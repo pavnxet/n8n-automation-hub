@@ -1,0 +1,205 @@
+{
+  "id": "n8n-nodes-base.mailchimptrigger",
+  "name": "Mailchimp Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.mailchimptrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Mailchimp is an integrated marketing platform that allows business owners to automate their email campaigns and track user engagement",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mailchimptrigger",
+  "credentials": {
+    "name": "Mailchimp credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mailchimp",
+    "slug": "mailchimp",
+    "json_file": "credentials/mailchimp.json",
+    "markdown_file": "credentials/mailchimp.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allows",
+    "business",
+    "campaigns",
+    "credentials",
+    "email",
+    "engagement",
+    "integrated",
+    "mailchimp",
+    "mailchimptrigger",
+    "marketing",
+    "owners",
+    "platform",
+    "their",
+    "track",
+    "trigger",
+    "user"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mailchimptrigger.md",
+      "title": "Mailchimp Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mailchimptrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.mailchimptrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.mailchimptrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.mailchimptrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.mailchimptrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mailchimpTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mailchimpApi",
+    "mailchimpOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "mailchimpApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiKey"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mailchimpOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Mailchimp Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiKey",
+        "options": [
+          {
+            "name": "API Key",
+            "value": "apiKey"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "The list that is gonna fire the event. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Campaign Sent",
+            "value": "campaign",
+            "description": "Whether the webhook is triggered when a campaign is sent or cancelled"
+          },
+          {
+            "name": "Cleaned",
+            "value": "cleaned",
+            "description": "Whether the webhook is triggered when a subscriber's email address is cleaned from the list"
+          },
+          {
+            "name": "Email Address Updated",
+            "value": "upemail",
+            "description": "Whether the webhook is triggered when a subscriber's email address is changed"
+          },
+          {
+            "name": "Profile Updated",
+            "value": "profile",
+            "description": "Whether the webhook is triggered when a subscriber's profile is updated"
+          },
+          {
+            "name": "Subscribe",
+            "value": "subscribe",
+            "description": "Whether the webhook is triggered when a list subscriber is added"
+          },
+          {
+            "name": "Unsubscribe",
+            "value": "unsubscribe",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          }
+        ],
+        "description": "The events that can trigger the webhook and whether they are enabled"
+      },
+      {
+        "name": "sources",
+        "displayName": "Sources",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "User",
+            "value": "user",
+            "description": "Whether the webhook is triggered by subscriber-initiated actions"
+          },
+          {
+            "name": "Admin",
+            "value": "admin",
+            "description": "Whether the webhook is triggered by admin-initiated actions in the web interface"
+          },
+          {
+            "name": "API",
+            "value": "api",
+            "description": "Whether the webhook is triggered by actions initiated via the API"
+          }
+        ],
+        "description": "The possible sources of any events that can trigger the webhook and whether they are enabled"
+      }
+    ]
+  }
+}

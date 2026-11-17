@@ -1,0 +1,225 @@
+{
+  "id": "n8n-nodes-base.googlecalendartrigger",
+  "name": "Google Calendar Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.googlecalendartrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Google Calendar is a time-management and scheduling calendar service developed by Google",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googlecalendartrigger",
+  "credentials": {
+    "name": "Google credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [
+    {
+      "name": "Event Cancelled",
+      "description": ""
+    },
+    {
+      "name": "Event Created",
+      "description": ""
+    },
+    {
+      "name": "Event Ended",
+      "description": ""
+    },
+    {
+      "name": "Event Started",
+      "description": ""
+    },
+    {
+      "name": "Event Updated",
+      "description": ""
+    }
+  ],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "calendar",
+    "credentials",
+    "developed",
+    "google",
+    "googlecalendartrigger",
+    "management",
+    "scheduling",
+    "service",
+    "time",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googlecalendartrigger.md",
+      "title": "Google Calendar Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googlecalendartrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.googlecalendartrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.googlecalendartrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.googlecalendartrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.googlecalendartrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleCalendarTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleCalendarOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleCalendarOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Google Calendar Trigger"
+  },
+  "subtitle": "={{$parameter[\"triggerOn\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "calendarId",
+        "displayName": "Calendar",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "description": "Google Calendar to operate on"
+      },
+      {
+        "name": "triggerOn",
+        "displayName": "Trigger On",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Event Cancelled",
+            "value": "eventCancelled"
+          },
+          {
+            "name": "Event Created",
+            "value": "eventCreated"
+          },
+          {
+            "name": "Event Ended",
+            "value": "eventEnded"
+          },
+          {
+            "name": "Event Started",
+            "value": "eventStarted"
+          },
+          {
+            "name": "Event Updated",
+            "value": "eventUpdated"
+          }
+        ]
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "matchTerm",
+            "description": "Free text search terms to filter events that match these terms in any field, except for extended properties"
+          }
+        ]
+      }
+    ]
+  }
+}

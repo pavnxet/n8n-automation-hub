@@ -1,0 +1,296 @@
+{
+  "id": "n8n-nodes-langchain.lmchatminimax",
+  "name": "MiniMax Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatminimax",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the MiniMax Chat Model node to use MiniMax's chat models with conversational agents[^1]",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatminimax",
+  "credentials": {
+    "name": "MiniMax credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/minimax",
+    "slug": "minimax",
+    "json_file": "credentials/minimax.json",
+    "markdown_file": "credentials/minimax.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "Select the model that generates the completion. Refer to MiniMax's model documentation for the available models"
+    },
+    {
+      "name": "Hide Thinking",
+      "description": "When turned on (default), the node strips tags from the model's response. Turn this off to include the model's reasoning in the output"
+    },
+    {
+      "name": "Maximum Number of Tokens",
+      "description": "Enter the maximum number of tokens used, which sets the completion length"
+    },
+    {
+      "name": "Sampling Temperature",
+      "description": "Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations"
+    },
+    {
+      "name": "Timeout",
+      "description": "Enter the maximum request time in milliseconds"
+    },
+    {
+      "name": "Max Retries",
+      "description": "Enter the maximum number of times to retry a request"
+    },
+    {
+      "name": "Top P",
+      "description": "Use this option to set the probability the completion should use. Use a lower value to ignore less probable options"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agents",
+    "chat",
+    "cluster",
+    "conversational",
+    "credentials",
+    "hide",
+    "lmchatminimax",
+    "max",
+    "maximum",
+    "minimax",
+    "model",
+    "models",
+    "number",
+    "retries",
+    "sampling",
+    "sub",
+    "temperature",
+    "thinking",
+    "timeout",
+    "tokens",
+    "top"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.lmchatminimax.md",
+      "title": "MiniMax Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatminimax",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatminimax.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatminimax.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatminimax.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatminimax.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatMinimax",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "minimaxApi"
+  ],
+  "credential_details": [
+    {
+      "name": "minimaxApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "MiniMax Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "MiniMax-M2.7",
+        "options": [
+          {
+            "name": "MiniMax-M2",
+            "value": "MiniMax-M2"
+          },
+          {
+            "name": "MiniMax-M2.1",
+            "value": "MiniMax-M2.1"
+          },
+          {
+            "name": "MiniMax-M2.1-Highspeed",
+            "value": "MiniMax-M2.1-highspeed"
+          },
+          {
+            "name": "MiniMax-M2.5",
+            "value": "MiniMax-M2.5"
+          },
+          {
+            "name": "MiniMax-M2.5-Highspeed",
+            "value": "MiniMax-M2.5-highspeed"
+          },
+          {
+            "name": "MiniMax-M2.7",
+            "value": "MiniMax-M2.7"
+          },
+          {
+            "name": "MiniMax-M2.7-Highspeed",
+            "value": "MiniMax-M2.7-highspeed"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "The model which will generate the completion. <a href=\"https://platform.minimax.io/docs/api-reference/text-openai-api\">Learn more</a>."
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "MiniMax-M3",
+        "options": [
+          {
+            "name": "MiniMax-M2",
+            "value": "MiniMax-M2"
+          },
+          {
+            "name": "MiniMax-M2.1",
+            "value": "MiniMax-M2.1"
+          },
+          {
+            "name": "MiniMax-M2.1-Highspeed",
+            "value": "MiniMax-M2.1-highspeed"
+          },
+          {
+            "name": "MiniMax-M2.5",
+            "value": "MiniMax-M2.5"
+          },
+          {
+            "name": "MiniMax-M2.5-Highspeed",
+            "value": "MiniMax-M2.5-highspeed"
+          },
+          {
+            "name": "MiniMax-M2.7",
+            "value": "MiniMax-M2.7"
+          },
+          {
+            "name": "MiniMax-M2.7-Highspeed",
+            "value": "MiniMax-M2.7-highspeed"
+          },
+          {
+            "name": "MiniMax-M3",
+            "value": "MiniMax-M3"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.1
+            ]
+          }
+        },
+        "description": "The model which will generate the completion. <a href=\"https://platform.minimax.io/docs/api-reference/text-openai-api\">Learn more</a>."
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "MiniMax-M3"
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The model which will generate the completion. <a href=\"https://platform.minimax.io/docs/api-reference/text-openai-api\">Learn more</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "hideThinking",
+            "description": "Whether to strip chain-of-thought reasoning from the response, returning only the final answer"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion. The limit depends on the selected model."
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in milliseconds"
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt"
+          },
+          {
+            "name": "topP",
+            "description": "Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We generally recommend altering this or temperature b"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

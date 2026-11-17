@@ -1,0 +1,226 @@
+{
+  "id": "n8n-nodes-langchain.memorypostgreschat",
+  "name": "Postgres Chat Memory",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.memorypostgreschat",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Postgres Chat Memory node to use Postgres as a memory[^1] server for storing chat history",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorypostgreschat",
+  "credentials": {
+    "name": "Postgres credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/postgres",
+    "slug": "postgres",
+    "json_file": "credentials/postgres.json",
+    "markdown_file": "credentials/postgres.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Session Key",
+      "description": "Enter the key to use to store the memory in the workflow data"
+    },
+    {
+      "name": "Table Name",
+      "description": "Enter the name of the table to store the chat history in. The system will create the table if doesn't exist"
+    },
+    {
+      "name": "Context Window Length",
+      "description": "Enter the number of previous interactions to consider for context"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "chat",
+    "cluster",
+    "context",
+    "credentials",
+    "history",
+    "key",
+    "length",
+    "memory",
+    "memorypostgreschat",
+    "name",
+    "postgres",
+    "server",
+    "session",
+    "storing",
+    "sub",
+    "table",
+    "window"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.memorypostgreschat.md",
+      "title": "Postgres Chat Memory node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorypostgreschat",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorypostgreschat.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.memorypostgreschat.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.memorypostgreschat.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorypostgreschat.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+  "type_version": 1.4,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3,
+    1.4
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "postgres"
+  ],
+  "credential_details": [
+    {
+      "name": "postgres",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Postgres Chat Memory"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_memory"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI agent. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "sessionIdType",
+        "displayName": "Session ID",
+        "type": "options",
+        "default": "fromInput",
+        "options": [
+          {
+            "name": "Connected Chat Trigger Node",
+            "value": "fromInput",
+            "description": "Looks for an input field called 'sessionId' that is coming from a directly connected Chat Trigger"
+          },
+          {
+            "name": "Define below",
+            "value": "customKey",
+            "description": "Use an expression to reference data in previous nodes or enter static text"
+          }
+        ]
+      },
+      {
+        "name": "sessionKey",
+        "displayName": "Session Key From Previous Node",
+        "type": "string",
+        "default": "={{ $json.sessionId }}",
+        "displayOptions": {
+          "show": {
+            "sessionIdType": [
+              "fromInput"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "scopedSessionHintNotice",
+        "displayName": "Session is automatically scoped only to this memory node. To share a session between different memory nodes, switch \"Session ID\" to \"Define below\" and use the same key in each node.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.4
+                }
+              }
+            ],
+            "sessionIdType": [
+              "fromInput"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sessionKey",
+        "displayName": "Key",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "sessionIdType": [
+              "customKey"
+            ]
+          }
+        },
+        "description": "The key to use to store session ID in the memory"
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name",
+        "type": "string",
+        "default": "n8n_chat_histories",
+        "description": "The table name to store the chat history in. If table does not exist, it will be created."
+      },
+      {
+        "name": "contextWindowLength",
+        "displayName": "Context Window Length",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 1.1
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

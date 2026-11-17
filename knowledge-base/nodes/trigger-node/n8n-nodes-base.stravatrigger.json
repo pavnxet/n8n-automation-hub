@@ -1,0 +1,171 @@
+{
+  "id": "n8n-nodes-base.stravatrigger",
+  "name": "Strava Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.stravatrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Strava is an internet service for tracking human exercise which incorporates social network features",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.stravatrigger",
+  "credentials": {
+    "name": "Strava credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/strava",
+    "slug": "strava",
+    "json_file": "credentials/strava.json",
+    "markdown_file": "credentials/strava.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [
+    {
+      "name": "\\[All\\]",
+      "description": ""
+    },
+    {
+      "name": "Activity",
+      "description": ""
+    },
+    {
+      "name": "Athlete",
+      "description": ""
+    }
+  ],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "credentials",
+    "exercise",
+    "human",
+    "incorporates",
+    "internet",
+    "network",
+    "service",
+    "social",
+    "strava",
+    "stravatrigger",
+    "tracking",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.stravatrigger.md",
+      "title": "Strava Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.stravatrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.stravatrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.stravatrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.stravatrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.stravatrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.stravaTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "stravaOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "stravaOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Strava Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "object",
+        "displayName": "Object",
+        "type": "options",
+        "default": "*",
+        "options": [
+          {
+            "name": "[All]",
+            "value": "*"
+          },
+          {
+            "name": "Activity",
+            "value": "activity"
+          },
+          {
+            "name": "Athlete",
+            "value": "athlete"
+          }
+        ]
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "default": "*",
+        "options": [
+          {
+            "name": "[All]",
+            "value": "*"
+          },
+          {
+            "name": "Created",
+            "value": "create"
+          },
+          {
+            "name": "Deleted",
+            "value": "delete"
+          },
+          {
+            "name": "Updated",
+            "value": "update"
+          }
+        ]
+      },
+      {
+        "name": "resolveData",
+        "displayName": "Resolve Data",
+        "type": "boolean",
+        "default": true,
+        "description": "By default the webhook-data only contain the Object ID. If this option gets activated, it will resolve the data automatically."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "deleteIfExist",
+            "description": "Strava allows just one subscription at all times. If you want to delete the current subscription to make room for a new subscription with the current parameters"
+          }
+        ]
+      }
+    ]
+  }
+}

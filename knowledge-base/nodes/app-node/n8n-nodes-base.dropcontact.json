@@ -1,0 +1,273 @@
+{
+  "id": "n8n-nodes-base.dropcontact",
+  "name": "Dropcontact",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.dropcontact",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Dropcontact node to automate work in Dropcontact, and integrate Dropcontact with other applications. n8n has built-in support for a wide range of Dropcontact features, including fetching contacts",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.dropcontact",
+  "credentials": {
+    "name": "Dropcontact",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/dropcontact",
+    "slug": "dropcontact",
+    "json_file": "credentials/dropcontact.json",
+    "markdown_file": "credentials/dropcontact.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Enrich",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "enrich"
+    },
+    {
+      "resource": "",
+      "operation": "Fetch Request",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "fetchRequest"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "contacts",
+    "dropcontact",
+    "enrich",
+    "fetch",
+    "fetching",
+    "including",
+    "request",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.dropcontact.md",
+      "title": "Dropcontact node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.dropcontact",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.dropcontact.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.dropcontact.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.dropcontact.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.dropcontact.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.dropcontact",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "dropcontactApi"
+  ],
+  "credential_details": [
+    {
+      "name": "dropcontactApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Dropcontact"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "contact",
+        "options": [
+          {
+            "name": "Contact",
+            "value": "contact"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "enrich",
+        "options": [
+          {
+            "name": "Enrich",
+            "value": "enrich",
+            "description": "Find B2B emails and enrich your contact from his name and his website"
+          },
+          {
+            "name": "Fetch Request",
+            "value": "fetchRequest"
+          }
+        ]
+      },
+      {
+        "name": "requestId",
+        "displayName": "Request ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "fetchRequest"
+            ]
+          }
+        }
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output (Faster)",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        },
+        "description": "When off, waits for the contact data before completing. Waiting time can be adjusted with Extend Wait Time option. When on, returns a request_id that can be used later in the Fetch Request operation."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "num_siren"
+          },
+          {
+            "name": "siret"
+          },
+          {
+            "name": "company"
+          },
+          {
+            "name": "country"
+          },
+          {
+            "name": "first_name"
+          },
+          {
+            "name": "full_name"
+          },
+          {
+            "name": "last_name"
+          },
+          {
+            "name": "linkedin"
+          },
+          {
+            "name": "phone"
+          },
+          {
+            "name": "website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "waitTime",
+            "description": "When not simplifying the response, data will be fetched in two steps. This parameter controls how long to wait (in seconds) before trying the second step."
+          },
+          {
+            "name": "siren",
+            "description": "Whether you want the <a href=\"https://en.wikipedia.org/wiki/SIREN_code\" target=\"_blank\">SIREN number</a>, NAF code, TVA number, company address and informations"
+          },
+          {
+            "name": "language",
+            "description": "Whether the response is in English or French"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

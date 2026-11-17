@@ -1,0 +1,32 @@
+<!-- n8n built-in node reference: n8n-nodes-langchain.lmchatmistralcloud | source: https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatmistralcloud -->
+
+Use the Mistral Cloud Chat Model node to combine Mistral Cloud's chat models with conversational agents[^1].
+
+On this page, you'll find the node parameters for the Mistral Cloud Chat Model node, and links to more resources.
+
+> **Credentials:**
+> Refer to the [Mistral Cloud credentials documentation](https://docs.n8n.io/integrations/builtin/credentials/mistral) for authentication information for this node.
+
+## Node parameters
+
+* **Model**: Select the model to use to generate the completion. n8n dynamically loads models from Mistral Cloud and you'll only see the models available to your account.
+
+## Node options
+
+* **Maximum Number of Tokens**: Enter the maximum number of tokens used, which sets the completion length.
+* **Sampling Temperature**: Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations.
+* **Timeout**: Enter the maximum request time in milliseconds.
+* **Max Retries**: Enter the maximum number of times to retry a request.
+* **Top P**: Use this option to set the probability the completion should use. Use a lower value to ignore less probable options. 
+* **Enable Safe Mode**: Enable safe mode by injecting a safety prompt at the beginning of the completion. This helps prevent the model from generating offensive content.
+* **Random Seed**: Enter a seed to use for random sampling. If set, different calls will generate deterministic results.
+
+## Templates and examples
+
+[Browse Mistral Cloud Chat Model node documentation integration templates](https://n8n.io/integrations/mistral-cloud-chat-model) or [search all templates](https://n8n.io/workflows/)
+
+## Related resources
+
+Refer to [LangChain's Mistral documentation](https://docs.langchain.com/oss/javascript/integrations/chat/mistral) for more information about the service.
+
+[^1]: AI agents are artificial intelligence systems capable of responding to requests, making decisions, and performing real-world tasks for users. They use large language models (LLMs) to interpret user input and make decisions about how to best process requests using the information and resources they have available.

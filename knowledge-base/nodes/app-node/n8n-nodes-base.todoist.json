@@ -1,0 +1,1580 @@
+{
+  "id": "n8n-nodes-base.todoist",
+  "name": "Todoist",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.todoist",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Todoist node to automate work in Todoist, and integrate Todoist with other applications. n8n has built-in support for a wide range of Todoist features, including creating, updating, deleting, and getting tasks",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.todoist",
+  "credentials": {
+    "name": "Todoist",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/todoist",
+    "slug": "todoist",
+    "json_file": "credentials/todoist.json",
+    "markdown_file": "credentials/todoist.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Task",
+      "operation": "Create a new task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Task",
+      "operation": "Close a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "close"
+    },
+    {
+      "resource": "Task",
+      "operation": "Delete a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get all tasks",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Reopen a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "reopen"
+    },
+    {
+      "resource": "Task",
+      "operation": "Update a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 7,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "close",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "new",
+    "reopen",
+    "task",
+    "tasks",
+    "todoist",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.todoist.md",
+      "title": "Todoist node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.todoist",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.todoist.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.todoist.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.todoist.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.todoist.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.todoist",
+  "type_version": 2.2,
+  "type_versions": [
+    2,
+    2.1,
+    2.2
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "todoistApi",
+    "todoistOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "todoistApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiKey"
+          ]
+        }
+      }
+    },
+    {
+      "name": "todoistOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Todoist"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 50,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiKey",
+        "options": [
+          {
+            "name": "API Key",
+            "value": "apiKey"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "task",
+        "options": [
+          {
+            "name": "Task",
+            "value": "task",
+            "description": "Task resource"
+          },
+          {
+            "name": "Project",
+            "value": "project",
+            "description": "Project resource"
+          },
+          {
+            "name": "Section",
+            "value": "section",
+            "description": "Section resource"
+          },
+          {
+            "name": "Comment",
+            "value": "comment",
+            "description": "Comment resource"
+          },
+          {
+            "name": "Label",
+            "value": "label",
+            "description": "Label resource"
+          },
+          {
+            "name": "Reminder",
+            "value": "reminder",
+            "description": "Reminder resource"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Close",
+            "value": "close",
+            "description": "Close a task"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new task"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a task"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a task"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many tasks"
+          },
+          {
+            "name": "Move",
+            "value": "move",
+            "description": "Move a task"
+          },
+          {
+            "name": "Quick Add",
+            "value": "quickAdd",
+            "description": "Quick add a task using natural language"
+          },
+          {
+            "name": "Reopen",
+            "value": "reopen",
+            "description": "Reopen a task"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a task"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Archive",
+            "value": "archive",
+            "description": "Archive a project"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new project"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a project"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a project"
+          },
+          {
+            "name": "Get Collaborators",
+            "value": "getCollaborators",
+            "description": "Get project collaborators"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many projects"
+          },
+          {
+            "name": "Unarchive",
+            "value": "unarchive",
+            "description": "Unarchive a project"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a project"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "project"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new section"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a section"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a section"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many sections"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a section"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "section"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new comment"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a comment"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a comment"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many comments"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a comment"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new label"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a label"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a label"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many labels"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a label"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "label"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new reminder"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a reminder"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many reminders"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a reminder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "delete",
+              "close",
+              "get",
+              "reopen",
+              "update",
+              "move"
+            ]
+          }
+        }
+      },
+      {
+        "name": "project",
+        "displayName": "Project Name or ID",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create",
+              "move"
+            ]
+          }
+        },
+        "description": "The destination project. Choose from the list, or specify an ID."
+      },
+      {
+        "name": "section",
+        "displayName": "Section Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "move"
+            ]
+          },
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Section to which you want move the task. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "section",
+            "description": "The destination section. The task becomes the last root task of the section. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/e"
+          },
+          {
+            "name": "parent",
+            "description": "The destination parent task. The task becomes the last child task of the parent task. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "move"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "labels",
+        "displayName": "Label Names",
+        "type": "multiOptions",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Optional labels that will be assigned to a created task. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "content",
+        "displayName": "Content",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Task content"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "quickAdd"
+            ]
+          }
+        },
+        "description": "Natural language text for quick adding task (e.g., \"Buy milk @Grocery #shopping tomorrow\"). It can include a due date in free form text, a project name starting with the \"#\" character (without spaces), a label starting w"
+      },
+      {
+        "name": "options",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "note",
+            "description": "The content of the note"
+          },
+          {
+            "name": "reminder",
+            "description": "The date of the reminder, added in free form text"
+          },
+          {
+            "name": "auto_reminder",
+            "description": "When this option is enabled, the default reminder will be added to the new item if it has a due date with time set"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "quickAdd"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "description",
+            "description": "A description for the task"
+          },
+          {
+            "name": "dueDateTime",
+            "description": "Specific date and time in RFC3339 format in UTC"
+          },
+          {
+            "name": "dueLang",
+            "description": "2-letter code specifying language in case due_string is not written in English"
+          },
+          {
+            "name": "dueString",
+            "description": "Human defined task due date (ex.: “next Monday”, “Tomorrow”). Value is set using local (not UTC) time."
+          },
+          {
+            "name": "parentId",
+            "description": "The parent task you want to operate on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "priority",
+            "description": "Task priority from 1 (normal) to 4 (urgent)"
+          },
+          {
+            "name": "section",
+            "description": "The section you want to operate on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "order",
+            "description": "Non-zero integer used to sort tasks under the same parent"
+          },
+          {
+            "name": "dueDate",
+            "description": "Specific date in YYYY-MM-DD format"
+          },
+          {
+            "name": "assigneeId",
+            "description": "Responsible user ID (for shared tasks)"
+          },
+          {
+            "name": "duration",
+            "description": "Positive integer for task duration (must be used with Duration Unit)"
+          },
+          {
+            "name": "durationUnit",
+            "description": "Unit of time for duration (must be used with Duration)"
+          },
+          {
+            "name": "deadlineDate",
+            "description": "Specific deadline date in YYYY-MM-DD format"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "task"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "filter",
+            "description": "Filter by any <a href=\"https://get.todoist.help/hc/en-us/articles/205248842\">supported filter.</a>"
+          },
+          {
+            "name": "ids",
+            "description": "A list of the task IDs to retrieve, this should be a comma-separated list"
+          },
+          {
+            "name": "labelId",
+            "description": "Filter tasks by label. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "lang",
+            "description": "IETF language tag defining what language filter is written in, if differs from default English"
+          },
+          {
+            "name": "parentId",
+            "description": "Filter tasks by parent task ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "projectId",
+            "description": "Filter tasks by project ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "sectionId",
+            "description": "Filter tasks by section ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "content",
+            "description": "Task content"
+          },
+          {
+            "name": "description",
+            "description": "A description for the task"
+          },
+          {
+            "name": "dueDateTime",
+            "description": "Specific date and time in RFC3339 format in UTC"
+          },
+          {
+            "name": "dueLang",
+            "description": "2-letter code specifying language in case due_string is not written in English"
+          },
+          {
+            "name": "dueString",
+            "description": "Human defined task due date (ex.: “next Monday”, “Tomorrow”). Value is set using local (not UTC) time."
+          },
+          {
+            "name": "dueLang",
+            "description": "2-letter code specifying language in case due_string is not written in English"
+          },
+          {
+            "name": "labels",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "priority",
+            "description": "Task priority from 1 (normal) to 4 (urgent)"
+          },
+          {
+            "name": "order",
+            "description": "Non-zero integer used to sort tasks under the same parent"
+          },
+          {
+            "name": "dueDate",
+            "description": "Specific date in YYYY-MM-DD format"
+          },
+          {
+            "name": "assigneeId",
+            "description": "Responsible user ID (for shared tasks)"
+          },
+          {
+            "name": "duration",
+            "description": "Positive integer for task duration (must be used with Duration Unit)"
+          },
+          {
+            "name": "durationUnit",
+            "description": "Unit of time for duration (must be used with Duration)"
+          },
+          {
+            "name": "deadlineDate",
+            "description": "Specific deadline date in YYYY-MM-DD format"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "projectId",
+        "displayName": "Project ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "project"
+            ],
+            "operation": [
+              "archive",
+              "delete",
+              "get",
+              "getCollaborators",
+              "unarchive",
+              "update"
+            ]
+          }
+        },
+        "description": "The project ID - can be either a string or number"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "project"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Name of the project"
+      },
+      {
+        "name": "projectOptions",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "color",
+            "description": "The color of the project"
+          },
+          {
+            "name": "is_favorite",
+            "description": "Whether the project is a favorite"
+          },
+          {
+            "name": "parent_id",
+            "description": "Parent project ID"
+          },
+          {
+            "name": "view_style",
+            "description": "The default view style of the project"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "project"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "projectUpdateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "name",
+            "description": "Name of the project"
+          },
+          {
+            "name": "color",
+            "description": "The color of the project"
+          },
+          {
+            "name": "is_favorite",
+            "description": "Whether the project is a favorite"
+          },
+          {
+            "name": "view_style",
+            "description": "The default view style of the project"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "project"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sectionId",
+        "displayName": "Section ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "section"
+            ],
+            "operation": [
+              "delete",
+              "get",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sectionProject",
+        "displayName": "Project Name or ID",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "section"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The project to add the section to"
+      },
+      {
+        "name": "sectionName",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "section"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Name of the section"
+      },
+      {
+        "name": "sectionOptions",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "order",
+            "description": "The order of the section"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "section"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sectionUpdateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "name",
+            "description": "Name of the section"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "section"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sectionFilters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "project_id",
+            "description": "Filter sections by project. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "section"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "commentId",
+        "displayName": "Comment ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "delete",
+              "get",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "commentTaskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The ID of the task to comment on"
+      },
+      {
+        "name": "commentContent",
+        "displayName": "Content",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Comment content"
+      },
+      {
+        "name": "commentUpdateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "content",
+            "description": "Comment content"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "commentFilters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "task_id",
+            "description": "Filter comments by task ID"
+          },
+          {
+            "name": "project_id",
+            "description": "Filter comments by project ID"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "labelId",
+        "displayName": "Label ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "label"
+            ],
+            "operation": [
+              "delete",
+              "get",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "labelName",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "label"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Name of the label"
+      },
+      {
+        "name": "labelOptions",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "color",
+            "description": "The color of the label"
+          },
+          {
+            "name": "order",
+            "description": "Label order"
+          },
+          {
+            "name": "is_favorite",
+            "description": "Whether the label is a favorite"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "label"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "labelUpdateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "name",
+            "description": "Name of the label"
+          },
+          {
+            "name": "color",
+            "description": "The color of the label"
+          },
+          {
+            "name": "order",
+            "description": "Label order"
+          },
+          {
+            "name": "is_favorite",
+            "description": "Whether the label is a favorite"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "label"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "reminderId",
+        "displayName": "Reminder ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "delete",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "itemId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The ID of the task to attach reminder to"
+      },
+      {
+        "name": "dueDateType",
+        "displayName": "Due Date Type",
+        "type": "options",
+        "required": true,
+        "default": "natural_language",
+        "options": [
+          {
+            "name": "Natural Language",
+            "value": "natural_language",
+            "description": "Human-readable date and time (e.g., \"tomorrow 2pm\")"
+          },
+          {
+            "name": "Full-Day Date",
+            "value": "full_day",
+            "description": "Date without specific time (floating)"
+          },
+          {
+            "name": "Floating Date with Time",
+            "value": "floating_time",
+            "description": "Date and time without timezone"
+          },
+          {
+            "name": "Fixed Timezone Date with Time",
+            "value": "fixed_timezone",
+            "description": "Date and time with specific timezone"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "How to specify when the reminder should trigger"
+      },
+      {
+        "name": "natural_language_representation",
+        "displayName": "Natural Language Representation",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "create"
+            ],
+            "dueDateType": [
+              "natural_language"
+            ]
+          }
+        },
+        "description": "Human-readable date and time"
+      },
+      {
+        "name": "date",
+        "displayName": "Date",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "create"
+            ],
+            "dueDateType": [
+              "full_day"
+            ]
+          }
+        },
+        "description": "Full-day date in YYYY-MM-DD format"
+      },
+      {
+        "name": "datetime",
+        "displayName": "Date Time",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "create"
+            ],
+            "dueDateType": [
+              "floating_time"
+            ]
+          }
+        },
+        "description": "Floating date and time (no timezone)"
+      },
+      {
+        "name": "datetime",
+        "displayName": "Date Time",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "create"
+            ],
+            "dueDateType": [
+              "fixed_timezone"
+            ]
+          }
+        },
+        "description": "Date and time with timezone"
+      },
+      {
+        "name": "timezone",
+        "displayName": "Timezone",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "create"
+            ],
+            "dueDateType": [
+              "fixed_timezone"
+            ]
+          }
+        },
+        "description": "Timezone for the fixed timezone date"
+      },
+      {
+        "name": "reminderOptions",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "type",
+            "description": "The reminder type"
+          },
+          {
+            "name": "minute_offset",
+            "description": "Minutes before the task due date"
+          },
+          {
+            "name": "notify_uid",
+            "description": "User ID to notify (for shared tasks)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "reminderUpdateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "due",
+            "description": "When the reminder should trigger"
+          },
+          {
+            "name": "type",
+            "description": "The reminder type"
+          },
+          {
+            "name": "minute_offset",
+            "description": "Minutes before the task due date"
+          },
+          {
+            "name": "notify_uid",
+            "description": "User ID to notify (for shared tasks)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reminder"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

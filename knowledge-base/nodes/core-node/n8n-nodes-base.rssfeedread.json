@@ -1,0 +1,119 @@
+{
+  "id": "n8n-nodes-base.rssfeedread",
+  "name": "RSS Read",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.rssfeedread",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the RSS Read node to read data from RSS feeds published on the internet",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedread",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "URL",
+      "description": "Enter the URL for the RSS publication you want to read"
+    },
+    {
+      "name": "Ignore SSL Issues",
+      "description": "Choose whether n8n should ignore SSL/TLS verification (turned on) or not (turned off)"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "core",
+    "data",
+    "feeds",
+    "ignore",
+    "internet",
+    "issues",
+    "published",
+    "read",
+    "rss",
+    "rssfeedread",
+    "ssl",
+    "url"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.rssfeedread.md",
+      "title": "RSS Read",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedread",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.rssfeedread.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.rssfeedread.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.rssfeedread.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.rssfeedread.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.rssFeedRead",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "RSS Read",
+    "color": "#b02020"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "url",
+        "displayName": "URL",
+        "type": "string",
+        "required": true,
+        "description": "URL of the RSS feed"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customFields",
+            "description": "A comma-separated list of custom fields to include in the output. For example, \"author, contentSnippet\"."
+          },
+          {
+            "name": "ignoreSSL",
+            "description": "Whether to ignore SSL/TLS certificate issues or not"
+          }
+        ]
+      }
+    ]
+  }
+}

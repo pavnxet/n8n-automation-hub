@@ -1,0 +1,667 @@
+{
+  "id": "n8n-nodes-base.storyblok",
+  "name": "Storyblok",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.storyblok",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Storyblok node to automate work in Storyblok, and integrate Storyblok with other applications. n8n has built-in support for a wide range of Storyblok features, including getting, deleting, and publishing stories",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.storyblok",
+  "credentials": {
+    "name": "Storyblok",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/storyblok",
+    "slug": "storyblok",
+    "json_file": "credentials/storyblok.json",
+    "markdown_file": "credentials/storyblok.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Content API / Story",
+      "operation": "Get a story",
+      "description": "",
+      "doc": "",
+      "resource_value": "story",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Content API / Story",
+      "operation": "Get all stories",
+      "description": "",
+      "doc": "",
+      "resource_value": "story",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Management API / Story",
+      "operation": "Delete a story",
+      "description": "",
+      "doc": "",
+      "resource_value": "story",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Management API / Story",
+      "operation": "Get a story",
+      "description": "",
+      "doc": "",
+      "resource_value": "story",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Management API / Story",
+      "operation": "Get all stories",
+      "description": "",
+      "doc": "",
+      "resource_value": "story",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Management API / Story",
+      "operation": "Publish a story",
+      "description": "",
+      "doc": "",
+      "resource_value": "story",
+      "operation_value": "publish"
+    },
+    {
+      "resource": "Management API / Story",
+      "operation": "Unpublish a story",
+      "description": "",
+      "doc": "",
+      "resource_value": "story",
+      "operation_value": "publish"
+    }
+  ],
+  "operation_count": 7,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "api",
+    "app",
+    "applications",
+    "content",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "management",
+    "publish",
+    "publishing",
+    "stories",
+    "story",
+    "storyblok",
+    "unpublish",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.storyblok.md",
+      "title": "Storyblok node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.storyblok",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.storyblok.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.storyblok.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.storyblok.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.storyblok.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.storyblok",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "storyblokContentApi",
+    "storyblokManagementApi"
+  ],
+  "credential_details": [
+    {
+      "name": "storyblokContentApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "source": [
+            "contentApi"
+          ]
+        }
+      }
+    },
+    {
+      "name": "storyblokManagementApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "source": [
+            "managementApi"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Storyblok"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 22,
+    "parameters": [
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "options",
+        "default": "contentApi",
+        "options": [
+          {
+            "name": "Content API",
+            "value": "contentApi"
+          },
+          {
+            "name": "Management API",
+            "value": "managementApi"
+          }
+        ],
+        "description": "Pick where your data comes from, Content or Management API"
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "story",
+        "options": [
+          {
+            "name": "Story",
+            "value": "story"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi"
+            ]
+          }
+        }
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "story",
+        "options": [
+          {
+            "name": "Story",
+            "value": "story"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a story"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many stories"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi"
+            ],
+            "resource": [
+              "story"
+            ]
+          }
+        }
+      },
+      {
+        "name": "identifier",
+        "displayName": "Identifier",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The ID or slug of the story to get"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "starts_with",
+            "description": "Filter by slug"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a story"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a story"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many stories"
+          },
+          {
+            "name": "Publish",
+            "value": "publish",
+            "description": "Publish a story"
+          },
+          {
+            "name": "Unpublish",
+            "value": "unpublish",
+            "description": "Unpublish a story"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ]
+          }
+        }
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The name of the space. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "storyId",
+        "displayName": "Story ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Numeric ID of the story"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The name of the space. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "storyId",
+        "displayName": "Story ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Numeric ID of the story"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "The name of the space. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "starts_with",
+            "description": "Filter by slug"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "publish"
+            ]
+          }
+        },
+        "description": "The name of the space. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "storyId",
+        "displayName": "Story ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "publish"
+            ]
+          }
+        },
+        "description": "Numeric ID of the story"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "releaseId",
+            "description": "Numeric ID of release"
+          },
+          {
+            "name": "language",
+            "description": "Language code to publish the story individually (must be enabled in the space settings)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "publish"
+            ]
+          }
+        }
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "unpublish"
+            ]
+          }
+        },
+        "description": "The name of the space. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "storyId",
+        "displayName": "Story ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "managementApi"
+            ],
+            "resource": [
+              "story"
+            ],
+            "operation": [
+              "unpublish"
+            ]
+          }
+        },
+        "description": "Numeric ID of the story"
+      }
+    ]
+  }
+}

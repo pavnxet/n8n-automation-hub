@@ -1,0 +1,511 @@
+{
+  "id": "n8n-nodes-base.zoom",
+  "name": "Zoom",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.zoom",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Zoom node to automate work in Zoom, and integrate Zoom with other applications. n8n has built-in support for a wide range of Zoom features, including creating, retrieving, deleting, and updating meetings",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.zoom",
+  "credentials": {
+    "name": "Zoom",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/zoom",
+    "slug": "zoom",
+    "json_file": "credentials/zoom.json",
+    "markdown_file": "credentials/zoom.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Meeting",
+      "operation": "Create a meeting",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Meeting",
+      "operation": "Delete a meeting",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Meeting",
+      "operation": "Retrieve a meeting",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting"
+    },
+    {
+      "resource": "Meeting",
+      "operation": "Retrieve all meetings",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting"
+    },
+    {
+      "resource": "Meeting",
+      "operation": "Update a meeting",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "including",
+    "meeting",
+    "meetings",
+    "retrieve",
+    "retrieving",
+    "update",
+    "updating",
+    "work",
+    "zoom"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.zoom.md",
+      "title": "Zoom node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.zoom",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.zoom.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.zoom.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.zoom.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.zoom.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.zoom",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "zoomApi",
+    "zoomOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "zoomApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "zoomOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Zoom"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 14,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "meeting",
+        "options": [
+          {
+            "name": "Meeting",
+            "value": "meeting"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a meeting"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a meeting"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a meeting"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many meetings"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a meeting"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ]
+          }
+        }
+      },
+      {
+        "name": "topic",
+        "displayName": "Topic",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        },
+        "description": "Topic of the meeting"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "agenda",
+            "description": "Meeting agenda"
+          },
+          {
+            "name": "duration",
+            "description": "Meeting duration (minutes)"
+          },
+          {
+            "name": "password",
+            "description": "Password to join the meeting with maximum 10 characters"
+          },
+          {
+            "name": "scheduleFor",
+            "description": "Schedule meeting for someone else from your account, provide their email ID"
+          },
+          {
+            "name": "settings"
+          },
+          {
+            "name": "startTime",
+            "description": "Start time should be used only for scheduled or recurring meetings with fixed time"
+          },
+          {
+            "name": "timeZone",
+            "description": "Time zone used in the response. The default is the time zone of the calendar. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/"
+          },
+          {
+            "name": "type",
+            "description": "Meeting type"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        }
+      },
+      {
+        "name": "meetingId",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        },
+        "description": "Meeting ID"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "occurrenceId",
+            "description": "To view meeting details of a particular occurrence of the recurring meeting"
+          },
+          {
+            "name": "showPreviousOccurrences",
+            "description": "Whether to view meeting details of all previous occurrences of the recurring meeting"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 30,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "meeting"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "type",
+            "description": "Meeting type"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        }
+      },
+      {
+        "name": "meetingId",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        },
+        "description": "Meeting ID"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "occurrenceId",
+            "description": "Meeting occurrence ID"
+          },
+          {
+            "name": "scheduleForReminder",
+            "description": "Whether to notify hosts and alternative hosts about meeting cancellation via email"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        }
+      },
+      {
+        "name": "meetingId",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        },
+        "description": "Meeting ID"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "agenda",
+            "description": "Meeting agenda"
+          },
+          {
+            "name": "duration",
+            "description": "Meeting duration (minutes)"
+          },
+          {
+            "name": "password",
+            "description": "Password to join the meeting with maximum 10 characters"
+          },
+          {
+            "name": "scheduleFor",
+            "description": "Schedule meeting for someone else from your account, provide their email ID"
+          },
+          {
+            "name": "settings"
+          },
+          {
+            "name": "startTime",
+            "description": "Start time should be used only for scheduled or recurring meetings with fixed time"
+          },
+          {
+            "name": "timeZone",
+            "description": "Time zone used in the response. The default is the time zone of the calendar. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/"
+          },
+          {
+            "name": "topic",
+            "description": "Meeting topic"
+          },
+          {
+            "name": "type",
+            "description": "Meeting type"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "meeting"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

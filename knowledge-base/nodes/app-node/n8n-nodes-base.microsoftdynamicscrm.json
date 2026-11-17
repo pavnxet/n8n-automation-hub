@@ -1,0 +1,641 @@
+{
+  "id": "n8n-nodes-base.microsoftdynamicscrm",
+  "name": "Microsoft Dynamics CRM",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.microsoftdynamicscrm",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Microsoft Dynamics CRM node to automate work in Microsoft Dynamics CRM, and integrate Microsoft Dynamics CRM with other applications. n8n has built-in support for creating, updating, deleting, and getting Microsoft Dynamics CRM accounts",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.microsoftdynamicscrm",
+  "credentials": {
+    "name": "Microsoft",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/microsoft",
+    "slug": "microsoft",
+    "json_file": "credentials/microsoft.json",
+    "markdown_file": "credentials/microsoft.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Account",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Account",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Account",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Account",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Account",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "account",
+    "accounts",
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "crm",
+    "delete",
+    "deleting",
+    "dynamics",
+    "get",
+    "getting",
+    "microsoft",
+    "microsoftdynamicscrm",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.microsoftdynamicscrm.md",
+      "title": "Microsoft Dynamics CRM node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.microsoftdynamicscrm",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.microsoftdynamicscrm.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.microsoftdynamicscrm.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.microsoftdynamicscrm.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.microsoftdynamicscrm.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.microsoftDynamicsCrm",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "microsoftDynamicsOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "microsoftDynamicsOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Microsoft Dynamics CRM"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 11,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "account",
+        "options": [
+          {
+            "name": "Account",
+            "value": "account"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "delete"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Company or business name"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "accountcategorycode",
+            "description": "Category to indicate whether the customer account is standard or preferred. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/ex"
+          },
+          {
+            "name": "accountratingcode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "addresses"
+          },
+          {
+            "name": "businesstypecode",
+            "description": "The legal designation or other business type of the account for contracts or reporting purposes. Choose from the list, or specify an ID using an <a href=\"https:"
+          },
+          {
+            "name": "customersizecode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "customertypecode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "description",
+            "description": "Additional information to describe the account, such as an excerpt from the company’s website"
+          },
+          {
+            "name": "emailaddress1",
+            "description": "The primary email address for the account"
+          },
+          {
+            "name": "emailaddress2",
+            "description": "The secondary email address for the account"
+          },
+          {
+            "name": "emailaddress3",
+            "description": "Alternate email address for the account"
+          },
+          {
+            "name": "fax"
+          },
+          {
+            "name": "ftpsiteurl",
+            "description": "URL for the account’s FTP site to enable users to access data and share documents"
+          },
+          {
+            "name": "industrycode",
+            "description": "The account’s primary industry for use in marketing segmentation and demographic analysis. Choose from the list, or specify an ID using an <a href=\"https://docs"
+          },
+          {
+            "name": "name",
+            "description": "Company o business name"
+          },
+          {
+            "name": "creditlimit",
+            "description": "Credit limit of the account. This is a useful reference when you address invoice and accounting issues with the customer."
+          },
+          {
+            "name": "numberofemployees",
+            "description": "Number of employees that work at the account for use in marketing segmentation and demographic analysis"
+          },
+          {
+            "name": "paymenttermscode",
+            "description": "The payment terms to indicate when the customer needs to pay the total amount. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code"
+          },
+          {
+            "name": "preferredappointmentdaycode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "preferredappointmenttimecode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "preferredcontactmethodcode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "primarysatoriid"
+          },
+          {
+            "name": "primarytwitterid"
+          },
+          {
+            "name": "revenue",
+            "description": "The annual revenue for the account, used as an indicator in financial performance analysis"
+          },
+          {
+            "name": "sharesoutstanding",
+            "description": "The number of shares available to the public for the account. This number is used as an indicator in financial performance analysis."
+          },
+          {
+            "name": "shippingmethodcode",
+            "description": "Shipping method for deliveries sent to the account’s address to designate the preferred carrier or other delivery option. Choose from the list, or specify an ID"
+          },
+          {
+            "name": "sic",
+            "description": "The Standard Industrial Classification (SIC) code that indicates the account’s primary industry of business, for use in marketing segmentation and demographic a"
+          },
+          {
+            "name": "stageid"
+          },
+          {
+            "name": "stockexchange",
+            "description": "The stock exchange at which the account is listed to track their stock and financial performance of the company"
+          },
+          {
+            "name": "telephone1",
+            "description": "The main phone number for this account"
+          },
+          {
+            "name": "telephone2",
+            "description": "The second phone number for this account"
+          },
+          {
+            "name": "telephone3",
+            "description": "The third phone number for this account"
+          },
+          {
+            "name": "territorycode",
+            "description": "Region or territory for the account for use in segmentation and analysis. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expr"
+          },
+          {
+            "name": "tickersymbol",
+            "description": "Type the stock exchange symbol for the account to track financial performance of the company. You can click the code entered in this field to access the latest "
+          },
+          {
+            "name": "websiteurl",
+            "description": "The account’s website URL to get quick details about the company profile"
+          },
+          {
+            "name": "yominame",
+            "description": "The phonetic spelling of the company name, if specified in Japanese, to make sure the name is pronounced correctly in phone calls and other communications"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "accountId",
+        "displayName": "Account ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "delete",
+              "get",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnFields",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "expandFields",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "get",
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "query",
+            "description": "Query to filter the results. Check <a href=\"https://docs.microsoft.com/en-us/powerapps/developer/data-platform/webapi/query-data-web-api#filter-results\" target="
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "accountcategorycode",
+            "description": "Category to indicate whether the customer account is standard or preferred. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/ex"
+          },
+          {
+            "name": "accountratingcode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "addresses"
+          },
+          {
+            "name": "businesstypecode",
+            "description": "The legal designation or other business type of the account for contracts or reporting purposes. Choose from the list, or specify an ID using an <a href=\"https:"
+          },
+          {
+            "name": "customersizecode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "customertypecode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "description",
+            "description": "Additional information to describe the account, such as an excerpt from the company’s website"
+          },
+          {
+            "name": "emailaddress1",
+            "description": "The primary email address for the account"
+          },
+          {
+            "name": "emailaddress2",
+            "description": "The secondary email address for the account"
+          },
+          {
+            "name": "emailaddress3",
+            "description": "Alternate email address for the account"
+          },
+          {
+            "name": "fax"
+          },
+          {
+            "name": "ftpsiteurl",
+            "description": "URL for the account’s FTP site to enable users to access data and share documents"
+          },
+          {
+            "name": "industrycode",
+            "description": "The account’s primary industry for use in marketing segmentation and demographic analysis. Choose from the list, or specify an ID using an <a href=\"https://docs"
+          },
+          {
+            "name": "name",
+            "description": "Company o business name"
+          },
+          {
+            "name": "creditlimit",
+            "description": "Credit limit of the account. This is a useful reference when you address invoice and accounting issues with the customer."
+          },
+          {
+            "name": "numberofemployees",
+            "description": "Number of employees that work at the account for use in marketing segmentation and demographic analysis"
+          },
+          {
+            "name": "paymenttermscode",
+            "description": "The payment terms to indicate when the customer needs to pay the total amount. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code"
+          },
+          {
+            "name": "preferredappointmentdaycode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "preferredappointmenttimecode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "preferredcontactmethodcode",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "primarysatoriid"
+          },
+          {
+            "name": "primarytwitterid"
+          },
+          {
+            "name": "revenue",
+            "description": "The annual revenue for the account, used as an indicator in financial performance analysis"
+          },
+          {
+            "name": "sharesoutstanding",
+            "description": "The number of shares available to the public for the account. This number is used as an indicator in financial performance analysis."
+          },
+          {
+            "name": "shippingmethodcode",
+            "description": "Shipping method for deliveries sent to the account’s address to designate the preferred carrier or other delivery option. Choose from the list, or specify an ID"
+          },
+          {
+            "name": "sic",
+            "description": "The Standard Industrial Classification (SIC) code that indicates the account’s primary industry of business, for use in marketing segmentation and demographic a"
+          },
+          {
+            "name": "stageid"
+          },
+          {
+            "name": "stockexchange",
+            "description": "The stock exchange at which the account is listed to track their stock and financial performance of the company"
+          },
+          {
+            "name": "telephone1",
+            "description": "The main phone number for this account"
+          },
+          {
+            "name": "telephone2",
+            "description": "The second phone number for this account"
+          },
+          {
+            "name": "telephone3",
+            "description": "The third phone number for this account"
+          },
+          {
+            "name": "territorycode",
+            "description": "Region or territory for the account for use in segmentation and analysis. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expr"
+          },
+          {
+            "name": "tickersymbol",
+            "description": "Type the stock exchange symbol for the account to track financial performance of the company. You can click the code entered in this field to access the latest "
+          },
+          {
+            "name": "websiteurl",
+            "description": "The account’s website URL to get quick details about the company profile"
+          },
+          {
+            "name": "yominame",
+            "description": "The phonetic spelling of the company name, if specified in Japanese, to make sure the name is pronounced correctly in phone calls and other communications"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnFields",
+            "description": "Fields the response will include. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

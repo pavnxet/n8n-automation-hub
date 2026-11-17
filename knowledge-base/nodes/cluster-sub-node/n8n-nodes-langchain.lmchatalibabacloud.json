@@ -1,0 +1,274 @@
+{
+  "id": "n8n-nodes-langchain.lmchatalibabacloud",
+  "name": "Qwen Cloud Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatalibabacloud",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Qwen Cloud Chat Model node sends chat prompts to conversational models available on Qwen Cloud, for advanced AI chains and LangChain integrations. Use it to generate conversational responses, integrate model outputs into workflows, or run prompts with custom sampling, retry, and timeout settings",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatalibabacloud",
+  "credentials": {
+    "name": "Qwen Cloud credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/alibaba",
+    "slug": "alibaba",
+    "json_file": "credentials/alibaba.json",
+    "markdown_file": "credentials/alibaba.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Generate chat response",
+      "operation": "Model",
+      "description": "(type: _options_, field: model): The model that generates the completion. Learn more about available models on Qwen Cloud: Choose models",
+      "doc": ""
+    },
+    {
+      "resource": "Generate chat response",
+      "operation": "Frequency Penalty",
+      "description": "(type: _number_, field: frequencyPenalty): Positive values penalize new tokens based on how often they appear so far, decreasing the model's likelihood to repeat the same line verbatim. Default: 0",
+      "doc": ""
+    },
+    {
+      "resource": "Generate chat response",
+      "operation": "Maximum Number of Tokens",
+      "description": "(type: _number_, field: maxTokens): The maximum number of tokens to generate in the completion. The limit depends on the selected model. A value of minus one uses the model's default limit. Default: -1",
+      "doc": ""
+    },
+    {
+      "resource": "Generate chat response",
+      "operation": "Response Format",
+      "description": "(type: _options_, field: responseFormat): The output format returned by the node, for example plain text or structured formats. Default: text",
+      "doc": ""
+    },
+    {
+      "resource": "Generate chat response",
+      "operation": "Presence Penalty",
+      "description": "(type: _number_, field: presencePenalty): Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to discuss new topics. Default: 0",
+      "doc": ""
+    },
+    {
+      "resource": "Generate chat response",
+      "operation": "Sampling Temperature",
+      "description": "(type: _number_, field: temperature): Control randomness. Lower values make output less random, near zero is deterministic. Default: 0.7",
+      "doc": ""
+    },
+    {
+      "resource": "Generate chat response",
+      "operation": "Timeout",
+      "description": "(type: _number_, field: timeout): Maximum time (in milliseconds) allowed for a request before it's aborted. Default: 360000",
+      "doc": ""
+    },
+    {
+      "resource": "Generate chat response",
+      "operation": "Max Retries",
+      "description": "(type: _number_, field: maxRetries): Maximum number of retry attempts for failed requests. Default: 2",
+      "doc": ""
+    },
+    {
+      "resource": "Generate chat response",
+      "operation": "Top P",
+      "description": "(type: _number_, field: topP): Nucleus sampling parameter that controls diversity. 0.5 means half of the probability mass is considered. Adjust Top P or Sampling Temperature, but not both. Default: 1",
+      "doc": ""
+    }
+  ],
+  "operation_count": 9,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "advanced",
+    "available",
+    "chains",
+    "chat",
+    "cloud",
+    "cluster",
+    "conversational",
+    "credentials",
+    "custom",
+    "format",
+    "frequency",
+    "generate",
+    "integrations",
+    "langchain",
+    "lmchatalibabacloud",
+    "max",
+    "maximum",
+    "model",
+    "models",
+    "number",
+    "outputs",
+    "penalty",
+    "presence",
+    "prompts",
+    "qwen",
+    "response",
+    "responses",
+    "retries",
+    "retry",
+    "sampling",
+    "sends",
+    "settings",
+    "sub",
+    "temperature",
+    "timeout",
+    "tokens",
+    "top"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.lmchatalibabacloud.md",
+      "title": "Qwen Cloud Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatalibabacloud",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatalibabacloud.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatalibabacloud.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatalibabacloud.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatalibabacloud.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatAlibabaCloud",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "alibabaCloudApi"
+  ],
+  "credential_details": [
+    {
+      "name": "alibabaCloudApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Qwen Cloud Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "notice",
+        "displayName": "If using JSON response format, you must include word \"json\" in the prompt in your chain or agent.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.responseFormat": [
+              "json_object"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "qwen-plus",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "eq": 1
+                }
+              }
+            ]
+          }
+        },
+        "description": "The model which will generate the completion. <a href=\"https://www.qwencloud.com/models\">Learn more</a>."
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "qwen-plus",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "The model which will generate the completion. <a href=\"https://www.qwencloud.com/models\">Learn more</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "frequencyPenalty",
+            "description": "Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion. The limit depends on the selected model."
+          },
+          {
+            "name": "responseFormat"
+          },
+          {
+            "name": "presencePenalty",
+            "description": "Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in milliseconds"
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt"
+          },
+          {
+            "name": "topP",
+            "description": "Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We generally recommend altering this or temperature b"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

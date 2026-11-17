@@ -1,0 +1,199 @@
+{
+  "id": "n8n-nodes-langchain.embeddingsopenai",
+  "name": "Embeddings OpenAI",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.embeddingsopenai",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Embeddings OpenAI node to generate embeddings[^1] for a given text",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsopenai",
+  "credentials": {
+    "name": "OpenAI credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/openai",
+    "slug": "openai",
+    "json_file": "credentials/openai.json",
+    "markdown_file": "credentials/openai.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "Select the model to use for generating embeddings"
+    },
+    {
+      "name": "Base URL",
+      "description": "Enter the URL to send the request to. Use this if you are using a self-hosted OpenAI-like model"
+    },
+    {
+      "name": "Batch Size",
+      "description": "Enter the maximum number of documents to send in each request"
+    },
+    {
+      "name": "Strip New Lines",
+      "description": "Select whether to remove new line characters from input text (turned on) or not (turned off). n8n enables this by default"
+    },
+    {
+      "name": "Timeout",
+      "description": "Enter the maximum amount of time a request can take in seconds. Set to -1 for no timeout"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "base",
+    "batch",
+    "cluster",
+    "credentials",
+    "embeddings",
+    "embeddingsopenai",
+    "generate",
+    "given",
+    "lines",
+    "model",
+    "new",
+    "openai",
+    "size",
+    "strip",
+    "sub",
+    "text",
+    "timeout",
+    "url"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.embeddingsopenai.md",
+      "title": "Embeddings OpenAI node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsopenai",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsopenai.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsopenai.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsopenai.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsopenai.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "openAiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "openAiApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Embeddings OpenAI"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_embedding"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_vectorStore'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "text-embedding-ada-002",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "The model which will generate the embeddings. <a href=\"https://developers.openai.com/api/docs/models\">Learn more</a>."
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "text-embedding-3-small",
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "The model which will generate the embeddings. <a href=\"https://developers.openai.com/api/docs/models\">Learn more</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dimensions",
+            "description": "The number of dimensions the resulting output embeddings should have. Only supported in text-embedding-3 and later models."
+          },
+          {
+            "name": "baseURL",
+            "description": "Override the default base URL for the API"
+          },
+          {
+            "name": "batchSize",
+            "description": "Maximum number of documents to send in each request"
+          },
+          {
+            "name": "stripNewLines",
+            "description": "Whether to strip new lines from the input text"
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in seconds. Set to -1 for no timeout."
+          },
+          {
+            "name": "encodingFormat",
+            "description": "The format to return the embeddings in"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

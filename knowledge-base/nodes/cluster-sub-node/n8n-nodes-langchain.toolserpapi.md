@@ -1,0 +1,29 @@
+<!-- n8n built-in node reference: n8n-nodes-langchain.toolserpapi | source: https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolserpapi -->
+
+> **Feature availability:**
+> The SerpApi (Google Search) node is deprecated from n8n 2.35.0. Use the verified **SerpApi Official** community node instead. Refer to [Deprecated and versioned nodes](https://docs.n8n.io/integrations/builtin/deprecated-nodes) for more information.
+
+The SerpAPI node allows an agent[^1] in your workflow to call Google's Search API.
+
+On this page, you'll find the node parameters for the SerpAPI node, and links to more resources.
+
+> **Credentials:**
+> Refer to the [Serp credentials documentation](https://docs.n8n.io/integrations/builtin/credentials/serp) for authentication information for this node.
+
+## Node options
+
+* **Country**: Enter the country code you'd like to use. Refer to [Google GL Parameter: Supported Google Countries](https://serpapi.com/google-countries) for supported countries and country codes.
+* **Device**: Select the device to use to get the search results.
+* **Explicit Array**: Choose whether to force SerpApi to fetch the Google results even if a cached version is already present (turned on) or not (turned off).
+* **Google Domain**: Enter the Google Domain to use. Refer to [Supported Google Domains](https://serpapi.com/google-domains) for supported domains.
+* **Language**: Enter the language code you'd like to use. Refer to [Google HL Parameter: Supported Google Languages](https://serpapi.com/google-languages) for supported languages and language codes.
+
+## Templates and examples
+
+[Browse SerpApi (Google Search) node documentation integration templates](https://n8n.io/integrations/serpapi) or [search all templates](https://n8n.io/workflows/)
+
+## Related resources
+
+Refer to [Serp's documentation](https://serpapi.com/search-api) for more information about the service.
+
+[^1]: AI agents are artificial intelligence systems capable of responding to requests, making decisions, and performing real-world tasks for users. They use large language models (LLMs) to interpret user input and make decisions about how to best process requests using the information and resources they have available.

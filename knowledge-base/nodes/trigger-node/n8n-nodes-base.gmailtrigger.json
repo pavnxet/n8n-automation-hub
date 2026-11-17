@@ -1,0 +1,346 @@
+{
+  "id": "n8n-nodes-base.gmailtrigger",
+  "name": "Gmail Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.gmailtrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Gmail is an email service developed by Google. The Gmail Trigger node can start a workflow based on events in Gmail",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.gmailtrigger",
+  "credentials": {
+    "name": "Google",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Credential to connect with",
+      "description": "Select or create a new Google credential to use for the trigger. Refer to Google credentials for more information on setting up a new credential"
+    },
+    {
+      "name": "Poll Times",
+      "description": "Select a poll Mode to set how often to trigger the poll. Your Mode selection will add or remove relevant fields. Refer to Poll Mode options to configure the parameters for each mode type"
+    },
+    {
+      "name": "Simplify",
+      "description": "Choose whether to return a simplified version of the response (turned on, default) or the raw data (turned off)"
+    },
+    {
+      "name": "Max Emails per Poll",
+      "description": "Enter the maximum number of emails the node fetches per poll cycle. The default is 10, with a maximum of 50. If there are more unread emails than the limit, the node queues the remaining emails and fetches them in the next poll cycle"
+    },
+    {
+      "name": "Include Spam and Trash",
+      "description": "Select whether the node should trigger on new messages in the Spam and Trash folders (turned on) or not (turned off)"
+    },
+    {
+      "name": "Label Names or IDs",
+      "description": "Only trigger on messages with the selected labels added to them. Select the Label names you want to apply or enter an expression to specify IDs. The dropdown populates based on the Credential you selected"
+    },
+    {
+      "name": "Search",
+      "description": "Enter Gmail search refine filters, like from:, to trigger the node on the filtered conditions only. Refer to Refine searches in Gmail for more information"
+    },
+    {
+      "name": "Read Status",
+      "description": "Choose whether to receive Unread and read emails, Unread emails only (default), or Read emails only"
+    },
+    {
+      "name": "Sender",
+      "description": "Enter an email or a part of a sender name to trigger only on messages from that sender"
+    }
+  ],
+  "events": [
+    {
+      "name": "Message Received",
+      "description": "The node triggers for new messages at the selected Poll Time"
+    }
+  ],
+  "trigger_methods": [
+    "polling"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "401 unauthorized error",
+      "summary": "The full text of the error looks like this:"
+    }
+  ],
+  "keywords": [
+    "based",
+    "connect",
+    "credential",
+    "developed",
+    "email",
+    "emails",
+    "events",
+    "gmail",
+    "gmailtrigger",
+    "google",
+    "ids",
+    "include",
+    "label",
+    "max",
+    "names",
+    "poll",
+    "read",
+    "search",
+    "sender",
+    "service",
+    "simplify",
+    "spam",
+    "start",
+    "status",
+    "times",
+    "trash",
+    "trigger"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "DnRpcOvtlMPcHD6I3kyx",
+      "name": "poll-modes"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Gmail Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.gmailtrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.gmailtrigger/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Gmail Trigger node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.gmailtrigger/common-issues",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.gmailtrigger/common-issues.md"
+    },
+    {
+      "page": "poll-mode-options.md",
+      "title": "Gmail Trigger node poll mode options documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.gmailtrigger/poll-mode-options",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.gmailtrigger/poll-mode-options.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.gmailtrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.gmailtrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.gmailtrigger/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.gmailTrigger",
+  "type_version": 1.3,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleApi",
+    "gmailOAuth2"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "serviceAccount"
+          ]
+        }
+      }
+    },
+    {
+      "name": "gmailOAuth2",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Gmail Trigger"
+  },
+  "subtitle": "={{\"Gmail Trigger\"}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "oAuth2",
+        "options": [
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          },
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          }
+        ]
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "default": "messageReceived",
+        "options": [
+          {
+            "name": "Message Received",
+            "value": "messageReceived"
+          }
+        ]
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "includeSpamTrash",
+            "description": "Whether to include messages from SPAM and TRASH in the results"
+          },
+          {
+            "name": "includeDrafts",
+            "description": "Whether to include email drafts in the results"
+          },
+          {
+            "name": "labelIds",
+            "description": "Only return messages with labels that match all of the specified label IDs. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expr"
+          },
+          {
+            "name": "q",
+            "description": "Only return messages matching the specified query"
+          },
+          {
+            "name": "readStatus"
+          },
+          {
+            "name": "sender",
+            "description": "Sender name or email to filter by"
+          }
+        ]
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dataPropertyAttachmentsPrefixName",
+            "description": "Prefix for name of the binary property to which to write the attachment. An index starting with 0 will be added. So if name is 'attachment_' the first attachmen"
+          },
+          {
+            "name": "downloadAttachments",
+            "description": "Whether the email's attachments will be downloaded"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "simple": [
+              true
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

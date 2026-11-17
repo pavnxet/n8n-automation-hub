@@ -1,0 +1,247 @@
+{
+  "id": "n8n-nodes-base.executeworkflowtrigger",
+  "name": "Execute Sub-workflow Trigger",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.executeworkflowtrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use this node to start a workflow in response to another workflow. It should be the first node in the workflow",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflowtrigger",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "another",
+    "core",
+    "execute",
+    "executeworkflowtrigger",
+    "first",
+    "response",
+    "should",
+    "start",
+    "sub",
+    "trigger"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "wlwT5JcWyWTecnDN6aul",
+      "name": "subworkflow-usage"
+    },
+    {
+      "id": "edKlUxnfiRMq38CujuFv",
+      "name": "subworkflow-data-flow"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.executeworkflowtrigger.md",
+      "title": "Execute Sub-workflow Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflowtrigger",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.executeworkflowtrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.executeworkflowtrigger.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.executeworkflowtrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.executeworkflowtrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.executeWorkflowTrigger",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "When Executed by Another Workflow",
+    "color": "#ff6d5a"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "hidden",
+        "default": "worklfow_call",
+        "options": [
+          {
+            "name": "Workflow Call",
+            "value": "worklfow_call",
+            "description": "When executed by another workflow using Execute Workflow Trigger"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "When an ‘execute workflow’ node calls this workflow, the execution starts here. Any data passed into the 'execute workflow' node will be output by this node.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "eq": 1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "outdatedVersionWarning",
+        "displayName": "This node is out of date. Please upgrade by removing it and adding a new one",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "eq": 1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputSource",
+        "displayName": "Input data mode",
+        "type": "options",
+        "default": "workflowInputs",
+        "options": [
+          {
+            "name": "Define using fields below",
+            "value": "workflowInputs",
+            "description": "Provide input fields via UI"
+          },
+          {
+            "name": "Define using JSON example",
+            "value": "jsonExample",
+            "description": "Generate a schema from an example JSON object"
+          },
+          {
+            "name": "Accept all data",
+            "value": "passthrough",
+            "description": "Use all incoming data from the parent workflow"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonExample_notice",
+        "displayName": "Provide an example object to infer fields and their types.<br>To allow any type for a given field, set the value to null.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "inputSource": [
+              "jsonExample"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonExample",
+        "displayName": "JSON Example",
+        "type": "json",
+        "default": "{\n  \"aField\": \"a string\",\n  \"aNumber\": 123,\n  \"thisFieldAcceptsAnyType\": null,\n  \"anArray\": []\n}",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "inputSource": [
+              "jsonExample"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workflowInputs",
+        "displayName": "Workflow Input Schema",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "inputSource": [
+              "workflowInputs"
+            ]
+          }
+        },
+        "description": "Define expected input fields. If no inputs are provided, all data from the calling workflow will be passed through."
+      }
+    ]
+  }
+}

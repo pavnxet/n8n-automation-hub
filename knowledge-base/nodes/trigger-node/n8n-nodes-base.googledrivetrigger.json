@@ -1,0 +1,420 @@
+{
+  "id": "n8n-nodes-base.googledrivetrigger",
+  "name": "Google Drive Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.googledrivetrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Google Drive is a file storage and synchronization service developed by Google. It allows users to store files on their servers, synchronize files across devices, and share files",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googledrivetrigger",
+  "credentials": {
+    "name": "Google credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [
+    "polling"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "401 unauthorized error",
+      "summary": "The full text of the error looks like this:"
+    },
+    {
+      "title": "Handling more than one file change",
+      "summary": "The Google Drive Trigger node polls Google Drive for changes at a set interval (once every minute by default)"
+    }
+  ],
+  "keywords": [
+    "across",
+    "allows",
+    "credentials",
+    "developed",
+    "devices",
+    "drive",
+    "file",
+    "files",
+    "google",
+    "googledrivetrigger",
+    "servers",
+    "service",
+    "share",
+    "storage",
+    "store",
+    "synchronization",
+    "synchronize",
+    "their",
+    "trigger",
+    "users"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Google Drive Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googledrivetrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.googledrivetrigger/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Google Drive Trigger node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googledrivetrigger/common-issues",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.googledrivetrigger/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.googledrivetrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.googledrivetrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.googledrivetrigger/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleDriveTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleApi",
+    "googleDriveOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "serviceAccount"
+          ]
+        }
+      }
+    },
+    {
+      "name": "googleDriveOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Google Drive Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 11,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "authentication",
+        "displayName": "Credential Type",
+        "type": "options",
+        "default": "oAuth2",
+        "options": [
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          },
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          }
+        ]
+      },
+      {
+        "name": "triggerOn",
+        "displayName": "Trigger On",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Changes to a Specific File",
+            "value": "specificFile"
+          },
+          {
+            "name": "Changes Involving a Specific Folder",
+            "value": "specificFolder"
+          }
+        ]
+      },
+      {
+        "name": "fileToWatch",
+        "displayName": "File",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "specificFile"
+            ]
+          }
+        }
+      },
+      {
+        "name": "event",
+        "displayName": "Watch For",
+        "type": "options",
+        "required": true,
+        "default": "fileUpdated",
+        "options": [
+          {
+            "name": "File Updated",
+            "value": "fileUpdated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "specificFile"
+            ]
+          }
+        },
+        "description": "When to trigger this node"
+      },
+      {
+        "name": "folderToWatch",
+        "displayName": "Folder",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "specificFolder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "event",
+        "displayName": "Watch For",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "File Created",
+            "value": "fileCreated",
+            "description": "When a file is created in the watched folder"
+          },
+          {
+            "name": "File Updated",
+            "value": "fileUpdated",
+            "description": "When a file is updated in the watched folder"
+          },
+          {
+            "name": "Folder Created",
+            "value": "folderCreated",
+            "description": "When a folder is created in the watched folder"
+          },
+          {
+            "name": "Folder Updated",
+            "value": "folderUpdated",
+            "description": "When a folder is updated in the watched folder"
+          },
+          {
+            "name": "Watch Folder Updated",
+            "value": "watchFolderUpdated",
+            "description": "When the watched folder itself is modified"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "specificFolder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "asas",
+        "displayName": "Changes within subfolders won't trigger this node",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "specificFolder"
+            ]
+          },
+          "hide": {
+            "event": [
+              "watchFolderUpdated"
+            ]
+          }
+        }
+      },
+      {
+        "name": "driveToWatch",
+        "displayName": "Drive To Watch",
+        "type": "options",
+        "required": true,
+        "default": "root",
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "anyFileFolder"
+            ]
+          }
+        },
+        "description": "The drive to monitor. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "event",
+        "displayName": "Watch For",
+        "type": "options",
+        "required": true,
+        "default": "fileCreated",
+        "options": [
+          {
+            "name": "File Created",
+            "value": "fileCreated",
+            "description": "When a file is created in the watched drive"
+          },
+          {
+            "name": "File Updated",
+            "value": "fileUpdated",
+            "description": "When a file is updated in the watched drive"
+          },
+          {
+            "name": "Folder Created",
+            "value": "folderCreated",
+            "description": "When a folder is created in the watched drive"
+          },
+          {
+            "name": "Folder Updated",
+            "value": "folderUpdated",
+            "description": "When a folder is updated in the watched drive"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "anyFileFolder"
+            ]
+          }
+        },
+        "description": "When to trigger this node"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fileType",
+            "description": "Triggers only when the file is this type"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "event": [
+              "fileCreated",
+              "fileUpdated"
+            ]
+          },
+          "hide": {
+            "triggerOn": [
+              "specificFile"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

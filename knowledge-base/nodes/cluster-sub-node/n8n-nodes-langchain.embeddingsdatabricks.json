@@ -1,0 +1,188 @@
+{
+  "id": "n8n-nodes-langchain.embeddingsdatabricks",
+  "name": "Embeddings Databricks",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.embeddingsdatabricks",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Embeddings Databricks node to generate embeddings[^1] for text with an embeddings model served by your Databricks workspace. The node queries Unity AI Gateway model services, the same gateway the Databricks Chat Model node uses. Its main job is to pair with the Databricks Vector Store node, which needs an embeddings connection in every operation mode",
+  "doc_url": "https://docs.n8n.io/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsdatabricks",
+  "credentials": {
+    "name": "Databricks",
+    "doc": "https://docs.n8n.io/credentials/databricks",
+    "slug": "databricks",
+    "json_file": "credentials/databricks.json",
+    "markdown_file": "credentials/databricks.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "The Unity AI Gateway model service that generates the embeddings, named catalog.schema.service"
+    },
+    {
+      "name": "Batch Size",
+      "description": "The maximum number of documents to send in one request. Default 512, maximum 2048. Refer to Rate limits before lowering it"
+    },
+    {
+      "name": "Strip New Lines",
+      "description": "Whether to remove new line characters from the input text before embedding it. Turned on by default"
+    },
+    {
+      "name": "Timeout",
+      "description": "The maximum time a request may take, in milliseconds. Default 360000 (six minutes). A request that runs out of time fails with Request timed out"
+    },
+    {
+      "name": "Max Retries",
+      "description": "How many times to retry a failed request. Default 2"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "batch",
+    "chat",
+    "cluster",
+    "connection",
+    "databricks",
+    "embeddings",
+    "embeddingsdatabricks",
+    "every",
+    "gateway",
+    "generate",
+    "lines",
+    "main",
+    "max",
+    "mode",
+    "model",
+    "needs",
+    "new",
+    "operation",
+    "pair",
+    "queries",
+    "retries",
+    "same",
+    "served",
+    "services",
+    "size",
+    "store",
+    "strip",
+    "sub",
+    "text",
+    "timeout",
+    "unity",
+    "uses",
+    "vector",
+    "workspace"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.embeddingsdatabricks.md",
+      "title": "",
+      "url": "",
+      "origpath": "cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsdatabricks.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsdatabricks.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsdatabricks.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsdatabricks.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.embeddingsDatabricks",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "databricksOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "databricksOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Embeddings Databricks"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_embedding"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_vectorStore'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "description": "The Unity AI Gateway model service. Choose from the list, or enter its full name (catalog.schema.service)."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batchSize",
+            "description": "Maximum number of documents to send in each request"
+          },
+          {
+            "name": "stripNewLines",
+            "description": "Whether to strip new lines from the input text"
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in milliseconds"
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "id": "n8n-nodes-langchain.embeddingsazureopenai",
+  "name": "Microsoft Foundry Embeddings",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.embeddingsazureopenai",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Microsoft Foundry Embeddings node to generate embeddings[^1] for a given text",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsazureopenai",
+  "credentials": {
+    "name": "Microsoft Foundry credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/azureopenai",
+    "slug": "azureopenai",
+    "json_file": "credentials/azureopenai.json",
+    "markdown_file": "credentials/azureopenai.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Authentication",
+      "description": "Choose how the node signs in to Azure. Each option uses its own credential"
+    },
+    {
+      "name": "Model (Deployment) Name",
+      "description": "Select the model (deployment) to use for generating embeddings"
+    },
+    {
+      "name": "Batch Size",
+      "description": "Enter the maximum number of documents to send in each request"
+    },
+    {
+      "name": "Strip New Lines",
+      "description": "Select whether to remove new line characters from input text (turned on) or not (turned off). n8n enables this by default"
+    },
+    {
+      "name": "Timeout",
+      "description": "Enter the maximum amount of time a request can take in seconds. Set to -1 for no timeout"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "authentication",
+    "batch",
+    "cluster",
+    "credentials",
+    "deployment",
+    "embeddings",
+    "embeddingsazureopenai",
+    "foundry",
+    "generate",
+    "given",
+    "lines",
+    "microsoft",
+    "model",
+    "name",
+    "new",
+    "size",
+    "strip",
+    "sub",
+    "text",
+    "timeout"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.embeddingsazureopenai.md",
+      "title": "Microsoft Foundry Embeddings node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsazureopenai",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsazureopenai.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsazureopenai.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsazureopenai.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsazureopenai.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.embeddingsAzureOpenAi",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "azureOpenAiApi",
+    "azureEntraCognitiveServicesOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "azureOpenAiApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "azureOpenAiApi"
+          ]
+        }
+      }
+    },
+    {
+      "name": "azureEntraCognitiveServicesOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "azureEntraCognitiveServicesOAuth2Api"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Microsoft Foundry Embeddings"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_embedding"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "azureOpenAiApi",
+        "options": [
+          {
+            "name": "API Key",
+            "value": "azureOpenAiApi"
+          },
+          {
+            "name": "Azure Entra ID (OAuth2)",
+            "value": "azureEntraCognitiveServicesOAuth2Api"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_vectorStore'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "model",
+        "displayName": "Model (Deployment) Name",
+        "type": "string",
+        "description": "The name of the model(deployment) to use"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batchSize",
+            "description": "Maximum number of documents to send in each request"
+          },
+          {
+            "name": "stripNewLines",
+            "description": "Whether to strip new lines from the input text"
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in seconds. Set to -1 for no timeout."
+          },
+          {
+            "name": "dimensions",
+            "description": "The number of dimensions the resulting output embeddings should have. Only supported in text-embedding-3 and later models."
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

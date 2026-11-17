@@ -1,0 +1,1041 @@
+{
+  "id": "n8n-nodes-base.seatable",
+  "name": "SeaTable",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.seatable",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the SeaTable node to automate work in SeaTable, and integrate SeaTable with other applications. n8n has built-in support for a wide range of SeaTable features, including creating, updating, deleting, updating, and getting rows",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.seatable",
+  "credentials": {
+    "name": "SeaTable",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/seatable",
+    "slug": "seatable",
+    "json_file": "credentials/seatable.json",
+    "markdown_file": "credentials/seatable.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Row",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Row",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "remove"
+    },
+    {
+      "resource": "Row",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Row",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Row",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "row",
+    "rows",
+    "seatable",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.seatable.md",
+      "title": "SeaTable node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.seatable",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.seatable.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.seatable.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.seatable.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.seatable.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.seaTable",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "seaTableApi"
+  ],
+  "credential_details": [
+    {
+      "name": "seaTableApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "SeaTable"
+  },
+  "subtitle": "={{$parameter[\"resource\"] + \": \" + $parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 42,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "row",
+        "options": [
+          {
+            "name": "Row",
+            "value": "row"
+          },
+          {
+            "name": "Base",
+            "value": "base"
+          },
+          {
+            "name": "Link",
+            "value": "link"
+          },
+          {
+            "name": "Asset",
+            "value": "asset"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new row"
+          },
+          {
+            "name": "Delete",
+            "value": "remove",
+            "description": "Delete a row"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get the content of a row"
+          },
+          {
+            "name": "Get Many",
+            "value": "list",
+            "description": "Get many rows from a table or a table view"
+          },
+          {
+            "name": "Lock",
+            "value": "lock",
+            "description": "Lock a row to prevent further changes"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Search one or multiple rows"
+          },
+          {
+            "name": "Unlock",
+            "value": "unlock",
+            "description": "Remove the lock from a row"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update the content of a row"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "rowId",
+        "displayName": "Row ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ]
+          },
+          "hide": {
+            "operation": [
+              "create",
+              "list",
+              "search"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "fieldsToSend",
+        "displayName": "Data to Send",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Define Below for Each Column",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether to insert the input data this node receives in the new row"
+      },
+      {
+        "name": "apply_default",
+        "displayName": "Apply Column Default Values",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "bigdata": [
+              false
+            ],
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether to use the column default values to populate new rows during creation (only available for normal backend)"
+      },
+      {
+        "name": "notice",
+        "displayName": "In this mode, make sure the incoming data fields are named the same as the columns in SeaTable. (Use an \"Edit Fields\" node before this node to change them if required.)",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/fieldsToSend": [
+              "autoMapInputData"
+            ],
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputsToIgnore",
+        "displayName": "Inputs to Ignore",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "/fieldsToSend": [
+              "autoMapInputData"
+            ],
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "List of input properties to avoid sending, separated by commas. Leave empty to send all properties."
+      },
+      {
+        "name": "columnsUi",
+        "displayName": "Columns to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "columnValues",
+            "values": [
+              {
+                "name": "columnName",
+                "displayName": "Column Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "columnValue",
+                "displayName": "Column Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/fieldsToSend": [
+              "defineBelow"
+            ],
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Add destination column with its value. Provide the value in this way. Date: YYYY-MM-DD or YYYY-MM-DD hh:mm. Duration: time in seconds. Checkbox: true, on or 1. Multi-Select: comma-separated list."
+      },
+      {
+        "name": "bigdata",
+        "displayName": "Save to \"Big Data\" Backend",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether write to Big Data backend (true) or not (false). True requires the activation of the Big Data backend in the base."
+      },
+      {
+        "name": "notice",
+        "displayName": "Hint: Link, files, images or digital signatures have to be added separately. These column types cannot be set with this node.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "simple",
+            "description": "Whether to return a simplified version of the response instead of the raw data"
+          },
+          {
+            "name": "convert",
+            "description": "Whether to return the column keys (false) or the column names (true)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "viewName",
+        "displayName": "View Name",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        },
+        "description": "The name of SeaTable view to access, or specify by using an expression. Provide it in the way \"col.name:::col.type\"."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "simple",
+            "description": "Whether to return a simplified version of the response instead of the raw data"
+          },
+          {
+            "name": "convert",
+            "description": "Whether to return the column keys (false) or the column names (true)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchColumn",
+        "displayName": "Column Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Select the column to be searched. Not all column types are supported for search. Choose from the list, or specify a name using an <a href=\"https://docs.n8n.io/code-examples/expressions/\">expression</a>."
+      },
+      {
+        "name": "searchTerm",
+        "displayName": "Search Term",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "What to look for?"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "insensitive",
+            "description": "Whether the search ignores case sensitivity (true). Otherwise, it distinguishes between uppercase and lowercase characters."
+          },
+          {
+            "name": "wildcard",
+            "description": "Whether the search only results perfect matches (true). Otherwise, it finds a row even if the search value is part of a string (false)."
+          },
+          {
+            "name": "simple",
+            "description": "Whether to return a simplified version of the response instead of the raw data"
+          },
+          {
+            "name": "convert",
+            "description": "Whether to return the column keys (false) or the column names (true)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fieldsToSend",
+        "displayName": "Data to Send",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Define Below for Each Column",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Whether to insert the input data this node receives in the new row"
+      },
+      {
+        "name": "inputsToIgnore",
+        "displayName": "Inputs to Ignore",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ],
+            "fieldsToSend": [
+              "autoMapInputData"
+            ]
+          }
+        },
+        "description": "List of input properties to avoid sending, separated by commas. Leave empty to send all properties."
+      },
+      {
+        "name": "columnsUi",
+        "displayName": "Columns to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "columnValues",
+            "values": [
+              {
+                "name": "columnName",
+                "displayName": "Column Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "columnValue",
+                "displayName": "Column Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ],
+            "fieldsToSend": [
+              "defineBelow"
+            ]
+          }
+        },
+        "description": "Add destination column with its value. Provide the value in this way:Date: YYYY-MM-DD or YYYY-MM-DD hh:mmDuration: time in secondsCheckbox: true, on or 1Multi-Select: comma-separated list."
+      },
+      {
+        "name": "notice",
+        "displayName": "Hint: Link, files, images or digital signatures have to be added separately.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "snapshot",
+        "options": [
+          {
+            "name": "Snapshot",
+            "value": "snapshot",
+            "description": "Create a snapshot of the base"
+          },
+          {
+            "name": "Metadata",
+            "value": "metadata",
+            "description": "Get the complete metadata of the base"
+          },
+          {
+            "name": "Collaborator",
+            "value": "collaborator",
+            "description": "Get the username from the email or name of a collaborator"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "base"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchString",
+        "displayName": "Name or email of the collaborator",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "base"
+            ],
+            "operation": [
+              "collaborator"
+            ]
+          }
+        },
+        "description": "SeaTable identifies users with a unique username like 244b43hr6fy54bb4afa2c2cb7369d244@auth.local. Get this username from an email or the name of a collaborator."
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add",
+            "description": "Create a link between two rows in a link column"
+          },
+          {
+            "name": "List",
+            "value": "list",
+            "description": "List all links of a specific row"
+          },
+          {
+            "name": "Remove",
+            "value": "remove",
+            "description": "Remove a link between two rows from a link column"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name (Source)",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "Choose from the list, of specify by using an expression. Provide it in the way \"table_name:::table_id\"."
+      },
+      {
+        "name": "linkColumn",
+        "displayName": "Link Column",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "Choose from the list of specify the Link Column by using an expression. You have to provide it in the way \"column_name:::link_id:::other_table_id\"."
+      },
+      {
+        "name": "linkColumnSourceId",
+        "displayName": "Row ID From the Source Table",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "Provide the row ID of table you selected"
+      },
+      {
+        "name": "linkColumnTargetId",
+        "displayName": "Row ID From the Target",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "Provide the row ID of table you want to link"
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        },
+        "description": "Choose from the list, of specify by using an expression. Provide it in the way \"table_name:::table_id\"."
+      },
+      {
+        "name": "linkColumn",
+        "displayName": "Link Column",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        },
+        "description": "Choose from the list of specify the Link Column by using an expression. You have to provide it in the way \"column_name:::link_id:::other_table_id:::column_key\"."
+      },
+      {
+        "name": "rowId",
+        "displayName": "Row ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name (Source)",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "Choose from the list, of specify by using an expression. Provide it in the way \"table_name:::table_id\"."
+      },
+      {
+        "name": "linkColumn",
+        "displayName": "Link Column",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "Choose from the list of specify the Link Column by using an expression. You have to provide it in the way \"column_name:::link_id:::other_table_id\"."
+      },
+      {
+        "name": "linkColumnSourceId",
+        "displayName": "Row ID From the Source Table",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "Provide the row ID of table you selected"
+      },
+      {
+        "name": "linkColumnTargetId",
+        "displayName": "Row ID From the Target Table",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "link"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "Provide the row ID of table you want to link"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upload",
+        "options": [
+          {
+            "name": "Public URL",
+            "value": "getPublicURL",
+            "description": "Get the public URL from asset path"
+          },
+          {
+            "name": "Upload",
+            "value": "upload",
+            "description": "Add a file/image to an existing row"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "asset"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "asset"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify a name using an <a href=\"https://docs.n8n.io/code-examples/expressions/\">expression</a>"
+      },
+      {
+        "name": "uploadColumn",
+        "displayName": "Column Name",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "asset"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify the name using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "rowId",
+        "displayName": "Row ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "asset"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "dataPropertyName",
+        "displayName": "Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "asset"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the data for the file to be written"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "replace",
+            "description": "Whether to replace the existing asset with the same name (true). Otherwise, a new version with a different name (numeral in parentheses) will be uploaded (false"
+          },
+          {
+            "name": "append",
+            "description": "Whether to keep existing files/images in the column and append the new asset (true). Otherwise, the existing files/images are removed from the column (false)."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "asset"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        }
+      },
+      {
+        "name": "assetPath",
+        "displayName": "Asset Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "asset"
+            ],
+            "operation": [
+              "getPublicURL"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

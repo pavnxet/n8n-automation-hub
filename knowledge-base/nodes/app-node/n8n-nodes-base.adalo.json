@@ -1,0 +1,374 @@
+{
+  "id": "n8n-nodes-base.adalo",
+  "name": "Adalo",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.adalo",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Adalo node to automate work in Adalo, and integrate Adalo with other applications. n8n has built-in support for a wide range of Adalo features, including like creating, getting, updating and deleting databases, records, and collections",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.adalo",
+  "credentials": {
+    "name": "Adalo",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/adalo",
+    "slug": "adalo",
+    "json_file": "credentials/adalo.json",
+    "markdown_file": "credentials/adalo.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Collection",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "collection",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Collection",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "collection",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Collection",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "collection",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Collection",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "collection",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Collection",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "collection",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "adalo",
+    "app",
+    "applications",
+    "collection",
+    "collections",
+    "create",
+    "creating",
+    "databases",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "like",
+    "many",
+    "records",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.adalo.md",
+      "title": "Adalo node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.adalo",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.adalo.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.adalo.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.adalo.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.adalo.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.adalo",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "adaloApi"
+  ],
+  "credential_details": [
+    {
+      "name": "adaloApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Adalo"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"collectionId\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "collection",
+        "options": [
+          {
+            "name": "Collection",
+            "value": "collection"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a row"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a row"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a row"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many rows"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a row"
+          }
+        ]
+      },
+      {
+        "name": "collectionId",
+        "displayName": "Collection ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "collection"
+            ]
+          }
+        },
+        "description": "Open your Adalo application and click on the three buttons beside the collection name, then select API Documentation"
+      },
+      {
+        "name": "rowId",
+        "displayName": "Row ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get",
+              "delete",
+              "update"
+            ],
+            "resource": [
+              "collection"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataToSend",
+        "displayName": "Data to Send",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Define Below for Each Column",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "resource": [
+              "collection"
+            ]
+          }
+        },
+        "description": "Whether to insert the input data this node receives in the new row"
+      },
+      {
+        "name": "inputsToIgnore",
+        "displayName": "Inputs to Ignore",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "dataToSend": [
+              "autoMapInputData"
+            ],
+            "resource": [
+              "collection"
+            ]
+          }
+        },
+        "description": "List of input properties to avoid sending, separated by commas. Leave empty to send all properties."
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Fields to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fieldValues",
+            "values": [
+              {
+                "name": "fieldId",
+                "displayName": "Field ID",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "dataToSend": [
+              "defineBelow"
+            ],
+            "resource": [
+              "collection"
+            ]
+          }
+        },
+        "description": "Field must be defined in the collection, otherwise it will be ignored. If field defined in the collection is not set here, it will be set to null."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "collection"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "collection"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "requestOptions",
+        "displayName": "Request Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batching"
+          },
+          {
+            "name": "allowUnauthorizedCerts",
+            "description": "Whether to accept the response even if SSL certificate validation is not possible"
+          },
+          {
+            "name": "proxy",
+            "description": "HTTP proxy to use. If authentication is required it can be defined as follow: http://username:password@myproxy:3128"
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for the server to send response headers (and start the response body) before aborting the request"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+<!-- n8n built-in node reference: asana | source: https://docs.n8n.io/integrations/builtin/credentials/asana -->
+
+You can use these credentials to authenticate the following nodes:
+
+- [Asana](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.asana)
+- [Asana Trigger](https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.asanatrigger)
+
+## Supported authentication methods
+
+- Access token
+- OAuth2
+
+## Related resources
+
+Refer to [Asana's Developer Guides](https://developers.asana.com/docs/overview) for more information about working with the service.
+
+## Using Access token
+
+To configure this credential, you'll need an [Asana](https://asana.com/) account and:
+
+- A Personal **Access Token** (PAT)
+
+To get your PAT:
+
+1. Open the Asana [developer console](https://app.asana.com/0/my-apps).
+2. In the **Personal access tokens** section, select **Create new token**.
+3. Enter a **Token name**, like `n8n integration`.
+4. Check the box to agree to the **Asana API terms**.
+5. Select **Create token**.
+6. Copy the token and enter it as the **Access Token** in your n8n credential.
+
+Refer to the [Asana Quick start guide](https://developers.asana.com/docs/quick-start#setup) for more information.
+
+## Using OAuth2
+
+To configure this credential, you'll need an [Asana](https://asana.com/) account.
+
+> **n8n Cloud:** Cloud users can connect with the one-click sign-in button instead of entering keys manually.
+
+If you're [self-hosting](https://app.gitbook.com/s/jm0ZYRpZIPWge2ZSiDYO/host-n8n) n8n, you'll need to register an application to set up OAuth:
+
+1. Open the Asana [developer console](https://app.asana.com/0/my-apps).
+2. In the **My apps** section, select **Create new app**.
+3. Enter an **App name** for your application, like `n8n integration`.
+4. Select a purpose for your app.
+5. Check the box to agree to the **Asana API terms**.
+6. Select **Create app**. The page opens to the app's **Basic Information**.
+7. Select **OAuth** from the left menu.
+8. In n8n, copy the **OAuth Redirect URL**.
+9. In Asana, select **Add redirect URL** and enter the URL you copied from n8n.
+7. Copy the **Client ID** from Asana and enter it in your n8n credential.
+8. Copy the **Client Secret** from Asana and enter it in your n8n credential.
+
+Refer to the [Asana OAuth register an application documentation](https://developers.asana.com/docs/oauth#register-an-application) for more information.

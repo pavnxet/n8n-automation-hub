@@ -1,0 +1,185 @@
+{
+  "id": "n8n-nodes-base.msg91",
+  "name": "MSG91",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.msg91",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the MSG91 node to automate work in MSG91, and integrate MSG91 with other applications. n8n supports sending SMS with MSG91",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.msg91",
+  "credentials": {
+    "name": "MSG91",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/msg91",
+    "slug": "msg91",
+    "json_file": "credentials/msg91.json",
+    "markdown_file": "credentials/msg91.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "SMS",
+      "operation": "Send SMS",
+      "description": "",
+      "doc": "",
+      "resource_value": "sms",
+      "operation_value": "send"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "msg91",
+    "send",
+    "sending",
+    "sms",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.msg91.md",
+      "title": "MSG91 node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.msg91",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.msg91.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.msg91.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.msg91.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.msg91.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.msg91",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "msg91Api"
+  ],
+  "credential_details": [
+    {
+      "name": "msg91Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "MSG91"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "sms",
+        "options": [
+          {
+            "name": "SMS",
+            "value": "sms"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send SMS"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ]
+          }
+        }
+      },
+      {
+        "name": "from",
+        "displayName": "Sender ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        },
+        "description": "The number from which to send the message"
+      },
+      {
+        "name": "to",
+        "displayName": "To",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        },
+        "description": "The number, with coutry code, to which to send the message"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        },
+        "description": "The message to send"
+      }
+    ]
+  }
+}

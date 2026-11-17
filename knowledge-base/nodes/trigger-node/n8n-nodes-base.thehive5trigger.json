@@ -1,0 +1,243 @@
+{
+  "id": "n8n-nodes-base.thehive5trigger",
+  "name": "TheHive 5 Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.thehive5trigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the TheHive 5 Trigger node to respond to events in TheHive and integrate TheHive with other applications. n8n has built-in support for a wide range of TheHive events, including alerts, cases, comments, pages, and tasks",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.thehive5trigger",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "alerts",
+    "applications",
+    "cases",
+    "comments",
+    "events",
+    "including",
+    "pages",
+    "respond",
+    "tasks",
+    "thehive",
+    "thehive5trigger",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.thehive5trigger.md",
+      "title": "TheHive 5 Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.thehive5trigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.thehive5trigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.thehive5trigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.thehive5trigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.thehive5trigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.theHiveProjectTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "TheHive Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "You must set up the webhook in TheHive — instructions <a href=\"https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.thehive5trigger/#configure-a-webhook-in-thehive\" target=\"_blank\">here</a>",
+        "type": "notice"
+      },
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "*",
+            "value": "*",
+            "description": "Any time any event is triggered (Wildcard Event)"
+          },
+          {
+            "name": "Alert Created",
+            "value": "alert_create",
+            "description": "Triggered when an alert is created"
+          },
+          {
+            "name": "Alert Deleted",
+            "value": "alert_delete",
+            "description": "Triggered when an alert is deleted"
+          },
+          {
+            "name": "Alert Updated",
+            "value": "alert_update",
+            "description": "Triggered when an alert is updated"
+          },
+          {
+            "name": "Case Created",
+            "value": "case_create",
+            "description": "Triggered when a case is created"
+          },
+          {
+            "name": "Case Deleted",
+            "value": "case_delete",
+            "description": "Triggered when a case is deleted"
+          },
+          {
+            "name": "Case Updated",
+            "value": "case_update",
+            "description": "Triggered when a case is updated"
+          },
+          {
+            "name": "Comment Created",
+            "value": "comment_create",
+            "description": "Triggered when a comment is created"
+          },
+          {
+            "name": "Comment Deleted",
+            "value": "comment_delete",
+            "description": "Triggered when a comment is deleted"
+          },
+          {
+            "name": "Comment Updated",
+            "value": "comment_update",
+            "description": "Triggered when a comment is updated"
+          },
+          {
+            "name": "Observable Created",
+            "value": "observable_create",
+            "description": "Triggered when an observable is created"
+          },
+          {
+            "name": "Observable Deleted",
+            "value": "observable_delete",
+            "description": "Triggered when an observable is deleted"
+          },
+          {
+            "name": "Observable Updated",
+            "value": "observable_update",
+            "description": "Triggered when an observable is updated"
+          },
+          {
+            "name": "Page Created",
+            "value": "page_create",
+            "description": "Triggered when an page is created"
+          },
+          {
+            "name": "Page Deleted",
+            "value": "page_delete",
+            "description": "Triggered when an page is deleted"
+          },
+          {
+            "name": "Page Updated",
+            "value": "page_update",
+            "description": "Triggered when an page is updated"
+          },
+          {
+            "name": "Task Created",
+            "value": "task_create",
+            "description": "Triggered when a task is created"
+          },
+          {
+            "name": "Task Updated",
+            "value": "task_update",
+            "description": "Triggered when a task is updated"
+          },
+          {
+            "name": "Task Log Created",
+            "value": "log_create",
+            "description": "Triggered when a task log is created"
+          },
+          {
+            "name": "Task Log Deleted",
+            "value": "log_delete",
+            "description": "Triggered when a task log is deleted"
+          },
+          {
+            "name": "Task Log Updated",
+            "value": "log_update",
+            "description": "Triggered when a task log is updated"
+          }
+        ],
+        "description": "Events types"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "description": "Filter any incoming events based on their fields"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "outputOnlyData",
+            "description": "Whether to output data with additional details and omit headers"
+          }
+        ]
+      }
+    ]
+  }
+}

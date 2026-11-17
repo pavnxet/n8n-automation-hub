@@ -1,0 +1,17 @@
+<!-- n8n built-in node reference: n8n-nodes-langchain.toolwolframalpha | source: https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolwolframalpha -->
+
+Use the Wolfram|Alpha tool node to connect your agents[^1] and chains[^2] to Wolfram|Alpha's computational intelligence engine.
+
+> **Credentials:**
+> Refer to the [Wolfram|Alpha credentials documentation](https://docs.n8n.io/integrations/builtin/credentials/wolframalpha) for authentication information for this node.
+
+## Templates and examples
+
+[Browse Wolfram|Alpha tool node documentation integration templates](https://n8n.io/integrations/wolframoralpha) or [search all templates](https://n8n.io/workflows/)
+
+## Related resources
+
+Refer to [Wolfram|Alpha's documentation](https://products.wolframalpha.com/api) for more information about the service.
+
+[^1]: AI agents are artificial intelligence systems capable of responding to requests, making decisions, and performing real-world tasks for users. They use large language models (LLMs) to interpret user input and make decisions about how to best process requests using the information and resources they have available.
+[^2]: AI chains allow you to interact with large language models (LLMs) and other resources in sequences of calls to components. AI chains in n8n don't use persistent memory, so you can't use them to reference previous context (use AI agents for this).

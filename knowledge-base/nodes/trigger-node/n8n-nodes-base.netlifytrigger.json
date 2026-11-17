@@ -1,0 +1,155 @@
+{
+  "id": "n8n-nodes-base.netlifytrigger",
+  "name": "Netlify Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.netlifytrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Netlify offers hosting and serverless backend services for web applications and static websites",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.netlifytrigger",
+  "credentials": {
+    "name": "Netlify credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/netlify",
+    "slug": "netlify",
+    "json_file": "credentials/netlify.json",
+    "markdown_file": "credentials/netlify.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "applications",
+    "backend",
+    "credentials",
+    "hosting",
+    "netlify",
+    "netlifytrigger",
+    "offers",
+    "serverless",
+    "services",
+    "static",
+    "trigger",
+    "websites"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.netlifytrigger.md",
+      "title": "Netlify Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.netlifytrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.netlifytrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.netlifytrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.netlifytrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.netlifytrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.netlifyTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "netlifyApi"
+  ],
+  "credential_details": [
+    {
+      "name": "netlifyApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Netlify Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "siteId",
+        "displayName": "Site Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Select the Site ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Deploy Building",
+            "value": "deployBuilding"
+          },
+          {
+            "name": "Deploy Failed",
+            "value": "deployFailed"
+          },
+          {
+            "name": "Deploy Created",
+            "value": "deployCreated"
+          },
+          {
+            "name": "Form Submitted",
+            "value": "submissionCreated"
+          }
+        ]
+      },
+      {
+        "name": "formId",
+        "displayName": "Form Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "event": [
+              "submissionCreated"
+            ]
+          }
+        },
+        "description": "Select a form. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "event": [
+              "submissionCreated"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      }
+    ]
+  }
+}

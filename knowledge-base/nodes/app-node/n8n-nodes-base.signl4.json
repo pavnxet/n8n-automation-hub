@@ -1,0 +1,225 @@
+{
+  "id": "n8n-nodes-base.signl4",
+  "name": "SIGNL4",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.signl4",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the SIGNL4 node to automate work in SIGNL4, and integrate SIGNL4 with other applications. n8n supports sending and resolving alerts with SIGNL4",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.signl4",
+  "credentials": {
+    "name": "SIGNL4",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/signl4",
+    "slug": "signl4",
+    "json_file": "credentials/signl4.json",
+    "markdown_file": "credentials/signl4.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Alert",
+      "operation": "Send an alert",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "send"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Resolve an alert",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "resolve"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "alert",
+    "alerts",
+    "app",
+    "applications",
+    "resolve",
+    "resolving",
+    "send",
+    "sending",
+    "signl4",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.signl4.md",
+      "title": "SIGNL4 node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.signl4",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.signl4.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.signl4.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.signl4.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.signl4.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.signl4",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "signl4Api"
+  ],
+  "credential_details": [
+    {
+      "name": "signl4Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "SIGNL4"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "alert",
+        "options": [
+          {
+            "name": "Alert",
+            "value": "alert"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send an alert"
+          },
+          {
+            "name": "Resolve",
+            "value": "resolve",
+            "description": "Resolve an alert"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "alert"
+            ]
+          }
+        },
+        "description": "A more detailed description for the alert"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "alertingScenario"
+          },
+          {
+            "name": "attachmentsUi"
+          },
+          {
+            "name": "externalId",
+            "description": "If the event originates from a record in a 3rd party system, use this parameter to pass the unique ID of that record. That ID will be communicated in outbound w"
+          },
+          {
+            "name": "filtering",
+            "description": "Whether to apply event filtering for this event, or not. If set to true, the event will only trigger a notification to the team, if it contains at least one key"
+          },
+          {
+            "name": "locationFieldsUi",
+            "description": "Transmit location information ('latitude, longitude') with your event and display a map in the mobile app"
+          },
+          {
+            "name": "service",
+            "description": "Assigns the alert to the service/system category with the specified name"
+          },
+          {
+            "name": "title",
+            "description": "The title or subject of this alert"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "alert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "externalId",
+        "displayName": "External ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "resolve"
+            ],
+            "resource": [
+              "alert"
+            ]
+          }
+        },
+        "description": "If the event originates from a record in a 3rd party system, use this parameter to pass the unique ID of that record. That ID will be communicated in outbound webhook notifications from SIGNL4, which is great for correla"
+      }
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "n8n-nodes-langchain.outputparseritemlist",
+  "name": "Item List Output Parser",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.outputparseritemlist",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Item List Output Parser node to return a list of items with a specific length and separator",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.outputparseritemlist",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Number of Items",
+      "description": "Enter the maximum items to return. Set to -1 for unlimited items"
+    },
+    {
+      "name": "Separator",
+      "description": "Select the separator used to split the results into separate items. Defaults to a new line"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "cluster",
+    "item",
+    "items",
+    "length",
+    "list",
+    "number",
+    "output",
+    "outputparseritemlist",
+    "parser",
+    "return",
+    "separator",
+    "specific",
+    "sub"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.outputparseritemlist.md",
+      "title": "Item List Output Parser node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.outputparseritemlist",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.outputparseritemlist.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.outputparseritemlist.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.outputparseritemlist.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.outputparseritemlist.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.outputParserItemList",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Item List Output Parser"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_outputParser"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "numberOfItems",
+            "description": "Defines how many items should be returned maximally. If set to -1, there is no limit."
+          },
+          {
+            "name": "separator",
+            "description": "Defines the separator that should be used to split the results into separate items. Defaults to a new line but can be changed depending on the data that should "
+          }
+        ]
+      }
+    ]
+  }
+}

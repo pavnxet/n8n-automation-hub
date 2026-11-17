@@ -1,0 +1,22 @@
+<!-- n8n built-in node reference: n8n-nodes-base.googleads | source: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googleads -->
+
+Use the Google Ads node to automate work in Google Ads, and integrate Google Ads with other applications. n8n has built-in support for a wide range of Google Ads features, including getting campaigns. 
+
+On this page, you'll find a list of operations the Google Ads node supports and links to more resources.
+
+> **Credentials:**
+> Refer to [Google Ads credentials](https://docs.n8n.io/integrations/builtin/credentials/google) for guidance on setting up authentication.
+
+## Operations
+
+* Campaign
+    * Get all campaigns
+    * Get a campaign
+
+## Templates and examples
+
+[Browse Google Ads node documentation integration templates](https://n8n.io/integrations/google-ads) or [search all templates](https://n8n.io/workflows/)
+
+## Related resources
+
+Refer to [Google Ads' documentation](https://developers.google.com/google-ads/api/docs/start) for more information about the service.

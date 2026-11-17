@@ -1,0 +1,294 @@
+{
+  "id": "n8n-nodes-base.hunter",
+  "name": "Hunter",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.hunter",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Hunter node to automate work in Hunter, and integrate Hunter with other applications. n8n has built-in support for a wide range of Hunter features, including getting, generating, and verifying email addresses",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.hunter",
+  "credentials": {
+    "name": "Hunter",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/hunter",
+    "slug": "hunter",
+    "json_file": "credentials/hunter.json",
+    "markdown_file": "credentials/hunter.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Get every email address found on the internet using a given domain name, with sources",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Generate or retrieve the most likely email address from a domain name, a first name and a last name",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Verify the deliverability of an email address",
+      "description": "",
+      "doc": ""
+    }
+  ],
+  "operation_count": 3,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "address",
+    "addresses",
+    "app",
+    "applications",
+    "deliverability",
+    "domain",
+    "email",
+    "every",
+    "first",
+    "found",
+    "generate",
+    "generating",
+    "get",
+    "getting",
+    "given",
+    "hunter",
+    "including",
+    "internet",
+    "last",
+    "likely",
+    "most",
+    "name",
+    "retrieve",
+    "sources",
+    "verify",
+    "verifying",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.hunter.md",
+      "title": "Hunter node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.hunter",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.hunter.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.hunter.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.hunter.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.hunter.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.hunter",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "hunterApi"
+  ],
+  "credential_details": [
+    {
+      "name": "hunterApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Hunter"
+  },
+  "subtitle": "={{$parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "domainSearch",
+        "options": [
+          {
+            "name": "Domain Search",
+            "value": "domainSearch",
+            "description": "Get every email address found on the internet using a given domain name, with sources"
+          },
+          {
+            "name": "Email Finder",
+            "value": "emailFinder",
+            "description": "Generate or retrieve the most likely email address from a domain name, a first name and a last name"
+          },
+          {
+            "name": "Email Verifier",
+            "value": "emailVerifier",
+            "description": "Verify the deliverability of an email address"
+          }
+        ],
+        "description": "Operation to consume"
+      },
+      {
+        "name": "domain",
+        "displayName": "Domain",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "domainSearch"
+            ]
+          }
+        },
+        "description": "Domain name from which you want to find the email addresses. For example, \"stripe.com\"."
+      },
+      {
+        "name": "onlyEmails",
+        "displayName": "Only Emails",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "domainSearch"
+            ]
+          }
+        },
+        "description": "Whether to return only the found emails"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "domainSearch"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "domainSearch"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "type"
+          },
+          {
+            "name": "seniority"
+          },
+          {
+            "name": "department"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "domainSearch"
+            ]
+          }
+        }
+      },
+      {
+        "name": "domain",
+        "displayName": "Domain",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "emailFinder"
+            ]
+          }
+        },
+        "description": "Domain name from which you want to find the email addresses. For example, \"stripe.com\"."
+      },
+      {
+        "name": "firstname",
+        "displayName": "First Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "emailFinder"
+            ]
+          }
+        },
+        "description": "The person's first name. It doesn't need to be in lowercase."
+      },
+      {
+        "name": "lastname",
+        "displayName": "Last Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "emailFinder"
+            ]
+          }
+        },
+        "description": "The person's last name. It doesn't need to be in lowercase."
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "emailVerifier"
+            ]
+          }
+        },
+        "description": "The email address you want to verify"
+      }
+    ]
+  }
+}

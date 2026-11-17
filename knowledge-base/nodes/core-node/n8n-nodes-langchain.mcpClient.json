@@ -1,0 +1,327 @@
+{
+  "id": "n8n-nodes-langchain.mcpClient",
+  "name": "MCP Client",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-langchain.mcpClient",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The MCP Client node is a Model Context Protocol (MCP) client that allows you to use the tools that are exposed by an external MCP server",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.mcpClient",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Server Transport",
+      "description": "The transport protocol used by the MCP Server endpoint you want to connect to"
+    },
+    {
+      "name": "MCP Endpoint URL",
+      "description": "The URL of the external MCP Server. For example, https://mcp.notion.com/mcp"
+    },
+    {
+      "name": "Authentication",
+      "description": "The authentication method for authentication to your MCP server. The MCP Client node supports bearer, generic header, multiple headers, and OAuth2 authentication. Select None to attempt to connect without authentication"
+    },
+    {
+      "name": "Tool",
+      "description": "Select the tool to use in the node. The list of tools is automatically fetched from the external MCP server"
+    },
+    {
+      "name": "Input Mode",
+      "description": ""
+    },
+    {
+      "name": "Convert to Binary",
+      "description": "Whether to convert images and audio to binary data. If false, images and audio are returned as base64 encoded strings"
+    },
+    {
+      "name": "Timeout",
+      "description": "Time in milliseconds to wait for tool calls to finish"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allows",
+    "authentication",
+    "binary",
+    "client",
+    "context",
+    "convert",
+    "core",
+    "endpoint",
+    "exposed",
+    "external",
+    "input",
+    "mcp",
+    "mcpclient",
+    "mode",
+    "model",
+    "protocol",
+    "server",
+    "timeout",
+    "tool",
+    "tools",
+    "transport",
+    "url"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "Yl56nEscwQQAbBUeWfvp",
+      "name": "tools-link"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.mcpClient.md",
+      "title": "MCP Client node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.mcpClient",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-langchain.mcpClient.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-langchain.mcpClient.json",
+    "markdown": "nodes/core-node/n8n-nodes-langchain.mcpClient.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-langchain.mcpClient.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.mcpClient",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "httpBearerAuth",
+    "httpHeaderAuth",
+    "mcpOAuth2Api",
+    "httpMultipleHeadersAuth"
+  ],
+  "credential_details": [
+    {
+      "name": "httpBearerAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "bearerAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "httpHeaderAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "headerAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mcpOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "mcpOAuth2Api"
+          ]
+        }
+      }
+    },
+    {
+      "name": "httpMultipleHeadersAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "multipleHeadersAuth"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "MCP Client"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "serverTransport",
+        "displayName": "Server Transport",
+        "type": "options",
+        "default": "httpStreamable",
+        "options": [
+          {
+            "name": "HTTP Streamable",
+            "value": "httpStreamable"
+          },
+          {
+            "name": "Server Sent Events (Deprecated)",
+            "value": "sse"
+          }
+        ],
+        "description": "The transport used by your endpoint"
+      },
+      {
+        "name": "endpointUrl",
+        "displayName": "MCP Endpoint URL",
+        "type": "string",
+        "required": true,
+        "description": "The URL of the MCP server to connect to"
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "Bearer Auth",
+            "value": "bearerAuth"
+          },
+          {
+            "name": "Header Auth",
+            "value": "headerAuth"
+          },
+          {
+            "name": "MCP OAuth2",
+            "value": "mcpOAuth2Api"
+          },
+          {
+            "name": "Multiple Headers Auth",
+            "value": "multipleHeadersAuth"
+          },
+          {
+            "name": "None",
+            "value": "none"
+          }
+        ],
+        "description": "The way to authenticate with your endpoint"
+      },
+      {
+        "name": "credentials",
+        "displayName": "Credentials",
+        "type": "credentials",
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "headerAuth",
+              "bearerAuth",
+              "mcpOAuth2Api",
+              "multipleHeadersAuth"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tool",
+        "displayName": "Tool",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "description": "The tool to use"
+      },
+      {
+        "name": "inputMode",
+        "displayName": "Input Mode",
+        "type": "options",
+        "default": "manual",
+        "options": [
+          {
+            "name": "Manual",
+            "value": "manual",
+            "description": "Manually specify the input data for each tool parameter"
+          },
+          {
+            "name": "JSON",
+            "value": "json",
+            "description": "Specify the input data as a JSON object"
+          }
+        ]
+      },
+      {
+        "name": "parameters",
+        "displayName": "Parameters",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "inputMode": [
+              "manual"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonInput",
+        "displayName": "JSON",
+        "type": "json",
+        "default": "{\n  \"my_field_1\": \"value\",\n  \"my_field_2\": 1\n}\n",
+        "displayOptions": {
+          "show": {
+            "inputMode": [
+              "json"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "convertToBinary",
+            "description": "Whether to convert images and audio to binary data. If false, images and audio will be returned as base64 encoded strings."
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for tool calls to finish"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

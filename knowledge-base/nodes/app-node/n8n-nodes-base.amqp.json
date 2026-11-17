@@ -1,0 +1,142 @@
+{
+  "id": "n8n-nodes-base.amqp",
+  "name": "AMQP Sender",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.amqp",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the AMQP Sender node to automate work in AMQP Sender, and integrate AMQP Sender with other applications. n8n has built-in support for a wide range of AMQP Sender features, including sending messages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.amqp",
+  "credentials": {
+    "name": "AMQP Sender",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/amqp",
+    "slug": "amqp",
+    "json_file": "credentials/amqp.json",
+    "markdown_file": "credentials/amqp.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Send message",
+      "description": "",
+      "doc": ""
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "amqp",
+    "app",
+    "applications",
+    "including",
+    "message",
+    "messages",
+    "send",
+    "sender",
+    "sending",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.amqp.md",
+      "title": "AMQP Sender node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.amqp",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.amqp.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.amqp.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.amqp.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.amqp.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.amqp",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "amqp"
+  ],
+  "credential_details": [
+    {
+      "name": "amqp",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "AMQP Sender"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "sink",
+        "displayName": "Queue / Topic",
+        "type": "string",
+        "description": "Name of the queue of topic to publish to"
+      },
+      {
+        "name": "headerParametersJson",
+        "displayName": "Headers",
+        "type": "json",
+        "description": "Header parameters as JSON (flat object). Sent as application_properties in amqp-message meta info."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "containerId",
+            "description": "Will be used to pass to the RHEA Backend as container_id"
+          },
+          {
+            "name": "dataAsObject",
+            "description": "Whether to send the data as an object"
+          },
+          {
+            "name": "reconnect",
+            "description": "Whether to automatically reconnect if disconnected"
+          },
+          {
+            "name": "reconnectLimit",
+            "description": "Maximum number of reconnect attempts"
+          },
+          {
+            "name": "sendOnlyProperty",
+            "description": "The only property to send. If empty the whole item will be sent."
+          }
+        ]
+      }
+    ]
+  }
+}

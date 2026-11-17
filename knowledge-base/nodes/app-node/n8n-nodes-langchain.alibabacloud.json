@@ -1,0 +1,1322 @@
+{
+  "id": "n8n-nodes-langchain.alibabacloud",
+  "name": "Qwen Cloud",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-langchain.alibabacloud",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "The Qwen Cloud node lets you call models available on Qwen Cloud from n8n. Use it to generate completions, analyze or create images, and produce short videos from text or images",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.alibabacloud",
+  "credentials": {
+    "name": "Qwen Cloud credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/alibaba",
+    "slug": "alibaba",
+    "json_file": "credentials/alibaba.json",
+    "markdown_file": "credentials/alibaba.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "alibabacloud",
+    "analyze",
+    "app",
+    "available",
+    "call",
+    "cloud",
+    "completions",
+    "create",
+    "credentials",
+    "generate",
+    "images",
+    "lets",
+    "models",
+    "produce",
+    "qwen",
+    "short",
+    "text",
+    "videos"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.alibabacloud.md",
+      "title": "Qwen Cloud node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.alibabacloud",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.alibabacloud.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-langchain.alibabacloud.json",
+    "markdown": "nodes/app-node/n8n-nodes-langchain.alibabacloud.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-langchain.alibabacloud.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.alibabaCloud",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "alibabaCloudApi"
+  ],
+  "credential_details": [
+    {
+      "name": "alibabaCloudApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Qwen Cloud"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": "={{\n\t\t(() => {\n\t\t\tconst resource = $parameter.resource;\n\t\t\tconst operation = $parameter.operation;\n\t\t\tif (resource === 'text' && operation === 'message') {\n\t\t\t\treturn [{ type: 'main' }, { type: 'ai_tool', displayName: 'Tools' }];\n\t\t\t}\n\n\t\t\treturn ['main'];\n\t\t})()\n\t}}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 45,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "text",
+        "options": [
+          {
+            "name": "Text",
+            "value": "text"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Video",
+            "value": "video"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Message a Model",
+            "value": "message",
+            "description": "Create a completion with a Qwen model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "qwen3.5-flash",
+        "options": [
+          {
+            "name": "Qwen3 Max",
+            "value": "qwen3-max",
+            "description": "Most capable model with best performance"
+          },
+          {
+            "name": "Qwen3 Max (2026-01-23)",
+            "value": "qwen3-max-2026-01-23",
+            "description": "Qwen Max snapshot from 2026-01-23"
+          },
+          {
+            "name": "Qwen3.5 122B-A10B",
+            "value": "qwen3.5-122b-a10b",
+            "description": "MoE model with 122B total / 10B active parameters"
+          },
+          {
+            "name": "Qwen3.5 27B",
+            "value": "qwen3.5-27b",
+            "description": "Dense 27B parameter model"
+          },
+          {
+            "name": "Qwen3.5 35B-A3B",
+            "value": "qwen3.5-35b-a3b",
+            "description": "Small MoE model with 35B total / 3B active parameters"
+          },
+          {
+            "name": "Qwen3.5 397B-A17B",
+            "value": "qwen3.5-397b-a17b",
+            "description": "Large MoE model with 397B total / 17B active parameters"
+          },
+          {
+            "name": "Qwen3.5 Flash",
+            "value": "qwen3.5-flash",
+            "description": "Faster, more cost-effective model"
+          },
+          {
+            "name": "Qwen3.5 Flash (2026-02-23)",
+            "value": "qwen3.5-flash-2026-02-23",
+            "description": "Qwen Flash snapshot from 2026-02-23"
+          },
+          {
+            "name": "Qwen3.5 Plus",
+            "value": "qwen3.5-plus",
+            "description": "Balanced model with good performance and cost"
+          },
+          {
+            "name": "Qwen3.5 Plus (2026-02-15)",
+            "value": "qwen3.5-plus-2026-02-15",
+            "description": "Qwen Plus snapshot from 2026-02-15"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "The model to use for generation"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messages",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "default": {
+          "messageValues": [
+            {
+              "content": "",
+              "role": "user"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "messageValues",
+            "values": [
+              {
+                "name": "content",
+                "displayName": "Content",
+                "type": "string"
+              },
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "enableSearch",
+            "description": "Whether to enable web search for up-to-date information"
+          },
+          {
+            "name": "maxTokens",
+            "description": "Maximum number of tokens to generate"
+          },
+          {
+            "name": "maxToolsIterations",
+            "description": "Maximum number of tool-calling iterations before stopping. Set to 0 for unlimited."
+          },
+          {
+            "name": "repetitionPenalty",
+            "description": "Penalty for token repetition. Higher values reduce repetition."
+          },
+          {
+            "name": "seed",
+            "description": "Random seed for reproducible outputs"
+          },
+          {
+            "name": "stop",
+            "description": "Comma-separated list of sequences where the API will stop generating"
+          },
+          {
+            "name": "system"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness in the output. Lower values make output more focused and deterministic."
+          },
+          {
+            "name": "topK",
+            "description": "Limits the sampling pool to top K tokens"
+          },
+          {
+            "name": "topP",
+            "description": "Nucleus sampling parameter. Lower values make output more focused."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "generate",
+        "options": [
+          {
+            "name": "Analyze Image",
+            "value": "analyze",
+            "description": "Take in images and answer questions about them"
+          },
+          {
+            "name": "Generate an Image",
+            "value": "generate",
+            "description": "Creates an image from a text prompt"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "qwen3-vl-flash",
+        "options": [
+          {
+            "name": "Qwen-VL Flash",
+            "value": "qwen3-vl-flash",
+            "description": "Fast vision-language model"
+          },
+          {
+            "name": "Qwen-VL Plus",
+            "value": "qwen3-vl-plus",
+            "description": "Enhanced vision-language model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The model to use for image analysis"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "URL",
+            "value": "url"
+          },
+          {
+            "name": "Binary Data",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "How to provide the image for analysis"
+      },
+      {
+        "name": "imageUrl",
+        "displayName": "Image URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The URL of the image to analyze"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "question",
+        "displayName": "Question",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The question or instruction about the image"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "visionOptions",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "temperature",
+            "description": "Controls randomness in the output. Lower values make output more focused and deterministic."
+          },
+          {
+            "name": "maxTokens",
+            "description": "Maximum number of tokens to generate"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "z-image-turbo",
+        "options": [
+          {
+            "name": "Qwen Image",
+            "value": "qwen-image",
+            "description": "Qwen image generation model"
+          },
+          {
+            "name": "Qwen Image Max",
+            "value": "qwen-image-max",
+            "description": "Most capable Qwen image generation model"
+          },
+          {
+            "name": "Qwen Image Plus",
+            "value": "qwen-image-plus",
+            "description": "Enhanced Qwen image generation model"
+          },
+          {
+            "name": "Wan 2.6 Image",
+            "value": "wan2.6-image",
+            "description": "Wan image editing model. Requires 1 to 4 reference images."
+          },
+          {
+            "name": "Wan 2.6 T2I",
+            "value": "wan2.6-t2i",
+            "description": "Wanx image generation model"
+          },
+          {
+            "name": "Z-Image Turbo",
+            "value": "z-image-turbo",
+            "description": "Fast image generation model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The model to use for image generation"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The text prompt describing the image to generate"
+      },
+      {
+        "name": "wanImageEditNotice",
+        "displayName": "Attach reference images for Wan image editing. Use a Wan t2i model for text-only generate.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "wan"
+                }
+              }
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          },
+          "hide": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "-t2i"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "referenceImages",
+        "displayName": "Reference Images",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "inputType": "url",
+              "imageUrl": "",
+              "binaryPropertyName": "data"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "inputType",
+                "displayName": "Input Type",
+                "type": "options"
+              },
+              {
+                "name": "imageUrl",
+                "displayName": "Image URL",
+                "type": "string"
+              },
+              {
+                "name": "binaryPropertyName",
+                "displayName": "Input Data Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "wan"
+                }
+              }
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          },
+          "hide": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "-t2i"
+                }
+              }
+            ]
+          }
+        },
+        "description": "1 to 4 reference images for Wan image editing"
+      },
+      {
+        "name": "downloadImage",
+        "displayName": "Download Image",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Whether to download the generated image as binary data. When disabled, only the image URL is returned."
+      },
+      {
+        "name": "imageOptions",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "size",
+            "description": "The size of the generated image"
+          },
+          {
+            "name": "size",
+            "description": "The size of the generated image"
+          },
+          {
+            "name": "size",
+            "description": "The size of the generated image"
+          },
+          {
+            "name": "promptExtend",
+            "description": "Whether to automatically extend and enhance the prompt"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "textToVideo",
+        "options": [
+          {
+            "name": "Generate Video From Text",
+            "value": "textToVideo",
+            "description": "Generate a video from a text prompt"
+          },
+          {
+            "name": "Generate Video From Image",
+            "value": "imageToVideo",
+            "description": "Generate a video from one or more images using Wan models"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "wan2.6-t2v",
+        "options": [
+          {
+            "name": "Wan 2.6 Text-to-Video",
+            "value": "wan2.6-t2v",
+            "description": "Text-to-video generation model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "The model to use for text-to-video generation"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "The text prompt to generate video from"
+      },
+      {
+        "name": "resolution",
+        "displayName": "Resolution",
+        "type": "options",
+        "default": "1080P",
+        "options": [
+          {
+            "name": "720P",
+            "value": "720P"
+          },
+          {
+            "name": "1080P",
+            "value": "1080P"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Resolution tier of the generated video"
+      },
+      {
+        "name": "duration",
+        "displayName": "Duration (Seconds)",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Duration of the generated video in seconds (2–15)"
+      },
+      {
+        "name": "shotType",
+        "displayName": "Shot Type",
+        "type": "options",
+        "default": "single",
+        "options": [
+          {
+            "name": "Single",
+            "value": "single"
+          },
+          {
+            "name": "Multi",
+            "value": "multi"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Whether to generate a single-shot or multi-shot narrative video"
+      },
+      {
+        "name": "downloadVideo",
+        "displayName": "Download Video",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Whether to download the generated video as binary data. When disabled, only the video URL is returned."
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "videoOptions",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "promptExtend",
+            "description": "Whether to automatically extend and enhance the prompt"
+          },
+          {
+            "name": "audio",
+            "description": "Whether to generate audio for the video"
+          },
+          {
+            "name": "audioInputType"
+          },
+          {
+            "name": "audioUrl",
+            "description": "URL of the audio file to use for the video"
+          },
+          {
+            "name": "audioBinaryPropertyName"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "wan2.6-i2v-flash",
+        "options": [
+          {
+            "name": "Wan 2.6 Image-to-Video Flash",
+            "value": "wan2.6-i2v-flash",
+            "description": "Fast image-to-video generation model"
+          },
+          {
+            "name": "Wan 2.6 Image-to-Video",
+            "value": "wan2.6-i2v",
+            "description": "Standard image-to-video generation model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "The model to use for image-to-video generation"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "Image URL",
+            "value": "url"
+          },
+          {
+            "name": "Binary File",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "imgUrl",
+        "displayName": "Image URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "The URL of the first-frame image to generate video from"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "A text prompt describing the desired content and visual characteristics for the generated video"
+      },
+      {
+        "name": "resolution",
+        "displayName": "Resolution",
+        "type": "options",
+        "default": "1080P",
+        "options": [
+          {
+            "name": "720P",
+            "value": "720P"
+          },
+          {
+            "name": "1080P",
+            "value": "1080P"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Resolution tier of the generated video"
+      },
+      {
+        "name": "duration",
+        "displayName": "Duration (Seconds)",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Duration of the generated video in seconds (2–15)"
+      },
+      {
+        "name": "shotType",
+        "displayName": "Shot Type",
+        "type": "options",
+        "default": "single",
+        "options": [
+          {
+            "name": "Single",
+            "value": "single"
+          },
+          {
+            "name": "Multi",
+            "value": "multi"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Whether to generate a single-shot or multi-shot narrative video"
+      },
+      {
+        "name": "downloadVideo",
+        "displayName": "Download Video",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Whether to download the generated video as binary data. When disabled, only the video URL is returned."
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "imageToVideoOptions",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "promptExtend",
+            "description": "Whether to automatically extend and enhance the prompt"
+          },
+          {
+            "name": "audio",
+            "description": "Whether to generate audio for the video"
+          },
+          {
+            "name": "audioInputType"
+          },
+          {
+            "name": "audioUrl",
+            "description": "URL of the audio file to use for the video"
+          },
+          {
+            "name": "audioBinaryPropertyName"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

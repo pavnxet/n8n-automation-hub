@@ -1,0 +1,832 @@
+{
+  "id": "n8n-nodes-langchain.perplexity",
+  "name": "Perplexity",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-langchain.perplexity",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Perplexity node to automate work in Perplexity and integrate Perplexity with other applications. n8n has built-in support for messaging a model",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.perplexity",
+  "credentials": {
+    "name": "Perplexity credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/perplexity",
+    "slug": "perplexity",
+    "json_file": "credentials/perplexity.json",
+    "markdown_file": "credentials/perplexity.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Message a Model",
+      "description": "Create one or more completions for a given text",
+      "doc": "",
+      "resource_value": "agent"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "credentials",
+    "message",
+    "messaging",
+    "model",
+    "perplexity",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.perplexity.md",
+      "title": "Perplexity node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.perplexity",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.perplexity.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-langchain.perplexity.json",
+    "markdown": "nodes/app-node/n8n-nodes-langchain.perplexity.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-langchain.perplexity.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.perplexity",
+  "type_version": 2.0,
+  "type_versions": [
+    1,
+    2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "perplexityApi"
+  ],
+  "credential_details": [
+    {
+      "name": "perplexityApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Perplexity"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 25,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "hidden",
+        "default": "chat",
+        "options": [
+          {
+            "name": "Chat",
+            "value": "chat"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "chat",
+        "options": [
+          {
+            "name": "Agent",
+            "value": "agent",
+            "description": "Create responses using the Agent API with third-party models, presets, tools, and structured outputs"
+          },
+          {
+            "name": "Chat",
+            "value": "chat",
+            "description": "Send messages using Sonar models with built-in web search"
+          },
+          {
+            "name": "Embedding",
+            "value": "embedding",
+            "description": "Generate vector embeddings for text"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Get raw, ranked web search results"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "createResponse",
+        "options": [
+          {
+            "name": "Create Response",
+            "value": "createResponse",
+            "description": "Create a response using the Agent API with third-party models, presets, and tools"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "agent"
+            ]
+          }
+        }
+      },
+      {
+        "name": "input",
+        "displayName": "Input",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "agent"
+            ],
+            "operation": [
+              "createResponse"
+            ]
+          }
+        },
+        "description": "The input text prompt to send to the agent"
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "agent"
+            ],
+            "operation": [
+              "createResponse"
+            ]
+          }
+        },
+        "description": "The model to use. Uses provider/model format (e.g. openai/gpt-5.2). Leave empty when using a preset."
+      },
+      {
+        "name": "preset",
+        "displayName": "Preset",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "agent"
+            ],
+            "operation": [
+              "createResponse"
+            ]
+          }
+        },
+        "description": "Preset name to use. Use preset OR model, not both."
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "agent"
+            ],
+            "operation": [
+              "createResponse"
+            ]
+          }
+        },
+        "description": "Whether to return only essential fields (ID, model, output text, citations)"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "instructions",
+            "description": "System-level instructions for the agent"
+          },
+          {
+            "name": "languagePreference",
+            "description": "ISO 639-1 language code for the response language preference"
+          },
+          {
+            "name": "maxOutputTokens",
+            "description": "The maximum number of tokens to generate in the response"
+          },
+          {
+            "name": "maxSteps",
+            "description": "Maximum number of agentic steps (1-10)"
+          },
+          {
+            "name": "modelsFallback",
+            "description": "Comma-separated list of 1-5 model IDs to use as fallbacks"
+          },
+          {
+            "name": "reasoning",
+            "description": "Reasoning configuration object (e.g. {\"effort\": \"high\"})"
+          },
+          {
+            "name": "responseFormat",
+            "description": "JSON schema for structured output. Set type to \"json_schema\" with a schema property."
+          },
+          {
+            "name": "tools",
+            "description": "Array of tool objects to make available to the agent"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "agent"
+            ],
+            "operation": [
+              "createResponse"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "complete",
+        "options": [
+          {
+            "name": "Message a Model",
+            "value": "complete",
+            "description": "Create one or more completions for a given text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "required": true,
+        "default": "sonar",
+        "options": [
+          {
+            "name": "Sonar",
+            "value": "sonar"
+          },
+          {
+            "name": "Sonar Deep Research",
+            "value": "sonar-deep-research"
+          },
+          {
+            "name": "Sonar Pro",
+            "value": "sonar-pro"
+          },
+          {
+            "name": "Sonar Reasoning Pro",
+            "value": "sonar-reasoning-pro"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "complete"
+            ]
+          }
+        },
+        "description": "The model which will generate the completion"
+      },
+      {
+        "name": "messages",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "required": true,
+        "default": {
+          "message": [
+            {
+              "role": "user",
+              "content": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "message",
+            "values": [
+              {
+                "name": "content",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "complete"
+            ]
+          }
+        },
+        "description": "Any optional system messages must be sent first, followed by alternating user and assistant messages"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "complete"
+            ]
+          }
+        },
+        "description": "Whether to return only essential fields (ID, citations, message)"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "disableSearch",
+            "description": "Whether to disable web search for this request"
+          },
+          {
+            "name": "enableSearchClassifier",
+            "description": "Whether to enable the search classifier"
+          },
+          {
+            "name": "frequencyPenalty",
+            "description": "Values greater than 1.0 penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verb"
+          },
+          {
+            "name": "imageDomainFilter",
+            "description": "Comma-separated list of domains to filter image results from"
+          },
+          {
+            "name": "imageFormatFilter",
+            "description": "Comma-separated list of image formats to filter results by"
+          },
+          {
+            "name": "languagePreference",
+            "description": "ISO 639-1 language code for the response language preference"
+          },
+          {
+            "name": "lastUpdatedAfter",
+            "description": "Filter results last updated after this date (MM/DD/YYYY)"
+          },
+          {
+            "name": "lastUpdatedBefore",
+            "description": "Filter results last updated before this date (MM/DD/YYYY)"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion. The number of tokens requested plus the number of prompt tokens sent in messages must not exceed the"
+          },
+          {
+            "name": "temperature",
+            "description": "The amount of randomness in the response, valued between 0 inclusive and 2 exclusive. Higher values are more random, and lower values are more deterministic."
+          },
+          {
+            "name": "presencePenalty",
+            "description": "A value between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk abo"
+          },
+          {
+            "name": "reasoningEffort",
+            "description": "The level of reasoning effort to apply"
+          },
+          {
+            "name": "responseFormat",
+            "description": "JSON schema for structured output. Set type to \"json_schema\" with a schema property."
+          },
+          {
+            "name": "returnImages",
+            "description": "Whether or not a request to an online model should return images. Requires Perplexity API usage Tier-2."
+          },
+          {
+            "name": "returnRelatedQuestions",
+            "description": "Whether or not a request to an online model should return related questions. Requires Perplexity API usage Tier-2."
+          },
+          {
+            "name": "searchAfterDate",
+            "description": "Filter results published after this date (MM/DD/YYYY)"
+          },
+          {
+            "name": "searchBeforeDate",
+            "description": "Filter results published before this date (MM/DD/YYYY)"
+          },
+          {
+            "name": "searchDomainFilter",
+            "description": "Limit the citations used by the online model to URLs from the specified domains. For blacklisting, add a <code>-</code> to the beginning of the domain string (e"
+          },
+          {
+            "name": "searchLanguageFilter",
+            "description": "Comma-separated list of ISO 639-1 language codes to filter results by (max 20)"
+          },
+          {
+            "name": "searchMode",
+            "description": "The search mode to use for retrieving information"
+          },
+          {
+            "name": "searchRecency",
+            "description": "Returns search results within the specified time interval"
+          },
+          {
+            "name": "stop",
+            "description": "Comma-separated list of sequences where the model should stop generating"
+          },
+          {
+            "name": "topK",
+            "description": "The number of tokens to keep for highest Top K filtering, specified as an integer between 0 and 2048 inclusive. If set to 0, Top K filtering is disabled. We rec"
+          },
+          {
+            "name": "topP",
+            "description": "The nucleus sampling threshold, valued between 0 and 1 inclusive. For each subsequent token, the model considers the results of the tokens with Top P probabilit"
+          },
+          {
+            "name": "webSearchOptions",
+            "description": "Advanced web search configuration object"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "complete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "createEmbedding",
+        "options": [
+          {
+            "name": "Create Embedding",
+            "value": "createEmbedding",
+            "description": "Generate vector embeddings for text input"
+          },
+          {
+            "name": "Create Contextualized Embedding",
+            "value": "createContextualized",
+            "description": "Generate context-aware embeddings for document chunks"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "embedding"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "required": true,
+        "default": "pplx-embed-v1-4b",
+        "options": [
+          {
+            "name": "PPLX Embed V1 0.6B",
+            "value": "pplx-embed-v1-0.6b"
+          },
+          {
+            "name": "PPLX Embed V1 4B",
+            "value": "pplx-embed-v1-4b"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "embedding"
+            ],
+            "operation": [
+              "createEmbedding"
+            ]
+          }
+        },
+        "description": "The embedding model to use"
+      },
+      {
+        "name": "input",
+        "displayName": "Input Texts",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "embedding"
+            ],
+            "operation": [
+              "createEmbedding"
+            ]
+          }
+        },
+        "description": "Text(s) to embed. Put each text on a separate line."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dimensions",
+            "description": "Number of dimensions for the output embedding. If 0 or unset, the full model dimensions are used."
+          },
+          {
+            "name": "encoding_format",
+            "description": "The format of the returned embeddings"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "embedding"
+            ],
+            "operation": [
+              "createEmbedding"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "required": true,
+        "default": "pplx-embed-context-v1-4b",
+        "options": [
+          {
+            "name": "PPLX Embed Context V1 4B",
+            "value": "pplx-embed-context-v1-4b"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "embedding"
+            ],
+            "operation": [
+              "createContextualized"
+            ]
+          }
+        },
+        "description": "The contextualized embedding model to use"
+      },
+      {
+        "name": "input",
+        "displayName": "Input Documents",
+        "type": "json",
+        "required": true,
+        "default": "[[\"paragraph 1 of doc A\", \"paragraph 2 of doc A\"], [\"paragraph 1 of doc B\"]]",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "embedding"
+            ],
+            "operation": [
+              "createContextualized"
+            ]
+          }
+        },
+        "description": "Array of documents, where each document is an array of paragraph strings"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dimensions",
+            "description": "Number of dimensions for the output embedding. If 0 or unset, the full model dimensions are used."
+          },
+          {
+            "name": "encoding_format",
+            "description": "The format of the returned embeddings. Float is not supported by this endpoint."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "embedding"
+            ],
+            "operation": [
+              "createContextualized"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "search",
+        "options": [
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Get raw, ranked web search results with filtering and content extraction"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "The search query string"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return only the ID and results array"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "country",
+            "description": "2-character ISO 3166-1 alpha-2 country code to localize search results"
+          },
+          {
+            "name": "lastUpdatedAfter",
+            "description": "Filter results last updated after this date (MM/DD/YYYY)"
+          },
+          {
+            "name": "lastUpdatedBefore",
+            "description": "Filter results last updated before this date (MM/DD/YYYY)"
+          },
+          {
+            "name": "maxResults",
+            "description": "Maximum number of search results to return (1-20)"
+          },
+          {
+            "name": "maxTokens",
+            "description": "Maximum number of tokens in the response"
+          },
+          {
+            "name": "maxTokensPerPage",
+            "description": "Maximum number of tokens per page of results"
+          },
+          {
+            "name": "searchAfterDate",
+            "description": "Filter results published after this date (MM/DD/YYYY)"
+          },
+          {
+            "name": "searchBeforeDate",
+            "description": "Filter results published before this date (MM/DD/YYYY)"
+          },
+          {
+            "name": "searchDomainFilter",
+            "description": "Comma-separated list of domains to limit search results to (max 20)"
+          },
+          {
+            "name": "searchLanguageFilter",
+            "description": "Comma-separated list of ISO 639-1 language codes to filter results by (max 20)"
+          },
+          {
+            "name": "searchRecencyFilter",
+            "description": "Filter search results by publication recency"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "requestOptions",
+        "displayName": "Request Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batching"
+          },
+          {
+            "name": "allowUnauthorizedCerts",
+            "description": "Whether to accept the response even if SSL certificate validation is not possible"
+          },
+          {
+            "name": "proxy",
+            "description": "HTTP proxy to use. If authentication is required it can be defined as follow: http://username:password@myproxy:3128"
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for the server to send response headers (and start the response body) before aborting the request"
+          }
+        ]
+      }
+    ]
+  }
+}

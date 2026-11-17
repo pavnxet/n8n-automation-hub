@@ -1,0 +1,24 @@
+<!-- n8n built-in node reference: n8n-nodes-base.mqtt | source: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mqtt -->
+
+Use the MQTT node to automate work in MQTT, and integrate MQTT with other applications. n8n supports transporting messages with MQTT.
+
+On this page, you'll find a list of operations the MQTT node supports and links to more resources.
+
+> **Credentials:**
+> Refer to [MQTT credentials](https://docs.n8n.io/integrations/builtin/credentials/mqtt) for guidance on setting up authentication.
+
+> **AI tool:** This node can be used as an AI tool. Connect it to the Tools input of an AI Agent node so the agent can call it.
+
+## Operations
+
+Use the MQTT node to send a message. You can set the message topic, and choose whether to send the node input data as part of the message.
+
+## Templates and examples
+
+[Browse MQTT node documentation integration templates](https://n8n.io/integrations/mqtt) or [search all templates](https://n8n.io/workflows/)
+
+## Related resources
+
+n8n provides a trigger node for MQTT. Refer to the [MQTT Trigger node documentation](https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mqtttrigger) for more information.
+
+Refer to [MQTT's documentation](https://mqtt.org/getting-started/) for more information about the service.

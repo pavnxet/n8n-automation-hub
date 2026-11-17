@@ -1,0 +1,53 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate workflows and regenerate the registry
+        run: python3 tools/validate_repo.py
+
+      - name: Fail if the registry is stale
+        run: |
+          if ! git diff --quiet -- automations/registry.json; then
+            echo "::error::automations/registry.json is out of date. Run: python3 tools/validate_repo.py and commit the result."
+            git --no-pager diff --stat -- automations/registry.json
+            exit 1
+          fi
+
+      - name: Check knowledge base integrity
+        run: |
+          python3 - <<'PY'
+          import glob, json, sys
+          files = glob.glob("knowledge-base/**/*.json", recursive=True)
+          bad = []
+          for f in files:
+              try:
+                  json.load(open(f, encoding="utf-8"))
+              except Exception as e:
+                  bad.append((f, str(e)))
+          print(f"checked {len(files)} json files")
+          for f, e in bad:
+              print(f"::error file={f}::{e}")
+          sys.exit(1 if bad else 0)
+          PY
+
+      - name: Search CLI smoke test
+        run: |
+          python3 knowledge-base/tools/search.py "append row" --ops --limit 3
+          python3 knowledge-base/tools/search.py "send email" --limit 3

@@ -1,0 +1,191 @@
+{
+  "id": "n8n-nodes-langchain.lmchatgooglegemini",
+  "name": "Google Gemini Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatgooglegemini",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Google Gemini Chat Model node to use Google's Gemini chat models with conversational agents",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatgooglegemini",
+  "credentials": {
+    "name": "Google Gemini",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/googleai",
+    "slug": "googleai",
+    "json_file": "credentials/googleai.json",
+    "markdown_file": "credentials/googleai.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agents",
+    "chat",
+    "cluster",
+    "conversational",
+    "gemini",
+    "google",
+    "lmchatgooglegemini",
+    "model",
+    "models",
+    "sub"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.lmchatgooglegemini.md",
+      "title": "Google Gemini Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatgooglegemini",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatgooglegemini.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatgooglegemini.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatgooglegemini.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatgooglegemini.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "googlePalmApi"
+  ],
+  "credential_details": [
+    {
+      "name": "googlePalmApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Google Gemini Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "modelName",
+        "displayName": "Model",
+        "type": "options",
+        "default": "models/gemini-2.5-flash",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "eq": 1
+                }
+              }
+            ]
+          }
+        },
+        "description": "The model which will generate the completion. <a href=\"https://developers.generativeai.google/api/rest/generativelanguage/models/list\">Learn more</a>."
+      },
+      {
+        "name": "modelName",
+        "displayName": "Model",
+        "type": "options",
+        "default": "models/gemini-3-flash-preview",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "eq": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "The model which will generate the completion. <a href=\"https://developers.generativeai.google/api/rest/generativelanguage/models/list\">Learn more</a>."
+      },
+      {
+        "name": "modelName",
+        "displayName": "Model",
+        "type": "options",
+        "default": "models/gemini-3-flash-preview",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The model which will generate the completion. <a href=\"https://developers.generativeai.google/api/rest/generativelanguage/models/list\">Learn more</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxOutputTokens",
+            "description": "The maximum number of tokens to generate in the completion"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "topK",
+            "description": "Used to remove \"long tail\" low probability responses. Defaults to -1, which disables it."
+          },
+          {
+            "name": "topP",
+            "description": "Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We generally recommend altering this or temperature b"
+          },
+          {
+            "name": "safetySettings"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

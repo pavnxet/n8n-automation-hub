@@ -1,0 +1,189 @@
+{
+  "id": "n8n-nodes-base.twake",
+  "name": "Twake",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.twake",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Twake node to automate work in Twake, and integrate Twake with other applications. n8n supports sending messages with Twake",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.twake",
+  "credentials": {
+    "name": "Twake",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/twake",
+    "slug": "twake",
+    "json_file": "credentials/twake.json",
+    "markdown_file": "credentials/twake.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Message",
+      "operation": "Send a message",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "send"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "message",
+    "messages",
+    "send",
+    "sending",
+    "twake",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.twake.md",
+      "title": "Twake node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.twake",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.twake.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.twake.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.twake.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.twake.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.twake",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "twakeCloudApi"
+  ],
+  "credential_details": [
+    {
+      "name": "twakeCloudApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Twake"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Message",
+            "value": "message",
+            "description": "Send data to the message app"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send a message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "Channel's ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "content",
+        "displayName": "Content",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "Message content"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "senderIcon",
+            "description": "URL of the image/icon"
+          },
+          {
+            "name": "senderName"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

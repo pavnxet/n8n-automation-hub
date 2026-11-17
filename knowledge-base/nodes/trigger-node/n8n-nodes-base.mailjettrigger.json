@@ -1,0 +1,141 @@
+{
+  "id": "n8n-nodes-base.mailjettrigger",
+  "name": "Mailjet Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.mailjettrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Mailjet is a cloud-based email sending and tracking system. The platform allows professionals to send both marketing emails and transactional emails. It includes tools for designing emails, sending massive volumes and tracking these messages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mailjettrigger",
+  "credentials": {
+    "name": "Mailjet credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mailjet",
+    "slug": "mailjet",
+    "json_file": "credentials/mailjet.json",
+    "markdown_file": "credentials/mailjet.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allows",
+    "based",
+    "both",
+    "cloud",
+    "credentials",
+    "designing",
+    "email",
+    "emails",
+    "mailjet",
+    "mailjettrigger",
+    "marketing",
+    "massive",
+    "messages",
+    "platform",
+    "professionals",
+    "send",
+    "sending",
+    "system",
+    "tools",
+    "tracking",
+    "transactional",
+    "trigger",
+    "volumes"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mailjettrigger.md",
+      "title": "Mailjet Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mailjettrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.mailjettrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.mailjettrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.mailjettrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.mailjettrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mailjetTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mailjetEmailApi"
+  ],
+  "credential_details": [
+    {
+      "name": "mailjetEmailApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Mailjet Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 1,
+    "parameters": [
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "default": "open",
+        "options": [
+          {
+            "name": "email.blocked",
+            "value": "blocked"
+          },
+          {
+            "name": "email.bounce",
+            "value": "bounce"
+          },
+          {
+            "name": "email.open",
+            "value": "open"
+          },
+          {
+            "name": "email.sent",
+            "value": "sent"
+          },
+          {
+            "name": "email.spam",
+            "value": "spam"
+          },
+          {
+            "name": "email.unsub",
+            "value": "unsub"
+          }
+        ],
+        "description": "Determines which resource events the webhook is triggered for"
+      }
+    ]
+  }
+}

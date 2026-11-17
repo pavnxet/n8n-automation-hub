@@ -1,0 +1,478 @@
+{
+  "id": "n8n-nodes-base.disqus",
+  "name": "Disqus",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.disqus",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Disqus node to automate work in Disqus, and integrate Disqus with other applications. n8n has built-in support for a wide range of Disqus features, including returning forums",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.disqus",
+  "credentials": {
+    "name": "Disqus",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/disqus",
+    "slug": "disqus",
+    "json_file": "credentials/disqus.json",
+    "markdown_file": "credentials/disqus.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Forum",
+      "operation": "Return forum details",
+      "description": "",
+      "doc": "",
+      "resource_value": "forum"
+    },
+    {
+      "resource": "Forum",
+      "operation": "Return a list of categories within a forum",
+      "description": "",
+      "doc": "",
+      "resource_value": "forum"
+    },
+    {
+      "resource": "Forum",
+      "operation": "Return a list of threads within a forum",
+      "description": "",
+      "doc": "",
+      "resource_value": "forum"
+    },
+    {
+      "resource": "Forum",
+      "operation": "Return a list of posts within a forum",
+      "description": "",
+      "doc": "",
+      "resource_value": "forum"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "categories",
+    "disqus",
+    "forum",
+    "forums",
+    "including",
+    "list",
+    "posts",
+    "return",
+    "returning",
+    "threads",
+    "within",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.disqus.md",
+      "title": "Disqus node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.disqus",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.disqus.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.disqus.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.disqus.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.disqus.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.disqus",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "disqusApi"
+  ],
+  "credential_details": [
+    {
+      "name": "disqusApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Disqus"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 16,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "forum",
+        "options": [
+          {
+            "name": "Forum",
+            "value": "forum"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Return forum details"
+          },
+          {
+            "name": "Get All Categories",
+            "value": "getCategories",
+            "description": "Return a list of categories within a forum"
+          },
+          {
+            "name": "Get All Threads",
+            "value": "getThreads",
+            "description": "Return a list of threads within a forum"
+          },
+          {
+            "name": "Get All Posts",
+            "value": "getPosts",
+            "description": "Return a list of posts within a forum"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "forum"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Forum Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "forum"
+            ]
+          }
+        },
+        "description": "The short name(aka ID) of the forum to get"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attach"
+          },
+          {
+            "name": "related",
+            "description": "You may specify relations to include with your response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "forum"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Forum Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getPosts"
+            ],
+            "resource": [
+              "forum"
+            ]
+          }
+        },
+        "description": "The short name(aka ID) of the forum to get"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "forum"
+            ],
+            "operation": [
+              "getPosts"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "forum"
+            ],
+            "operation": [
+              "getPosts"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "filters",
+            "description": "You may specify filters for your response"
+          },
+          {
+            "name": "include",
+            "description": "You may specify relations to include with your response"
+          },
+          {
+            "name": "order",
+            "description": "You may specify order to sort your response"
+          },
+          {
+            "name": "query",
+            "description": "You may specify query forChoices: asc, desc your response"
+          },
+          {
+            "name": "related",
+            "description": "You may specify relations to include with your response"
+          },
+          {
+            "name": "since",
+            "description": "Unix timestamp (or ISO datetime standard)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getPosts"
+            ],
+            "resource": [
+              "forum"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Forum Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getCategories"
+            ],
+            "resource": [
+              "forum"
+            ]
+          }
+        },
+        "description": "The short name(aka ID) of the forum to get Categories"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "forum"
+            ],
+            "operation": [
+              "getCategories"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "forum"
+            ],
+            "operation": [
+              "getCategories"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "order",
+            "description": "You may specify order to sort your response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getCategories"
+            ],
+            "resource": [
+              "forum"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Forum Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getThreads"
+            ],
+            "resource": [
+              "forum"
+            ]
+          }
+        },
+        "description": "The short name(aka ID) of the forum to get Threads"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "forum"
+            ],
+            "operation": [
+              "getThreads"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "forum"
+            ],
+            "operation": [
+              "getThreads"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "related",
+            "description": "You may specify relations to include with your response"
+          },
+          {
+            "name": "include",
+            "description": "You may specify relations to include with your response"
+          },
+          {
+            "name": "order",
+            "description": "You may specify order to sort your response"
+          },
+          {
+            "name": "since",
+            "description": "Unix timestamp (or ISO datetime standard)"
+          },
+          {
+            "name": "thread",
+            "description": "Looks up a thread by ID. You may pass us the \"ident\" query type instead of an ID by including \"forum\". You may pass us the \"link\" query type to filter by URL. Y"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getThreads"
+            ],
+            "resource": [
+              "forum"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

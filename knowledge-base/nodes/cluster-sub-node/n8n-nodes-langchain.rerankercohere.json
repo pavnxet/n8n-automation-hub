@@ -1,0 +1,140 @@
+{
+  "id": "n8n-nodes-langchain.rerankercohere",
+  "name": "Reranker Cohere",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.rerankercohere",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Reranker Cohere node allows you to rerank[^1] the resulting chunks from a vector store[^2]. You can connect this node to a vector store",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.rerankercohere",
+  "credentials": {
+    "name": "Cohere credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/cohere",
+    "slug": "cohere",
+    "json_file": "credentials/cohere.json",
+    "markdown_file": "credentials/cohere.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "Choose the reranking model to use. You can find out more about the available models in Cohere's model documentation"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allows",
+    "chunks",
+    "cluster",
+    "cohere",
+    "connect",
+    "credentials",
+    "model",
+    "rerank",
+    "reranker",
+    "rerankercohere",
+    "resulting",
+    "store",
+    "sub",
+    "vector"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.rerankercohere.md",
+      "title": "Reranker Cohere",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.rerankercohere",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.rerankercohere.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.rerankercohere.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.rerankercohere.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.rerankercohere.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.rerankerCohere",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "cohereApi"
+  ],
+  "credential_details": [
+    {
+      "name": "cohereApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Reranker Cohere"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_reranker"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "modelName",
+        "displayName": "Model",
+        "type": "options",
+        "default": "rerank-v3.5",
+        "options": [
+          {
+            "name": "rerank-v3.5",
+            "value": "rerank-v3.5"
+          },
+          {
+            "name": "rerank-english-v3.0",
+            "value": "rerank-english-v3.0"
+          },
+          {
+            "name": "rerank-multilingual-v3.0",
+            "value": "rerank-multilingual-v3.0"
+          }
+        ],
+        "description": "The model that should be used to rerank the documents. <a href=\"https://docs.cohere.com/docs/models\">Learn more</a>."
+      },
+      {
+        "name": "topN",
+        "displayName": "Top N",
+        "type": "number",
+        "default": 3,
+        "description": "The maximum number of documents to return after reranking"
+      }
+    ]
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "id": "n8n-nodes-base.respondtowebhook",
+  "name": "Respond to Webhook",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.respondtowebhook",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Respond to Webhook node to control the response to incoming webhooks. This node works with the Webhook node",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Respond With",
+      "description": "Choose what data to send in the webhook response",
+      "options": [
+        "All Incoming Items: Respond with all the JSON items from the input",
+        "Binary File: Respond with a binary file defined in Response Data Source",
+        "First Incoming Item: Respond with the first incoming item's JSON",
+        "JSON: Respond with a JSON object defined in Response Body",
+        "JWT Token: Respond with a JSON Web Token (JWT)",
+        "No Data: No response payload",
+        "Redirect: Redirect to a URL set in Redirect URL"
+      ]
+    },
+    {
+      "name": "Response Code",
+      "description": "Set the response code to use"
+    },
+    {
+      "name": "Response Headers",
+      "description": "Define the response headers to send"
+    },
+    {
+      "name": "Put Response in Field",
+      "description": "Available when you respond with All Incoming Items or First Incoming Item. Set the field name for the field containing the response data"
+    },
+    {
+      "name": "Enable Streaming",
+      "description": "When enabled, sends the data back to the user using streaming. Requires a trigger configured with the Response mode Streaming"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "code",
+    "control",
+    "core",
+    "enable",
+    "field",
+    "headers",
+    "incoming",
+    "put",
+    "respond",
+    "respondtowebhook",
+    "response",
+    "streaming",
+    "webhook",
+    "webhooks",
+    "works"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.respondtowebhook.md",
+      "title": "Respond to Webhook",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.respondtowebhook.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.respondtowebhook.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.respondtowebhook.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.respondToWebhook",
+  "type_version": 1.5,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "jwtAuth"
+  ],
+  "credential_details": [
+    {
+      "name": "jwtAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "respondWith": [
+            "jwt"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Respond to Webhook"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": "={{((version, parameters) => {\n    const multipleOutputs = version === 1.3 || (version >= 1.4 && parameters.enableResponseOutput);\n    if (multipleOutputs) {\n        return [\n            {\n                type: 'main',\n                displayName: 'Input Data',\n            },\n            {\n                type: 'main',\n                displayName: 'Response',\n            },\n        ];\n    }\n    return ['main'];\n})($nodeVersion, $parameter)}}"
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 14,
+    "parameters": [
+      {
+        "name": "enableResponseOutput",
+        "displayName": "Enable Response Output Branch",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.4
+                }
+              }
+            ]
+          }
+        },
+        "description": "Whether to provide an additional output branch with the response sent to the webhook"
+      },
+      {
+        "name": "generalNotice",
+        "displayName": "Verify that the \"Webhook\" node's \"Respond\" parameter is set to \"Using Respond to Webhook Node\". <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook/\" target=\"_blank\">More details",
+        "type": "notice"
+      },
+      {
+        "name": "respondWith",
+        "displayName": "Respond With",
+        "type": "options",
+        "default": "firstIncomingItem",
+        "options": [
+          {
+            "name": "All Incoming Items",
+            "value": "allIncomingItems",
+            "description": "Respond with all input JSON items"
+          },
+          {
+            "name": "Binary File",
+            "value": "binary",
+            "description": "Respond with incoming file binary data"
+          },
+          {
+            "name": "First Incoming Item",
+            "value": "firstIncomingItem",
+            "description": "Respond with the first input JSON item"
+          },
+          {
+            "name": "JSON",
+            "value": "json",
+            "description": "Respond with a custom JSON body"
+          },
+          {
+            "name": "JWT Token",
+            "value": "jwt",
+            "description": "Respond with a JWT token"
+          },
+          {
+            "name": "No Data",
+            "value": "noData",
+            "description": "Respond with an empty body"
+          },
+          {
+            "name": "Redirect",
+            "value": "redirect",
+            "description": "Respond with a redirect to a given URL"
+          },
+          {
+            "name": "Text",
+            "value": "text",
+            "description": "Respond with a simple text message body"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1,
+              1.1
+            ]
+          }
+        },
+        "description": "The data that should be returned"
+      },
+      {
+        "name": "respondWith",
+        "displayName": "Respond With",
+        "type": "options",
+        "default": "firstIncomingItem",
+        "options": [
+          {
+            "name": "All Incoming Items",
+            "value": "allIncomingItems",
+            "description": "Respond with all input JSON items"
+          },
+          {
+            "name": "Binary File",
+            "value": "binary",
+            "description": "Respond with incoming file binary data"
+          },
+          {
+            "name": "First Incoming Item",
+            "value": "firstIncomingItem",
+            "description": "Respond with the first input JSON item"
+          },
+          {
+            "name": "JSON",
+            "value": "json",
+            "description": "Respond with a custom JSON body"
+          },
+          {
+            "name": "JWT Token",
+            "value": "jwt",
+            "description": "Respond with a JWT token"
+          },
+          {
+            "name": "No Data",
+            "value": "noData",
+            "description": "Respond with an empty body"
+          },
+          {
+            "name": "Redirect",
+            "value": "redirect",
+            "description": "Respond with a redirect to a given URL"
+          },
+          {
+            "name": "Text",
+            "value": "text",
+            "description": "Respond with a simple text message body"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The data that should be returned"
+      },
+      {
+        "name": "credentials",
+        "displayName": "Credentials",
+        "type": "credentials",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "jwt"
+            ]
+          }
+        }
+      },
+      {
+        "name": "webhookNotice",
+        "displayName": "When using expressions, note that this node will only run for the first item in the input data",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "json",
+              "text",
+              "jwt"
+            ]
+          }
+        }
+      },
+      {
+        "name": "redirectURL",
+        "displayName": "Redirect URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "redirect"
+            ]
+          }
+        },
+        "description": "The URL to redirect to"
+      },
+      {
+        "name": "responseBody",
+        "displayName": "Response Body",
+        "type": "json",
+        "default": "{\n  \"myField\": \"value\"\n}",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "json"
+            ]
+          }
+        },
+        "description": "The HTTP response JSON data"
+      },
+      {
+        "name": "payload",
+        "displayName": "Payload",
+        "type": "json",
+        "default": "{\n  \"myField\": \"value\"\n}",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "jwt"
+            ]
+          }
+        },
+        "description": "The payload to include in the JWT token"
+      },
+      {
+        "name": "responseBody",
+        "displayName": "Response Body",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "text"
+            ]
+          }
+        },
+        "description": "The HTTP response text data"
+      },
+      {
+        "name": "responseDataSource",
+        "displayName": "Response Data Source",
+        "type": "options",
+        "default": "automatically",
+        "options": [
+          {
+            "name": "Choose Automatically From Input",
+            "value": "automatically",
+            "description": "Use if input data will contain a single piece of binary data"
+          },
+          {
+            "name": "Specify Myself",
+            "value": "set",
+            "description": "Enter the name of the input field the binary data will be in"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "binary"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputFieldName",
+        "displayName": "Input Field Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "binary"
+            ],
+            "responseDataSource": [
+              "set"
+            ]
+          }
+        },
+        "description": "The name of the node input field with the binary data"
+      },
+      {
+        "name": "contentTypeNotice",
+        "displayName": "To avoid unexpected behavior, add a \"Content-Type\" response header with the appropriate value",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "responseCode",
+            "description": "The HTTP response code to return. Defaults to 200."
+          },
+          {
+            "name": "responseHeaders",
+            "description": "Add headers to the webhook response"
+          },
+          {
+            "name": "responseKey",
+            "description": "The name of the response field to put all items in"
+          },
+          {
+            "name": "enableStreaming",
+            "description": "Whether to enable streaming to the response"
+          }
+        ]
+      }
+    ]
+  }
+}

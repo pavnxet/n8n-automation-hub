@@ -1,0 +1,864 @@
+{
+  "id": "n8n-nodes-base.ghost",
+  "name": "Ghost",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.ghost",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Ghost node to automate work in Ghost, and integrate Ghost with other applications. n8n has built-in support for a wide range of Ghost features, including creating, updating, deleting, and getting posts for the Admin and content API",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.ghost",
+  "credentials": {
+    "name": "Ghost",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/ghost",
+    "slug": "ghost",
+    "json_file": "credentials/ghost.json",
+    "markdown_file": "credentials/ghost.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Admin API / Post",
+      "operation": "Create a post",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Admin API / Post",
+      "operation": "Delete a post",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Admin API / Post",
+      "operation": "Get a post",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Admin API / Post",
+      "operation": "Get all posts",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Admin API / Post",
+      "operation": "Update a post",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Content API / Post",
+      "operation": "Get a post",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Content API / Post",
+      "operation": "Get all posts",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 7,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "admin",
+    "api",
+    "app",
+    "applications",
+    "content",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "ghost",
+    "including",
+    "post",
+    "posts",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.ghost.md",
+      "title": "Ghost node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.ghost",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.ghost.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.ghost.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.ghost.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.ghost.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.ghost",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "ghostAdminApi",
+    "ghostContentApi"
+  ],
+  "credential_details": [
+    {
+      "name": "ghostAdminApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "source": [
+            "adminApi"
+          ]
+        }
+      }
+    },
+    {
+      "name": "ghostContentApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "source": [
+            "contentApi"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Ghost"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 22,
+    "parameters": [
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "options",
+        "default": "contentApi",
+        "options": [
+          {
+            "name": "Admin API",
+            "value": "adminApi"
+          },
+          {
+            "name": "Content API",
+            "value": "contentApi"
+          }
+        ],
+        "description": "Pick where your data comes from, Content or Admin API"
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "post",
+        "options": [
+          {
+            "name": "Post",
+            "value": "post"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a post"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many posts"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a post"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a post"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a post"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many posts"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a post"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Post's title"
+      },
+      {
+        "name": "contentFormat",
+        "displayName": "Content Format",
+        "type": "options",
+        "default": "html",
+        "options": [
+          {
+            "name": "HTML",
+            "value": "html"
+          },
+          {
+            "name": "Mobile Doc",
+            "value": "mobileDoc"
+          },
+          {
+            "name": "Lexical",
+            "value": "lexical"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The format of the post"
+      },
+      {
+        "name": "content",
+        "displayName": "Content",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ],
+            "contentFormat": [
+              "html"
+            ]
+          }
+        },
+        "description": "The content of the post to create"
+      },
+      {
+        "name": "content",
+        "displayName": "Content (JSON)",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ],
+            "contentFormat": [
+              "mobileDoc"
+            ]
+          }
+        },
+        "description": "Mobiledoc is the raw JSON format that Ghost uses to store post contents. <a href=\"https://ghost.org/docs/concepts/posts/#document-storage\">Info</a>."
+      },
+      {
+        "name": "content",
+        "displayName": "Content (JSON)",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ],
+            "contentFormat": [
+              "lexical"
+            ]
+          }
+        },
+        "description": "Lexical is the JSON format returned by the Ghost Default editor"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "authors",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "canonical_url"
+          },
+          {
+            "name": "codeinjection_foot",
+            "description": "The Code Injection allows you inject a small snippet into your Ghost site"
+          },
+          {
+            "name": "codeinjection_head",
+            "description": "The Code Injection allows you inject a small snippet into your Ghost site"
+          },
+          {
+            "name": "featured"
+          },
+          {
+            "name": "meta_description"
+          },
+          {
+            "name": "meta_title"
+          },
+          {
+            "name": "og_description"
+          },
+          {
+            "name": "og_image",
+            "description": "URL of the image"
+          },
+          {
+            "name": "og_title"
+          },
+          {
+            "name": "published_at"
+          },
+          {
+            "name": "slug"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "tags",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "twitter_description"
+          },
+          {
+            "name": "twitter_image",
+            "description": "URL of the image"
+          },
+          {
+            "name": "twitter_title"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "postId",
+        "displayName": "Post ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The ID of the post to delete"
+      },
+      {
+        "name": "by",
+        "displayName": "By",
+        "type": "options",
+        "required": true,
+        "default": "id",
+        "options": [
+          {
+            "name": "ID",
+            "value": "id"
+          },
+          {
+            "name": "Slug",
+            "value": "slug"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi",
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Get the post either by slug or ID"
+      },
+      {
+        "name": "identifier",
+        "displayName": "Identifier",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi",
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The ID or slug of the post to get"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Limit the fields returned in the response object. E.g. for posts fields=title,url."
+          },
+          {
+            "name": "formats"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Limit the fields returned in the response object. E.g. for posts fields=title,url."
+          },
+          {
+            "name": "formats"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi",
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi",
+              "contentApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include",
+            "description": "Tells the API to return additional data related to the resource you have requested"
+          },
+          {
+            "name": "fields",
+            "description": "Limit the fields returned in the response object. E.g. for posts fields=title,url."
+          },
+          {
+            "name": "formats",
+            "description": "By default, only html is returned, however each post and page in Ghost has 2 available formats: html and plaintext"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "contentApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include",
+            "description": "Tells the API to return additional data related to the resource you have requested"
+          },
+          {
+            "name": "fields",
+            "description": "Limit the fields returned in the response object. E.g. for posts fields=title,url."
+          },
+          {
+            "name": "formats"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "postId",
+        "displayName": "Post ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The ID of the post to update"
+      },
+      {
+        "name": "contentFormat",
+        "displayName": "Content Format",
+        "type": "options",
+        "default": "html",
+        "options": [
+          {
+            "name": "HTML",
+            "value": "html"
+          },
+          {
+            "name": "Mobile Doc",
+            "value": "mobileDoc"
+          },
+          {
+            "name": "Lexical",
+            "value": "lexical"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The format of the post"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "authors",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "canonical_url"
+          },
+          {
+            "name": "codeinjection_foot"
+          },
+          {
+            "name": "codeinjection_head"
+          },
+          {
+            "name": "content"
+          },
+          {
+            "name": "contentJson",
+            "description": "Mobiledoc is the raw JSON format that Ghost uses to store post contents. <a href=\"https://ghost.org/docs/concepts/posts/#document-storage\">Info.</a>."
+          },
+          {
+            "name": "contentJson",
+            "description": "Lexical is the JSON format returned by the Ghost Default editor"
+          },
+          {
+            "name": "featured"
+          },
+          {
+            "name": "meta_description"
+          },
+          {
+            "name": "meta_title"
+          },
+          {
+            "name": "og_description"
+          },
+          {
+            "name": "og_image",
+            "description": "URL of the image"
+          },
+          {
+            "name": "og_title"
+          },
+          {
+            "name": "published_at"
+          },
+          {
+            "name": "slug"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "tags",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "title",
+            "description": "Post's title"
+          },
+          {
+            "name": "twitter_description"
+          },
+          {
+            "name": "twitter_image",
+            "description": "URL of the image"
+          },
+          {
+            "name": "twitter_title"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "source": [
+              "adminApi"
+            ],
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

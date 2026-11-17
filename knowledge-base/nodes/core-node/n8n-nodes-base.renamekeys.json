@@ -1,0 +1,132 @@
+{
+  "id": "n8n-nodes-base.renamekeys",
+  "name": "Rename Keys",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.renamekeys",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Rename Keys node to rename the keys of a key-value pair in n8n",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.renamekeys",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Current Key Name",
+      "description": "The current name of the key you want to rename"
+    },
+    {
+      "name": "New Key Name",
+      "description": "The new name you want to assign to the key"
+    },
+    {
+      "name": "Replace With",
+      "description": "Enter the new name you want to assign to the key(s) that match the Regular Expression"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "core",
+    "current",
+    "key",
+    "keys",
+    "name",
+    "new",
+    "pair",
+    "rename",
+    "renamekeys",
+    "replace",
+    "value"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.renamekeys.md",
+      "title": "Rename Keys",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.renamekeys",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.renamekeys.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.renamekeys.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.renamekeys.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.renamekeys.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.renameKeys",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Rename Keys",
+    "color": "#772244"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "keys",
+        "displayName": "Keys",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "key",
+            "values": [
+              {
+                "name": "currentKey",
+                "displayName": "Current Key Name",
+                "type": "string"
+              },
+              {
+                "name": "newKey",
+                "displayName": "New Key Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "description": "Adds a key which should be renamed"
+      },
+      {
+        "name": "additionalOptions",
+        "displayName": "Additional Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "regexReplacement",
+            "description": "Adds a regular expression"
+          }
+        ]
+      }
+    ]
+  }
+}

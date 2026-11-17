@@ -1,0 +1,481 @@
+{
+  "id": "n8n-nodes-base.gong",
+  "name": "Gong",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.gong",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Gong node to automate work in Gong and integrate Gong with other applications. n8n has built-in support for a wide range of Gong features, which includes getting one or more calls and users",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gong",
+  "credentials": {
+    "name": "Gong credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/gong",
+    "slug": "gong",
+    "json_file": "credentials/gong.json",
+    "markdown_file": "credentials/gong.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Call",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "call",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Call",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "call",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "User",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "getAll"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "call",
+    "calls",
+    "credentials",
+    "get",
+    "getting",
+    "gong",
+    "many",
+    "user",
+    "users",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.gong.md",
+      "title": "Gong node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gong",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.gong.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.gong.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.gong.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.gong.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.gong",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "gongApi",
+    "gongOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "gongApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "gongOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Gong"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 15,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "call",
+        "options": [
+          {
+            "name": "Call",
+            "value": "call"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve data for a specific call"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve a list of calls"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ]
+          }
+        }
+      },
+      {
+        "name": "call",
+        "displayName": "Call to Get",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "properties",
+            "description": "The Call properties to include in the returned results. Choose from a list, or specify IDs using an <a href=\"https://docs.n8n.io/code-examples/expressions/\">exp"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fromDateTime",
+            "description": "Returns calls that started on or after the specified date and time. If not provided, list starts with earliest call. For web-conference calls recorded by Gong, "
+          },
+          {
+            "name": "toDateTime",
+            "description": "Returns calls that started up to but excluding specified date and time. If not provided, list ends with most recent call. For web-conference calls recorded by G"
+          },
+          {
+            "name": "workspaceId",
+            "description": "Return only the calls belonging to this workspace"
+          },
+          {
+            "name": "callIds",
+            "description": "List of calls IDs to be filtered"
+          },
+          {
+            "name": "primaryUserIds",
+            "description": "Return only the calls hosted by the specified user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "properties",
+            "description": "The Call properties to include in the returned results. Choose from a list, or specify IDs using an <a href=\"https://docs.n8n.io/code-examples/expressions/\">exp"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve data for a specific user"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve a list of users"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "user",
+        "displayName": "User to Get",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "createdFromDateTime",
+            "description": "An optional user creation time lower limit, if supplied the API will return only the users created at or after this time"
+          },
+          {
+            "name": "createdToDateTime",
+            "description": "An optional user creation time upper limit, if supplied the API will return only the users created before this time"
+          },
+          {
+            "name": "userIds",
+            "description": "Set of Gong's unique numeric identifiers for the users (up to 20 digits)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "requestOptions",
+        "displayName": "Request Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batching"
+          },
+          {
+            "name": "allowUnauthorizedCerts",
+            "description": "Whether to accept the response even if SSL certificate validation is not possible"
+          },
+          {
+            "name": "proxy",
+            "description": "HTTP proxy to use. If authentication is required it can be defined as follow: http://username:password@myproxy:3128"
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for the server to send response headers (and start the response body) before aborting the request"
+          }
+        ]
+      }
+    ]
+  }
+}

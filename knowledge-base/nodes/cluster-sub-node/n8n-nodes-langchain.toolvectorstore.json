@@ -1,0 +1,156 @@
+{
+  "id": "n8n-nodes-langchain.toolvectorstore",
+  "name": "Vector Store Question Answer Tool",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.toolvectorstore",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Vector Store Question Answer node is a tool[^1] that allows an agent[^2] to summarize results and answer questions based on chunks from a vector store[^3]",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolvectorstore",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Description of Data",
+      "description": "Enter a description of the data in the vector store"
+    },
+    {
+      "name": "Limit",
+      "description": "The maximum number of results to return"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agent",
+    "allows",
+    "answer",
+    "based",
+    "chunks",
+    "cluster",
+    "data",
+    "description",
+    "limit",
+    "question",
+    "questions",
+    "results",
+    "store",
+    "sub",
+    "summarize",
+    "tool",
+    "toolvectorstore",
+    "vector"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "Yl56nEscwQQAbBUeWfvp",
+      "name": "tools-link"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.toolvectorstore.md",
+      "title": "Vector Store Question Answer Tool node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolvectorstore",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolvectorstore.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.toolvectorstore.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.toolvectorstore.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolvectorstore.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Answer questions with a vector store"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      {
+        "displayName": "Vector Store",
+        "maxConnections": 1,
+        "type": "ai_vectorStore",
+        "required": true
+      },
+      {
+        "displayName": "Model",
+        "maxConnections": 1,
+        "type": "ai_languageModel",
+        "required": true
+      }
+    ],
+    "outputs": [
+      "ai_tool"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI agent. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "name",
+        "displayName": "Data Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Name of the data in vector store. This will be used to fill this tool description: Useful for when you need to answer questions about [name]. Whenever you need information about [data description], you should ALWAYS use "
+      },
+      {
+        "name": "description",
+        "displayName": "Description of Data",
+        "type": "string",
+        "description": "Describe the data in vector store. This will be used to fill this tool description: Useful for when you need to answer questions about [name]. Whenever you need information about [data description], you should ALWAYS use"
+      },
+      {
+        "name": "topK",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 4,
+        "description": "The maximum number of results to return"
+      }
+    ]
+  }
+}

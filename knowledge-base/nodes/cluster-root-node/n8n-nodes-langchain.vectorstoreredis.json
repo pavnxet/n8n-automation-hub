@@ -1,0 +1,557 @@
+{
+  "id": "n8n-nodes-langchain.vectorstoreredis",
+  "name": "Redis Vector Store",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.vectorstoreredis",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Redis Vector Store node to interact with your Redis database as a vector store[^1]. You can insert documents into the vector database, get documents from the vector database, retrieve documents using a retriever connected to a chain[^2], or connect it directly to an agent[^3] to use as a tool[^4]",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreredis",
+  "credentials": {
+    "name": "Redis credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/redis",
+    "slug": "redis",
+    "json_file": "credentials/redis.json",
+    "markdown_file": "credentials/redis.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Rerank Results"
+    },
+    {
+      "name": "Get Many parameters",
+      "description": "This Operation Mode includes the Metadata Filter Node option. From node version 1.4, it also includes the Metadata Schema Node option",
+      "options": [
+        "Prompt: Enter the search query"
+      ]
+    },
+    {
+      "name": "Insert Documents parameters",
+      "description": "From node version 1.4, this Operation Mode includes the Metadata Schema Node option"
+    },
+    {
+      "name": "Retrieve Documents (As Vector Store for Chain/Tool) parameters",
+      "description": "This Operation Mode includes the Metadata Filter Node option. From node version 1.4, it also includes the Metadata Schema Node option"
+    },
+    {
+      "name": "Retrieve Documents (As Tool for AI Agent) parameters",
+      "description": "This Operation Mode includes the Metadata Filter Node option. From node version 1.4, it also includes the Metadata Schema Node option",
+      "options": [
+        "Name: The name of the vector store"
+      ]
+    },
+    {
+      "name": "Include Metadata",
+      "description": "Whether to include document metadata"
+    },
+    {
+      "name": "Metadata Filter",
+      "description": "The Metadata Filter option limits results to documents whose metadata matches a filter. It's available for the Get Many, Retrieve Documents (As Vector Store for Chain/Tool), and Retrieve Documents (As Tool for AI Agent) operation modes. The filter syntax depends on the node version"
+    },
+    {
+      "name": "Redis query filters in node version 1.4",
+      "description": "From node version 1.4, Metadata Filter takes a Redis query expression. You can filter on tag, numeric, text, and geo fields, and combine conditions with AND and OR logic. A filter only works on a field that the index stores with a matching type. Refer to Metadata Schema to set field types",
+      "options": [
+        "Tag",
+        "Several tags",
+        "Numeric range",
+        "Combined",
+        "Text"
+      ]
+    },
+    {
+      "name": "Comma-separated filters in node version 1.3 and earlier",
+      "description": "In node version 1.3 and earlier, Metadata Filter takes a comma-separated list of words, for example Item1,Item2,Item3. The node runs an OR query, so a document matches if at least one of the words matches"
+    },
+    {
+      "name": "Metadata Schema",
+      "description": "The Metadata Schema option sets the type of each metadata field in the index. It's available from node version 1.4 for the Insert Documents, Get Many, Retrieve Documents (As Vector Store for Chain/Tool), and Retrieve Documents (As Tool for AI Agent) operation modes",
+      "options": [
+        "tag",
+        "text",
+        "numeric",
+        "geo",
+        "Option",
+        "sortable",
+        "separator",
+        "caseSensitive",
+        "weight",
+        "noStem",
+        "noindex",
+        "Metadata values",
+        "Numbers or dates",
+        "Arrays",
+        "Strings in the form \"<longitude>,<latitude>\"",
+        "Any other strings"
+      ]
+    },
+    {
+      "name": "Redis Configuration Options",
+      "description": "Available for all operation modes:",
+      "options": [
+        "Key Prefix: Enter the key prefix for storing documents (default: doc:)"
+      ]
+    },
+    {
+      "name": "Insert Options",
+      "description": "Available for the Insert Documents operation mode:"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agent",
+    "chain",
+    "cluster",
+    "comma",
+    "connect",
+    "connected",
+    "credentials",
+    "database",
+    "directly",
+    "documents",
+    "earlier",
+    "filter",
+    "filters",
+    "get",
+    "include",
+    "insert",
+    "interact",
+    "many",
+    "metadata",
+    "options",
+    "parameters",
+    "query",
+    "redis",
+    "rerank",
+    "results",
+    "retrieve",
+    "retriever",
+    "root",
+    "schema",
+    "separated",
+    "store",
+    "tool",
+    "vector",
+    "vectorstoreredis",
+    "version"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "eiIkcF23uZ2A8BkFVQM5",
+      "name": "Operation Mode"
+    },
+    {
+      "id": "KcxcfJWhy81cjCSzO4vQ",
+      "name": "vector-store-rerank-results"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    },
+    {
+      "id": "dN5Se1JVH7wYGtmN4n0v",
+      "name": "self-hosted-ai-starter-kit"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.vectorstoreredis.md",
+      "title": "Redis Vector Store node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreredis",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreredis.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.vectorstoreredis.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.vectorstoreredis.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreredis.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.vectorStoreRedis",
+  "type_version": 1.4,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3,
+    1.4
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "redis"
+  ],
+  "credential_details": [
+    {
+      "name": "redis",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Redis Vector Store"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{\n\t\t\t((parameters) => {\n\t\t\t\tconst mode = parameters?.mode;\n\t\t\t\tconst useReranker = parameters?.useReranker;\n\t\t\t\tconst inputs = [{ displayName: \"Embedding\", type: \"ai_embedding\", required: true, maxConnections: 1}]\n\n\t\t\t\tif (['load', 'retrieve', 'retrieve-as-tool'].includes(mode) && useReranker) {\n\t\t\t\t\tinputs.push({ displayName: \"Reranker\", type: \"ai_reranker\", required: true, maxConnections: 1})\n\t\t\t\t}\n\n\t\t\t\tif (mode === 'retrieve-as-tool') {\n\t\t\t\t\treturn inputs;\n\t\t\t\t}\n\n\t\t\t\tif (['insert', 'load', 'update'].includes(mode)) {\n\t\t\t\t\tinputs.push({ displayName: \"\", type: \"main\"})\n\t\t\t\t}\n\n\t\t\t\tif (['insert'].includes(mode)) {\n\t\t\t\t\tinputs.push({ displayName: \"Document\", type: \"ai_document\", required: true, maxConnections: 1})\n\t\t\t\t}\n\t\t\t\treturn inputs\n\t\t\t})($parameter)\n\t\t}}",
+    "outputs": "={{\n\t\t\t((parameters) => {\n\t\t\t\tconst mode = parameters?.mode ?? 'retrieve';\n\n\t\t\t\tif (mode === 'retrieve-as-tool') {\n\t\t\t\t\treturn [{ displayName: \"Tool\", type: \"ai_tool\"}]\n\t\t\t\t}\n\n\t\t\t\tif (mode === 'retrieve') {\n\t\t\t\t\treturn [{ displayName: \"Vector Store\", type: \"ai_vectorStore\"}]\n\t\t\t\t}\n\t\t\t\treturn [{ displayName: \"\", type: \"main\"}]\n\t\t\t})($parameter)\n\t\t}}"
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 16,
+    "parameters": [
+      {
+        "name": "ragStarterCallout",
+        "displayName": "Tip: Get a feel for vector stores in n8n with our",
+        "type": "callout"
+      },
+      {
+        "name": "mode",
+        "displayName": "Operation Mode",
+        "type": "options",
+        "default": "retrieve",
+        "options": [
+          {
+            "name": "Get Many",
+            "value": "load",
+            "description": "Get many ranked documents from vector store for query"
+          },
+          {
+            "name": "Insert Documents",
+            "value": "insert",
+            "description": "Insert documents into vector store"
+          },
+          {
+            "name": "Retrieve Documents (As Vector Store for Chain/Tool)",
+            "value": "retrieve",
+            "description": "Retrieve documents from vector store to be used as vector store with AI nodes"
+          },
+          {
+            "name": "Retrieve Documents (As Tool for AI Agent)",
+            "value": "retrieve-as-tool",
+            "description": "Retrieve documents from vector store to be used as tool with AI nodes"
+          },
+          {
+            "name": "Update Documents",
+            "value": "update",
+            "description": "Update documents in vector store by ID"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store retriever. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_retriever'>Insert one</a>",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "retrieve"
+            ]
+          }
+        }
+      },
+      {
+        "name": "toolName",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1.2
+                }
+              }
+            ],
+            "mode": [
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Name of the vector store"
+      },
+      {
+        "name": "toolDescription",
+        "displayName": "Description",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Explain to the LLM what this tool does, a good, specific description would allow LLMs to produce expected results much more often"
+      },
+      {
+        "name": "redisIndex",
+        "displayName": "Redis Index",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        }
+      },
+      {
+        "name": "upgradeNotice",
+        "displayName": "A newer version of this node supports advanced filtering and a custom metadata schema. To use it, add a new Redis Vector Store node with a new index, then reimport your documents. Don't point the new node at an index created by this version: metadata will be missing and filters will return wrong results. This node and its index keep working as they are.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1.3
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "embeddingBatchSize",
+        "displayName": "Embedding Batch Size",
+        "type": "number",
+        "default": 200,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "insert"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Number of documents to embed in a single batch"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "keyPrefix",
+            "description": "Prefix for Redis keys storing the documents"
+          },
+          {
+            "name": "overwriteDocuments",
+            "description": "Whether existing documents and the index should be overwritten"
+          },
+          {
+            "name": "metadataKey",
+            "description": "The hash key to be used to store the metadata of the document"
+          },
+          {
+            "name": "metadataSchema",
+            "description": "JSON array defining metadata field types for indexing. If not provided, schema will be inferred from documents. Example: <code>[{\"name\": \"category\", \"type\": \"ta"
+          },
+          {
+            "name": "contentKey",
+            "description": "The hash key to be used to store the content of the document"
+          },
+          {
+            "name": "vectorKey",
+            "description": "The hash key to be used to store the embedding of the document"
+          },
+          {
+            "name": "ttl",
+            "description": "Time-to-live for the documents in seconds"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "insert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load"
+            ]
+          }
+        },
+        "description": "Search prompt to retrieve matching documents from the vector store using similarity-based ranking"
+      },
+      {
+        "name": "topK",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 4,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Number of top results to fetch from vector store"
+      },
+      {
+        "name": "includeDocumentMetadata",
+        "displayName": "Include Metadata",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Whether or not to include document metadata"
+      },
+      {
+        "name": "useReranker",
+        "displayName": "Rerank Results",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve",
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Whether or not to rerank results"
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of an embedding entry"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "metadataFilter",
+            "description": "The comma-separated list of words by which to apply additional full-text metadata filtering"
+          },
+          {
+            "name": "advancedFilter",
+            "description": "Redis query filter expression. Supports Tag, Numeric, Text, Geo filters with AND/OR logic. Example: <code>@category:{electronics} @price:[0 100]</code>"
+          },
+          {
+            "name": "metadataSchema",
+            "description": "JSON array defining metadata field types for indexing. If not provided, schema will be inferred from documents. Example: <code>[{\"name\": \"category\", \"type\": \"ta"
+          },
+          {
+            "name": "keyPrefix",
+            "description": "Prefix for Redis keys storing the documents"
+          },
+          {
+            "name": "metadataKey",
+            "description": "The hash key to be used to store the metadata of the document"
+          },
+          {
+            "name": "contentKey",
+            "description": "The hash key to be used to store the content of the document"
+          },
+          {
+            "name": "vectorKey",
+            "description": "The hash key to be used to store the embedding of the document"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve-as-tool"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "metadataFilter",
+            "description": "The comma-separated list of words by which to apply additional full-text metadata filtering"
+          },
+          {
+            "name": "advancedFilter",
+            "description": "Redis query filter expression. Supports Tag, Numeric, Text, Geo filters with AND/OR logic. Example: <code>@category:{electronics} @price:[0 100]</code>"
+          },
+          {
+            "name": "metadataSchema",
+            "description": "JSON array defining metadata field types for indexing. If not provided, schema will be inferred from documents. Example: <code>[{\"name\": \"category\", \"type\": \"ta"
+          },
+          {
+            "name": "keyPrefix",
+            "description": "Prefix for Redis keys storing the documents"
+          },
+          {
+            "name": "metadataKey",
+            "description": "The hash key to be used to store the metadata of the document"
+          },
+          {
+            "name": "contentKey",
+            "description": "The hash key to be used to store the content of the document"
+          },
+          {
+            "name": "vectorKey",
+            "description": "The hash key to be used to store the embedding of the document"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "retrieve"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

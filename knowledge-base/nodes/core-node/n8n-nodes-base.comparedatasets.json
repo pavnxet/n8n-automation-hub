@@ -1,0 +1,284 @@
+{
+  "id": "n8n-nodes-base.comparedatasets",
+  "name": "Compare Datasets",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.comparedatasets",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Compare Datasets node helps you compare data from two input streams",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.comparedatasets",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Fields to Skip Comparing",
+      "description": "Enter field names that you want to ignore in the comparison"
+    },
+    {
+      "name": "Disable Dot Notation",
+      "description": "Whether to disallow referencing child fields using parent.child in the field name (turned on) or allow it (turned off, default)"
+    },
+    {
+      "name": "Multiple Matches",
+      "description": "Choose how to handle duplicate data. The default is Include All Matches. You can choose Include First Match Only"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "compare",
+    "comparedatasets",
+    "comparing",
+    "core",
+    "data",
+    "datasets",
+    "disable",
+    "dot",
+    "fields",
+    "helps",
+    "input",
+    "matches",
+    "multiple",
+    "notation",
+    "skip",
+    "streams"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.comparedatasets.md",
+      "title": "Compare Datasets",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.comparedatasets",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.comparedatasets.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.comparedatasets.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.comparedatasets.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.comparedatasets.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.compareDatasets",
+  "type_version": 2.3,
+  "type_versions": [
+    1,
+    2,
+    2.1,
+    2.2,
+    2.3
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Compare Datasets"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main",
+      "main"
+    ],
+    "outputs": [
+      "main",
+      "main",
+      "main",
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "infoBox",
+        "displayName": "Items from different branches are paired together when the fields below match. If paired, the rest of the fields are compared to determine whether the items are the same or different",
+        "type": "notice"
+      },
+      {
+        "name": "mergeByFields",
+        "displayName": "Fields to Match",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "field1": "",
+              "field2": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field1",
+                "displayName": "Input A Field",
+                "type": "string"
+              },
+              {
+                "name": "field2",
+                "displayName": "Input B Field",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "resolve",
+        "displayName": "When There Are Differences",
+        "type": "options",
+        "default": "preferInput2",
+        "options": [
+          {
+            "name": "Use Input A Version",
+            "value": "preferInput1"
+          },
+          {
+            "name": "Use Input B Version",
+            "value": "preferInput2"
+          },
+          {
+            "name": "Use a Mix of Versions",
+            "value": "mix",
+            "description": "Output uses different inputs for different fields"
+          },
+          {
+            "name": "Include Both Versions",
+            "value": "includeBoth",
+            "description": "Output contains all data (but structure more complex)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1,
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "resolve",
+        "displayName": "When There Are Differences",
+        "type": "options",
+        "default": "includeBoth",
+        "options": [
+          {
+            "name": "Use Input A Version",
+            "value": "preferInput1"
+          },
+          {
+            "name": "Use Input B Version",
+            "value": "preferInput2"
+          },
+          {
+            "name": "Use a Mix of Versions",
+            "value": "mix",
+            "description": "Output uses different inputs for different fields"
+          },
+          {
+            "name": "Include Both Versions",
+            "value": "includeBoth",
+            "description": "Output contains all data (but structure more complex)"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              1,
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "fuzzyCompare",
+        "displayName": "Fuzzy Compare",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Whether to tolerate small type differences when comparing fields. E.g. the number 3 and the string '3' are treated as the same."
+      },
+      {
+        "name": "preferWhenMix",
+        "displayName": "Prefer",
+        "type": "options",
+        "default": "input1",
+        "options": [
+          {
+            "name": "Input A Version",
+            "value": "input1"
+          },
+          {
+            "name": "Input B Version",
+            "value": "input2"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resolve": [
+              "mix"
+            ]
+          }
+        }
+      },
+      {
+        "name": "exceptWhenMix",
+        "displayName": "For Everything Except",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resolve": [
+              "mix"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "skipFields",
+            "description": "Fields that shouldn't be included when checking whether two items are the same"
+          },
+          {
+            "name": "fuzzyCompare",
+            "description": "Whether to tolerate small type differences when comparing fields. E.g. the number 3 and the string '3' are treated as the same."
+          },
+          {
+            "name": "disableDotNotation",
+            "description": "Whether to disallow referencing child fields using `parent.child` in the field name"
+          },
+          {
+            "name": "multipleMatches"
+          }
+        ]
+      }
+    ]
+  }
+}

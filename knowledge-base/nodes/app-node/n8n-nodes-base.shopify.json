@@ -1,0 +1,990 @@
+{
+  "id": "n8n-nodes-base.shopify",
+  "name": "Shopify",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.shopify",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Shopify node to automate work in Shopify, and integrate Shopify with other applications. n8n has built-in support for a wide range of Shopify features, including creating, updating, deleting, and getting orders and products",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.shopify",
+  "credentials": {
+    "name": "Shopify",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/shopify",
+    "slug": "shopify",
+    "json_file": "credentials/shopify.json",
+    "markdown_file": "credentials/shopify.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Order",
+      "operation": "Create an order",
+      "description": "",
+      "doc": "",
+      "resource_value": "order",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Order",
+      "operation": "Delete an order",
+      "description": "",
+      "doc": "",
+      "resource_value": "order",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Order",
+      "operation": "Get an order",
+      "description": "",
+      "doc": "",
+      "resource_value": "order",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Order",
+      "operation": "Get all orders",
+      "description": "",
+      "doc": "",
+      "resource_value": "order",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Order",
+      "operation": "Update an order",
+      "description": "",
+      "doc": "",
+      "resource_value": "order",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Product",
+      "operation": "Create a product",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Product",
+      "operation": "Delete a product",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Product",
+      "operation": "Get a product",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Product",
+      "operation": "Get all products",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Product",
+      "operation": "Update a product",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 10,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "order",
+    "orders",
+    "product",
+    "products",
+    "shopify",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.shopify.md",
+      "title": "Shopify node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.shopify",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.shopify.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.shopify.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.shopify.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.shopify.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.shopify",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "shopifyApi",
+    "shopifyAccessTokenApi",
+    "shopifyOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "shopifyApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiKey"
+          ]
+        }
+      }
+    },
+    {
+      "name": "shopifyAccessTokenApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "shopifyOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Shopify"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 25,
+    "parameters": [
+      {
+        "name": "apiVersion",
+        "displayName": "Shopify API Version: 2024-07",
+        "type": "notice"
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiKey",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          },
+          {
+            "name": "API Key",
+            "value": "apiKey"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "order",
+        "options": [
+          {
+            "name": "Order",
+            "value": "order"
+          },
+          {
+            "name": "Product",
+            "value": "product"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an order"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an order"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an order"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many orders"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an order"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "order"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "billingAddressUi"
+          },
+          {
+            "name": "discountCodesUi"
+          },
+          {
+            "name": "email",
+            "description": "The customer's email address"
+          },
+          {
+            "name": "fulfillmentStatus",
+            "description": "The order's status in terms of fulfilled line items"
+          },
+          {
+            "name": "inventoryBehaviour",
+            "description": "The behaviour to use when updating inventory"
+          },
+          {
+            "name": "locationId",
+            "description": "The ID of the physical location where the order was processed. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">e"
+          },
+          {
+            "name": "note",
+            "description": "An optional note that a shop owner can attach to the order"
+          },
+          {
+            "name": "sendFulfillmentReceipt",
+            "description": "Whether to send a shipping confirmation to the customer"
+          },
+          {
+            "name": "sendReceipt",
+            "description": "Whether to send an order confirmation to the customer"
+          },
+          {
+            "name": "shippingAddressUi"
+          },
+          {
+            "name": "sourceName",
+            "description": "Where the order originated. Can be set only during order creation, and is not writeable afterwards."
+          },
+          {
+            "name": "tags",
+            "description": "Tags attached to the order, formatted as a string of comma-separated values"
+          },
+          {
+            "name": "test",
+            "description": "Whether this is a test order"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "order"
+            ]
+          }
+        }
+      },
+      {
+        "name": "limeItemsUi",
+        "displayName": "Line Items",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "lineItemValues",
+            "values": [
+              {
+                "name": "productId",
+                "displayName": "Product Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "variantId",
+                "displayName": "Variant ID",
+                "type": "string"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "grams",
+                "displayName": "Grams",
+                "type": "string"
+              },
+              {
+                "name": "quantity",
+                "displayName": "Quantity",
+                "type": "number"
+              },
+              {
+                "name": "price",
+                "displayName": "Price",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "order"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "orderId",
+        "displayName": "Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "order"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "orderId",
+        "displayName": "Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "order"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Fields the order will return, formatted as a string of comma-separated values. By default all the fields are returned."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "order"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "order"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "order"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attributionAppId",
+            "description": "Show orders attributed to a certain app, specified by the app ID. Set as current to show orders for the app currently consuming the API."
+          },
+          {
+            "name": "createdAtMin",
+            "description": "Show orders created at or after date"
+          },
+          {
+            "name": "createdAtMax",
+            "description": "Show orders created at or before date"
+          },
+          {
+            "name": "financialStatus",
+            "description": "Filter orders by their financial status"
+          },
+          {
+            "name": "fulfillmentStatus",
+            "description": "Filter orders by their fulfillment status"
+          },
+          {
+            "name": "fields",
+            "description": "Fields the orders will return, formatted as a string of comma-separated values. By default all the fields are returned."
+          },
+          {
+            "name": "ids",
+            "description": "Retrieve only orders specified by a comma-separated list of order IDs"
+          },
+          {
+            "name": "processedAtMax",
+            "description": "Show orders imported at or before date"
+          },
+          {
+            "name": "processedAtMin",
+            "description": "Show orders imported at or after date"
+          },
+          {
+            "name": "status",
+            "description": "Filter orders by their status"
+          },
+          {
+            "name": "sinceId",
+            "description": "Show orders after the specified ID"
+          },
+          {
+            "name": "updatedAtMax",
+            "description": "Show orders last updated at or after date"
+          },
+          {
+            "name": "updatedAtMin",
+            "description": "Show orders last updated at or before date"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "order"
+            ]
+          }
+        }
+      },
+      {
+        "name": "orderId",
+        "displayName": "Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "order"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "email",
+            "description": "The customer's email address"
+          },
+          {
+            "name": "locationId",
+            "description": "The ID of the physical location where the order was processed. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">e"
+          },
+          {
+            "name": "note",
+            "description": "An optional note that a shop owner can attach to the order"
+          },
+          {
+            "name": "shippingAddressUi"
+          },
+          {
+            "name": "sourceName",
+            "description": "Where the order originated. Can be set only during order creation, and is not writeable afterwards."
+          },
+          {
+            "name": "tags",
+            "description": "Tags attached to the order, formatted as a string of comma-separated values"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "order"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a product"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a product"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a product"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many products"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a product"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "product"
+            ]
+          }
+        },
+        "description": "The name of the product"
+      },
+      {
+        "name": "productId",
+        "displayName": "Product ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "body_html",
+            "description": "A description of the product. Supports HTML formatting."
+          },
+          {
+            "name": "handle",
+            "description": "A unique human-friendly string for the product. Automatically generated from the product's title. Used by the Liquid templating language to refer to objects."
+          },
+          {
+            "name": "images",
+            "description": "A list of product image objects, each one representing an image associated with the product"
+          },
+          {
+            "name": "productOptions",
+            "description": "The custom product property names like Size, Color, and Material. You can add up to 3 options of up to 255 characters each."
+          },
+          {
+            "name": "product_type",
+            "description": "A categorization for the product used for filtering and searching products"
+          },
+          {
+            "name": "published_at",
+            "description": "The date and time (ISO 8601 format) when the product was published. Can be set to null to unpublish the product from the Online Store channel."
+          },
+          {
+            "name": "published_scope"
+          },
+          {
+            "name": "tags",
+            "description": "A string of comma-separated tags that are used for filtering and search. A product can have up to 250 tags. Each tag can have up to 255 characters."
+          },
+          {
+            "name": "template_suffix",
+            "description": "The suffix of the Liquid template used for the product page. If this property is specified, then the product page uses a template called \"product.suffix.liquid\""
+          },
+          {
+            "name": "vendor",
+            "description": "The name of the product's vendor"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "product"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "body_html",
+            "description": "A description of the product. Supports HTML formatting."
+          },
+          {
+            "name": "handle",
+            "description": "A unique human-friendly string for the product. Automatically generated from the product's title. Used by the Liquid templating language to refer to objects."
+          },
+          {
+            "name": "images",
+            "description": "A list of product image objects, each one representing an image associated with the product"
+          },
+          {
+            "name": "productOptions",
+            "description": "The custom product property names like Size, Color, and Material. You can add up to 3 options of up to 255 characters each."
+          },
+          {
+            "name": "product_type",
+            "description": "A categorization for the product used for filtering and searching products"
+          },
+          {
+            "name": "published_at",
+            "description": "The date and time (ISO 8601 format) when the product was published. Can be set to null to unpublish the product from the Online Store channel."
+          },
+          {
+            "name": "published_scope"
+          },
+          {
+            "name": "tags",
+            "description": "A string of comma-separated tags that are used for filtering and search. A product can have up to 250 tags. Each tag can have up to 255 characters."
+          },
+          {
+            "name": "template_suffix",
+            "description": "The suffix of the Liquid template used for the product page. If this property is specified, then the product page uses a template called \"product.suffix.liquid\""
+          },
+          {
+            "name": "title",
+            "description": "The name of the product"
+          },
+          {
+            "name": "vendor",
+            "description": "The name of the product's vendor"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "product"
+            ]
+          }
+        }
+      },
+      {
+        "name": "productId",
+        "displayName": "Product ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "productId",
+        "displayName": "Product ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Fields the product will return, formatted as a string of comma-separated values. By default all the fields are returned."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "product"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "collection_id",
+            "description": "Filter results by product collection ID"
+          },
+          {
+            "name": "created_at_max",
+            "description": "Show products created before date"
+          },
+          {
+            "name": "created_at_min",
+            "description": "Show products created after date"
+          },
+          {
+            "name": "fields",
+            "description": "Show only certain fields, specified by a comma-separated list of field names"
+          },
+          {
+            "name": "handle",
+            "description": "Filter results by product handle"
+          },
+          {
+            "name": "ids",
+            "description": "Return only products specified by a comma-separated list of product IDs"
+          },
+          {
+            "name": "presentment_currencies",
+            "description": "Return presentment prices in only certain currencies, specified by a comma-separated list of ISO 4217 currency codes"
+          },
+          {
+            "name": "product_type",
+            "description": "Filter results by product type"
+          },
+          {
+            "name": "published_at_max",
+            "description": "Show products published before date"
+          },
+          {
+            "name": "published_at_min",
+            "description": "Show products published after date"
+          },
+          {
+            "name": "published_status",
+            "description": "Return products by their published status"
+          },
+          {
+            "name": "title",
+            "description": "Filter results by product title"
+          },
+          {
+            "name": "updated_at_max",
+            "description": "Show products last updated before date"
+          },
+          {
+            "name": "updated_at_min",
+            "description": "Show products last updated after date"
+          },
+          {
+            "name": "vendor",
+            "description": "Filter results by product vendor"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "product"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

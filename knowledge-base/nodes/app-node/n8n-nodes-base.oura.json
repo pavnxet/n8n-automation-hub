@@ -1,0 +1,251 @@
+{
+  "id": "n8n-nodes-base.oura",
+  "name": "Oura",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.oura",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Oura node to automate work in Oura, and integrate Oura with other applications. n8n has built-in support for a wide range of Oura features, including getting profiles, and summaries",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.oura",
+  "credentials": {
+    "name": "Oura",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/oura",
+    "slug": "oura",
+    "json_file": "credentials/oura.json",
+    "markdown_file": "credentials/oura.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Profile",
+      "operation": "Get the user's personal information",
+      "description": "",
+      "doc": "",
+      "resource_value": "profile",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Summary",
+      "operation": "Get the user's activity summary",
+      "description": "",
+      "doc": "",
+      "resource_value": "summary"
+    },
+    {
+      "resource": "Summary",
+      "operation": "Get the user's readiness summary",
+      "description": "",
+      "doc": "",
+      "resource_value": "summary"
+    },
+    {
+      "resource": "Summary",
+      "operation": "Get the user's sleep summary",
+      "description": "",
+      "doc": "",
+      "resource_value": "summary"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "activity",
+    "app",
+    "applications",
+    "get",
+    "getting",
+    "including",
+    "oura",
+    "personal",
+    "profile",
+    "profiles",
+    "readiness",
+    "sleep",
+    "summaries",
+    "summary",
+    "user",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.oura.md",
+      "title": "Oura node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.oura",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.oura.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.oura.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.oura.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.oura.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.oura",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "ouraApi"
+  ],
+  "credential_details": [
+    {
+      "name": "ouraApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Oura"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "summary",
+        "options": [
+          {
+            "name": "Profile",
+            "value": "profile"
+          },
+          {
+            "name": "Summary",
+            "value": "summary"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get the user's personal information"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "profile"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getSleep",
+        "options": [
+          {
+            "name": "Get Activity Summary",
+            "value": "getActivity",
+            "description": "Get the user's activity summary"
+          },
+          {
+            "name": "Get Readiness Summary",
+            "value": "getReadiness",
+            "description": "Get the user's readiness summary"
+          },
+          {
+            "name": "Get Sleep Periods",
+            "value": "getSleep",
+            "description": "Get the user's sleep summary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "summary"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "summary"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "summary"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "end",
+            "description": "End date for the summary retrieval. If omitted, it defaults to the current day."
+          },
+          {
+            "name": "start",
+            "description": "Start date for the summary retrieval. If omitted, it defaults to a week ago."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "summary"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

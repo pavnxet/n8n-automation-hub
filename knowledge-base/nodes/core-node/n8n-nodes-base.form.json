@@ -1,0 +1,1777 @@
+{
+  "id": "n8n-nodes-base.form",
+  "name": "n8n Form",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.form",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the n8n Form node to create user-facing forms with multiple steps. You can add other nodes with custom logic between to process user input. You must start the workflow with the n8n Form Trigger node",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.form",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [
+    {
+      "name": "Form with mutually exclusive branching",
+      "source_url": "https://raw.githubusercontent.com/n8n-io/n8n-docs/refs/heads/main/docs/_workflows/integrations/builtin/core-nodes/n8n-nodes-base.form/mutually-exclusive-branching.json",
+      "node_count": 8,
+      "workflow": {
+        "name": "Form with mutually exclusive branching",
+        "nodes": [
+          {
+            "parameters": {
+              "formTitle": "Form with mutually exclusive branching",
+              "formDescription": "This form contains branches, but only one branch will ever be executed.",
+              "formFields": {
+                "values": [
+                  {
+                    "fieldLabel": "Would you recommend this site?",
+                    "fieldType": "dropdown",
+                    "fieldOptions": {
+                      "values": [
+                        {
+                          "option": "Yes"
+                        },
+                        {
+                          "option": "No"
+                        }
+                      ]
+                    },
+                    "requiredField": true
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.formTrigger",
+            "typeVersion": 2.2,
+            "position": [
+              0,
+              0
+            ],
+            "id": "1adce353-28c9-48b8-8326-c1f41d9311fd",
+            "name": "On form submission",
+            "webhookId": "d869b846-111d-4f53-96e4-2c4a533d9ed6"
+          },
+          {
+            "parameters": {
+              "rules": {
+                "values": [
+                  {
+                    "conditions": {
+                      "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 2
+                      },
+                      "conditions": [
+                        {
+                          "leftValue": "={{ $json['Would you recommend this site?'] }}",
+                          "rightValue": "Yes",
+                          "operator": {
+                            "type": "string",
+                            "operation": "equals"
+                          }
+                        }
+                      ],
+                      "combinator": "and"
+                    },
+                    "renameOutput": true,
+                    "outputKey": "Yes"
+                  },
+                  {
+                    "conditions": {
+                      "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 2
+                      },
+                      "conditions": [
+                        {
+                          "id": "1dd9b1f5-6f48-4182-ae04-f47c37e3fa98",
+                          "leftValue": "={{ $json['Would you recommend this site?'] }}",
+                          "rightValue": "No",
+                          "operator": {
+                            "type": "string",
+                            "operation": "equals",
+                            "name": "filter.operator.equals"
+                          }
+                        }
+                      ],
+                      "combinator": "and"
+                    },
+                    "renameOutput": true,
+                    "outputKey": "No"
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.switch",
+            "typeVersion": 3.2,
+            "position": [
+              220,
+              0
+            ],
+            "id": "c0d3e3f1-76c5-4bac-8382-c3d70a57ee8a",
+            "name": "Switch"
+          },
+          {
+            "parameters": {
+              "formFields": {
+                "values": [
+                  {
+                    "fieldLabel": "What can we do to improve?",
+                    "fieldType": "textarea"
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              440,
+              200
+            ],
+            "id": "615cf27a-658c-43be-aff9-c5fda8a04c51",
+            "name": "If not recommended",
+            "webhookId": "3579ba77-7ba2-4a97-8a29-a228aac297d5"
+          },
+          {
+            "parameters": {
+              "operation": "completion",
+              "completionTitle": "Thank you for your review!",
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              660,
+              -200
+            ],
+            "id": "13423b3f-0380-429d-92bf-460cc8b409a3",
+            "name": "Thanks for the review",
+            "webhookId": "bce3f77b-3005-4989-bd61-b9c5ff19e59e"
+          },
+          {
+            "parameters": {
+              "operation": "completion",
+              "completionTitle": "Thank you for your feedback",
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              660,
+              200
+            ],
+            "id": "0848a392-41f2-47e8-be17-124fef3d9a63",
+            "name": "Thanks for the feedback",
+            "webhookId": "8b1a34e2-aa24-4c12-841c-79f6491cb779"
+          },
+          {
+            "parameters": {
+              "content": "## Form with mutually exclusive branching\nThis form contains a branch where only one of the two paths will execute, depending on your selections.",
+              "width": 380
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+              -160,
+              -260
+            ],
+            "typeVersion": 1,
+            "id": "57c5e1cd-7dda-4bfb-8bfa-8c9f91110249",
+            "name": "Sticky Note"
+          },
+          {
+            "parameters": {
+              "content": "This Switch node determines which branch will execute.\n\nThe switch uses data from a dropdown field with single selection enforced, so only one path will execute.",
+              "color": 5
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+              440,
+              0
+            ],
+            "typeVersion": 1,
+            "id": "9bde0398-7021-4ec6-b950-d836979c973b",
+            "name": "Sticky Note1"
+          },
+          {
+            "parameters": {
+              "formFields": {
+                "values": [
+                  {
+                    "fieldLabel": "Leave your review below",
+                    "fieldType": "textarea"
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              440,
+              -200
+            ],
+            "id": "9956a49e-964d-4269-910f-28ad8393548e",
+            "name": "If recommended",
+            "webhookId": "f8298b40-1f61-465b-b228-30a659075f30"
+          }
+        ],
+        "pinData": {},
+        "connections": {
+          "On form submission": {
+            "main": [
+              [
+                {
+                  "node": "Switch",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Switch": {
+            "main": [
+              [
+                {
+                  "node": "If recommended",
+                  "type": "main",
+                  "index": 0
+                }
+              ],
+              [
+                {
+                  "node": "If not recommended",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "If not recommended": {
+            "main": [
+              [
+                {
+                  "node": "Thanks for the feedback",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "If recommended": {
+            "main": [
+              [
+                {
+                  "node": "Thanks for the review",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          }
+        },
+        "active": false,
+        "settings": {
+          "executionOrder": "v1"
+        },
+        "versionId": "6797e22c-1b2b-421a-b16d-869f636d0790",
+        "meta": {
+          "instanceId": "1f94e052868811125a74dc63385a38f60e7a14ab6e00497af83e8b68412ec251"
+        },
+        "id": "DCotkGqkv0VfT6QT",
+        "tags": []
+      }
+    },
+    {
+      "name": "Form that can execute multiple branches",
+      "source_url": "https://raw.githubusercontent.com/n8n-io/n8n-docs/refs/heads/main/docs/_workflows/integrations/builtin/core-nodes/n8n-nodes-base.form/multiple-branch-execution.json",
+      "node_count": 17,
+      "workflow": {
+        "name": "Form that can execute multiple branches",
+        "nodes": [
+          {
+            "parameters": {
+              "formTitle": "Form that may execute multiple branches",
+              "formDescription": "This form contains multiple branches. Depending on the user's responses, more than one branch may execute sequentially.",
+              "formFields": {
+                "values": [
+                  {
+                    "fieldLabel": "What are your favorite film genres",
+                    "fieldType": "dropdown",
+                    "fieldOptions": {
+                      "values": [
+                        {
+                          "option": "Documentary"
+                        },
+                        {
+                          "option": "Action"
+                        },
+                        {
+                          "option": "Romance"
+                        },
+                        {
+                          "option": "Comedy"
+                        },
+                        {
+                          "option": "Drama"
+                        }
+                      ]
+                    },
+                    "multiselect": true,
+                    "requiredField": true
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.formTrigger",
+            "typeVersion": 2.2,
+            "position": [
+              -300,
+              60
+            ],
+            "id": "ad3f0e0a-a1e9-4504-8711-508bd29bd745",
+            "name": "On form submission",
+            "webhookId": "b3e1c86f-ae45-421e-9045-f19873b7a73e"
+          },
+          {
+            "parameters": {
+              "rules": {
+                "values": [
+                  {
+                    "conditions": {
+                      "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 2
+                      },
+                      "conditions": [
+                        {
+                          "id": "e3d995dd-d555-4e7a-b744-a3434ed602ad",
+                          "leftValue": "={{ $json['What are your favorite film genres'] }}",
+                          "rightValue": "Documentary",
+                          "operator": {
+                            "type": "array",
+                            "operation": "contains",
+                            "rightType": "any"
+                          }
+                        }
+                      ],
+                      "combinator": "and"
+                    },
+                    "renameOutput": true,
+                    "outputKey": "Documentary"
+                  },
+                  {
+                    "conditions": {
+                      "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 2
+                      },
+                      "conditions": [
+                        {
+                          "id": "ae94981b-1273-4830-ac2a-991bb25f41d8",
+                          "leftValue": "={{ $json['What are your favorite film genres'] }}",
+                          "rightValue": "Action",
+                          "operator": {
+                            "type": "array",
+                            "operation": "contains",
+                            "rightType": "any"
+                          }
+                        }
+                      ],
+                      "combinator": "and"
+                    },
+                    "renameOutput": true,
+                    "outputKey": "Action"
+                  },
+                  {
+                    "conditions": {
+                      "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 2
+                      },
+                      "conditions": [
+                        {
+                          "id": "b9545089-4054-484d-9e6c-98f4872e7e9e",
+                          "leftValue": "={{ $json['What are your favorite film genres'] }}",
+                          "rightValue": "Romance",
+                          "operator": {
+                            "type": "array",
+                            "operation": "contains",
+                            "rightType": "any"
+                          }
+                        }
+                      ],
+                      "combinator": "and"
+                    },
+                    "renameOutput": true,
+                    "outputKey": "Romance"
+                  },
+                  {
+                    "conditions": {
+                      "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 2
+                      },
+                      "conditions": [
+                        {
+                          "id": "71ae5a41-0927-40e3-a583-e569bcebfd1f",
+                          "leftValue": "={{ $json['What are your favorite film genres'] }}",
+                          "rightValue": "Comedy",
+                          "operator": {
+                            "type": "array",
+                            "operation": "contains",
+                            "rightType": "any"
+                          }
+                        }
+                      ],
+                      "combinator": "and"
+                    },
+                    "renameOutput": true,
+                    "outputKey": "Comedy"
+                  },
+                  {
+                    "conditions": {
+                      "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 2
+                      },
+                      "conditions": [
+                        {
+                          "id": "5bfe5981-203a-457a-bfaa-36846d7b79a8",
+                          "leftValue": "={{ $json['What are your favorite film genres'] }}",
+                          "rightValue": "Drama",
+                          "operator": {
+                            "type": "array",
+                            "operation": "contains",
+                            "rightType": "any"
+                          }
+                        }
+                      ],
+                      "combinator": "and"
+                    },
+                    "renameOutput": true,
+                    "outputKey": "Drama"
+                  },
+                  {
+                    "conditions": {
+                      "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict",
+                        "version": 2
+                      },
+                      "conditions": [
+                        {
+                          "id": "adb1bfc5-08fd-4653-abe0-6f12aedda16a",
+                          "leftValue": "={{ $json['What are your favorite film genres'] }}",
+                          "rightValue": 1,
+                          "operator": {
+                            "type": "array",
+                            "operation": "lengthGt",
+                            "rightType": "number"
+                          }
+                        }
+                      ],
+                      "combinator": "and"
+                    },
+                    "renameOutput": true,
+                    "outputKey": "Final page"
+                  }
+                ]
+              },
+              "options": {
+                "allMatchingOutputs": true
+              }
+            },
+            "type": "n8n-nodes-base.switch",
+            "typeVersion": 3.2,
+            "position": [
+              100,
+              0
+            ],
+            "id": "df96da7b-c7dc-43c6-8941-973842603e0c",
+            "name": "Switch"
+          },
+          {
+            "parameters": {
+              "content": "## Form that may execute multiple branches\nThis form contains branching where more than one path may execute, depending on the user's selections.",
+              "width": 380
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+              -160,
+              -260
+            ],
+            "typeVersion": 1,
+            "id": "c51af5ad-8f6c-4f2a-8974-65c4abc4fcbf",
+            "name": "Sticky Note"
+          },
+          {
+            "parameters": {
+              "content": "This Switch node determines which branches will execute.\n\nMultiple conditions may be true, resulting in more than one branch being executed. When this happens, n8n executes the first branch completely before returning to execute the next branch.",
+              "height": 220,
+              "width": 260,
+              "color": 5
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+              20,
+              320
+            ],
+            "typeVersion": 1,
+            "id": "eab3ff17-5030-4556-a0c7-2571345e8cdf",
+            "name": "Sticky Note1"
+          },
+          {
+            "parameters": {
+              "formFields": {
+                "values": [
+                  {
+                    "fieldLabel": "What is your favorite documentary?"
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              700,
+              -500
+            ],
+            "id": "dc55c82f-7d4f-4368-8ab5-69a673e92027",
+            "name": "Documentary questions",
+            "webhookId": "0c72f06e-4cc0-41eb-931c-7bf82bb1927e"
+          },
+          {
+            "parameters": {
+              "formFields": {
+                "values": [
+                  {
+                    "fieldLabel": "What is your favorite action film?"
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              700,
+              -280
+            ],
+            "id": "3f76b5df-561b-4159-9e14-33a43d8c45a8",
+            "name": "Action questions",
+            "webhookId": "bea04786-25cc-477e-aaf1-ab68159cbe28"
+          },
+          {
+            "parameters": {
+              "operation": "completion",
+              "completionTitle": "Thank you for answering our documentary questions!",
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              920,
+              -500
+            ],
+            "id": "16660e2e-a047-45d2-ba54-12d573633ece",
+            "name": "Documentary thanks",
+            "webhookId": "0238f2c2-8984-4adc-aade-308bb458c16e"
+          },
+          {
+            "parameters": {
+              "operation": "completion",
+              "completionTitle": "Thank you for answering our action film questions!",
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              920,
+              -280
+            ],
+            "id": "1853276a-3ba6-4315-b772-fbeb0c68a477",
+            "name": "Action thanks",
+            "webhookId": "2e47b563-bd17-466c-86b7-9237be55d226"
+          },
+          {
+            "parameters": {
+              "formFields": {
+                "values": [
+                  {
+                    "fieldLabel": "What is your favorite romance film?"
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              700,
+              -20
+            ],
+            "id": "cd7bc8d0-a143-4733-be84-320c88ef241b",
+            "name": "Romance questions",
+            "webhookId": "3f77a665-fc03-46ba-a58f-6d9bd7099028"
+          },
+          {
+            "parameters": {
+              "operation": "completion",
+              "completionTitle": "Thank you for answering our romance film questions!",
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              920,
+              -20
+            ],
+            "id": "42d7c8b5-f66f-4b34-821c-0df91bbaa9ea",
+            "name": "Romance thanks",
+            "webhookId": "eee896c5-d116-4586-972d-3fe02073ed11"
+          },
+          {
+            "parameters": {
+              "formFields": {
+                "values": [
+                  {
+                    "fieldLabel": "What is your favorite comedy film?"
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              700,
+              220
+            ],
+            "id": "b9422abf-1ad5-44e4-941d-692f72bc2fef",
+            "name": "Comedy questions",
+            "webhookId": "97b56894-28fb-47d1-b729-754e43f1ac09"
+          },
+          {
+            "parameters": {
+              "operation": "completion",
+              "completionTitle": "Thank you for answering our comedy film questions!",
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              920,
+              220
+            ],
+            "id": "1db70bda-0752-41b7-a930-b90f6e64b3e7",
+            "name": "Comedy thanks",
+            "webhookId": "b021494a-5a35-4ade-b7c0-ca43a309268d"
+          },
+          {
+            "parameters": {
+              "formFields": {
+                "values": [
+                  {
+                    "fieldLabel": "What is your favorite drama film?"
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              700,
+              480
+            ],
+            "id": "2bef931a-12d2-4873-ad19-9bdb0b5fe78f",
+            "name": "Drama questions",
+            "webhookId": "8d801d97-1103-42ee-a0c1-c1f1153727d9"
+          },
+          {
+            "parameters": {
+              "operation": "completion",
+              "completionTitle": "Thank you for answering our drama film questions!",
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              920,
+              480
+            ],
+            "id": "1fd7fa2f-d1be-430a-bb98-ded89ad8fca0",
+            "name": "Drama thanks",
+            "webhookId": "46a782bc-21b2-4fcd-9c52-82a7bb20ec2c"
+          },
+          {
+            "parameters": {
+              "operation": "completion",
+              "completionTitle": "Thank you for answering our film questions!",
+              "options": {}
+            },
+            "type": "n8n-nodes-base.form",
+            "typeVersion": 1,
+            "position": [
+              700,
+              720
+            ],
+            "id": "7b0aeed0-0e13-4fcb-a3e9-c5ff4d6a77ca",
+            "name": "Multi-selection thank you",
+            "webhookId": "67fcd1f3-e5a6-4bf6-b17e-37b2a87f4c3d"
+          },
+          {
+            "parameters": {
+              "content": "n8n Form nodes using the **Form Ending** page type are only executed if they are the last node in the execution path.\n\nThese endings specific to a genre are only executed if this is the only valid branch.",
+              "height": 1400,
+              "width": 280,
+              "color": 5
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+              840,
+              -740
+            ],
+            "typeVersion": 1,
+            "id": "7bda913a-d75c-4b20-8be6-a767c008a8f6",
+            "name": "Sticky Note2"
+          },
+          {
+            "parameters": {
+              "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe switch includes this **Form Ending** node whenever more than one branch is executed.\n\nBecause this is the [final branch](https://docs.n8n.io/flow-logic/execution-order/) that will be executed, this is the final display whenever multiple branches are executed.",
+              "height": 400,
+              "width": 300,
+              "color": 5
+            },
+            "type": "n8n-nodes-base.stickyNote",
+            "position": [
+              740,
+              800
+            ],
+            "typeVersion": 1,
+            "id": "9c3f93a5-5248-4ba1-99b5-9df6d21416c2",
+            "name": "Sticky Note3"
+          }
+        ],
+        "pinData": {},
+        "connections": {
+          "On form submission": {
+            "main": [
+              [
+                {
+                  "node": "Switch",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Switch": {
+            "main": [
+              [
+                {
+                  "node": "Documentary questions",
+                  "type": "main",
+                  "index": 0
+                }
+              ],
+              [
+                {
+                  "node": "Action questions",
+                  "type": "main",
+                  "index": 0
+                }
+              ],
+              [
+                {
+                  "node": "Romance questions",
+                  "type": "main",
+                  "index": 0
+                }
+              ],
+              [
+                {
+                  "node": "Comedy questions",
+                  "type": "main",
+                  "index": 0
+                }
+              ],
+              [
+                {
+                  "node": "Drama questions",
+                  "type": "main",
+                  "index": 0
+                }
+              ],
+              [
+                {
+                  "node": "Multi-selection thank you",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Documentary questions": {
+            "main": [
+              [
+                {
+                  "node": "Documentary thanks",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Action questions": {
+            "main": [
+              [
+                {
+                  "node": "Action thanks",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Romance questions": {
+            "main": [
+              [
+                {
+                  "node": "Romance thanks",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Comedy questions": {
+            "main": [
+              [
+                {
+                  "node": "Comedy thanks",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Drama questions": {
+            "main": [
+              [
+                {
+                  "node": "Drama thanks",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          }
+        },
+        "active": false,
+        "settings": {
+          "executionOrder": "v1"
+        },
+        "versionId": "b1d38757-38ea-4ee8-a352-990185b17e31",
+        "meta": {
+          "instanceId": "1f94e052868811125a74dc63385a38f60e7a14ab6e00497af83e8b68412ec251"
+        },
+        "id": "kl3goXzWrfrWHpYv",
+        "tags": []
+      }
+    }
+  ],
+  "common_issues": [],
+  "keywords": [
+    "between",
+    "core",
+    "create",
+    "custom",
+    "facing",
+    "form",
+    "forms",
+    "input",
+    "logic",
+    "multiple",
+    "must",
+    "n8n",
+    "process",
+    "start",
+    "steps",
+    "trigger",
+    "user"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.form.md",
+      "title": "n8n Form node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.form",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.form.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.form.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.form.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.form.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.form",
+  "type_version": 2.5,
+  "type_versions": [
+    1,
+    2.3,
+    2.4,
+    2.5
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Form"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 24,
+    "parameters": [
+      {
+        "name": "triggerNotice",
+        "displayName": "An n8n Form Trigger node must be set up before this node",
+        "type": "notice"
+      },
+      {
+        "name": "operation",
+        "displayName": "Page Type",
+        "type": "options",
+        "default": "page",
+        "options": [
+          {
+            "name": "Next Form Page",
+            "value": "page"
+          },
+          {
+            "name": "Form Ending",
+            "value": "completion"
+          }
+        ]
+      },
+      {
+        "name": "defineForm",
+        "displayName": "Define Form",
+        "type": "options",
+        "default": "fields",
+        "options": [
+          {
+            "name": "Using Fields Below",
+            "value": "fields"
+          },
+          {
+            "name": "Using JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonOutput",
+        "displayName": "Form Fields",
+        "type": "json",
+        "default": "[\n  {\n    \"fieldLabel\": \"Name\",\n    \"placeholder\": \"enter your name\",\n    \"requiredField\": true\n  },\n  {\n    \"fieldLabel\": \"Age\",\n    \"fieldType\": \"number\",\n    \"placeholder\": \"enter your age\"\n  },\n  {\n    \"fieldLabel\": \"Email\",\n    \"fieldType\": \"email\",\n    \"requiredField\": true\n  },\n  {\n    \"field",
+        "displayOptions": {
+          "show": {
+            "defineForm": [
+              "json"
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "limitWaitTime",
+        "displayName": "Limit Wait Time",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "page"
+            ]
+          }
+        },
+        "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+      },
+      {
+        "name": "limitType",
+        "displayName": "Limit Type",
+        "type": "options",
+        "default": "afterTimeInterval",
+        "options": [
+          {
+            "name": "After Time Interval",
+            "value": "afterTimeInterval",
+            "description": "Waits for a certain amount of time"
+          },
+          {
+            "name": "At Specified Time",
+            "value": "atSpecifiedTime",
+            "description": "Waits until the set date and time to continue"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "limitWaitTime": [
+              true
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        },
+        "description": "Sets the condition for the execution to resume. Can be a specified date or after some time."
+      },
+      {
+        "name": "resumeAmount",
+        "displayName": "Amount",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "limitType": [
+              "afterTimeInterval"
+            ],
+            "limitWaitTime": [
+              true
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        },
+        "description": "The time to wait"
+      },
+      {
+        "name": "resumeUnit",
+        "displayName": "Unit",
+        "type": "options",
+        "default": "hours",
+        "options": [
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "limitType": [
+              "afterTimeInterval"
+            ],
+            "limitWaitTime": [
+              true
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        },
+        "description": "Unit of the interval value"
+      },
+      {
+        "name": "maxDateAndTime",
+        "displayName": "Max Date and Time",
+        "type": "dateTime",
+        "displayOptions": {
+          "show": {
+            "limitType": [
+              "atSpecifiedTime"
+            ],
+            "limitWaitTime": [
+              true
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        },
+        "description": "Continue execution after the specified date and time"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "formTitle",
+            "description": "Shown at the top of the form"
+          },
+          {
+            "name": "formDescription",
+            "description": "Shown underneath the Form Title. Can be used to prompt the user on how to complete the form. Accepts HTML. Does not accept <code>&lt;script&gt;</code>, <code>&l"
+          },
+          {
+            "name": "buttonLabel"
+          },
+          {
+            "name": "customCss",
+            "description": "Override default styling of the public form interface with CSS"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "respondWith",
+        "displayName": "On n8n Form Submission",
+        "type": "options",
+        "default": "text",
+        "options": [
+          {
+            "name": "Show Completion Screen",
+            "value": "text",
+            "description": "Show a response text to the user"
+          },
+          {
+            "name": "Redirect to URL",
+            "value": "redirect",
+            "description": "Redirect the user to a URL"
+          },
+          {
+            "name": "Show Text",
+            "value": "showText",
+            "description": "Display simple text or HTML"
+          },
+          {
+            "name": "Return Binary File",
+            "value": "returnBinary",
+            "description": "Return incoming binary file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "completion"
+            ]
+          }
+        }
+      },
+      {
+        "name": "redirectUrl",
+        "displayName": "URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "redirect"
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        }
+      },
+      {
+        "name": "completionTitle",
+        "displayName": "Completion Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "text",
+              "returnBinary"
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        }
+      },
+      {
+        "name": "completionMessage",
+        "displayName": "Completion Message",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "text",
+              "returnBinary"
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responseText",
+        "displayName": "Text",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "showText"
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        },
+        "description": "The text to display on the page. Use HTML to show a customized web page."
+      },
+      {
+        "name": "inputDataFieldName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "returnBinary"
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        },
+        "description": "Find the name of input field containing the binary data to return in the Input panel on the left, in the Binary tab"
+      },
+      {
+        "name": "limitWaitTime",
+        "displayName": "Limit Wait Time",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "completion"
+            ]
+          }
+        },
+        "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+      },
+      {
+        "name": "limitType",
+        "displayName": "Limit Type",
+        "type": "options",
+        "default": "afterTimeInterval",
+        "options": [
+          {
+            "name": "After Time Interval",
+            "value": "afterTimeInterval",
+            "description": "Waits for a certain amount of time"
+          },
+          {
+            "name": "At Specified Time",
+            "value": "atSpecifiedTime",
+            "description": "Waits until the set date and time to continue"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "limitWaitTime": [
+              true
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        },
+        "description": "Sets the condition for the execution to resume. Can be a specified date or after some time."
+      },
+      {
+        "name": "resumeAmount",
+        "displayName": "Amount",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "limitType": [
+              "afterTimeInterval"
+            ],
+            "limitWaitTime": [
+              true
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        },
+        "description": "The time to wait"
+      },
+      {
+        "name": "resumeUnit",
+        "displayName": "Unit",
+        "type": "options",
+        "default": "hours",
+        "options": [
+          {
+            "name": "Minutes",
+            "value": "minutes"
+          },
+          {
+            "name": "Hours",
+            "value": "hours"
+          },
+          {
+            "name": "Days",
+            "value": "days"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "limitType": [
+              "afterTimeInterval"
+            ],
+            "limitWaitTime": [
+              true
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        },
+        "description": "Unit of the interval value"
+      },
+      {
+        "name": "maxDateAndTime",
+        "displayName": "Max Date and Time",
+        "type": "dateTime",
+        "displayOptions": {
+          "show": {
+            "limitType": [
+              "atSpecifiedTime"
+            ],
+            "limitWaitTime": [
+              true
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        },
+        "description": "Continue execution after the specified date and time"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "formTitle",
+            "description": "Shown at the top of the form"
+          },
+          {
+            "name": "customCss",
+            "description": "Override default styling of the public form interface with CSS"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "respondWith": [
+              "text",
+              "returnBinary",
+              "redirect"
+            ],
+            "operation": [
+              "completion"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

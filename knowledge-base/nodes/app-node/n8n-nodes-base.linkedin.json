@@ -1,0 +1,362 @@
+{
+  "id": "n8n-nodes-base.linkedin",
+  "name": "LinkedIn",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.linkedin",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the LinkedIn node to automate work in LinkedIn, and integrate LinkedIn with other applications. n8n supports creating posts",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.linkedin",
+  "credentials": {
+    "name": "LinkedIn",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/linkedin",
+    "slug": "linkedin",
+    "json_file": "credentials/linkedin.json",
+    "markdown_file": "credentials/linkedin.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Post",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "create"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [
+    {
+      "name": "Post As",
+      "description": "choose whether to post as a Person or Organization"
+    },
+    {
+      "name": "Person Name or ID",
+      "description": "and Organization URN: enter an identifier for the person or organization"
+    },
+    {
+      "name": "Text",
+      "description": "the post contents"
+    },
+    {
+      "name": "Media Category",
+      "description": "use this when including images or article URLs in your post"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "category",
+    "create",
+    "creating",
+    "linkedin",
+    "media",
+    "name",
+    "person",
+    "post",
+    "posts",
+    "text",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.linkedin.md",
+      "title": "LinkedIn node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.linkedin",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.linkedin.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.linkedin.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.linkedin.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.linkedin.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.linkedIn",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "linkedInOAuth2Api",
+    "linkedInCommunityManagementOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "linkedInOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "standard"
+          ]
+        }
+      }
+    },
+    {
+      "name": "linkedInCommunityManagementOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "communityManagement"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "LinkedIn"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "standard",
+        "options": [
+          {
+            "name": "Standard",
+            "value": "standard"
+          },
+          {
+            "name": "Community Management",
+            "value": "communityManagement"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "post",
+        "options": [
+          {
+            "name": "Post",
+            "value": "post"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new post"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ]
+          }
+        }
+      },
+      {
+        "name": "postAs",
+        "displayName": "Post As",
+        "type": "options",
+        "default": "person",
+        "options": [
+          {
+            "name": "Person",
+            "value": "person"
+          },
+          {
+            "name": "Organization",
+            "value": "organization"
+          }
+        ],
+        "description": "If to post on behalf of a user or an organization"
+      },
+      {
+        "name": "person",
+        "displayName": "Person Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "postAs": [
+              "person"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        },
+        "description": "Person as which the post should be posted as. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "organization",
+        "displayName": "Organization URN",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "postAs": [
+              "organization"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        },
+        "description": "URN of Organization as which the post should be posted as"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        },
+        "description": "The primary content of the post"
+      },
+      {
+        "name": "shareMediaCategory",
+        "displayName": "Media Category",
+        "type": "options",
+        "default": "NONE",
+        "options": [
+          {
+            "name": "None",
+            "value": "NONE",
+            "description": "The post does not contain any media, and will only consist of text"
+          },
+          {
+            "name": "Article",
+            "value": "ARTICLE",
+            "description": "The post contains an article URL"
+          },
+          {
+            "name": "Image",
+            "value": "IMAGE",
+            "description": "The post contains an image"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "post"
+            ],
+            "shareMediaCategory": [
+              "IMAGE"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "description",
+            "description": "Provide a short description for your image or article"
+          },
+          {
+            "name": "originalUrl",
+            "description": "Provide the URL of the article you would like to share here"
+          },
+          {
+            "name": "thumbnailBinaryPropertyName"
+          },
+          {
+            "name": "title",
+            "description": "Customize the title of your image or article"
+          },
+          {
+            "name": "visibility",
+            "description": "Dictate if post will be seen by the public or only connections"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

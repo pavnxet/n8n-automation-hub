@@ -1,0 +1,574 @@
+{
+  "id": "n8n-nodes-base.baserow",
+  "name": "Baserow",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.baserow",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Baserow node to automate work in Baserow, and integrate Baserow with other applications. n8n has built-in support for a wide range of Baserow features, including creating, getting, retrieving, and updating rows",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.baserow",
+  "credentials": {
+    "name": "Baserow",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/baserow",
+    "slug": "baserow",
+    "json_file": "credentials/baserow.json",
+    "markdown_file": "credentials/baserow.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Row",
+      "operation": "Create multiple rows",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Row",
+      "operation": "Delete multiple rows",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Row",
+      "operation": "Update multiple rows",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Row",
+      "operation": "Create a row",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Row",
+      "operation": "Delete a row",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Row",
+      "operation": "Get a row",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Row",
+      "operation": "Get many rows",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Row",
+      "operation": "Update a row",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 8,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "baserow",
+    "create",
+    "creating",
+    "delete",
+    "get",
+    "getting",
+    "including",
+    "many",
+    "multiple",
+    "retrieving",
+    "row",
+    "rows",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.baserow.md",
+      "title": "Baserow node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.baserow",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.baserow.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.baserow.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.baserow.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.baserow.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.baserow",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "baserowApi",
+    "baserowTokenApi"
+  ],
+  "credential_details": [
+    {
+      "name": "baserowApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "usernamePassword"
+          ]
+        }
+      }
+    },
+    {
+      "name": "baserowTokenApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "databaseToken"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Baserow"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \":\" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 18,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "usernamePassword",
+        "options": [
+          {
+            "name": "Username & Password",
+            "value": "usernamePassword"
+          },
+          {
+            "name": "Database Token",
+            "value": "databaseToken"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "row",
+        "options": [
+          {
+            "name": "Row",
+            "value": "row"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Batch Create",
+            "value": "batchCreate",
+            "description": "Create up to 200 rows in one request"
+          },
+          {
+            "name": "Batch Delete",
+            "value": "batchDelete",
+            "description": "Delete up to 200 rows in one request"
+          },
+          {
+            "name": "Batch Update",
+            "value": "batchUpdate",
+            "description": "Update up to 200 rows in one request"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a row"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a row"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a row"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many rows"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a row"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ]
+          }
+        }
+      },
+      {
+        "name": "databaseId",
+        "displayName": "Database Name or ID",
+        "type": "options",
+        "required": true,
+        "default": "0",
+        "displayOptions": {
+          "hide": {
+            "authentication": [
+              "databaseToken"
+            ]
+          }
+        },
+        "description": "Database to operate on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "tableId",
+        "displayName": "Table Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Table to operate on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "rowId",
+        "displayName": "Row ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the row to return"
+      },
+      {
+        "name": "rowId",
+        "displayName": "Row ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the row to update"
+      },
+      {
+        "name": "dataToSend",
+        "displayName": "Data to Send",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Define Below for Each Column",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update",
+              "batchCreate",
+              "batchUpdate"
+            ]
+          }
+        },
+        "description": "Whether to insert the input data this node receives in the new row"
+      },
+      {
+        "name": "inputsToIgnore",
+        "displayName": "Inputs to Ignore",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update",
+              "batchCreate",
+              "batchUpdate"
+            ],
+            "dataToSend": [
+              "autoMapInputData"
+            ]
+          }
+        },
+        "description": "List of input properties to avoid sending, separated by commas. Leave empty to send all properties."
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Fields to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fieldValues",
+            "values": [
+              {
+                "name": "fieldId",
+                "displayName": "Field Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "dataToSend": [
+              "defineBelow"
+            ]
+          }
+        }
+      },
+      {
+        "name": "rowsUi",
+        "displayName": "Rows",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "rowValues",
+            "values": [
+              {
+                "name": "id",
+                "displayName": "Row ID",
+                "type": "string"
+              },
+              {
+                "name": "fieldsUi",
+                "displayName": "Fields",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "batchCreate",
+              "batchUpdate"
+            ],
+            "dataToSend": [
+              "defineBelow"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataToSend",
+        "displayName": "Data to Send",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data",
+            "value": "autoMapInputData",
+            "description": "Collect row IDs from input items automatically"
+          },
+          {
+            "name": "Define Below",
+            "value": "defineBelow",
+            "description": "Manually specify row IDs"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "batchDelete"
+            ]
+          }
+        },
+        "description": "Choose whether to manually enter row IDs or map them from input data"
+      },
+      {
+        "name": "rowId",
+        "displayName": "Row ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the row to delete"
+      },
+      {
+        "name": "rowIds",
+        "displayName": "Row IDs",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "batchDelete"
+            ],
+            "dataToSend": [
+              "defineBelow"
+            ]
+          }
+        },
+        "description": "IDs of the rows to delete"
+      },
+      {
+        "name": "rowIdProperty",
+        "displayName": "Property Containing Row ID",
+        "type": "string",
+        "default": "id",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "batchDelete"
+            ],
+            "dataToSend": [
+              "autoMapInputData"
+            ]
+          }
+        },
+        "description": "Name of the property in each input item that contains the row ID"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalOptions",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "filters",
+            "description": "Filter rows based on comparison operators"
+          },
+          {
+            "name": "filterType",
+            "description": "This works only if two or more filters are provided. Defaults to <code>AND</code>"
+          },
+          {
+            "name": "search",
+            "description": "Text to match (can be in any column)"
+          },
+          {
+            "name": "order",
+            "description": "Set the sort order of the result rows"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

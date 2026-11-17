@@ -1,0 +1,194 @@
+{
+  "id": "n8n-nodes-langchain.documentgithubloader",
+  "name": "GitHub Document Loader",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.documentgithubloader",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the GitHub Document Loader node to load data from a GitHub repository for vector stores[^1] or summarization",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentgithubloader",
+  "credentials": {
+    "name": "GitHub credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/github",
+    "slug": "github",
+    "json_file": "credentials/github.json",
+    "markdown_file": "credentials/github.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Text Splitting",
+      "description": "Choose from:"
+    },
+    {
+      "name": "Repository Link",
+      "description": "Enter the URL of your GitHub repository"
+    },
+    {
+      "name": "Branch",
+      "description": "Enter the branch name to use"
+    },
+    {
+      "name": "Recursive",
+      "description": "Select whether to include sub-folders and files (turned on) or not (turned off)"
+    },
+    {
+      "name": "Ignore Paths",
+      "description": "Enter directories to ignore"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "branch",
+    "cluster",
+    "credentials",
+    "data",
+    "document",
+    "documentgithubloader",
+    "github",
+    "ignore",
+    "load",
+    "loader",
+    "paths",
+    "recursive",
+    "repository",
+    "splitting",
+    "stores",
+    "sub",
+    "summarization",
+    "text",
+    "vector"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "7MPhMVJM8wcmiOf5zn2m",
+      "name": "langchain-doc-loaders-link"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.documentgithubloader.md",
+      "title": "GitHub Document Loader node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentgithubloader",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentgithubloader.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.documentgithubloader.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.documentgithubloader.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentgithubloader.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.documentGithubLoader",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "githubApi"
+  ],
+  "credential_details": [
+    {
+      "name": "githubApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "GitHub Document Loader"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{ ((parameter) => { function getInputs(parameters) {\n    const inputs = [];\n    const textSplittingMode = parameters?.textSplittingMode;\n    if (!textSplittingMode || textSplittingMode === 'custom') {\n        inputs.push({\n            displayName: 'Text Splitter',\n            maxConnections: 1,\n            type: 'ai_textSplitter',\n            required: true,\n        });\n    }\n    return inputs;\n}; return getInputs(parameter) })($parameter) }}",
+    "outputs": [
+      "ai_document"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_vectorStore'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "repository",
+        "displayName": "Repository Link",
+        "type": "string"
+      },
+      {
+        "name": "branch",
+        "displayName": "Branch",
+        "type": "string",
+        "default": "main"
+      },
+      {
+        "name": "textSplittingMode",
+        "displayName": "Text Splitting",
+        "type": "options",
+        "required": true,
+        "default": "simple",
+        "options": [
+          {
+            "name": "Simple",
+            "value": "simple",
+            "description": "Splits every 1000 characters with a 200 character overlap"
+          },
+          {
+            "name": "Custom",
+            "value": "custom",
+            "description": "Connect a custom text-splitting sub-node"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.1
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalOptions",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "recursive"
+          },
+          {
+            "name": "ignorePaths",
+            "description": "Comma-separated list of paths to ignore, e.g. \"docs, src/tests"
+          }
+        ]
+      }
+    ]
+  }
+}

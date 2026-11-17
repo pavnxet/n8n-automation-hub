@@ -1,0 +1,1252 @@
+{
+  "id": "n8n-nodes-langchain.anthropic",
+  "name": "Anthropic",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-langchain.anthropic",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Anthropic node to automate work in Anthropic and integrate Anthropic with other applications. n8n has built-in support for a wide range of Anthropic features, including analyzing, uploading, getting, and deleting documents, files, and images, and generating, improving, or templatizing prompts",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.anthropic",
+  "credentials": {
+    "name": "Anthropic credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/anthropic",
+    "slug": "anthropic",
+    "json_file": "credentials/anthropic.json",
+    "markdown_file": "credentials/anthropic.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Document",
+      "operation": "Analyze Document",
+      "description": "Take in documents and answer questions about them",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "analyze"
+    },
+    {
+      "resource": "File",
+      "operation": "Upload File",
+      "description": "Upload a file to the Anthropic API for later user",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "upload"
+    },
+    {
+      "resource": "File",
+      "operation": "Get File Metadata",
+      "description": "Get metadata for a file from the Anthropic API",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "get"
+    },
+    {
+      "resource": "File",
+      "operation": "List Files",
+      "description": "List files from the Anthropic API",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "list"
+    },
+    {
+      "resource": "File",
+      "operation": "Delete File",
+      "description": "Delete a file from the Anthropic API",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "deleteFile"
+    },
+    {
+      "resource": "Image",
+      "operation": "Analyze Image",
+      "description": "Take in images and answer questions about them",
+      "doc": "",
+      "resource_value": "image",
+      "operation_value": "analyze"
+    },
+    {
+      "resource": "Prompt",
+      "operation": "Generate Prompt",
+      "description": "Generate a prompt for a model",
+      "doc": "",
+      "resource_value": "prompt",
+      "operation_value": "generate"
+    },
+    {
+      "resource": "Prompt",
+      "operation": "Improve Prompt",
+      "description": "Improve a prompt for a model",
+      "doc": "",
+      "resource_value": "prompt",
+      "operation_value": "improve"
+    },
+    {
+      "resource": "Prompt",
+      "operation": "Templatize Prompt",
+      "description": "Templatize a prompt for a model",
+      "doc": "",
+      "resource_value": "prompt",
+      "operation_value": "templatize"
+    },
+    {
+      "resource": "Text",
+      "operation": "Message a Model",
+      "description": "Create a completion with an Anthropic model",
+      "doc": "",
+      "resource_value": "text",
+      "operation_value": "message"
+    }
+  ],
+  "operation_count": 10,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analyze",
+    "analyzing",
+    "anthropic",
+    "app",
+    "applications",
+    "credentials",
+    "delete",
+    "deleting",
+    "document",
+    "documents",
+    "file",
+    "files",
+    "generate",
+    "generating",
+    "get",
+    "getting",
+    "image",
+    "images",
+    "improve",
+    "improving",
+    "including",
+    "list",
+    "message",
+    "metadata",
+    "model",
+    "prompt",
+    "prompts",
+    "templatize",
+    "templatizing",
+    "text",
+    "upload",
+    "uploading",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.anthropic.md",
+      "title": "Anthropic node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.anthropic",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.anthropic.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-langchain.anthropic.json",
+    "markdown": "nodes/app-node/n8n-nodes-langchain.anthropic.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-langchain.anthropic.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.anthropic",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "anthropicApi"
+  ],
+  "credential_details": [
+    {
+      "name": "anthropicApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Anthropic"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": "={{\n\t\t(() => {\n\t\t\tconst resource = $parameter.resource;\n\t  \tconst operation = $parameter.operation;\n\t\t\tif (resource === 'text' && operation === 'message') {\n\t\t\t\treturn [{ type: 'main' }, { type: 'ai_tool', displayName: 'Tools' }];\n\t\t\t}\n\n\t\t\treturn ['main'];\n\t\t})()\n\t}}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 46,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "text",
+        "options": [
+          {
+            "name": "Document",
+            "value": "document"
+          },
+          {
+            "name": "File",
+            "value": "file"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Prompt",
+            "value": "prompt"
+          },
+          {
+            "name": "Text",
+            "value": "text"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "analyze",
+        "options": [
+          {
+            "name": "Analyze Document",
+            "value": "analyze",
+            "description": "Take in documents and answer questions about them"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text Input",
+        "type": "string",
+        "default": "What's in this document?",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "Document URL(s)",
+            "value": "url"
+          },
+          {
+            "name": "Binary File(s)",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "documentUrls",
+        "displayName": "URL(s)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "URL(s) of the document(s) to analyze, multiple URLs can be added separated by comma"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the document(s), seperate multiple field names with commas"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Whether to simplify the response or not"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxTokens",
+            "description": "Fewer tokens will result in shorter, less detailed image description"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upload",
+        "options": [
+          {
+            "name": "Upload File",
+            "value": "upload",
+            "description": "Upload a file to the Anthropic API for later use"
+          },
+          {
+            "name": "Get File Metadata",
+            "value": "get",
+            "description": "Get metadata for a file from the Anthropic API"
+          },
+          {
+            "name": "List Files",
+            "value": "list",
+            "description": "List files from the Anthropic API"
+          },
+          {
+            "name": "Delete File",
+            "value": "deleteFile",
+            "description": "Delete a file from the Anthropic API"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "deleteFile"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "ID of the file to delete"
+      },
+      {
+        "name": "fileId",
+        "displayName": "File ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "ID of the file to get metadata for"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "list"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "operation": [
+              "list"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "File URL",
+            "value": "url"
+          },
+          {
+            "name": "Binary File",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileUrl",
+        "displayName": "URL",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "URL of the file to upload"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Name of the binary field which contains the file"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fileName",
+            "description": "The file name to use for the uploaded file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "analyze",
+        "options": [
+          {
+            "name": "Analyze Image",
+            "value": "analyze",
+            "description": "Take in images and answer questions about them"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text Input",
+        "type": "string",
+        "default": "What's in this image?",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "Image URL(s)",
+            "value": "url"
+          },
+          {
+            "name": "Binary File(s)",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "imageUrls",
+        "displayName": "URL(s)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the image(s), seperate multiple field names with commas"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Whether to simplify the response or not"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxTokens",
+            "description": "Fewer tokens will result in shorter, less detailed image description"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "generate",
+        "options": [
+          {
+            "name": "Generate Prompt",
+            "value": "generate",
+            "description": "Generate a prompt for a model"
+          },
+          {
+            "name": "Improve Prompt",
+            "value": "improve",
+            "description": "Improve a prompt for a model"
+          },
+          {
+            "name": "Templatize Prompt",
+            "value": "templatize",
+            "description": "Templatize a prompt for a model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "prompt"
+            ]
+          }
+        }
+      },
+      {
+        "name": "experimentalNotice",
+        "displayName": "The <a href=\"https://docs.anthropic.com/en/api/prompt-tools-generate\">prompt tools APIs</a> are in a closed research preview. Your organization must request access to use them.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "prompt"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "Task",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "prompt"
+            ]
+          }
+        },
+        "description": "Description of the prompt's purpose"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "prompt"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "messages",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "content": "",
+              "role": "user"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "content",
+                "displayName": "Prompt",
+                "type": "string"
+              },
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "improve"
+            ],
+            "resource": [
+              "prompt"
+            ]
+          }
+        },
+        "description": "Messages that constitute the prompt to be improved"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "improve"
+            ],
+            "resource": [
+              "prompt"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "system",
+            "description": "The existing system prompt to incorporate, if any"
+          },
+          {
+            "name": "feedback",
+            "description": "Feedback for improving the prompt"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "improve"
+            ],
+            "resource": [
+              "prompt"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messages",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "content": "",
+              "role": "user"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "content",
+                "displayName": "Prompt",
+                "type": "string"
+              },
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "templatize"
+            ],
+            "resource": [
+              "prompt"
+            ]
+          }
+        },
+        "description": "Messages that constitute the prompt to be templatized"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "templatize"
+            ],
+            "resource": [
+              "prompt"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "system",
+            "description": "The existing system prompt to templatize"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "templatize"
+            ],
+            "resource": [
+              "prompt"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Message a Model",
+            "value": "message",
+            "description": "Create a completion with Anthropic model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messages",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "content": "",
+              "role": "user"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "content",
+                "displayName": "Prompt",
+                "type": "string"
+              },
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "addAttachments",
+        "displayName": "Add Attachments",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to add attachments to the message"
+      },
+      {
+        "name": "attachmentsInputType",
+        "displayName": "Attachments Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "URL(s)",
+            "value": "url"
+          },
+          {
+            "name": "Binary File(s)",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "addAttachments": [
+              true
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "The type of input to use for the attachments"
+      },
+      {
+        "name": "attachmentsUrls",
+        "displayName": "Attachment URL(s)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "addAttachments": [
+              true
+            ],
+            "attachmentsInputType": [
+              "url"
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "URL(s) of the file(s) to attach, multiple URLs can be added separated by comma"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Attachment Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "addAttachments": [
+              true
+            ],
+            "attachmentsInputType": [
+              "binary"
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the file(s) to attach, multiple field names can be added separated by comma"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "includeMergedResponse",
+            "description": "Whether to include a single output string merging all text parts of the response"
+          },
+          {
+            "name": "system"
+          },
+          {
+            "name": "promptCaching",
+            "description": "Whether to cache the prompt so that repeat calls are cheaper and faster. Do not enable for one-off calls: in this case writing the cache costs more than it save"
+          },
+          {
+            "name": "codeExecution",
+            "description": "Whether to enable code execution. Not supported by all models."
+          },
+          {
+            "name": "webSearch",
+            "description": "Whether to enable web search"
+          },
+          {
+            "name": "maxUses",
+            "description": "The maximum number of web search uses per request"
+          },
+          {
+            "name": "allowedDomains",
+            "description": "Comma-separated list of domains to search. Only domains in this list will be searched. Conflicts with \"Web Search Blocked Domains\"."
+          },
+          {
+            "name": "blockedDomains",
+            "description": "Comma-separated list of domains to block from search. Conflicts with \"Web Search Allowed Domains\"."
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls the randomness of the output. Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and "
+          },
+          {
+            "name": "topP",
+            "description": "The maximum cumulative probability of tokens to consider when sampling"
+          },
+          {
+            "name": "topK",
+            "description": "The maximum number of tokens to consider when sampling"
+          },
+          {
+            "name": "maxToolsIterations",
+            "description": "The maximum number of tool iteration cycles the LLM will run before stopping. A single iteration can contain multiple tool calls. Set to 0 for no limit"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "promptCachingNotice",
+        "displayName": "Cache reads and writes are billed at different rates than regular input tokens, so reported prompt/total tokens are only an approximation of actual billable usage",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.promptCaching": [
+              "5m",
+              "1h"
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "id": "n8n-nodes-base.postbin",
+  "name": "PostBin",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.postbin",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "PostBin is a service that helps you test API clients and webhooks. Use the PostBin node to automate work in PostBin, and integrate PostBin with other applications. n8n has built-in support for a wide range of PostBin features, including creating and deleting bins, and getting and sending requests",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postbin",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Bin",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "bin",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Bin",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "bin",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Bin",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "bin",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Request",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "request",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Request",
+      "operation": "Remove First",
+      "description": "",
+      "doc": "",
+      "resource_value": "request",
+      "operation_value": "removeFirst"
+    },
+    {
+      "resource": "Request",
+      "operation": "Send",
+      "description": "",
+      "doc": "",
+      "resource_value": "request",
+      "operation_value": "send"
+    }
+  ],
+  "operation_count": 6,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "bin",
+    "bins",
+    "clients",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "first",
+    "get",
+    "getting",
+    "helps",
+    "including",
+    "postbin",
+    "remove",
+    "request",
+    "requests",
+    "send",
+    "sending",
+    "service",
+    "test",
+    "webhooks",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.postbin.md",
+      "title": "PostBin node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postbin",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.postbin.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.postbin.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.postbin.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.postbin.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.postBin",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "PostBin"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "bin",
+        "options": [
+          {
+            "name": "Bin",
+            "value": "bin"
+          },
+          {
+            "name": "Request",
+            "value": "request"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create bin"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a bin"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a bin"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "bin"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binId",
+        "displayName": "Bin ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "bin"
+            ],
+            "operation": [
+              "get",
+              "delete"
+            ]
+          }
+        },
+        "description": "Unique identifier for each bin"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a request"
+          },
+          {
+            "name": "Remove First",
+            "value": "removeFirst",
+            "description": "Remove the first request from bin"
+          },
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send a test request to the bin"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "request"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binId",
+        "displayName": "Bin ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "request"
+            ],
+            "operation": [
+              "get",
+              "removeFirst",
+              "send"
+            ]
+          }
+        },
+        "description": "Unique identifier for each bin"
+      },
+      {
+        "name": "binContent",
+        "displayName": "Bin Content",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "request"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        }
+      },
+      {
+        "name": "requestId",
+        "displayName": "Request ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "request"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for each request"
+      },
+      {
+        "name": "requestOptions",
+        "displayName": "Request Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batching"
+          },
+          {
+            "name": "allowUnauthorizedCerts",
+            "description": "Whether to accept the response even if SSL certificate validation is not possible"
+          },
+          {
+            "name": "proxy",
+            "description": "HTTP proxy to use. If authentication is required it can be defined as follow: http://username:password@myproxy:3128"
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for the server to send response headers (and start the response body) before aborting the request"
+          }
+        ]
+      }
+    ]
+  }
+}

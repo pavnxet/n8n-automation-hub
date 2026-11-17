@@ -1,0 +1,346 @@
+{
+  "id": "n8n-nodes-base.mailerlite",
+  "name": "MailerLite",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.mailerlite",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the MailerLite node to automate work in MailerLite, and integrate MailerLite with other applications. n8n has built-in support for a wide range of MailerLite features, including creating, updating, deleting, and getting subscribers",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mailerlite",
+  "credentials": {
+    "name": "MailerLite",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mailerlite",
+    "slug": "mailerlite",
+    "json_file": "credentials/mailerlite.json",
+    "markdown_file": "credentials/mailerlite.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Subscriber",
+      "operation": "Create a new subscriber",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscriber",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Subscriber",
+      "operation": "Get an subscriber",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscriber",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Subscriber",
+      "operation": "Get all subscribers",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscriber",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Subscriber",
+      "operation": "Update an subscriber",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscriber",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "mailerlite",
+    "new",
+    "subscriber",
+    "subscribers",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mailerlite.md",
+      "title": "MailerLite node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mailerlite",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mailerlite.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.mailerlite.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.mailerlite.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.mailerlite.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mailerLite",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mailerLiteApi"
+  ],
+  "credential_details": [
+    {
+      "name": "mailerLiteApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "MailerLite"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "subscriber",
+        "options": [
+          {
+            "name": "Subscriber",
+            "value": "subscriber"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new subscriber"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an subscriber"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many subscribers"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an subscriber"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ]
+          }
+        }
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Email of new subscriber"
+      },
+      {
+        "name": "subscriberId",
+        "displayName": "Subscriber Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Email of subscriber"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customFieldsUi",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "subscribed_at"
+          },
+          {
+            "name": "ip_address"
+          },
+          {
+            "name": "opted_in_at"
+          },
+          {
+            "name": "optin_ip"
+          },
+          {
+            "name": "unsubscribed_at"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "update",
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "subscriberId",
+        "displayName": "Subscriber Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Email of subscriber to delete"
+      },
+      {
+        "name": "subscriberId",
+        "displayName": "Subscriber Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Email of subscriber to get"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "status"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "subscriber"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

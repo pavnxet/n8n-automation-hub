@@ -1,0 +1,587 @@
+{
+  "id": "n8n-nodes-base.mongodb",
+  "name": "MongoDB",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.mongodb",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the MongoDB node to automate work in MongoDB, and integrate MongoDB with other applications. n8n has built-in support for a wide range of MongoDB features, including aggregating, updating, finding, deleting, and getting documents as well as creating, updating, listing, and dropping search indexes. All operations in this Node make use of the MongoDB Node driver",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mongodb",
+  "credentials": {
+    "name": "MongoDB",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mongodb",
+    "slug": "mongodb",
+    "json_file": "credentials/mongodb.json",
+    "markdown_file": "credentials/mongodb.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Document",
+      "operation": "Aggregate documents",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "aggregate"
+    },
+    {
+      "resource": "Document",
+      "operation": "Delete documents",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Document",
+      "operation": "Find documents",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "find"
+    },
+    {
+      "resource": "Document",
+      "operation": "Find and replace documents",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "find"
+    },
+    {
+      "resource": "Document",
+      "operation": "Find and update documents",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "find"
+    },
+    {
+      "resource": "Document",
+      "operation": "Insert documents",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "insert"
+    },
+    {
+      "resource": "Document",
+      "operation": "Update documents",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Search Index",
+      "operation": "Create search indexes",
+      "description": "",
+      "doc": "",
+      "resource_value": "searchIndexes",
+      "operation_value": "createSearchIndex"
+    },
+    {
+      "resource": "Search Index",
+      "operation": "Drop search indexes",
+      "description": "",
+      "doc": "",
+      "resource_value": "searchIndexes",
+      "operation_value": "dropSearchIndex"
+    },
+    {
+      "resource": "Search Index",
+      "operation": "List search indexes",
+      "description": "",
+      "doc": "",
+      "resource_value": "searchIndexes",
+      "operation_value": "listSearchIndexes"
+    },
+    {
+      "resource": "Search Index",
+      "operation": "Update search indexes",
+      "description": "",
+      "doc": "",
+      "resource_value": "searchIndexes",
+      "operation_value": "updateSearchIndex"
+    }
+  ],
+  "operation_count": 11,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "aggregate",
+    "aggregating",
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "document",
+    "documents",
+    "driver",
+    "drop",
+    "dropping",
+    "find",
+    "finding",
+    "getting",
+    "including",
+    "index",
+    "indexes",
+    "insert",
+    "list",
+    "listing",
+    "make",
+    "mongodb",
+    "operations",
+    "replace",
+    "search",
+    "update",
+    "updating",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mongodb.md",
+      "title": "MongoDB node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mongodb",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mongodb.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.mongodb.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.mongodb.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.mongodb.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mongoDb",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mongoDb"
+  ],
+  "credential_details": [
+    {
+      "name": "mongoDb",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "MongoDB"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 17,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "document",
+        "options": [
+          {
+            "name": "Search Index",
+            "value": "searchIndexes"
+          },
+          {
+            "name": "Document",
+            "value": "document"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "find",
+        "options": [
+          {
+            "name": "Aggregate",
+            "value": "aggregate",
+            "description": "Aggregate documents"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete documents"
+          },
+          {
+            "name": "Find",
+            "value": "find",
+            "description": "Find documents"
+          },
+          {
+            "name": "Find And Replace",
+            "value": "findOneAndReplace",
+            "description": "Find and replace documents"
+          },
+          {
+            "name": "Find And Update",
+            "value": "findOneAndUpdate",
+            "description": "Find and update documents"
+          },
+          {
+            "name": "Insert",
+            "value": "insert",
+            "description": "Insert documents"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update documents"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "createSearchIndex",
+        "options": [
+          {
+            "name": "Create",
+            "value": "createSearchIndex"
+          },
+          {
+            "name": "Drop",
+            "value": "dropSearchIndex"
+          },
+          {
+            "name": "List",
+            "value": "listSearchIndexes"
+          },
+          {
+            "name": "Update",
+            "value": "updateSearchIndex"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "searchIndexes"
+            ]
+          }
+        }
+      },
+      {
+        "name": "collection",
+        "displayName": "Collection",
+        "type": "string",
+        "required": true,
+        "description": "MongoDB Collection"
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "json",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "aggregate"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "MongoDB aggregation pipeline query in JSON format"
+      },
+      {
+        "name": "query",
+        "displayName": "Delete Query (JSON Format)",
+        "type": "json",
+        "required": true,
+        "default": "{}",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "MongoDB Delete query"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "limit",
+            "description": "Use limit to specify the maximum number of documents or 0 for unlimited documents"
+          },
+          {
+            "name": "skip",
+            "description": "The number of documents to skip in the results set"
+          },
+          {
+            "name": "sort",
+            "description": "A JSON that defines the sort order of the result set"
+          },
+          {
+            "name": "projection",
+            "description": "A JSON that defines a selection of fields to retrieve or exclude from the result set"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "find"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Add query options"
+      },
+      {
+        "name": "query",
+        "displayName": "Query (JSON Format)",
+        "type": "json",
+        "required": true,
+        "default": "{}",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "find"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "MongoDB Find query"
+      },
+      {
+        "name": "fields",
+        "displayName": "Fields",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Comma-separated list of the fields to be included into the new document"
+      },
+      {
+        "name": "updateKey",
+        "displayName": "Update Key",
+        "type": "string",
+        "required": true,
+        "default": "id",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update",
+              "findOneAndReplace",
+              "findOneAndUpdate"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Name of the property which decides which rows in the database should be updated. Normally that would be \"id\"."
+      },
+      {
+        "name": "fields",
+        "displayName": "Fields",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update",
+              "findOneAndReplace",
+              "findOneAndUpdate"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Comma-separated list of the fields to be included into the new document"
+      },
+      {
+        "name": "upsert",
+        "displayName": "Upsert",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update",
+              "findOneAndReplace",
+              "findOneAndUpdate"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Whether to perform an insert if no documents match the update key"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dateFields",
+            "description": "Comma-separated list of fields that will be parsed as Mongo Date type"
+          },
+          {
+            "name": "useDotNotation",
+            "description": "Whether to use dot notation to access date fields"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update",
+              "insert",
+              "findOneAndReplace",
+              "findOneAndUpdate"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "indexName",
+        "displayName": "Index Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "listSearchIndexes"
+            ],
+            "resource": [
+              "searchIndexes"
+            ]
+          }
+        },
+        "description": "If provided, only lists indexes with the specified name"
+      },
+      {
+        "name": "indexNameRequired",
+        "displayName": "Index Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createSearchIndex",
+              "dropSearchIndex",
+              "updateSearchIndex"
+            ],
+            "resource": [
+              "searchIndexes"
+            ]
+          }
+        },
+        "description": "The name of the search index"
+      },
+      {
+        "name": "indexDefinition",
+        "displayName": "Index Definition",
+        "type": "json",
+        "required": true,
+        "default": "{}",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createSearchIndex",
+              "updateSearchIndex"
+            ],
+            "resource": [
+              "searchIndexes"
+            ]
+          }
+        },
+        "description": "The search index definition"
+      },
+      {
+        "name": "indexType",
+        "displayName": "Index Type",
+        "type": "options",
+        "required": true,
+        "default": "vectorSearch",
+        "options": [
+          {
+            "name": "Vector Search",
+            "value": "vectorSearch"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createSearchIndex"
+            ],
+            "resource": [
+              "searchIndexes"
+            ]
+          }
+        },
+        "description": "The search index index type"
+      }
+    ]
+  }
+}

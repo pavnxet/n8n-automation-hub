@@ -1,0 +1,791 @@
+{
+  "id": "n8n-nodes-base.dropbox",
+  "name": "Dropbox",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.dropbox",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Dropbox node to automate work in Dropbox, and integrate Dropbox with other applications. n8n has built-in support for a wide range of Dropbox features, including creating, downloading, moving, and copying files and folders",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.dropbox",
+  "credentials": {
+    "name": "Dropbox",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/dropbox",
+    "slug": "dropbox",
+    "json_file": "credentials/dropbox.json",
+    "markdown_file": "credentials/dropbox.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "File",
+      "operation": "Copy a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "copy"
+    },
+    {
+      "resource": "File",
+      "operation": "Delete a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "File",
+      "operation": "Download a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "download"
+    },
+    {
+      "resource": "File",
+      "operation": "Move a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "move"
+    },
+    {
+      "resource": "File",
+      "operation": "Upload a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "upload"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Copy a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "copy"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Create a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Delete a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Return the files and folders in a given folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Move a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "move"
+    },
+    {
+      "resource": "Search",
+      "operation": "Query",
+      "description": "",
+      "doc": "",
+      "resource_value": "search",
+      "operation_value": "query"
+    }
+  ],
+  "operation_count": 11,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "copy",
+    "copying",
+    "create",
+    "creating",
+    "delete",
+    "download",
+    "downloading",
+    "dropbox",
+    "file",
+    "files",
+    "folder",
+    "folders",
+    "given",
+    "including",
+    "move",
+    "moving",
+    "query",
+    "return",
+    "search",
+    "upload",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.dropbox.md",
+      "title": "Dropbox node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.dropbox",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.dropbox.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.dropbox.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.dropbox.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.dropbox.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.dropbox",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "dropboxApi",
+    "dropboxOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "dropboxApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "dropboxOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Dropbox"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 27,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ],
+        "description": "Means of authenticating with the service"
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "file",
+        "options": [
+          {
+            "name": "File",
+            "value": "file"
+          },
+          {
+            "name": "Folder",
+            "value": "folder"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upload",
+        "options": [
+          {
+            "name": "Copy",
+            "value": "copy",
+            "description": "Copy a file"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a file"
+          },
+          {
+            "name": "Download",
+            "value": "download",
+            "description": "Download a file"
+          },
+          {
+            "name": "Move",
+            "value": "move",
+            "description": "Move a file"
+          },
+          {
+            "name": "Upload",
+            "value": "upload",
+            "description": "Upload a file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Copy",
+            "value": "copy",
+            "description": "Copy a folder"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a folder"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a folder"
+          },
+          {
+            "name": "List",
+            "value": "list",
+            "description": "Return the files and folders in a given folder"
+          },
+          {
+            "name": "Move",
+            "value": "move",
+            "description": "Move a folder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "query",
+        "options": [
+          {
+            "name": "Query",
+            "value": "query"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "path",
+        "displayName": "From Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "copy"
+            ],
+            "resource": [
+              "file",
+              "folder"
+            ]
+          }
+        },
+        "description": "The path of file or folder to copy"
+      },
+      {
+        "name": "toPath",
+        "displayName": "To Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "copy"
+            ],
+            "resource": [
+              "file",
+              "folder"
+            ]
+          }
+        },
+        "description": "The destination path of file or folder"
+      },
+      {
+        "name": "path",
+        "displayName": "Delete Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "file",
+              "folder"
+            ]
+          }
+        },
+        "description": "The path to delete. Can be a single file or a whole folder."
+      },
+      {
+        "name": "path",
+        "displayName": "From Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "move"
+            ],
+            "resource": [
+              "file",
+              "folder"
+            ]
+          }
+        },
+        "description": "The path of file or folder to move"
+      },
+      {
+        "name": "toPath",
+        "displayName": "To Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "move"
+            ],
+            "resource": [
+              "file",
+              "folder"
+            ]
+          }
+        },
+        "description": "The new path of file or folder"
+      },
+      {
+        "name": "path",
+        "displayName": "File Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The file path of the file to download. Has to contain the full path."
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "path",
+        "displayName": "File Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The file path of the file to upload. Has to contain the full path. The parent folder has to exist. Existing files get overwritten."
+      },
+      {
+        "name": "binaryData",
+        "displayName": "Binary File",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Whether the data to upload should be taken from binary field"
+      },
+      {
+        "name": "fileContent",
+        "displayName": "File Content",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "The text content of the file to upload"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ],
+            "binaryData": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "query"
+            ],
+            "resource": [
+              "search"
+            ]
+          }
+        },
+        "description": "The string to search for. May match across multiple fields based on the request arguments."
+      },
+      {
+        "name": "fileStatus",
+        "displayName": "File Status",
+        "type": "options",
+        "default": "active",
+        "options": [
+          {
+            "name": "Active",
+            "value": "active"
+          },
+          {
+            "name": "Deleted",
+            "value": "deleted"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "query"
+            ],
+            "resource": [
+              "search"
+            ]
+          }
+        },
+        "description": "The string to search for. May match across multiple fields based on the request arguments."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "query"
+            ],
+            "resource": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "query"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "query"
+            ],
+            "resource": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "file_categories"
+          },
+          {
+            "name": "file_extensions",
+            "description": "Multiple file extensions can be set separated by comma. Example: jpg,pdf."
+          },
+          {
+            "name": "path",
+            "description": "If this field is not specified, this module searches the entire Dropbox"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "query"
+            ]
+          }
+        }
+      },
+      {
+        "name": "path",
+        "displayName": "Folder",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "The folder to create. The parent folder has to exist."
+      },
+      {
+        "name": "path",
+        "displayName": "Folder Path",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "list"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "The path of which to list the content"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "list"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "list"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include_deleted",
+            "description": "Whether the results will include entries for files and folders that used to exist but were deleted. The default for this field is False."
+          },
+          {
+            "name": "include_has_explicit_shared_members",
+            "description": "Whether the results will include a flag for each file indicating whether or not that file has any explicit members. The default for this field is False."
+          },
+          {
+            "name": "include_mounted_folders",
+            "description": "Whether the results will include entries under mounted folders which includes app folder, shared folder and team folder. The default for this field is True."
+          },
+          {
+            "name": "include_non_downloadable_files",
+            "description": "Whether to include files that are not downloadable, i.e. Google Docs. The default for this field is True."
+          },
+          {
+            "name": "recursive",
+            "description": "Whether the list folder operation will be applied recursively to all subfolders and the response will contain contents of all subfolders. The default for this f"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

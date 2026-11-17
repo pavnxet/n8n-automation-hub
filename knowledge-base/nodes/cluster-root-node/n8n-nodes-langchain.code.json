@@ -1,0 +1,186 @@
+{
+  "id": "n8n-nodes-langchain.code",
+  "name": "LangChain Code",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.code",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the LangChain Code node to import LangChain. This means if there is functionality you need that n8n hasn't created a node for, you can still use it. By configuring the LangChain Code node connectors you can use it as a normal node, root node or sub-node",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.code",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Add Code",
+      "description": "Add your custom code. Choose either Execute or Supply Data mode. You can only use one mode"
+    },
+    {
+      "name": "Inputs",
+      "description": "Choose the input types"
+    },
+    {
+      "name": "Outputs",
+      "description": "Choose the output types"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "cluster",
+    "code",
+    "configuring",
+    "connectors",
+    "created",
+    "functionality",
+    "hasn",
+    "import",
+    "inputs",
+    "langchain",
+    "means",
+    "need",
+    "normal",
+    "outputs",
+    "root",
+    "still"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "iIcw3xaOoa9HryGmR8dX",
+      "name": "builtin-methods"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.code.md",
+      "title": "LangChain Code node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.code",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.code.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.code.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.code.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.code.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.code",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "LangChain Code"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{ ((values) => { const connectorTypes = {\"ai_chain\":\"Chain\",\"ai_document\":\"Document\",\"ai_embedding\":\"Embedding\",\"ai_languageModel\":\"Language Model\",\"ai_memory\":\"Memory\",\"ai_outputParser\":\"Output Parser\",\"ai_textSplitter\":\"Text Splitter\",\"ai_tool\":\"Tool\",\"ai_vectorStore\":\"Vector Store\",\"main\":\"Main\"}; return values.map(value => { return { type: value.type, required: value.required, maxConnections: value.maxConnections === -1 ? undefined : value.maxConnections, displayName: connectorTypes[value.type] !== 'Main' ? connectorTypes[value.type] : undefined } } ) })($parameter.inputs.input) }}",
+    "outputs": "={{ ((values) => { const connectorTypes = {\"ai_chain\":\"Chain\",\"ai_document\":\"Document\",\"ai_embedding\":\"Embedding\",\"ai_languageModel\":\"Language Model\",\"ai_memory\":\"Memory\",\"ai_outputParser\":\"Output Parser\",\"ai_textSplitter\":\"Text Splitter\",\"ai_tool\":\"Tool\",\"ai_vectorStore\":\"Vector Store\",\"main\":\"Main\"}; return values.map(value => { return { type: value.type, displayName: connectorTypes[value.type] !== 'Main' ? connectorTypes[value.type] : undefined } } ) })($parameter.outputs.output) }}"
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "code",
+        "displayName": "Code",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "execute",
+            "values": [
+              {
+                "name": "code",
+                "displayName": "JavaScript - Execute",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "supplyData",
+            "values": [
+              {
+                "name": "code",
+                "displayName": "JavaScript - Supply Data",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "You can import LangChain and use all available functionality. Debug by using <code>console.log()</code> statements and viewing their output in the browser console.",
+        "type": "notice"
+      },
+      {
+        "name": "inputs",
+        "displayName": "Inputs",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "input",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "maxConnections",
+                "displayName": "Max Connections",
+                "type": "number"
+              },
+              {
+                "name": "required",
+                "displayName": "Required",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "description": "The input to add"
+      },
+      {
+        "name": "outputs",
+        "displayName": "Outputs",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "output",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "The output to add"
+      }
+    ]
+  }
+}

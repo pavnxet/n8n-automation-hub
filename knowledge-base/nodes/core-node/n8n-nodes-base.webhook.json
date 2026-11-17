@@ -1,0 +1,680 @@
+{
+  "id": "n8n-nodes-base.webhook",
+  "name": "Webhook",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.webhook",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Webhook node to create webhooks, which can receive data from apps and services when an event occurs. It's a trigger node, which means it can start an n8n workflow. This allows services to connect to n8n and run a workflow",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook",
+  "credentials": {
+    "name": "Webhook",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/webhook",
+    "slug": "webhook",
+    "json_file": "credentials/webhook.json",
+    "markdown_file": "credentials/webhook.md"
+  },
+  "authentication_methods": [
+    "Basic auth",
+    "Header auth",
+    "JWT auth",
+    "None",
+    "n8n User Auth (OAuth2)"
+  ],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Webhook URLs",
+      "description": "The Webhook node has two Webhook URLs: test and production. n8n displays the URLs at the top of the node panel"
+    },
+    {
+      "name": "HTTP Method",
+      "description": "The Webhook node supports standard HTTP Request Methods:",
+      "options": [
+        "DELETE",
+        "GET",
+        "HEAD",
+        "PATCH",
+        "POST",
+        "PUT"
+      ]
+    },
+    {
+      "name": "Path",
+      "description": "By default, this field contains a randomly generated webhook URL path, to avoid conflicts with other webhook nodes",
+      "options": [
+        "/:variable",
+        "/path/:variable",
+        "/:variable/path",
+        "/:variable1/path/:variable2",
+        "/:variable1/:variable2"
+      ]
+    },
+    {
+      "name": "Supported authentication methods",
+      "description": "You can require authentication for any service calling your webhook URL. Choose from these authentication methods:",
+      "options": [
+        "Basic auth",
+        "Header auth",
+        "JWT auth",
+        "n8n User Auth (OAuth2)",
+        "None"
+      ]
+    },
+    {
+      "name": "Using n8n User Auth (OAuth2)",
+      "description": "Only users logged in to this n8n instance can call the webhook. The caller must send an OAuth2 bearer token issued by this instance. n8n resolves the token to the calling user and runs the execution as that user. End-user credentials resolve to the calling user's connected accounts under this mode",
+      "options": [
+        "Any other request receives a 401 response. Only GET requests can be redirected"
+      ]
+    },
+    {
+      "name": "Calling a webhook that uses n8n User Auth (OAuth2)",
+      "description": "n8n is the OAuth2 authorization server for the webhook. How the caller gets a bearer token depends on the caller:"
+    },
+    {
+      "name": "Respond"
+    },
+    {
+      "name": "Response Code",
+      "description": "Customize the HTTP response code that the Webhook node returns upon successful execution. Select from common response codes or create a custom code"
+    },
+    {
+      "name": "Response Data",
+      "description": "Choose what data to include in the response body:",
+      "options": [
+        "All Entries: The Webhook returns all the entries of the last node in an array",
+        "No Response Body: The Webhook returns without a body"
+      ]
+    },
+    {
+      "name": "Allowed Origins (CORS)",
+      "description": "Set the permitted cross-origin domains. Enter a comma-separated list of URLs allowed for cross-origin non-preflight requests. Use * (default) to allow all origins"
+    },
+    {
+      "name": "Binary Property",
+      "description": "Enabling this setting allows the Webhook node to receive binary data, such as an image or audio file. Enter the name of the binary property to write the data of the received file to"
+    },
+    {
+      "name": "Ignore Bots",
+      "description": "Ignore requests from bots like link previewers and web crawlers"
+    },
+    {
+      "name": "IP(s) Allowlist",
+      "description": "Enable this to limit who (or what) can invoke a Webhook trigger URL. Enter a comma-separated list of allowed IP addresses. Access from IP addresses outside the allowlist throws a 403 error. If left blank, all IP addresses can invoke the webhook trigger URL"
+    },
+    {
+      "name": "No Response Body",
+      "description": "Enable this to prevent n8n sending a body with the response"
+    },
+    {
+      "name": "OAuth2 Client",
+      "description": "How n8n handles a request without a bearer token when Authentication is n8n User Auth (OAuth2). Auto-Detect (default) redirects browser navigations through the n8n sign-in page and requires a bearer token from everything else. Bearer Token Only always requires a bearer token and never redirects. Bro"
+    },
+    {
+      "name": "Only Run If",
+      "description": "An expression evaluated against the incoming request. The workflow only runs if the expression returns true. Use $json to access the request as { body, headers, params, query }. For example, {{ $json.body.campaign_id === 'user-research-invite' }}. Requests that don't match receive a 200 response wit"
+    },
+    {
+      "name": "Raw Body",
+      "description": "Specify that the Webhook node will receive data in a raw format, such as JSON or XML"
+    },
+    {
+      "name": "Response Content-Type",
+      "description": "Choose the format for the webhook body"
+    },
+    {
+      "name": "Response Headers",
+      "description": "Send extra headers in the Webhook response. Refer to MDN Web Docs | Response header to learn more about response headers"
+    },
+    {
+      "name": "Property Name",
+      "description": "by default, n8n returns all available data. You can choose to return a specific JSON key, so that n8n returns the value"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Listen for multiple HTTP methods",
+      "summary": "By default, the Webhook node accepts calls that use a single method. For example, it can accept GET or POST requests, but not both. If you want to accept calls using multiple methods:"
+    },
+    {
+      "title": "Use the HTTP Request node to trigger the Webhook node",
+      "summary": "The HTTP Request node makes HTTP requests to the URL you specify"
+    },
+    {
+      "title": "Use curl to trigger the Webhook node",
+      "summary": "You can use curl to make HTTP requests that trigger the Webhook node"
+    },
+    {
+      "title": "Send a response of type string",
+      "summary": "By default, the response format is JSON or an array. To send a response of type string:"
+    },
+    {
+      "title": "Test URL versus Production URL",
+      "summary": "n8n generates two Webhook URLs for each Webhook node: a Test URL and a Production URL"
+    },
+    {
+      "title": "IP addresses in whitelist are failing to connect",
+      "summary": "If you're unable to connect from IP addresses in your IP whitelist, check if you are running n8n behind a reverse proxy"
+    },
+    {
+      "title": "Only one webhook per path and method",
+      "summary": "n8n only permits registering one webhook for each path and HTTP method combination (for example, a GET request for /my-request). This avoids ambiguity over which webhook should receive requests"
+    },
+    {
+      "title": "Timeouts on n8n Cloud",
+      "summary": "n8n Cloud uses Cloudflare to protect against malicious traffic. If your webhook doesn't respond within 100 seconds, the incoming request will fail with a 524 status code"
+    }
+  ],
+  "keywords": [
+    "allowed",
+    "allowlist",
+    "allows",
+    "apps",
+    "auth",
+    "authentication",
+    "binary",
+    "body",
+    "bots",
+    "calling",
+    "client",
+    "code",
+    "connect",
+    "content",
+    "core",
+    "cors",
+    "create",
+    "data",
+    "event",
+    "headers",
+    "http",
+    "ignore",
+    "means",
+    "method",
+    "methods",
+    "n8n",
+    "name",
+    "oauth2",
+    "occurs",
+    "only",
+    "origins",
+    "path",
+    "property",
+    "raw",
+    "receive",
+    "respond",
+    "response",
+    "run",
+    "services",
+    "start",
+    "trigger",
+    "type",
+    "urls",
+    "user",
+    "uses",
+    "webhook",
+    "webhooks"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Webhook node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.webhook/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Webhook node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/common-issues",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.webhook/common-issues.md"
+    },
+    {
+      "page": "workflow-development.md",
+      "title": "Webhook node workflow development documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/workflow-development",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.webhook/workflow-development.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.webhook.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.webhook.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.webhook/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.webhook",
+  "type_version": 2.1,
+  "type_versions": [
+    1,
+    1.1,
+    2,
+    2.1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "httpBasicAuth",
+    "httpHeaderAuth",
+    "jwtAuth"
+  ],
+  "credential_details": [
+    {
+      "name": "httpBasicAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "basicAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "httpHeaderAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "headerAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "jwtAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "jwtAuth"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Webhook"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": "={{((parameters) => {\n    const httpMethod = parameters.httpMethod;\n    if (!Array.isArray(httpMethod))\n        return [\n            {\n                type: 'main',\n                displayName: httpMethod,\n            },\n        ];\n    const outputs = httpMethod.map((method) => {\n        return {\n            type: 'main',\n            displayName: method,\n        };\n    });\n    return outputs;\n})($parameter)}}"
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 14,
+    "parameters": [
+      {
+        "name": "multipleMethods",
+        "displayName": "Allow Multiple HTTP Methods",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to allow the webhook to listen for multiple HTTP methods"
+      },
+      {
+        "name": "httpMethod",
+        "displayName": "HTTP Method",
+        "type": "options",
+        "default": "GET",
+        "options": [
+          {
+            "name": "DELETE",
+            "value": "DELETE"
+          },
+          {
+            "name": "GET",
+            "value": "GET"
+          },
+          {
+            "name": "HEAD",
+            "value": "HEAD"
+          },
+          {
+            "name": "PATCH",
+            "value": "PATCH"
+          },
+          {
+            "name": "POST",
+            "value": "POST"
+          },
+          {
+            "name": "PUT",
+            "value": "PUT"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "multipleMethods": [
+              false
+            ]
+          }
+        },
+        "description": "The HTTP method to listen to"
+      },
+      {
+        "name": "httpMethod",
+        "displayName": "HTTP Methods",
+        "type": "multiOptions",
+        "options": [
+          {
+            "name": "DELETE",
+            "value": "DELETE"
+          },
+          {
+            "name": "GET",
+            "value": "GET"
+          },
+          {
+            "name": "HEAD",
+            "value": "HEAD"
+          },
+          {
+            "name": "PATCH",
+            "value": "PATCH"
+          },
+          {
+            "name": "POST",
+            "value": "POST"
+          },
+          {
+            "name": "PUT",
+            "value": "PUT"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "multipleMethods": [
+              true
+            ]
+          }
+        },
+        "description": "The HTTP methods to listen to"
+      },
+      {
+        "name": "path",
+        "displayName": "Path",
+        "type": "string",
+        "description": "The path to listen to, dynamic values could be specified by using ':', e.g. 'your-path/:dynamic-value'. If dynamic values are set 'webhookId' would be prepended to path."
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "Basic Auth",
+            "value": "basicAuth"
+          },
+          {
+            "name": "Header Auth",
+            "value": "headerAuth"
+          },
+          {
+            "name": "JWT Auth",
+            "value": "jwtAuth"
+          },
+          {
+            "name": "None",
+            "value": "none"
+          }
+        ],
+        "description": "The way to authenticate"
+      },
+      {
+        "name": "responseMode",
+        "displayName": "Respond",
+        "type": "options",
+        "default": "onReceived",
+        "options": [
+          {
+            "name": "Immediately",
+            "value": "onReceived",
+            "description": "As soon as this node executes"
+          },
+          {
+            "name": "When Last Node Finishes",
+            "value": "lastNode",
+            "description": "Returns data of the last-executed node"
+          },
+          {
+            "name": "Using 'Respond to Webhook' Node",
+            "value": "responseNode",
+            "description": "Response defined in that node"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1,
+              1.1,
+              2
+            ]
+          }
+        },
+        "description": "When and how to respond to the webhook"
+      },
+      {
+        "name": "responseMode",
+        "displayName": "Respond",
+        "type": "options",
+        "default": "onReceived",
+        "options": [
+          {
+            "name": "Immediately",
+            "value": "onReceived",
+            "description": "As soon as this node executes"
+          },
+          {
+            "name": "When Last Node Finishes",
+            "value": "lastNode",
+            "description": "Returns data of the last-executed node"
+          },
+          {
+            "name": "Using 'Respond to Webhook' Node",
+            "value": "responseNode",
+            "description": "Response defined in that node"
+          },
+          {
+            "name": "Streaming",
+            "value": "streaming",
+            "description": "Returns data in real time from streaming enabled nodes"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              1,
+              1.1,
+              2
+            ]
+          }
+        },
+        "description": "When and how to respond to the webhook"
+      },
+      {
+        "name": "webhookNotice",
+        "displayName": "Insert a 'Respond to Webhook' node to control when and how you respond. <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook/\" target=\"_blank\">More details</a>",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "responseMode": [
+              "responseNode"
+            ]
+          }
+        }
+      },
+      {
+        "name": "webhookStreamingNotice",
+        "displayName": "Insert a node that supports streaming (e.g. 'AI Agent') and enable streaming to stream directly to the response while the workflow is executed. <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook/\" target=\"_blank\">More details</a>",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "responseMode": [
+              "streaming"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responseCode",
+        "displayName": "Response Code",
+        "type": "number",
+        "default": 200,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1,
+              1.1
+            ]
+          },
+          "hide": {
+            "responseMode": [
+              "responseNode"
+            ]
+          }
+        },
+        "description": "The HTTP Response code to return"
+      },
+      {
+        "name": "responseData",
+        "displayName": "Response Data",
+        "type": "options",
+        "default": "firstEntryJson",
+        "options": [
+          {
+            "name": "All Entries",
+            "value": "allEntries",
+            "description": "Returns all the entries of the last node. Always returns an array."
+          },
+          {
+            "name": "First Entry JSON",
+            "value": "firstEntryJson",
+            "description": "Returns the JSON data of the first entry of the last node. Always returns a JSON object."
+          },
+          {
+            "name": "First Entry Binary",
+            "value": "firstEntryBinary",
+            "description": "Returns the binary data of the first entry of the last node. Always returns a binary file."
+          },
+          {
+            "name": "No Response Body",
+            "value": "noData",
+            "description": "Returns without a body"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseMode": [
+              "lastNode"
+            ]
+          }
+        },
+        "description": "What data should be returned. If it should return all items as an array or only the first item as object."
+      },
+      {
+        "name": "responseBinaryPropertyName",
+        "displayName": "Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "responseData": [
+              "firstEntryBinary"
+            ]
+          }
+        },
+        "description": "Name of the binary property to return"
+      },
+      {
+        "name": "contentTypeNotice",
+        "displayName": "If you are sending back a response, add a \"Content-Type\" response header with the appropriate value to avoid unexpected behavior",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "responseMode": [
+              "onReceived"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allowedOrigins",
+            "description": "Comma-separated list of URLs allowed for cross-origin non-preflight requests. Use * (default) to allow all origins."
+          },
+          {
+            "name": "binaryData",
+            "description": "Whether the webhook will receive binary data"
+          },
+          {
+            "name": "binaryPropertyName",
+            "description": "The name of the output field to put any binary file data in. Only relevant if binary data is received."
+          },
+          {
+            "name": "ignoreBots",
+            "description": "Whether to ignore requests from bots like link previewers and web crawlers"
+          },
+          {
+            "name": "ipWhitelist",
+            "description": "Comma-separated list of allowed IP addresses or CIDR ranges. Leave empty to allow all IPs."
+          },
+          {
+            "name": "noResponseBody",
+            "description": "Whether to send any body in the response"
+          },
+          {
+            "name": "responsePropertyName",
+            "description": "Name of the property to return the data of instead of the whole JSON"
+          },
+          {
+            "name": "binaryPropertyName",
+            "description": "If the data gets received via \"Form-Data Multipart\" it will be the prefix and a number starting with 0 will be attached to it"
+          },
+          {
+            "name": "rawBody",
+            "description": "Raw body (binary)"
+          },
+          {
+            "name": "rawBody",
+            "description": "Whether to return the raw body"
+          },
+          {
+            "name": "responseCode"
+          },
+          {
+            "name": "responseContentType",
+            "description": "Set a custom content-type to return if another one as the \"application/json\" should be returned"
+          },
+          {
+            "name": "responseData",
+            "description": "Custom response data to send"
+          },
+          {
+            "name": "responseHeaders",
+            "description": "Add headers to the webhook response"
+          }
+        ]
+      }
+    ]
+  }
+}

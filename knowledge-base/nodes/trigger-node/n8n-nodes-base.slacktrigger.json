@@ -1,0 +1,318 @@
+{
+  "id": "n8n-nodes-base.slacktrigger",
+  "name": "Slack Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.slacktrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Slack Trigger node to respond to events in Slack and integrate Slack with other applications. n8n has built-in support for a wide range of Slack events, including new messages, reactions, and new channels",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.slacktrigger",
+  "credentials": {
+    "name": "Scopes | Slack",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/slack#scopes",
+    "slug": "slack#scopes"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Watch Whole Workspace",
+      "description": "Whether the node should watch for the selected Events in all channels in the workspace (turned on) or not (turned off, default)"
+    },
+    {
+      "name": "Channel to Watch",
+      "description": "Select the channel your node should watch for the selected Events. This parameter only appears if you don't turn on Watch Whole Workspace. You can select a channel:"
+    },
+    {
+      "name": "Download Files",
+      "description": "Whether to download files and use them in the node's output (turned on) or not (turned off, default). Use this parameter with the File Made Public and File Shared events"
+    },
+    {
+      "name": "Resolve IDs",
+      "description": "Whether to resolve the IDs to their respective names and return them (turned on) or not (turned off, default)"
+    },
+    {
+      "name": "Usernames or IDs to ignore",
+      "description": "Select usernames or enter a comma-separated string of encoded user IDs to ignore events from. Choose from the list, or specify IDs using an expression"
+    },
+    {
+      "name": "Emoji Names to Filter",
+      "description": "Enter a comma-separated, not colon-separated, list of emoji names (for example thumbsup, eyes, white_check_mark) to limit Reaction Added events to only those specific reactions. Leave empty to trigger on any reaction"
+    }
+  ],
+  "events": [
+    {
+      "name": "Any Event",
+      "description": "The node triggers on any event in Slack"
+    },
+    {
+      "name": "App Home Opened",
+      "description": "The node triggers when a user opens the App Home tab of your Slack app"
+    },
+    {
+      "name": "Bot / App Mention",
+      "description": "The node triggers when your bot or app is mentioned in a channel the app is in"
+    },
+    {
+      "name": "File Made Public",
+      "description": "The node triggers when a file is made public"
+    },
+    {
+      "name": "File Shared",
+      "description": "The node triggers when a file is shared in a channel the app is in"
+    },
+    {
+      "name": "New Message Posted to Channel",
+      "description": "The node triggers when a new message is posted to a channel the app is in"
+    },
+    {
+      "name": "New Public Channel Created",
+      "description": "The node triggers when a new public channel is created"
+    },
+    {
+      "name": "New User",
+      "description": "The node triggers when a new user is added to Slack"
+    },
+    {
+      "name": "Reaction Added",
+      "description": "The node triggers when a reaction is added to a message the app is added to"
+    }
+  ],
+  "trigger_methods": [
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "applications",
+    "channel",
+    "channels",
+    "download",
+    "emoji",
+    "events",
+    "files",
+    "filter",
+    "ids",
+    "ignore",
+    "including",
+    "messages",
+    "names",
+    "reactions",
+    "resolve",
+    "respond",
+    "scopes",
+    "slack",
+    "slacktrigger",
+    "trigger",
+    "usernames",
+    "watch",
+    "whole",
+    "workspace"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "aLQxqepKmNn7Oz3PDTB7",
+      "name": "token-rotation"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.slacktrigger.md",
+      "title": "Slack Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.slacktrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.slacktrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.slacktrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.slacktrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.slacktrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.slackTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "slackApi"
+  ],
+  "credential_details": [
+    {
+      "name": "slackApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Slack Trigger"
+  },
+  "subtitle": "={{$parameter[\"eventFilter\"].join(\", \")}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "hidden",
+        "default": "accessToken"
+      },
+      {
+        "name": "notice",
+        "displayName": "Set up a webhook in your Slack app to enable this node. <a href=\"https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.slacktrigger/#configure-a-webhook-in-slack\" target=\"_blank\">More info</a>. We also recommend setting up a <a href=\"https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.slacktrigger/#verify-the-webhook\" target=\"_blank\">signing secret</a> to ensure the authenticity of requests.",
+        "type": "notice"
+      },
+      {
+        "name": "trigger",
+        "displayName": "Trigger On",
+        "type": "multiOptions",
+        "options": [
+          {
+            "name": "Any Event",
+            "value": "any_event",
+            "description": "Triggers on any event"
+          },
+          {
+            "name": "Bot / App Mention",
+            "value": "app_mention",
+            "description": "When your bot or app is mentioned in a channel the app is added to"
+          },
+          {
+            "name": "File Made Public",
+            "value": "file_public",
+            "description": "When a file is made public"
+          },
+          {
+            "name": "File Shared",
+            "value": "file_share",
+            "description": "When a file is shared in a channel the app is added to"
+          },
+          {
+            "name": "New Message Posted to Channel",
+            "value": "message",
+            "description": "When a message is posted to a channel the app is added to"
+          },
+          {
+            "name": "New Public Channel Created",
+            "value": "channel_created",
+            "description": "When a new public channel is created"
+          },
+          {
+            "name": "New User",
+            "value": "team_join",
+            "description": "When a new user is added to Slack"
+          },
+          {
+            "name": "Reaction Added",
+            "value": "reaction_added",
+            "description": "When a reaction is added to a message the app is added to"
+          }
+        ]
+      },
+      {
+        "name": "watchWorkspace",
+        "displayName": "Watch Whole Workspace",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "trigger": [
+              "any_event",
+              "message",
+              "reaction_added",
+              "file_share",
+              "app_mention"
+            ]
+          }
+        },
+        "description": "Whether to watch for the event in the whole workspace, rather than a specific channel"
+      },
+      {
+        "name": "notice",
+        "displayName": "This will use one execution for every event in any channel your bot is in, use with caution",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "trigger": [
+              "any_event",
+              "message",
+              "reaction_added",
+              "file_share",
+              "app_mention"
+            ],
+            "watchWorkspace": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel to Watch",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "watchWorkspace": [
+              false
+            ]
+          }
+        },
+        "description": "The Slack channel to listen to events from. Applies to events: Bot/App mention, File Shared, New Message Posted on Channel, Reaction Added."
+      },
+      {
+        "name": "downloadFiles",
+        "displayName": "Download Files",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "trigger": [
+              "any_event",
+              "file_share"
+            ]
+          }
+        },
+        "description": "Whether to download the files and add it to the output"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "resolveIds",
+            "description": "Whether to resolve the IDs to their respective names and return them"
+          },
+          {
+            "name": "userIds",
+            "description": "A comma-separated string of encoded user IDs. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          }
+        ]
+      }
+    ]
+  }
+}

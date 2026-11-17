@@ -1,0 +1,198 @@
+{
+  "id": "n8n-nodes-langchain.embeddingsawsbedrock",
+  "name": "Embeddings AWS Bedrock",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.embeddingsawsbedrock",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Embeddings AWS Bedrock node to generate embeddings[^1] for a given text",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsawsbedrock",
+  "credentials": {
+    "name": "AWS credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/aws",
+    "slug": "aws",
+    "json_file": "credentials/aws.json",
+    "markdown_file": "credentials/aws.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Authentication",
+      "description": "Select the authentication method:"
+    },
+    {
+      "name": "Model",
+      "description": "Select the model or inference profile that generates the embedding. The dropdown lists on-demand embedding models and embedding inference profiles together. If the dropdown is empty or incomplete, your IAM role may lack the bedrock:ListFoundationModels or bedrock:ListInferenceProfiles permission. Sw"
+    },
+    {
+      "name": "Additional Model Request Fields",
+      "description": "Enter model-specific request fields as JSON, for example Titan's dimensions and normalize or Cohere's input_type and truncate. Refer to the AWS model parameters documentation for the fields each model family supports"
+    },
+    {
+      "name": "Max Retries",
+      "description": "Enter the maximum number of times to retry a request"
+    },
+    {
+      "name": "Timeout",
+      "description": "Enter the maximum time in milliseconds to wait for a request to complete. Set it to 0 to disable the timeout"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "additional",
+    "authentication",
+    "aws",
+    "bedrock",
+    "cluster",
+    "credentials",
+    "embeddings",
+    "embeddingsawsbedrock",
+    "fields",
+    "generate",
+    "given",
+    "max",
+    "model",
+    "request",
+    "retries",
+    "sub",
+    "text",
+    "timeout"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.embeddingsawsbedrock.md",
+      "title": "Embeddings AWS Bedrock node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsawsbedrock",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsawsbedrock.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsawsbedrock.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsawsbedrock.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsawsbedrock.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.embeddingsAwsBedrock",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "aws",
+    "awsAssumeRole"
+  ],
+  "credential_details": [
+    {
+      "name": "aws",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "iam"
+          ]
+        }
+      }
+    },
+    {
+      "name": "awsAssumeRole",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "assumeRole"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Embeddings AWS Bedrock"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_embedding"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "iam",
+        "options": [
+          {
+            "name": "AWS (IAM)",
+            "value": "iam"
+          },
+          {
+            "name": "AWS (Assume Role)",
+            "value": "assumeRole"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_vectorStore'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "description": "The model or inference profile which will generate the embeddings. <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html\">Learn more</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "additionalModelRequestFields",
+            "description": "Model-specific request fields passed through as JSON (e.g. Titan <code>dimensions</code>/<code>normalize</code>, Cohere <code>input_type</code>/<code>truncate</"
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt when a request fails"
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in milliseconds. Set to 0 to disable."
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "id": "n8n-nodes-base.googlecloudnaturallanguage",
+  "name": "Google Cloud Natural Language",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googlecloudnaturallanguage",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Cloud Natural Language node to automate work in Google Cloud Natural Language, and integrate Google Cloud Natural Language with other applications. n8n has built-in support for a wide range of Google Cloud Natural Language features, including analyzing documents",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecloudnaturallanguage",
+  "credentials": {
+    "name": "Google Cloud Natural Language",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Document",
+      "operation": "Analyze Sentiment",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "analyzeSentiment"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analyze",
+    "analyzing",
+    "app",
+    "applications",
+    "cloud",
+    "document",
+    "documents",
+    "google",
+    "googlecloudnaturallanguage",
+    "including",
+    "language",
+    "natural",
+    "sentiment",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googlecloudnaturallanguage.md",
+      "title": "Google Cloud Natural Language node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecloudnaturallanguage",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlecloudnaturallanguage.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googlecloudnaturallanguage.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googlecloudnaturallanguage.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googlecloudnaturallanguage.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleCloudNaturalLanguage",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input",
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleCloudNaturalLanguageOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleCloudNaturalLanguageOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Google Cloud Natural Language"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "document",
+        "options": [
+          {
+            "name": "Document",
+            "value": "document"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "analyzeSentiment",
+        "options": [
+          {
+            "name": "Analyze Sentiment",
+            "value": "analyzeSentiment"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "options",
+        "required": true,
+        "default": "content",
+        "options": [
+          {
+            "name": "Content",
+            "value": "content"
+          },
+          {
+            "name": "Google Cloud Storage URI",
+            "value": "gcsContentUri"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyzeSentiment"
+            ]
+          }
+        },
+        "description": "The source of the document: a string containing the content or a Google Cloud Storage URI"
+      },
+      {
+        "name": "content",
+        "displayName": "Content",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyzeSentiment"
+            ],
+            "source": [
+              "content"
+            ]
+          }
+        },
+        "description": "The content of the input in string format. Cloud audit logging exempt since it is based on user data."
+      },
+      {
+        "name": "gcsContentUri",
+        "displayName": "Google Cloud Storage URI",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyzeSentiment"
+            ],
+            "source": [
+              "gcsContentUri"
+            ]
+          }
+        },
+        "description": "The Google Cloud Storage URI where the file content is located. This URI must be of the form: <code>gs://bucket_name/object_name</code>. For more details, see <a href=\"https://cloud.google.com/storage/docs/reference-uris"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "documentType",
+            "description": "The type of input document"
+          },
+          {
+            "name": "encodingType",
+            "description": "The encoding type used by the API to calculate sentence offsets"
+          },
+          {
+            "name": "language",
+            "description": "The language of the document (if not specified, the language is automatically detected). Both ISO and BCP-47 language codes are accepted."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyzeSentiment"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "id": "n8n-nodes-base.executecommand",
+  "name": "Execute Command",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.executecommand",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "The Execute Command node runs shell commands on the host machine that runs n8n",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executecommand",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Execute Once",
+      "description": "Choose whether you want the node to execute only once (turned on) or once for every item it receives as input (turned off)"
+    },
+    {
+      "name": "Command",
+      "description": "Enter the command to execute on the host machine. Refer to sections below for examples of running multiple commands and cURL commands"
+    },
+    {
+      "name": "Run multiple commands",
+      "description": "Use one of two methods to run multiple commands in one Execute Command node:"
+    },
+    {
+      "name": "Run cURL command",
+      "description": "You can also use the HTTP Request node to make a cURL request"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Command failed: &lt;command&gt; /bin/sh: &lt;command&gt;: not found",
+      "summary": "This error occurs when the shell environment can't find one of the commands in the Command parameter"
+    },
+    {
+      "title": "Error: stdout maxBuffer length exceeded",
+      "summary": "This error happens when your command returns more output than the Execute Command node is able to process at one time"
+    },
+    {
+      "title": "PowerShell commands get truncated at line breaks",
+      "summary": "On Windows, the Execute Command node passes the Command parameter to the system shell as a single string. If your command contains line breaks, the shell only executes the first line and ignores the rest"
+    }
+  ],
+  "keywords": [
+    "command",
+    "commands",
+    "core",
+    "curl",
+    "execute",
+    "executecommand",
+    "host",
+    "machine",
+    "multiple",
+    "once",
+    "run",
+    "runs",
+    "shell"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Execute Command",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executecommand",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.executecommand/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Execute Command node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executecommand/common-issues",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.executecommand/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.executecommand.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.executecommand.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.executecommand/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.executeCommand",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Execute Command",
+    "color": "#886644"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "executeOnce",
+        "displayName": "Execute Once",
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to execute only once instead of once for each entry"
+      },
+      {
+        "name": "command",
+        "displayName": "Command",
+        "type": "string",
+        "required": true,
+        "description": "The command to execute"
+      }
+    ]
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "id": "n8n-nodes-base.kafka",
+  "name": "Kafka",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.kafka",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Kafka node to automate work in Kafka, and integrate Kafka with other applications. n8n has built-in support for a wide range of Kafka features, including sending messages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.kafka",
+  "credentials": {
+    "name": "Kafka",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/kafka",
+    "slug": "kafka",
+    "json_file": "credentials/kafka.json",
+    "markdown_file": "credentials/kafka.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Send message",
+      "description": "",
+      "doc": ""
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "including",
+    "kafka",
+    "message",
+    "messages",
+    "send",
+    "sending",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.kafka.md",
+      "title": "Kafka node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.kafka",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.kafka.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.kafka.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.kafka.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.kafka.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.kafka",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "kafka"
+  ],
+  "credential_details": [
+    {
+      "name": "kafka",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Kafka"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 12,
+    "parameters": [
+      {
+        "name": "topic",
+        "displayName": "Topic",
+        "type": "string",
+        "description": "Name of the queue of topic to publish to"
+      },
+      {
+        "name": "sendInputData",
+        "displayName": "Send Input Data",
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to send the data the node receives as JSON to Kafka"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "sendInputData": [
+              false
+            ]
+          }
+        },
+        "description": "The message to be sent"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "useSchemaRegistry",
+        "displayName": "Use Schema Registry",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to use Confluent Schema Registry"
+      },
+      {
+        "name": "schemaRegistryUrl",
+        "displayName": "Schema Registry URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "useSchemaRegistry": [
+              true
+            ]
+          }
+        },
+        "description": "URL of the schema registry"
+      },
+      {
+        "name": "useKey",
+        "displayName": "Use Key",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to use a message key"
+      },
+      {
+        "name": "key",
+        "displayName": "Key",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "useKey": [
+              true
+            ]
+          }
+        },
+        "description": "The message key"
+      },
+      {
+        "name": "eventName",
+        "displayName": "Event Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "useSchemaRegistry": [
+              true
+            ]
+          }
+        },
+        "description": "Namespace and Name of Schema in Schema Registry (namespace.name)"
+      },
+      {
+        "name": "headersUi",
+        "displayName": "Headers",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "headerValues",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "headerParametersJson",
+        "displayName": "Headers (JSON)",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "Header parameters as JSON (flat object)"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "acks",
+            "description": "Whether or not producer must wait for acknowledgement from all replicas"
+          },
+          {
+            "name": "compression",
+            "description": "Whether to send the data in a compressed format using the GZIP codec"
+          },
+          {
+            "name": "timeout",
+            "description": "The time to await a response in ms"
+          }
+        ]
+      }
+    ]
+  }
+}

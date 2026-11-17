@@ -1,0 +1,285 @@
+{
+  "id": "n8n-nodes-base.messagebird",
+  "name": "MessageBird",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.messagebird",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the MessageBird node to automate work in MessageBird, and integrate MessageBird with other applications. n8n has built-in support for a wide range of MessageBird features, including sending messages, and getting balances",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.messagebird",
+  "credentials": {
+    "name": "MessageBird",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/messagebird",
+    "slug": "messagebird",
+    "json_file": "credentials/messagebird.json",
+    "markdown_file": "credentials/messagebird.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "SMS",
+      "operation": "Send text messages (SMS)",
+      "description": "",
+      "doc": "",
+      "resource_value": "sms",
+      "operation_value": "send"
+    },
+    {
+      "resource": "Balance",
+      "operation": "Get the balance",
+      "description": "",
+      "doc": "",
+      "resource_value": "balance",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "balance",
+    "balances",
+    "get",
+    "getting",
+    "including",
+    "messagebird",
+    "messages",
+    "send",
+    "sending",
+    "sms",
+    "text",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.messagebird.md",
+      "title": "MessageBird node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.messagebird",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.messagebird.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.messagebird.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.messagebird.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.messagebird.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.messageBird",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "messageBirdApi"
+  ],
+  "credential_details": [
+    {
+      "name": "messageBirdApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "MessageBird"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "sms",
+        "options": [
+          {
+            "name": "SMS",
+            "value": "sms"
+          },
+          {
+            "name": "Balance",
+            "value": "balance"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send text messages (SMS)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get the balance"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "balance"
+            ]
+          }
+        }
+      },
+      {
+        "name": "originator",
+        "displayName": "From",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        },
+        "description": "The number from which to send the message"
+      },
+      {
+        "name": "recipients",
+        "displayName": "To",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        },
+        "description": "All recipients separated by commas"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        },
+        "description": "The message to be send"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "createdDatetime",
+            "description": "The date and time of the creation of the message in RFC3339 format (Y-m-dTH:i:sP)"
+          },
+          {
+            "name": "datacoding",
+            "description": "Using unicode will limit the maximum number of characters to 70 instead of 160"
+          },
+          {
+            "name": "gateway",
+            "description": "The SMS route that is used to send the message"
+          },
+          {
+            "name": "groupIds",
+            "description": "Group IDs separated by commas, If provided recipients can be omitted"
+          },
+          {
+            "name": "mclass",
+            "description": "Indicated the message type. 1 is a normal message, 0 is a flash message."
+          },
+          {
+            "name": "reference",
+            "description": "A client reference"
+          },
+          {
+            "name": "reportUrl",
+            "description": "The status report URL to be used on a per-message basis. Reference is required for a status report webhook to be sent."
+          },
+          {
+            "name": "scheduledDatetime",
+            "description": "The scheduled date and time of the message in RFC3339 format (Y-m-dTH:i:sP)"
+          },
+          {
+            "name": "type",
+            "description": "The type of message. Values can be: sms, binary, or flash."
+          },
+          {
+            "name": "typeDetails",
+            "description": "A hash with extra information. Is only used when a binary message is sent."
+          },
+          {
+            "name": "validity",
+            "description": "The amount of seconds that the message is valid"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

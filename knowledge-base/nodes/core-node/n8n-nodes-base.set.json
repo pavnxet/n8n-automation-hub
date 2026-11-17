@@ -1,0 +1,479 @@
+{
+  "id": "n8n-nodes-base.set",
+  "name": "Edit Fields (Set)",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.set",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Edit Fields node to set workflow data. This node can set new data as well as overwrite data that already exists. This node is crucial in workflows which expect incoming data from previous nodes, such as when inserting values to Google Sheets or databases",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.set",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Mode",
+      "description": "You can either use Manual Mapping to edit fields using the GUI or JSON Output to write JSON that n8n adds to the input data"
+    },
+    {
+      "name": "Fields to Set",
+      "description": "If you select Mode > Manual Mapping, you can configure the fields by dragging and dropping values from INPUT",
+      "options": [
+        "n8n sets the value's name as the field name",
+        "The field value contains an expression which accesses the value"
+      ]
+    },
+    {
+      "name": "Keep Only Set Fields",
+      "description": "Enable this to discard any input data that you don't use in Fields to Set"
+    },
+    {
+      "name": "Include in Output",
+      "description": "Choose which input data to include in the node's output data"
+    },
+    {
+      "name": "Include Binary Data",
+      "description": "If the input data includes binary data, choose whether to include it in the Edit Fields node's output data"
+    },
+    {
+      "name": "Ignore Type Conversion Errors",
+      "description": "Manual Mapping only"
+    },
+    {
+      "name": "Support Dot Notation",
+      "description": "By default, n8n supports dot notation"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "already",
+    "binary",
+    "conversion",
+    "core",
+    "crucial",
+    "data",
+    "databases",
+    "dot",
+    "edit",
+    "errors",
+    "exists",
+    "expect",
+    "fields",
+    "google",
+    "ignore",
+    "include",
+    "incoming",
+    "inserting",
+    "keep",
+    "mode",
+    "notation",
+    "only",
+    "output",
+    "overwrite",
+    "previous",
+    "set",
+    "sheets",
+    "such",
+    "type",
+    "values",
+    "well"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.set.md",
+      "title": "Edit Fields (Set)",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.set",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.set.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.set.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.set.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.set.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.set",
+  "type_version": 3.4,
+  "type_versions": [
+    3,
+    3.1,
+    3.2,
+    3.3,
+    3.4
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Edit Fields"
+  },
+  "subtitle": "={{$parameter[\"mode\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 15,
+    "parameters": [
+      {
+        "name": "mode",
+        "displayName": "Mode",
+        "type": "options",
+        "default": "manual",
+        "options": [
+          {
+            "name": "Manual Mapping",
+            "value": "manual",
+            "description": "Edit item fields one by one"
+          },
+          {
+            "name": "JSON",
+            "value": "raw",
+            "description": "Customize item output with JSON"
+          }
+        ]
+      },
+      {
+        "name": "duplicateItem",
+        "displayName": "Duplicate Item",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether this item should be duplicated a set number of times"
+      },
+      {
+        "name": "duplicateCount",
+        "displayName": "Duplicate Item Count",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "duplicateItem": [
+              true
+            ]
+          }
+        },
+        "description": "How many times the item should be duplicated, mainly used for testing and debugging"
+      },
+      {
+        "name": "duplicateWarning",
+        "displayName": "Item duplication is set in the node settings. This option will be ignored when the workflow runs automatically.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "duplicateItem": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonOutput",
+        "displayName": "JSON",
+        "type": "json",
+        "default": "{\n  \"my_field_1\": \"value\",\n  \"my_field_2\": 1\n}\n",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "raw"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fields",
+        "displayName": "Fields to Set",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "stringValue",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "numberValue",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "booleanValue",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "arrayValue",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "objectValue",
+                "displayName": "Value",
+                "type": "json"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              3,
+              3.1,
+              3.2
+            ],
+            "mode": [
+              "manual"
+            ]
+          }
+        },
+        "description": "Edit existing fields or add new ones to modify the output data"
+      },
+      {
+        "name": "assignments",
+        "displayName": "Fields to Set",
+        "type": "assignmentCollection",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "manual"
+            ]
+          },
+          "hide": {
+            "@version": [
+              3,
+              3.1,
+              3.2
+            ]
+          }
+        }
+      },
+      {
+        "name": "include",
+        "displayName": "Include in Output",
+        "type": "options",
+        "default": "all",
+        "options": [
+          {
+            "name": "All Input Fields",
+            "value": "all",
+            "description": "Also include all unchanged fields from the input"
+          },
+          {
+            "name": "No Input Fields",
+            "value": "none",
+            "description": "Include only the fields specified above"
+          },
+          {
+            "name": "Selected Input Fields",
+            "value": "selected",
+            "description": "Also include the fields listed in the parameter “Fields to Include”"
+          },
+          {
+            "name": "All Input Fields Except",
+            "value": "except",
+            "description": "Exclude the fields listed in the parameter “Fields to Exclude”"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              3,
+              3.1,
+              3.2
+            ]
+          }
+        },
+        "description": "How to select the fields you want to include in your output items"
+      },
+      {
+        "name": "includeOtherFields",
+        "displayName": "Include Other Input Fields",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              3,
+              3.1,
+              3.2
+            ]
+          }
+        },
+        "description": "Whether to pass to the output all the input fields (along with the fields set in 'Fields to Set')"
+      },
+      {
+        "name": "include",
+        "displayName": "Input Fields to Include",
+        "type": "options",
+        "default": "all",
+        "options": [
+          {
+            "name": "All",
+            "value": "all",
+            "description": "Also include all unchanged fields from the input"
+          },
+          {
+            "name": "Selected",
+            "value": "selected",
+            "description": "Also include the fields listed in the parameter “Fields to Include”"
+          },
+          {
+            "name": "All Except",
+            "value": "except",
+            "description": "Exclude the fields listed in the parameter “Fields to Exclude”"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              3,
+              3.1,
+              3.2
+            ],
+            "/includeOtherFields": [
+              false
+            ]
+          }
+        },
+        "description": "How to select the fields you want to include in your output items"
+      },
+      {
+        "name": "includeFields",
+        "displayName": "Fields to Include",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "include": [
+              "selected"
+            ],
+            "@version": [
+              3,
+              3.1,
+              3.2
+            ]
+          }
+        },
+        "description": "Comma-separated list of the field names you want to include in the output. You can drag the selected fields from the input panel."
+      },
+      {
+        "name": "excludeFields",
+        "displayName": "Fields to Exclude",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "include": [
+              "except"
+            ],
+            "@version": [
+              3,
+              3.1,
+              3.2
+            ]
+          }
+        },
+        "description": "Comma-separated list of the field names you want to exclude from the output. You can drag the selected fields from the input panel."
+      },
+      {
+        "name": "includeFields",
+        "displayName": "Fields to Include",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "include": [
+              "selected"
+            ],
+            "/includeOtherFields": [
+              true
+            ]
+          },
+          "hide": {
+            "@version": [
+              3,
+              3.1,
+              3.2
+            ]
+          }
+        },
+        "description": "Comma-separated list of the field names you want to include in the output. You can drag the selected fields from the input panel."
+      },
+      {
+        "name": "excludeFields",
+        "displayName": "Fields to Exclude",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "include": [
+              "except"
+            ],
+            "/includeOtherFields": [
+              true
+            ]
+          },
+          "hide": {
+            "@version": [
+              3,
+              3.1,
+              3.2
+            ]
+          }
+        },
+        "description": "Comma-separated list of the field names you want to exclude from the output. You can drag the selected fields from the input panel."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "includeBinary",
+            "description": "Whether binary data should be included if present in the input item"
+          },
+          {
+            "name": "stripBinary",
+            "description": "Whether binary data should be stripped from the input item. Only applies when \"Include Other Input Fields\" is enabled."
+          },
+          {
+            "name": "ignoreConversionErrors",
+            "description": "Whether to ignore field type errors and apply a less strict type conversion"
+          },
+          {
+            "name": "dotNotation",
+            "description": "By default, dot-notation is used in property names. This means that \"a.b\" will set the property \"b\" underneath \"a\" so { \"a\": { \"b\": value} }. If that is not int"
+          }
+        ]
+      }
+    ]
+  }
+}

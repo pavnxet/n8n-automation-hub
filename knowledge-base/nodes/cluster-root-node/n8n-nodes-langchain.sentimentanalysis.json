@@ -1,0 +1,141 @@
+{
+  "id": "n8n-nodes-langchain.sentimentanalysis",
+  "name": "Sentiment Analysis",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.sentimentanalysis",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Sentiment Analysis node to analyze the sentiment of incoming text data",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.sentimentanalysis",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analysis",
+    "analyze",
+    "cluster",
+    "data",
+    "incoming",
+    "root",
+    "sentiment",
+    "sentimentanalysis",
+    "text"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.sentimentanalysis.md",
+      "title": "Sentiment Analysis node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.sentimentanalysis",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.sentimentanalysis.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.sentimentanalysis.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.sentimentanalysis.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.sentimentanalysis.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.sentimentAnalysis",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Sentiment Analysis"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      {
+        "displayName": "",
+        "type": "main"
+      },
+      {
+        "displayName": "Model",
+        "maxConnections": 1,
+        "type": "ai_languageModel",
+        "required": true
+      }
+    ],
+    "outputs": "={{((parameters, defaultCategories) => {\n    const options = (parameters?.options ?? {});\n    const categories = options?.categories ?? defaultCategories;\n    const categoriesArray = categories.split(',').map((cat) => cat.trim());\n    const ret = categoriesArray.map((cat) => ({ type: 'main', displayName: cat }));\n    return ret;\n})($parameter, \"Positive, Neutral, Negative\")}}"
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "inputText",
+        "displayName": "Text to Analyze",
+        "type": "string",
+        "required": true,
+        "description": "Use an expression to reference data in previous nodes or enter static text"
+      },
+      {
+        "name": "detailedResultsNotice",
+        "displayName": "Sentiment scores are LLM-generated estimates, not statistically rigorous measurements. They may be inconsistent across runs and should be used as rough indicators only.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.includeDetailedResults": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "categories",
+            "description": "A comma-separated list of categories to analyze"
+          },
+          {
+            "name": "systemPromptTemplate",
+            "description": "String to use directly as the system prompt template"
+          },
+          {
+            "name": "includeDetailedResults",
+            "description": "Whether to include sentiment strength and confidence scores in the output"
+          },
+          {
+            "name": "enableAutoFixing",
+            "description": "Whether to enable auto-fixing (may trigger an additional LLM call if output is broken)"
+          },
+          {
+            "name": "batching",
+            "description": "Batch processing options for rate limiting"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "id": "n8n-nodes-base.figmatrigger",
+  "name": "Figma Trigger (Beta)",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.figmatrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Figma is a prototyping tool which is primarily web-based, with more offline features enabled by desktop applications for macOS and Windows",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.figmatrigger",
+  "credentials": {
+    "name": "Figma credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/figma",
+    "slug": "figma",
+    "json_file": "credentials/figma.json",
+    "markdown_file": "credentials/figma.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [
+    {
+      "name": "File Commented",
+      "description": "Triggers when someone comments on a file"
+    },
+    {
+      "name": "File Deleted",
+      "description": "Triggers when someone deletes an individual file, but not when someone deletes an entire folder with all files"
+    },
+    {
+      "name": "File Updated",
+      "description": "Triggers when someone saves or deletes a file. A save occurs when someone closes a file within 30 seconds after making changes"
+    },
+    {
+      "name": "File Version Updated",
+      "description": "Triggers when someone creates a named version in the version history of a file"
+    },
+    {
+      "name": "Library Publish",
+      "description": "Triggers when someone publishes a library file"
+    }
+  ],
+  "trigger_methods": [
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "applications",
+    "based",
+    "beta",
+    "credentials",
+    "desktop",
+    "enabled",
+    "figma",
+    "figmatrigger",
+    "macos",
+    "offline",
+    "primarily",
+    "prototyping",
+    "tool",
+    "trigger",
+    "windows"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.figmatrigger.md",
+      "title": "Figma Trigger (Beta) node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.figmatrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.figmatrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.figmatrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.figmatrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.figmatrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.figmaTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "figmaApi"
+  ],
+  "credential_details": [
+    {
+      "name": "figmaApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Figma Trigger (Beta)"
+  },
+  "subtitle": "={{$parameter[\"triggerOn\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "teamId",
+        "displayName": "Team ID",
+        "type": "string",
+        "required": true,
+        "description": "Trigger will monitor this Figma Team for changes. Team ID can be found in the URL of a Figma Team page when viewed in a web browser: figma.com/files/team/{TEAM-ID}/."
+      },
+      {
+        "name": "triggerOn",
+        "displayName": "Trigger On",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "File Commented",
+            "value": "fileComment",
+            "description": "Triggers when someone comments on a file"
+          },
+          {
+            "name": "File Deleted",
+            "value": "fileDelete",
+            "description": "Triggers whenever a file has been deleted. Does not trigger on all files within a folder, if the folder is deleted."
+          },
+          {
+            "name": "File Updated",
+            "value": "fileUpdate",
+            "description": "Triggers whenever a file saves or is deleted. This occurs whenever a file is closed or within 30 seconds after changes have been made."
+          },
+          {
+            "name": "File Version Updated",
+            "value": "fileVersionUpdate",
+            "description": "Triggers whenever a named version is created in the version history of a file"
+          },
+          {
+            "name": "Library Publish",
+            "value": "libraryPublish",
+            "description": "Triggers whenever a library file is published"
+          }
+        ]
+      }
+    ]
+  }
+}

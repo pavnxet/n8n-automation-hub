@@ -1,0 +1,3578 @@
+{
+  "id": "n8n-nodes-base.harvest",
+  "name": "Harvest",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.harvest",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Harvest node to automate work in Harvest, and integrate Harvest with other applications. n8n has built-in support for a wide range of Harvest features, including creating, updating, deleting, and getting clients, contacts, invoices, tasks, expenses, users, and projects",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.harvest",
+  "credentials": {
+    "name": "Harvest",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/harvest",
+    "slug": "harvest",
+    "json_file": "credentials/harvest.json",
+    "markdown_file": "credentials/harvest.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Client",
+      "operation": "Create a client",
+      "description": "",
+      "doc": "",
+      "resource_value": "client",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Client",
+      "operation": "Delete a client",
+      "description": "",
+      "doc": "",
+      "resource_value": "client",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Client",
+      "operation": "Get data of a client",
+      "description": "",
+      "doc": "",
+      "resource_value": "client",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Client",
+      "operation": "Get data of all clients",
+      "description": "",
+      "doc": "",
+      "resource_value": "client",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Client",
+      "operation": "Update a client",
+      "description": "",
+      "doc": "",
+      "resource_value": "client",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Company",
+      "operation": "Retrieves the company for the currently authenticated user",
+      "description": "",
+      "doc": "",
+      "resource_value": "company"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Create a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Delete a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Get data of a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Get data of all contacts",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Update a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Estimate",
+      "operation": "Create an estimate",
+      "description": "",
+      "doc": "",
+      "resource_value": "estimate",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Estimate",
+      "operation": "Delete an estimate",
+      "description": "",
+      "doc": "",
+      "resource_value": "estimate",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Estimate",
+      "operation": "Get data of an estimate",
+      "description": "",
+      "doc": "",
+      "resource_value": "estimate",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Estimate",
+      "operation": "Get data of all estimates",
+      "description": "",
+      "doc": "",
+      "resource_value": "estimate",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Estimate",
+      "operation": "Update an estimate",
+      "description": "",
+      "doc": "",
+      "resource_value": "estimate",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Expense",
+      "operation": "Get data of an expense",
+      "description": "",
+      "doc": "",
+      "resource_value": "expense",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Expense",
+      "operation": "Get data of all expenses",
+      "description": "",
+      "doc": "",
+      "resource_value": "expense",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Expense",
+      "operation": "Create an expense",
+      "description": "",
+      "doc": "",
+      "resource_value": "expense",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Expense",
+      "operation": "Update an expense",
+      "description": "",
+      "doc": "",
+      "resource_value": "expense",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Expense",
+      "operation": "Delete an expense",
+      "description": "",
+      "doc": "",
+      "resource_value": "expense",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Get data of an invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Get data of all invoices",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Create an invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Update an invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Delete an invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Project",
+      "operation": "Create a project",
+      "description": "",
+      "doc": "",
+      "resource_value": "project",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Project",
+      "operation": "Delete a project",
+      "description": "",
+      "doc": "",
+      "resource_value": "project",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Project",
+      "operation": "Get data of a project",
+      "description": "",
+      "doc": "",
+      "resource_value": "project",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Project",
+      "operation": "Get data of all projects",
+      "description": "",
+      "doc": "",
+      "resource_value": "project",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Project",
+      "operation": "Update a project",
+      "description": "",
+      "doc": "",
+      "resource_value": "project",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Task",
+      "operation": "Create a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Task",
+      "operation": "Delete a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get data of a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get data of all tasks",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Update a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Time Entries",
+      "operation": "Create a time entry using duration",
+      "description": "",
+      "doc": "",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Time Entries",
+      "operation": "Create a time entry using start and end time",
+      "description": "",
+      "doc": "",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Time Entries",
+      "operation": "Delete a time entry",
+      "description": "",
+      "doc": "",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Time Entries",
+      "operation": "Delete a time entry's external reference",
+      "description": "",
+      "doc": "",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Time Entries",
+      "operation": "Get data of a time entry",
+      "description": "",
+      "doc": "",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Time Entries",
+      "operation": "Get data of all time entries",
+      "description": "",
+      "doc": "",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Time Entries",
+      "operation": "Restart a time entry",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Time Entries",
+      "operation": "Stop a time entry",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Time Entries",
+      "operation": "Update a time entry",
+      "description": "",
+      "doc": "",
+      "operation_value": "update"
+    },
+    {
+      "resource": "User",
+      "operation": "Create a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "create"
+    },
+    {
+      "resource": "User",
+      "operation": "Delete a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "User",
+      "operation": "Get data of a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Get data of all users",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Get data of authenticated user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Update a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 51,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "authenticated",
+    "client",
+    "clients",
+    "company",
+    "contact",
+    "contacts",
+    "create",
+    "creating",
+    "currently",
+    "data",
+    "delete",
+    "deleting",
+    "duration",
+    "end",
+    "entries",
+    "entry",
+    "estimate",
+    "estimates",
+    "expense",
+    "expenses",
+    "external",
+    "get",
+    "getting",
+    "harvest",
+    "including",
+    "invoice",
+    "invoices",
+    "project",
+    "projects",
+    "reference",
+    "restart",
+    "retrieves",
+    "start",
+    "stop",
+    "task",
+    "tasks",
+    "time",
+    "update",
+    "updating",
+    "user",
+    "users",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.harvest.md",
+      "title": "Harvest node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.harvest",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.harvest.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.harvest.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.harvest.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.harvest.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.harvest",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "harvestApi",
+    "harvestOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "harvestApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "harvestOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Harvest"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 112,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "task",
+        "options": [
+          {
+            "name": "Client",
+            "value": "client"
+          },
+          {
+            "name": "Company",
+            "value": "company"
+          },
+          {
+            "name": "Contact",
+            "value": "contact"
+          },
+          {
+            "name": "Estimate",
+            "value": "estimate"
+          },
+          {
+            "name": "Expense",
+            "value": "expense"
+          },
+          {
+            "name": "Invoice",
+            "value": "invoice"
+          },
+          {
+            "name": "Project",
+            "value": "project"
+          },
+          {
+            "name": "Task",
+            "value": "task"
+          },
+          {
+            "name": "Time Entry",
+            "value": "timeEntry"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a client"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a client"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a client"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many clients"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a client"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieves the company for the currently authenticated user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a contact"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a contact"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a contact"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many contacts"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a contact"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an estimate"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an estimate"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of an estimate"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many estimates"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an estimate"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "estimate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an expense"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an expense"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of an expense"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many expenses"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an expense"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "expense"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an invoice"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an invoice"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of an invoice"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many invoices"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an invoice"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a project"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a project"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a project"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many projects"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a project"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "project"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a task"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a task"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a task"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many tasks"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a task"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create via Duration",
+            "value": "createByDuration",
+            "description": "Create a time entry via duration"
+          },
+          {
+            "name": "Create via Start and End Time",
+            "value": "createByStartEnd",
+            "description": "Create a time entry via start and end time"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a time entry"
+          },
+          {
+            "name": "Delete External Reference",
+            "value": "deleteExternal",
+            "description": "Delete a time entry’s external reference"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a time entry"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many time entries"
+          },
+          {
+            "name": "Restart",
+            "value": "restartTime",
+            "description": "Restart a time entry"
+          },
+          {
+            "name": "Stop",
+            "value": "stopTime",
+            "description": "Stop a time entry"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a time entry"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "me",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a user"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a user"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a user"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many users"
+          },
+          {
+            "name": "Me",
+            "value": "me",
+            "description": "Get data of authenticated user"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "accountId",
+        "displayName": "Account Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "is_active",
+            "description": "Whether to only return active clients and false to return inactive clients"
+          },
+          {
+            "name": "updated_since",
+            "description": "Only return clients that have been updated since the given date and time"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Client ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "client"
+            ]
+          }
+        },
+        "description": "The ID of the client you are retrieving"
+      },
+      {
+        "name": "id",
+        "displayName": "Client ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "client"
+            ]
+          }
+        },
+        "description": "The ID of the client you want to delete"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "client"
+            ]
+          }
+        },
+        "description": "The name of the client"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "address",
+            "description": "A textual representation of the client’s physical address. May include new line characters."
+          },
+          {
+            "name": "currency",
+            "description": "The currency used by the estimate. If not provided, the client’s currency will be used. See a list of supported currencies"
+          },
+          {
+            "name": "is_active",
+            "description": "Whether the client is active, or archived. Defaults to true."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "client"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Client ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "client"
+            ]
+          }
+        },
+        "description": "The ID of the client want to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "address",
+            "description": "A textual representation of the client’s physical address. May include new line characters."
+          },
+          {
+            "name": "currency",
+            "description": "The currency used by the estimate. If not provided, the client’s currency will be used. See a list of supported currencies"
+          },
+          {
+            "name": "is_active",
+            "description": "Whether the client is active, or archived. Defaults to true."
+          },
+          {
+            "name": "name",
+            "description": "Whether the client is active, or archived. Defaults to true."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "client"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "is_active",
+            "description": "Whether to only return active clients and false to return inactive clients"
+          },
+          {
+            "name": "updated_since",
+            "description": "Only return clients that have been updated since the given date and time"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "The ID of the contact you are retrieving"
+      },
+      {
+        "name": "id",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "The ID of the contact you want to delete"
+      },
+      {
+        "name": "firstName",
+        "displayName": "First Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "The first name of the contact"
+      },
+      {
+        "name": "clientId",
+        "displayName": "Client ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "The ID of the client associated with this contact"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "email",
+            "description": "The contact’s email address"
+          },
+          {
+            "name": "fax",
+            "description": "The contact’s fax number"
+          },
+          {
+            "name": "last_name",
+            "description": "The last name of the contact"
+          },
+          {
+            "name": "phone_mobile",
+            "description": "The contact’s mobile phone number"
+          },
+          {
+            "name": "phone_office",
+            "description": "The contact’s office phone number"
+          },
+          {
+            "name": "title",
+            "description": "The title of the contact"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "The ID of the contact want to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client_id",
+            "description": "The ID of the client associated with this contact"
+          },
+          {
+            "name": "email",
+            "description": "The contact’s email address"
+          },
+          {
+            "name": "fax",
+            "description": "The contact’s fax number"
+          },
+          {
+            "name": "first_name",
+            "description": "The first name of the contact"
+          },
+          {
+            "name": "last_name",
+            "description": "The last name of the contact"
+          },
+          {
+            "name": "phone_mobile",
+            "description": "The contact’s mobile phone number"
+          },
+          {
+            "name": "phone_office",
+            "description": "The contact’s office phone number"
+          },
+          {
+            "name": "title",
+            "description": "The title of the contact"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "estimate"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "estimate"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client_id",
+            "description": "Only return time entries belonging to the client with the given ID"
+          },
+          {
+            "name": "from",
+            "description": "Only return time entries with a spent_date on or after the given date"
+          },
+          {
+            "name": "state",
+            "description": "Only return estimates with a state matching the value provided. Options: draft, sent, accepted, or declined."
+          },
+          {
+            "name": "to",
+            "description": "Only return time entries with a spent_date on or before the given date"
+          },
+          {
+            "name": "updated_since",
+            "description": "Only return time entries that have been updated since the given date and time"
+          },
+          {
+            "name": "page",
+            "description": "The page number to use in pagination. For instance, if you make a list request and receive 100 records, your subsequent call can include page=2 to retrieve the "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "estimate"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Estimate ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "estimate"
+            ]
+          }
+        },
+        "description": "The ID of the estimate you are retrieving"
+      },
+      {
+        "name": "id",
+        "displayName": "Estimate ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "estimate"
+            ]
+          }
+        },
+        "description": "The ID of the estimate want to delete"
+      },
+      {
+        "name": "clientId",
+        "displayName": "Client ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "estimate"
+            ]
+          }
+        },
+        "description": "The ID of the client this estimate belongs to"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "currency",
+            "description": "The currency used by the estimate. If not provided, the client’s currency will be used. See a list of supported currencies"
+          },
+          {
+            "name": "over_budget_notification_percentage",
+            "description": "This percentage is subtracted from the subtotal. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "issue_date",
+            "description": "Date the invoice was issued. Defaults to today’s date."
+          },
+          {
+            "name": "notes",
+            "description": "Any additional notes to include on the estimate"
+          },
+          {
+            "name": "number",
+            "description": "If no value is set, the number will be automatically generated"
+          },
+          {
+            "name": "purchase_order",
+            "description": "The purchase order number"
+          },
+          {
+            "name": "subject",
+            "description": "The estimate subject"
+          },
+          {
+            "name": "tax",
+            "description": "This percentage is applied to the subtotal, including line items and discounts. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "tax2",
+            "description": "This percentage is applied to the subtotal, including line items and discounts. Example: use 10.0 for 10.0%."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "estimate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "estimate"
+            ]
+          }
+        },
+        "description": "The ID of the invoice want to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client_id",
+            "description": "The ID of the retainer associated with this invoice"
+          },
+          {
+            "name": "currency",
+            "description": "The currency used by the estimate. If not provided, the client’s currency will be used. See a list of supported currencies"
+          },
+          {
+            "name": "over_budget_notification_percentage",
+            "description": "This percentage is subtracted from the subtotal. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "issue_date",
+            "description": "Date the invoice was issued. Defaults to today’s date."
+          },
+          {
+            "name": "number",
+            "description": "If no value is set, the number will be automatically generated"
+          },
+          {
+            "name": "notes",
+            "description": "Any additional notes to include on the estimate"
+          },
+          {
+            "name": "purchase_order",
+            "description": "The purchase order number"
+          },
+          {
+            "name": "subject",
+            "description": "The estimate subject"
+          },
+          {
+            "name": "tax",
+            "description": "This percentage is applied to the subtotal, including line items and discounts. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "tax2",
+            "description": "This percentage is applied to the subtotal, including line items and discounts. Example: use 10.0 for 10.0%."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "estimate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "expense"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "expense"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client_id",
+            "description": "Only return time entries belonging to the client with the given ID"
+          },
+          {
+            "name": "from",
+            "description": "Only return time entries with a spent_date on or after the given date"
+          },
+          {
+            "name": "is_billed",
+            "description": "Whether to only return time entries that have been invoiced and false to return time entries that have not been invoiced"
+          },
+          {
+            "name": "page",
+            "description": "The page number to use in pagination. For instance, if you make a list request and receive 100 records, your subsequent call can include page=2 to retrieve the "
+          },
+          {
+            "name": "project_id",
+            "description": "Only return time entries belonging to the client with the given ID"
+          },
+          {
+            "name": "to",
+            "description": "Only return time entries with a spent_date on or before the given date"
+          },
+          {
+            "name": "updated_since",
+            "description": "Only return time entries that have been updated since the given date and time"
+          },
+          {
+            "name": "user_id",
+            "description": "Only return time entries belonging to the user with the given ID"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "expense"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Expense ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        },
+        "description": "The ID of the expense you are retrieving"
+      },
+      {
+        "name": "id",
+        "displayName": "Expense ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        },
+        "description": "The ID of the expense you want to delete"
+      },
+      {
+        "name": "projectId",
+        "displayName": "Project ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        },
+        "description": "The ID of the project associated with this expense"
+      },
+      {
+        "name": "expenseCategoryId",
+        "displayName": "Expense Category ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        },
+        "description": "The ID of the expense category this expense is being tracked against"
+      },
+      {
+        "name": "spentDate",
+        "displayName": "Spent Date",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        },
+        "description": "Date the expense occurred"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "billable",
+            "description": "Whether this expense is billable or not. Defaults to true."
+          },
+          {
+            "name": "notes",
+            "description": "Notes about the expense"
+          },
+          {
+            "name": "total_cost",
+            "description": "The total amount of the expense"
+          },
+          {
+            "name": "units",
+            "description": "The quantity of units to use in calculating the total_cost of the expense"
+          },
+          {
+            "name": "user_id",
+            "description": "The ID of the user associated with this expense. Defaults to the ID of the currently authenticated user."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        },
+        "description": "The ID of the invoice want to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "billable",
+            "description": "Whether this expense is billable or not. Defaults to true."
+          },
+          {
+            "name": "expense_category_id",
+            "description": "The ID of the expense category this expense is being tracked against"
+          },
+          {
+            "name": "notes",
+            "description": "Notes about the expense"
+          },
+          {
+            "name": "project_id",
+            "description": "The ID of the project associated with this expense"
+          },
+          {
+            "name": "spent_date",
+            "description": "Date the expense occurred"
+          },
+          {
+            "name": "total_cost",
+            "description": "The total amount of the expense"
+          },
+          {
+            "name": "units",
+            "description": "The quantity of units to use in calculating the total_cost of the expense"
+          },
+          {
+            "name": "user_id",
+            "description": "The ID of the user associated with this expense. Defaults to the ID of the currently authenticated user."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client_id",
+            "description": "Only return time entries belonging to the client with the given ID"
+          },
+          {
+            "name": "from",
+            "description": "Only return time entries with a spent_date on or after the given date"
+          },
+          {
+            "name": "page",
+            "description": "The page number to use in pagination. For instance, if you make a list request and receive 100 records, your subsequent call can include page=2 to retrieve the "
+          },
+          {
+            "name": "project_id",
+            "description": "Only return time entries belonging to the client with the given ID"
+          },
+          {
+            "name": "state",
+            "description": "Only return invoices with a state matching the value provided. Options: draft, open, paid, or closed."
+          },
+          {
+            "name": "to",
+            "description": "Only return time entries with a spent_date on or before the given date"
+          },
+          {
+            "name": "updated_since",
+            "description": "Only return time entries that have been updated since the given date and time"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        },
+        "description": "The ID of the invoice you are retrieving"
+      },
+      {
+        "name": "id",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        },
+        "description": "The ID of the invoice want to delete"
+      },
+      {
+        "name": "clientId",
+        "displayName": "Client ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        },
+        "description": "The ID of the retainer associated with this invoice"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "currency",
+            "description": "The currency used by the invoice. If not provided, the client’s currency will be used. See a list of supported currencies"
+          },
+          {
+            "name": "over_budget_notification_percentage",
+            "description": "This percentage is subtracted from the subtotal. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "ends_on",
+            "description": "Date the invoice is due. Defaults to the issue_date if no payment_term is specified."
+          },
+          {
+            "name": "estimate_id",
+            "description": "The ID of the estimate associated with this invoice"
+          },
+          {
+            "name": "issue_date",
+            "description": "Date the invoice was issued. Defaults to today’s date."
+          },
+          {
+            "name": "notes",
+            "description": "Notes about the project"
+          },
+          {
+            "name": "number",
+            "description": "If no value is set, the number will be automatically generated"
+          },
+          {
+            "name": "payment_term",
+            "description": "The timeframe in which the invoice should be paid. Defaults to custom. Options: upon receipt, net 15, net 30, net 45, or net 60."
+          },
+          {
+            "name": "purchase_order",
+            "description": "The purchase order number"
+          },
+          {
+            "name": "retainer_id",
+            "description": "The ID of the retainer associated with this invoice"
+          },
+          {
+            "name": "subject",
+            "description": "The invoice subject"
+          },
+          {
+            "name": "tax",
+            "description": "This percentage is applied to the subtotal, including line items and discounts. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "tax2",
+            "description": "This percentage is applied to the subtotal, including line items and discounts. Example: use 10.0 for 10.0%."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        },
+        "description": "The ID of the invoice want to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client_id",
+            "description": "The ID of the retainer associated with this invoice"
+          },
+          {
+            "name": "currency",
+            "description": "The currency used by the invoice. If not provided, the client’s currency will be used. See a list of supported currencies"
+          },
+          {
+            "name": "over_budget_notification_percentage",
+            "description": "This percentage is subtracted from the subtotal. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "ends_on",
+            "description": "Date the invoice is due. Defaults to the issue_date if no payment_term is specified."
+          },
+          {
+            "name": "estimate_id",
+            "description": "The ID of the estimate associated with this invoice"
+          },
+          {
+            "name": "issue_date",
+            "description": "Date the invoice was issued. Defaults to today’s date."
+          },
+          {
+            "name": "notes",
+            "description": "Notes about the project"
+          },
+          {
+            "name": "number",
+            "description": "If no value is set, the number will be automatically generated"
+          },
+          {
+            "name": "payment_term",
+            "description": "The timeframe in which the invoice should be paid. Defaults to custom. Options: upon receipt, net 15, net 30, net 45, or net 60."
+          },
+          {
+            "name": "purchase_order",
+            "description": "The purchase order number"
+          },
+          {
+            "name": "retainer_id",
+            "description": "The ID of the retainer associated with this invoice"
+          },
+          {
+            "name": "subject",
+            "description": "The invoice subject"
+          },
+          {
+            "name": "tax",
+            "description": "This percentage is applied to the subtotal, including line items and discounts. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "tax2",
+            "description": "This percentage is applied to the subtotal, including line items and discounts. Example: use 10.0 for 10.0%."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "project"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "project"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client_id",
+            "description": "Only return projects belonging to the client with the given ID"
+          },
+          {
+            "name": "is_active",
+            "description": "Whether to only return active projects and false to return inactive projects"
+          },
+          {
+            "name": "page",
+            "description": "The page number to use in pagination"
+          },
+          {
+            "name": "updated_since",
+            "description": "Only return projects by updated_since"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "project"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Project ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        },
+        "description": "The ID of the project you are retrieving"
+      },
+      {
+        "name": "id",
+        "displayName": "Project ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        },
+        "description": "The ID of the project want to delete"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        },
+        "description": "The name of the project"
+      },
+      {
+        "name": "clientId",
+        "displayName": "Client ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        },
+        "description": "The ID of the client to associate this project with"
+      },
+      {
+        "name": "isBillable",
+        "displayName": "Is Billable",
+        "type": "boolean",
+        "required": true,
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        },
+        "description": "Whether the project is billable or not"
+      },
+      {
+        "name": "billBy",
+        "displayName": "Bill By",
+        "type": "options",
+        "required": true,
+        "default": "none",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "People",
+            "value": "People"
+          },
+          {
+            "name": "Project",
+            "value": "Project"
+          },
+          {
+            "name": "Tasks",
+            "value": "Tasks"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        },
+        "description": "The method by which the project is invoiced"
+      },
+      {
+        "name": "budgetBy",
+        "displayName": "Budget By",
+        "type": "string",
+        "required": true,
+        "default": "none",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        },
+        "description": "The email of the user or \"none\""
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "budget",
+            "description": "The budget in hours for the project when budgeting by time"
+          },
+          {
+            "name": "budget_is_monthly",
+            "description": "Whether the budget resets every month. Defaults to false."
+          },
+          {
+            "name": "cost_budget",
+            "description": "The monetary budget for the project when budgeting by money"
+          },
+          {
+            "name": "cost_budget_include_expenses",
+            "description": "Option for budget of Total Project Fees projects to include tracked expenses. Defaults to false."
+          },
+          {
+            "name": "ends_on",
+            "description": "Date the project will end"
+          },
+          {
+            "name": "fee",
+            "description": "The amount you plan to invoice for the project. Only used by fixed-fee projects."
+          },
+          {
+            "name": "hourly_rate",
+            "description": "Rate for projects billed by Project Hourly Rate"
+          },
+          {
+            "name": "is_active",
+            "description": "Whether the project is active or archived. Defaults to true."
+          },
+          {
+            "name": "is_fixed_fee",
+            "description": "Whether the project is a fixed-fee project or not"
+          },
+          {
+            "name": "notes",
+            "description": "Notes about the project"
+          },
+          {
+            "name": "notify_when_over_budget",
+            "description": "Whether project managers should be notified when the project goes over budget. Defaults to false."
+          },
+          {
+            "name": "over_budget_notification_percentage",
+            "description": "Percentage value used to trigger over budget email alerts. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "show_budget_to_all",
+            "description": "Whether to show project budget to all employees. Does not apply to Total Project Fee projects. Defaults to false."
+          },
+          {
+            "name": "starts_on",
+            "description": "Date the project was started"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Project ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        },
+        "description": "The ID of the project want to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "bill_by",
+            "description": "The method by which the project is invoiced"
+          },
+          {
+            "name": "budget",
+            "description": "The budget in hours for the project when budgeting by time"
+          },
+          {
+            "name": "budget_by",
+            "description": "The email of the user or \"none\""
+          },
+          {
+            "name": "budget_is_monthly",
+            "description": "Whether to have the budget reset every month. Defaults to false."
+          },
+          {
+            "name": "client_id",
+            "description": "The ID of the client to associate this project with"
+          },
+          {
+            "name": "cost_budget",
+            "description": "The monetary budget for the project when budgeting by money"
+          },
+          {
+            "name": "cost_budget_include_expenses",
+            "description": "Option for budget of Total Project Fees projects to include tracked expenses. Defaults to false."
+          },
+          {
+            "name": "ends_on",
+            "description": "Date the project will end"
+          },
+          {
+            "name": "fee",
+            "description": "The amount you plan to invoice for the project. Only used by fixed-fee projects."
+          },
+          {
+            "name": "hourly_rate",
+            "description": "Rate for projects billed by Project Hourly Rate"
+          },
+          {
+            "name": "is_active",
+            "description": "Whether the project is active or archived. Defaults to true."
+          },
+          {
+            "name": "is_billable",
+            "description": "Whether the project is billable or not"
+          },
+          {
+            "name": "is_fixed_fee",
+            "description": "Whether the project is a fixed-fee project or not"
+          },
+          {
+            "name": "name",
+            "description": "The name of the project"
+          },
+          {
+            "name": "notes",
+            "description": "Notes about the project"
+          },
+          {
+            "name": "notify_when_over_budget",
+            "description": "Whether project managers should be notified when the project goes over budget. Defaults to false."
+          },
+          {
+            "name": "over_budget_notification_percentage",
+            "description": "Percentage value used to trigger over budget email alerts. Example: use 10.0 for 10.0%."
+          },
+          {
+            "name": "show_budget_to_all",
+            "description": "Whether to show project budget to all employees. Does not apply to Total Project Fee projects. Defaults to false."
+          },
+          {
+            "name": "starts_on",
+            "description": "Date the project was started"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "project"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "is_active",
+            "description": "Whether to only return active tasks and false to return inactive tasks"
+          },
+          {
+            "name": "page",
+            "description": "The page number to use in pagination"
+          },
+          {
+            "name": "updated_since",
+            "description": "Only return tasks belonging to the task with the given ID"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "The ID of the task you are retrieving"
+      },
+      {
+        "name": "id",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "The ID of the task you want to delete"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "The name of the task"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "billable_by_default",
+            "description": "Whether default tasks should be marked billable when creating a new project. Defaults to true."
+          },
+          {
+            "name": "default_hourly_rate",
+            "description": "The default hourly rate to use for this task when it is added to a project. Defaults to 0."
+          },
+          {
+            "name": "is_active",
+            "description": "Whether this task is active or archived. Defaults to true."
+          },
+          {
+            "name": "is_default",
+            "description": "Whether this task should be automatically added to future projects. Defaults to false."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "The ID of the task you want to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "billable_by_default",
+            "description": "Whether default tasks should be marked billable when creating a new project. Defaults to true."
+          },
+          {
+            "name": "default_hourly_rate",
+            "description": "The default hourly rate to use for this task when it is added to a project. Defaults to 0."
+          },
+          {
+            "name": "is_active",
+            "description": "Whether this task is active or archived. Defaults to true."
+          },
+          {
+            "name": "is_default",
+            "description": "Whether this task should be automatically added to future projects. Defaults to false."
+          },
+          {
+            "name": "name",
+            "description": "Name of the task"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client_id",
+            "description": "Only return time entries belonging to the client with the given ID"
+          },
+          {
+            "name": "from",
+            "description": "Only return time entries with a spent_date on or after the given date"
+          },
+          {
+            "name": "is_billed",
+            "description": "Whether to only return time entries that have been invoiced and false to return time entries that have not been invoiced"
+          },
+          {
+            "name": "is_running",
+            "description": "Whether to only return running time entries and false to return non-running time entries"
+          },
+          {
+            "name": "page",
+            "description": "The page number to use in pagination. For instance, if you make a list request and receive 100 records, your subsequent call can include page=2 to retrieve the "
+          },
+          {
+            "name": "to",
+            "description": "Only return time entries with a spent_date on or before the given date"
+          },
+          {
+            "name": "updated_since",
+            "description": "Only return time entries that have been updated since the given date and time"
+          },
+          {
+            "name": "user_id",
+            "description": "Only return time entries belonging to the user with the given ID"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ID of the time entry you are retrieving"
+      },
+      {
+        "name": "id",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ID of the time entry you are deleting"
+      },
+      {
+        "name": "id",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "deleteExternal"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ID of the time entry whose external reference you are deleting"
+      },
+      {
+        "name": "id",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "stopTime"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "Stop a running time entry. Stopping a time entry is only possible if it’s currently running."
+      },
+      {
+        "name": "id",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "restartTime"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "Restart a stopped time entry. Restarting a time entry is only possible if it isn’t currently running."
+      },
+      {
+        "name": "id",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ID of the time entry to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "ended_time",
+            "description": "The time the entry ended"
+          },
+          {
+            "name": "hours",
+            "description": "The current amount of time tracked"
+          },
+          {
+            "name": "notes",
+            "description": "These are notes about the time entry"
+          },
+          {
+            "name": "started_time",
+            "description": "The time the entry started. Defaults to the current time. Example: “8:00am”."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        }
+      },
+      {
+        "name": "projectId",
+        "displayName": "Project ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createByDuration"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ID of the project to associate with the time entry"
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createByDuration"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ID of the task to associate with the time entry"
+      },
+      {
+        "name": "spentDate",
+        "displayName": "Spent Date",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createByDuration"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ISO 8601 formatted date the time entry was spent"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "hours",
+            "description": "The current amount of time tracked"
+          },
+          {
+            "name": "notes",
+            "description": "These are notes about the time entry"
+          },
+          {
+            "name": "user_id",
+            "description": "The ID of the user to associate with the time entry. Defaults to the currently authenticated user’s ID."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createByDuration"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        }
+      },
+      {
+        "name": "projectId",
+        "displayName": "Project ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createByStartEnd"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ID of the project to associate with the time entry"
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createByStartEnd"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ID of the task to associate with the time entry"
+      },
+      {
+        "name": "spentDate",
+        "displayName": "Spent Date",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createByStartEnd"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        },
+        "description": "The ISO 8601 formatted date the time entry was spent"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "ended_time",
+            "description": "The time the entry ended"
+          },
+          {
+            "name": "notes",
+            "description": "These are notes about the time entry"
+          },
+          {
+            "name": "started_time",
+            "description": "The time the entry started. Defaults to the current time. Example: “8:00am”."
+          },
+          {
+            "name": "user_id",
+            "description": "The ID of the user to associate with the time entry. Defaults to the currently authenticated user’s ID."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createByStartEnd"
+            ],
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "is_active",
+            "description": "Whether to only return active users and false to return inactive users"
+          },
+          {
+            "name": "updated_since",
+            "description": "Only return users belonging to the user with the given ID"
+          },
+          {
+            "name": "page",
+            "description": "The page number to use in pagination"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        },
+        "description": "The ID of the user you are retrieving"
+      },
+      {
+        "name": "id",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        },
+        "description": "The ID of the user you want to delete"
+      },
+      {
+        "name": "firstName",
+        "displayName": "First Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        },
+        "description": "The first name of the user"
+      },
+      {
+        "name": "lastName",
+        "displayName": "Last Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        },
+        "description": "The last name of the user"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        },
+        "description": "The email of the user"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "can_create_invoices",
+            "description": "Whether the user can create invoices. Only applicable to Project Managers."
+          },
+          {
+            "name": "can_create_projects",
+            "description": "Whether the user can create projects. Only applicable to Project Managers."
+          },
+          {
+            "name": "can_see_rates",
+            "description": "Whether the user can see billable rates on projects. Only applicable to Project Managers."
+          },
+          {
+            "name": "cost_rate",
+            "description": "The cost rate to use for this user when calculating a project’s costs vs billable amount"
+          },
+          {
+            "name": "default_hourly_rate",
+            "description": "The billable rate to use for this user when they are added to a project"
+          },
+          {
+            "name": "has_access_to_all_future_projects",
+            "description": "Whether the user should be automatically added to future projects"
+          },
+          {
+            "name": "is_active",
+            "description": "Whether the user is active or archived"
+          },
+          {
+            "name": "is_admin",
+            "description": "Whether the user has Admin permissions"
+          },
+          {
+            "name": "is_contractor",
+            "description": "Whether the user is a contractor or an employee"
+          },
+          {
+            "name": "is_project_manager",
+            "description": "Whether the user has Project Manager permissions"
+          },
+          {
+            "name": "roles",
+            "description": "The role names assigned to this person"
+          },
+          {
+            "name": "timezone",
+            "description": "The user’s timezone. Defaults to the company’s timezone. See a list of <a href=\"/api-v2/introduction/overview/supported-timezones/\">supported time zones</a>."
+          },
+          {
+            "name": "weekly_capacity",
+            "description": "The number of hours per week this person is available to work in seconds. Defaults to <code class=\"language-plaintext highlighter-rouge\">126000</code> seconds ("
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        },
+        "description": "The ID of the time entry to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "can_create_invoices",
+            "description": "Whether the user can create invoices. Only applicable to Project Managers."
+          },
+          {
+            "name": "can_create_projects",
+            "description": "Whether the user can create projects. Only applicable to Project Managers."
+          },
+          {
+            "name": "can_see_rates",
+            "description": "Whether the user can see billable rates on projects. Only applicable to Project Managers."
+          },
+          {
+            "name": "cost_rate",
+            "description": "The cost rate to use for this user when calculating a project’s costs vs billable amount"
+          },
+          {
+            "name": "default_hourly_rate",
+            "description": "The billable rate to use for this user when they are added to a project"
+          },
+          {
+            "name": "email",
+            "description": "The user email"
+          },
+          {
+            "name": "first_name",
+            "description": "The user first name"
+          },
+          {
+            "name": "has_access_to_all_future_projects",
+            "description": "Whether the user should be automatically added to future projects"
+          },
+          {
+            "name": "is_active",
+            "description": "Whether the user is active or archived"
+          },
+          {
+            "name": "is_admin",
+            "description": "Whether the user has Admin permissions"
+          },
+          {
+            "name": "is_contractor",
+            "description": "Whether the user is a contractor or an employee"
+          },
+          {
+            "name": "is_project_manager",
+            "description": "Whether the user has Project Manager permissions"
+          },
+          {
+            "name": "last_name",
+            "description": "The user last name"
+          },
+          {
+            "name": "roles",
+            "description": "The role names assigned to this person"
+          },
+          {
+            "name": "timezone",
+            "description": "The user’s timezone. Defaults to the company’s timezone. See a list of <a href=\"/api-v2/introduction/overview/supported-timezones/\">supported time zones</a>."
+          },
+          {
+            "name": "weekly_capacity",
+            "description": "The number of hours per week this person is available to work in seconds. Defaults to <code class=\"language-plaintext highlighter-rouge\">126000</code> seconds ("
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

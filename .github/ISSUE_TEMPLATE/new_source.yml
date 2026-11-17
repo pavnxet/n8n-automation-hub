@@ -1,0 +1,48 @@
+name: New source
+description: Add an official or unofficial n8n source to the registry.
+labels: ["sources"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Source URL
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Tier
+      options:
+        - official
+        - community-curated
+        - aggregator
+    validations:
+      required: true
+
+  - type: input
+    id: licence
+    attributes:
+      label: Licence
+      placeholder: MIT / CC BY 4.0 / Sustainable Use License / not stated
+    validations:
+      required: true
+
+  - type: textarea
+    id: checked
+    attributes:
+      label: What you verified
+      description: >-
+        Say what you actually inspected: file counts, whether workflows are real or
+        placeholders, whether authors are attributed, whether links are referral links.
+    validations:
+      required: true
+
+  - type: textarea
+    id: use
+    attributes:
+      label: What it will be used for
+      placeholder: landscape research / candidate automations (to be rewritten, not copied)
+    validations:
+      required: true

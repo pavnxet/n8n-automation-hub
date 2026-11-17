@@ -1,0 +1,148 @@
+{
+  "id": "n8n-nodes-base.facebookleadadstrigger",
+  "name": "Facebook Lead Ads Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.facebookleadadstrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Facebook Lead Ads Trigger node to respond to events in Facebook Lead Ads and integrate Facebook Lead Ads with other applications. n8n has built-in support for responding to new leads",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.facebookleadadstrigger",
+  "credentials": {
+    "name": "Facebook Lead Ads credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/facebookleadads",
+    "slug": "facebookleadads",
+    "json_file": "credentials/facebookleadads.json",
+    "markdown_file": "credentials/facebookleadads.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "ads",
+    "applications",
+    "credentials",
+    "events",
+    "facebook",
+    "facebookleadadstrigger",
+    "lead",
+    "leads",
+    "respond",
+    "responding",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.facebookleadadstrigger.md",
+      "title": "Facebook Lead Ads Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.facebookleadadstrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.facebookleadadstrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.facebookleadadstrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.facebookleadadstrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.facebookleadadstrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.facebookLeadAdsTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "facebookLeadAdsOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "facebookLeadAdsOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Facebook Lead Ads Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "facebookLeadAdsNotice",
+        "displayName": "Due to Facebook API limitations, you can use just one Facebook Lead Ads trigger for each Facebook App",
+        "type": "notice"
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "default": "newLead",
+        "options": [
+          {
+            "name": "New Lead",
+            "value": "newLead"
+          }
+        ]
+      },
+      {
+        "name": "page",
+        "displayName": "Page",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "description": "The page linked to the form for retrieving new leads"
+      },
+      {
+        "name": "form",
+        "displayName": "Form",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "description": "The form to monitor for fetching lead details upon submission"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "simplifyOutput",
+            "description": "Whether to return a simplified version of the webhook event instead of all fields"
+          }
+        ]
+      }
+    ]
+  }
+}

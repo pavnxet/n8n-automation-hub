@@ -1,0 +1,441 @@
+{
+  "id": "n8n-nodes-base.microsoftgraphsecurity",
+  "name": "Microsoft Graph Security",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.microsoftgraphsecurity",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Microsoft Graph Security node to automate work in Microsoft Graph Security, and integrate Microsoft Graph Security with other applications. n8n has built-in support for a wide range of Microsoft Graph Security features, including getting, and updating scores, and profiles",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.microsoftgraphsecurity",
+  "credentials": {
+    "name": "Microsoft",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/microsoft",
+    "slug": "microsoft",
+    "json_file": "credentials/microsoft.json",
+    "markdown_file": "credentials/microsoft.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Secure Score",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "secureScore",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Secure Score",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "secureScore",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Secure Score Control Profile",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "secureScoreControlProfile",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Secure Score Control Profile",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "secureScoreControlProfile",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Secure Score Control Profile",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "secureScoreControlProfile",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "control",
+    "get",
+    "getting",
+    "graph",
+    "including",
+    "microsoft",
+    "microsoftgraphsecurity",
+    "profile",
+    "profiles",
+    "score",
+    "scores",
+    "secure",
+    "security",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.microsoftgraphsecurity.md",
+      "title": "Microsoft Graph Security node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.microsoftgraphsecurity",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.microsoftgraphsecurity.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.microsoftgraphsecurity.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.microsoftgraphsecurity.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.microsoftgraphsecurity.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.microsoftGraphSecurity",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "microsoftGraphSecurityOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "microsoftGraphSecurityOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Microsoft Graph Security"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 15,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "secureScore",
+        "options": [
+          {
+            "name": "Secure Score",
+            "value": "secureScore"
+          },
+          {
+            "name": "Secure Score Control Profile",
+            "value": "secureScoreControlProfile"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScore"
+            ]
+          }
+        }
+      },
+      {
+        "name": "secureScoreId",
+        "displayName": "Secure Score ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScore"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the secure score to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScore"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScore"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "filter",
+            "description": "<a href=\"https://docs.microsoft.com/en-us/graph/query-parameters#filter-parameter\">Query parameter</a> to filter results by"
+          },
+          {
+            "name": "includeControlScores"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScore"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScoreControlProfile"
+            ]
+          }
+        }
+      },
+      {
+        "name": "secureScoreControlProfileId",
+        "displayName": "Secure Score Control Profile ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScoreControlProfile"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the secure score control profile to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScoreControlProfile"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScoreControlProfile"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "filter",
+            "description": "<a href=\"https://docs.microsoft.com/en-us/graph/query-parameters#filter-parameter\">Query parameter</a> to filter results by"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScoreControlProfile"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "secureScoreControlProfileId",
+        "displayName": "Secure Score Control Profile ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScoreControlProfile"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the secure score control profile to update"
+      },
+      {
+        "name": "provider",
+        "displayName": "Provider",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScoreControlProfile"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Name of the provider of the security product or service"
+      },
+      {
+        "name": "vendor",
+        "displayName": "Vendor",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScoreControlProfile"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Name of the vendor of the security product or service"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "state",
+            "description": "Analyst driven setting on the control"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "secureScoreControlProfile"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

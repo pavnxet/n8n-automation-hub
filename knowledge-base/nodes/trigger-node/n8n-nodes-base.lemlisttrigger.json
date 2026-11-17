@@ -1,0 +1,315 @@
+{
+  "id": "n8n-nodes-base.lemlisttrigger",
+  "name": "Lemlist Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.lemlisttrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Lemlist is an email outreach platform that allows you to automatically generate personalized images and videos and send personalized cold emails",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.lemlisttrigger",
+  "credentials": {
+    "name": "Lemlist credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/lemlist",
+    "slug": "lemlist",
+    "json_file": "credentials/lemlist.json",
+    "markdown_file": "credentials/lemlist.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allows",
+    "automatically",
+    "cold",
+    "credentials",
+    "email",
+    "emails",
+    "generate",
+    "images",
+    "lemlist",
+    "lemlisttrigger",
+    "outreach",
+    "personalized",
+    "platform",
+    "send",
+    "trigger",
+    "videos"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.lemlisttrigger.md",
+      "title": "Lemlist Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.lemlisttrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.lemlisttrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.lemlisttrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.lemlisttrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.lemlisttrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.lemlistTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "lemlistApi"
+  ],
+  "credential_details": [
+    {
+      "name": "lemlistApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Lemlist Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "*",
+            "value": "*"
+          },
+          {
+            "name": "Contacted",
+            "value": "contacted"
+          },
+          {
+            "name": "Hooked",
+            "value": "hooked"
+          },
+          {
+            "name": "Attracted",
+            "value": "attracted"
+          },
+          {
+            "name": "Warmed",
+            "value": "warmed"
+          },
+          {
+            "name": "Interested",
+            "value": "interested"
+          },
+          {
+            "name": "Skipped",
+            "value": "skipped"
+          },
+          {
+            "name": "Not Interested",
+            "value": "notInterested"
+          },
+          {
+            "name": "Emails Sent",
+            "value": "emailsSent"
+          },
+          {
+            "name": "Emails Opened",
+            "value": "emailsOpened"
+          },
+          {
+            "name": "Emails Clicked",
+            "value": "emailsClicked"
+          },
+          {
+            "name": "Emails Replied",
+            "value": "emailsReplied"
+          },
+          {
+            "name": "Emails Bounced",
+            "value": "emailsBounced"
+          },
+          {
+            "name": "Emails Send Failed",
+            "value": "emailsSendFailed"
+          },
+          {
+            "name": "Emails Failed",
+            "value": "emailsFailed"
+          },
+          {
+            "name": "Emails Unsubscribed",
+            "value": "emailsUnsubscribed"
+          },
+          {
+            "name": "Emails Interested",
+            "value": "emailsInterested"
+          },
+          {
+            "name": "Emails Not Interested",
+            "value": "emailsNotInterested"
+          },
+          {
+            "name": "Opportunities Done",
+            "value": "opportunitiesDone"
+          },
+          {
+            "name": "Aircall Created",
+            "value": "aircallCreated"
+          },
+          {
+            "name": "Aircall Ended",
+            "value": "aircallEnded"
+          },
+          {
+            "name": "Aircall Done",
+            "value": "aircallDone"
+          },
+          {
+            "name": "Aircall Interested",
+            "value": "aircallInterested"
+          },
+          {
+            "name": "Aircall Not Interested",
+            "value": "aircallNotInterested"
+          },
+          {
+            "name": "Api Done",
+            "value": "apiDone"
+          },
+          {
+            "name": "Api Interested",
+            "value": "apiInterested"
+          },
+          {
+            "name": "Api Not Interested",
+            "value": "apiNotInterested"
+          },
+          {
+            "name": "Api Failed",
+            "value": "apiFailed"
+          },
+          {
+            "name": "LinkedIn Visit Done",
+            "value": "linkedinVisitDone"
+          },
+          {
+            "name": "LinkedIn Visit Failed",
+            "value": "linkedinVisitFailed"
+          },
+          {
+            "name": "LinkedIn Invite Done",
+            "value": "linkedinInviteDone"
+          },
+          {
+            "name": "LinkedIn Invite Failed",
+            "value": "linkedinInviteFailed"
+          },
+          {
+            "name": "LinkedIn Invite Accepted",
+            "value": "linkedinInviteAccepted"
+          },
+          {
+            "name": "LinkedIn Replied",
+            "value": "linkedinReplied"
+          },
+          {
+            "name": "LinkedIn Sent",
+            "value": "linkedinSent"
+          },
+          {
+            "name": "LinkedIn Voice Note Done",
+            "value": "linkedinVoiceNoteDone"
+          },
+          {
+            "name": "LinkedIn Voice Note Failed",
+            "value": "linkedinVoiceNoteFailed"
+          },
+          {
+            "name": "LinkedIn Interested",
+            "value": "linkedinInterested"
+          },
+          {
+            "name": "LinkedIn Not Interested",
+            "value": "linkedinNotInterested"
+          },
+          {
+            "name": "LinkedIn Send Failed",
+            "value": "linkedinSendFailed"
+          },
+          {
+            "name": "Manual Interested",
+            "value": "manualInterested"
+          },
+          {
+            "name": "Manual Not Interested",
+            "value": "manualNotInterested"
+          },
+          {
+            "name": "Paused",
+            "value": "paused"
+          },
+          {
+            "name": "Resumed",
+            "value": "resumed"
+          },
+          {
+            "name": "Custom Domain Errors",
+            "value": "customDomainErrors"
+          },
+          {
+            "name": "Connection Issue",
+            "value": "connectionIssue"
+          },
+          {
+            "name": "Send Limit Reached",
+            "value": "sendLimitReached"
+          },
+          {
+            "name": "Lemwarm Paused",
+            "value": "lemwarmPaused"
+          }
+        ]
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "campaignId",
+            "description": "We'll call this hook only for this campaignId. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "isFirst",
+            "description": "Whether to call this hook only the first time this activity happened"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,541 @@
+{
+  "id": "n8n-nodes-base.extractfromfile",
+  "name": "Extract From File",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.extractfromfile",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "A common pattern in n8n workflows is to receive a file, either from an [HTTP Request node][] (for files you are fetching from a website), a [Webhook Node][] (for files which are sent to your workflow from elsewhere), or from a local source. Data obtained in this way is often in a binary format, for example a spreadsheet or PDF",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.extractfromfile",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Extract From CSV",
+      "description": "The \"Comma Separated Values\" file type is commonly used for tabulated data",
+      "doc": "",
+      "operation_value": "csv"
+    },
+    {
+      "resource": "",
+      "operation": "Extract From HTML",
+      "description": "Extract fields from standard web page HTML format files",
+      "doc": "",
+      "operation_value": "html"
+    },
+    {
+      "resource": "",
+      "operation": "Extract From JSON",
+      "description": "Extract JSON data from a binary file",
+      "doc": "",
+      "operation_value": "fromJson"
+    },
+    {
+      "resource": "",
+      "operation": "Extract From ICS",
+      "description": "Extract fields from iCalendar format files",
+      "doc": "",
+      "operation_value": "fromIcs"
+    },
+    {
+      "resource": "",
+      "operation": "Extract From ODS",
+      "description": "Extract fields from ODS spreadsheet files",
+      "doc": "",
+      "operation_value": "ods"
+    },
+    {
+      "resource": "",
+      "operation": "Extract From PDF",
+      "description": "Extract fields from Portable Document Format files",
+      "doc": "",
+      "operation_value": "pdf"
+    },
+    {
+      "resource": "",
+      "operation": "Extract From RTF",
+      "description": "Extract fields from Rich Text Format files",
+      "doc": "",
+      "operation_value": "rtf"
+    },
+    {
+      "resource": "",
+      "operation": "Extract From Text File",
+      "description": "Extract fields from a standard text file format",
+      "doc": "",
+      "operation_value": "text"
+    },
+    {
+      "resource": "",
+      "operation": "Extract From XLS",
+      "description": "Extract fields from a Microsoft Excel file (older format)",
+      "doc": "",
+      "operation_value": "xls"
+    },
+    {
+      "resource": "",
+      "operation": "Extract From XLSX",
+      "description": "Extract fields from a Microsoft Excel file",
+      "doc": "",
+      "operation_value": "xlsx"
+    },
+    {
+      "resource": "",
+      "operation": "Move File to Base64 String",
+      "description": "Converts binary data to a text-friendly [base64][] format",
+      "doc": "",
+      "operation_value": "binaryToPropery"
+    }
+  ],
+  "operation_count": 11,
+  "parameters": [
+    {
+      "name": "Input Binary Field",
+      "description": "Enter the name of the field from the node input data that contains the binary file. The default is 'data'"
+    },
+    {
+      "name": "Destination Output Field",
+      "description": "Enter the name of the field in the node output that will contain the extracted data",
+      "options": [
+        "Extract From JSON",
+        "Extract From ICS",
+        "Extract From Text File",
+        "Move File to Base64 String"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [
+    {
+      "name": "Extract from file example",
+      "source_url": "https://raw.githubusercontent.com/n8n-io/n8n-docs/refs/heads/main/docs/_workflows/integrations/builtin/core-nodes/n8n-nodes-base.extractfromfile/webhook-example.json",
+      "node_count": 2,
+      "workflow": {
+        "name": "Extract from file example",
+        "nodes": [
+          {
+            "parameters": {
+              "httpMethod": "POST",
+              "path": "06696ea7-9dc7-464a-873b-3feb095b0874",
+              "options": {
+                "rawBody": true
+              }
+            },
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 2,
+            "position": [
+              -380,
+              -80
+            ],
+            "id": "dfbd51af-6050-47c5-a26c-74cba77f65f7",
+            "name": "Webhook",
+            "webhookId": "06696ea7-9dc7-464a-873b-3feb095b0874"
+          },
+          {
+            "parameters": {
+              "options": {
+                "headerRow": false
+              }
+            },
+            "type": "n8n-nodes-base.extractFromFile",
+            "typeVersion": 1,
+            "position": [
+              -160,
+              -80
+            ],
+            "id": "1b1e4643-8269-402b-83af-dfd90fd6a0b5",
+            "name": "Extract from File"
+          }
+        ],
+        "pinData": {},
+        "connections": {
+          "Webhook": {
+            "main": [
+              [
+                {
+                  "node": "Extract from File",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          }
+        },
+        "active": true,
+        "settings": {
+          "executionOrder": "v1"
+        },
+        "versionId": "dd2bf7f1-692a-41a8-9c2e-7931de57fa13",
+        "meta": {
+          "instanceId": "1060f46e51fc7902c377ab29d7cbfb87696ddf6b3c5c27cbbb65c3cb36e21baf"
+        },
+        "id": "9i3iDZf5MpjlJ2sh",
+        "tags": []
+      }
+    }
+  ],
+  "common_issues": [],
+  "keywords": [
+    "base64",
+    "binary",
+    "common",
+    "core",
+    "csv",
+    "data",
+    "destination",
+    "either",
+    "elsewhere",
+    "extract",
+    "extractfromfile",
+    "fetching",
+    "field",
+    "file",
+    "files",
+    "format",
+    "html",
+    "http",
+    "ics",
+    "input",
+    "json",
+    "local",
+    "move",
+    "obtained",
+    "ods",
+    "often",
+    "output",
+    "pattern",
+    "pdf",
+    "receive",
+    "request",
+    "rtf",
+    "sent",
+    "source",
+    "spreadsheet",
+    "string",
+    "text",
+    "webhook",
+    "website",
+    "xls",
+    "xlsx"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.extractfromfile.md",
+      "title": "Extract From File",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.extractfromfile",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.extractfromfile.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.extractfromfile.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.extractfromfile.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.extractfromfile.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.extractFromFile",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Extract from File"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "csv",
+        "options": [
+          {
+            "name": "Extract From CSV",
+            "value": "csv",
+            "description": "Transform a CSV file into output items"
+          },
+          {
+            "name": "Extract From HTML",
+            "value": "html",
+            "description": "Transform a table in an HTML file into output items"
+          },
+          {
+            "name": "Extract From ICS",
+            "value": "fromIcs",
+            "description": "Transform a ICS file into output items"
+          },
+          {
+            "name": "Extract From JSON",
+            "value": "fromJson",
+            "description": "Transform a JSON file into output items"
+          },
+          {
+            "name": "Extract From ODS",
+            "value": "ods",
+            "description": "Transform an ODS file into output items"
+          },
+          {
+            "name": "Extract From PDF",
+            "value": "pdf",
+            "description": "Extracts the content and metadata from a PDF file"
+          },
+          {
+            "name": "Extract From RTF",
+            "value": "rtf",
+            "description": "Transform a table in an RTF file into output items"
+          },
+          {
+            "name": "Extract From Text File",
+            "value": "text",
+            "description": "Extracts the content of a text file"
+          },
+          {
+            "name": "Extract From XML",
+            "value": "xml",
+            "description": "Extracts the content of an XML file"
+          },
+          {
+            "name": "Extract From XLS",
+            "value": "xls",
+            "description": "Transform an Excel file into output items"
+          },
+          {
+            "name": "Extract From XLSX",
+            "value": "xlsx",
+            "description": "Transform an Excel file into output items"
+          },
+          {
+            "name": "Move File to Base64 String",
+            "value": "binaryToPropery",
+            "description": "Convert a file into a base64-encoded string"
+          }
+        ]
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "csv",
+              "html",
+              "rtf",
+              "ods",
+              "xls",
+              "xlsx"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "delimiter",
+            "description": "Set the field delimiter, usually a comma"
+          },
+          {
+            "name": "encoding"
+          },
+          {
+            "name": "enableBOM",
+            "description": "Whether to detect and exclude the byte-order-mark from the CSV Input if present"
+          },
+          {
+            "name": "relaxQuotes",
+            "description": "Whether to handle unclosed quotes in CSV fields as part of the field's content instead of throwing a parsing error"
+          },
+          {
+            "name": "headerRow",
+            "description": "Whether the first row of the file contains the header names"
+          },
+          {
+            "name": "includeEmptyCells",
+            "description": "Whether to include empty cells when reading from file. They will be filled with an empty string."
+          },
+          {
+            "name": "maxRowCount",
+            "description": "Stop handling records after the requested number of rows are read. Use -1 if you want to load all rows."
+          },
+          {
+            "name": "range",
+            "description": "The range to read from the table. If set to a number it will be the starting row. If set to string it will be used as A1-style notation range."
+          },
+          {
+            "name": "rawData",
+            "description": "Whether to return RAW data, instead of parsing it"
+          },
+          {
+            "name": "readAsString",
+            "description": "In some cases and file formats, it is necessary to read as string to ensure special characters are interpreted correctly"
+          },
+          {
+            "name": "sheetName",
+            "description": "Name of the sheet to read from in the spreadsheet"
+          },
+          {
+            "name": "fromLine",
+            "description": "Start handling records from the requested line number. Starts at 0."
+          },
+          {
+            "name": "skipRecordsWithErrors"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "csv",
+              "html",
+              "rtf",
+              "ods",
+              "xls",
+              "xlsx"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "binaryToPropery",
+              "fromJson",
+              "text",
+              "fromIcs",
+              "xml"
+            ]
+          }
+        }
+      },
+      {
+        "name": "destinationKey",
+        "displayName": "Destination Output Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "binaryToPropery",
+              "fromJson",
+              "text",
+              "fromIcs",
+              "xml"
+            ]
+          }
+        },
+        "description": "The name of the output field that will contain the extracted data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "encoding",
+            "description": "Specify the encoding of the file, defaults to UTF-8"
+          },
+          {
+            "name": "stripBOM",
+            "description": "Whether to strip the BOM (Byte Order Mark) from the file, this could help in an environment where the presence of the BOM is causing issues or inconsistencies"
+          },
+          {
+            "name": "keepSource"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "binaryToPropery",
+              "fromJson",
+              "text",
+              "fromIcs",
+              "xml"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "pdf"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "joinPages",
+            "description": "Whether to join the text from all pages or return an array of text from each page"
+          },
+          {
+            "name": "keepSource"
+          },
+          {
+            "name": "maxPages",
+            "description": "Maximum number of pages to include"
+          },
+          {
+            "name": "password",
+            "description": "Prowide password, if the PDF is encrypted"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "pdf"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

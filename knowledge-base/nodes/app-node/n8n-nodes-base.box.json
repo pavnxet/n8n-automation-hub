@@ -1,0 +1,1394 @@
+{
+  "id": "n8n-nodes-base.box",
+  "name": "Box",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.box",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Box node to automate work in Box, and integrate Box with other applications. n8n has built-in support for a wide range of Box features, including creating, copying, deleting, searching, uploading, and downloading files and folders",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.box",
+  "credentials": {
+    "name": "Box",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/box",
+    "slug": "box",
+    "json_file": "credentials/box.json",
+    "markdown_file": "credentials/box.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "File",
+      "operation": "Copy a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "copy"
+    },
+    {
+      "resource": "File",
+      "operation": "Delete a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "File",
+      "operation": "Download a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "download"
+    },
+    {
+      "resource": "File",
+      "operation": "Get a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "get"
+    },
+    {
+      "resource": "File",
+      "operation": "Search files",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "search"
+    },
+    {
+      "resource": "File",
+      "operation": "Share a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "share"
+    },
+    {
+      "resource": "File",
+      "operation": "Upload a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "upload"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Create a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Get a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Delete a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Search files",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Share a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "share"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Update folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 13,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "box",
+    "copy",
+    "copying",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "download",
+    "downloading",
+    "file",
+    "files",
+    "folder",
+    "folders",
+    "get",
+    "including",
+    "search",
+    "searching",
+    "share",
+    "update",
+    "upload",
+    "uploading",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.box.md",
+      "title": "Box node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.box",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.box.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.box.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.box.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.box.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.box",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "boxOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "boxOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Box"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 48,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "file",
+        "options": [
+          {
+            "name": "File",
+            "value": "file"
+          },
+          {
+            "name": "Folder",
+            "value": "folder"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upload",
+        "options": [
+          {
+            "name": "Copy",
+            "value": "copy",
+            "description": "Copy a file"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a file"
+          },
+          {
+            "name": "Download",
+            "value": "download",
+            "description": "Download a file"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a file"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Search files"
+          },
+          {
+            "name": "Share",
+            "value": "share",
+            "description": "Share a file"
+          },
+          {
+            "name": "Upload",
+            "value": "upload",
+            "description": "Upload a file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "copy"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "parentId",
+        "displayName": "Parent ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "copy"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The ID of folder to copy the file to. If not defined will be copied to the root folder."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response."
+          },
+          {
+            "name": "name",
+            "description": "An optional new name for the copied file"
+          },
+          {
+            "name": "version",
+            "description": "An optional ID of the specific file version to copy"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "copy"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Field ID"
+      },
+      {
+        "name": "fileId",
+        "displayName": "File ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Field ID"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The string to search for. This query is matched against item names, descriptions, text content of files, and various other fields of the different item types."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "file"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "contet_types",
+            "description": "Limits search results to items with the given content types. Content types are defined as a comma-separated lists of Box recognized content types."
+          },
+          {
+            "name": "createdRangeUi"
+          },
+          {
+            "name": "direction",
+            "description": "Defines the direction in which search results are ordered. Default value is DESC."
+          },
+          {
+            "name": "fields",
+            "description": "A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response."
+          },
+          {
+            "name": "file_extensions",
+            "description": "Limits search results to a comma-separated list of file extensions"
+          },
+          {
+            "name": "ancestor_folder_ids",
+            "description": "Limits search results to items within the given list of folders. Folders are defined as a comma-separated lists of folder IDs."
+          },
+          {
+            "name": "scope",
+            "description": "Limits search results to a user scope"
+          },
+          {
+            "name": "size_range",
+            "description": "Limits search results to items within a given file size range. File size ranges are defined as comma-separated byte sizes."
+          },
+          {
+            "name": "sort",
+            "description": "Returns the results ordered in descending order by date at which the item was last modified"
+          },
+          {
+            "name": "trash_content",
+            "description": "Controls if search results include the trash"
+          },
+          {
+            "name": "updatedRangeUi"
+          },
+          {
+            "name": "owner_user_ids",
+            "description": "Limits search results to items owned by the given list of owners. Owners are defined as a comma-separated list of user IDs."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The ID of the file to share"
+      },
+      {
+        "name": "accessibleBy",
+        "displayName": "Accessible By",
+        "type": "options",
+        "options": [
+          {
+            "name": "Group",
+            "value": "group"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The type of object the file will be shared with"
+      },
+      {
+        "name": "useEmail",
+        "displayName": "Use Email",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "file"
+            ],
+            "accessibleBy": [
+              "user"
+            ]
+          }
+        },
+        "description": "Whether identify the user by email or ID"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "file"
+            ],
+            "useEmail": [
+              true
+            ],
+            "accessibleBy": [
+              "user"
+            ]
+          }
+        },
+        "description": "The user's email address to share the file with"
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "file"
+            ],
+            "useEmail": [
+              false
+            ],
+            "accessibleBy": [
+              "user"
+            ]
+          }
+        },
+        "description": "The user's ID to share the file with"
+      },
+      {
+        "name": "groupId",
+        "displayName": "Group ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "file"
+            ],
+            "accessibleBy": [
+              "group"
+            ]
+          }
+        },
+        "description": "The group's ID to share the file with"
+      },
+      {
+        "name": "role",
+        "displayName": "Role",
+        "type": "options",
+        "default": "editor",
+        "options": [
+          {
+            "name": "Co-Owner",
+            "value": "coOwner",
+            "description": "A Co-owner has all of functional read/write access that an editor does"
+          },
+          {
+            "name": "Editor",
+            "value": "editor",
+            "description": "An editor has full read/write access to a folder or file"
+          },
+          {
+            "name": "Previewer",
+            "value": "previewer",
+            "description": "A previewer has limited read access"
+          },
+          {
+            "name": "Previewer Uploader",
+            "value": "previewerUploader",
+            "description": "This access level is a combination of Previewer and Uploader"
+          },
+          {
+            "name": "Uploader",
+            "value": "uploader",
+            "description": "An uploader has limited write access"
+          },
+          {
+            "name": "Viewer",
+            "value": "viewer",
+            "description": "A viewer has read access to a folder or file"
+          },
+          {
+            "name": "Viewer Uploader",
+            "value": "viewerUploader",
+            "description": "This access level is a combination of Viewer and Uploader"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The level of access granted"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "can_view_path",
+            "description": "Whether the invited users can see the entire parent path to the associated folder. The user will not gain privileges in any parent folder and therefore cannot s"
+          },
+          {
+            "name": "expires_at",
+            "description": "Set the expiration date for the collaboration. At this date, the collaboration will be automatically removed from the item."
+          },
+          {
+            "name": "fields",
+            "description": "A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response."
+          },
+          {
+            "name": "notify",
+            "description": "Whether if users should receive email notification for the action performed"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileName",
+        "displayName": "File Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The name the file should be saved as"
+      },
+      {
+        "name": "binaryData",
+        "displayName": "Binary File",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Whether the data to upload should be taken from binary field"
+      },
+      {
+        "name": "fileContent",
+        "displayName": "File Content",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "binaryData": [
+              false
+            ],
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The text content of the file"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "binaryData": [
+              true
+            ],
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "parentId",
+        "displayName": "Parent ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "ID of the parent folder that will contain the file. If not it will be uploaded to the root folder."
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a folder"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a folder"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a folder"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Search files"
+          },
+          {
+            "name": "Share",
+            "value": "share",
+            "description": "Share a folder"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update folder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "Folder's name"
+      },
+      {
+        "name": "parentId",
+        "displayName": "Parent ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "ID of the folder you want to create the new folder in. if not defined it will be created on the root folder."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "access",
+            "description": "ID of the folder you want to create the new folder in"
+          },
+          {
+            "name": "fields",
+            "description": "A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "displayName": "Folder ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "displayName": "Folder ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "recursive",
+        "displayName": "Recursive",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "Whether to delete a folder that is not empty by recursively deleting the folder and all of its content"
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "The string to search for. This query is matched against item names, descriptions, text content of files, and various other fields of the different item types."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "folder"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "contet_types",
+            "description": "Limits search results to items with the given content types. Content types are defined as a comma-separated lists of Box recognized content types."
+          },
+          {
+            "name": "createdRangeUi"
+          },
+          {
+            "name": "direction",
+            "description": "Defines the direction in which search results are ordered. Default value is DESC."
+          },
+          {
+            "name": "fields",
+            "description": "A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response."
+          },
+          {
+            "name": "file_extensions",
+            "description": "Limits search results to a comma-separated list of file extensions"
+          },
+          {
+            "name": "ancestor_folder_ids",
+            "description": "Limits search results to items within the given list of folders. Folders are defined as a comma-separated lists of folder IDs."
+          },
+          {
+            "name": "scope",
+            "description": "Limits search results to a user scope"
+          },
+          {
+            "name": "size_range",
+            "description": "Limits search results to items within a given file size range. File size ranges are defined as comma-separated byte sizes."
+          },
+          {
+            "name": "sort",
+            "description": "Returns the results ordered in descending order by date at which the item was last modified"
+          },
+          {
+            "name": "trash_content",
+            "description": "Controls if search results include the trash"
+          },
+          {
+            "name": "updatedRangeUi"
+          },
+          {
+            "name": "owner_user_ids",
+            "description": "Limits search results to items owned by the given list of owners. Owners are defined as a comma-separated list of user IDs."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "displayName": "Folder ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "The ID of the folder to share"
+      },
+      {
+        "name": "accessibleBy",
+        "displayName": "Accessible By",
+        "type": "options",
+        "default": "user",
+        "options": [
+          {
+            "name": "User",
+            "value": "user"
+          },
+          {
+            "name": "Group",
+            "value": "group"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "The type of object the file will be shared with"
+      },
+      {
+        "name": "useEmail",
+        "displayName": "Use Email",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "folder"
+            ],
+            "accessibleBy": [
+              "user"
+            ]
+          }
+        },
+        "description": "Whether identify the user by email or ID"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "folder"
+            ],
+            "accessibleBy": [
+              "user"
+            ],
+            "useEmail": [
+              true
+            ]
+          }
+        },
+        "description": "The user's email address to share the folder with"
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "folder"
+            ],
+            "accessibleBy": [
+              "user"
+            ],
+            "useEmail": [
+              false
+            ]
+          }
+        },
+        "description": "The user's ID to share the folder with"
+      },
+      {
+        "name": "groupId",
+        "displayName": "Group ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "folder"
+            ],
+            "accessibleBy": [
+              "group"
+            ]
+          }
+        },
+        "description": "The group's ID to share the folder with"
+      },
+      {
+        "name": "role",
+        "displayName": "Role",
+        "type": "options",
+        "default": "editor",
+        "options": [
+          {
+            "name": "Co-Owner",
+            "value": "coOwner",
+            "description": "A Co-owner has all of functional read/write access that an editor does"
+          },
+          {
+            "name": "Editor",
+            "value": "editor",
+            "description": "An editor has full read/write access to a folder or file"
+          },
+          {
+            "name": "Previewer",
+            "value": "previewer",
+            "description": "A previewer has limited read access"
+          },
+          {
+            "name": "Previewer Uploader",
+            "value": "previewerUploader",
+            "description": "This access level is a combination of Previewer and Uploader"
+          },
+          {
+            "name": "Uploader",
+            "value": "uploader",
+            "description": "An uploader has limited write access"
+          },
+          {
+            "name": "Viewer",
+            "value": "viewer",
+            "description": "A viewer has read access to a folder or file"
+          },
+          {
+            "name": "Viewer Uploader",
+            "value": "viewerUploader",
+            "description": "This access level is a combination of Viewer and Uploader"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        },
+        "description": "The level of access granted"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "can_view_path",
+            "description": "Whether the invited users can see the entire parent path to the associated folder. The user will not gain privileges in any parent folder and therefore cannot s"
+          },
+          {
+            "name": "expires_at",
+            "description": "Set the expiration date for the collaboration. At this date, the collaboration will be automatically removed from the item."
+          },
+          {
+            "name": "fields",
+            "description": "A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response."
+          },
+          {
+            "name": "notify",
+            "description": "Whether if users should receive email notification for the action performed"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "share"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "displayName": "Folder ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "can_non_owners_invite",
+            "description": "Whether users who are not the owner of the folder can invite new collaborators to the folder"
+          },
+          {
+            "name": "can_non_owners_view_collaborators",
+            "description": "Whether to restrict collaborators who are not the owner of this folder from viewing other collaborations on this folder"
+          },
+          {
+            "name": "description",
+            "description": "The optional description of this folder"
+          },
+          {
+            "name": "fields",
+            "description": "A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response."
+          },
+          {
+            "name": "is_collaboration_restricted_to_enterprise",
+            "description": "Whether new invites to this folder are restricted to users within the enterprise. This does not affect existing collaborations."
+          },
+          {
+            "name": "name",
+            "description": "The optional new name for this folder"
+          },
+          {
+            "name": "parentId",
+            "description": "The parent folder for this folder. Use this to move the folder or to restore it out of the trash."
+          },
+          {
+            "name": "shared_link",
+            "description": "Share link information"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

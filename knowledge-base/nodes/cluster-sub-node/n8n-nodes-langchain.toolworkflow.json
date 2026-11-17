@@ -1,0 +1,228 @@
+{
+  "id": "n8n-nodes-langchain.toolworkflow",
+  "name": "Call n8n Workflow Tool",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.toolworkflow",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Call n8n Workflow Tool node is a tool[^1] that allows an agent[^2] to run another n8n workflow and fetch its output data",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolworkflow",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Description",
+      "description": "Enter a custom code a description. This tells the agent when to use this tool. For example:"
+    },
+    {
+      "name": "Source",
+      "description": "Tell n8n which workflow to call. You can choose either:",
+      "options": [
+        "Database to select the workflow from a list or enter a workflow ID",
+        "Define Below and copy in a complete workflow JSON"
+      ]
+    },
+    {
+      "name": "Workflow Inputs",
+      "description": "When using Database as workflow source, once you choose a sub-workflow (and define the Workflow Input Schema in the sub-workflow), you can define the Workflow Inputs",
+      "options": [
+        "providing fixed values",
+        "using expressions to reference data from the current workflow"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agent",
+    "allows",
+    "another",
+    "call",
+    "cluster",
+    "data",
+    "description",
+    "fetch",
+    "inputs",
+    "n8n",
+    "output",
+    "source",
+    "sub",
+    "tool",
+    "toolworkflow"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "Yl56nEscwQQAbBUeWfvp",
+      "name": "tools-link"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.toolworkflow.md",
+      "title": "Call n8n Workflow Tool node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolworkflow",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolworkflow.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.toolworkflow.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.toolworkflow.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolworkflow.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+  "type_version": 2.2,
+  "type_versions": [
+    2,
+    2.1,
+    2.2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Call n8n Workflow Tool"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_tool"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI agent. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "noticeTemplateExample",
+        "displayName": "See an example of a workflow to suggest meeting slots using AI <a href=\"/templates/1953\" target=\"_blank\">here</a>.",
+        "type": "notice"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 2.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "The name of the function to be called, could contain letters, numbers, and underscores only"
+      },
+      {
+        "name": "description",
+        "displayName": "Description",
+        "type": "string"
+      },
+      {
+        "name": "executeNotice",
+        "displayName": "This tool will call the workflow you define below, and look in the last node for the response. The workflow needs to start with an Execute Workflow trigger",
+        "type": "notice"
+      },
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "options",
+        "default": "database",
+        "options": [
+          {
+            "name": "Database",
+            "value": "database",
+            "description": "Load the workflow from the database by ID"
+          },
+          {
+            "name": "Define Below",
+            "value": "parameter",
+            "description": "Pass the JSON code of a workflow"
+          }
+        ],
+        "description": "Where to get the workflow to execute from"
+      },
+      {
+        "name": "workflowId",
+        "displayName": "Workflow",
+        "type": "workflowSelector",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "database"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workflowInputs",
+        "displayName": "Workflow Inputs",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "source": [
+              "database"
+            ]
+          },
+          "hide": {
+            "workflowId": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "workflowJson",
+        "displayName": "Workflow JSON",
+        "type": "json",
+        "required": true,
+        "default": "\n\n\n\n\n\n\n\n\n",
+        "displayOptions": {
+          "show": {
+            "source": [
+              "parameter"
+            ]
+          }
+        },
+        "description": "The workflow JSON code to execute"
+      }
+    ]
+  }
+}

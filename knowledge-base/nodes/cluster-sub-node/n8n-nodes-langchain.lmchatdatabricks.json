@@ -1,0 +1,233 @@
+{
+  "id": "n8n-nodes-langchain.lmchatdatabricks",
+  "name": "Databricks Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatdatabricks",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Databricks Chat Model node to run AI agents and chains on models served by your Databricks workspace. The node queries Unity AI Gateway model services, so it works with Databricks-hosted foundation models and with external providers you route through the gateway",
+  "doc_url": "https://docs.n8n.io/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatdatabricks",
+  "credentials": {
+    "name": "Databricks",
+    "doc": "https://docs.n8n.io/credentials/databricks",
+    "slug": "databricks",
+    "json_file": "credentials/databricks.json",
+    "markdown_file": "credentials/databricks.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "The Unity AI Gateway model service that generates the completion, named catalog.schema.service"
+    },
+    {
+      "name": "Frequency Penalty",
+      "description": "Penalize new tokens based on how often they already appear in the text, to reduce verbatim repetition. Range from -2 to 2, default 0"
+    },
+    {
+      "name": "Maximum Number of Tokens",
+      "description": "The maximum number of tokens to generate in the completion. Default -1 (no limit set by n8n)"
+    },
+    {
+      "name": "Response Format",
+      "description": "Text (default) or JSON. JSON mode requires the word json in your prompt and a model service that supports JSON mode"
+    },
+    {
+      "name": "Presence Penalty",
+      "description": "Penalize new tokens based on whether they appear in the text so far, to encourage new topics. Range from -2 to 2, default 0"
+    },
+    {
+      "name": "Sampling Temperature",
+      "description": "Control randomness. Lower values give more deterministic completions. Range from 0 to 2, default 0.7"
+    },
+    {
+      "name": "Timeout",
+      "description": "The maximum time a request may take, in milliseconds. Default 360000 (six minutes)"
+    },
+    {
+      "name": "Max Retries",
+      "description": "How many times to retry a failed request. Default 2"
+    },
+    {
+      "name": "Top P",
+      "description": "Nucleus sampling. Adjust this or Sampling Temperature, not both. Range from 0 to 1, default 1"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agents",
+    "chains",
+    "chat",
+    "cluster",
+    "databricks",
+    "external",
+    "format",
+    "foundation",
+    "frequency",
+    "gateway",
+    "hosted",
+    "lmchatdatabricks",
+    "max",
+    "maximum",
+    "model",
+    "models",
+    "number",
+    "penalty",
+    "presence",
+    "providers",
+    "queries",
+    "response",
+    "retries",
+    "route",
+    "sampling",
+    "served",
+    "services",
+    "sub",
+    "temperature",
+    "through",
+    "timeout",
+    "tokens",
+    "top",
+    "unity",
+    "works",
+    "workspace"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.lmchatdatabricks.md",
+      "title": "",
+      "url": "",
+      "origpath": "cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatdatabricks.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatdatabricks.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatdatabricks.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatdatabricks.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatDatabricks",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "databricksOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "databricksOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Databricks Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "notice",
+        "displayName": "If using JSON response format, you must include word \"json\" in the prompt in your chain or agent. Also, make sure the selected model service supports JSON mode.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.responseFormat": [
+              "json_object"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "description": "The Unity AI Gateway model service. Choose from the list, or enter its full name (catalog.schema.service)."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "frequencyPenalty",
+            "description": "Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 32,768"
+          },
+          {
+            "name": "responseFormat"
+          },
+          {
+            "name": "presencePenalty",
+            "description": "Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in milliseconds"
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt"
+          },
+          {
+            "name": "topP",
+            "description": "Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We generally recommend altering this or temperature b"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+<!-- n8n built-in node reference: n8n-nodes-base.awscomprehend | source: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awscomprehend -->
+
+Use the AWS Comprehend node to automate work in AWS Comprehend, and integrate AWS Comprehend with other applications. n8n has built-in support for a wide range of AWS Comprehend features, including identifying and analyzing texts.
+
+On this page, you'll find a list of operations the AWS Comprehend node supports and links to more resources.
+
+> **Credentials:**
+> Refer to [AWS Comprehend credentials](https://docs.n8n.io/integrations/builtin/credentials/aws) for guidance on setting up authentication.
+
+## Operations
+
+**Text**
+
+- Identify the dominant language
+- Analyse the sentiment of the text
+
+## Templates and examples
+
+[Browse AWS Comprehend node documentation integration templates](https://n8n.io/integrations/aws-comprehend) or [search all templates](https://n8n.io/workflows/)

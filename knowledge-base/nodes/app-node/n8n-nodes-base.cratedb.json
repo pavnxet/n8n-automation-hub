@@ -1,0 +1,288 @@
+{
+  "id": "n8n-nodes-base.cratedb",
+  "name": "CrateDB",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.cratedb",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the CrateDB node to automate work in CrateDB, and integrate CrateDB with other applications. n8n has built-in support for a wide range of CrateDB features, including executing, inserting, and updating rows in the database",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.cratedb",
+  "credentials": {
+    "name": "CrateDB",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/cratedb",
+    "slug": "cratedb",
+    "json_file": "credentials/cratedb.json",
+    "markdown_file": "credentials/cratedb.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Execute an SQL query",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Insert rows in database",
+      "description": "",
+      "doc": "",
+      "operation_value": "insert"
+    },
+    {
+      "resource": "",
+      "operation": "Update rows in database",
+      "description": "",
+      "doc": "",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 3,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "cratedb",
+    "database",
+    "execute",
+    "executing",
+    "including",
+    "insert",
+    "inserting",
+    "query",
+    "rows",
+    "sql",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.cratedb.md",
+      "title": "CrateDB node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.cratedb",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.cratedb.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.cratedb.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.cratedb.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.cratedb.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.crateDb",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "crateDb"
+  ],
+  "credential_details": [
+    {
+      "name": "crateDb",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "CrateDB"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 11,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "insert",
+        "options": [
+          {
+            "name": "Execute Query",
+            "value": "executeQuery",
+            "description": "Execute an SQL query"
+          },
+          {
+            "name": "Insert",
+            "value": "insert",
+            "description": "Insert rows in database"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update rows in database"
+          }
+        ]
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "The SQL query to execute. You can use n8n expressions or $1 and $2 in conjunction with query parameters."
+      },
+      {
+        "name": "schema",
+        "displayName": "Schema",
+        "type": "string",
+        "required": true,
+        "default": "doc",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert"
+            ]
+          }
+        },
+        "description": "Name of the schema the table belongs to"
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert"
+            ]
+          }
+        },
+        "description": "Name of the table in which to insert data to"
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert"
+            ]
+          }
+        },
+        "description": "Comma-separated list of the properties which should used as columns for the new rows"
+      },
+      {
+        "name": "schema",
+        "displayName": "Schema",
+        "type": "string",
+        "required": true,
+        "default": "doc",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Name of the schema the table belongs to"
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Name of the table in which to update data in"
+      },
+      {
+        "name": "updateKey",
+        "displayName": "Update Key",
+        "type": "string",
+        "required": true,
+        "default": "id",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Comma-separated list of the properties which decides which rows in the database should be updated. Normally that would be \"id\"."
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Comma-separated list of the properties which should used as columns for rows to update"
+      },
+      {
+        "name": "returnFields",
+        "displayName": "Return Fields",
+        "type": "string",
+        "default": "*",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert",
+              "update"
+            ]
+          }
+        },
+        "description": "Comma-separated list of the fields that the operation will return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "mode",
+            "description": "The way queries should be sent to database. Can be used in conjunction with <b>Continue on Fail</b>. See <a href=\"https://docs.n8n.io/integrations/builtin/app-n"
+          },
+          {
+            "name": "queryParams",
+            "description": "Comma-separated list of properties which should be used as query parameters"
+          }
+        ]
+      }
+    ]
+  }
+}

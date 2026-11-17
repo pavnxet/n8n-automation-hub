@@ -1,0 +1,174 @@
+{
+  "id": "n8n-nodes-base.toggltrigger",
+  "name": "Toggl Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.toggltrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Toggl is a time tracking app that offers online time tracking and reporting services through their website along with mobile and desktop applications",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.toggltrigger",
+  "credentials": {
+    "name": "Toggl credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/toggl",
+    "slug": "toggl",
+    "json_file": "credentials/toggl.json",
+    "markdown_file": "credentials/toggl.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "along",
+    "applications",
+    "credentials",
+    "desktop",
+    "mobile",
+    "offers",
+    "online",
+    "reporting",
+    "services",
+    "their",
+    "through",
+    "time",
+    "toggl",
+    "toggltrigger",
+    "tracking",
+    "trigger",
+    "website"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.toggltrigger.md",
+      "title": "Toggl Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.toggltrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.toggltrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.toggltrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.toggltrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.toggltrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.togglTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "togglApi"
+  ],
+  "credential_details": [
+    {
+      "name": "togglApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Toggl Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "default": "newTimeEntry",
+        "options": [
+          {
+            "name": "New Time Entry",
+            "value": "newTimeEntry"
+          }
+        ]
+      }
+    ]
+  }
+}

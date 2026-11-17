@@ -1,0 +1,2363 @@
+{
+  "id": "n8n-nodes-base.googlesheets",
+  "name": "Google Sheets",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googlesheets",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Sheets node to automate work in Google Sheets, and integrate Google Sheets with other applications. n8n has built-in support for a wide range of Google Sheets features, including creating, updating, deleting, appending, removing and getting documents",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets",
+  "credentials": {
+    "name": "Google Sheets",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Document",
+      "operation": "Create",
+      "description": "a spreadsheet",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/document-operations#create-a-spreadsheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Title",
+          "description": "Enter the title of the new spreadsheet you want to create"
+        },
+        {
+          "name": "Sheets",
+          "description": "Add the Title(s) of the sheet(s) you want to create within the spreadsheet"
+        }
+      ],
+      "options": [
+        {
+          "name": "Locale",
+          "description": "Enter the locale of the spreadsheet. This affects formatting details such as functions, dates, and currency. Use one of the following formats:"
+        },
+        {
+          "name": "Recalculation Interval",
+          "description": "Enter the desired recalculation interval for the spreadsheet functions. This affects how often NOW, TODAY, RAND, and RANDBETWEEN are updated. Select On Change for recalculating whenever there is a change in the spreadsheet, Minute for recalculating every minute, or Hour for recalculating every hour."
+        }
+      ],
+      "resource_value": "spreadsheet",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Document",
+      "operation": "Delete",
+      "description": "a spreadsheet",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/document-operations#delete-a-spreadsheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet you want to delete"
+        }
+      ],
+      "resource_value": "spreadsheet",
+      "operation_value": "deleteSpreadsheet"
+    },
+    {
+      "resource": "Sheet Within Document",
+      "operation": "Append or Update Row",
+      "description": "Append a new row, or update the current one if it already exists",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#append-or-update-row",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Append or Update Row"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to append or update row(s) to"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to append or update row(s) to"
+        },
+        {
+          "name": "Mapping Column Mode",
+          "description": ""
+        }
+      ],
+      "resource_value": "sheet",
+      "operation_value": "appendOrUpdate"
+    },
+    {
+      "resource": "Sheet Within Document",
+      "operation": "Append Row",
+      "description": "Create a new row",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#append-row",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Append or Update Row"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to append or update row(s) to"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to append or update row(s) to"
+        },
+        {
+          "name": "Mapping Column Mode",
+          "description": ""
+        }
+      ],
+      "resource_value": "sheet",
+      "operation_value": "append"
+    },
+    {
+      "resource": "Sheet Within Document",
+      "operation": "Clear",
+      "description": "all data from a sheet",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#clear-a-sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Clear"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet with the sheet you want to clear data from"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to clear data from"
+        },
+        {
+          "name": "Clear",
+          "description": "Select what data you want cleared from the sheet"
+        }
+      ],
+      "resource_value": "sheet",
+      "operation_value": "clear"
+    },
+    {
+      "resource": "Sheet Within Document",
+      "operation": "Create",
+      "description": "a new sheet",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#create-a-new-sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet in which you want to create a new sheet"
+        },
+        {
+          "name": "Title",
+          "description": "Enter the title for your new sheet"
+        }
+      ],
+      "options": [
+        {
+          "name": "Hidden",
+          "description": "Turn on this option to keep the sheet hidden in the UI"
+        },
+        {
+          "name": "Right To Left",
+          "description": "Turn on this option to use RTL sheet instead of an LTR sheet"
+        },
+        {
+          "name": "Sheet ID",
+          "description": "Enter the ID of the sheet"
+        },
+        {
+          "name": "Sheet Index",
+          "description": "By default, the new sheet is the last sheet in the spreadsheet. To override this behavior, enter the index you want the new sheet to use. When you add a sheet at a given index, Google increments the indices for all following sheets. Refer to Sheets | SheetProperties documentation for more informatio"
+        },
+        {
+          "name": "Tab Color",
+          "description": "Enter the color as hex code or use the color picker to set the color of the tab in the UI"
+        }
+      ],
+      "resource_value": "sheet",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Sheet Within Document",
+      "operation": "Delete",
+      "description": "a sheet",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#delete-a-sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to delete"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose the sheet you want to delete"
+        }
+      ],
+      "resource_value": "sheet",
+      "operation_value": "remove"
+    },
+    {
+      "resource": "Sheet Within Document",
+      "operation": "Delete Rows or Columns",
+      "description": "Delete columns and rows from a sheet",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#delete-rows-or-columns",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete Rows or Columns"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to delete rows or columns from"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose the sheet in which you want to delete rows or columns"
+        },
+        {
+          "name": "Start Row Number",
+          "description": "or Start Column: Enter the row number or column letter to start deleting"
+        },
+        {
+          "name": "Number of Rows to Delete",
+          "description": "or Number of Columns to delete: Enter the number of rows or columns to delete"
+        }
+      ],
+      "resource_value": "sheet",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Sheet Within Document",
+      "operation": "Get Row(s)",
+      "description": "Read all rows in a sheet",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#get-rows",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Row(s)"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to get rows from"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to read rows from"
+        },
+        {
+          "name": "Filters",
+          "description": "By default, the node returns all rows in the sheet. Set filters to return a limited set of results:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Data Location on Sheet",
+          "description": "Use this option to specify a data range. By default, n8n will detect the range automatically until the last row in the sheet"
+        },
+        {
+          "name": "Output Formatting",
+          "description": "Use this option to choose how n8n formats the data returned by Google Sheets"
+        }
+      ],
+      "resource_value": "sheet",
+      "operation_value": "read"
+    },
+    {
+      "resource": "Sheet Within Document",
+      "operation": "Update Row",
+      "description": "Update a row in a sheet",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#update-row",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Append or Update Row"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to append or update row(s) to"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to append or update row(s) to"
+        },
+        {
+          "name": "Mapping Column Mode",
+          "description": ""
+        }
+      ],
+      "resource_value": "sheet",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 10,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Create a spreadsheet",
+      "page": "document-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/document-operations#create-a-spreadsheet",
+      "summary": "Use this operation to create a new spreadsheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Title",
+          "description": "Enter the title of the new spreadsheet you want to create"
+        },
+        {
+          "name": "Sheets",
+          "description": "Add the Title(s) of the sheet(s) you want to create within the spreadsheet"
+        }
+      ],
+      "options": [
+        {
+          "name": "Locale",
+          "description": "Enter the locale of the spreadsheet. This affects formatting details such as functions, dates, and currency. Use one of the following formats:"
+        },
+        {
+          "name": "Recalculation Interval",
+          "description": "Enter the desired recalculation interval for the spreadsheet functions. This affects how often NOW, TODAY, RAND, and RANDBETWEEN are updated. Select On Change for recalculating whenever there is a change in the spreadsheet, Minute for recalculating every minute, or Hour for recalculating every hour."
+        }
+      ]
+    },
+    {
+      "operation": "Delete a spreadsheet",
+      "page": "document-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/document-operations#delete-a-spreadsheet",
+      "summary": "Use this operation to delete an existing spreadsheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet you want to delete"
+        }
+      ]
+    },
+    {
+      "operation": "Append or Update Row",
+      "page": "sheet-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#append-or-update-row",
+      "summary": "Use this operation to update an existing row or add a new row at the end of the data if a matching entry isn't found in a sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Append or Update Row"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to append or update row(s) to"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to append or update row(s) to"
+        },
+        {
+          "name": "Mapping Column Mode",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "operation": "Append Row",
+      "page": "sheet-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#append-row",
+      "summary": "Use this operation to append a new row at the end of the data in a sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Append Row"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet with the sheet you want to append a row to"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to append a row to"
+        },
+        {
+          "name": "Mapping Column Mode",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "operation": "Clear a sheet",
+      "page": "sheet-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#clear-a-sheet",
+      "summary": "Use this operation to clear all data from a sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Clear"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet with the sheet you want to clear data from"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to clear data from"
+        },
+        {
+          "name": "Clear",
+          "description": "Select what data you want cleared from the sheet"
+        }
+      ]
+    },
+    {
+      "operation": "Create a new sheet",
+      "page": "sheet-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#create-a-new-sheet",
+      "summary": "Use this operation to create a new sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet in which you want to create a new sheet"
+        },
+        {
+          "name": "Title",
+          "description": "Enter the title for your new sheet"
+        }
+      ],
+      "options": [
+        {
+          "name": "Hidden",
+          "description": "Turn on this option to keep the sheet hidden in the UI"
+        },
+        {
+          "name": "Right To Left",
+          "description": "Turn on this option to use RTL sheet instead of an LTR sheet"
+        },
+        {
+          "name": "Sheet ID",
+          "description": "Enter the ID of the sheet"
+        },
+        {
+          "name": "Sheet Index",
+          "description": "By default, the new sheet is the last sheet in the spreadsheet. To override this behavior, enter the index you want the new sheet to use. When you add a sheet at a given index, Google increments the indices for all following sheets. Refer to Sheets | SheetProperties documentation for more informatio"
+        },
+        {
+          "name": "Tab Color",
+          "description": "Enter the color as hex code or use the color picker to set the color of the tab in the UI"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a sheet",
+      "page": "sheet-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#delete-a-sheet",
+      "summary": "Use this operation to permanently delete a sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to delete"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose the sheet you want to delete"
+        }
+      ]
+    },
+    {
+      "operation": "Delete Rows or Columns",
+      "page": "sheet-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#delete-rows-or-columns",
+      "summary": "Use this operation to delete rows or columns in a sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete Rows or Columns"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to delete rows or columns from"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose the sheet in which you want to delete rows or columns"
+        },
+        {
+          "name": "Start Row Number",
+          "description": "or Start Column: Enter the row number or column letter to start deleting"
+        },
+        {
+          "name": "Number of Rows to Delete",
+          "description": "or Number of Columns to delete: Enter the number of rows or columns to delete"
+        }
+      ]
+    },
+    {
+      "operation": "Get Row(s)",
+      "page": "sheet-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#get-rows",
+      "summary": "Use this operation to read one or more rows from a sheet",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Row(s)"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet that contains the sheet you want to get rows from"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to read rows from"
+        },
+        {
+          "name": "Filters",
+          "description": "By default, the node returns all rows in the sheet. Set filters to return a limited set of results:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Data Location on Sheet",
+          "description": "Use this option to specify a data range. By default, n8n will detect the range automatically until the last row in the sheet"
+        },
+        {
+          "name": "Output Formatting",
+          "description": "Use this option to choose how n8n formats the data returned by Google Sheets"
+        }
+      ]
+    },
+    {
+      "operation": "Update Row",
+      "page": "sheet-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations#update-row",
+      "summary": "Use this operation to update existing row in a sheet. This operation only updates existing rows. To append rows when a matching entry isn't found in a sheet, use Append or Update Row operation instead",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Sheets credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Sheet Within Document"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update Row"
+        },
+        {
+          "name": "Document",
+          "description": "Choose a spreadsheet with the sheet you want to update"
+        },
+        {
+          "name": "Sheet",
+          "description": "Choose a sheet you want to update"
+        },
+        {
+          "name": "Mapping Column Mode",
+          "description": ""
+        }
+      ],
+      "options": [
+        {
+          "name": "Cell Format",
+          "description": "Use this option to choose how to format the data in cells. Refer to Google Sheets API | CellFormat for more information"
+        },
+        {
+          "name": "Data Location on Sheet",
+          "description": "Use this option when you need to specify where the data range on your sheet"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Append an array",
+      "summary": "To insert an array of data into Google Sheets, you must convert the array into a valid JSON (key, value) format"
+    },
+    {
+      "title": "Column names were updated after the node's setup",
+      "summary": "You'll receive this error if the Google Sheet's column names have changed since you set up the node"
+    }
+  ],
+  "keywords": [
+    "app",
+    "append",
+    "appending",
+    "applications",
+    "clear",
+    "columns",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "document",
+    "documents",
+    "get",
+    "getting",
+    "google",
+    "googlesheets",
+    "including",
+    "removing",
+    "row",
+    "rows",
+    "sheet",
+    "sheets",
+    "update",
+    "updating",
+    "within",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    },
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "5qCFLvqGg2hlBEeEqCwp",
+      "name": "node-options"
+    },
+    {
+      "id": "5qCFLvqGg2hlBEeEqCwp",
+      "name": "node-options"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Google Sheets",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Google Sheets node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/common-issues.md"
+    },
+    {
+      "page": "document-operations.md",
+      "title": "Google Sheets Document operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/document-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/document-operations.md"
+    },
+    {
+      "page": "sheet-operations.md",
+      "title": "Google Sheets Sheet Within Document operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googlesheets.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googlesheets.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googlesheets/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleSheets",
+  "type_version": 4.7,
+  "type_versions": [
+    3,
+    4,
+    4.1,
+    4.2,
+    4.3,
+    4.4,
+    4.5,
+    4.6,
+    4.7
+  ],
+  "groups": [
+    "input",
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleApi",
+    "googleSheetsOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "serviceAccount"
+          ]
+        }
+      }
+    },
+    {
+      "name": "googleSheetsOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Google Sheets"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 47,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "oAuth2",
+        "options": [
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          },
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "sheet",
+        "options": [
+          {
+            "name": "Document",
+            "value": "spreadsheet"
+          },
+          {
+            "name": "Sheet Within Document",
+            "value": "sheet"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "read",
+        "options": [
+          {
+            "name": "Append or Update Row",
+            "value": "appendOrUpdate",
+            "description": "Append a new row or update an existing one (upsert)"
+          },
+          {
+            "name": "Append Row",
+            "value": "append",
+            "description": "Create a new row in a sheet"
+          },
+          {
+            "name": "Clear",
+            "value": "clear",
+            "description": "Delete all the contents or a part of a sheet"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new sheet"
+          },
+          {
+            "name": "Delete",
+            "value": "remove",
+            "description": "Permanently delete a sheet"
+          },
+          {
+            "name": "Delete Rows or Columns",
+            "value": "delete",
+            "description": "Delete columns or rows from a sheet"
+          },
+          {
+            "name": "Get Row(s)",
+            "value": "read",
+            "description": "Retrieve one or more rows from a sheet"
+          },
+          {
+            "name": "Update Row",
+            "value": "update",
+            "description": "Update an existing row in a sheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "documentId",
+        "displayName": "Document",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sheetName",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "append",
+              "appendOrUpdate",
+              "clear",
+              "delete",
+              "read",
+              "remove",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Map Each Column Below",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column"
+          },
+          {
+            "name": "Nothing",
+            "value": "nothing",
+            "description": "Do not send anything"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "append"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to insert the input data this node receives in the new row"
+      },
+      {
+        "name": "autoMapNotice",
+        "displayName": "In this mode, make sure the incoming data is named the same as the columns in your Sheet. (Use an 'Edit Fields' node before this node to change it if required.)",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "append"
+            ],
+            "dataMode": [
+              "autoMapInputData"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Fields to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fieldValues",
+            "values": [
+              {
+                "name": "fieldId",
+                "displayName": "Field Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "append"
+            ],
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "append"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 4
+                }
+              }
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cellFormat",
+            "description": "Determines how data should be interpreted"
+          },
+          {
+            "name": "locationDefine"
+          },
+          {
+            "name": "handlingExtraData",
+            "description": "What do to with fields that don't match any columns in the Google Sheet"
+          },
+          {
+            "name": "handlingExtraData",
+            "description": "What do to with fields that don't match any columns in the Google Sheet"
+          },
+          {
+            "name": "useAppend",
+            "description": "Whether to use append instead of update(default), this is more efficient but in some cases data might be misaligned"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "append"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "clear",
+        "displayName": "Clear",
+        "type": "options",
+        "default": "wholeSheet",
+        "options": [
+          {
+            "name": "Whole Sheet",
+            "value": "wholeSheet"
+          },
+          {
+            "name": "Specific Rows",
+            "value": "specificRows"
+          },
+          {
+            "name": "Specific Columns",
+            "value": "specificColumns"
+          },
+          {
+            "name": "Specific Range",
+            "value": "specificRange"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "clear"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "What to clear"
+      },
+      {
+        "name": "keepFirstRow",
+        "displayName": "Keep First Row",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "clear"
+            ],
+            "clear": [
+              "wholeSheet"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "startIndex",
+        "displayName": "Start Row Number",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "clear"
+            ],
+            "clear": [
+              "specificRows"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "The row number to delete from, The first row is 1"
+      },
+      {
+        "name": "rowsToDelete",
+        "displayName": "Number of Rows to Delete",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "clear"
+            ],
+            "clear": [
+              "specificRows"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "startIndex",
+        "displayName": "Start Column",
+        "type": "string",
+        "default": "A",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "clear"
+            ],
+            "clear": [
+              "specificColumns"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "The column to delete"
+      },
+      {
+        "name": "columnsToDelete",
+        "displayName": "Number of Columns to Delete",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "clear"
+            ],
+            "clear": [
+              "specificColumns"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "range",
+        "displayName": "Range",
+        "type": "string",
+        "required": true,
+        "default": "A:F",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "clear"
+            ],
+            "clear": [
+              "specificRange"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "The table range to read from or to append data to. See the Google <a href=\"https://developers.google.com/sheets/api/guides/values#writing\">documentation</a> for the details. If it contains multiple sheets it can also be "
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "default": "n8n-sheet",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The name of the sheet"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "hidden",
+            "description": "Whether the sheet is hidden in the UI, false if it's visible"
+          },
+          {
+            "name": "rightToLeft",
+            "description": "Whether the sheet is an RTL sheet instead of an LTR sheet"
+          },
+          {
+            "name": "sheetId",
+            "description": "The ID of the sheet. Must be non-negative. This field cannot be changed once set."
+          },
+          {
+            "name": "index",
+            "description": "The index of the sheet within the spreadsheet"
+          },
+          {
+            "name": "tabColor",
+            "description": "The color of the tab in the UI"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "toDelete",
+        "displayName": "To Delete",
+        "type": "options",
+        "default": "rows",
+        "options": [
+          {
+            "name": "Rows",
+            "value": "rows",
+            "description": "Rows to delete"
+          },
+          {
+            "name": "Columns",
+            "value": "columns",
+            "description": "Columns to delete"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "delete"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "What to delete"
+      },
+      {
+        "name": "startIndex",
+        "displayName": "Start Row Number",
+        "type": "number",
+        "default": 2,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "toDelete": [
+              "rows"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "The row number to delete from, The first row is 2"
+      },
+      {
+        "name": "numberToDelete",
+        "displayName": "Number of Rows to Delete",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "toDelete": [
+              "rows"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "startIndex",
+        "displayName": "Start Column",
+        "type": "string",
+        "default": "A",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "toDelete": [
+              "columns"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "The column to delete"
+      },
+      {
+        "name": "numberToDelete",
+        "displayName": "Number of Columns to Delete",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "toDelete": [
+              "columns"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "filtersUI",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "lookupColumn",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "lookupValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "read"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "combineFilters",
+        "displayName": "Combine Filters",
+        "type": "options",
+        "default": "OR",
+        "options": [
+          {
+            "name": "AND",
+            "value": "AND",
+            "description": "Only rows that meet all the conditions are selected"
+          },
+          {
+            "name": "OR",
+            "value": "OR",
+            "description": "Rows that meet at least one condition are selected"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 4.3
+                }
+              }
+            ],
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "read"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "How to combine the conditions defined in \"Filters\": AND requires all conditions to be true, OR requires at least one condition to be true"
+      },
+      {
+        "name": "combineFilters",
+        "displayName": "Combine Filters",
+        "type": "options",
+        "default": "AND",
+        "options": [
+          {
+            "name": "AND",
+            "value": "AND",
+            "description": "Only rows that meet all the conditions are selected"
+          },
+          {
+            "name": "OR",
+            "value": "OR",
+            "description": "Rows that meet at least one condition are selected"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 4.3
+                }
+              }
+            ],
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "read"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "How to combine the conditions defined in \"Filters\": AND requires all conditions to be true, OR requires at least one condition to be true"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dataLocationOnSheet"
+          },
+          {
+            "name": "outputFormatting"
+          },
+          {
+            "name": "returnFirstMatch",
+            "description": "Whether to select the first row of the sheet or the first matching row (if filters are set)"
+          },
+          {
+            "name": "returnAllMatches",
+            "description": "By default only the first result gets returned, Set to \"Return All Matches\" to get multiple matches"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "read"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Map Each Column Below",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column"
+          },
+          {
+            "name": "Nothing",
+            "value": "nothing",
+            "description": "Do not send anything"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "update"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to insert the input data this node receives in the new row"
+      },
+      {
+        "name": "columnToMatchOn",
+        "displayName": "Column to match on",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "update"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "valueToMatchOn",
+        "displayName": "Value of Column to Match On",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "update"
+            ],
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "columnName",
+                "displayName": "Column Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "update"
+            ],
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "update"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 4.7
+                }
+              }
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "update"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "between": {
+                    "from": 4,
+                    "to": 4.6
+                  }
+                }
+              }
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cellFormat",
+            "description": "Determines how data should be interpreted"
+          },
+          {
+            "name": "locationDefine"
+          },
+          {
+            "name": "handlingExtraData",
+            "description": "What do to with fields that don't match any columns in the Google Sheet"
+          },
+          {
+            "name": "handlingExtraData",
+            "description": "What do to with fields that don't match any columns in the Google Sheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Map Each Column Below",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column"
+          },
+          {
+            "name": "Nothing",
+            "value": "nothing",
+            "description": "Do not send anything"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "appendOrUpdate"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to insert the input data this node receives in the new row"
+      },
+      {
+        "name": "columnToMatchOn",
+        "displayName": "Column to match on",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "appendOrUpdate"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "valueToMatchOn",
+        "displayName": "Value of Column to Match On",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "appendOrUpdate"
+            ],
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "columnName",
+                "displayName": "Column Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "appendOrUpdate"
+            ],
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              3
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "appendOrUpdate"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 4.7
+                }
+              }
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "appendOrUpdate"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "between": {
+                    "from": 4,
+                    "to": 4.6
+                  }
+                }
+              }
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cellFormat",
+            "description": "Determines how data should be interpreted"
+          },
+          {
+            "name": "locationDefine"
+          },
+          {
+            "name": "handlingExtraData",
+            "description": "What do to with fields that don't match any columns in the Google Sheet"
+          },
+          {
+            "name": "handlingExtraData",
+            "description": "What do to with fields that don't match any columns in the Google Sheet"
+          },
+          {
+            "name": "useAppend",
+            "description": "Whether to use append instead of update(default), this is more efficient but in some cases data might be misaligned"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sheet"
+            ],
+            "operation": [
+              "appendOrUpdate"
+            ]
+          },
+          "hide": {
+            "sheetName": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a spreadsheet"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteSpreadsheet",
+            "description": "Delete a spreadsheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spreadsheet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spreadsheet"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The title of the spreadsheet"
+      },
+      {
+        "name": "sheetsUi",
+        "displayName": "Sheets",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "sheetValues",
+            "values": [
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "hidden",
+                "displayName": "Hidden",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spreadsheet"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "locale",
+            "description": "The locale of the spreadsheet in one of the following formats:\n\t\t\t\t<ul>\n\t\t\t\t\t<li>en (639-1)</li>\n\t\t\t\t\t<li>fil (639-2 if no 639-1 format exists)</li>\n\t\t\t\t\t<li>en"
+          },
+          {
+            "name": "autoRecalc",
+            "description": "Cell recalculation interval options"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spreadsheet"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "documentId",
+        "displayName": "Document",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spreadsheet"
+            ],
+            "operation": [
+              "deleteSpreadsheet"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

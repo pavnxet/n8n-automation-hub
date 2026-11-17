@@ -1,0 +1,261 @@
+{
+  "id": "n8n-nodes-base.openweathermap",
+  "name": "OpenWeatherMap",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.openweathermap",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the OpenWeatherMap node to automate work in OpenWeatherMap, and integrate OpenWeatherMap with other applications. n8n supports retrieving current and upcoming weather data with OpenWeatherMap",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.openweathermap",
+  "credentials": {
+    "name": "OpenWeatherMap",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/openweathermap",
+    "slug": "openweathermap",
+    "json_file": "credentials/openweathermap.json",
+    "markdown_file": "credentials/openweathermap.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Returns the current weather data",
+      "description": "",
+      "doc": "",
+      "operation_value": "currentWeather"
+    },
+    {
+      "resource": "",
+      "operation": "Returns the weather data for the next 5 days",
+      "description": "",
+      "doc": ""
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "current",
+    "data",
+    "days",
+    "next",
+    "openweathermap",
+    "retrieving",
+    "returns",
+    "upcoming",
+    "weather",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.openweathermap.md",
+      "title": "OpenWeatherMap node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.openweathermap",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.openweathermap.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.openweathermap.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.openweathermap.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.openweathermap.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.openWeatherMap",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "openWeatherMapApi"
+  ],
+  "credential_details": [
+    {
+      "name": "openWeatherMapApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "OpenWeatherMap"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "currentWeather",
+        "options": [
+          {
+            "name": "Current Weather",
+            "value": "currentWeather",
+            "description": "Returns the current weather data"
+          },
+          {
+            "name": "5 Day Forecast",
+            "value": "5DayForecast",
+            "description": "Returns the weather data for the next 5 days"
+          }
+        ]
+      },
+      {
+        "name": "format",
+        "displayName": "Format",
+        "type": "options",
+        "default": "metric",
+        "options": [
+          {
+            "name": "Imperial",
+            "value": "imperial",
+            "description": "Fahrenheit | miles/hour"
+          },
+          {
+            "name": "Metric",
+            "value": "metric",
+            "description": "Celsius | meter/sec"
+          },
+          {
+            "name": "Scientific",
+            "value": "standard",
+            "description": "Kelvin | meter/sec"
+          }
+        ],
+        "description": "The format in which format the data should be returned"
+      },
+      {
+        "name": "locationSelection",
+        "displayName": "Location Selection",
+        "type": "options",
+        "default": "cityName",
+        "options": [
+          {
+            "name": "City Name",
+            "value": "cityName"
+          },
+          {
+            "name": "City ID",
+            "value": "cityId"
+          },
+          {
+            "name": "Coordinates",
+            "value": "coordinates"
+          },
+          {
+            "name": "Zip Code",
+            "value": "zipCode"
+          }
+        ],
+        "description": "How to define the location for which to return the weather"
+      },
+      {
+        "name": "cityName",
+        "displayName": "City",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "locationSelection": [
+              "cityName"
+            ]
+          }
+        },
+        "description": "The name of the city to return the weather of"
+      },
+      {
+        "name": "cityId",
+        "displayName": "City ID",
+        "type": "number",
+        "required": true,
+        "default": 160001123,
+        "displayOptions": {
+          "show": {
+            "locationSelection": [
+              "cityId"
+            ]
+          }
+        },
+        "description": "The ID of city to return the weather of. List can be downloaded here: http://bulk.openweathermap.org/sample/."
+      },
+      {
+        "name": "latitude",
+        "displayName": "Latitude",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "locationSelection": [
+              "coordinates"
+            ]
+          }
+        },
+        "description": "The latitude of the location to return the weather of"
+      },
+      {
+        "name": "longitude",
+        "displayName": "Longitude",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "locationSelection": [
+              "coordinates"
+            ]
+          }
+        },
+        "description": "The longitude of the location to return the weather of"
+      },
+      {
+        "name": "zipCode",
+        "displayName": "Zip Code",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "locationSelection": [
+              "zipCode"
+            ]
+          }
+        },
+        "description": "The ID of city to return the weather of. List can be downloaded here: http://bulk.openweathermap.org/sample/."
+      },
+      {
+        "name": "language",
+        "displayName": "Language",
+        "type": "string",
+        "description": "The two letter language code to get your output in (eg. en, de, ...)."
+      }
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "id": "n8n-nodes-base.rssfeedreadtrigger",
+  "name": "RSS Feed Trigger",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.rssfeedreadtrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The RSS Feed Trigger node allows you to start an n8n workflow when a new RSS feed item has been published",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Poll Times",
+      "description": "Select a poll Mode to set how often to trigger the poll. Your Mode selection will add or remove relevant fields. Refer to the sections below to configure the parameters for each mode type"
+    },
+    {
+      "name": "Feed URL",
+      "description": "Enter the URL of the RSS feed to poll"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [
+    "polling"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allows",
+    "been",
+    "core",
+    "feed",
+    "item",
+    "poll",
+    "published",
+    "rss",
+    "rssfeedreadtrigger",
+    "start",
+    "times",
+    "trigger",
+    "url"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "DnRpcOvtlMPcHD6I3kyx",
+      "name": "poll-modes"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.rssfeedreadtrigger.md",
+      "title": "RSS Feed Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.rssfeedreadtrigger.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.rssfeedreadtrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.rssfeedreadtrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.rssFeedReadTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "RSS Feed Trigger",
+    "color": "#b02020"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "feedUrl",
+        "displayName": "Feed URL",
+        "type": "string",
+        "required": true,
+        "default": "https://blog.n8n.io/rss/",
+        "description": "URL of the RSS feed to poll"
+      }
+    ]
+  }
+}

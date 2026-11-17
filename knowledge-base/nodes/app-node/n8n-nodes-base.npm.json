@@ -1,0 +1,372 @@
+{
+  "id": "n8n-nodes-base.npm",
+  "name": "npm",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.npm",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the npm node to automate work in npm, and integrate npm with other applications",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.npm",
+  "credentials": {
+    "name": "npm",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/npm",
+    "slug": "npm",
+    "json_file": "credentials/npm.json",
+    "markdown_file": "credentials/npm.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Package",
+      "operation": "Get Package Metadata",
+      "description": "",
+      "doc": "",
+      "resource_value": "package"
+    },
+    {
+      "resource": "Package",
+      "operation": "Get Package Versions",
+      "description": "",
+      "doc": "",
+      "resource_value": "package"
+    },
+    {
+      "resource": "Package",
+      "operation": "Search for Packages",
+      "description": "",
+      "doc": "",
+      "resource_value": "package",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Distribution Tag",
+      "operation": "Get All Tags",
+      "description": "",
+      "doc": "",
+      "resource_value": "distTag",
+      "operation_value": "getMany"
+    },
+    {
+      "resource": "Distribution Tag",
+      "operation": "Update a Tag",
+      "description": "",
+      "doc": "",
+      "resource_value": "distTag",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "distribution",
+    "get",
+    "metadata",
+    "npm",
+    "package",
+    "packages",
+    "search",
+    "tag",
+    "tags",
+    "update",
+    "versions",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.npm.md",
+      "title": "npm node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.npm",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.npm.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.npm.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.npm.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.npm.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.npm",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "npmApi"
+  ],
+  "credential_details": [
+    {
+      "name": "npmApi",
+      "required": false
+    }
+  ],
+  "defaults": {
+    "name": "npm"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 12,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "package",
+        "options": [
+          {
+            "name": "Package",
+            "value": "package"
+          },
+          {
+            "name": "Distribution Tag",
+            "value": "distTag"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getMetadata",
+        "options": [
+          {
+            "name": "Get Metadata",
+            "value": "getMetadata",
+            "description": "Returns all the metadata for a package at a specific version"
+          },
+          {
+            "name": "Get Versions",
+            "value": "getVersions",
+            "description": "Returns all the versions for a package"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Search for packages"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "package"
+            ]
+          }
+        }
+      },
+      {
+        "name": "packageName",
+        "displayName": "Package Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "package"
+            ],
+            "operation": [
+              "getMetadata",
+              "getVersions"
+            ]
+          }
+        }
+      },
+      {
+        "name": "packageVersion",
+        "displayName": "Package Version",
+        "type": "string",
+        "required": true,
+        "default": "latest",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "package"
+            ],
+            "operation": [
+              "getMetadata"
+            ]
+          }
+        }
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "package"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "The query text used to search for packages"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "package"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "offset",
+        "displayName": "Offset",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "package"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Offset to return results from"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getMany",
+        "options": [
+          {
+            "name": "Get All",
+            "value": "getMany",
+            "description": "Returns all the dist-tags for a package"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a the dist-tags for a package"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "distTag"
+            ]
+          }
+        }
+      },
+      {
+        "name": "packageName",
+        "displayName": "Package Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "distTag"
+            ],
+            "operation": [
+              "getMany",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "packageVersion",
+        "displayName": "Package Version",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "distTag"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "distTagName",
+        "displayName": "Distribution Tag Name",
+        "type": "string",
+        "required": true,
+        "default": "latest",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "distTag"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "requestOptions",
+        "displayName": "Request Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batching"
+          },
+          {
+            "name": "allowUnauthorizedCerts",
+            "description": "Whether to accept the response even if SSL certificate validation is not possible"
+          },
+          {
+            "name": "proxy",
+            "description": "HTTP proxy to use. If authentication is required it can be defined as follow: http://username:password@myproxy:3128"
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for the server to send response headers (and start the response body) before aborting the request"
+          }
+        ]
+      }
+    ]
+  }
+}

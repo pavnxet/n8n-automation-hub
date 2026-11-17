@@ -1,0 +1,195 @@
+{
+  "id": "n8n-nodes-base.sort",
+  "name": "Sort",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.sort",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Sort node to organize lists of items in a desired ordering, or generate a random selection",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.sort",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Simple",
+      "description": "Performs an ascending or descending sort using the selected fields",
+      "options": [
+        "Use the Add Field To Sort By button to input the Field Name",
+        "Select whether to use Ascending or Descending order"
+      ]
+    },
+    {
+      "name": "Simple options",
+      "description": "When you select Simple as the Type, you have the option to Disable Dot Notation. By default, n8n enables dot notation to reference child fields in the format parent.child. Use this option to disable dot notation (turned on) or to continue using dot (turned off)"
+    },
+    {
+      "name": "Random",
+      "description": "Creates a random order in the list"
+    },
+    {
+      "name": "Code",
+      "description": "Input custom JavaScript code to perform the sort operation. This is a good option if a simple sort won't meet your needs"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "code",
+    "core",
+    "desired",
+    "generate",
+    "items",
+    "lists",
+    "options",
+    "ordering",
+    "organize",
+    "random",
+    "selection",
+    "simple",
+    "sort"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "0nvcx1EqJQgGVzUXOOMN",
+      "name": "data-section-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.sort.md",
+      "title": "Sort",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.sort",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.sort.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.sort.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.sort.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.sort.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.sort",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Sort"
+  },
+  "subtitle": "",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "default": "simple",
+        "options": [
+          {
+            "name": "Simple",
+            "value": "simple"
+          },
+          {
+            "name": "Random",
+            "value": "random"
+          },
+          {
+            "name": "Code",
+            "value": "code"
+          }
+        ],
+        "description": "The type of sorting to perform"
+      },
+      {
+        "name": "sortFieldsUi",
+        "displayName": "Fields To Sort By",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "sortField",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "order",
+                "displayName": "Order",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "type": [
+              "simple"
+            ]
+          }
+        },
+        "description": "The fields of the input items to sort by"
+      },
+      {
+        "name": "code",
+        "displayName": "Code",
+        "type": "string",
+        "default": "// The two items to compare are in the variables a and b\n\t// Access the fields in a.json and b.json\n\t// Return -1 if a should go before b\n\t// Return 1 if b should go before a\n\t// Return 0 if there's no difference\n\n\tfieldName = 'myField';\n\n\tif (a.json[fieldName] < b.json[fieldName]) {\n\treturn -1;\n\t}\n",
+        "displayOptions": {
+          "show": {
+            "type": [
+              "code"
+            ]
+          }
+        },
+        "description": "Javascript code to determine the order of any two items"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "disableDotNotation",
+            "description": "Whether to disallow referencing child fields using `parent.child` in the field name"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "type": [
+              "simple"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

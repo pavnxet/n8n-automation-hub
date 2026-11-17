@@ -1,0 +1,232 @@
+{
+  "id": "n8n-nodes-base.googlecloudrealtimedatabase",
+  "name": "Google Cloud Realtime Database",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googlecloudrealtimedatabase",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Cloud Realtime Database node to automate work in Google Cloud Realtime Database, and integrate Google Cloud Realtime Database with other applications. n8n has built-in support for a wide range of Google Cloud Realtime Database features, including writing, deleting, getting, and appending databases",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecloudrealtimedatabase",
+  "credentials": {
+    "name": "Google Cloud Realtime Database",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Write data to a database",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Delete data from a database",
+      "description": "",
+      "doc": "",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "",
+      "operation": "Get a record from a database",
+      "description": "",
+      "doc": "",
+      "operation_value": "get"
+    },
+    {
+      "resource": "",
+      "operation": "Append to a list of data",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Update item on a database",
+      "description": "",
+      "doc": "",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "append",
+    "appending",
+    "applications",
+    "cloud",
+    "data",
+    "database",
+    "databases",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "google",
+    "googlecloudrealtimedatabase",
+    "including",
+    "item",
+    "list",
+    "realtime",
+    "record",
+    "update",
+    "work",
+    "write",
+    "writing"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googlecloudrealtimedatabase.md",
+      "title": "Google Cloud Realtime Database node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecloudrealtimedatabase",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlecloudrealtimedatabase.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googlecloudrealtimedatabase.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googlecloudrealtimedatabase.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googlecloudrealtimedatabase.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleFirebaseRealtimeDatabase",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleFirebaseRealtimeDatabaseOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleFirebaseRealtimeDatabaseOAuth2Api",
+      "required": false
+    }
+  ],
+  "defaults": {
+    "name": "Google Cloud Realtime Database"
+  },
+  "subtitle": "={{$parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "projectId",
+        "displayName": "Project Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Write data to a database"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete data from a database"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a record from a database"
+          },
+          {
+            "name": "Push",
+            "value": "push",
+            "description": "Append to a list of data"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update item on a database"
+          }
+        ]
+      },
+      {
+        "name": "path",
+        "displayName": "Object Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "hide": {
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Object path on database. Do not append .json."
+      },
+      {
+        "name": "path",
+        "displayName": "Object Path",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Object path on database. Do not append .json."
+      },
+      {
+        "name": "attributes",
+        "displayName": "Columns / Attributes",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "push",
+              "update"
+            ]
+          }
+        },
+        "description": "Attributes to save"
+      }
+    ]
+  }
+}

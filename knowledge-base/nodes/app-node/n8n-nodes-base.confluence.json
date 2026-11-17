@@ -1,0 +1,198 @@
+{
+  "id": "n8n-nodes-base.confluence",
+  "name": "Confluence",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.confluence",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Confluence node to automate work in Confluence Cloud and integrate it with other applications. n8n has built-in support for creating, reading, updating, and deleting pages, working with page labels and comments, uploading and downloading attachments, listing spaces, and searching content with CQL",
+  "doc_url": "https://docs.n8n.io/app-nodes/n8n-nodes-base.confluence",
+  "credentials": {
+    "name": "Confluence Cloud OAuth2 API credential",
+    "doc": "https://docs.n8n.io/credentials/confluence",
+    "slug": "confluence",
+    "json_file": "credentials/confluence.json",
+    "markdown_file": "credentials/confluence.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Attachment",
+      "operation": "Delete",
+      "description": "move an attachment to the trash, or permanently delete it",
+      "doc": ""
+    },
+    {
+      "resource": "Attachment",
+      "operation": "Get Many",
+      "description": "list the attachments on a page, optionally downloading each file",
+      "doc": ""
+    },
+    {
+      "resource": "Attachment",
+      "operation": "Upload",
+      "description": "upload a file as an attachment on a page. Uploading a file with the same name as an existing attachment creates a new version of it",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Add Comment",
+      "description": "add a footer comment to a page, or reply to an existing comment",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Add Labels",
+      "description": "add one or more labels to a page",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Append",
+      "description": "append content to the bottom of an existing page",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Create",
+      "description": "create a new page in a space, optionally as a draft, private, at the space root, or under a parent page",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Delete",
+      "description": "move a page to trash, or permanently delete it. Child pages aren't deleted. They move up to the deleted page's parent",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Delete Comment",
+      "description": "permanently delete a footer comment",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Get",
+      "description": "retrieve a page, optionally with its full sub-tree, returning one item per page in tree order, the page itself first",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Get Comments",
+      "description": "list the top-level footer comments on a page",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Get Labels",
+      "description": "list the labels on a page",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Get Many by Label",
+      "description": "retrieve all pages carrying a label, optionally within one space",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Remove Label",
+      "description": "remove a label from a page",
+      "doc": ""
+    },
+    {
+      "resource": "Page",
+      "operation": "Update",
+      "description": "replace the title and body of an existing page, or change its draft/published status",
+      "doc": ""
+    },
+    {
+      "resource": "Search",
+      "operation": "Query",
+      "description": "search content with a CQL query, optionally fetching each result's full page content on the same request",
+      "doc": ""
+    },
+    {
+      "resource": "Space",
+      "operation": "Get",
+      "description": "retrieve a space",
+      "doc": ""
+    },
+    {
+      "resource": "Space",
+      "operation": "Get Many",
+      "description": "retrieve many spaces",
+      "doc": ""
+    }
+  ],
+  "operation_count": 18,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "api",
+    "app",
+    "append",
+    "applications",
+    "attachment",
+    "attachments",
+    "cloud",
+    "comment",
+    "comments",
+    "confluence",
+    "content",
+    "create",
+    "creating",
+    "credential",
+    "delete",
+    "deleting",
+    "downloading",
+    "get",
+    "label",
+    "labels",
+    "listing",
+    "many",
+    "oauth2",
+    "pages",
+    "query",
+    "reading",
+    "remove",
+    "search",
+    "searching",
+    "space",
+    "spaces",
+    "update",
+    "updating",
+    "upload",
+    "uploading",
+    "work",
+    "working"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.confluence.md",
+      "title": "Confluence node documentation",
+      "url": "",
+      "origpath": "app-nodes/n8n-nodes-base.confluence.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.confluence.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.confluence.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.confluence.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.confluence",
+  "node_schema": null
+}

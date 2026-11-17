@@ -1,0 +1,318 @@
+{
+  "id": "n8n-nodes-base.compression",
+  "name": "Compression",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.compression",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Compression node to compress and decompress files. Supports Zip, Gzip, Tar, and Tar.gz formats",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.compression",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Compress",
+      "options": [
+        "File Name: Enter the name of the compressed file the node creates"
+      ]
+    },
+    {
+      "name": "Decompress",
+      "description": "The Decompress operation detects the archive format from the file extension and supports the following formats:",
+      "options": [
+        "zip",
+        "gz and .gzip",
+        "tar",
+        "tar.gz and .tgz"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "compress",
+    "compression",
+    "core",
+    "decompress",
+    "files",
+    "formats",
+    "gzip"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.compression.md",
+      "title": "Compression",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.compression",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.compression.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.compression.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.compression.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.compression.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.compression",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Compression",
+    "color": "#408000"
+  },
+  "subtitle": "={{$parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 11,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "decompress",
+        "options": [
+          {
+            "name": "Compress",
+            "value": "compress",
+            "description": "Compress files into a zip or gzip archive"
+          },
+          {
+            "name": "Decompress",
+            "value": "decompress",
+            "description": "Decompress zip or gzip archives"
+          }
+        ]
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field(s)",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "compress"
+            ]
+          }
+        },
+        "description": "To process more than one file, use a comma-separated list of the binary fields names"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field(s)",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "decompress"
+            ]
+          }
+        },
+        "description": "To process more than one file, use a comma-separated list of the binary fields names"
+      },
+      {
+        "name": "outputFormat",
+        "displayName": "Output Format",
+        "type": "options",
+        "options": [
+          {
+            "name": "Gzip",
+            "value": "gzip"
+          },
+          {
+            "name": "Zip",
+            "value": "zip"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "compress"
+            ],
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Format of the output"
+      },
+      {
+        "name": "outputFormat",
+        "displayName": "Output Format",
+        "type": "options",
+        "default": "zip",
+        "options": [
+          {
+            "name": "Gzip",
+            "value": "gzip"
+          },
+          {
+            "name": "Zip",
+            "value": "zip"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "compress"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Format of the output"
+      },
+      {
+        "name": "fileName",
+        "displayName": "File Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "compress"
+            ],
+            "outputFormat": [
+              "zip"
+            ]
+          }
+        },
+        "description": "Name of the output file"
+      },
+      {
+        "name": "binaryPropertyOutput",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "outputFormat": [
+              "zip"
+            ],
+            "operation": [
+              "compress"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileName",
+        "displayName": "File Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "compress"
+            ],
+            "outputFormat": [
+              "gzip"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Name of the output file"
+      },
+      {
+        "name": "binaryPropertyOutput",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "outputFormat": [
+              "gzip"
+            ],
+            "operation": [
+              "compress"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "outputPrefix",
+        "displayName": "Output File Prefix",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "compress"
+            ],
+            "outputFormat": [
+              "gzip"
+            ],
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Prefix to add to the gzip file"
+      },
+      {
+        "name": "outputPrefix",
+        "displayName": "Output Prefix",
+        "type": "string",
+        "required": true,
+        "default": "file_",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "decompress"
+            ]
+          }
+        },
+        "description": "Prefix to add to the decompressed files"
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "generated": "2026-11-17",
+  "note": "Every source that feeds this repository. A source enters automations/ only after it has been read, validated and attributed.",
+  "tiers": {
+    "official": "Published by n8n. Highest trust, authoritative for behaviour.",
+    "community-curated": "Maintained by identifiable people, licence stated, workflows hand-picked.",
+    "aggregator": "Bulk collections. Individually unverified; provenance often unclear. Research only, never bulk-imported."
+  },
+  "sources": [
+    {
+      "id": "n8n-docs",
+      "name": "n8n documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/",
+      "tier": "official",
+      "licence": "Sustainable Use License v1.0",
+      "what_it_is": "Reference for every built-in node, trigger and credential, including operation lists, parameters and common issues.",
+      "quality_notes": "Authoritative and actively maintained. App-node pages list operations but rarely every parameter; core and AI node pages are more detailed.",
+      "used_for": "knowledge-base/nodes, knowledge-base/credentials",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8n-docs-repo",
+      "name": "n8n-io/n8n-docs",
+      "url": "https://github.com/n8n-io/n8n-docs",
+      "tier": "official",
+      "licence": "Sustainable Use License v1.0",
+      "what_it_is": "The GitBook source behind docs.n8n.io, plus docs/_workflows — the real workflow JSON embedded in the documentation.",
+      "quality_notes": "Cleanest machine-readable path to the docs. Markdown pages carry frontmatter with canonical URLs; reusable snippets are unresolved includes, resolved by ID in this repository.",
+      "used_for": "knowledge-base build, automations seed workflows",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8n-nodes-base",
+      "name": "n8n-nodes-base (npm)",
+      "url": "https://registry.npmjs.org/n8n-nodes-base",
+      "tier": "official",
+      "licence": "Sustainable Use License v1.0 (.ee. files excluded)",
+      "what_it_is": "The built-in node package. dist/types/nodes.json holds the full node descriptions: parameter names, types, defaults, option values, displayOptions, versions, credential names.",
+      "quality_notes": "The only precise source for what workflow JSON accepts. Pinned at 2.15.1 in this repository; drifts with each n8n release.",
+      "used_for": "knowledge-base node_schema, resources-operations.json, typeVersion",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8n-nodes-langchain",
+      "name": "@n8n/n8n-nodes-langchain (npm)",
+      "url": "https://registry.npmjs.org/@n8n/n8n-nodes-langchain",
+      "tier": "official",
+      "licence": "Sustainable Use License v1.0",
+      "what_it_is": "The AI cluster nodes: agents, chains, chat models, memory, tools, vector stores, parsers.",
+      "quality_notes": "Same shape as n8n-nodes-base. Pinned at 2.48.3. These nodes connect with typed ai_* connections, not main.",
+      "used_for": "knowledge-base cluster-root-node and cluster-sub-node records",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8n-templates",
+      "name": "n8n workflow template library",
+      "url": "https://n8n.io/workflows/",
+      "tier": "official",
+      "licence": "Hosted by n8n; templates are contributed by named creators",
+      "what_it_is": "n8n's own template gallery — the library the Templates button inside n8n opens.",
+      "quality_notes": "Every template has a named creator and a last-updated date. The public API is not reachable from every network, so templates are referenced by URL rather than mirrored here.",
+      "used_for": "discovery, candidate automations",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "npm-community-keyword",
+      "name": "npm registry — n8n-community-node-package",
+      "url": "https://registry.npmjs.org/-/v1/search?text=keywords:n8n-community-node-package",
+      "tier": "official",
+      "licence": "npm registry metadata; each package under its own licence",
+      "what_it_is": "The keyword n8n itself uses when browsing community nodes. 14,543 packages carry it.",
+      "quality_notes": "Metadata only. Popularity is a weak trust signal — the top packages by downloads are mostly API wrappers with no review. Download counts come from api.npmjs.org.",
+      "used_for": "community-nodes/index.json",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "awesome-n8n-templates-enescingoz",
+      "name": "enescingoz/awesome-n8n-templates",
+      "url": "https://github.com/enescingoz/awesome-n8n-templates",
+      "tier": "community-curated",
+      "licence": "CC BY 4.0 (per LICENSE file; GitHub reports NOASSERTION)",
+      "what_it_is": "About 280 workflow templates across 18 app categories, plus a category index.",
+      "quality_notes": "Widely used and the most cited collection. README carries affiliate sign-up links, disclosed as such. The author states no template was created by them, and individual templates remain under their creators' terms — so attribution per file is not available.",
+      "used_for": "landscape research only",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "awesome-n8n-workflows-felipfr",
+      "name": "felipfr/awesome-n8n-workflows",
+      "url": "https://github.com/felipfr/awesome-n8n-workflows",
+      "tier": "community-curated",
+      "licence": "MIT",
+      "what_it_is": "Curated workflow JSON grouped by function: analytics, CRM, finance, HR, marketing, monitoring, security.",
+      "quality_notes": "Clear MIT licence and an explicit note that workflows were gathered from the internet and belong to their authors. Smaller and less active than the alternatives.",
+      "used_for": "landscape research only",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8n-workflows-zie619",
+      "name": "Zie619/n8n-workflows",
+      "url": "https://github.com/zie619/n8n-workflows",
+      "tier": "aggregator",
+      "licence": "MIT (covers the collection)",
+      "what_it_is": "The largest single collection, with a searchable web interface. README claims 4,343 workflows.",
+      "quality_notes": "Important caveat found during research: an independent audit reported that a large share of the JSON files replace AI nodes with n8n-nodes-base.noOp placeholders, so the AI steps do not work as advertised. The repository also does not attribute individual workflow authors.",
+      "used_for": "landscape research only — never imported",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "awesome-n8n-templates-scrapernode",
+      "name": "ScraperNode/awesome-n8n-templates",
+      "url": "https://github.com/ScraperNode/awesome-n8n-templates",
+      "tier": "aggregator",
+      "licence": "MIT (covers the collection)",
+      "what_it_is": "Bulk template library claiming more than 13,000 workflows across 25 categories.",
+      "quality_notes": "Volume is the selling point and also the risk: no per-file attribution, no verification that a workflow imports or runs, and the count has changed repeatedly between README revisions.",
+      "used_for": "landscape research only — never imported",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8nworkflows-xyz",
+      "name": "nusquama/n8nworkflows.xyz",
+      "url": "https://github.com/nusquama/n8nworkflows.xyz",
+      "tier": "aggregator",
+      "licence": "Not stated in the repository",
+      "what_it_is": "Catalog of n8n workflows with a browsable site.",
+      "quality_notes": "No licence stated, so nothing from it can be copied into this repository. Useful only as an index of what people build.",
+      "used_for": "landscape research only",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8n-library-7and1",
+      "name": "7and1/n8n-Library",
+      "url": "https://github.com/7and1/n8n-Library",
+      "tier": "aggregator",
+      "licence": "Not stated in the repository",
+      "what_it_is": "Frequently regenerated library of roughly 2,300 templates, mixing curated and community workflows.",
+      "quality_notes": "No licence stated and no per-file provenance. Regenerated in bulk, so file paths and contents change without notice.",
+      "used_for": "landscape research only",
+      "last_checked": "2026-11-17"
+    }
+  ]
+}

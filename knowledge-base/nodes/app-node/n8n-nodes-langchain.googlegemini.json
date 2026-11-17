@@ -1,0 +1,1946 @@
+{
+  "id": "n8n-nodes-langchain.googlegemini",
+  "name": "Google Gemini",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-langchain.googlegemini",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Gemini node to automate work in Google Gemini and integrate Google Gemini with other applications. n8n has built-in support for a wide range of Google Gemini features, including working with audio, videos, images, documents, and files to analyze, generate, and transcribe",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.googlegemini",
+  "credentials": {
+    "name": "Google Gemini(PaLM) credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/googleai",
+    "slug": "googleai",
+    "json_file": "credentials/googleai.json",
+    "markdown_file": "credentials/googleai.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Audio",
+      "operation": "Analyze Audio",
+      "description": "Take in audio and answer questions about it",
+      "doc": "",
+      "resource_value": "audio",
+      "operation_value": "analyze"
+    },
+    {
+      "resource": "Audio",
+      "operation": "Transcribe a Recording",
+      "description": "Transcribes audio into text",
+      "doc": "",
+      "resource_value": "audio",
+      "operation_value": "transcribe"
+    },
+    {
+      "resource": "Document",
+      "operation": "Analyze Document",
+      "description": "Take in documents and answer questions about them",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "analyze"
+    },
+    {
+      "resource": "File Search",
+      "operation": "Create File Search Store",
+      "description": "Create a new File Search store for RAG (Retrieval Augmented Generation)",
+      "doc": "",
+      "resource_value": "fileSearch",
+      "operation_value": "createStore"
+    },
+    {
+      "resource": "File Search",
+      "operation": "Delete File Search Store",
+      "description": "Delete File Search Store",
+      "doc": "",
+      "resource_value": "fileSearch",
+      "operation_value": "deleteStore"
+    },
+    {
+      "resource": "File Search",
+      "operation": "List File Search Stores",
+      "description": "List all File Search stores owned by the user",
+      "doc": "",
+      "resource_value": "fileSearch",
+      "operation_value": "listStores"
+    },
+    {
+      "resource": "File Search",
+      "operation": "Upload to File Search Store",
+      "description": "Upload a file to a File Search store for RAG (Retrieval Augmented Generation)",
+      "doc": "",
+      "resource_value": "fileSearch",
+      "operation_value": "uploadToStore"
+    },
+    {
+      "resource": "Image",
+      "operation": "Analyze Image",
+      "description": "Take in images and answer questions about them",
+      "doc": "",
+      "resource_value": "image",
+      "operation_value": "analyze"
+    },
+    {
+      "resource": "Image",
+      "operation": "Generate an Image",
+      "description": "Creates an image from a text prompt",
+      "doc": "",
+      "resource_value": "image",
+      "operation_value": "generate"
+    },
+    {
+      "resource": "Image",
+      "operation": "Edit Image",
+      "description": "Upload one or more images and apply edits based on a prompt",
+      "doc": "",
+      "resource_value": "image",
+      "operation_value": "edit"
+    },
+    {
+      "resource": "Media File",
+      "operation": "Upload Media File",
+      "description": "Upload a file to the Google Gemini API for later user",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "upload"
+    },
+    {
+      "resource": "Text",
+      "operation": "Message a Model",
+      "description": "Create a completion with a Google Gemini model",
+      "doc": "",
+      "resource_value": "text",
+      "operation_value": "message"
+    },
+    {
+      "resource": "Video",
+      "operation": "Analyze Video",
+      "description": "Take in videos and answer questions about them",
+      "doc": "",
+      "resource_value": "video",
+      "operation_value": "analyze"
+    },
+    {
+      "resource": "Video",
+      "operation": "Generate a Video",
+      "description": "Creates a video from a text prompt",
+      "doc": "",
+      "resource_value": "video",
+      "operation_value": "generate"
+    },
+    {
+      "resource": "Video",
+      "operation": "Download Video",
+      "description": "Download a generated video from the Google Gemini API using a URL",
+      "doc": "",
+      "resource_value": "video",
+      "operation_value": "download"
+    }
+  ],
+  "operation_count": 15,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analyze",
+    "app",
+    "applications",
+    "audio",
+    "create",
+    "credentials",
+    "delete",
+    "document",
+    "documents",
+    "download",
+    "edit",
+    "file",
+    "files",
+    "gemini",
+    "generate",
+    "google",
+    "googlegemini",
+    "image",
+    "images",
+    "including",
+    "list",
+    "media",
+    "message",
+    "model",
+    "palm",
+    "recording",
+    "search",
+    "store",
+    "stores",
+    "text",
+    "transcribe",
+    "upload",
+    "video",
+    "videos",
+    "work",
+    "working"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.googlegemini.md",
+      "title": "Google Gemini node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.googlegemini",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.googlegemini.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-langchain.googlegemini.json",
+    "markdown": "nodes/app-node/n8n-nodes-langchain.googlegemini.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-langchain.googlegemini.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.googleGemini",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "googlePalmApi"
+  ],
+  "credential_details": [
+    {
+      "name": "googlePalmApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Google Gemini"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": "={{\n\t\t(() => {\n\t\t\tconst resource = $parameter.resource;\n\t  \tconst operation = $parameter.operation;\n\t\t\tif (resource === 'text' && operation === 'message') {\n\t\t\t\treturn [{ type: 'main' }, { type: 'ai_tool', displayName: 'Tools' }];\n\t\t\t}\n\n\t\t\treturn ['main'];\n\t\t})()\n\t}}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 76,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "text",
+        "options": [
+          {
+            "name": "Audio",
+            "value": "audio"
+          },
+          {
+            "name": "Document",
+            "value": "document"
+          },
+          {
+            "name": "File Search",
+            "value": "fileSearch"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Media File",
+            "value": "file"
+          },
+          {
+            "name": "Text",
+            "value": "text"
+          },
+          {
+            "name": "Video",
+            "value": "video"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "transcribe",
+        "options": [
+          {
+            "name": "Analyze Audio",
+            "value": "analyze",
+            "description": "Take in audio and answer questions about it"
+          },
+          {
+            "name": "Transcribe a Recording",
+            "value": "transcribe",
+            "description": "Transcribes audio into the text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text Input",
+        "type": "string",
+        "default": "What's in this audio?",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "Audio URL(s)",
+            "value": "url"
+          },
+          {
+            "name": "Binary File(s)",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "audioUrls",
+        "displayName": "URL(s)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "URL(s) of the audio(s) to analyze, multiple URLs can be added separated by comma"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the audio(s), seperate multiple field names with commas"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "Whether to simplify the response or not"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxOutputTokens",
+            "description": "Fewer tokens will result in shorter, less detailed audio description"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "transcribe"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "Audio URL(s)",
+            "value": "url"
+          },
+          {
+            "name": "Binary File(s)",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "transcribe"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "audioUrls",
+        "displayName": "URL(s)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "transcribe"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "URL(s) of the audio(s) to transcribe, multiple URLs can be added separated by comma"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "transcribe"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the audio(s), seperate multiple field names with commas"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "transcribe"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "Whether to simplify the response or not"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "startTime",
+            "description": "The start time of the audio in MM:SS or HH:MM:SS format"
+          },
+          {
+            "name": "endTime",
+            "description": "The end time of the audio in MM:SS or HH:MM:SS format"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "transcribe"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "analyze",
+        "options": [
+          {
+            "name": "Analyze Document",
+            "value": "analyze",
+            "description": "Take in documents and answer questions about them"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text Input",
+        "type": "string",
+        "default": "What's in this document?",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "Document URL(s)",
+            "value": "url"
+          },
+          {
+            "name": "Binary File(s)",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "documentUrls",
+        "displayName": "URL(s)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "URL(s) of the document(s) to analyze, multiple URLs can be added separated by comma"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the document(s), seperate multiple field names with commas"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Whether to simplify the response or not"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxOutputTokens",
+            "description": "Fewer tokens will result in shorter, less detailed document description"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upload",
+        "options": [
+          {
+            "name": "Upload Media File",
+            "value": "upload",
+            "description": "Upload a file to the Google Gemini API for later use"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "File URL",
+            "value": "url"
+          },
+          {
+            "name": "Binary File",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileUrl",
+        "displayName": "URL",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "URL of the file to upload"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the file"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "createStore",
+        "options": [
+          {
+            "name": "Create File Search Store",
+            "value": "createStore",
+            "description": "Create a new File Search store for RAG (Retrieval Augmented Generation)"
+          },
+          {
+            "name": "Delete File Search Store",
+            "value": "deleteStore",
+            "description": "Delete a File Search store"
+          },
+          {
+            "name": "List File Search Stores",
+            "value": "listStores",
+            "description": "List all File Search stores owned by the user"
+          },
+          {
+            "name": "Upload to File Search Store",
+            "value": "uploadToStore",
+            "description": "Upload a file to a File Search store for RAG (Retrieval Augmented Generation)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        }
+      },
+      {
+        "name": "displayName",
+        "displayName": "Display Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createStore"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        },
+        "description": "A human-readable name for the File Search store"
+      },
+      {
+        "name": "fileSearchStoreName",
+        "displayName": "File Search Store Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "deleteStore"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        },
+        "description": "The full name of the File Search store to delete (format: fileSearchStores/...)"
+      },
+      {
+        "name": "force",
+        "displayName": "Force Delete",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "deleteStore"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        },
+        "description": "Whether to delete related Documents and objects. If false, deletion will fail if the store contains any Documents."
+      },
+      {
+        "name": "pageSize",
+        "displayName": "Page Size",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "listStores"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        },
+        "description": "Maximum number of File Search stores to return per page (max 20)"
+      },
+      {
+        "name": "pageToken",
+        "displayName": "Page Token",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "listStores"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        },
+        "description": "Token from a previous page to retrieve the next page of results"
+      },
+      {
+        "name": "fileSearchStoreName",
+        "displayName": "File Search Store Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "uploadToStore"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        },
+        "description": "The full name of the File Search store to upload to (format: fileSearchStores/...)"
+      },
+      {
+        "name": "displayName",
+        "displayName": "File Display Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "uploadToStore"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        },
+        "description": "A human-readable name for the file (will be visible in citations)"
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "File URL",
+            "value": "url"
+          },
+          {
+            "name": "Binary File",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "uploadToStore"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileUrl",
+        "displayName": "URL",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "uploadToStore"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        },
+        "description": "URL of the file to upload"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "uploadToStore"
+            ],
+            "resource": [
+              "fileSearch"
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the file"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "generate",
+        "options": [
+          {
+            "name": "Analyze Image",
+            "value": "analyze",
+            "description": "Take in images and answer questions about them"
+          },
+          {
+            "name": "Generate an Image",
+            "value": "generate",
+            "description": "Creates an image from a text prompt"
+          },
+          {
+            "name": "Edit Image",
+            "value": "edit",
+            "description": "Upload one or more images and apply edits based on a prompt"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text Input",
+        "type": "string",
+        "default": "What's in this image?",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "Image URL(s)",
+            "value": "url"
+          },
+          {
+            "name": "Binary File(s)",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "imageUrls",
+        "displayName": "URL(s)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the image(s), separate multiple field names with commas"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Whether to simplify the response or not"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxOutputTokens",
+            "description": "Fewer tokens will result in shorter, less detailed image description"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Instruction describing how to edit the image"
+      },
+      {
+        "name": "images",
+        "displayName": "Images",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "binaryPropertyName": "data"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "binaryPropertyName",
+                "displayName": "Binary Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Add one or more binary fields to include images with your prompt"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "binaryPropertyOutput"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 1.2
+                }
+              }
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "models/gemini-3.1-flash-image-preview"
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "A text description of the desired image(s)"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "sampleCount",
+            "description": "Number of images to generate"
+          },
+          {
+            "name": "binaryPropertyOutput"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Message a Model",
+            "value": "message",
+            "description": "Create a completion with Google Gemini model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 1.2
+                }
+              }
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "models/gemini-3-flash-preview"
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messages",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "content": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "content",
+                "displayName": "Prompt",
+                "type": "string"
+              },
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "jsonOutput",
+        "displayName": "Output Content as JSON",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to attempt to return the response in JSON format"
+      },
+      {
+        "name": "builtInTools",
+        "displayName": "Built-in Tools",
+        "type": "collection",
+        "options": [
+          {
+            "name": "googleSearch",
+            "description": "Whether to allow the model to search the web using Google Search to get real-time information"
+          },
+          {
+            "name": "googleMaps"
+          },
+          {
+            "name": "urlContext",
+            "description": "Whether to allow the model to read and analyze content from specific URLs"
+          },
+          {
+            "name": "fileSearch"
+          },
+          {
+            "name": "codeExecution",
+            "description": "Whether to allow the model to execute code it generates to produce a response. Supported only by certain models."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "includeMergedResponse",
+            "description": "Whether to include a single output string merging all text parts of the response"
+          },
+          {
+            "name": "systemMessage"
+          },
+          {
+            "name": "codeExecution",
+            "description": "Whether to allow the model to execute code it generates to produce a response. Supported only by certain models."
+          },
+          {
+            "name": "frequencyPenalty",
+            "description": "Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim"
+          },
+          {
+            "name": "maxOutputTokens",
+            "description": "The maximum number of tokens to generate in the completion"
+          },
+          {
+            "name": "candidateCount",
+            "description": "How many completions to generate for each prompt"
+          },
+          {
+            "name": "presencePenalty",
+            "description": "Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls the randomness of the output. Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and "
+          },
+          {
+            "name": "topP",
+            "description": "The maximum cumulative probability of tokens to consider when sampling"
+          },
+          {
+            "name": "topK",
+            "description": "The maximum number of tokens to consider when sampling"
+          },
+          {
+            "name": "thinkingBudget",
+            "description": "Controls reasoning tokens for thinking models. Set to 0 to disable automatic thinking. Set to -1 for dynamic thinking (default)."
+          },
+          {
+            "name": "maxToolsIterations",
+            "description": "The maximum number of tool iteration cycles the LLM will run before stopping. A single iteration can contain multiple tool calls. Set to 0 for no limit"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "generate",
+        "options": [
+          {
+            "name": "Analyze Video",
+            "value": "analyze",
+            "description": "Take in videos and answer questions about them"
+          },
+          {
+            "name": "Generate a Video",
+            "value": "generate",
+            "description": "Creates a video from a text prompt"
+          },
+          {
+            "name": "Download Video",
+            "value": "download",
+            "description": "Download a generated video from the Google Gemini API using a URL"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text Input",
+        "type": "string",
+        "default": "What's in this video?",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "Video URL(s)",
+            "value": "url"
+          },
+          {
+            "name": "Binary File(s)",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "videoUrls",
+        "displayName": "URL(s)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        },
+        "description": "URL(s) of the video(s) to analyze, multiple URLs can be added separated by comma"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the video(s), seperate multiple field names with commas"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        },
+        "description": "Whether to simplify the response or not"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxOutputTokens",
+            "description": "Fewer tokens will result in shorter, less detailed video description"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "url",
+        "displayName": "URL",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        },
+        "description": "The URL from Google Gemini API to download the video from"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "binaryPropertyOutput"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        },
+        "description": "A text description of the desired video"
+      },
+      {
+        "name": "returnAs",
+        "displayName": "Return As",
+        "type": "options",
+        "default": "video",
+        "options": [
+          {
+            "name": "Video",
+            "value": "video"
+          },
+          {
+            "name": "URL",
+            "value": "url"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        },
+        "description": "Whether to return the video as a binary file or a URL that can be used to download the video later"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "sampleCount",
+            "description": "How many videos to generate"
+          },
+          {
+            "name": "durationSeconds",
+            "description": "Length of the generated video in seconds. Supported only by certain models."
+          },
+          {
+            "name": "aspectRatio"
+          },
+          {
+            "name": "personGeneration"
+          },
+          {
+            "name": "binaryPropertyOutput"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

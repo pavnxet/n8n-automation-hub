@@ -1,0 +1,246 @@
+{
+  "id": "n8n-nodes-langchain.memorybufferwindow",
+  "name": "Simple Memory",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.memorybufferwindow",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Simple Memory node to persist[^1] chat history in your workflow",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorybufferwindow",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Session Key",
+      "description": "Enter the key to use to store the memory in the workflow data"
+    },
+    {
+      "name": "Context Window Length",
+      "description": "Enter the number of previous interactions to consider for context"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Single memory instance",
+      "summary": "If you add more than one Simple Memory node to your workflow, all nodes access the same memory instance by default. Be careful when doing destructive actions that override existing memory contents, such as the override all messages operation in the Chat Memory Manager node. If you want more than one memory instance in your workflow, set different session IDs in different memory nodes"
+    },
+    {
+      "title": "Managing the Session ID",
+      "summary": "In most cases, the sessionId is automatically retrieved from the On Chat Message trigger. But you may run into an error with the phrase No sessionId"
+    }
+  ],
+  "keywords": [
+    "chat",
+    "cluster",
+    "context",
+    "history",
+    "key",
+    "length",
+    "memory",
+    "memorybufferwindow",
+    "persist",
+    "session",
+    "simple",
+    "sub",
+    "window"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Simple Memory node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorybufferwindow",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorybufferwindow/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Simple Memory node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorybufferwindow/common-issues",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorybufferwindow/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.memorybufferwindow.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.memorybufferwindow.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorybufferwindow/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+  "type_version": 1.4,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3,
+    1.4
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Simple Memory"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_memory"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI agent. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "scalingNotice",
+        "displayName": "This node stores memory locally in the n8n instance. It is not compatible with Queue Mode or Multi-Main setups, as memory will not be shared across workers. For production use with scaling, consider using an external memory store such as Redis, Postgres, or another persistent memory node.",
+        "type": "notice"
+      },
+      {
+        "name": "sessionKey",
+        "displayName": "Session Key",
+        "type": "string",
+        "default": "chat_history",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "The key to use to store the memory in the workflow data"
+      },
+      {
+        "name": "sessionKey",
+        "displayName": "Session ID",
+        "type": "string",
+        "default": "={{ $json.sessionId }}",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.1
+            ]
+          }
+        },
+        "description": "The key to use to store the memory"
+      },
+      {
+        "name": "sessionIdType",
+        "displayName": "Session ID",
+        "type": "options",
+        "default": "fromInput",
+        "options": [
+          {
+            "name": "Connected Chat Trigger Node",
+            "value": "fromInput",
+            "description": "Looks for an input field called 'sessionId' that is coming from a directly connected Chat Trigger"
+          },
+          {
+            "name": "Define below",
+            "value": "customKey",
+            "description": "Use an expression to reference data in previous nodes or enter static text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "sessionKey",
+        "displayName": "Session Key From Previous Node",
+        "type": "string",
+        "default": "={{ $json.sessionId }}",
+        "displayOptions": {
+          "show": {
+            "sessionIdType": [
+              "fromInput"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "scopedSessionHintNotice",
+        "displayName": "Session is automatically scoped only to this memory node. To share a session between different memory nodes, switch \"Session ID\" to \"Define below\" and use the same key in each node.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.4
+                }
+              }
+            ],
+            "sessionIdType": [
+              "fromInput"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sessionKey",
+        "displayName": "Key",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "sessionIdType": [
+              "customKey"
+            ]
+          }
+        },
+        "description": "The key to use to store session ID in the memory"
+      },
+      {
+        "name": "contextWindowLength",
+        "displayName": "Context Window Length",
+        "type": "number",
+        "default": 5
+      }
+    ]
+  }
+}

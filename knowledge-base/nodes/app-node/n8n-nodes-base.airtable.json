@@ -1,0 +1,714 @@
+{
+  "id": "n8n-nodes-base.airtable",
+  "name": "Airtable",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.airtable",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Airtable node to automate work in Airtable, and integrate Airtable with other applications. n8n has built-in support for a wide range of Airtable features, including creating, reading, listing, updating and deleting tables",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.airtable",
+  "credentials": {
+    "name": "Airtable",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/airtable",
+    "slug": "airtable",
+    "json_file": "credentials/airtable.json",
+    "markdown_file": "credentials/airtable.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Append the data to a table",
+      "description": "",
+      "doc": "",
+      "resource_value": "base"
+    },
+    {
+      "resource": "",
+      "operation": "Delete data from a table",
+      "description": "",
+      "doc": "",
+      "resource_value": "base"
+    },
+    {
+      "resource": "",
+      "operation": "List data from a table",
+      "description": "",
+      "doc": "",
+      "resource_value": "base"
+    },
+    {
+      "resource": "",
+      "operation": "Read data from a table",
+      "description": "",
+      "doc": "",
+      "resource_value": "base"
+    },
+    {
+      "resource": "",
+      "operation": "Update data in a table",
+      "description": "",
+      "doc": "",
+      "resource_value": "base"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Forbidden - perhaps check your credentials",
+      "summary": "This error displays when trying to perform actions not permitted by your current level of access. The full text looks something like this:"
+    },
+    {
+      "title": "Service is receiving too many requests from you",
+      "summary": "Airtable has a hard API limit on the number of requests generated using personal access tokens"
+    }
+  ],
+  "keywords": [
+    "airtable",
+    "app",
+    "append",
+    "applications",
+    "creating",
+    "data",
+    "delete",
+    "deleting",
+    "including",
+    "list",
+    "listing",
+    "read",
+    "reading",
+    "table",
+    "tables",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Airtable node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.airtable",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.airtable/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Airtable node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.airtable/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.airtable/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.airtable.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.airtable.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.airtable/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.airtable",
+  "type_version": 2.2,
+  "type_versions": [
+    2,
+    2.1,
+    2.2
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "airtableTokenApi",
+    "airtableOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "airtableTokenApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "airtableTokenApi"
+          ]
+        }
+      }
+    },
+    {
+      "name": "airtableOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "airtableOAuth2Api"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Airtable"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 24,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "airtableTokenApi",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "airtableTokenApi"
+          },
+          {
+            "name": "OAuth2",
+            "value": "airtableOAuth2Api"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "record",
+        "options": [
+          {
+            "name": "Base",
+            "value": "base"
+          },
+          {
+            "name": "Record",
+            "value": "record"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new record in a table"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteRecord",
+            "description": "Delete a record from a table"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a record from a table"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Search for specific records or list all"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a record in a table"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ]
+          }
+        }
+      },
+      {
+        "name": "base",
+        "displayName": "Base",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ]
+          }
+        }
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "typecast",
+            "description": "Whether the Airtable API should attempt mapping of string values for linked records & select options"
+          },
+          {
+            "name": "ignoreFields",
+            "description": "Comma-separated list of fields in input to ignore when updating"
+          },
+          {
+            "name": "updateAllMatches",
+            "description": "Whether to update all records matching the value in the \"Column to Match On\". If not set, only the first matching record will be updated."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Record ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "deleteRecord"
+            ]
+          }
+        },
+        "description": "ID of the record to delete. <a href=\"https://support.airtable.com/docs/record-id\" target=\"_blank\">More info</a>."
+      },
+      {
+        "name": "id",
+        "displayName": "Record ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the record to get. <a href=\"https://support.airtable.com/docs/record-id\" target=\"_blank\">More info</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "downloadFields",
+            "description": "The fields of type 'attachment' that should be downloaded"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Additional options which decide which records should be returned"
+      },
+      {
+        "name": "filterByFormula",
+        "displayName": "Filter By Formula",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "The formula will be evaluated for each record, and if the result is not 0, false, \"\", NaN, [], or #Error! the record will be included in the response. <a href=\"https://support.airtable.com/docs/formula-field-reference\" t"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "downloadFields",
+            "description": "The fields of type 'attachment' that should be downloaded"
+          },
+          {
+            "name": "fields",
+            "description": "The fields you want to include in the output"
+          },
+          {
+            "name": "view"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Additional options which decide which records should be returned"
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "property",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Defines how the returned records should be ordered"
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "typecast",
+            "description": "Whether the Airtable API should attempt mapping of string values for linked records & select options"
+          },
+          {
+            "name": "ignoreFields",
+            "description": "Comma-separated list of fields in input to ignore when updating"
+          },
+          {
+            "name": "updateAllMatches",
+            "description": "Whether to update all records matching the value in the \"Column to Match On\". If not set, only the first matching record will be updated."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "typecast",
+            "description": "Whether the Airtable API should attempt mapping of string values for linked records & select options"
+          },
+          {
+            "name": "ignoreFields",
+            "description": "Comma-separated list of fields in input to ignore when updating"
+          },
+          {
+            "name": "updateAllMatches",
+            "description": "Whether to update all records matching the value in the \"Column to Match On\". If not set, only the first matching record will be updated."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "record"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getMany",
+        "options": [
+          {
+            "name": "Get Many",
+            "value": "getMany",
+            "description": "List all the bases"
+          },
+          {
+            "name": "Get Schema",
+            "value": "getSchema",
+            "description": "Get the schema of the tables in a base"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "base"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "base"
+            ],
+            "operation": [
+              "getMany"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "base"
+            ],
+            "operation": [
+              "getMany"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "permissionLevel",
+            "description": "Filter the returned bases by one or more permission levels"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "base"
+            ],
+            "operation": [
+              "getMany"
+            ]
+          }
+        }
+      },
+      {
+        "name": "base",
+        "displayName": "Base",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "base"
+            ],
+            "operation": [
+              "getSchema"
+            ]
+          }
+        },
+        "description": "The Airtable Base to retrieve the schema from"
+      }
+    ]
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "id": "n8n-nodes-langchain.moonshot",
+  "name": "Moonshot Kimi",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-langchain.moonshot",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "The Moonshot Kimi node connects n8n workflows to Moonshot Kimi AI models. Use it to send prompts and receive model responses, attach images to messages, or analyze images with an image-analysis model",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.moonshot",
+  "credentials": {
+    "name": "Moonshot credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/moonshot",
+    "slug": "moonshot",
+    "json_file": "credentials/moonshot.json",
+    "markdown_file": "credentials/moonshot.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analysis",
+    "analyze",
+    "app",
+    "attach",
+    "connects",
+    "credentials",
+    "image",
+    "images",
+    "kimi",
+    "messages",
+    "model",
+    "models",
+    "moonshot",
+    "prompts",
+    "receive",
+    "responses",
+    "send"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.moonshot.md",
+      "title": "Moonshot Kimi node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.moonshot",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.moonshot.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-langchain.moonshot.json",
+    "markdown": "nodes/app-node/n8n-nodes-langchain.moonshot.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-langchain.moonshot.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.moonshot",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "moonshotApi"
+  ],
+  "credential_details": [
+    {
+      "name": "moonshotApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Moonshot Kimi"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": "={{\n\t\t(() => {\n\t\t\tconst resource = $parameter.resource;\n\t\t\tconst operation = $parameter.operation;\n\t\t\tif (resource === 'text' && operation === 'message') {\n\t\t\t\treturn [{ type: 'main' }, { type: 'ai_tool', displayName: 'Tools' }];\n\t\t\t}\n\n\t\t\treturn ['main'];\n\t\t})()\n\t}}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 14,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "text",
+        "options": [
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Text",
+            "value": "text"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "analyze",
+        "options": [
+          {
+            "name": "Analyze Image",
+            "value": "analyze",
+            "description": "Analyze an image and answer questions about it"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text Input",
+        "type": "string",
+        "default": "What's in this image?",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the image(s), separate multiple field names with commas"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxTokens",
+            "description": "Fewer tokens will result in shorter, less detailed image description"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Message a Model",
+            "value": "message",
+            "description": "Send a message and get a response from a Moonshot Kimi model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messages",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "content": "",
+              "role": "user"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "content",
+                "displayName": "Prompt",
+                "type": "string"
+              },
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "addAttachments",
+        "displayName": "Add Attachments",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to add image attachments to the message"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Attachment Input Data Field Name(s)",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "addAttachments": [
+              true
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Name of the binary field(s) which contains the image(s) to attach, separate multiple field names with commas"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "frequencyPenalty",
+            "description": "Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim"
+          },
+          {
+            "name": "includeMergedResponse",
+            "description": "Whether to include a single output string merging all text parts of the response"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion"
+          },
+          {
+            "name": "maxToolsIterations",
+            "description": "The maximum number of tool iteration cycles the LLM will run before stopping. A single iteration can contain multiple tool calls. Set to 0 for no limit."
+          },
+          {
+            "name": "temperature",
+            "description": "Controls the randomness of the output. Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and "
+          },
+          {
+            "name": "topP",
+            "description": "The maximum cumulative probability of tokens to consider when sampling"
+          },
+          {
+            "name": "presencePenalty",
+            "description": "Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics"
+          },
+          {
+            "name": "responseFormat"
+          },
+          {
+            "name": "system"
+          },
+          {
+            "name": "thinkingMode",
+            "description": "Whether to enable thinking mode for deep reasoning. The model will include reasoning steps in the response. Cannot be used together with Web Search."
+          },
+          {
+            "name": "webSearch",
+            "description": "Whether to enable built-in web search. The model will search the web for relevant information. Cannot be used together with Thinking Mode."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

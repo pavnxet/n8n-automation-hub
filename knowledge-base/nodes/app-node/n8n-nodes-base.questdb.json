@@ -1,0 +1,232 @@
+{
+  "id": "n8n-nodes-base.questdb",
+  "name": "QuestDB",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.questdb",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the QuestDB node to automate work in QuestDB, and integrate QuestDB with other applications. n8n supports executing an SQL query and inserting rows in a database with QuestDB",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.questdb",
+  "credentials": {
+    "name": "QuestDB",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/questdb",
+    "slug": "questdb",
+    "json_file": "credentials/questdb.json",
+    "markdown_file": "credentials/questdb.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Executes a SQL query",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Insert rows in database",
+      "description": "",
+      "doc": "",
+      "operation_value": "insert"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "database",
+    "executes",
+    "executing",
+    "insert",
+    "inserting",
+    "query",
+    "questdb",
+    "rows",
+    "sql",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.questdb.md",
+      "title": "QuestDB node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.questdb",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.questdb.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.questdb.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.questdb.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.questdb.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.questDb",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "questDb"
+  ],
+  "credential_details": [
+    {
+      "name": "questDb",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "QuestDB"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "insert",
+        "options": [
+          {
+            "name": "Execute Query",
+            "value": "executeQuery",
+            "description": "Executes a SQL query"
+          },
+          {
+            "name": "Insert",
+            "value": "insert",
+            "description": "Insert rows in database"
+          }
+        ]
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "The SQL query to execute. You can use n8n expressions or $1 and $2 in conjunction with query parameters."
+      },
+      {
+        "name": "schema",
+        "displayName": "Schema",
+        "type": "hidden",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert"
+            ]
+          }
+        },
+        "description": "Name of the schema the table belongs to"
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert"
+            ]
+          }
+        },
+        "description": "Name of the table in which to insert data to"
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert"
+            ]
+          }
+        },
+        "description": "Comma-separated list of the properties which should used as columns for the new rows"
+      },
+      {
+        "name": "returnFields",
+        "displayName": "Return Fields",
+        "type": "string",
+        "default": "*",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert"
+            ]
+          }
+        },
+        "description": "Comma-separated list of the fields that the operation will return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "mode",
+            "description": "The way queries should be sent to database. Can be used in conjunction with <b>Continue on Fail</b>. See <a href=\"https://docs.n8n.io/integrations/builtin/app-n"
+          },
+          {
+            "name": "queryParams",
+            "description": "Comma-separated list of properties which should be used as query parameters"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "hidden",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "insert"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "id": "n8n-nodes-base.googlesheetstrigger",
+  "name": "Google Sheets Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.googlesheetstrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Google Sheets is a web-based spreadsheet program that's part of Google's office software suite within its Google Drive service",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googlesheetstrigger",
+  "credentials": {
+    "name": "Google credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Stuck waiting for trigger event",
+      "summary": "When testing the Google Sheets Trigger node with the Execute step or Execute workflow buttons, the execution may appear stuck and unable to stop listening for events. If this occurs, you may need to exit the workflow and open it again to reset the canvas"
+    },
+    {
+      "title": "Date and time columns are rendering as numbers",
+      "summary": "Google Sheets can render dates and times a few different ways"
+    }
+  ],
+  "keywords": [
+    "based",
+    "credentials",
+    "drive",
+    "google",
+    "googlesheetstrigger",
+    "office",
+    "part",
+    "program",
+    "service",
+    "sheets",
+    "software",
+    "spreadsheet",
+    "suite",
+    "trigger",
+    "within"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Google Sheets Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googlesheetstrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.googlesheetstrigger/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Google Sheets Trigger node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googlesheetstrigger/common-issues",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.googlesheetstrigger/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.googlesheetstrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.googlesheetstrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.googlesheetstrigger/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleSheetsTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleSheetsTriggerOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleSheetsTriggerOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "triggerOAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Google Sheets Trigger"
+  },
+  "subtitle": "={{($parameter[\"event\"])}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "hidden",
+        "default": "triggerOAuth2",
+        "options": [
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "triggerOAuth2"
+          }
+        ]
+      },
+      {
+        "name": "documentId",
+        "displayName": "Document",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        }
+      },
+      {
+        "name": "sheetName",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        }
+      },
+      {
+        "name": "event",
+        "displayName": "Trigger On",
+        "type": "options",
+        "required": true,
+        "default": "anyUpdate",
+        "options": [
+          {
+            "name": "Row Added",
+            "value": "rowAdded"
+          },
+          {
+            "name": "Row Updated",
+            "value": "rowUpdate"
+          },
+          {
+            "name": "Row Added or Updated",
+            "value": "anyUpdate"
+          }
+        ],
+        "description": "It will be triggered also by newly created columns (if the 'Columns to Watch' option is not set)"
+      },
+      {
+        "name": "includeInOutput",
+        "displayName": "Include in Output",
+        "type": "options",
+        "default": "new",
+        "options": [
+          {
+            "name": "New Version",
+            "value": "new"
+          },
+          {
+            "name": "Old Version",
+            "value": "old"
+          },
+          {
+            "name": "Both Versions",
+            "value": "both"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "event": [
+              "rowAdded"
+            ]
+          }
+        },
+        "description": "This option will be effective only when automatically executing the workflow"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "columnsToWatch",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "dataLocationOnSheet"
+          },
+          {
+            "name": "valueRender",
+            "description": "Determines how values will be rendered in the output. <a href=\"https://developers.google.com/sheets/api/reference/rest/v4/ValueRenderOption\" target=\"_blank\">Mor"
+          },
+          {
+            "name": "dateTimeRenderOption",
+            "description": "Determines how dates should be rendered in the output.  <a href=\"https://developers.google.com/sheets/api/reference/rest/v4/DateTimeRenderOption\" target=\"_blank"
+          }
+        ]
+      }
+    ]
+  }
+}

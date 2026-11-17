@@ -1,0 +1,2300 @@
+{
+  "id": "n8n-nodes-base.microsoftexcel",
+  "name": "Microsoft Excel (OneDrive)",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.microsoftexcel",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Microsoft Excel (OneDrive) node to automate work in Microsoft Excel, and integrate Microsoft Excel with other applications. n8n has built-in support for a wide range of Microsoft Excel features, including adding and retrieving lists of table data, and workbooks, as well as getting worksheets. The node operates on workbooks stored in OneDrive",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.microsoftexcel",
+  "credentials": {
+    "name": "Microsoft Entra Service Principal",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/microsoftentraserviceprincipal",
+    "slug": "microsoftentraserviceprincipal",
+    "json_file": "credentials/microsoftentraserviceprincipal.json",
+    "markdown_file": "credentials/microsoftentraserviceprincipal.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Table",
+      "operation": "Adds rows to the end of the table",
+      "description": "",
+      "doc": "",
+      "resource_value": "table"
+    },
+    {
+      "resource": "Table",
+      "operation": "Retrieve a list of table columns",
+      "description": "",
+      "doc": "",
+      "resource_value": "table"
+    },
+    {
+      "resource": "Table",
+      "operation": "Retrieve a list of table rows",
+      "description": "",
+      "doc": "",
+      "resource_value": "table"
+    },
+    {
+      "resource": "Table",
+      "operation": "Looks for a specific column value and then returns the matching row",
+      "description": "",
+      "doc": "",
+      "resource_value": "table"
+    },
+    {
+      "resource": "Workbook",
+      "operation": "Adds a new worksheet to the workbook",
+      "description": "",
+      "doc": "",
+      "resource_value": "workbook"
+    },
+    {
+      "resource": "Workbook",
+      "operation": "Get data of all workbooks",
+      "description": "",
+      "doc": "",
+      "resource_value": "workbook"
+    },
+    {
+      "resource": "Worksheet",
+      "operation": "Get all worksheets",
+      "description": "",
+      "doc": "",
+      "resource_value": "worksheet"
+    },
+    {
+      "resource": "Worksheet",
+      "operation": "Get worksheet content",
+      "description": "",
+      "doc": "",
+      "resource_value": "worksheet"
+    }
+  ],
+  "operation_count": 8,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "adding",
+    "adds",
+    "app",
+    "applications",
+    "column",
+    "columns",
+    "content",
+    "data",
+    "end",
+    "entra",
+    "excel",
+    "get",
+    "getting",
+    "including",
+    "list",
+    "lists",
+    "looks",
+    "matching",
+    "microsoft",
+    "microsoftexcel",
+    "new",
+    "onedrive",
+    "operates",
+    "principal",
+    "retrieve",
+    "retrieving",
+    "returns",
+    "row",
+    "rows",
+    "service",
+    "specific",
+    "stored",
+    "table",
+    "value",
+    "well",
+    "work",
+    "workbook",
+    "workbooks",
+    "worksheet",
+    "worksheets"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.microsoftexcel.md",
+      "title": "Microsoft Excel (OneDrive) node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.microsoftexcel",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.microsoftexcel.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.microsoftexcel.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.microsoftexcel.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.microsoftexcel.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.microsoftExcel",
+  "type_version": 2.2,
+  "type_versions": [
+    2,
+    2.1,
+    2.2
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "microsoftExcelOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "microsoftExcelOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Microsoft Excel 365"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 95,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node connects to the Microsoft 365 cloud platform. Use the 'Extract from File' and 'Convert to File' nodes to directly manipulate spreadsheet files (.xls, .csv, etc). <a href=\"https://n8n.io/workflows/890-read-in-an-excel-spreadsheet-file/\" target=\"_blank\">More info</a>.",
+        "type": "notice"
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "workbook",
+        "options": [
+          {
+            "name": "Table",
+            "value": "table",
+            "description": "Represents an Excel table"
+          },
+          {
+            "name": "Workbook",
+            "value": "workbook",
+            "description": "A workbook is the top level object which contains one or more worksheets"
+          },
+          {
+            "name": "Sheet",
+            "value": "worksheet",
+            "description": "A sheet is a grid of cells which can contain data, tables, charts, etc"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "append",
+        "options": [
+          {
+            "name": "Append",
+            "value": "append",
+            "description": "Add rows to the end of the table"
+          },
+          {
+            "name": "Convert to Range",
+            "value": "convertToRange",
+            "description": "Convert a table to a range"
+          },
+          {
+            "name": "Create",
+            "value": "addTable",
+            "description": "Add a table based on range"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteTable",
+            "description": "Delete a table"
+          },
+          {
+            "name": "Get Columns",
+            "value": "getColumns",
+            "description": "Retrieve a list of table columns"
+          },
+          {
+            "name": "Get Rows",
+            "value": "getRows",
+            "description": "Retrieve a list of table rows"
+          },
+          {
+            "name": "Lookup",
+            "value": "lookup",
+            "description": "Look for rows that match a given value in a column"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "define",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMap",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Map Each Column Below",
+            "value": "define",
+            "description": "Set the value for each destination column"
+          },
+          {
+            "name": "Raw",
+            "value": "raw",
+            "description": "Send raw data as JSON"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "data",
+        "displayName": "Data",
+        "type": "json",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "raw"
+            ],
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        },
+        "description": "Raw values for the specified range as array of string arrays in JSON format"
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "define"
+            ],
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "index",
+            "description": "Specifies the relative position of the new row. If not defined, the addition happens at the end. Any row below the inserted row will be shifted downwards. First"
+          },
+          {
+            "name": "rawData",
+            "description": "Whether the data should be returned RAW instead of parsed into keys according to their header"
+          },
+          {
+            "name": "dataProperty",
+            "description": "The name of the property into which to write the RAW data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "addTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "addTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "selectRange",
+        "displayName": "Select Range",
+        "type": "options",
+        "default": "auto",
+        "options": [
+          {
+            "name": "Automatically",
+            "value": "auto",
+            "description": "The whole used range on the selected sheet will be converted into a table"
+          },
+          {
+            "name": "Manually",
+            "value": "manual",
+            "description": "Select a range that will be converted into a table"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "addTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "range",
+        "displayName": "Range",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "selectRange": [
+              "manual"
+            ],
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "addTable"
+            ]
+          }
+        },
+        "description": "The range of cells that will be converted to a table"
+      },
+      {
+        "name": "hasHeaders",
+        "displayName": "Has Headers",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "addTable"
+            ]
+          }
+        },
+        "description": "Whether the range has column labels. When this property set to false Excel will automatically generate header shifting the data down by one row."
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "convertToRange"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "convertToRange"
+            ]
+          }
+        }
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "convertToRange"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getColumns"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getColumns"
+            ]
+          }
+        }
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getColumns"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getColumns"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getColumns"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getColumns"
+            ]
+          }
+        },
+        "description": "Whether the data should be returned RAW instead of parsed into keys according to their header"
+      },
+      {
+        "name": "dataProperty",
+        "displayName": "Data Property",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "rawData": [
+              true
+            ],
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getColumns"
+            ]
+          }
+        },
+        "description": "The name of the property into which to write the RAW data"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "A comma-separated list of the fields to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "rawData": [
+              true
+            ],
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getColumns"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getRows"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getRows"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getRows"
+            ]
+          }
+        },
+        "description": "Whether the data should be returned RAW instead of parsed into keys according to their header"
+      },
+      {
+        "name": "dataProperty",
+        "displayName": "Data Property",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "rawData": [
+              true
+            ],
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getRows"
+            ]
+          }
+        },
+        "description": "The name of the property into which to write the RAW data"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "A comma-separated list of the fields to include in the response"
+          },
+          {
+            "name": "column",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>. Choose from the list, or specify IDs using an <a"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "getRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "lookup"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "lookup"
+            ]
+          }
+        }
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "lookup"
+            ]
+          }
+        }
+      },
+      {
+        "name": "lookupColumn",
+        "displayName": "Lookup Column",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "lookup"
+            ]
+          }
+        },
+        "description": "The name of the column in which to look for value"
+      },
+      {
+        "name": "lookupValue",
+        "displayName": "Lookup Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "lookup"
+            ]
+          }
+        },
+        "description": "The value to look for in column"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnAllMatches",
+            "description": "By default only the first result gets returned. If options gets set all found matches get returned."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "lookup"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Add Sheet",
+            "value": "addWorksheet",
+            "description": "Add a new sheet to the workbook"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteWorkbook",
+            "description": "Delete workbook"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get workbooks"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "workbook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "workbook"
+            ],
+            "operation": [
+              "addWorksheet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "name",
+            "description": "The name of the sheet to be added. The name should be unique. If not specified, Excel will determine the name of the new worksheet."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "workbook"
+            ],
+            "operation": [
+              "addWorksheet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "workbook"
+            ],
+            "operation": [
+              "deleteWorkbook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "workbook"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "workbook"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "A comma-separated list of the fields to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "workbook"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Append",
+            "value": "append",
+            "description": "Append data to sheet"
+          },
+          {
+            "name": "Append or Update",
+            "value": "upsert",
+            "description": "Append a new row or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Clear",
+            "value": "clear",
+            "description": "Clear sheet"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteWorksheet",
+            "description": "Delete sheet"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get a list of sheets"
+          },
+          {
+            "name": "Get Rows",
+            "value": "readRows",
+            "description": "Retrieve a list of sheet rows"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update rows of a sheet or sheet range"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "define",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMap",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Map Each Column Below",
+            "value": "define",
+            "description": "Set the value for each destination column"
+          },
+          {
+            "name": "Raw",
+            "value": "raw",
+            "description": "Send raw data as JSON"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "data",
+        "displayName": "Data",
+        "type": "json",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "raw"
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        },
+        "description": "Raw values for the specified range as array of string arrays in JSON format"
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "define"
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "rawData",
+            "description": "Whether the data should be returned RAW instead of parsed into keys according to their header"
+          },
+          {
+            "name": "dataProperty",
+            "description": "The name of the property into which to write the RAW data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "clear"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "clear"
+            ]
+          }
+        }
+      },
+      {
+        "name": "applyTo",
+        "displayName": "Apply To",
+        "type": "options",
+        "default": "All",
+        "options": [
+          {
+            "name": "All",
+            "value": "All",
+            "description": "Clear data in cells and remove all formatting"
+          },
+          {
+            "name": "Formats",
+            "value": "Formats",
+            "description": "Clear formatting(e.g. font size, color) of cells"
+          },
+          {
+            "name": "Contents",
+            "value": "Contents",
+            "description": "Clear data contained in cells"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "clear"
+            ]
+          }
+        }
+      },
+      {
+        "name": "useRange",
+        "displayName": "Select a Range",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "clear"
+            ]
+          }
+        }
+      },
+      {
+        "name": "range",
+        "displayName": "Range",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "useRange": [
+              true
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "clear"
+            ]
+          }
+        },
+        "description": "The sheet range that would be cleared, specified using a A1-style notation"
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "deleteWorksheet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "deleteWorksheet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "A comma-separated list of the fields to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "readRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "readRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "useRange",
+        "displayName": "Select a Range",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "readRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "range",
+        "displayName": "Range",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "useRange": [
+              true
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "readRows"
+            ]
+          }
+        },
+        "description": "The sheet range to read the data from specified using a A1-style notation, has to be specific e.g A1:B5, generic ranges like A:B are not supported"
+      },
+      {
+        "name": "keyRow",
+        "displayName": "Header Row",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "useRange": [
+              true
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "readRows"
+            ]
+          }
+        },
+        "description": "Relative to selected 'Range', first row index is 0"
+      },
+      {
+        "name": "dataStartRow",
+        "displayName": "First Data Row",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "useRange": [
+              true
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "readRows"
+            ]
+          }
+        },
+        "description": "Relative to selected 'Range', first row index is 0"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "rawData",
+            "description": "Whether the data should be returned RAW instead of parsed into keys according to their header"
+          },
+          {
+            "name": "dataProperty",
+            "description": "The name of the property into which to write the RAW data"
+          },
+          {
+            "name": "fields",
+            "description": "Fields the response will containt. Multiple can be added separated by ,."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "readRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "useRange",
+        "displayName": "Select a Range",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "range",
+        "displayName": "Range",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMap",
+              "define"
+            ],
+            "useRange": [
+              true
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The sheet range to read the data from specified using a A1-style notation, has to be specific e.g A1:B5, generic ranges like A:B are not supported. Leave blank to use whole used range in the sheet."
+      },
+      {
+        "name": "range",
+        "displayName": "Range",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "raw"
+            ],
+            "useRange": [
+              true
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The sheet range to read the data from specified using a A1-style notation"
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "define",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMap",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Map Each Column Below",
+            "value": "define",
+            "description": "Set the value for each destination column"
+          },
+          {
+            "name": "Raw",
+            "value": "raw",
+            "description": "Send raw data as JSON, the whole selected range would be updated with the new values"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "data",
+        "displayName": "Data",
+        "type": "json",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "raw"
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Raw values for the specified range as array of string arrays in JSON format. Should match the specified range: one array item for each row."
+      },
+      {
+        "name": "columnToMatchOn",
+        "displayName": "Column to match on",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMap",
+              "define"
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "valueToMatchOn",
+        "displayName": "Value of Column to Match On",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "define"
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "define"
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "rawData",
+            "description": "Whether the data should be returned RAW instead of parsed into keys according to their header"
+          },
+          {
+            "name": "dataProperty",
+            "description": "The name of the property into which to write the RAW data"
+          },
+          {
+            "name": "fields",
+            "description": "Fields the response will containt. Multiple can be added separated by ,."
+          },
+          {
+            "name": "updateAll",
+            "description": "Whether to update all matching rows or just the first match"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "workbook",
+        "displayName": "Workbook",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "worksheet",
+        "displayName": "Sheet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "useRange",
+        "displayName": "Select a Range",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "range",
+        "displayName": "Range",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMap",
+              "define"
+            ],
+            "useRange": [
+              true
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "The sheet range to read the data from specified using a A1-style notation, has to be specific e.g A1:B5, generic ranges like A:B are not supported. Leave blank to use whole used range in the sheet."
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "define",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMap",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Map Each Column Below",
+            "value": "define",
+            "description": "Set the value for each destination column"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "columnToMatchOn",
+        "displayName": "Column to match on",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMap",
+              "define"
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "valueToMatchOn",
+        "displayName": "Value of Column to Match On",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "define"
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "define"
+            ],
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "appendAfterSelectedRange",
+            "description": "Whether to append data after the selected range or used range"
+          },
+          {
+            "name": "rawData",
+            "description": "Whether the data should be returned RAW instead of parsed into keys according to their header"
+          },
+          {
+            "name": "dataProperty",
+            "description": "The name of the property into which to write the RAW data"
+          },
+          {
+            "name": "updateAll",
+            "description": "Whether to update all matching rows or just the first match"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "worksheet"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

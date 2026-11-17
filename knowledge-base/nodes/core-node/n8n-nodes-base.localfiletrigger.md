@@ -1,0 +1,56 @@
+<!-- n8n built-in node reference: n8n-nodes-base.localfiletrigger | source: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.localfiletrigger -->
+
+The Local File Trigger node starts a workflow when it detects changes on the file system. These changes involve a file or folder getting added, changed, or deleted.
+
+> **Security considerations:**
+> The Local File Trigger node can introduce significant security risks in environments that operate with untrusted users. Because of this, the node is [disabled](https://app.gitbook.com/s/jm0ZYRpZIPWge2ZSiDYO/host-n8n/configure-n8n/security/block-specific-nodes#exclude-nodes) by default from n8n 2.0.
+
+> **Self-hosted n8n only:**
+> This node isn't available on n8n Cloud.
+
+## Node parameters
+
+You can choose what event to watch for using the **Trigger On** parameter.
+
+## Changes to a Specific File
+
+The node triggers when the specified file changes.
+
+Enter the path for the file to watch in **File to Watch**.
+
+## Changes Involving a Specific Folder
+
+The node triggers when a change occurs in the selected folder.
+
+Configure these parameters:
+
+- **Folder to Watch**: Enter the path of the folder to watch.
+- **Watch for**: Select the type of change to watch for.
+
+## Node options
+
+Use the node **Options** to include or exclude files and folders.
+
+- **Include Linked Files/Folders**: also watch for changes to linked files or folders.
+- **Ignore**: files or paths to ignore. n8n tests the whole path, not just the filename. Supports the [Anymatch](https://github.com/micromatch/anymatch) syntax.
+- **Max Folder Depth**: how deep into the folder structure to watch for changes.
+
+### Examples for Ignore
+
+Ignore a single file:
+
+```sh
+**/<fileName>.<suffix>
+# For example, **/myfile.txt
+```
+
+Ignore a sub-directory of a directory you're watching:
+
+```sh
+**/<directoryName>/**
+# For example, **/myDirectory/**
+```
+
+## Templates and examples
+
+[Browse Local File Trigger node documentation integration templates](https://n8n.io/integrations/local-file-trigger) or [search all templates](https://n8n.io/workflows/)

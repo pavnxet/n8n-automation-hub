@@ -1,0 +1,135 @@
+{
+  "id": "n8n-nodes-langchain.embeddingslemonade",
+  "name": "Embeddings Lemonade",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.embeddingslemonade",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Embeddings Lemonade node to generate vector embeddings using models hosted and managed by a Lemonade server. This node is useful for workflows that perform semantic search, clustering, similarity matching, or any task that requires numerical vector representations of text",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingslemonade",
+  "credentials": {
+    "name": "Lemonade credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/lemonade",
+    "slug": "lemonade",
+    "json_file": "credentials/lemonade.json",
+    "markdown_file": "credentials/lemonade.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "The model which will generate the embeddings. Models are loaded and managed through the Lemonade server configured for this node. Select the desired model from the list of available options served by your Lemonade instance"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "cluster",
+    "clustering",
+    "credentials",
+    "embeddings",
+    "embeddingslemonade",
+    "generate",
+    "hosted",
+    "lemonade",
+    "managed",
+    "matching",
+    "model",
+    "models",
+    "numerical",
+    "perform",
+    "representations",
+    "requires",
+    "search",
+    "semantic",
+    "server",
+    "similarity",
+    "sub",
+    "task",
+    "text",
+    "useful",
+    "vector"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.embeddingslemonade.md",
+      "title": "Embeddings Lemonade node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingslemonade",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingslemonade.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingslemonade.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingslemonade.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingslemonade.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.embeddingsLemonade",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "lemonadeApi"
+  ],
+  "credential_details": [
+    {
+      "name": "lemonadeApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Embeddings Lemonade"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_embedding"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_vectorStore'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "required": true,
+        "description": "The model which will generate the completion. Models are loaded and managed through the Lemonade server."
+      }
+    ]
+  }
+}

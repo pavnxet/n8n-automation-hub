@@ -1,0 +1,133 @@
+{
+  "id": "n8n-nodes-base.autopilottrigger",
+  "name": "Autopilot Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.autopilottrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Autopilot is a visual marketing software that allows you to automate and personalize your marketing across the entire customer journey",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.autopilottrigger",
+  "credentials": {
+    "name": "Autopilot credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/autopilot",
+    "slug": "autopilot",
+    "json_file": "credentials/autopilot.json",
+    "markdown_file": "credentials/autopilot.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "across",
+    "allows",
+    "autopilot",
+    "autopilottrigger",
+    "credentials",
+    "customer",
+    "entire",
+    "journey",
+    "marketing",
+    "personalize",
+    "software",
+    "trigger",
+    "visual"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.autopilottrigger.md",
+      "title": "Autopilot Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.autopilottrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.autopilottrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.autopilottrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.autopilottrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.autopilottrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.autopilotTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "autopilotApi"
+  ],
+  "credential_details": [
+    {
+      "name": "autopilotApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Autopilot Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 1,
+    "parameters": [
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Contact Added",
+            "value": "contactAdded"
+          },
+          {
+            "name": "Contact Added To List",
+            "value": "contactAddedToList"
+          },
+          {
+            "name": "Contact Entered Segment",
+            "value": "contactEnteredSegment"
+          },
+          {
+            "name": "Contact Left Segment",
+            "value": "contactLeftSegment"
+          },
+          {
+            "name": "Contact Removed From List",
+            "value": "contactRemovedFromList"
+          },
+          {
+            "name": "Contact Unsubscribed",
+            "value": "contactUnsubscribed"
+          },
+          {
+            "name": "Contact Updated",
+            "value": "contactUpdated"
+          }
+        ]
+      }
+    ]
+  }
+}

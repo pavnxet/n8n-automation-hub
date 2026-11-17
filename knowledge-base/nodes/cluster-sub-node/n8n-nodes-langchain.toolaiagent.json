@@ -1,0 +1,253 @@
+{
+  "id": "n8n-nodes-langchain.toolaiagent",
+  "name": "AI Agent Tool",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.toolaiagent",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The AI Agent Tool node allows a root-level agent[^1] in your workflow to call other agents as tools to simplify multi-agent orchestration",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolaiagent",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Description",
+      "description": "Give a description to the LLM of this agent's purpose and scope of responsibility. A good, specific description tells the parent agent when to delegate tasks to this agent for processing"
+    },
+    {
+      "name": "Prompt (User Message)",
+      "description": "The prompt to the LLM explaining what actions to perform and what information to return"
+    },
+    {
+      "name": "Require Specific Output Format",
+      "description": "Whether you want the node to require a specific output format. When turned on, n8n prompts you to connect one of the output parsers described on the main agent page"
+    },
+    {
+      "name": "Enable Fallback Model",
+      "description": "Whether to enable a fallback model. When enabled, n8n prompts you to connect a backup chat model to use in case the primary model fails or isn't available"
+    },
+    {
+      "name": "System Message",
+      "description": "A message to send to the agent before the conversation starts"
+    },
+    {
+      "name": "Max Iterations",
+      "description": "The maximum number of times the model should run to generate a response before stopping"
+    },
+    {
+      "name": "Return Intermediate Steps",
+      "description": "Whether to include intermediate steps the agent took in the final output"
+    },
+    {
+      "name": "Automatically Passthrough Binary Images",
+      "description": "Whether binary images should be automatically passed through to the agent as image type messages"
+    },
+    {
+      "name": "Batch Processing",
+      "description": "Whether to enable the following batch processing options for rate limiting:"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agent",
+    "agents",
+    "ai",
+    "allows",
+    "automatically",
+    "batch",
+    "binary",
+    "call",
+    "cluster",
+    "description",
+    "enable",
+    "fallback",
+    "format",
+    "images",
+    "intermediate",
+    "iterations",
+    "level",
+    "max",
+    "message",
+    "model",
+    "multi",
+    "orchestration",
+    "output",
+    "passthrough",
+    "processing",
+    "prompt",
+    "require",
+    "return",
+    "root",
+    "simplify",
+    "specific",
+    "steps",
+    "sub",
+    "system",
+    "tool",
+    "toolaiagent",
+    "tools",
+    "user"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.toolaiagent.md",
+      "title": "AI Agent Tool node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolaiagent",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolaiagent.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.toolaiagent.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.toolaiagent.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolaiagent.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.agentTool",
+  "type_version": 3.0,
+  "type_versions": [
+    3
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "AI Agent Tool",
+    "color": "#404040"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{\n\t\t\t\t((hasOutputParser, needsFallback) => {\n\t\t\t\t\tfunction getInputs(hasMainInput, hasOutputParser, needsFallback) {\n    const getInputData = (inputs) => {\n        return inputs.map(({ type, filter, displayName, required }) => {\n            const input = {\n                type,\n                displayName,\n                required,\n                maxConnections: ['ai_languageModel', 'ai_memory', 'ai_outputParser'].includes(type)\n                    ? 1\n                    : undefined,\n            };\n            if (filter) {\n                input.filter = filter;\n            }\n            return input;\n        });\n    };\n    let specialInputs = [\n        {\n            type: 'ai_languageModel',\n            displayName: 'Chat Model',\n            required: true,\n            filter: {\n                excludedNodes: [\n                    '@n8n/n8n-nodes-langchain.lmCohere',\n                    '@n8n/n8n-nodes-langchain.lmOllama',\n                    'n8n/n8n-nodes-langchain.lmOpenAi',\n                    '@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference',\n                ],\n            },\n        },\n        {\n            type: 'ai_languageModel',\n            displayName: 'Fallback Model',\n            required: true,\n            filter: {\n                excludedNodes: [\n                    '@n8n/n8n-nodes-langchain.lmCohere',\n                    '@n8n/n8n-nodes-langchain.lmOllama',\n                    'n8n/n8n-nodes-langchain.lmOpenAi',\n                    '@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference',\n                ],\n            },\n        },\n        {\n            displayName: 'Memory',\n            type: 'ai_memory',\n        },\n        {\n            displayName: 'Tool',\n            type: 'ai_tool',\n        },\n        {\n            displayName: 'Output Parser',\n            type: 'ai_outputParser',\n        },\n    ];\n    if (hasOutputParser === false) {\n        specialInputs = specialInputs.filter((input) => input.type !== 'ai_outputParser');\n    }\n    if (needsFallback === false) {\n        specialInputs = specialInputs.filter((input) => input.displayName !== 'Fallback Model');\n    }\n    const mainInputs = hasMainInput ? ['main'] : [];\n    return [...mainInputs, ...getInputData(specialInputs)];\n};\n\t\t\t\t\treturn getInputs(false, hasOutputParser, needsFallback)\n\t\t\t\t})($parameter.hasOutputParser === undefined || $parameter.hasOutputParser === true, $parameter.needsFallback !== undefined && $parameter.needsFallback === true)\n\t\t\t}}",
+    "outputs": [
+      "ai_tool"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "toolDescription",
+        "displayName": "Description",
+        "type": "string",
+        "required": true,
+        "default": "AI Agent that can call other tools",
+        "description": "Explain to the LLM what this tool does, a good, specific description would allow LLMs to produce expected results much more often"
+      },
+      {
+        "name": "text",
+        "displayName": "Prompt (User Message)",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "hasOutputParser",
+        "displayName": "Require Specific Output Format",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "notice",
+        "displayName": "Connect an <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_outputParser'>output parser</a> on the canvas to specify the output format you require",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "hasOutputParser": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "needsFallback",
+        "displayName": "Enable Fallback Model",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "fallbackNotice",
+        "displayName": "Connect an additional language model on the canvas to use it as a fallback if the main model fails",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "needsFallback": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "systemMessage",
+            "description": "The message that will be sent to the agent before the conversation starts"
+          },
+          {
+            "name": "maxIterations",
+            "description": "The maximum number of iterations the agent will run before stopping"
+          },
+          {
+            "name": "returnIntermediateSteps",
+            "description": "Whether or not the output should include intermediate steps the agent took"
+          },
+          {
+            "name": "passthroughBinaryImages",
+            "description": "Whether or not binary images should be automatically passed through to the agent as image type messages"
+          },
+          {
+            "name": "passthroughBinaryPdfs",
+            "description": "Whether or not binary PDF documents should be automatically passed through to the agent. Useful for models that natively support PDF input (e.g. Google Gemini)."
+          },
+          {
+            "name": "tracingMetadata",
+            "description": "Custom metadata added to tracing events"
+          },
+          {
+            "name": "autoSaveHighlightedData",
+            "description": "Whether to automatically save <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executiondata/\" target=\"_blank\">highlighted data</a>. "
+          },
+          {
+            "name": "enableStreaming",
+            "description": "Whether this agent will stream the response in real-time as it generates text"
+          },
+          {
+            "name": "batching",
+            "description": "Batch processing options for rate limiting"
+          },
+          {
+            "name": "maxTokensFromMemory",
+            "description": "The maximum number of tokens to read from the chat memory history. Set to 0 to read all history."
+          },
+          {
+            "name": "forceToolCallOnFirstIteration",
+            "description": "Whether the model must call at least one tool on its first response of each run. Later responses are unrestricted so the agent can answer. Useful for smaller mo"
+          }
+        ]
+      }
+    ]
+  }
+}

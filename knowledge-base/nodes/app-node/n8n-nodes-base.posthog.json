@@ -1,0 +1,481 @@
+{
+  "id": "n8n-nodes-base.posthog",
+  "name": "PostHog",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.posthog",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the PostHog node to automate work in PostHog, and integrate PostHog with other applications. n8n has built-in support for a wide range of PostHog features, including creating aliases, events, and identity, as well as tracking pages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.posthog",
+  "credentials": {
+    "name": "PostHog",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/posthog",
+    "slug": "posthog",
+    "json_file": "credentials/posthog.json",
+    "markdown_file": "credentials/posthog.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Alias",
+      "operation": "Create an alias",
+      "description": "",
+      "doc": "",
+      "resource_value": "alias",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Event",
+      "operation": "Create an event",
+      "description": "",
+      "doc": "",
+      "resource_value": "event",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Identity",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "identity",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Track",
+      "operation": "Track a page",
+      "description": "",
+      "doc": "",
+      "resource_value": "track",
+      "operation_value": "page"
+    },
+    {
+      "resource": "Track",
+      "operation": "Track a screen",
+      "description": "",
+      "doc": "",
+      "resource_value": "track",
+      "operation_value": "screen"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "alias",
+    "aliases",
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "event",
+    "events",
+    "identity",
+    "including",
+    "pages",
+    "posthog",
+    "screen",
+    "track",
+    "tracking",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.posthog.md",
+      "title": "PostHog node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.posthog",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.posthog.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.posthog.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.posthog.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.posthog.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.postHog",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "postHogApi"
+  ],
+  "credential_details": [
+    {
+      "name": "postHogApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "PostHog"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 16,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "event",
+        "options": [
+          {
+            "name": "Alias",
+            "value": "alias"
+          },
+          {
+            "name": "Event",
+            "value": "event"
+          },
+          {
+            "name": "Identity",
+            "value": "identity"
+          },
+          {
+            "name": "Track",
+            "value": "track"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an alias"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alias"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alias",
+        "displayName": "Alias",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alias"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The name of the alias"
+      },
+      {
+        "name": "distinctId",
+        "displayName": "Distinct ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alias"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The user's distinct ID"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "contextUi"
+          },
+          {
+            "name": "timestamp",
+            "description": "If not set, it'll automatically be set to the current time"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alias"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an event"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "eventName",
+        "displayName": "Event",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The name of the event"
+      },
+      {
+        "name": "distinctId",
+        "displayName": "Distinct ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The user's distinct ID"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "propertiesUi"
+          },
+          {
+            "name": "timestamp",
+            "description": "If not set, it'll automatically be set to the current time"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "identity"
+            ]
+          }
+        }
+      },
+      {
+        "name": "distinctId",
+        "displayName": "Distinct ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "identity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The identity's distinct ID"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "propertiesUi"
+          },
+          {
+            "name": "messageId"
+          },
+          {
+            "name": "timestamp",
+            "description": "If not set, it'll automatically be set to the current time"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "identity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "page",
+        "options": [
+          {
+            "name": "Page",
+            "value": "page",
+            "description": "Track a page"
+          },
+          {
+            "name": "Screen",
+            "value": "screen",
+            "description": "Track a screen"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "page",
+              "screen"
+            ]
+          }
+        }
+      },
+      {
+        "name": "distinctId",
+        "displayName": "Distinct ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "page",
+              "screen"
+            ]
+          }
+        },
+        "description": "The user's distinct ID"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "category"
+          },
+          {
+            "name": "contextUi"
+          },
+          {
+            "name": "messageId"
+          },
+          {
+            "name": "propertiesUi"
+          },
+          {
+            "name": "timestamp",
+            "description": "If not set, it'll automatically be set to the current time"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "page",
+              "screen"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,405 @@
+{
+  "id": "n8n-nodes-base.plivo",
+  "name": "Plivo",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.plivo",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Plivo node to automate work in Plivo, and integrate Plivo with other applications. n8n has built-in support for a wide range of Plivo features, including making calls, and sending SMS/MMS",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.plivo",
+  "credentials": {
+    "name": "Plivo",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/plivo",
+    "slug": "plivo",
+    "json_file": "credentials/plivo.json",
+    "markdown_file": "credentials/plivo.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Call",
+      "operation": "Make a voice call",
+      "description": "",
+      "doc": "",
+      "resource_value": "call",
+      "operation_value": "make"
+    },
+    {
+      "resource": "MMS",
+      "operation": "Send an MMS message (US/Canada only)",
+      "description": "",
+      "doc": "",
+      "resource_value": "mms",
+      "operation_value": "send"
+    },
+    {
+      "resource": "SMS",
+      "operation": "Send an SMS message",
+      "description": "",
+      "doc": "",
+      "resource_value": "sms",
+      "operation_value": "send"
+    }
+  ],
+  "operation_count": 3,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "call",
+    "calls",
+    "canada",
+    "including",
+    "make",
+    "making",
+    "message",
+    "mms",
+    "only",
+    "plivo",
+    "send",
+    "sending",
+    "sms",
+    "voice",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.plivo.md",
+      "title": "Plivo node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.plivo",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.plivo.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.plivo.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.plivo.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.plivo.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.plivo",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "plivoApi"
+  ],
+  "credential_details": [
+    {
+      "name": "plivoApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Plivo"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 15,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "sms",
+        "options": [
+          {
+            "name": "Call",
+            "value": "call"
+          },
+          {
+            "name": "MMS",
+            "value": "mms"
+          },
+          {
+            "name": "SMS",
+            "value": "sms"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send an SMS message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ]
+          }
+        }
+      },
+      {
+        "name": "from",
+        "displayName": "From",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "Plivo Number to send the SMS from"
+      },
+      {
+        "name": "to",
+        "displayName": "To",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "Phone number to send the message to"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        },
+        "description": "Message to send"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send an MMS message (US/Canada only)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "mms"
+            ]
+          }
+        }
+      },
+      {
+        "name": "from",
+        "displayName": "From",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "mms"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "Plivo Number to send the MMS from"
+      },
+      {
+        "name": "to",
+        "displayName": "To",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "mms"
+            ]
+          }
+        },
+        "description": "Phone number to send the MMS to"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "mms"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "Message to send"
+      },
+      {
+        "name": "media_urls",
+        "displayName": "Media URLs",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "mms"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "Comma-separated list of media URLs of the files from your file server"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "make",
+        "options": [
+          {
+            "name": "Make",
+            "value": "make",
+            "description": "Make a voice call"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ]
+          }
+        }
+      },
+      {
+        "name": "from",
+        "displayName": "From",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "make"
+            ]
+          }
+        },
+        "description": "Caller ID for the call to make"
+      },
+      {
+        "name": "to",
+        "displayName": "To",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "make"
+            ]
+          }
+        },
+        "description": "Phone number to make the call to"
+      },
+      {
+        "name": "answer_method",
+        "displayName": "Answer Method",
+        "type": "options",
+        "required": true,
+        "default": "POST",
+        "options": [
+          {
+            "name": "GET",
+            "value": "GET"
+          },
+          {
+            "name": "POST",
+            "value": "POST"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "make"
+            ]
+          }
+        },
+        "description": "HTTP verb to be used when invoking the Answer URL"
+      },
+      {
+        "name": "answer_url",
+        "displayName": "Answer URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "call"
+            ],
+            "operation": [
+              "make"
+            ]
+          }
+        },
+        "description": "URL to be invoked by Plivo once the call is answered. It should return the XML to handle the call once answered."
+      }
+    ]
+  }
+}

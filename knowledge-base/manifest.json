@@ -1,0 +1,49 @@
+{
+  "name": "n8n-node-kb",
+  "version": "1.1.0",
+  "generated": "2026-11-17",
+  "source": {
+    "docs": "https://docs.n8n.io/integrations/builtin/",
+    "repo": "https://github.com/n8n-io/n8n-docs",
+    "snapshot": "git clone --depth 1, 2026-11-17"
+  },
+  "counts": {
+    "app-node": 275,
+    "trigger-node": 91,
+    "core-node": 69,
+    "cluster-root-node": 24,
+    "cluster-sub-node": 72,
+    "credential": 322,
+    "nodes_total": 531,
+    "credentials_total": 322,
+    "operations_total": 3848,
+    "keywords_total": 2604,
+    "example_workflows": 12
+  },
+  "layout": {
+    "catalog.json": "every node, one compact entry each - start here",
+    "indexes/nodes.jsonl": "one line per node (id, name, ops, desc) - grep friendly",
+    "indexes/operations.jsonl": "one line per operation - best file for 'which node does X'",
+    "indexes/keywords.json": "keyword -> node ids",
+    "indexes/by-category.json": "category -> node ids",
+    "indexes/triggers.json": "all trigger nodes",
+    "indexes/ai-tools.json": "all nodes usable as AI tools",
+    "indexes/credentials.json": "credential types + auth methods",
+    "nodes/<category>/<id>.json": "full structured record per node",
+    "nodes/<category>/<id>.md": "clean readable reference per node",
+    "credentials/<id>.json|.md": "credential type records",
+    "tools/search.py": "BM25 search CLI over the KB",
+    "schema.json": "JSON Schema for a node record",
+    "examples/index.json": "real n8n workflows bundled with the docs, as templates",
+    "indexes/resources-operations.json": "internal values for resource/operation/authentication options per node"
+  },
+  "enriched_from": {
+    "n8n-nodes-base": "2.15.1",
+    "@n8n/n8n-nodes-langchain": "2.48.3"
+  },
+  "coverage": {
+    "docs_nodes": 531,
+    "package_nodes_matched": 521,
+    "package_nodes_missing": 10
+  }
+}

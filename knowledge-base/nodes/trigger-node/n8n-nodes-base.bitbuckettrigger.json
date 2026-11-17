@@ -1,0 +1,244 @@
+{
+  "id": "n8n-nodes-base.bitbuckettrigger",
+  "name": "Bitbucket Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.bitbuckettrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Bitbucket is a web-based version control repository hosting service owned by Atlassian, for source code and development projects that use either Mercurial or Git revision control systems",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.bitbuckettrigger",
+  "credentials": {
+    "name": "Bitbucket credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/bitbucket",
+    "slug": "bitbucket",
+    "json_file": "credentials/bitbucket.json",
+    "markdown_file": "credentials/bitbucket.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "atlassian",
+    "based",
+    "bitbucket",
+    "bitbuckettrigger",
+    "code",
+    "control",
+    "credentials",
+    "development",
+    "either",
+    "hosting",
+    "mercurial",
+    "owned",
+    "projects",
+    "repository",
+    "revision",
+    "service",
+    "source",
+    "systems",
+    "trigger",
+    "version"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.bitbuckettrigger.md",
+      "title": "Bitbucket Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.bitbuckettrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.bitbuckettrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.bitbuckettrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.bitbuckettrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.bitbuckettrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.bitbucketTrigger",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "bitbucketApi",
+    "bitbucketAccessTokenApi"
+  ],
+  "credential_details": [
+    {
+      "name": "bitbucketApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "password"
+          ]
+        }
+      }
+    },
+    {
+      "name": "bitbucketAccessTokenApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Bitbucket Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "password",
+        "options": [
+          {
+            "name": "Password (Deprecated)",
+            "value": "password"
+          },
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Password (Deprecated)",
+            "value": "password"
+          },
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.1
+            ]
+          }
+        }
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "workspace",
+        "options": [
+          {
+            "name": "Repository",
+            "value": "repository"
+          },
+          {
+            "name": "Workspace",
+            "value": "workspace"
+          }
+        ]
+      },
+      {
+        "name": "workspace",
+        "displayName": "Workspace Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "workspace",
+              "repository"
+            ]
+          }
+        },
+        "description": "The repository of which to listen to the events. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "events",
+        "displayName": "Event Names or IDs",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "workspace"
+            ]
+          }
+        },
+        "description": "The events to listen to. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "repository",
+        "displayName": "Repository Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "repository"
+            ]
+          }
+        },
+        "description": "The repository of which to listen to the events. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "events",
+        "displayName": "Event Names or IDs",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "repository"
+            ]
+          }
+        },
+        "description": "The events to listen to. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      }
+    ]
+  }
+}

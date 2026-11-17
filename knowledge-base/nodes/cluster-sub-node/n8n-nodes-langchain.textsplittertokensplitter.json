@@ -1,0 +1,127 @@
+{
+  "id": "n8n-nodes-langchain.textsplittertokensplitter",
+  "name": "Token Splitter",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.textsplittertokensplitter",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Token Splitter node splits a raw text string by first converting the text into BPE tokens, then splits these tokens into chunks and converts the tokens within a single chunk back into text",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.textsplittertokensplitter",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Chunk Size",
+      "description": "Enter the number of characters in each chunk"
+    },
+    {
+      "name": "Chunk Overlap",
+      "description": "Enter how much overlap to have between chunks"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "back",
+    "chunk",
+    "chunks",
+    "cluster",
+    "converting",
+    "converts",
+    "first",
+    "overlap",
+    "single",
+    "size",
+    "splits",
+    "splitter",
+    "string",
+    "sub",
+    "text",
+    "textsplittertokensplitter",
+    "token",
+    "tokens",
+    "within"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.textsplittertokensplitter.md",
+      "title": "Token Splitter node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.textsplittertokensplitter",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.textsplittertokensplitter.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.textsplittertokensplitter.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.textsplittertokensplitter.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.textsplittertokensplitter.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Token Splitter"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_textSplitter"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a document loader. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_document'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "chunkSize",
+        "displayName": "Chunk Size",
+        "type": "number",
+        "default": 1000,
+        "description": "Maximum number of tokens per chunk"
+      },
+      {
+        "name": "chunkOverlap",
+        "displayName": "Chunk Overlap",
+        "type": "number",
+        "default": 0,
+        "description": "Number of tokens shared between consecutive chunks to preserve context"
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "id": "n8n-nodes-base.emeliatrigger",
+  "name": "Emelia Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.emeliatrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Learn how to use the Emelia Trigger node in n8n. Follow technical documentation to integrate Emelia Trigger node into your workflows.",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.emeliatrigger",
+  "credentials": {
+    "name": "Emelia credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/emelia",
+    "slug": "emelia",
+    "json_file": "credentials/emelia.json",
+    "markdown_file": "credentials/emelia.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "credentials",
+    "emelia",
+    "emeliatrigger",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.emeliatrigger.md",
+      "title": "Emelia Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.emeliatrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.emeliatrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.emeliatrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.emeliatrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.emeliatrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.emeliaTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "emeliaApi"
+  ],
+  "credential_details": [
+    {
+      "name": "emeliaApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Emelia Trigger"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "campaignId",
+        "displayName": "Campaign Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Email Bounced",
+            "value": "bounced"
+          },
+          {
+            "name": "Email Opened",
+            "value": "opened"
+          },
+          {
+            "name": "Email Replied",
+            "value": "replied"
+          },
+          {
+            "name": "Email Sent",
+            "value": "sent"
+          },
+          {
+            "name": "Link Clicked",
+            "value": "clicked"
+          },
+          {
+            "name": "Unsubscribed Contact",
+            "value": "unsubscribed"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,680 @@
+{
+  "id": "n8n-nodes-base.iterable",
+  "name": "Iterable",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.iterable",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Iterable node to automate work in Iterable, and integrate Iterable with other applications. n8n has built-in support for a wide range of Iterable features, including creating users, recording the actions performed by the users, and adding and removing users from the list",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.iterable",
+  "credentials": {
+    "name": "Iterable",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/iterable",
+    "slug": "iterable",
+    "json_file": "credentials/iterable.json",
+    "markdown_file": "credentials/iterable.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Event",
+      "operation": "Record the actions a user perform",
+      "description": "",
+      "doc": "",
+      "resource_value": "event"
+    },
+    {
+      "resource": "User",
+      "operation": "Create/Update a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user"
+    },
+    {
+      "resource": "User",
+      "operation": "Delete a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "User",
+      "operation": "Get a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User List",
+      "operation": "Add user to list",
+      "description": "",
+      "doc": "",
+      "resource_value": "userList",
+      "operation_value": "add"
+    },
+    {
+      "resource": "User List",
+      "operation": "Remove a user from a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "userList",
+      "operation_value": "remove"
+    }
+  ],
+  "operation_count": 6,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "actions",
+    "add",
+    "adding",
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "event",
+    "get",
+    "including",
+    "iterable",
+    "list",
+    "perform",
+    "performed",
+    "record",
+    "recording",
+    "remove",
+    "removing",
+    "update",
+    "user",
+    "users",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.iterable.md",
+      "title": "Iterable node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.iterable",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.iterable.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.iterable.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.iterable.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.iterable.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.iterable",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "iterableApi"
+  ],
+  "credential_details": [
+    {
+      "name": "iterableApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Iterable"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 23,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "user",
+        "options": [
+          {
+            "name": "Event",
+            "value": "event"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          },
+          {
+            "name": "User List",
+            "value": "userList"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "track",
+        "options": [
+          {
+            "name": "Track",
+            "value": "track",
+            "description": "Record the actions a user perform"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ]
+          }
+        },
+        "description": "The name of the event to track"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "campaignId",
+            "description": "Campaign tied to conversion"
+          },
+          {
+            "name": "createdAt",
+            "description": "Time event happened"
+          },
+          {
+            "name": "dataFieldsUi"
+          },
+          {
+            "name": "email",
+            "description": "Either email or userId must be passed in to identify the user. If both are passed in, email takes precedence."
+          },
+          {
+            "name": "id",
+            "description": "Optional event ID. If an event exists with that ID, the event will be updated. If none is specified, a new ID will automatically be generated and returned."
+          },
+          {
+            "name": "templateId"
+          },
+          {
+            "name": "userId",
+            "description": "userId that was passed into the updateUser call"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upsert",
+        "options": [
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new user, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a user"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "identifier",
+        "displayName": "Identifier",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "User ID",
+            "value": "userId"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Identifier to be used"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "preferUserId",
+        "displayName": "Create If Doesn't Exist",
+        "type": "boolean",
+        "required": true,
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "upsert"
+            ],
+            "identifier": [
+              "userId"
+            ]
+          }
+        },
+        "description": "Whether to create a new user if the idetifier does not exist"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dataFieldsUi"
+          },
+          {
+            "name": "mergeNestedObjects",
+            "description": "Whether to merge top level objects instead of overwriting (default: false), e.g. if user profile has data: {mySettings:{mobile:true}} and change contact field h"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "by",
+        "displayName": "By",
+        "type": "options",
+        "required": true,
+        "default": "email",
+        "options": [
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "User ID",
+            "value": "userId"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Identifier to be used"
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "by": [
+              "userId"
+            ]
+          }
+        },
+        "description": "Unique identifier for a particular user"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "by": [
+              "email"
+            ]
+          }
+        },
+        "description": "Email for a particular user"
+      },
+      {
+        "name": "by",
+        "displayName": "By",
+        "type": "options",
+        "required": true,
+        "default": "email",
+        "options": [
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "User ID",
+            "value": "userId"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Identifier to be used"
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ],
+            "by": [
+              "userId"
+            ]
+          }
+        },
+        "description": "Unique identifier for a particular user"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ],
+            "by": [
+              "email"
+            ]
+          }
+        },
+        "description": "Email for a particular user"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add",
+            "description": "Add user to list"
+          },
+          {
+            "name": "Remove",
+            "value": "remove",
+            "description": "Remove a user from a list"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userList"
+            ]
+          }
+        }
+      },
+      {
+        "name": "listId",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userList"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "Identifier to be used. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "identifier",
+        "displayName": "Identifier",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "User ID",
+            "value": "userId"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userList"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "Identifier to be used"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userList"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "listId",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userList"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "Identifier to be used. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "identifier",
+        "displayName": "Identifier",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "User ID",
+            "value": "userId"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userList"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "Identifier to be used"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userList"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "campaignId",
+            "description": "Attribute unsubscribe to a campaign"
+          },
+          {
+            "name": "channelUnsubscribe",
+            "description": "Whether to unsubscribe email from list's associated channel - essentially a global unsubscribe"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userList"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "id": "n8n-nodes-base.seatabletrigger",
+  "name": "SeaTable Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.seatabletrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "SeaTable is a collaborative database application with a spreadsheet interface",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.seatabletrigger",
+  "credentials": {
+    "name": "SeaTable credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/seatable",
+    "slug": "seatable",
+    "json_file": "credentials/seatable.json",
+    "markdown_file": "credentials/seatable.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "application",
+    "collaborative",
+    "credentials",
+    "database",
+    "interface",
+    "seatable",
+    "seatabletrigger",
+    "spreadsheet",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.seatabletrigger.md",
+      "title": "SeaTable Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.seatabletrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.seatabletrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.seatabletrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.seatabletrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.seatabletrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.seaTableTrigger",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "seaTableApi"
+  ],
+  "credential_details": [
+    {
+      "name": "seaTableApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "SeaTable Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "default": "newRow",
+        "options": [
+          {
+            "name": "New Row",
+            "value": "newRow",
+            "description": "Trigger on newly created rows"
+          },
+          {
+            "name": "New or Updated Row",
+            "value": "updatedRow",
+            "description": "Trigger has recently created or modified rows"
+          },
+          {
+            "name": "New Signature",
+            "value": "newAsset",
+            "description": "Trigger on new signatures"
+          }
+        ]
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name",
+        "type": "options",
+        "required": true,
+        "description": "The name of SeaTable table to access. Choose from the list, or specify the name using an <a href=\"https://docs.n8n.io/code-examples/expressions/\">expression</a>."
+      },
+      {
+        "name": "viewName",
+        "displayName": "View Name",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "event": [
+              "newRow",
+              "updatedRow"
+            ]
+          }
+        },
+        "description": "The name of SeaTable view to access. Choose from the list, or specify the name using an <a href=\"https://docs.n8n.io/code-examples/expressions/\">expression</a>."
+      },
+      {
+        "name": "assetColumn",
+        "displayName": "Signature Column",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "event": [
+              "newAsset"
+            ]
+          }
+        },
+        "description": "Select the digital-signature column that should be tracked. Choose from the list, or specify the name using an <a href=\"https://docs.n8n.io/code-examples/expressions/\">expression</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "simple",
+            "description": "Whether to return a simplified version of the response instead of the raw data"
+          },
+          {
+            "name": "convert",
+            "description": "Whether to return the column keys (false) or the column names (true)"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "\"Fetch Test Event\" returns max. three items of the last hour.",
+        "type": "notice"
+      }
+    ]
+  }
+}

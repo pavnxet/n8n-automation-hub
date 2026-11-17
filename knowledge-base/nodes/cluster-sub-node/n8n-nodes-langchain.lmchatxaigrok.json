@@ -1,0 +1,231 @@
+{
+  "id": "n8n-nodes-langchain.lmchatxaigrok",
+  "name": "xAI Grok Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatxaigrok",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the xAI Grok Chat Model node to access xAI Grok's large language models for conversational AI and text generation tasks",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatxaigrok",
+  "credentials": {
+    "name": "xAI credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/xai",
+    "slug": "xai",
+    "json_file": "credentials/xai.json",
+    "markdown_file": "credentials/xai.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "Select the model which will generate the completion. n8n dynamically loads available models from the xAI Grok API. Learn more in the xAI Grok model documentation"
+    },
+    {
+      "name": "Frequency Penalty",
+      "description": "Use this option to control the chances of the model repeating itself. Higher values reduce the chance of the model repeating itself"
+    },
+    {
+      "name": "Maximum Number of Tokens",
+      "description": "Enter the maximum number of tokens used, which sets the completion length. Most models have a context length of 2048 tokens with the newest models supporting up to 32,768 tokens"
+    },
+    {
+      "name": "Response Format",
+      "description": "Choose Text or JSON. JSON ensures the model returns valid JSON"
+    },
+    {
+      "name": "Presence Penalty",
+      "description": "Use this option to control the chances of the model talking about new topics. Higher values increase the chance of the model talking about new topics"
+    },
+    {
+      "name": "Sampling Temperature",
+      "description": "Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations"
+    },
+    {
+      "name": "Timeout",
+      "description": "Enter the maximum request time in milliseconds"
+    },
+    {
+      "name": "Max Retries",
+      "description": "Enter the maximum number of times to retry a request"
+    },
+    {
+      "name": "Top P",
+      "description": "Use this option to set the probability the completion should use. Use a lower value to ignore less probable options"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "access",
+    "chat",
+    "cluster",
+    "conversational",
+    "credentials",
+    "format",
+    "frequency",
+    "generation",
+    "grok",
+    "language",
+    "large",
+    "lmchatxaigrok",
+    "max",
+    "maximum",
+    "model",
+    "models",
+    "number",
+    "penalty",
+    "presence",
+    "response",
+    "retries",
+    "sampling",
+    "sub",
+    "tasks",
+    "temperature",
+    "text",
+    "timeout",
+    "tokens",
+    "top",
+    "xai"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.lmchatxaigrok.md",
+      "title": "xAI Grok Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatxaigrok",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatxaigrok.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatxaigrok.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatxaigrok.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatxaigrok.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatXAiGrok",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "xAiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "xAiApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "xAI Grok Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "notice",
+        "displayName": "If using JSON response format, you must include word \"json\" in the prompt in your chain or agent. Also, make sure to select latest models released post November 2023.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.responseFormat": [
+              "json_object"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "grok-2-vision-1212",
+        "description": "The model which will generate the completion. <a href=\"https://docs.x.ai/docs/models\">Learn more</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "frequencyPenalty",
+            "description": "Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 32,768"
+          },
+          {
+            "name": "responseFormat"
+          },
+          {
+            "name": "presencePenalty",
+            "description": "Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in milliseconds"
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt"
+          },
+          {
+            "name": "topP",
+            "description": "Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We generally recommend altering this or temperature b"
+          },
+          {
+            "name": "priority",
+            "description": "Whether to give your xAI API requests higher scheduling priority (Priority Processing)"
+          },
+          {
+            "name": "reasoning",
+            "description": "Effort the model spends thinking before responding"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

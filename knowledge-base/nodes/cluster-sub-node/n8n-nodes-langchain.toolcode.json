@@ -1,0 +1,286 @@
+{
+  "id": "n8n-nodes-langchain.toolcode",
+  "name": "Custom Code Tool",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.toolcode",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Custom Code Tool node to write code that an agent[^1] can run",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolcode",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Description",
+      "description": "Give your custom code a description. This tells the agent when to use this tool. For example:"
+    },
+    {
+      "name": "Language",
+      "description": "You can use JavaScript or Python"
+    },
+    {
+      "name": "JavaScript / Python box",
+      "description": "Write the code here"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agent",
+    "box",
+    "cluster",
+    "code",
+    "custom",
+    "description",
+    "javascript",
+    "language",
+    "python",
+    "sub",
+    "tool",
+    "toolcode",
+    "write"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "Yl56nEscwQQAbBUeWfvp",
+      "name": "tools-link"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.toolcode.md",
+      "title": "Custom Code Tool node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolcode",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolcode.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.toolcode.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.toolcode.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolcode.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.toolCode",
+  "type_version": 1.3,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Code Tool"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_tool"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 13,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI agent. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "noticeTemplateExample",
+        "displayName": "See an example of a conversational agent with custom tool written in JavaScript <a href=\"/templates/1963\" target=\"_blank\">here</a>.",
+        "type": "notice"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.1
+            ]
+          }
+        },
+        "description": "The name of the function to be called, could contain letters, numbers, and underscores only"
+      },
+      {
+        "name": "description",
+        "displayName": "Description",
+        "type": "string"
+      },
+      {
+        "name": "language",
+        "displayName": "Language",
+        "type": "options",
+        "default": "javaScript",
+        "options": [
+          {
+            "name": "JavaScript",
+            "value": "javaScript"
+          },
+          {
+            "name": "Python (Beta)",
+            "value": "python"
+          }
+        ]
+      },
+      {
+        "name": "jsCode",
+        "displayName": "JavaScript",
+        "type": "string",
+        "default": "// Example: convert the incoming query to uppercase and return it\nreturn query.toUpperCase()",
+        "displayOptions": {
+          "show": {
+            "language": [
+              "javaScript"
+            ]
+          }
+        },
+        "description": "E.g. Converts any text to uppercase"
+      },
+      {
+        "name": "pythonCode",
+        "displayName": "Python",
+        "type": "string",
+        "default": "# Example: convert the incoming query to uppercase and return it\nreturn _query.upper()",
+        "displayOptions": {
+          "show": {
+            "language": [
+              "python"
+            ]
+          }
+        },
+        "description": "E.g. Converts any text to uppercase"
+      },
+      {
+        "name": "specifyInputSchema",
+        "displayName": "Specify Input Schema",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to specify the schema for the function. This would require the LLM to provide the input in the correct format and would validate it against the schema."
+      },
+      {
+        "name": "schemaType",
+        "displayName": "Schema Type",
+        "type": "options",
+        "default": "fromJson",
+        "options": [
+          {
+            "name": "Generate From JSON Example",
+            "value": "fromJson",
+            "description": "Generate a schema from an example JSON object"
+          },
+          {
+            "name": "Define using JSON Schema",
+            "value": "manual",
+            "description": "Define the JSON schema manually"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "specifyInputSchema": [
+              true
+            ]
+          }
+        },
+        "description": "How to specify the schema for the function"
+      },
+      {
+        "name": "jsonSchemaExample",
+        "displayName": "JSON Example",
+        "type": "json",
+        "default": "{\n\t\"some_input\": \"some_value\"\n}",
+        "displayOptions": {
+          "show": {
+            "specifyInputSchema": [
+              true
+            ],
+            "schemaType": [
+              "fromJson"
+            ]
+          }
+        },
+        "description": "Example JSON object to use to generate the schema"
+      },
+      {
+        "name": "notice",
+        "displayName": "All properties will be required. To make them optional, use the 'JSON Schema' schema type instead",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "specifyInputSchema": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ],
+            "schemaType": [
+              "fromJson"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputSchema",
+        "displayName": "Input Schema",
+        "type": "json",
+        "default": "{\n\"type\": \"object\",\n\"properties\": {\n\t\"some_input\": {\n\t\t\"type\": \"string\",\n\t\t\"description\": \"Some input to the function\"\n\t\t}\n\t}\n}",
+        "displayOptions": {
+          "show": {
+            "specifyInputSchema": [
+              true
+            ],
+            "schemaType": [
+              "manual"
+            ]
+          }
+        },
+        "description": "Schema to use for the function"
+      }
+    ]
+  }
+}

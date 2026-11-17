@@ -1,0 +1,240 @@
+{
+  "id": "n8n-nodes-langchain.retrieverworkflow",
+  "name": "Workflow Retriever",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.retrieverworkflow",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Workflow Retriever node to retrieve data from an n8n workflow for use in a Retrieval QA Chain or another Retriever node",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrieverworkflow",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Source",
+      "description": "Tell n8n which workflow to call. You can choose either:",
+      "options": [
+        "Database and enter a workflow ID",
+        "Parameter and copy in a complete workflow JSON"
+      ]
+    },
+    {
+      "name": "Workflow values"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "another",
+    "chain",
+    "cluster",
+    "data",
+    "retrieval",
+    "retrieve",
+    "retriever",
+    "retrieverworkflow",
+    "source",
+    "sub",
+    "values"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "i66Pv0lYL7QjJ9F9tZUj",
+      "name": "workflow-values"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.retrieverworkflow.md",
+      "title": "Workflow Retriever node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrieverworkflow",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrieverworkflow.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.retrieverworkflow.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.retrieverworkflow.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrieverworkflow.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.retrieverWorkflow",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Workflow Retriever"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      {
+        "displayName": "Retriever",
+        "maxConnections": 1,
+        "type": "ai_retriever"
+      }
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "executeNotice",
+        "displayName": "The workflow will receive \"query\" as input and the output of the last node will be returned and converted to Documents",
+        "type": "notice"
+      },
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "options",
+        "default": "database",
+        "options": [
+          {
+            "name": "Database",
+            "value": "database",
+            "description": "Load the workflow from the database by ID"
+          },
+          {
+            "name": "Parameter",
+            "value": "parameter",
+            "description": "Load the workflow from a parameter"
+          }
+        ],
+        "description": "Where to get the workflow to execute from"
+      },
+      {
+        "name": "workflowId",
+        "displayName": "Workflow ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "database"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "eq": 1
+                }
+              }
+            ]
+          }
+        },
+        "description": "The workflow to execute"
+      },
+      {
+        "name": "workflowId",
+        "displayName": "Workflow",
+        "type": "workflowSelector",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "database"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "workflowJson",
+        "displayName": "Workflow JSON",
+        "type": "json",
+        "required": true,
+        "default": "\n\n\n",
+        "displayOptions": {
+          "show": {
+            "source": [
+              "parameter"
+            ]
+          }
+        },
+        "description": "The workflow JSON code to execute"
+      },
+      {
+        "name": "fields",
+        "displayName": "Workflow Values",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "stringValue",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "numberValue",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "booleanValue",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "arrayValue",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "objectValue",
+                "displayName": "Value",
+                "type": "json"
+              }
+            ]
+          }
+        ],
+        "description": "Set the values which should be made available in the workflow"
+      }
+    ]
+  }
+}

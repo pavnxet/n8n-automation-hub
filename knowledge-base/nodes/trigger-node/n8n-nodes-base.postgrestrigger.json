@@ -1,0 +1,233 @@
+{
+  "id": "n8n-nodes-base.postgrestrigger",
+  "name": "Postgres Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.postgrestrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Postgres Trigger node to respond to events in Postgres and integrate Postgres with other applications. n8n has built-in support responding to insert, update, and delete events",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.postgrestrigger",
+  "credentials": {
+    "name": "Postgres credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/postgres",
+    "slug": "postgres",
+    "json_file": "credentials/postgres.json",
+    "markdown_file": "credentials/postgres.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "applications",
+    "credentials",
+    "delete",
+    "events",
+    "insert",
+    "postgres",
+    "postgrestrigger",
+    "respond",
+    "responding",
+    "trigger",
+    "update"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.postgrestrigger.md",
+      "title": "Postgres Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.postgrestrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.postgrestrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.postgrestrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.postgrestrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.postgrestrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.postgresTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "postgres"
+  ],
+  "credential_details": [
+    {
+      "name": "postgres",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Postgres Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "triggerMode",
+        "displayName": "Listen For",
+        "type": "options",
+        "default": "createTrigger",
+        "options": [
+          {
+            "name": "Table Row Change Events",
+            "value": "createTrigger",
+            "description": "Insert, update or delete"
+          },
+          {
+            "name": "Advanced",
+            "value": "listenTrigger",
+            "description": "Listen to existing Postgres channel"
+          }
+        ]
+      },
+      {
+        "name": "schema",
+        "displayName": "Schema Name",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "public"
+        },
+        "displayOptions": {
+          "show": {
+            "triggerMode": [
+              "createTrigger"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "triggerMode": [
+              "createTrigger"
+            ]
+          }
+        }
+      },
+      {
+        "name": "channelName",
+        "displayName": "Channel Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "triggerMode": [
+              "listenTrigger"
+            ]
+          }
+        },
+        "description": "Name of the channel to listen to"
+      },
+      {
+        "name": "firesOn",
+        "displayName": "Event to listen for",
+        "type": "options",
+        "default": "INSERT",
+        "options": [
+          {
+            "name": "Insert",
+            "value": "INSERT"
+          },
+          {
+            "name": "Update",
+            "value": "UPDATE"
+          },
+          {
+            "name": "Delete",
+            "value": "DELETE"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "triggerMode": [
+              "createTrigger"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "channelName",
+            "description": "Name of the channel to listen to"
+          },
+          {
+            "name": "functionName",
+            "description": "Name of the function to create"
+          },
+          {
+            "name": "replaceIfExists",
+            "description": "Whether to replace an existing function and trigger with the same name"
+          },
+          {
+            "name": "triggerName",
+            "description": "Name of the trigger to create"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "triggerMode": [
+              "createTrigger"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "connectionTimeout",
+            "description": "Number of seconds reserved for connecting to the database"
+          },
+          {
+            "name": "delayClosingIdleConnection",
+            "description": "Number of seconds to wait before idle connection would be eligible for closing"
+          }
+        ]
+      }
+    ]
+  }
+}

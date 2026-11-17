@@ -1,0 +1,113 @@
+{
+  "id": "n8n-nodes-base.wufootrigger",
+  "name": "Wufoo Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.wufootrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Wufoo is an online form builder that helps you create custom HTML forms without writing code",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.wufootrigger",
+  "credentials": {
+    "name": "Wufoo credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/wufoo",
+    "slug": "wufoo",
+    "json_file": "credentials/wufoo.json",
+    "markdown_file": "credentials/wufoo.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "builder",
+    "code",
+    "create",
+    "credentials",
+    "custom",
+    "form",
+    "forms",
+    "helps",
+    "html",
+    "online",
+    "trigger",
+    "without",
+    "writing",
+    "wufoo",
+    "wufootrigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.wufootrigger.md",
+      "title": "Wufoo Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.wufootrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.wufootrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.wufootrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.wufootrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.wufootrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.wufooTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "wufooApi"
+  ],
+  "credential_details": [
+    {
+      "name": "wufooApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Wufoo Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "form",
+        "displayName": "Forms Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "The form upon which will trigger this node when a new entry is made. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "onlyAnswers",
+        "displayName": "Only Answers",
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to return only the answers of the form and not any of the other data"
+      }
+    ]
+  }
+}

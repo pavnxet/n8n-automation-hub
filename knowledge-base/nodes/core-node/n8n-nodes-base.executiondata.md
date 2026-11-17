@@ -1,0 +1,26 @@
+<!-- n8n built-in node reference: n8n-nodes-base.executiondata | source: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executiondata -->
+
+Use this node to save metadata for workflow executions. You can then search by this data in the **Executions** list.
+
+You can retrieve custom execution data during workflow execution using the Code node. Refer to [Custom executions data](https://app.gitbook.com/s/rPN1zU5jaYNvwH7RzxqA/understand-workflows/understand-executions/customize-executions-data) for more information.
+
+## Operations
+
+* Save Execution Data for Search
+
+## Data to Save
+
+Add a **Saved Field** for each key/value pair of metadata you'd like to save.
+
+## Limitations
+
+The Execution Data node has the following restrictions when storing execution metadata:
+
+* `key`: limited to 50 characters
+* `value`: limited to 512 characters
+
+If either the `key` or `value` exceed the above limitations, n8n truncates to their maximum length and outputs a log entry.
+
+## Templates and examples
+
+[Browse Execution Data integration templates](https://n8n.io/integrations/execution-data) or [search all templates](https://n8n.io/workflows/)

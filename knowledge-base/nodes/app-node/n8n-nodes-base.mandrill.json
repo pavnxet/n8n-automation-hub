@@ -1,0 +1,507 @@
+{
+  "id": "n8n-nodes-base.mandrill",
+  "name": "Mandrill",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.mandrill",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Mandrill node to automate work in Mandrill, and integrate Mandrill with other applications. n8n supports sending messages based on templates or HTML with Mandrill",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mandrill",
+  "credentials": {
+    "name": "Mandrill",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mandrill",
+    "slug": "mandrill",
+    "json_file": "credentials/mandrill.json",
+    "markdown_file": "credentials/mandrill.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Message",
+      "operation": "Send message based on template",
+      "description": "",
+      "doc": "",
+      "resource_value": "message"
+    },
+    {
+      "resource": "Message",
+      "operation": "Send message based on HTML",
+      "description": "",
+      "doc": "",
+      "resource_value": "message"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "based",
+    "html",
+    "mandrill",
+    "message",
+    "messages",
+    "send",
+    "sending",
+    "template",
+    "templates",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mandrill.md",
+      "title": "Mandrill node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mandrill",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mandrill.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.mandrill.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.mandrill.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.mandrill.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mandrill",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mandrillApi"
+  ],
+  "credential_details": [
+    {
+      "name": "mandrillApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Mandrill"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 15,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Message",
+            "value": "message",
+            "description": "Send a message"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "sendTemplate",
+        "options": [
+          {
+            "name": "Send Template",
+            "value": "sendTemplate",
+            "description": "Send message based on template"
+          },
+          {
+            "name": "Send HTML",
+            "value": "sendHtml",
+            "description": "Send message based on HTML"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "template",
+        "displayName": "Template Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendTemplate"
+            ]
+          }
+        },
+        "description": "The template you want to send. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "fromEmail",
+        "displayName": "From Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendHtml",
+              "sendTemplate"
+            ]
+          }
+        },
+        "description": "Email address of the sender optional with name"
+      },
+      {
+        "name": "toEmail",
+        "displayName": "To Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendHtml",
+              "sendTemplate"
+            ]
+          }
+        },
+        "description": "Email address of the recipient. Multiple ones can be separated by comma."
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendHtml",
+              "sendTemplate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "async",
+            "description": "Whether to enable a background sending mode that is optimized for bulk sending. In async mode, messages/send will immediately return a status of \"queued\" for ev"
+          },
+          {
+            "name": "autoText",
+            "description": "Whether or not to automatically generate a text part for messages that are not given text"
+          },
+          {
+            "name": "autoHtml",
+            "description": "Whether or not to automatically generate an HTML part for messages that are not given HTML"
+          },
+          {
+            "name": "bccAddress",
+            "description": "An optional address to receive an exact copy of each recipient's email"
+          },
+          {
+            "name": "fromName",
+            "description": "Optional from name to be used"
+          },
+          {
+            "name": "googleAnalyticsCampaign",
+            "description": "Optional string indicating the value to set for the utm_campaign tracking parameter. If this isn't provided the email's from address will be used instead."
+          },
+          {
+            "name": "googleAnalyticsDomains",
+            "description": "An array of strings separated by a comma (,) indicating for which any matching URLs will automatically have Google Analytics parameters appended to their query "
+          },
+          {
+            "name": "html",
+            "description": "The html you want to send"
+          },
+          {
+            "name": "important",
+            "description": "Whether or not this message is important, and should be delivered ahead of non-important messages"
+          },
+          {
+            "name": "inlineCss",
+            "description": "Whether or not to automatically inline all CSS styles provided in the message HTML - only for HTML documents less than 256KB in size"
+          },
+          {
+            "name": "ipPool",
+            "description": "The name of the dedicated ip pool that should be used to send the message. If you do not have any dedicated IPs, this parameter has no effect. If you specify a "
+          },
+          {
+            "name": "preserveRecipients",
+            "description": "Whether or not to expose all recipients in to \"To\" header for each email"
+          },
+          {
+            "name": "returnPathDomain",
+            "description": "A custom domain to use for the messages's return-path"
+          },
+          {
+            "name": "sendAt",
+            "description": "When this message should be sent as a UTC timestamp in YYYY-MM-DD HH:MM:SS format. If you specify a time in the past, the message will be sent immediately. An a"
+          },
+          {
+            "name": "signingDomain",
+            "description": "A custom domain to use for SPF/DKIM signing instead of mandrill(for \"via\" or \"on behalf of\" in email clients)"
+          },
+          {
+            "name": "subAccount",
+            "description": "The unique ID of a subaccount for this message - must already exist or will fail with an error"
+          },
+          {
+            "name": "subject",
+            "description": "Subject line of the email"
+          },
+          {
+            "name": "tags",
+            "description": "An array of string separated by a comma (,) to tag the message with. Stats are accumulated using tags, though we only store the first 100 we see, so this should"
+          },
+          {
+            "name": "text",
+            "description": "Example text content"
+          },
+          {
+            "name": "trackClicks",
+            "description": "Whether or not to turn on click tracking for the message"
+          },
+          {
+            "name": "trackOpens",
+            "description": "Whether or not to turn on open tracking for the message"
+          },
+          {
+            "name": "trackingDomain",
+            "description": "A custom domain to use for tracking opens and clicks instead of mandrillapp.com"
+          },
+          {
+            "name": "urlStripQs",
+            "description": "Whether or not to strip the query string from URLs when aggregating tracked URL data"
+          },
+          {
+            "name": "viewContentLink",
+            "description": "Whether to remove content logging for sensitive emails"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendHtml",
+              "sendTemplate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "mergeVarsJson",
+        "displayName": "Merge Vars",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "Global merge variables"
+      },
+      {
+        "name": "mergeVarsUi",
+        "displayName": "Merge Vars",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "mergeVarsValues",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "content",
+                "displayName": "Content",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "Per-recipient merge variables"
+      },
+      {
+        "name": "metadataUi",
+        "displayName": "Metadata",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "metadataValues",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "Metadata an associative array of user metadata. Mandrill will store this metadata and make it available for retrieval. In addition, you can select up to 10 metadata fields to index and make searchable using the Mandrill "
+      },
+      {
+        "name": "metadataJson",
+        "displayName": "Metadata",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "Metadata an associative array of user metadata. Mandrill will store this metadata and make it available for retrieval. In addition, you can select up to 10 metadata fields to index and make searchable using the Mandrill "
+      },
+      {
+        "name": "attachmentsJson",
+        "displayName": "Attachments",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "An array of supported attachments to add to the message"
+      },
+      {
+        "name": "attachmentsUi",
+        "displayName": "Attachments",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "attachmentsValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "content",
+                "displayName": "Content",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "attachmentsBinary",
+            "values": [
+              {
+                "name": "property",
+                "displayName": "Property",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "Array of supported attachments to add to the message"
+      },
+      {
+        "name": "headersJson",
+        "displayName": "Headers",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "Optional extra headers to add to the message (most headers are allowed)"
+      },
+      {
+        "name": "headersUi",
+        "displayName": "Headers",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "headersValues",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "Optional extra headers to add to the message (most headers are allowed)"
+      }
+    ]
+  }
+}

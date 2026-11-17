@@ -1,0 +1,243 @@
+{
+  "id": "n8n-nodes-base.xml",
+  "name": "XML",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.xml",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Documentation for the XML node in n8n, a workflow automation platform. Includes guidance on usage, and links to examples.",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.xml",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "JSON to XML options",
+      "description": "These options only appear if you select JSON to XML as the Mode:",
+      "options": [
+        "Turning this option on doesn't add <![CDATA[ ... ]]> if it's not required",
+        "Root Name: Enter the root element name to use"
+      ]
+    },
+    {
+      "name": "XML to JSON options",
+      "description": "These options only appear if you select XML to JSON as the Mode:"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "automation",
+    "core",
+    "json",
+    "options",
+    "platform",
+    "usage",
+    "xml"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.xml.md",
+      "title": "XML",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.xml",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.xml.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.xml.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.xml.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.xml.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.xml",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "XML",
+    "color": "#333377"
+  },
+  "subtitle": "={{$parameter[\"mode\"]===\"jsonToxml\" ? \"JSON to XML\" : \"XML to JSON\"}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "mode",
+        "displayName": "Mode",
+        "type": "options",
+        "default": "xmlToJson",
+        "options": [
+          {
+            "name": "JSON to XML",
+            "value": "jsonToxml",
+            "description": "Converts data from JSON to XML"
+          },
+          {
+            "name": "XML to JSON",
+            "value": "xmlToJson",
+            "description": "Converts data from XML to JSON"
+          }
+        ],
+        "description": "From and to what format the data should be converted"
+      },
+      {
+        "name": "xmlNotice",
+        "displayName": "If your XML is inside a binary file, use the 'Extract from File' node to convert it to text first",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "xmlToJson"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataPropertyName",
+        "displayName": "Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "jsonToxml"
+            ]
+          }
+        },
+        "description": "Name of the property to which to contains the converted XML data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allowSurrogateChars",
+            "description": "Whether to allow using characters from the Unicode surrogate blocks"
+          },
+          {
+            "name": "attrkey",
+            "description": "Prefix that is used to access the attributes"
+          },
+          {
+            "name": "cdata",
+            "description": "Whether to wrap text nodes in &lt;![CDATA[ ... ]]&gt; instead of escaping when necessary. Does not add &lt;![CDATA[ ... ]]&gt; if it is not required."
+          },
+          {
+            "name": "charkey",
+            "description": "Prefix that is used to access the character content"
+          },
+          {
+            "name": "headless",
+            "description": "Whether to omit the XML header"
+          },
+          {
+            "name": "rootName",
+            "description": "Root element name to be used"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "jsonToxml"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataPropertyName",
+        "displayName": "Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "xmlToJson"
+            ]
+          }
+        },
+        "description": "Name of the property which contains the XML data to convert"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attrkey",
+            "description": "Prefix that is used to access the attributes"
+          },
+          {
+            "name": "charkey",
+            "description": "Prefix that is used to access the character content"
+          },
+          {
+            "name": "explicitArray",
+            "description": "Whether to always put child nodes in an array if true; otherwise an array is created only if there is more than one"
+          },
+          {
+            "name": "explicitRoot",
+            "description": "Whether to set this if you want to get the root node in the resulting object"
+          },
+          {
+            "name": "ignoreAttrs",
+            "description": "Whether to ignore all XML attributes and only create text nodes"
+          },
+          {
+            "name": "mergeAttrs",
+            "description": "Whether to merge attributes and child elements as properties of the parent, instead of keying attributes off a child attribute object. This option is ignored if"
+          },
+          {
+            "name": "normalize",
+            "description": "Whether to trim whitespaces inside text nodes"
+          },
+          {
+            "name": "normalizeTags",
+            "description": "Whether to normalize all tag names to lowercase"
+          },
+          {
+            "name": "trim",
+            "description": "Whether to trim the whitespace at the beginning and end of text nodes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "xmlToJson"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "id": "n8n-nodes-base.salesforcetrigger",
+  "name": "Salesforce Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.salesforcetrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Salesforce Trigger node to respond to events in Salesforce and integrate Salesforce with other applications. n8n has built-in support for a wide range of Salesforce events",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.salesforcetrigger",
+  "credentials": {
+    "name": "Salesforce credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/salesforce",
+    "slug": "salesforce",
+    "json_file": "credentials/salesforce.json",
+    "markdown_file": "credentials/salesforce.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "applications",
+    "credentials",
+    "events",
+    "respond",
+    "salesforce",
+    "salesforcetrigger",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.salesforcetrigger.md",
+      "title": "Salesforce Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.salesforcetrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.salesforcetrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.salesforcetrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.salesforcetrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.salesforcetrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.salesforceTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "salesforceOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "salesforceOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Salesforce Trigger"
+  },
+  "subtitle": "={{($parameter[\"triggerOn\"])}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "triggerOn",
+        "displayName": "Trigger On",
+        "type": "options",
+        "options": [
+          {
+            "name": "Account Created",
+            "value": "accountCreated",
+            "description": "When a new account is created"
+          },
+          {
+            "name": "Account Updated",
+            "value": "accountUpdated",
+            "description": "When an existing account is modified"
+          },
+          {
+            "name": "Attachment Created",
+            "value": "attachmentCreated",
+            "description": "When a file is uploaded and attached to an object"
+          },
+          {
+            "name": "Attachment Updated",
+            "value": "attachmentUpdated",
+            "description": "When an existing file is modified"
+          },
+          {
+            "name": "Case Created",
+            "value": "caseCreated",
+            "description": "When a new case is created"
+          },
+          {
+            "name": "Case Updated",
+            "value": "caseUpdated",
+            "description": "When an existing case is modified"
+          },
+          {
+            "name": "Contact Created",
+            "value": "contactCreated",
+            "description": "When a new contact is created"
+          },
+          {
+            "name": "Contact Updated",
+            "value": "contactUpdated",
+            "description": "When an existing contact is modified"
+          },
+          {
+            "name": "Custom Object Created",
+            "value": "customObjectCreated",
+            "description": "When a new object of a given type is created"
+          },
+          {
+            "name": "Custom Object Updated",
+            "value": "customObjectUpdated",
+            "description": "When an object of a given type is modified"
+          },
+          {
+            "name": "Lead Created",
+            "value": "leadCreated",
+            "description": "When a new lead is created"
+          },
+          {
+            "name": "Lead Updated",
+            "value": "leadUpdated",
+            "description": "When an existing lead is modified"
+          },
+          {
+            "name": "Opportunity Created",
+            "value": "opportunityCreated",
+            "description": "When a new opportunity is created"
+          },
+          {
+            "name": "Opportunity Updated",
+            "value": "opportunityUpdated",
+            "description": "When an existing opportunity is modified"
+          },
+          {
+            "name": "Task Created",
+            "value": "taskCreated",
+            "description": "When a new task is created"
+          },
+          {
+            "name": "Task Updated",
+            "value": "taskUpdated",
+            "description": "When an existing task is modified"
+          },
+          {
+            "name": "User Created",
+            "value": "userCreated",
+            "description": "When a new user is created"
+          },
+          {
+            "name": "User Updated",
+            "value": "userUpdated",
+            "description": "When an existing user is modified"
+          }
+        ],
+        "description": "Which Salesforce event should trigger the node"
+      },
+      {
+        "name": "customObject",
+        "displayName": "Custom Object Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "customObjectUpdated",
+              "customObjectCreated"
+            ]
+          }
+        },
+        "description": "Name of the custom object. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      }
+    ]
+  }
+}

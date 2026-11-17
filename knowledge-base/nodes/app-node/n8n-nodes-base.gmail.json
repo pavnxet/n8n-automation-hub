@@ -1,0 +1,3663 @@
+{
+  "id": "n8n-nodes-base.gmail",
+  "name": "Gmail",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.gmail",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Gmail node to automate work in Gmail, and integrate Gmail with other applications. n8n has built-in support for a wide range of Gmail features, including creating, updating, deleting, and getting drafts, messages, labels, and threads",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail",
+  "credentials": {
+    "name": "Google",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Draft",
+      "operation": "Create",
+      "description": "a draft",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations#create-a-draft",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Subject",
+          "description": "Enter the subject line"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the email message body"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachments",
+          "description": "Select Add Attachment to add an attachment. Enter the Attachment Field Name (in Input) to identify which field from the input node contains the attachment"
+        },
+        {
+          "name": "BCC",
+          "description": "Enter one or more email addresses for blind copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "CC",
+          "description": "Enter one or more email addresses for carbon copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "From Alias Name or ID",
+          "description": "Select an alias to send the draft from. This field populates based on the credential you selected in the parameters"
+        },
+        {
+          "name": "Send Replies To",
+          "description": "Enter an email address to set as the reply to address"
+        },
+        {
+          "name": "Thread ID",
+          "description": "If you want this draft attached to a thread, enter the ID for that thread"
+        },
+        {
+          "name": "To Email",
+          "description": "Enter one or more email addresses for recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        }
+      ],
+      "resource_value": "draft",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Draft",
+      "operation": "Delete",
+      "description": "a draft",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations#delete-a-draft",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Draft ID",
+          "description": "Enter the ID of the draft you wish to delete"
+        }
+      ],
+      "resource_value": "draft",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Draft",
+      "operation": "Get",
+      "description": "a draft",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations#get-a-draft",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Draft ID",
+          "description": "Enter the ID of the draft you wish to get information about"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachment Prefix",
+          "description": "Enter a prefix for the name of the binary property the node should write any attachments to. n8n adds an index starting with 0 to the prefix. For example, if you enter attachment_' as the prefix, the first attachment saves to 'attachment_0'"
+        },
+        {
+          "name": "Download Attachments",
+          "description": "Select whether the node should download the draft's attachments (turned on) or not (turned off)"
+        }
+      ],
+      "resource_value": "draft",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Draft",
+      "operation": "Get Many",
+      "description": "drafts",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations#get-many-drafts",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether the node returns all drafts (turned on) or only up to a set limit (turned off)"
+        },
+        {
+          "name": "Limit",
+          "description": "Enter the maximum number of drafts to return. Only used if you've turned off Return All"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachment Prefix",
+          "description": "Enter a prefix for the name of the binary property the node should write any attachments to. n8n adds an index starting with 0 to the prefix. For example, if you enter attachment_' as the prefix, the first attachment saves to 'attachment_0'"
+        },
+        {
+          "name": "Download Attachments",
+          "description": "Select whether the node should download the draft's attachments (turned on) or not (turned off)"
+        },
+        {
+          "name": "Include Spam and Trash",
+          "description": "Select whether the node should get drafts in the Spam and Trash folders (turned on) or not (turned off)"
+        }
+      ],
+      "resource_value": "draft",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Label",
+      "operation": "Create",
+      "description": "a label",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations#create-a-label",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Label"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Name",
+          "description": "Enter a display name for the label"
+        }
+      ],
+      "options": [
+        {
+          "name": "Label List Visibility",
+          "description": "Sets the visibility of the label in the label list in the Gmail web interface. Choose from:"
+        },
+        {
+          "name": "Message List Visibility",
+          "description": "Sets the visibility of messages with this label in the message list in the Gmail web interface. Choose whether to Show or Hide messages with this label"
+        }
+      ],
+      "resource_value": "label",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Label",
+      "operation": "Delete",
+      "description": "a label",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations#delete-a-label",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Label"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Label ID",
+          "description": "Enter the ID of the label you want to delete"
+        }
+      ],
+      "resource_value": "label",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Label",
+      "operation": "Get",
+      "description": "a label",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations#get-a-label",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Label"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Label ID",
+          "description": "Enter the ID of the label you want to get"
+        }
+      ],
+      "resource_value": "label",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Label",
+      "operation": "Get Many",
+      "description": "labels",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations#get-many-labels",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether the node returns all drafts (turned on) or only up to a set limit (turned off)"
+        },
+        {
+          "name": "Limit",
+          "description": "Enter the maximum number of drafts to return. Only used if you've turned off Return All"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachment Prefix",
+          "description": "Enter a prefix for the name of the binary property the node should write any attachments to. n8n adds an index starting with 0 to the prefix. For example, if you enter attachment_' as the prefix, the first attachment saves to 'attachment_0'"
+        },
+        {
+          "name": "Download Attachments",
+          "description": "Select whether the node should download the draft's attachments (turned on) or not (turned off)"
+        },
+        {
+          "name": "Include Spam and Trash",
+          "description": "Select whether the node should get drafts in the Spam and Trash folders (turned on) or not (turned off)"
+        }
+      ],
+      "resource_value": "label",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Message",
+      "operation": "Add Label",
+      "description": "to a message",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#add-label-to-a-message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Add Label"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you want to add the label to"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Select the Label names you want to add or enter an expression to specify IDs. The dropdown populates based on the Credential you selected"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "addLabels"
+    },
+    {
+      "resource": "Message",
+      "operation": "Delete",
+      "description": "a message",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#delete-a-message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you want to delete"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Message",
+      "operation": "Get",
+      "description": "a message",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#get-a-message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you wish to retrieve"
+        },
+        {
+          "name": "Simplify",
+          "description": "Choose whether to return a simplified version of the response (turned on) or the raw data (turned off). Default is on"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Message",
+      "operation": "Get Many",
+      "description": "messages",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#get-many-messages",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether the node returns all drafts (turned on) or only up to a set limit (turned off)"
+        },
+        {
+          "name": "Limit",
+          "description": "Enter the maximum number of drafts to return. Only used if you've turned off Return All"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachment Prefix",
+          "description": "Enter a prefix for the name of the binary property the node should write any attachments to. n8n adds an index starting with 0 to the prefix. For example, if you enter attachment_' as the prefix, the first attachment saves to 'attachment_0'"
+        },
+        {
+          "name": "Download Attachments",
+          "description": "Select whether the node should download the draft's attachments (turned on) or not (turned off)"
+        },
+        {
+          "name": "Include Spam and Trash",
+          "description": "Select whether the node should get drafts in the Spam and Trash folders (turned on) or not (turned off)"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Message",
+      "operation": "Mark as Read",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#mark-as-read",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Mark as Read"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you wish to mark as read"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "markAsRead"
+    },
+    {
+      "resource": "Message",
+      "operation": "Mark as Unread",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#mark-as-unread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Mark as Unread"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you wish to mark as unread"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "markAsUnread"
+    },
+    {
+      "resource": "Message",
+      "operation": "Remove Label",
+      "description": "from a message",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#remove-label-from-a-message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Remove Label"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you want to remove the label from"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Select the Label names you want to remove or enter an expression to specify IDs. The dropdown populates based on the Credential you selected"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "removeLabels"
+    },
+    {
+      "resource": "Message",
+      "operation": "Reply",
+      "description": "to a message",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#reply-to-a-message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Reply"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you want to reply to"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the email message body"
+        }
+      ],
+      "options": [
+        {
+          "name": "Append n8n attribution",
+          "description": "By default, the node appends the statement This email was sent automatically with n8n to the end of the email. To remove this statement, turn this option off"
+        },
+        {
+          "name": "Attachments",
+          "description": "Select Add Attachment to add an attachment. Enter the Attachment Field Name (in Input) to identify which field from the input node contains the attachment"
+        },
+        {
+          "name": "BCC",
+          "description": "Enter one or more email addresses for blind copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "CC",
+          "description": "Enter one or more email addresses for carbon copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "Sender Name",
+          "description": "Enter the name you want displayed in your recipients' email as the sender"
+        },
+        {
+          "name": "Reply to Sender Only",
+          "description": "Choose whether to reply all (turned off) or reply to the sender only (turned on)"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "reply"
+    },
+    {
+      "resource": "Message",
+      "operation": "Send",
+      "description": "a message",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#send-a-message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send"
+        },
+        {
+          "name": "To",
+          "description": "Enter the email address you want the email sent to"
+        },
+        {
+          "name": "Subject",
+          "description": "Enter the subject line"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the email message body"
+        }
+      ],
+      "options": [
+        {
+          "name": "Append n8n attribution",
+          "description": "By default, the node appends the statement This email was sent automatically with n8n to the end of the email. To remove this statement, turn this option off"
+        },
+        {
+          "name": "Attachments",
+          "description": "Select Add Attachment to add an attachment. Enter the Attachment Field Name (in Input) to identify which field from the input node contains the attachment"
+        },
+        {
+          "name": "BCC",
+          "description": "Enter one or more email addresses for blind copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "CC",
+          "description": "Enter one or more email addresses for carbon copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "Sender Name",
+          "description": "Enter the name you want displayed in your recipients' email as the sender"
+        },
+        {
+          "name": "Send Replies To",
+          "description": "Enter an email address to set as the reply to address"
+        },
+        {
+          "name": "Reply to Sender Only",
+          "description": "Choose whether to reply all (turned off) or reply to the sender only (turned on)"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "send"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Add Label",
+      "description": "to a thread",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#add-label-to-a-thread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Add Label"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to add the label to"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Select the Label names you want to apply or enter an expression to specify IDs. The dropdown populates based on the Credential you selected"
+        }
+      ],
+      "resource_value": "thread",
+      "operation_value": "addLabels"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Delete",
+      "description": "a thread",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#delete-a-thread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to delete"
+        }
+      ],
+      "resource_value": "thread",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Get",
+      "description": "a thread",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#get-a-thread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you wish to retrieve"
+        },
+        {
+          "name": "Simplify",
+          "description": "Choose whether to return a simplified version of the response (turned on) or the raw data (turned off). Default is on"
+        }
+      ],
+      "options": [
+        {
+          "name": "Return Only Messages",
+          "description": "Choose whether to return only thread messages (turned on)"
+        }
+      ],
+      "resource_value": "thread",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Get Many",
+      "description": "threads",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#get-many-threads",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether the node returns all drafts (turned on) or only up to a set limit (turned off)"
+        },
+        {
+          "name": "Limit",
+          "description": "Enter the maximum number of drafts to return. Only used if you've turned off Return All"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachment Prefix",
+          "description": "Enter a prefix for the name of the binary property the node should write any attachments to. n8n adds an index starting with 0 to the prefix. For example, if you enter attachment_' as the prefix, the first attachment saves to 'attachment_0'"
+        },
+        {
+          "name": "Download Attachments",
+          "description": "Select whether the node should download the draft's attachments (turned on) or not (turned off)"
+        },
+        {
+          "name": "Include Spam and Trash",
+          "description": "Select whether the node should get drafts in the Spam and Trash folders (turned on) or not (turned off)"
+        }
+      ],
+      "resource_value": "thread",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Remove Label",
+      "description": "from thread",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#remove-label-from-a-thread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Remove Label"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to remove the label from"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Select the Label names you want to remove or enter an expression to specify their IDs. The dropdown populates based on the Credential you selected"
+        }
+      ],
+      "resource_value": "thread",
+      "operation_value": "removeLabels"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Reply",
+      "description": "to a message",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#reply-to-a-message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Reply"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you want to reply to"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the email message body"
+        }
+      ],
+      "options": [
+        {
+          "name": "Append n8n attribution",
+          "description": "By default, the node appends the statement This email was sent automatically with n8n to the end of the email. To remove this statement, turn this option off"
+        },
+        {
+          "name": "Attachments",
+          "description": "Select Add Attachment to add an attachment. Enter the Attachment Field Name (in Input) to identify which field from the input node contains the attachment"
+        },
+        {
+          "name": "BCC",
+          "description": "Enter one or more email addresses for blind copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "CC",
+          "description": "Enter one or more email addresses for carbon copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "Sender Name",
+          "description": "Enter the name you want displayed in your recipients' email as the sender"
+        },
+        {
+          "name": "Reply to Sender Only",
+          "description": "Choose whether to reply all (turned off) or reply to the sender only (turned on)"
+        }
+      ],
+      "resource_value": "thread",
+      "operation_value": "reply"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Trash",
+      "description": "a thread",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#trash-a-thread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Trash"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to move to the trash"
+        }
+      ],
+      "resource_value": "thread",
+      "operation_value": "trash"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Untrash",
+      "description": "a thread",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#untrash-a-thread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Untrash"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to move to the trash"
+        }
+      ],
+      "resource_value": "thread",
+      "operation_value": "untrash"
+    }
+  ],
+  "operation_count": 25,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Create a draft",
+      "page": "draft-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations#create-a-draft",
+      "summary": "Use this operation to create a new draft",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Subject",
+          "description": "Enter the subject line"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the email message body"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachments",
+          "description": "Select Add Attachment to add an attachment. Enter the Attachment Field Name (in Input) to identify which field from the input node contains the attachment"
+        },
+        {
+          "name": "BCC",
+          "description": "Enter one or more email addresses for blind copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "CC",
+          "description": "Enter one or more email addresses for carbon copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "From Alias Name or ID",
+          "description": "Select an alias to send the draft from. This field populates based on the credential you selected in the parameters"
+        },
+        {
+          "name": "Send Replies To",
+          "description": "Enter an email address to set as the reply to address"
+        },
+        {
+          "name": "Thread ID",
+          "description": "If you want this draft attached to a thread, enter the ID for that thread"
+        },
+        {
+          "name": "To Email",
+          "description": "Enter one or more email addresses for recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a draft",
+      "page": "draft-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations#delete-a-draft",
+      "summary": "Use this operation to delete a draft",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Draft ID",
+          "description": "Enter the ID of the draft you wish to delete"
+        }
+      ]
+    },
+    {
+      "operation": "Get a draft",
+      "page": "draft-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations#get-a-draft",
+      "summary": "Use this operation to get a single draft",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Draft ID",
+          "description": "Enter the ID of the draft you wish to get information about"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachment Prefix",
+          "description": "Enter a prefix for the name of the binary property the node should write any attachments to. n8n adds an index starting with 0 to the prefix. For example, if you enter attachment_' as the prefix, the first attachment saves to 'attachment_0'"
+        },
+        {
+          "name": "Download Attachments",
+          "description": "Select whether the node should download the draft's attachments (turned on) or not (turned off)"
+        }
+      ]
+    },
+    {
+      "operation": "Get Many drafts",
+      "page": "draft-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations#get-many-drafts",
+      "summary": "Use this operation to get two or more drafts",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Draft"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether the node returns all drafts (turned on) or only up to a set limit (turned off)"
+        },
+        {
+          "name": "Limit",
+          "description": "Enter the maximum number of drafts to return. Only used if you've turned off Return All"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachment Prefix",
+          "description": "Enter a prefix for the name of the binary property the node should write any attachments to. n8n adds an index starting with 0 to the prefix. For example, if you enter attachment_' as the prefix, the first attachment saves to 'attachment_0'"
+        },
+        {
+          "name": "Download Attachments",
+          "description": "Select whether the node should download the draft's attachments (turned on) or not (turned off)"
+        },
+        {
+          "name": "Include Spam and Trash",
+          "description": "Select whether the node should get drafts in the Spam and Trash folders (turned on) or not (turned off)"
+        }
+      ]
+    },
+    {
+      "operation": "Create a label",
+      "page": "label-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations#create-a-label",
+      "summary": "Use this operation to create a new label",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Label"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Name",
+          "description": "Enter a display name for the label"
+        }
+      ],
+      "options": [
+        {
+          "name": "Label List Visibility",
+          "description": "Sets the visibility of the label in the label list in the Gmail web interface. Choose from:"
+        },
+        {
+          "name": "Message List Visibility",
+          "description": "Sets the visibility of messages with this label in the message list in the Gmail web interface. Choose whether to Show or Hide messages with this label"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a label",
+      "page": "label-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations#delete-a-label",
+      "summary": "Use this operation to delete an existing label",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Label"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Label ID",
+          "description": "Enter the ID of the label you want to delete"
+        }
+      ]
+    },
+    {
+      "operation": "Get a label",
+      "page": "label-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations#get-a-label",
+      "summary": "Use this operation to get an existing label",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Label"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Label ID",
+          "description": "Enter the ID of the label you want to get"
+        }
+      ]
+    },
+    {
+      "operation": "Get Many labels",
+      "page": "label-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations#get-many-labels",
+      "summary": "Use this operation to get two or more labels",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Label"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether the node returns all labels (turned on) or only up to a set limit (turned off)"
+        },
+        {
+          "name": "Limit",
+          "description": "Enter the maximum number of labels to return. Only used if you've turned off Return All"
+        }
+      ]
+    },
+    {
+      "operation": "Add Label to a message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#add-label-to-a-message",
+      "summary": "Use this operation to add one or more labels to a message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Add Label"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you want to add the label to"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Select the Label names you want to add or enter an expression to specify IDs. The dropdown populates based on the Credential you selected"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#delete-a-message",
+      "summary": "Use this operation to immediately and permanently delete a message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you want to delete"
+        }
+      ]
+    },
+    {
+      "operation": "Get a message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#get-a-message",
+      "summary": "Use this operation to get a single message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you wish to retrieve"
+        },
+        {
+          "name": "Simplify",
+          "description": "Choose whether to return a simplified version of the response (turned on) or the raw data (turned off). Default is on"
+        }
+      ]
+    },
+    {
+      "operation": "Get Many messages",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#get-many-messages",
+      "summary": "Use this operation to get two or more messages",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether the node returns all messages (turned on) or only up to a set limit (turned off)"
+        },
+        {
+          "name": "Limit",
+          "description": "Enter the maximum number of messages to return. Only used if you've turned off Return All"
+        },
+        {
+          "name": "Simplify",
+          "description": "Choose whether to return a simplified version of the response (turned on) or the raw data (turned off). Default is on"
+        }
+      ],
+      "options": [
+        {
+          "name": "Include Spam and Trash",
+          "description": "Select whether the node should get messages in the Spam and Trash folders (turned on) or not (turned off)"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Only return messages with the selected labels added to them. Select the Label names you want to apply or enter an expression to specify IDs. The dropdown populates based on the Credential you selected"
+        },
+        {
+          "name": "Search",
+          "description": "Enter Gmail search refine filters, like from:, to filter the messages returned. Refer to Refine searches in Gmail for more information"
+        },
+        {
+          "name": "Read Status",
+          "description": "Choose whether to receive Unread and read emails, Unread emails only (default), or Read emails only"
+        },
+        {
+          "name": "Received After",
+          "description": "Return only those emails received after the specified date and time. Use the date picker to select the day and time or enter an expression to set a date as a string in ISO format or a timestamp in milliseconds. Refer to ISO 8601 for more information on formatting the string"
+        },
+        {
+          "name": "Received Before",
+          "description": "Return only those emails received before the specified date and time. Use the date picker to select the day and time or enter an expression to set a date as a string in ISO format or a timestamp in milliseconds. Refer to ISO 8601 for more information on formatting the string"
+        },
+        {
+          "name": "Sender",
+          "description": "Enter an email or a part of a sender name to return messages from only that sender"
+        }
+      ]
+    },
+    {
+      "operation": "Mark as Read",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#mark-as-read",
+      "summary": "Use this operation to mark a message as read",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Mark as Read"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you wish to mark as read"
+        }
+      ]
+    },
+    {
+      "operation": "Mark as Unread",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#mark-as-unread",
+      "summary": "Use this operation to mark a message as unread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Mark as Unread"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you wish to mark as unread"
+        }
+      ]
+    },
+    {
+      "operation": "Remove Label from a message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#remove-label-from-a-message",
+      "summary": "Use this operation to remove one or more labels from a message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Remove Label"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you want to remove the label from"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Select the Label names you want to remove or enter an expression to specify IDs. The dropdown populates based on the Credential you selected"
+        }
+      ]
+    },
+    {
+      "operation": "Reply to a message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#reply-to-a-message",
+      "summary": "Use this operation to send a message as a reply to an existing message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Reply"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the ID of the message you want to reply to"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the email message body"
+        }
+      ],
+      "options": [
+        {
+          "name": "Append n8n attribution",
+          "description": "By default, the node appends the statement This email was sent automatically with n8n to the end of the email. To remove this statement, turn this option off"
+        },
+        {
+          "name": "Attachments",
+          "description": "Select Add Attachment to add an attachment. Enter the Attachment Field Name (in Input) to identify which field from the input node contains the attachment"
+        },
+        {
+          "name": "BCC",
+          "description": "Enter one or more email addresses for blind copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "CC",
+          "description": "Enter one or more email addresses for carbon copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "Sender Name",
+          "description": "Enter the name you want displayed in your recipients' email as the sender"
+        },
+        {
+          "name": "Reply to Sender Only",
+          "description": "Choose whether to reply all (turned off) or reply to the sender only (turned on)"
+        }
+      ]
+    },
+    {
+      "operation": "Send a message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#send-a-message",
+      "summary": "Use this operation to send a message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send"
+        },
+        {
+          "name": "To",
+          "description": "Enter the email address you want the email sent to"
+        },
+        {
+          "name": "Subject",
+          "description": "Enter the subject line"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the email message body"
+        }
+      ],
+      "options": [
+        {
+          "name": "Append n8n attribution",
+          "description": "By default, the node appends the statement This email was sent automatically with n8n to the end of the email. To remove this statement, turn this option off"
+        },
+        {
+          "name": "Attachments",
+          "description": "Select Add Attachment to add an attachment. Enter the Attachment Field Name (in Input) to identify which field from the input node contains the attachment"
+        },
+        {
+          "name": "BCC",
+          "description": "Enter one or more email addresses for blind copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "CC",
+          "description": "Enter one or more email addresses for carbon copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "Sender Name",
+          "description": "Enter the name you want displayed in your recipients' email as the sender"
+        },
+        {
+          "name": "Send Replies To",
+          "description": "Enter an email address to set as the reply to address"
+        },
+        {
+          "name": "Reply to Sender Only",
+          "description": "Choose whether to reply all (turned off) or reply to the sender only (turned on)"
+        }
+      ]
+    },
+    {
+      "operation": "Send a message and wait for approval",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations#send-a-message-and-wait-for-approval",
+      "summary": "Use this operation to send a message and wait for approval from the recipient before continuing the workflow execution",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send and Wait for Approval"
+        },
+        {
+          "name": "To",
+          "description": "Enter the email address you want the email sent to"
+        },
+        {
+          "name": "Subject",
+          "description": "Enter the subject line"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the email message body"
+        }
+      ],
+      "options": [
+        {
+          "name": "Type of Approval",
+          "description": "Choose Approve Only (default) to include only an approval button or Approve and Disapprove to also include a disapproval option"
+        },
+        {
+          "name": "Approve Button Label",
+          "description": "The label to use for the approval button (Approve by default)"
+        },
+        {
+          "name": "Approve Button Style",
+          "description": "Whether to style the approval button as a Primary (default) or Secondary button"
+        },
+        {
+          "name": "Disapprove Button Label",
+          "description": "The label to use for the disapproval button (Decline by default). Only visible when you set Type of Approval to Approve and Disapprove"
+        },
+        {
+          "name": "Disapprove Button Style",
+          "description": "Whether to style the disapproval button as a Primary or Secondary (default) button. Only visible when you set Type of Approval to Approve and Disapprove"
+        }
+      ]
+    },
+    {
+      "operation": "Add Label to a thread",
+      "page": "thread-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#add-label-to-a-thread",
+      "summary": "Use this operation to create a new draft",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Add Label"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to add the label to"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Select the Label names you want to apply or enter an expression to specify IDs. The dropdown populates based on the Credential you selected"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a thread",
+      "page": "thread-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#delete-a-thread",
+      "summary": "Use this operation to immediately and permanently delete a thread and all its messages",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to delete"
+        }
+      ]
+    },
+    {
+      "operation": "Get a thread",
+      "page": "thread-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#get-a-thread",
+      "summary": "Use this operation to get a single thread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you wish to retrieve"
+        },
+        {
+          "name": "Simplify",
+          "description": "Choose whether to return a simplified version of the response (turned on) or the raw data (turned off). Default is on"
+        }
+      ],
+      "options": [
+        {
+          "name": "Return Only Messages",
+          "description": "Choose whether to return only thread messages (turned on)"
+        }
+      ]
+    },
+    {
+      "operation": "Get Many threads",
+      "page": "thread-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#get-many-threads",
+      "summary": "Use this operation to get two or more threads",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether the node returns all threads (turned on) or only up to a set limit (turned off)"
+        },
+        {
+          "name": "Limit",
+          "description": "Enter the maximum number of threads to return. Only used if you've turned off Return All"
+        }
+      ],
+      "options": [
+        {
+          "name": "Include Spam and Trash",
+          "description": "Select whether the node should get threads in the Spam and Trash folders (turned on) or not (turned off)"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Only return threads with the selected labels added to them. Select the Label names you want to apply or enter an expression to specify IDs. The dropdown populates based on the Credential you selected"
+        },
+        {
+          "name": "Search",
+          "description": "Enter Gmail search refine filters, like from:, to filter the threads returned. Refer to Refine searches in Gmail for more information"
+        },
+        {
+          "name": "Read Status",
+          "description": "Choose whether to receive Unread and read emails, Unread emails only (default), or Read emails only"
+        },
+        {
+          "name": "Received After",
+          "description": "Return only those emails received after the specified date and time. Use the date picker to select the day and time or enter an expression to set a date as a string in ISO format or a timestamp in milliseconds. Refer to ISO 8601 for more information on formatting the string"
+        },
+        {
+          "name": "Received Before",
+          "description": "Return only those emails received before the specified date and time. Use the date picker to select the day and time or enter an expression to set a date as a string in ISO format or a timestamp in milliseconds. Refer to ISO 8601 for more information on formatting the string"
+        }
+      ]
+    },
+    {
+      "operation": "Remove label from a thread",
+      "page": "thread-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#remove-label-from-a-thread",
+      "summary": "Use this operation to remove a label from a thread",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Remove Label"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to remove the label from"
+        },
+        {
+          "name": "Label Names or IDs",
+          "description": "Select the Label names you want to remove or enter an expression to specify their IDs. The dropdown populates based on the Credential you selected"
+        }
+      ]
+    },
+    {
+      "operation": "Reply to a message",
+      "page": "thread-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#reply-to-a-message",
+      "summary": "Use this operation to reply to a message",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Reply"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to reply to"
+        },
+        {
+          "name": "Message Snippet or ID",
+          "description": "Select the Message you want to reply to or enter an expression to specify its ID. The dropdown populates based on the Credential you selected"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the email message body"
+        }
+      ],
+      "options": [
+        {
+          "name": "Attachments",
+          "description": "Select Add Attachment to add an attachment. Enter the Attachment Field Name (in Input) to identify which field from the input node contains the attachment"
+        },
+        {
+          "name": "BCC",
+          "description": "Enter one or more email addresses for blind copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "CC",
+          "description": "Enter one or more email addresses for carbon copy recipients. Separate multiple email addresses with a comma, for example jay@gatsby.com, jon@smith.com"
+        },
+        {
+          "name": "Sender Name",
+          "description": "Enter the name you want displayed in your recipients' email as the sender"
+        },
+        {
+          "name": "Reply to Sender Only",
+          "description": "Choose whether to reply all (turned off) or reply to the sender only (turned on)"
+        }
+      ]
+    },
+    {
+      "operation": "Trash a thread",
+      "page": "thread-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#trash-a-thread",
+      "summary": "Use this operation to move a thread and all its messages to the trash",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Trash"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to move to the trash"
+        }
+      ]
+    },
+    {
+      "operation": "Untrash a thread",
+      "page": "thread-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations#untrash-a-thread",
+      "summary": "Use this operation to recover a thread and all its messages from the trash",
+      "parameters": [
+        {
+          "name": "Resource",
+          "description": "Select Thread"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Untrash"
+        },
+        {
+          "name": "Thread ID",
+          "description": "Enter the ID of the thread you want to move to the trash"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Remove the n8n attribution from sent messages",
+      "summary": "If you're using the node to send a message or reply to a message, the node appends this statement to the end of the email:"
+    },
+    {
+      "title": "Forbidden - perhaps check your credentials",
+      "summary": "This error displays next to certain dropdowns in the node, like the Label Names or IDs dropdown. The full text looks something like this:"
+    },
+    {
+      "title": "401 unauthorized error",
+      "summary": "The full text of the error looks like this:"
+    },
+    {
+      "title": "Bad request - please check your parameters",
+      "summary": "This error most often occurs if you enter a Message ID, Thread ID, or Label ID that doesn't exist"
+    }
+  ],
+  "keywords": [
+    "add",
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "draft",
+    "drafts",
+    "get",
+    "getting",
+    "gmail",
+    "google",
+    "including",
+    "label",
+    "labels",
+    "many",
+    "mark",
+    "message",
+    "messages",
+    "read",
+    "remove",
+    "reply",
+    "send",
+    "thread",
+    "threads",
+    "trash",
+    "unread",
+    "untrash",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    },
+    {
+      "id": "sYWM3IB0LEL4RkPx8ndF",
+      "name": "hitl-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Gmail node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.gmail/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Gmail node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.gmail/common-issues.md"
+    },
+    {
+      "page": "draft-operations.md",
+      "title": "Gmail node Draft Operations documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.gmail/draft-operations.md"
+    },
+    {
+      "page": "label-operations.md",
+      "title": "Gmail node Label Operations documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.gmail/label-operations.md"
+    },
+    {
+      "page": "message-operations.md",
+      "title": "Gmail node Message Operations documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.gmail/message-operations.md"
+    },
+    {
+      "page": "thread-operations.md",
+      "title": "Gmail node Thread Operations documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.gmail/thread-operations.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.gmail.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.gmail.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.gmail/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.gmail",
+  "type_version": 2.2,
+  "type_versions": [
+    2,
+    2.1,
+    2.2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleApi",
+    "gmailOAuth2"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "serviceAccount"
+          ]
+        }
+      }
+    },
+    {
+      "name": "gmailOAuth2",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Gmail"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 63,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "oAuth2",
+        "options": [
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          },
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Message",
+            "value": "message"
+          },
+          {
+            "name": "Label",
+            "value": "label"
+          },
+          {
+            "name": "Draft",
+            "value": "draft"
+          },
+          {
+            "name": "Thread",
+            "value": "thread"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "delete"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "draft"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageId",
+        "displayName": "Draft ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "draft"
+            ],
+            "operation": [
+              "delete",
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "draft"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "threadNotice",
+        "displayName": "To reply to an existing thread, specify the Thread ID from the options below.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "draft"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "emailType",
+        "displayName": "Email Type",
+        "type": "options",
+        "required": true,
+        "default": "text",
+        "options": [
+          {
+            "name": "HTML",
+            "value": "html"
+          },
+          {
+            "name": "Text",
+            "value": "text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "draft"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "draft"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attachmentsUi",
+            "description": "Array of supported attachments to add to the message"
+          },
+          {
+            "name": "bccList",
+            "description": "The email addresses of the blind copy recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com."
+          },
+          {
+            "name": "ccList",
+            "description": "The email addresses of the copy recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com."
+          },
+          {
+            "name": "fromAlias",
+            "description": "Select the alias to send the email from. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "replyTo",
+            "description": "The email address that the reply message is sent to"
+          },
+          {
+            "name": "threadId",
+            "description": "The identifier of the thread to attach the draft"
+          },
+          {
+            "name": "sendTo",
+            "description": "The email addresses of the recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "draft"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dataPropertyAttachmentsPrefixName",
+            "description": "Prefix for name of the binary property to which to write the attachment. An index starting with 0 will be added. So if name is 'attachment_' the first attachmen"
+          },
+          {
+            "name": "downloadAttachments",
+            "description": "Whether the draft's attachments will be downloaded"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "draft"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "draft"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "draft"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dataPropertyAttachmentsPrefixName",
+            "description": "Prefix for name of the binary property to which to write the attachments. An index starting with 0 will be added. So if name is 'attachment_' the first attachme"
+          },
+          {
+            "name": "downloadAttachments",
+            "description": "Whether the draft's attachments will be downloaded"
+          },
+          {
+            "name": "includeSpamTrash",
+            "description": "Whether to include messages from SPAM and TRASH in the results"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "draft"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "delete"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "label"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "label"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Label Name"
+      },
+      {
+        "name": "labelId",
+        "displayName": "Label ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "label"
+            ],
+            "operation": [
+              "get",
+              "delete"
+            ]
+          }
+        },
+        "description": "The ID of the label"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "labelListVisibility",
+            "description": "The visibility of the label in the label list in the Gmail web interface"
+          },
+          {
+            "name": "messageListVisibility",
+            "description": "The visibility of messages with this label in the message list in the Gmail web interface"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "label"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "label"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "label"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Add Label",
+            "value": "addLabels"
+          },
+          {
+            "name": "Delete",
+            "value": "delete"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          },
+          {
+            "name": "Mark as Read",
+            "value": "markAsRead"
+          },
+          {
+            "name": "Mark as Unread",
+            "value": "markAsUnread"
+          },
+          {
+            "name": "Remove Label",
+            "value": "removeLabels"
+          },
+          {
+            "name": "Reply",
+            "value": "reply"
+          },
+          {
+            "name": "Send",
+            "value": "send"
+          },
+          {
+            "name": "Send and Wait for Response",
+            "value": "sendAndWait"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "get",
+              "delete",
+              "markAsRead",
+              "markAsUnread"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "reply"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sendTo",
+        "displayName": "To",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "The email addresses of the recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com."
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        }
+      },
+      {
+        "name": "emailType",
+        "displayName": "Email Type",
+        "type": "options",
+        "required": true,
+        "default": "html",
+        "options": [
+          {
+            "name": "Text",
+            "value": "text"
+          },
+          {
+            "name": "HTML",
+            "value": "html"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send",
+              "reply"
+            ]
+          },
+          "hide": {
+            "@version": [
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "emailType",
+        "displayName": "Email Type",
+        "type": "options",
+        "required": true,
+        "default": "html",
+        "options": [
+          {
+            "name": "Text",
+            "value": "text"
+          },
+          {
+            "name": "HTML",
+            "value": "html"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send",
+              "reply"
+            ],
+            "@version": [
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "reply",
+              "send"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase “This email was sent automatically with n8n” to the end of the email"
+          },
+          {
+            "name": "attachmentsUi",
+            "description": "Array of supported attachments to add to the message"
+          },
+          {
+            "name": "bccList",
+            "description": "The email addresses of the blind copy recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com."
+          },
+          {
+            "name": "ccList",
+            "description": "The email addresses of the copy recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com."
+          },
+          {
+            "name": "senderName",
+            "description": "The name that will be shown in recipients' inboxes"
+          },
+          {
+            "name": "replyTo",
+            "description": "The email address that the reply message is sent to"
+          },
+          {
+            "name": "replyToSenderOnly",
+            "description": "Whether to reply to the sender only or to the entire list of recipients"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send",
+              "reply"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dataPropertyAttachmentsPrefixName",
+            "description": "Prefix for name of the binary property to which to write the attachment. An index starting with 0 will be added. So if name is 'attachment_' the first attachmen"
+          },
+          {
+            "name": "downloadAttachments",
+            "description": "Whether the email's attachments will be downloaded and included in the output"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "simple": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "message"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "filtersNotice",
+        "displayName": "Fetching a lot of messages may take a long time. Consider using filters to speed things up",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "message"
+            ],
+            "returnAll": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "includeSpamTrash",
+            "description": "Whether to include messages from SPAM and TRASH in the results"
+          },
+          {
+            "name": "labelIds",
+            "description": "Only return messages with labels that match all of the specified label IDs. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expr"
+          },
+          {
+            "name": "q",
+            "description": "Only return messages matching the specified query"
+          },
+          {
+            "name": "readStatus"
+          },
+          {
+            "name": "receivedAfter",
+            "description": "Get all emails received after the specified date. In an expression you can set date using string in ISO format or a timestamp in miliseconds."
+          },
+          {
+            "name": "receivedBefore",
+            "description": "Get all emails received before the specified date. In an expression you can set date using string in ISO format or a timestamp in miliseconds."
+          },
+          {
+            "name": "sender",
+            "description": "Sender name or email to filter by"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dataPropertyAttachmentsPrefixName",
+            "description": "Prefix for name of the binary property to which to write the attachment. An index starting with 0 will be added. So if name is 'attachment_' the first attachmen"
+          },
+          {
+            "name": "downloadAttachments",
+            "description": "Whether the email's attachments will be downloaded and included in the output"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "message"
+            ]
+          },
+          "hide": {
+            "simple": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "addLabels",
+              "removeLabels"
+            ]
+          }
+        }
+      },
+      {
+        "name": "labelIds",
+        "displayName": "Label Names or IDs",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "addLabels",
+              "removeLabels"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "sendTo",
+        "displayName": "To",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responseType",
+        "displayName": "Response Type",
+        "type": "options",
+        "default": "approval",
+        "options": [
+          {
+            "name": "Approval",
+            "value": "approval",
+            "description": "User can approve/disapprove from within the message"
+          },
+          {
+            "name": "Free Text",
+            "value": "freeText",
+            "description": "User can submit a response via a form"
+          },
+          {
+            "name": "Custom Form",
+            "value": "customForm",
+            "description": "User can submit a response via a custom form"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "defineForm",
+        "displayName": "Define Form",
+        "type": "options",
+        "default": "fields",
+        "options": [
+          {
+            "name": "Using Fields Below",
+            "value": "fields"
+          },
+          {
+            "name": "Using JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonOutput",
+        "displayName": "Form Fields",
+        "type": "json",
+        "default": "[\n  {\n    \"fieldLabel\": \"Name\",\n    \"placeholder\": \"enter your name\",\n    \"requiredField\": true\n  },\n  {\n    \"fieldLabel\": \"Age\",\n    \"fieldType\": \"number\",\n    \"placeholder\": \"enter your age\"\n  },\n  {\n    \"fieldLabel\": \"Email\",\n    \"fieldType\": \"email\",\n    \"requiredField\": true\n  },\n  {\n    \"field",
+        "displayOptions": {
+          "show": {
+            "defineForm": [
+              "json"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "approvalOptions",
+        "displayName": "Approval Options",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "approvalType",
+                "displayName": "Type of Approval",
+                "type": "options"
+              },
+              {
+                "name": "approveLabel",
+                "displayName": "Approve Button Label",
+                "type": "string"
+              },
+              {
+                "name": "buttonApprovalStyle",
+                "displayName": "Approve Button Style",
+                "type": "options"
+              },
+              {
+                "name": "disapproveLabel",
+                "displayName": "Disapprove Button Label",
+                "type": "string"
+              },
+              {
+                "name": "buttonDisapprovalStyle",
+                "displayName": "Disapprove Button Style",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "approval"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "limitWaitTime",
+            "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+          },
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase \"This message was sent automatically with n8n\" to the end of the message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "approval"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "messageButtonLabel"
+          },
+          {
+            "name": "responseFormTitle",
+            "description": "Title of the form that the user can access to provide their response"
+          },
+          {
+            "name": "responseFormDescription",
+            "description": "Description of the form that the user can access to provide their response"
+          },
+          {
+            "name": "responseFormButtonLabel"
+          },
+          {
+            "name": "responseFormCustomCss",
+            "description": "Override default styling of the response form with CSS"
+          },
+          {
+            "name": "limitWaitTime",
+            "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+          },
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase \"This message was sent automatically with n8n\" to the end of the message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "freeText",
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Add Label",
+            "value": "addLabels"
+          },
+          {
+            "name": "Delete",
+            "value": "delete"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          },
+          {
+            "name": "Remove Label",
+            "value": "removeLabels"
+          },
+          {
+            "name": "Reply",
+            "value": "reply"
+          },
+          {
+            "name": "Trash",
+            "value": "trash"
+          },
+          {
+            "name": "Untrash",
+            "value": "untrash"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ]
+          }
+        }
+      },
+      {
+        "name": "threadId",
+        "displayName": "Thread ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "get",
+              "delete",
+              "reply",
+              "trash",
+              "untrash"
+            ]
+          }
+        },
+        "description": "The ID of the thread you are operating on"
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message Snippet or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "reply"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "emailType",
+        "displayName": "Email Type",
+        "type": "options",
+        "required": true,
+        "default": "text",
+        "options": [
+          {
+            "name": "Text",
+            "value": "text"
+          },
+          {
+            "name": "HTML",
+            "value": "html"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "reply"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "reply"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attachmentsUi",
+            "description": "Array of supported attachments to add to the message"
+          },
+          {
+            "name": "bccList",
+            "description": "The email addresses of the blind copy recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com."
+          },
+          {
+            "name": "ccList",
+            "description": "The email addresses of the copy recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com."
+          },
+          {
+            "name": "senderName",
+            "description": "The name displayed in your contacts inboxes"
+          },
+          {
+            "name": "replyToSenderOnly",
+            "description": "Whether to reply to the sender only or to the entire list of recipients"
+          },
+          {
+            "name": "replyToRecipientsOnly",
+            "description": "Whether to exclude the sender from the reply"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "reply"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "thread"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnOnlyMessages",
+            "description": "Whether to return only thread messages"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "thread"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "thread"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filtersNotice",
+        "displayName": "Fetching a lot of messages may take a long time. Consider using filters to speed things up",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "thread"
+            ],
+            "returnAll": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "includeSpamTrash",
+            "description": "Whether to include threads from SPAM and TRASH in the results"
+          },
+          {
+            "name": "labelIds",
+            "description": "Only return threads with labels that match all of the specified label IDs. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expre"
+          },
+          {
+            "name": "q",
+            "description": "Only return messages matching the specified query"
+          },
+          {
+            "name": "readStatus"
+          },
+          {
+            "name": "receivedAfter",
+            "description": "Get all emails received after the specified date. In an expression you can set date using string in ISO format or a timestamp in miliseconds."
+          },
+          {
+            "name": "receivedBefore",
+            "description": "Get all emails received before the specified date. In an expression you can set date using string in ISO format or a timestamp in miliseconds."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "thread"
+            ]
+          }
+        }
+      },
+      {
+        "name": "threadId",
+        "displayName": "Thread ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "addLabels",
+              "removeLabels"
+            ]
+          }
+        }
+      },
+      {
+        "name": "labelIds",
+        "displayName": "Label Names or IDs",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "addLabels",
+              "removeLabels"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      }
+    ]
+  }
+}

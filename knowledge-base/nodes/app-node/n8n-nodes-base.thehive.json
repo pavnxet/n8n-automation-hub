@@ -1,0 +1,2271 @@
+{
+  "id": "n8n-nodes-base.thehive",
+  "name": "TheHive",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.thehive",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the TheHive node to automate work in TheHive, and integrate TheHive with other applications. n8n has built-in support for a wide range of TheHive features, including creating alerts, counting tasks logs, cases, and observables",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.thehive",
+  "credentials": {
+    "name": "TheHive",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/thehive",
+    "slug": "thehive",
+    "json_file": "credentials/thehive.json",
+    "markdown_file": "credentials/thehive.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Alert",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert"
+    },
+    {
+      "resource": "",
+      "operation": "Case",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert"
+    },
+    {
+      "resource": "",
+      "operation": "Log",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert"
+    },
+    {
+      "resource": "",
+      "operation": "Observable",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert"
+    },
+    {
+      "resource": "",
+      "operation": "Task",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "alert",
+    "alerts",
+    "app",
+    "applications",
+    "case",
+    "cases",
+    "counting",
+    "creating",
+    "including",
+    "log",
+    "logs",
+    "observable",
+    "observables",
+    "task",
+    "tasks",
+    "thehive",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.thehive.md",
+      "title": "TheHive node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.thehive",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.thehive.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.thehive.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.thehive.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.thehive.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.theHive",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "theHiveApi"
+  ],
+  "credential_details": [
+    {
+      "name": "theHiveApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "TheHive"
+  },
+  "subtitle": "={{$parameter[\"operation\"]}} : {{$parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 87,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "alert",
+        "options": [
+          {
+            "name": "Alert",
+            "value": "alert"
+          },
+          {
+            "name": "Case",
+            "value": "case"
+          },
+          {
+            "name": "Log",
+            "value": "log"
+          },
+          {
+            "name": "Observable",
+            "value": "observable"
+          },
+          {
+            "name": "Task",
+            "value": "task"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation Name or ID",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "alert"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "alert"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "id",
+        "displayName": "Alert ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "promote",
+              "markAsRead",
+              "markAsUnread",
+              "merge",
+              "update",
+              "executeResponder",
+              "get"
+            ]
+          }
+        },
+        "description": "Title of the alert"
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "merge"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Title of the alert"
+      },
+      {
+        "name": "description",
+        "displayName": "Description",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Description of the alert"
+      },
+      {
+        "name": "severity",
+        "displayName": "Severity",
+        "type": "options",
+        "required": true,
+        "default": 2,
+        "options": [
+          {
+            "name": "Low",
+            "value": 1
+          },
+          {
+            "name": "Medium",
+            "value": 2
+          },
+          {
+            "name": "High",
+            "value": 3
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Severity of the alert. Default=Medium."
+      },
+      {
+        "name": "date",
+        "displayName": "Date",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Date and time when the alert was raised default=now"
+      },
+      {
+        "name": "tags",
+        "displayName": "Tags",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Case Tags"
+      },
+      {
+        "name": "tlp",
+        "displayName": "TLP",
+        "type": "options",
+        "required": true,
+        "default": 2,
+        "options": [
+          {
+            "name": "White",
+            "value": 0
+          },
+          {
+            "name": "Green",
+            "value": 1
+          },
+          {
+            "name": "Amber",
+            "value": 2
+          },
+          {
+            "name": "Red",
+            "value": 3
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Traffict Light Protocol (TLP). Default=Amber."
+      },
+      {
+        "name": "status",
+        "displayName": "Status",
+        "type": "options",
+        "required": true,
+        "default": "New",
+        "options": [
+          {
+            "name": "New",
+            "value": "New"
+          },
+          {
+            "name": "Updated",
+            "value": "Updated"
+          },
+          {
+            "name": "Ignored",
+            "value": "Ignored"
+          },
+          {
+            "name": "Imported",
+            "value": "Imported"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Status of the alert"
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Type of the alert"
+      },
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Source of the alert"
+      },
+      {
+        "name": "sourceRef",
+        "displayName": "SourceRef",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Source reference of the alert"
+      },
+      {
+        "name": "follow",
+        "displayName": "Follow",
+        "type": "boolean",
+        "required": true,
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether the alert becomes active when updated default=true"
+      },
+      {
+        "name": "artifactUi",
+        "displayName": "Artifacts",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "artifactValues",
+            "values": [
+              {
+                "name": "dataType",
+                "displayName": "Data Type Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "data",
+                "displayName": "Data",
+                "type": "string"
+              },
+              {
+                "name": "binaryProperty",
+                "displayName": "Input Binary Field",
+                "type": "string"
+              },
+              {
+                "name": "message",
+                "displayName": "Message",
+                "type": "string"
+              },
+              {
+                "name": "tags",
+                "displayName": "Case Tags",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Artifact attributes"
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "caseTemplate",
+            "description": "Case template to use when a case is created from this alert"
+          },
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "customFieldsJson",
+            "description": "Custom fields in JSON format. Overrides Custom Fields UI if set."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "caseTemplate",
+            "description": "Case template to use when a case is created from this alert"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "promote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "artifactUi"
+          },
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "customFieldsJson",
+            "description": "Custom fields in JSON format. Overrides Custom Fields UI if set."
+          },
+          {
+            "name": "caseTemplate",
+            "description": "Case template to use when a case is created from this alert"
+          },
+          {
+            "name": "description",
+            "description": "Description of the alert"
+          },
+          {
+            "name": "follow",
+            "description": "Whether the alert becomes active when updated default=true"
+          },
+          {
+            "name": "severity",
+            "description": "Severity of the alert. Default=Medium."
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "tags"
+          },
+          {
+            "name": "title",
+            "description": "Title of the alert"
+          },
+          {
+            "name": "tlp",
+            "description": "Traffict Light Protocol (TLP). Default=Amber."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "sort"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "alert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "includeSimilar",
+            "description": "Whether to include similar cases"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "alert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "description",
+            "description": "Description of the alert"
+          },
+          {
+            "name": "follow",
+            "description": "Whether the alert becomes active when updated default=true"
+          },
+          {
+            "name": "severity",
+            "description": "Severity of the alert. Default=Medium."
+          },
+          {
+            "name": "tags"
+          },
+          {
+            "name": "title"
+          },
+          {
+            "name": "tlp",
+            "description": "Traffict Light Protocol (TLP). Default=Amber."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "getAll",
+              "count"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation Name or ID",
+        "type": "options",
+        "required": true,
+        "default": "getAll",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create",
+              "getAll"
+            ]
+          }
+        },
+        "description": "ID of the case"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll",
+              "search"
+            ],
+            "resource": [
+              "observable"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll",
+              "search"
+            ],
+            "resource": [
+              "observable"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "id",
+        "displayName": "Observable ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "update",
+              "executeResponder",
+              "executeAnalyzer",
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the observable"
+      },
+      {
+        "name": "dataType",
+        "displayName": "Data Type Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create",
+              "executeAnalyzer"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "data",
+        "displayName": "Data",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          },
+          "hide": {
+            "dataType": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryProperty",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ],
+            "dataType": [
+              "file"
+            ]
+          }
+        },
+        "description": "The name of the input binary field that represent the attachment file"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Description of the observable in the context of the case"
+      },
+      {
+        "name": "startDate",
+        "displayName": "Start Date",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Date and time of the begin of the case default=now"
+      },
+      {
+        "name": "tlp",
+        "displayName": "TLP",
+        "type": "options",
+        "required": true,
+        "default": 2,
+        "options": [
+          {
+            "name": "White",
+            "value": 0
+          },
+          {
+            "name": "Green",
+            "value": 1
+          },
+          {
+            "name": "Amber",
+            "value": 2
+          },
+          {
+            "name": "Red",
+            "value": 3
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Traffict Light Protocol (TLP). Default=Amber."
+      },
+      {
+        "name": "ioc",
+        "displayName": "IOC",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether the observable is an IOC (Indicator of compromise)"
+      },
+      {
+        "name": "sighted",
+        "displayName": "Sighted",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether sighted previously"
+      },
+      {
+        "name": "status",
+        "displayName": "Status",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Ok",
+            "value": "Ok"
+          },
+          {
+            "name": "Deleted",
+            "value": "Deleted"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Status of the observable. Default=Ok."
+      },
+      {
+        "name": "analyzers",
+        "displayName": "Analyzer Names or IDs",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "executeAnalyzer"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "tags"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "message",
+            "description": "Description of the observable in the context of the case"
+          },
+          {
+            "name": "tags"
+          },
+          {
+            "name": "tlp",
+            "description": "Traffict Light Protocol (TLP). Default=Amber."
+          },
+          {
+            "name": "ioc",
+            "description": "Whether the observable is an IOC (Indicator of compromise)"
+          },
+          {
+            "name": "sighted",
+            "description": "Whether sighted previously"
+          },
+          {
+            "name": "status",
+            "description": "Status of the observable. Default=Ok."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "sort",
+            "description": "Specify the sorting attribut, + for asc, - for desc"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll",
+              "search"
+            ],
+            "resource": [
+              "observable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dataType",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "range"
+          },
+          {
+            "name": "description"
+          },
+          {
+            "name": "ioc",
+            "description": "Whether the observable is an IOC (Indicator of compromise)"
+          },
+          {
+            "name": "keyword"
+          },
+          {
+            "name": "message",
+            "description": "Description of the observable in the context of the case"
+          },
+          {
+            "name": "tags"
+          },
+          {
+            "name": "sighted"
+          },
+          {
+            "name": "Status",
+            "description": "Status of the observable. Default=Ok."
+          },
+          {
+            "name": "tlp",
+            "description": "Traffict Light Protocol (TLP). Default=Amber."
+          },
+          {
+            "name": "data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "search",
+              "count"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "getAll",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "case"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "case"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "id",
+        "displayName": "Case ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "update",
+              "executeResponder",
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the case"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Title of the case"
+      },
+      {
+        "name": "description",
+        "displayName": "Description",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Description of the case"
+      },
+      {
+        "name": "severity",
+        "displayName": "Severity",
+        "type": "options",
+        "required": true,
+        "default": 2,
+        "options": [
+          {
+            "name": "Low",
+            "value": 1
+          },
+          {
+            "name": "Medium",
+            "value": 2
+          },
+          {
+            "name": "High",
+            "value": 3
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Severity of the alert. Default=Medium."
+      },
+      {
+        "name": "startDate",
+        "displayName": "Start Date",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Date and time of the begin of the case default=now"
+      },
+      {
+        "name": "owner",
+        "displayName": "Owner",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "flag",
+        "displayName": "Flag",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Flag of the case default=false"
+      },
+      {
+        "name": "tlp",
+        "displayName": "TLP",
+        "type": "options",
+        "required": true,
+        "default": 2,
+        "options": [
+          {
+            "name": "White",
+            "value": 0
+          },
+          {
+            "name": "Green",
+            "value": 1
+          },
+          {
+            "name": "Amber",
+            "value": 2
+          },
+          {
+            "name": "Red",
+            "value": 3
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Traffict Light Protocol (TLP). Default=Amber."
+      },
+      {
+        "name": "tags",
+        "displayName": "Tags",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "customFieldsJson",
+            "description": "Custom fields in JSON format. Overrides Custom Fields UI if set."
+          },
+          {
+            "name": "endDate",
+            "description": "Resolution date"
+          },
+          {
+            "name": "summary",
+            "description": "Summary of the case, to be provided when closing a case"
+          },
+          {
+            "name": "metrics",
+            "description": "List of metrics"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "customFieldsJson",
+            "description": "Custom fields in JSON format. Overrides Custom Fields UI if set."
+          },
+          {
+            "name": "description",
+            "description": "Description of the case"
+          },
+          {
+            "name": "endDate",
+            "description": "Resolution date"
+          },
+          {
+            "name": "flag",
+            "description": "Flag of the case default=false"
+          },
+          {
+            "name": "impactStatus",
+            "description": "Impact status of the case"
+          },
+          {
+            "name": "metrics",
+            "description": "List of metrics"
+          },
+          {
+            "name": "owner"
+          },
+          {
+            "name": "resolutionStatus",
+            "description": "Resolution status of the case"
+          },
+          {
+            "name": "severity",
+            "description": "Severity of the alert. Default=Medium."
+          },
+          {
+            "name": "startDate",
+            "description": "Date and time of the begin of the case default=now"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "summary",
+            "description": "Summary of the case, to be provided when closing a case"
+          },
+          {
+            "name": "tags"
+          },
+          {
+            "name": "title",
+            "description": "Title of the case"
+          },
+          {
+            "name": "tlp",
+            "description": "Traffict Light Protocol (TLP). Default=Amber."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "sort",
+            "description": "Specify the sorting attribut, + for asc, - for desc"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "case"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "description",
+            "description": "Description of the case"
+          },
+          {
+            "name": "endDate",
+            "description": "Resolution date"
+          },
+          {
+            "name": "flag",
+            "description": "Flag of the case default=false"
+          },
+          {
+            "name": "impactStatus"
+          },
+          {
+            "name": "owner"
+          },
+          {
+            "name": "resolutionStatus"
+          },
+          {
+            "name": "severity",
+            "description": "Severity of the alert. Default=Medium."
+          },
+          {
+            "name": "startDate",
+            "description": "Date and time of the begin of the case default=now"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "summary",
+            "description": "Summary of the case, to be provided when closing a case"
+          },
+          {
+            "name": "tags"
+          },
+          {
+            "name": "title",
+            "description": "Title of the case"
+          },
+          {
+            "name": "tlp",
+            "description": "Traffict Light Protocol (TLP). Default=Amber."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "getAll",
+              "count"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation Name or ID",
+        "type": "options",
+        "required": true,
+        "default": "getAll",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "id",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "update",
+              "executeResponder",
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the taks"
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create",
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search",
+              "getAll"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search",
+              "getAll"
+            ],
+            "resource": [
+              "task"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Task details"
+      },
+      {
+        "name": "status",
+        "displayName": "Status",
+        "type": "options",
+        "required": true,
+        "default": "Waiting",
+        "options": [
+          {
+            "name": "Cancel",
+            "value": "Cancel"
+          },
+          {
+            "name": "Completed",
+            "value": "Completed"
+          },
+          {
+            "name": "InProgress",
+            "value": "InProgress"
+          },
+          {
+            "name": "Waiting",
+            "value": "Waiting"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Status of the task. Default=Waiting."
+      },
+      {
+        "name": "flag",
+        "displayName": "Flag",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether to flag the task. Default=false."
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "description",
+            "description": "Task details"
+          },
+          {
+            "name": "endDate",
+            "description": "Date of the end of the task. This is automatically set when status is set to Completed."
+          },
+          {
+            "name": "owner",
+            "description": "User who owns the task. This is automatically set to current user when status is set to InProgress."
+          },
+          {
+            "name": "startDate",
+            "description": "Date of the beginning of the task. This is automatically set when status is set to Open."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "description",
+            "description": "Task details"
+          },
+          {
+            "name": "endDate",
+            "description": "Date of the end of the task. This is automatically set when status is set to Completed."
+          },
+          {
+            "name": "flag",
+            "description": "Whether to flag the task. Default=false."
+          },
+          {
+            "name": "owner",
+            "description": "User who owns the task. This is automatically set to current user when status is set to InProgress."
+          },
+          {
+            "name": "startDate",
+            "description": "Date of the beginning of the task. This is automatically set when status is set to Open."
+          },
+          {
+            "name": "status",
+            "description": "Status of the task. Default=Waiting."
+          },
+          {
+            "name": "title",
+            "description": "Task details"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "sort",
+            "description": "Specify the sorting attribut, + for asc, - for desc"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll",
+              "search"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "description",
+            "description": "Task details"
+          },
+          {
+            "name": "endDate",
+            "description": "Date of the end of the task. This is automatically set when status is set to Completed."
+          },
+          {
+            "name": "flag",
+            "description": "Whether to flag the task. Default=false."
+          },
+          {
+            "name": "owner",
+            "description": "User who owns the task. This is automatically set to current user when status is set to InProgress."
+          },
+          {
+            "name": "startDate",
+            "description": "Date of the beginning of the task. This is automatically set when status is set to Open."
+          },
+          {
+            "name": "status",
+            "description": "Status of the task. Default=Waiting."
+          },
+          {
+            "name": "title",
+            "description": "Task details"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "search",
+              "count"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create task log"
+          },
+          {
+            "name": "Execute Responder",
+            "value": "executeResponder",
+            "description": "Execute a responder on a selected log"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many task logs"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a single log"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ]
+          }
+        }
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "create",
+              "getAll"
+            ]
+          }
+        },
+        "description": "ID of the task"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "log"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "log"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "id",
+        "displayName": "Log ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "executeResponder",
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Content of the Log"
+      },
+      {
+        "name": "startDate",
+        "displayName": "Start Date",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Date of the log submission default=now"
+      },
+      {
+        "name": "status",
+        "displayName": "Status",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Ok",
+            "value": "Ok"
+          },
+          {
+            "name": "Deleted",
+            "value": "Deleted"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Status of the log (Ok or Deleted) default=Ok"
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attachmentValues",
+            "description": "File attached to the log"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

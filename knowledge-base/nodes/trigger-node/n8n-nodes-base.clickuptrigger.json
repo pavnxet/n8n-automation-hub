@@ -1,0 +1,287 @@
+{
+  "id": "n8n-nodes-base.clickuptrigger",
+  "name": "ClickUp Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.clickuptrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "ClickUp is a cloud-based collaboration and project management tool suitable for businesses of all sizes and industries. Features include communication and collaboration tools, task assignments and statuses, alerts and a task toolbar",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.clickuptrigger",
+  "credentials": {
+    "name": "ClickUp credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/clickup",
+    "slug": "clickup",
+    "json_file": "credentials/clickup.json",
+    "markdown_file": "credentials/clickup.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "alerts",
+    "assignments",
+    "based",
+    "businesses",
+    "clickup",
+    "clickuptrigger",
+    "cloud",
+    "collaboration",
+    "communication",
+    "credentials",
+    "include",
+    "industries",
+    "management",
+    "project",
+    "sizes",
+    "statuses",
+    "suitable",
+    "task",
+    "tool",
+    "toolbar",
+    "tools",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.clickuptrigger.md",
+      "title": "ClickUp Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.clickuptrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.clickuptrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.clickuptrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.clickuptrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.clickuptrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.clickUpTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "clickUpApi",
+    "clickUpOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "clickUpApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "clickUpOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "ClickUp Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "*",
+            "value": "*"
+          },
+          {
+            "name": "folder.created",
+            "value": "folderCreated"
+          },
+          {
+            "name": "folder.deleted",
+            "value": "folderDeleted"
+          },
+          {
+            "name": "folder.updated",
+            "value": "folderUpdated"
+          },
+          {
+            "name": "goal.created",
+            "value": "goalCreated"
+          },
+          {
+            "name": "goal.deleted",
+            "value": "goalDeleted"
+          },
+          {
+            "name": "goal.updated",
+            "value": "goalUpdated"
+          },
+          {
+            "name": "keyResult.created",
+            "value": "keyResultCreated"
+          },
+          {
+            "name": "keyResult.deleted",
+            "value": "keyResultDelete"
+          },
+          {
+            "name": "keyResult.updated",
+            "value": "keyResultUpdated"
+          },
+          {
+            "name": "list.created",
+            "value": "listCreated"
+          },
+          {
+            "name": "list.deleted",
+            "value": "listDeleted"
+          },
+          {
+            "name": "list.updated",
+            "value": "listUpdated"
+          },
+          {
+            "name": "space.created",
+            "value": "spaceCreated"
+          },
+          {
+            "name": "space.deleted",
+            "value": "spaceDeleted"
+          },
+          {
+            "name": "space.updated",
+            "value": "spaceUpdated"
+          },
+          {
+            "name": "task.assignee.updated",
+            "value": "taskAssigneeUpdated"
+          },
+          {
+            "name": "task.comment.posted",
+            "value": "taskCommentPosted"
+          },
+          {
+            "name": "task.comment.updated",
+            "value": "taskCommentUpdated"
+          },
+          {
+            "name": "task.created",
+            "value": "taskCreated"
+          },
+          {
+            "name": "task.deleted",
+            "value": "taskDeleted"
+          },
+          {
+            "name": "task.dueDate.updated",
+            "value": "taskDueDateUpdated"
+          },
+          {
+            "name": "task.moved",
+            "value": "taskMoved"
+          },
+          {
+            "name": "task.status.updated",
+            "value": "taskStatusUpdated"
+          },
+          {
+            "name": "task.tag.updated",
+            "value": "taskTagUpdated"
+          },
+          {
+            "name": "task.timeEstimate.updated",
+            "value": "taskTimeEstimateUpdated"
+          },
+          {
+            "name": "task.timeTracked.updated",
+            "value": "taskTimeTrackedUpdated"
+          },
+          {
+            "name": "task.updated",
+            "value": "taskUpdated"
+          }
+        ]
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "folderId"
+          },
+          {
+            "name": "listId"
+          },
+          {
+            "name": "spaceId"
+          },
+          {
+            "name": "taskId"
+          }
+        ]
+      }
+    ]
+  }
+}

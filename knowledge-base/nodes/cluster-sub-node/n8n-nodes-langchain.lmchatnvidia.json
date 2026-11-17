@@ -1,0 +1,259 @@
+{
+  "id": "n8n-nodes-langchain.lmchatnvidia",
+  "name": "NVIDIA Nemotron Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatnvidia",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the NVIDIA Nemotron Chat Model node to access NVIDIA Nemotron models with conversational agents[^1]. The node works with Nemotron models hosted on build.nvidia.com and with self-hosted NVIDIA Inference Microservices (NIM)",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatnvidia",
+  "credentials": {
+    "name": "NVIDIA Nemotron credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/nvidia",
+    "slug": "nvidia",
+    "json_file": "credentials/nvidia.json",
+    "markdown_file": "credentials/nvidia.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "Select the Nemotron model to use to generate the completion"
+    },
+    {
+      "name": "Frequency Penalty",
+      "description": "Use this option to control the chances of the model repeating itself. Higher values reduce the chance of the model repeating itself"
+    },
+    {
+      "name": "Maximum Number of Tokens",
+      "description": "Enter the maximum number of tokens used, which sets the completion length. Use -1 for the model default"
+    },
+    {
+      "name": "Response Format",
+      "description": "Choose Text or JSON. JSON ensures the model returns valid JSON. When you choose JSON, include the word json in your prompt in the chain or agent"
+    },
+    {
+      "name": "Presence Penalty",
+      "description": "Use this option to control the chances of the model talking about new topics. Higher values increase the chance of the model talking about new topics"
+    },
+    {
+      "name": "Sampling Temperature",
+      "description": "Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations"
+    },
+    {
+      "name": "Timeout",
+      "description": "Enter the maximum request time in milliseconds"
+    },
+    {
+      "name": "Max Retries",
+      "description": "Enter the maximum number of times to retry a request"
+    },
+    {
+      "name": "Top P",
+      "description": "Use this option to set the probability the completion should use. Use a lower value to ignore less probable options"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "access",
+    "agents",
+    "build",
+    "chat",
+    "cluster",
+    "conversational",
+    "credentials",
+    "format",
+    "frequency",
+    "hosted",
+    "inference",
+    "lmchatnvidia",
+    "max",
+    "maximum",
+    "microservices",
+    "model",
+    "models",
+    "nemotron",
+    "number",
+    "nvidia",
+    "penalty",
+    "presence",
+    "response",
+    "retries",
+    "sampling",
+    "self",
+    "sub",
+    "temperature",
+    "timeout",
+    "tokens",
+    "top",
+    "works"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.lmchatnvidia.md",
+      "title": "NVIDIA Nemotron Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatnvidia",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatnvidia.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatnvidia.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatnvidia.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatnvidia.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatNvidia",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "nvidiaApi"
+  ],
+  "credential_details": [
+    {
+      "name": "nvidiaApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "NVIDIA Nemotron Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "notice",
+        "displayName": "If using JSON response format, you must include word \"json\" in the prompt in your chain or agent.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.responseFormat": [
+              "json_object"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "nvidia/llama-3.3-nemotron-super-49b-v1",
+        "options": [
+          {
+            "name": "nvidia/llama-3.1-nemotron-nano-8b-v1",
+            "value": "nvidia/llama-3.1-nemotron-nano-8b-v1"
+          },
+          {
+            "name": "nvidia/llama-3.3-nemotron-super-49b-v1",
+            "value": "nvidia/llama-3.3-nemotron-super-49b-v1"
+          },
+          {
+            "name": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+            "value": "nvidia/llama-3.3-nemotron-super-49b-v1.5"
+          },
+          {
+            "name": "nvidia/nemotron-3-nano-30b-a3b",
+            "value": "nvidia/nemotron-3-nano-30b-a3b"
+          },
+          {
+            "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+            "value": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+          },
+          {
+            "name": "nvidia/nemotron-3-super-120b-a12b",
+            "value": "nvidia/nemotron-3-super-120b-a12b"
+          },
+          {
+            "name": "nvidia/nemotron-nano-12b-v2-vl",
+            "value": "nvidia/nemotron-nano-12b-v2-vl"
+          },
+          {
+            "name": "nvidia/nvidia-nemotron-nano-9b-v2",
+            "value": "nvidia/nvidia-nemotron-nano-9b-v2"
+          }
+        ],
+        "description": "The Nemotron model which will generate the completion. <a href=\"https://build.nvidia.com/models\">Learn more</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "frequencyPenalty",
+            "description": "Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion. Use -1 for the model default."
+          },
+          {
+            "name": "responseFormat"
+          },
+          {
+            "name": "presencePenalty",
+            "description": "Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in milliseconds"
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt"
+          },
+          {
+            "name": "topP",
+            "description": "Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We generally recommend altering this or temperature b"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

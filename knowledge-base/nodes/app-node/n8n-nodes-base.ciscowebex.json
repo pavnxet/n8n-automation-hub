@@ -1,0 +1,1077 @@
+{
+  "id": "n8n-nodes-base.ciscowebex",
+  "name": "Webex by Cisco",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.ciscowebex",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Webex by Cisco node to automate work in Webex, and integrate Webex with other applications. n8n has built-in support for a wide range of Webex features, including creating, getting, updating, and deleting meetings and messages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.ciscowebex",
+  "credentials": {
+    "name": "Webex",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/ciscowebex",
+    "slug": "ciscowebex",
+    "json_file": "credentials/ciscowebex.json",
+    "markdown_file": "credentials/ciscowebex.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Meeting",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Meeting",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Meeting",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Meeting",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Meeting",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "meeting",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Message",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Message",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Message",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Message",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Message",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 10,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "cisco",
+    "ciscowebex",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "meeting",
+    "meetings",
+    "message",
+    "messages",
+    "update",
+    "updating",
+    "webex",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.ciscowebex.md",
+      "title": "Webex by Cisco node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.ciscowebex",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.ciscowebex.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.ciscowebex.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.ciscowebex.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.ciscowebex.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.ciscoWebex",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "ciscoWebexOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "ciscoWebexOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Webex by Cisco"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 33,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Meeting",
+            "value": "meeting"
+          },
+          {
+            "name": "Message",
+            "value": "message"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "delete"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Meeting title. The title can be a maximum of 128 characters long."
+      },
+      {
+        "name": "start",
+        "displayName": "Start",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Date and time for the start of the meeting. Acceptable <a href=\"https://datatracker.ietf.org/doc/html/rfc2445\"> format</a>."
+      },
+      {
+        "name": "end",
+        "displayName": "End",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Date and time for the end of the meeting. Acceptable <a href=\"https://datatracker.ietf.org/doc/html/rfc2445\"> format</a>."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "agenda",
+            "description": "Meeting agenda. The agenda can be a maximum of 1300 characters long."
+          },
+          {
+            "name": "allowAnyUserToBeCoHost",
+            "description": "Whether or not to allow any attendee with a host account on the target site to become a co-host when joining the meeting"
+          },
+          {
+            "name": "allowAuthenticatedDevices",
+            "description": "Whether or not to allow authenticated video devices in the meeting's organization to start or join the meeting without a prompt"
+          },
+          {
+            "name": "allowFirstUserToBeCoHost",
+            "description": "Whether or not to allow the first attendee of the meeting with a host account on the target site to become a co-host"
+          },
+          {
+            "name": "autoAcceptRequest",
+            "description": "Whether or not meeting registration request is accepted automatically"
+          },
+          {
+            "name": "enableConnectAudioBeforeHost",
+            "description": "Whether or not to allow any attendee to connect audio in the meeting before the host joins the meeting"
+          },
+          {
+            "name": "enabledAutoRecordMeeting",
+            "description": "Whether or not meeting is recorded automatically"
+          },
+          {
+            "name": "enabledJoinBeforeHost",
+            "description": "Whether or not to allow any attendee to join the meeting before the host joins the meeting"
+          },
+          {
+            "name": "excludePassword",
+            "description": "Whether or not to exclude password from the meeting email invitation"
+          },
+          {
+            "name": "hostEmail",
+            "description": "Email address for the meeting host. Can only be set if you're an admin."
+          },
+          {
+            "name": "integrationTags",
+            "description": "External keys created by an integration application in its own domain. They could be Zendesk ticket IDs, Jira IDs, Salesforce Opportunity IDs, etc."
+          },
+          {
+            "name": "inviteesUi"
+          },
+          {
+            "name": "joinBeforeHostMinutes",
+            "description": "The number of minutes an attendee can join the meeting before the meeting start time and the host joins"
+          },
+          {
+            "name": "publicMeeting",
+            "description": "Whether or not to allow the meeting to be listed on the public calendar"
+          },
+          {
+            "name": "recurrence",
+            "description": "Rule for how the meeting should recur. Acceptable <a href=\"https://datatracker.ietf.org/doc/html/rfc2445\"> format</a>."
+          },
+          {
+            "name": "requireRegistrationInfo",
+            "description": "Data required for meeting registration"
+          },
+          {
+            "name": "reminderTime",
+            "description": "The number of minutes before the meeting begins, for sending an email reminder to the host"
+          },
+          {
+            "name": "sendEmail",
+            "description": "Whether or not to send emails to host and invitees"
+          },
+          {
+            "name": "siteUrl",
+            "description": "URL of the Webex site which the meeting is created on. If not specified, the meeting is created on user's preferred site. Choose from the list, or specify an ID"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "meetingId",
+        "displayName": "Meeting ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the meeting"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "hostEmail",
+            "description": "Email address for the meeting host. This parameter is only used if the user or application calling the API has the admin-level scopes."
+          },
+          {
+            "name": "sendEmail",
+            "description": "Whether or not to send emails to host and invitees"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "meetingId",
+        "displayName": "Meeting ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the meeting"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "hostEmail",
+            "description": "Email address for the meeting host. This parameter is only used if the user or application calling the API has the admin-level scopes."
+          },
+          {
+            "name": "password",
+            "description": "Meeting password. It's required when the meeting is protected by a password and the current user is not privileged to view it if they are not a host, co-host or"
+          },
+          {
+            "name": "sendEmail",
+            "description": "Whether or not to send emails to host and invitees. It is an optional field and default value is true."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "from",
+            "description": "Start date and time (inclusive) for the meeting. Acceptable <a href=\"https://datatracker.ietf.org/doc/html/rfc2445\"> format</a>."
+          },
+          {
+            "name": "hostEmail",
+            "description": "Email address for the meeting host"
+          },
+          {
+            "name": "integrationTag",
+            "description": "External tag created by another application, e.g. Zendesk ticket ID or Jira ID"
+          },
+          {
+            "name": "current",
+            "description": "Whether to return just the current meeting or all meetings"
+          },
+          {
+            "name": "meetingNumber",
+            "description": "Meeting number for the meeting objects being requested"
+          },
+          {
+            "name": "meetingType"
+          },
+          {
+            "name": "participantEmail",
+            "description": "Email of a person that must be a meeting participant"
+          },
+          {
+            "name": "siteUrl",
+            "description": "URL of the Webex site which the API lists meetings from. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">express"
+          },
+          {
+            "name": "state",
+            "description": "Meeting state for the meeting objects being requested"
+          },
+          {
+            "name": "to",
+            "description": "End date and time (inclusive) for the meeting. Acceptable <a href=\"https://datatracker.ietf.org/doc/html/rfc2445\"> format</a>."
+          },
+          {
+            "name": "webLink",
+            "description": "URL encoded link to information page for the meeting objects being requested"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "meetingId",
+        "displayName": "Meeting ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the meeting"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "agenda",
+            "description": "The meeting's agenda. Cannot be longer that 1300 characters."
+          },
+          {
+            "name": "allowAnyUserToBeCoHost",
+            "description": "Whether or not to allow any attendee with a host account on the target site to become a co-host when joining the meeting"
+          },
+          {
+            "name": "allowAuthenticatedDevices",
+            "description": "Whether or not to allow authenticated video devices in the meeting's organization to start or join the meeting without a prompt"
+          },
+          {
+            "name": "allowFirstUserToBeCoHost",
+            "description": "Whether or not to allow the first attendee of the meeting with a host account on the target site to become a co-host"
+          },
+          {
+            "name": "enableConnectAudioBeforeHost",
+            "description": "Whether or not to allow any attendee to connect audio in the meeting before the host joins the meeting"
+          },
+          {
+            "name": "enabledAutoRecordMeeting",
+            "description": "Whether or not meeting is recorded automatically"
+          },
+          {
+            "name": "enabledJoinBeforeHost",
+            "description": "Whether or not to allow any attendee to join the meeting before the host joins the meeting"
+          },
+          {
+            "name": "end",
+            "description": "Date and time for the end of the meeting. Acceptable <a href=\"https://datatracker.ietf.org/doc/html/rfc2445\"> format</a>."
+          },
+          {
+            "name": "excludePassword",
+            "description": "Whether or not to exclude password from the meeting email invitation"
+          },
+          {
+            "name": "hostEmail",
+            "description": "Email address for the meeting host. This attribute should only be set if the user or application calling the API has the admin-level scopes."
+          },
+          {
+            "name": "inviteesUi"
+          },
+          {
+            "name": "joinBeforeHostMinutes",
+            "description": "The number of minutes an attendee can join the meeting before the meeting start time and the host joins"
+          },
+          {
+            "name": "password",
+            "description": "Meeting password. Must conform to the site's password complexity settings. If not specified, a random password conforming to the site's password rules will be g"
+          },
+          {
+            "name": "publicMeeting",
+            "description": "Whether or not to allow the meeting to be listed on the public calendar"
+          },
+          {
+            "name": "recurrence",
+            "description": "Meeting series recurrence rule (conforming with RFC 2445), applying only to meeting series"
+          },
+          {
+            "name": "requireRegistrationInfo",
+            "description": "Data required for meeting registration"
+          },
+          {
+            "name": "reminderTime",
+            "description": "The number of minutes before the meeting begins, for sending an email reminder to the host"
+          },
+          {
+            "name": "sendEmail",
+            "description": "Whether or not to send emails to host and invitees. It is an optional field and default value is true."
+          },
+          {
+            "name": "siteUrl",
+            "description": "URL of the Webex site which the meeting is created on. If not specified, the meeting is created on user's preferred site. Choose from the list, or specify an ID"
+          },
+          {
+            "name": "start",
+            "description": "Date and time for the start of the meeting. Acceptable <a href=\"https://datatracker.ietf.org/doc/html/rfc2445\"> format</a>."
+          },
+          {
+            "name": "title",
+            "description": "Meeting title"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "meeting"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "delete"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "destination",
+        "displayName": "Destination",
+        "type": "options",
+        "required": true,
+        "default": "room",
+        "options": [
+          {
+            "name": "Room",
+            "value": "room"
+          },
+          {
+            "name": "Person",
+            "value": "person"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "roomId",
+        "displayName": "Room Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ],
+            "destination": [
+              "room"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "specifyPersonBy",
+        "displayName": "Specify Person By",
+        "type": "options",
+        "required": true,
+        "default": "email",
+        "options": [
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "ID",
+            "value": "id"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ],
+            "destination": [
+              "person"
+            ]
+          }
+        }
+      },
+      {
+        "name": "toPersonId",
+        "displayName": "Person ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ],
+            "specifyPersonBy": [
+              "id"
+            ]
+          }
+        }
+      },
+      {
+        "name": "toPersonEmail",
+        "displayName": "Person Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ],
+            "specifyPersonBy": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The message, in plain text"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attachmentsUi"
+          },
+          {
+            "name": "fileUi"
+          },
+          {
+            "name": "markdown",
+            "description": "The message in markdown format. When used the text parameter is used to provide alternate text for UI clients that do not support rich text."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the message to delete"
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the message to retrieve"
+      },
+      {
+        "name": "roomId",
+        "displayName": "Room Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "List messages in a room, by ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "before",
+            "description": "List messages sent before a date and time"
+          },
+          {
+            "name": "beforeMessage",
+            "description": "List messages sent before a message, by ID"
+          },
+          {
+            "name": "parentId",
+            "description": "List messages with a parent, by ID"
+          },
+          {
+            "name": "mentionedPeople",
+            "description": "List only messages with certain person mentioned. Enter their ID. You can use 'me' as a shorthand for yourself"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the message to update"
+      },
+      {
+        "name": "markdown",
+        "displayName": "Is Markdown",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Whether the message uses markdown"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "update"
+            ],
+            "markdown": [
+              false
+            ]
+          }
+        },
+        "description": "The message, in plain text"
+      },
+      {
+        "name": "markdownText",
+        "displayName": "Markdown",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "update"
+            ],
+            "markdown": [
+              true
+            ]
+          }
+        },
+        "description": "The message, in Markdown format. The maximum message length is 7439 bytes."
+      }
+    ]
+  }
+}

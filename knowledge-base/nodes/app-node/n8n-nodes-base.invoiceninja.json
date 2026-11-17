@@ -1,0 +1,2297 @@
+{
+  "id": "n8n-nodes-base.invoiceninja",
+  "name": "Invoice Ninja",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.invoiceninja",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Invoice Ninja node to automate work in Invoice Ninja, and integrate Invoice Ninja with other applications. n8n has built-in support for a wide range of Invoice Ninja features, including creating, updating, deleting, and getting clients, expense, invoice, payments and quotes",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.invoiceninja",
+  "credentials": {
+    "name": "Invoice Ninja",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/invoiceninja",
+    "slug": "invoiceninja",
+    "json_file": "credentials/invoiceninja.json",
+    "markdown_file": "credentials/invoiceninja.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Client",
+      "operation": "Create a new client",
+      "description": "",
+      "doc": "",
+      "resource_value": "client",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Client",
+      "operation": "Delete a client",
+      "description": "",
+      "doc": "",
+      "resource_value": "client",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Client",
+      "operation": "Get data of a client",
+      "description": "",
+      "doc": "",
+      "resource_value": "client",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Client",
+      "operation": "Get data of all clients",
+      "description": "",
+      "doc": "",
+      "resource_value": "client",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Expense",
+      "operation": "Create a new expense",
+      "description": "",
+      "doc": "",
+      "resource_value": "expense",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Expense",
+      "operation": "Delete an expense",
+      "description": "",
+      "doc": "",
+      "resource_value": "expense",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Expense",
+      "operation": "Get data of an expense",
+      "description": "",
+      "doc": "",
+      "resource_value": "expense",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Expense",
+      "operation": "Get data of all expenses",
+      "description": "",
+      "doc": "",
+      "resource_value": "expense",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Create a new invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Delete a invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Email an invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "email"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Get data of a invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Get data of all invoices",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Payment",
+      "operation": "Create a new payment",
+      "description": "",
+      "doc": "",
+      "resource_value": "payment",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Payment",
+      "operation": "Delete a payment",
+      "description": "",
+      "doc": "",
+      "resource_value": "payment",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Payment",
+      "operation": "Get data of a payment",
+      "description": "",
+      "doc": "",
+      "resource_value": "payment",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Payment",
+      "operation": "Get data of all payments",
+      "description": "",
+      "doc": "",
+      "resource_value": "payment",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Create a new quote",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Delete a quote",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Email an quote",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "email"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Get data of a quote",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Get data of all quotes",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Create a new task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Task",
+      "operation": "Delete a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get data of a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get data of all tasks",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 26,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "client",
+    "clients",
+    "create",
+    "creating",
+    "data",
+    "delete",
+    "deleting",
+    "email",
+    "expense",
+    "expenses",
+    "get",
+    "getting",
+    "including",
+    "invoice",
+    "invoiceninja",
+    "invoices",
+    "new",
+    "ninja",
+    "payment",
+    "payments",
+    "quote",
+    "quotes",
+    "task",
+    "tasks",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.invoiceninja.md",
+      "title": "Invoice Ninja node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.invoiceninja",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.invoiceninja.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.invoiceninja.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.invoiceninja.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.invoiceninja.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.invoiceNinja",
+  "type_version": 2.0,
+  "type_versions": [
+    1,
+    2
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "invoiceNinjaApi"
+  ],
+  "credential_details": [
+    {
+      "name": "invoiceNinjaApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Invoice Ninja"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 69,
+    "parameters": [
+      {
+        "name": "apiVersion",
+        "displayName": "API Version",
+        "type": "options",
+        "default": "v4",
+        "options": [
+          {
+            "name": "Version 4",
+            "value": "v4"
+          },
+          {
+            "name": "Version 5",
+            "value": "v5"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "apiVersion",
+        "displayName": "API Version",
+        "type": "options",
+        "default": "v5",
+        "options": [
+          {
+            "name": "Version 4",
+            "value": "v4"
+          },
+          {
+            "name": "Version 5",
+            "value": "v5"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "client",
+        "options": [
+          {
+            "name": "Bank Transaction",
+            "value": "bank_transaction"
+          },
+          {
+            "name": "Client",
+            "value": "client"
+          },
+          {
+            "name": "Expense",
+            "value": "expense"
+          },
+          {
+            "name": "Invoice",
+            "value": "invoice"
+          },
+          {
+            "name": "Payment",
+            "value": "payment"
+          },
+          {
+            "name": "Quote",
+            "value": "quote"
+          },
+          {
+            "name": "Task",
+            "value": "task"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new client"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a client"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a client"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many clients"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "clientName"
+          },
+          {
+            "name": "idNumber"
+          },
+          {
+            "name": "privateNotes"
+          },
+          {
+            "name": "vatNumber"
+          },
+          {
+            "name": "workPhone"
+          },
+          {
+            "name": "website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "client"
+            ]
+          }
+        }
+      },
+      {
+        "name": "billingAddressUi",
+        "displayName": "Billing Address",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "billingAddressValue",
+            "values": [
+              {
+                "name": "streetAddress",
+                "displayName": "Street Address",
+                "type": "string"
+              },
+              {
+                "name": "aptSuite",
+                "displayName": "Apt/Suite",
+                "type": "string"
+              },
+              {
+                "name": "city",
+                "displayName": "City",
+                "type": "string"
+              },
+              {
+                "name": "state",
+                "displayName": "State",
+                "type": "string"
+              },
+              {
+                "name": "postalCode",
+                "displayName": "Postal Code",
+                "type": "string"
+              },
+              {
+                "name": "countryCode",
+                "displayName": "Country Code Name or ID",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactsUi",
+        "displayName": "Contacts",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "contacstValues",
+            "values": [
+              {
+                "name": "firstName",
+                "displayName": "First Name",
+                "type": "string"
+              },
+              {
+                "name": "lastName",
+                "displayName": "Last Name",
+                "type": "string"
+              },
+              {
+                "name": "email",
+                "displayName": "Email",
+                "type": "string"
+              },
+              {
+                "name": "phone",
+                "displayName": "Phone",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "shippingAddressUi",
+        "displayName": "Shipping Address",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "shippingAddressValue",
+            "values": [
+              {
+                "name": "streetAddress",
+                "displayName": "Street Address",
+                "type": "string"
+              },
+              {
+                "name": "aptSuite",
+                "displayName": "Apt/Suite",
+                "type": "string"
+              },
+              {
+                "name": "city",
+                "displayName": "City",
+                "type": "string"
+              },
+              {
+                "name": "state",
+                "displayName": "State",
+                "type": "string"
+              },
+              {
+                "name": "postalCode",
+                "displayName": "Postal Code",
+                "type": "string"
+              },
+              {
+                "name": "countryCode",
+                "displayName": "Country Code Name or ID",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "clientId",
+        "displayName": "Client ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "clientId",
+        "displayName": "Client ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "client"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "client"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "createdAt"
+          },
+          {
+            "name": "updatedAt"
+          },
+          {
+            "name": "isDeleted"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "client"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new invoice"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a invoice"
+          },
+          {
+            "name": "Email",
+            "value": "email",
+            "description": "Email an invoice"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a invoice"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many invoices"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "autoBill"
+          },
+          {
+            "name": "customValue1"
+          },
+          {
+            "name": "customValue2"
+          },
+          {
+            "name": "discount"
+          },
+          {
+            "name": "dueDate"
+          },
+          {
+            "name": "email"
+          },
+          {
+            "name": "emailInvoice"
+          },
+          {
+            "name": "invoiceDate"
+          },
+          {
+            "name": "invoiceNumber"
+          },
+          {
+            "name": "invoiceStatus"
+          },
+          {
+            "name": "isAmountDiscount"
+          },
+          {
+            "name": "markSent"
+          },
+          {
+            "name": "paid"
+          },
+          {
+            "name": "partial"
+          },
+          {
+            "name": "partialDueDate"
+          },
+          {
+            "name": "poNumber"
+          },
+          {
+            "name": "privateNotes"
+          },
+          {
+            "name": "publicNotes"
+          },
+          {
+            "name": "taxName1"
+          },
+          {
+            "name": "taxName2"
+          },
+          {
+            "name": "taxRate1"
+          },
+          {
+            "name": "taxRate2"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "invoiceItemsUi",
+        "displayName": "Invoice Items",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "invoiceItemsValues",
+            "values": [
+              {
+                "name": "cost",
+                "displayName": "Cost",
+                "type": "number"
+              },
+              {
+                "name": "description",
+                "displayName": "Description",
+                "type": "string"
+              },
+              {
+                "name": "service",
+                "displayName": "Service",
+                "type": "string"
+              },
+              {
+                "name": "hours",
+                "displayName": "Hours",
+                "type": "number"
+              },
+              {
+                "name": "taxName1",
+                "displayName": "Tax Name 1",
+                "type": "string"
+              },
+              {
+                "name": "taxName2",
+                "displayName": "Tax Name 2",
+                "type": "string"
+              },
+              {
+                "name": "taxRate1",
+                "displayName": "Tax Rate 1",
+                "type": "number"
+              },
+              {
+                "name": "taxRate2",
+                "displayName": "Tax Rate 2",
+                "type": "number"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "invoiceId",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "invoiceId",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "invoiceId",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "invoiceNumber"
+          },
+          {
+            "name": "include"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "createdAt"
+          },
+          {
+            "name": "updatedAt"
+          },
+          {
+            "name": "isDeleted"
+          },
+          {
+            "name": "clientStatus"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new task"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a task"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a task"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many tasks"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "customValue1"
+          },
+          {
+            "name": "customValue2"
+          },
+          {
+            "name": "description"
+          },
+          {
+            "name": "project",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "timeLogsUi",
+        "displayName": "Time Logs",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "timeLogsValues",
+            "values": [
+              {
+                "name": "startDate",
+                "displayName": "Start Date",
+                "type": "dateTime"
+              },
+              {
+                "name": "endDate",
+                "displayName": "End Date",
+                "type": "dateTime"
+              },
+              {
+                "name": "duration",
+                "displayName": "Duration (Hours)",
+                "type": "number"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new payment"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a payment"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a payment"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many payments"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "invoice",
+        "displayName": "Invoice Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "payment"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "amount",
+        "displayName": "Amount",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "payment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "paymentType"
+          },
+          {
+            "name": "transferReference"
+          },
+          {
+            "name": "privateNotes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "apiVersion": [
+              "v4"
+            ],
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "payment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "paymentType"
+          },
+          {
+            "name": "transferReference"
+          },
+          {
+            "name": "privateNotes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "apiVersion": [
+              "v5"
+            ],
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "payment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "paymentId",
+        "displayName": "Payment ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payment"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "paymentId",
+        "displayName": "Payment ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payment"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "payment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payment"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payment"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "createdAt"
+          },
+          {
+            "name": "updatedAt"
+          },
+          {
+            "name": "isDeleted"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "payment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new expense"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an expense"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of an expense"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many expenses"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "expense"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "amount"
+          },
+          {
+            "name": "billable"
+          },
+          {
+            "name": "client",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "customValue1"
+          },
+          {
+            "name": "customValue2"
+          },
+          {
+            "name": "category",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "expenseDate"
+          },
+          {
+            "name": "paymentDate"
+          },
+          {
+            "name": "paymentType"
+          },
+          {
+            "name": "privateNotes"
+          },
+          {
+            "name": "publicNotes"
+          },
+          {
+            "name": "taxName1"
+          },
+          {
+            "name": "taxName2"
+          },
+          {
+            "name": "taxRate1"
+          },
+          {
+            "name": "taxRate2"
+          },
+          {
+            "name": "transactionReference"
+          },
+          {
+            "name": "vendor",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "apiVersion": [
+              "v4"
+            ],
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "amount"
+          },
+          {
+            "name": "billable"
+          },
+          {
+            "name": "client",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "customValue1"
+          },
+          {
+            "name": "customValue2"
+          },
+          {
+            "name": "category",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "expenseDate"
+          },
+          {
+            "name": "paymentDate"
+          },
+          {
+            "name": "paymentType"
+          },
+          {
+            "name": "privateNotes"
+          },
+          {
+            "name": "publicNotes"
+          },
+          {
+            "name": "taxName1"
+          },
+          {
+            "name": "taxName2"
+          },
+          {
+            "name": "taxRate1"
+          },
+          {
+            "name": "taxRate2"
+          },
+          {
+            "name": "transactionReference"
+          },
+          {
+            "name": "vendor",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "apiVersion": [
+              "v5"
+            ],
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "expense"
+            ]
+          }
+        }
+      },
+      {
+        "name": "expenseId",
+        "displayName": "Expense ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "expense"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "expenseId",
+        "displayName": "Expense ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "expense"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "expense"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "expense"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new quote"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a quote"
+          },
+          {
+            "name": "Email",
+            "value": "email",
+            "description": "Email a quote"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a quote"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many quotes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "client",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "autoBill"
+          },
+          {
+            "name": "customValue1"
+          },
+          {
+            "name": "customValue2"
+          },
+          {
+            "name": "discount"
+          },
+          {
+            "name": "dueDate"
+          },
+          {
+            "name": "email"
+          },
+          {
+            "name": "emailQuote"
+          },
+          {
+            "name": "quoteDate"
+          },
+          {
+            "name": "quoteNumber"
+          },
+          {
+            "name": "quoteStatus"
+          },
+          {
+            "name": "isAmountDiscount"
+          },
+          {
+            "name": "paid"
+          },
+          {
+            "name": "partial"
+          },
+          {
+            "name": "partialDueDate"
+          },
+          {
+            "name": "poNumber"
+          },
+          {
+            "name": "privateNotes"
+          },
+          {
+            "name": "publicNotes"
+          },
+          {
+            "name": "taxName1"
+          },
+          {
+            "name": "taxName2"
+          },
+          {
+            "name": "taxRate1"
+          },
+          {
+            "name": "taxRate2"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "quote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "invoiceItemsUi",
+        "displayName": "Invoice Items",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "invoiceItemsValues",
+            "values": [
+              {
+                "name": "cost",
+                "displayName": "Cost",
+                "type": "number"
+              },
+              {
+                "name": "description",
+                "displayName": "Description",
+                "type": "string"
+              },
+              {
+                "name": "service",
+                "displayName": "Service",
+                "type": "string"
+              },
+              {
+                "name": "hours",
+                "displayName": "Hours",
+                "type": "number"
+              },
+              {
+                "name": "taxName1",
+                "displayName": "Tax Name 1",
+                "type": "string"
+              },
+              {
+                "name": "taxName2",
+                "displayName": "Tax Name 2",
+                "type": "string"
+              },
+              {
+                "name": "taxRate1",
+                "displayName": "Tax Rate 1",
+                "type": "number"
+              },
+              {
+                "name": "taxRate2",
+                "displayName": "Tax Rate 2",
+                "type": "number"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "quoteId",
+        "displayName": "Quote ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "quoteId",
+        "displayName": "Quote ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "quoteId",
+        "displayName": "Quote ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "quote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "quoteNumber"
+          },
+          {
+            "name": "include"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "createdAt"
+          },
+          {
+            "name": "updatedAt"
+          },
+          {
+            "name": "isDeleted"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "quote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new bank transaction"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a bank transaction"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a bank transaction"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many bank transactions"
+          },
+          {
+            "name": "Match Payment",
+            "value": "matchPayment",
+            "description": "Match payment to a bank transaction"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "bank_transaction"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "amount"
+          },
+          {
+            "name": "bankIntegrationId",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "baseType"
+          },
+          {
+            "name": "currencyId",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "date"
+          },
+          {
+            "name": "description"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "bank_transaction"
+            ]
+          }
+        }
+      },
+      {
+        "name": "bankTransactionId",
+        "displayName": "Bank Transaction ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "bank_transaction"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "bankTransactionId",
+        "displayName": "Bank Transaction ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "bank_transaction"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "bank_transaction"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "bank_transaction"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "bankTransactionId",
+        "displayName": "Bank Transaction ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "bank_transaction"
+            ],
+            "operation": [
+              "matchPayment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "paymentId",
+        "displayName": "Payment Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "bank_transaction"
+            ],
+            "operation": [
+              "matchPayment"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      }
+    ]
+  }
+}

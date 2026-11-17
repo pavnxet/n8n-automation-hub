@@ -1,0 +1,310 @@
+{
+  "id": "n8n-nodes-base.pushover",
+  "name": "Pushover",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.pushover",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Pushover node to automate work in Pushover, and integrate Pushover with other applications. n8n supports sending push notifications with Pushover",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.pushover",
+  "credentials": {
+    "name": "Pushover",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/pushover",
+    "slug": "pushover",
+    "json_file": "credentials/pushover.json",
+    "markdown_file": "credentials/pushover.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Message",
+      "operation": "Push",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "push"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "message",
+    "notifications",
+    "push",
+    "pushover",
+    "sending",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.pushover.md",
+      "title": "Pushover node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.pushover",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.pushover.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.pushover.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.pushover.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.pushover.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.pushover",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "pushoverApi"
+  ],
+  "credential_details": [
+    {
+      "name": "pushoverApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Pushover"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Message",
+            "value": "message"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "push",
+        "options": [
+          {
+            "name": "Push",
+            "value": "push"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userKey",
+        "displayName": "User Key",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "push"
+            ]
+          }
+        },
+        "description": "The user/group key (not e-mail address) of your user (or you), viewable when logged into the <a href=\"https://pushover.net/\">dashboard</a> (often referred to as <code>USER_KEY</code> in the <a href=\"https://support.pusho"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "push"
+            ]
+          }
+        },
+        "description": "Your message"
+      },
+      {
+        "name": "priority",
+        "displayName": "Priority",
+        "type": "options",
+        "default": -2,
+        "options": [
+          {
+            "name": "Lowest Priority",
+            "value": -2
+          },
+          {
+            "name": "Low Priority",
+            "value": -1
+          },
+          {
+            "name": "Normal Priority",
+            "value": 0
+          },
+          {
+            "name": "High Priority",
+            "value": 1
+          },
+          {
+            "name": "Emergency Priority",
+            "value": 2
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "push"
+            ]
+          }
+        },
+        "description": "Send as -2 to generate no notification/alert, -1 to always send as a quiet notification, 1 to display as high-priority and bypass the user's quiet hours, or 2 to also require confirmation from the user"
+      },
+      {
+        "name": "retry",
+        "displayName": "Retry (Seconds)",
+        "type": "number",
+        "required": true,
+        "default": 30,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "push"
+            ],
+            "priority": [
+              2
+            ]
+          }
+        },
+        "description": "Specifies how often (in seconds) the Pushover servers will send the same notification to the user. This parameter must have a value of at least 30 seconds between retries."
+      },
+      {
+        "name": "expire",
+        "displayName": "Expire (Seconds)",
+        "type": "number",
+        "required": true,
+        "default": 30,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "push"
+            ],
+            "priority": [
+              2
+            ]
+          }
+        },
+        "description": "Specifies how many seconds your notification will continue to be retried for (every retry seconds)"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attachmentsUi"
+          },
+          {
+            "name": "device",
+            "description": "Your user's device name to send the message directly to that device, rather than all of the user's devices (multiple devices may be separated by a comma)"
+          },
+          {
+            "name": "html",
+            "description": "Whether to enable messages formatting with HTML tags"
+          },
+          {
+            "name": "sound",
+            "description": "The name of one of the sounds supported by device clients to override the user's default sound choice. Choose from the list, or specify an ID using an <a href=\""
+          },
+          {
+            "name": "timestamp",
+            "description": "A Unix timestamp of your message's date and time to display to the user, rather than the time your message is received by our API"
+          },
+          {
+            "name": "title",
+            "description": "Your message's title, otherwise your app's name is used"
+          },
+          {
+            "name": "timestamp",
+            "description": "A Unix timestamp of your message's date and time to display to the user, rather than the time your message is received by our API"
+          },
+          {
+            "name": "url",
+            "description": "A supplementary URL to show with your message"
+          },
+          {
+            "name": "url_title",
+            "description": "A title for your supplementary URL, otherwise just the URL is shown"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "push"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

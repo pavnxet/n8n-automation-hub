@@ -1,0 +1,162 @@
+{
+  "id": "n8n-nodes-base.totp",
+  "name": "TOTP",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.totp",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "The TOTP node provides a way to generate a TOTP (time-based one-time password)",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.totp",
+  "credentials": {
+    "name": "TOTP",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/totp",
+    "slug": "totp",
+    "json_file": "credentials/totp.json",
+    "markdown_file": "credentials/totp.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Credential to connect with",
+      "description": "Select or create a TOTP credential for the node to use"
+    },
+    {
+      "name": "Operation"
+    },
+    {
+      "name": "Algorithm",
+      "description": "Select the HMAC hashing algorithm to use. Default is SHA1"
+    },
+    {
+      "name": "Digits",
+      "description": "Enter the number of digits in the generated code. Default is 6"
+    },
+    {
+      "name": "Period",
+      "description": "Enter how many seconds the TOTP is valid for. Default is 30"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "algorithm",
+    "based",
+    "connect",
+    "core",
+    "credential",
+    "digits",
+    "generate",
+    "operation",
+    "password",
+    "period",
+    "provides",
+    "time",
+    "totp"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.totp.md",
+      "title": "TOTP",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.totp",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.totp.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.totp.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.totp.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.totp.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.totp",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "totpApi"
+  ],
+  "credential_details": [
+    {
+      "name": "totpApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "TOTP"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "generateSecret",
+        "options": [
+          {
+            "name": "Generate Secret",
+            "value": "generateSecret"
+          }
+        ]
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "algorithm",
+            "description": "HMAC hashing algorithm. Defaults to SHA1."
+          },
+          {
+            "name": "digits",
+            "description": "Number of digits in the generated TOTP code. Defaults to 6 digits."
+          },
+          {
+            "name": "period",
+            "description": "How many seconds the generated TOTP code is valid for. Defaults to 30 seconds."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generateSecret"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

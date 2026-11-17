@@ -1,0 +1,409 @@
+{
+  "id": "n8n-nodes-base.evaluationtrigger",
+  "name": "Evaluation Trigger",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.evaluationtrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Evaluation Trigger node when setting up evaluations to validate your AI workflow reliability. During evaluation, the Evaluation Trigger node reads your evaluation dataset from Google Sheets, sending the items through the workflow one at a time, in sequence",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.evaluationtrigger",
+  "credentials": {
+    "name": "Google Sheets",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Source:",
+      "description": "Select the location to which you want to output the evaluation results. Default value is Data table"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "core",
+    "dataset",
+    "during",
+    "evaluation",
+    "evaluations",
+    "evaluationtrigger",
+    "google",
+    "items",
+    "reads",
+    "reliability",
+    "sending",
+    "sequence",
+    "setting",
+    "sheets",
+    "source",
+    "through",
+    "time",
+    "trigger",
+    "validate"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.evaluationtrigger.md",
+      "title": "Evaluation Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.evaluationtrigger",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.evaluationtrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.evaluationtrigger.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.evaluationtrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.evaluationtrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.evaluationTrigger",
+  "type_version": 4.7,
+  "type_versions": [
+    4.6,
+    4.7
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleApi",
+    "googleSheetsOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "serviceAccount"
+          ]
+        }
+      }
+    },
+    {
+      "name": "googleSheetsOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "When fetching a dataset row",
+    "color": "#c3c9d5"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 14,
+    "parameters": [
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "options",
+        "default": "dataTable",
+        "options": [
+          {
+            "name": "Data table",
+            "value": "dataTable",
+            "description": "Load the test dataset from a local Data table"
+          },
+          {
+            "name": "Google Sheets",
+            "value": "googleSheets",
+            "description": "Load the test dataset from a Google Sheets document"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 4.7
+                }
+              }
+            ]
+          }
+        },
+        "description": "Where to get the test dataset from"
+      },
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "options",
+        "default": "googleSheets",
+        "options": [
+          {
+            "name": "Data table",
+            "value": "dataTable",
+            "description": "Load the test dataset from a local Data table"
+          },
+          {
+            "name": "Google Sheets",
+            "value": "googleSheets",
+            "description": "Load the test dataset from a Google Sheets document"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 4.6
+                }
+              }
+            ]
+          }
+        },
+        "description": "Where to get the test dataset from"
+      },
+      {
+        "name": "notice",
+        "displayName": "Pulls a test dataset from a Google Sheet. The workflow will run once for each row, in sequence. Tips for wiring this node up <a href=\"https://docs.n8n.io/advanced-ai/evaluations/tips-and-common-issues/#combining-multiple-triggers\">here</a>.",
+        "type": "notice",
+        "displayOptions": {
+          "hide": {
+            "source": [
+              "dataTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "credentials",
+        "displayName": "Credentials",
+        "type": "credentials",
+        "displayOptions": {
+          "hide": {
+            "source": [
+              "dataTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "oAuth2",
+        "options": [
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          },
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "source": [
+              "dataTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "documentId",
+        "displayName": "Document Containing Dataset",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "hide": {
+            "source": [
+              "dataTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sheetName",
+        "displayName": "Sheet Containing Dataset",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "hide": {
+            "source": [
+              "dataTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataTableId",
+        "displayName": "Data table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "source": [
+              "dataTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "limitRows",
+        "displayName": "Limit Rows",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to limit number of rows to process"
+      },
+      {
+        "name": "maxRows",
+        "displayName": "Max Rows to Process",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "limitRows": [
+              true
+            ]
+          }
+        },
+        "description": "Maximum number of rows to process"
+      },
+      {
+        "name": "filtersUI",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "lookupColumn",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "lookupValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "source": [
+              "dataTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filterRows",
+        "displayName": "Filter Rows",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "dataTable"
+            ]
+          }
+        },
+        "description": "Whether to filter rows to process"
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyCondition",
+        "options": [
+          {
+            "name": "Any Condition",
+            "value": "anyCondition"
+          },
+          {
+            "name": "All Conditions",
+            "value": "allConditions"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "filterRows": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "filterRows": [
+              true
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get"
+      }
+    ]
+  }
+}

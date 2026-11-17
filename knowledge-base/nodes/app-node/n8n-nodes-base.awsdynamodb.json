@@ -1,0 +1,795 @@
+{
+  "id": "n8n-nodes-base.awsdynamodb",
+  "name": "AWS DynamoDB",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.awsdynamodb",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the AWS DynamoDB node to automate work in AWS DynamoDB, and integrate AWS DynamoDB with other applications. n8n has built-in support for a wide range of AWS DynamoDB features, including creating, reading, updating, deleting items, and records on a database",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awsdynamodb",
+  "credentials": {
+    "name": "AWS",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/aws",
+    "slug": "aws",
+    "json_file": "credentials/aws.json",
+    "markdown_file": "credentials/aws.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Item",
+      "operation": "Create a new record, or update the current one if it already exists (upsert/put)",
+      "description": "",
+      "doc": "",
+      "resource_value": "item"
+    },
+    {
+      "resource": "Item",
+      "operation": "Delete an item",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Item",
+      "operation": "Get an item",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Item",
+      "operation": "Get all items",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "already",
+    "app",
+    "applications",
+    "aws",
+    "awsdynamodb",
+    "create",
+    "creating",
+    "current",
+    "database",
+    "delete",
+    "deleting",
+    "dynamodb",
+    "exists",
+    "get",
+    "including",
+    "item",
+    "items",
+    "new",
+    "put",
+    "reading",
+    "record",
+    "records",
+    "update",
+    "updating",
+    "upsert",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.awsdynamodb.md",
+      "title": "AWS DynamoDB node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awsdynamodb",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.awsdynamodb.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.awsdynamodb.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.awsdynamodb.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.awsdynamodb.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.awsDynamoDb",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "aws",
+    "awsAssumeRole"
+  ],
+  "credential_details": [
+    {
+      "name": "aws",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "iam"
+          ]
+        }
+      }
+    },
+    {
+      "name": "awsAssumeRole",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "assumeRole"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "AWS DynamoDB"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 25,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "iam",
+        "options": [
+          {
+            "name": "AWS (IAM)",
+            "value": "iam"
+          },
+          {
+            "name": "AWS (Assume Role)",
+            "value": "assumeRole"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "item",
+        "options": [
+          {
+            "name": "Item",
+            "value": "item"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upsert",
+        "options": [
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an item"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an item"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many items"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ]
+          }
+        },
+        "description": "Table to operate on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "dataToSend",
+        "displayName": "Data to Send",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Define Below for Each Column",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Whether to insert the input data this node receives in the new row"
+      },
+      {
+        "name": "inputsToIgnore",
+        "displayName": "Inputs to Ignore",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upsert"
+            ],
+            "dataToSend": [
+              "autoMapInputData"
+            ]
+          }
+        },
+        "description": "List of input properties to avoid sending, separated by commas. Leave empty to send all properties."
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Fields to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fieldValues",
+            "values": [
+              {
+                "name": "fieldId",
+                "displayName": "Field ID",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upsert"
+            ],
+            "dataToSend": [
+              "defineBelow"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "eavUi",
+            "description": "Substitution tokens for attribute names in an expression. Only needed when the parameter \"condition expression\" is set."
+          },
+          {
+            "name": "conditionExpression",
+            "description": "A condition that must be satisfied in order for a conditional upsert to succeed. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Put"
+          },
+          {
+            "name": "eanUi",
+            "description": "One or more substitution tokens for attribute names in an expression. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html\">"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnValues",
+        "displayName": "Return",
+        "type": "options",
+        "default": "NONE",
+        "options": [
+          {
+            "name": "Attribute Values",
+            "value": "ALL_OLD",
+            "description": "The content of the old item is returned"
+          },
+          {
+            "name": "Nothing",
+            "value": "NONE",
+            "description": "Nothing is returned"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Use ReturnValues if you want to get the item attributes as they appeared before they were deleted"
+      },
+      {
+        "name": "keysUi",
+        "displayName": "Keys",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "keyValues",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Item's primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key."
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "returnValues": [
+              "ALL_OLD"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "conditionExpression",
+            "description": "A condition that must be satisfied in order for a conditional delete to succeed"
+          },
+          {
+            "name": "eanUi",
+            "description": "One or more substitution tokens for attribute names in an expression. Check <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem."
+          },
+          {
+            "name": "expressionAttributeUi",
+            "description": "Substitution tokens for attribute names in an expression. Only needed when the parameter \"condition expression\" is set."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "select",
+        "displayName": "Select",
+        "type": "options",
+        "default": "ALL_ATTRIBUTES",
+        "options": [
+          {
+            "name": "All Attributes",
+            "value": "ALL_ATTRIBUTES"
+          },
+          {
+            "name": "All Projected Attributes",
+            "value": "ALL_PROJECTED_ATTRIBUTES"
+          },
+          {
+            "name": "Specific Attributes",
+            "value": "SPECIFIC_ATTRIBUTES",
+            "description": "Select them in Attributes to Select under Additional Fields"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "get"
+            ],
+            "select": [
+              "ALL_PROJECTED_ATTRIBUTES",
+              "ALL_ATTRIBUTES"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "keysUi",
+        "displayName": "Keys",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "keyValues",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Item's primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "projectionExpression"
+          },
+          {
+            "name": "eanUi",
+            "description": "One or more substitution tokens for attribute names in an expression. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html\">"
+          },
+          {
+            "name": "readType",
+            "description": "Type of read to perform on the table. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html\">View details</a"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "scan",
+        "displayName": "Scan",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to do an scan or query. Check <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-query-scan.html\" >differences</a>."
+      },
+      {
+        "name": "filterExpression",
+        "displayName": "Filter Expression",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "scan": [
+              true
+            ]
+          }
+        },
+        "description": "A filter expression determines which items within the Scan results should be returned to you. All of the other results are discarded. Empty value will return all Scan results."
+      },
+      {
+        "name": "keyConditionExpression",
+        "displayName": "Key Condition Expression",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "scan": [
+              false
+            ]
+          }
+        },
+        "description": "Condition to determine the items to be retrieved. The condition must perform an equality test on a single partition key value, in this format: <code>partitionKeyName = :partitionkeyval</code>"
+      },
+      {
+        "name": "eavUi",
+        "displayName": "Expression Attribute Values",
+        "type": "fixedCollection",
+        "required": true,
+        "options": [
+          {
+            "name": "eavValues",
+            "values": [
+              {
+                "name": "attribute",
+                "displayName": "Attribute",
+                "type": "string"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Substitution tokens for attribute names in an expression"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "select",
+        "displayName": "Select",
+        "type": "options",
+        "default": "ALL_ATTRIBUTES",
+        "options": [
+          {
+            "name": "All Attributes",
+            "value": "ALL_ATTRIBUTES"
+          },
+          {
+            "name": "All Projected Attributes",
+            "value": "ALL_PROJECTED_ATTRIBUTES"
+          },
+          {
+            "name": "Count",
+            "value": "COUNT"
+          },
+          {
+            "name": "Specific Attributes",
+            "value": "SPECIFIC_ATTRIBUTES",
+            "description": "Select them in Attributes to Select under Additional Fields"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "select": [
+              "ALL_PROJECTED_ATTRIBUTES",
+              "ALL_ATTRIBUTES",
+              "SPECIFIC_ATTRIBUTES"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "indexName",
+            "description": "Name of the index to query. It can be any secondary local or global index on the table."
+          },
+          {
+            "name": "projectionExpression",
+            "description": "Text that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attribut"
+          },
+          {
+            "name": "filterExpression",
+            "description": "Text that contains conditions that DynamoDB applies after the Query operation, but before the data is returned. Items that do not satisfy the FilterExpression c"
+          },
+          {
+            "name": "eanUi",
+            "description": "One or more substitution tokens for attribute names in an expression. Check <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

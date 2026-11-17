@@ -1,0 +1,698 @@
+{
+  "id": "n8n-nodes-base.vero",
+  "name": "Vero",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.vero",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Vero node to automate work in Vero and integrate Vero with other applications. n8n has built-in support for a wide range of Vero features, including creating and deleting users",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.vero",
+  "credentials": {
+    "name": "Vero",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/vero",
+    "slug": "vero",
+    "json_file": "credentials/vero.json",
+    "markdown_file": "credentials/vero.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "User",
+      "operation": "Create or update a user profile",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "create"
+    },
+    {
+      "resource": "User",
+      "operation": "Change a users identifier",
+      "description": "",
+      "doc": "",
+      "resource_value": "user"
+    },
+    {
+      "resource": "User",
+      "operation": "Unsubscribe a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "unsubscribe"
+    },
+    {
+      "resource": "User",
+      "operation": "Resubscribe a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "resubscribe"
+    },
+    {
+      "resource": "User",
+      "operation": "Delete a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "User",
+      "operation": "Adds a tag to a users profile",
+      "description": "",
+      "doc": "",
+      "resource_value": "user"
+    },
+    {
+      "resource": "User",
+      "operation": "Removes a tag from a users profile",
+      "description": "",
+      "doc": "",
+      "resource_value": "user"
+    },
+    {
+      "resource": "Event",
+      "operation": "Track an event for a specific customer",
+      "description": "",
+      "doc": "",
+      "resource_value": "event",
+      "operation_value": "track"
+    }
+  ],
+  "operation_count": 8,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "adds",
+    "app",
+    "applications",
+    "change",
+    "create",
+    "creating",
+    "customer",
+    "delete",
+    "deleting",
+    "event",
+    "identifier",
+    "including",
+    "profile",
+    "removes",
+    "resubscribe",
+    "specific",
+    "tag",
+    "track",
+    "unsubscribe",
+    "update",
+    "user",
+    "users",
+    "vero",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.vero.md",
+      "title": "Vero node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.vero",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.vero.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.vero.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.vero.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.vero.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.vero",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "veroApi"
+  ],
+  "credential_details": [
+    {
+      "name": "veroApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Vero"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 25,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "user",
+        "options": [
+          {
+            "name": "User",
+            "value": "user",
+            "description": "Create, update and manage the subscription status of your users"
+          },
+          {
+            "name": "Event",
+            "value": "event",
+            "description": "Track events based on actions your customers take in real time"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Add Tags",
+            "value": "addTags",
+            "description": "Adds a tag to a users profile"
+          },
+          {
+            "name": "Alias",
+            "value": "alias",
+            "description": "Change a users identifier"
+          },
+          {
+            "name": "Create or Update",
+            "value": "create",
+            "description": "Create or update a user profile"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a user"
+          },
+          {
+            "name": "Re-Subscribe",
+            "value": "resubscribe",
+            "description": "Resubscribe a user"
+          },
+          {
+            "name": "Remove Tags",
+            "value": "removeTags",
+            "description": "Removes a tag from a users profile"
+          },
+          {
+            "name": "Unsubscribe",
+            "value": "unsubscribe",
+            "description": "Unsubscribe a user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "track",
+        "options": [
+          {
+            "name": "Track",
+            "value": "track",
+            "description": "Track an event for a specific customer"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The unique identifier of the customer"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "email",
+            "description": "The table to create the row in"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataAttributesUi",
+        "displayName": "Data",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "dataAttributesValues",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "Key value pairs that represent the custom user properties you want to update"
+      },
+      {
+        "name": "dataAttributesJson",
+        "displayName": "Data",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "Key value pairs that represent the custom user properties you want to update"
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "alias"
+            ]
+          }
+        },
+        "description": "The old unique identifier of the user"
+      },
+      {
+        "name": "newId",
+        "displayName": "New ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "alias"
+            ]
+          }
+        },
+        "description": "The new unique identifier of the user"
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "unsubscribe"
+            ]
+          }
+        },
+        "description": "The unique identifier of the user"
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "resubscribe"
+            ]
+          }
+        },
+        "description": "The unique identifier of the user"
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The unique identifier of the user"
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "addTags"
+            ]
+          }
+        },
+        "description": "The unique identifier of the user"
+      },
+      {
+        "name": "tags",
+        "displayName": "Tags",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "addTags"
+            ]
+          }
+        },
+        "description": "Tags to add separated by \",\""
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "removeTags"
+            ]
+          }
+        },
+        "description": "The unique identifier of the user"
+      },
+      {
+        "name": "tags",
+        "displayName": "Tags",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "removeTags"
+            ]
+          }
+        },
+        "description": "Tags to remove separated by \",\""
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ]
+          }
+        },
+        "description": "The unique identifier of the customer"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ]
+          }
+        }
+      },
+      {
+        "name": "eventName",
+        "displayName": "Event Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ]
+          }
+        },
+        "description": "The name of the event tracked"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataAttributesUi",
+        "displayName": "Data",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "dataAttributesValues",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "Key value pairs that represent any properties you want to track with this event"
+      },
+      {
+        "name": "extraAttributesUi",
+        "displayName": "Extra",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "extraAttributesValues",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "Key value pairs that represent reserved, Vero-specific operators. Refer to the note on “deduplication” below."
+      },
+      {
+        "name": "dataAttributesJson",
+        "displayName": "Data",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "Key value pairs that represent the custom user properties you want to update"
+      },
+      {
+        "name": "extraAttributesJson",
+        "displayName": "Extra",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "track"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "Key value pairs that represent reserved, Vero-specific operators. Refer to the note on “deduplication” below."
+      }
+    ]
+  }
+}

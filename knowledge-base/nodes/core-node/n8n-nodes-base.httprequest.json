@@ -1,0 +1,1248 @@
+{
+  "id": "n8n-nodes-base.httprequest",
+  "name": "HTTP Request",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.httprequest",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "The HTTP Request node is one of the most versatile nodes in n8n. It allows you to make HTTP requests to query data from any app or service with a REST API. You can use the HTTP Request node as a regular node or attached to an AI agent to use as a tool{ data-preview }",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest",
+  "credentials": {
+    "name": "HTTP Request",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/httprequest",
+    "slug": "httprequest",
+    "json_file": "credentials/httprequest.json",
+    "markdown_file": "credentials/httprequest.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Method",
+      "description": "Select the method to use for the request:",
+      "options": [
+        "DELETE",
+        "GET",
+        "HEAD",
+        "OPTIONS",
+        "PATCH",
+        "POST",
+        "PUT"
+      ]
+    },
+    {
+      "name": "URL",
+      "description": "Enter the endpoint you want to use"
+    },
+    {
+      "name": "Authentication",
+      "description": "n8n recommends using the Predefined Credential Type option when it's available. It offers an easier way to set up and manage credentials, compared to configuring generic credentials"
+    },
+    {
+      "name": "Predefined credentials",
+      "description": "Credentials for integrations supported by n8n, including both built-in and community nodes. Use Predefined Credential Type for custom operations without extra setup. Refer to Custom API operations for more information"
+    },
+    {
+      "name": "Generic credentials",
+      "description": "Credentials for integrations not supported by n8n. You'll need to manually configure the authentication process, including specifying the required API endpoints, necessary parameters, and the authentication method",
+      "options": [
+        "Basic auth",
+        "Custom auth",
+        "Digest auth",
+        "Header auth",
+        "OAuth1 API",
+        "OAuth2 API",
+        "Query auth",
+        "Simplified Custom Auth"
+      ]
+    },
+    {
+      "name": "Send Query Parameters",
+      "description": "Query parameters act as filters on HTTP requests. If the API you're interacting with supports them and the request you're making needs a filter, turn this option on",
+      "options": [
+        "Using JSON: Enter JSON to define your query parameters"
+      ]
+    },
+    {
+      "name": "Send Headers",
+      "description": "Use this parameter to send headers with your request. Headers contain metadata or context about your request",
+      "options": [
+        "Using JSON: Enter JSON to define your header parameters"
+      ]
+    },
+    {
+      "name": "Send Body",
+      "description": "If you need to send a body with your API request, turn this option on"
+    },
+    {
+      "name": "Form URLencoded",
+      "description": "Use this option to send your body as application/x-www-form-urlencoded"
+    },
+    {
+      "name": "Form-Data",
+      "description": "Use this option to send your body as multipart/form-data",
+      "options": [
+        "Choose Form Data to enter Name/Value pairs",
+        "Choose n8n Binary File to pull the body from a file the node has access to",
+        "Name: Enter the ID of the field to set"
+      ]
+    },
+    {
+      "name": "JSON",
+      "description": "Use this option to send your body as JSON",
+      "options": [
+        "Using JSON: Enter JSON to define your body"
+      ]
+    },
+    {
+      "name": "n8n Binary File",
+      "description": "Use this option to send the contents of a file stored in n8n as the body"
+    },
+    {
+      "name": "Raw",
+      "description": "Use this option to send raw data in the body",
+      "options": [
+        "Body: Enter the raw body content to send"
+      ]
+    },
+    {
+      "name": "Array Format in Query Parameters",
+      "description": "Use this option to control the format for arrays included in query parameters. Choose from these options:"
+    },
+    {
+      "name": "Batching",
+      "description": "Control how to batch large numbers of input items:",
+      "options": [
+        "Items per Batch: Enter the number of input items to include in each batch"
+      ]
+    },
+    {
+      "name": "Ignore SSL Issues",
+      "description": "By default, n8n only downloads the response if SSL certificate validation succeeds. If you'd like to download the response even if SSL certificate validation fails, turn this option on"
+    },
+    {
+      "name": "Lowercase Headers",
+      "description": "Choose whether to lowercase header names (turned on, default) or not (turned off)"
+    },
+    {
+      "name": "Redirects",
+      "description": "Choose whether to follow redirects (turned on by default) or not (turned off). If turned on, enter the maximum number of redirects the request should follow in Max Redirects"
+    },
+    {
+      "name": "Response",
+      "description": "Use this option to set some details about the expected API response, including:",
+      "options": [
+        "JSON: Select this option to format the response as JSON"
+      ]
+    },
+    {
+      "name": "Pagination",
+      "description": "Use this option to paginate results, useful for handling query results that are too big for the API to return in a single call",
+      "options": [
+        "Pagination Mode:",
+        "Off: Turn off pagination"
+      ]
+    },
+    {
+      "name": "Proxy",
+      "description": "Use this option if you need to specify an HTTP proxy"
+    },
+    {
+      "name": "Timeout",
+      "description": "Use this option to set how long the node should wait for the server to send response headers (and start the response body). The node aborts requests that exceed this value for the initial response"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Connection refused (ECONNREFUSED)",
+      "page": "common-issues.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/common-issues#connection-refused-econnrefused",
+      "summary": "This error displays when the node reaches a host on the network but the target port has no listener. The TCP connection is actively refused. It isn't a DNS failure, a timeout, or a firewall drop",
+      "parameters": [
+        {
+          "name": "Target on the host machine, Docker Desktop (Mac or Windows)",
+          "description": "use http://host.docker.internal: in the URL field. Docker Desktop adds this hostname automatically"
+        },
+        {
+          "name": "Target on the host machine, Linux",
+          "description": "pass --add-host=host.docker.internal:host-gateway to the container, or set extra_hosts in docker-compose.yml:"
+        },
+        {
+          "name": "Target in another container on the same Compose stack",
+          "description": "use the service name as the hostname, for example http://my-api:5000. Reference the container's internal port, not the published ports: mapping"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Bad request - please check your parameters",
+      "summary": "This error displays when the node receives a 400 error indicating a bad request. This error most often occurs because:"
+    },
+    {
+      "title": "The resource you are requesting could not be found",
+      "summary": "This error displays when the endpoint URL you entered is invalid"
+    },
+    {
+      "title": "Connection refused (ECONNREFUSED)",
+      "summary": "This error displays when the node reaches a host on the network but the target port has no listener. The TCP connection is actively refused. It isn't a DNS failure, a timeout, or a firewall drop"
+    },
+    {
+      "title": "JSON parameter need to be an valid JSON",
+      "summary": "This error displays when you've passed a parameter as JSON and it's not formatted as valid JSON"
+    },
+    {
+      "title": "Forbidden - perhaps check your credentials",
+      "summary": "This error displays when the node receives a 403 error indicating authentication failed"
+    },
+    {
+      "title": "429 - The service is receiving too many requests from you",
+      "summary": "This error displays when the node receives a 429 error from the service that you're calling. This often means that you have hit the rate limits of that service. You can find out more on the Handling API rate limits page"
+    },
+    {
+      "title": "Your uploaded file arrives with the wrong file name",
+      "summary": "When you send a file with Body Content Type set to Form-Data, n8n takes the file name of the multipart/form-data part from the binary data, not from the Name field. Name sets the form field name only. If the binary data has no file name, n8n sends file"
+    },
+    {
+      "title": "Unsupported media type (415) when you send a file",
+      "summary": "This error displays when the API expects multipart/form-data but the request body isn't multipart"
+    }
+  ],
+  "keywords": [
+    "agent",
+    "allows",
+    "array",
+    "attached",
+    "authentication",
+    "batching",
+    "binary",
+    "body",
+    "core",
+    "credentials",
+    "data",
+    "file",
+    "form",
+    "format",
+    "generic",
+    "headers",
+    "http",
+    "httprequest",
+    "ignore",
+    "issues",
+    "json",
+    "lowercase",
+    "make",
+    "method",
+    "most",
+    "n8n",
+    "pagination",
+    "parameters",
+    "predefined",
+    "preview",
+    "proxy",
+    "query",
+    "raw",
+    "redirects",
+    "regular",
+    "request",
+    "requests",
+    "response",
+    "rest",
+    "send",
+    "service",
+    "ssl",
+    "timeout",
+    "tool",
+    "url",
+    "urlencoded",
+    "versatile"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "I3wrw8MpZtbjn2khruiw",
+      "name": "pagination-variables"
+    },
+    {
+      "id": "91KTZVqkKv8rY72iELNl",
+      "name": "pagination-api-differences"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "HTTP Request node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.httprequest/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "HTTP Request node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/common-issues",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.httprequest/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.httprequest.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.httprequest.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.httprequest/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.httpRequest",
+  "type_version": 4.4,
+  "type_versions": [
+    3,
+    4,
+    4.1,
+    4.2,
+    4.3,
+    4.4
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "httpSslAuth"
+  ],
+  "credential_details": [
+    {
+      "name": "httpSslAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "provideSslCertificates": [
+            true
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "HTTP Request",
+    "color": "#0004F5"
+  },
+  "subtitle": "={{$parameter[\"method\"] + \": \" + $parameter[\"url\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 42,
+    "parameters": [
+      {
+        "name": "curlImport",
+        "type": "curlImport"
+      },
+      {
+        "name": "method",
+        "displayName": "Method",
+        "type": "options",
+        "default": "GET",
+        "options": [
+          {
+            "name": "DELETE",
+            "value": "DELETE"
+          },
+          {
+            "name": "GET",
+            "value": "GET"
+          },
+          {
+            "name": "HEAD",
+            "value": "HEAD"
+          },
+          {
+            "name": "OPTIONS",
+            "value": "OPTIONS"
+          },
+          {
+            "name": "PATCH",
+            "value": "PATCH"
+          },
+          {
+            "name": "POST",
+            "value": "POST"
+          },
+          {
+            "name": "PUT",
+            "value": "PUT"
+          }
+        ],
+        "description": "The request method to use"
+      },
+      {
+        "name": "url",
+        "displayName": "URL",
+        "type": "string",
+        "required": true,
+        "description": "The URL to make the request to"
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Predefined Credential Type",
+            "value": "predefinedCredentialType",
+            "description": "We've already implemented auth for many services so that you don't have to set it up manually"
+          },
+          {
+            "name": "Generic Credential Type",
+            "value": "genericCredentialType",
+            "description": "Fully customizable. Choose between basic, header, OAuth2, etc."
+          }
+        ]
+      },
+      {
+        "name": "nodeCredentialType",
+        "displayName": "Credential Type",
+        "type": "credentialsSelect",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "predefinedCredentialType"
+            ]
+          }
+        }
+      },
+      {
+        "name": "googleApiWarning",
+        "displayName": "Make sure you have specified the scope(s) for the Service Account in the credential",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "nodeCredentialType": [
+              "googleApi"
+            ]
+          }
+        }
+      },
+      {
+        "name": "genericAuthType",
+        "displayName": "Generic Auth Type",
+        "type": "credentialsSelect",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "genericCredentialType"
+            ]
+          }
+        }
+      },
+      {
+        "name": "provideSslCertificates",
+        "displayName": "SSL Certificates",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "provideSslCertificatesNotice",
+        "displayName": "Provide certificates in node's 'Credential for SSL Certificates' parameter",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "provideSslCertificates": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "sslCertificate",
+        "displayName": "SSL Certificate",
+        "type": "credentials",
+        "displayOptions": {
+          "show": {
+            "provideSslCertificates": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "sendQuery",
+        "displayName": "Send Query Parameters",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether the request has query params or not"
+      },
+      {
+        "name": "specifyQuery",
+        "displayName": "Specify Query Parameters",
+        "type": "options",
+        "default": "keypair",
+        "options": [
+          {
+            "name": "Using Fields Below",
+            "value": "keypair"
+          },
+          {
+            "name": "Using JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendQuery": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "queryParameters",
+        "displayName": "Query Parameters",
+        "type": "fixedCollection",
+        "default": {
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "parameters",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendQuery": [
+              true
+            ],
+            "specifyQuery": [
+              "keypair"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonQuery",
+        "displayName": "JSON",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "sendQuery": [
+              true
+            ],
+            "specifyQuery": [
+              "json"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sendHeaders",
+        "displayName": "Send Headers",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether the request has headers or not"
+      },
+      {
+        "name": "specifyHeaders",
+        "displayName": "Specify Headers",
+        "type": "options",
+        "default": "keypair",
+        "options": [
+          {
+            "name": "Using Fields Below",
+            "value": "keypair"
+          },
+          {
+            "name": "Using JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendHeaders": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "headerParameters",
+        "displayName": "Headers",
+        "type": "fixedCollection",
+        "default": {
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "parameters",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendHeaders": [
+              true
+            ],
+            "specifyHeaders": [
+              "keypair"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonHeaders",
+        "displayName": "JSON",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "sendHeaders": [
+              true
+            ],
+            "specifyHeaders": [
+              "json"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sendBody",
+        "displayName": "Send Body",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether the request has a body or not"
+      },
+      {
+        "name": "contentType",
+        "displayName": "Body Content Type",
+        "type": "options",
+        "default": "json",
+        "options": [
+          {
+            "name": "Form Urlencoded",
+            "value": "form-urlencoded"
+          },
+          {
+            "name": "Form-Data",
+            "value": "multipart-form-data"
+          },
+          {
+            "name": "JSON",
+            "value": "json"
+          },
+          {
+            "name": "n8n Binary File",
+            "value": "binaryData"
+          },
+          {
+            "name": "Raw",
+            "value": "raw"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ]
+          }
+        },
+        "description": "Content-Type to use to send body parameters"
+      },
+      {
+        "name": "specifyBody",
+        "displayName": "Specify Body",
+        "type": "options",
+        "default": "keypair",
+        "options": [
+          {
+            "name": "Using Fields Below",
+            "value": "keypair"
+          },
+          {
+            "name": "Using JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "contentType": [
+              "json"
+            ]
+          }
+        },
+        "description": "The body can be specified using explicit fields (<code>keypair</code>) or using a JavaScript object (<code>json</code>)"
+      },
+      {
+        "name": "bodyParameters",
+        "displayName": "Body Parameters",
+        "type": "fixedCollection",
+        "default": {
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "parameters",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "contentType": [
+              "json"
+            ],
+            "specifyBody": [
+              "keypair"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonBody",
+        "displayName": "JSON",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "contentType": [
+              "json"
+            ],
+            "specifyBody": [
+              "json"
+            ]
+          }
+        }
+      },
+      {
+        "name": "bodyParameters",
+        "displayName": "Body",
+        "type": "fixedCollection",
+        "default": {
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "parameters",
+            "values": [
+              {
+                "name": "parameterType",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "inputDataFieldName",
+                "displayName": "Input Data Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "contentType": [
+              "multipart-form-data"
+            ]
+          }
+        }
+      },
+      {
+        "name": "specifyBody",
+        "displayName": "Specify Body",
+        "type": "options",
+        "default": "keypair",
+        "options": [
+          {
+            "name": "Using Fields Below",
+            "value": "keypair"
+          },
+          {
+            "name": "Using Single Field",
+            "value": "string"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "contentType": [
+              "form-urlencoded"
+            ]
+          }
+        }
+      },
+      {
+        "name": "bodyParameters",
+        "displayName": "Body Fields",
+        "type": "fixedCollection",
+        "default": {
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "parameters",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "contentType": [
+              "form-urlencoded"
+            ],
+            "specifyBody": [
+              "keypair"
+            ]
+          }
+        }
+      },
+      {
+        "name": "body",
+        "displayName": "Body",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "specifyBody": [
+              "string"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputDataFieldName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "contentType": [
+              "binaryData"
+            ]
+          }
+        },
+        "description": "The name of the incoming field containing the binary file data to be processed"
+      },
+      {
+        "name": "rawContentType",
+        "displayName": "Content Type",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "contentType": [
+              "raw"
+            ]
+          }
+        }
+      },
+      {
+        "name": "body",
+        "displayName": "Body",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "sendBody": [
+              true
+            ],
+            "contentType": [
+              "raw"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batching"
+          },
+          {
+            "name": "allowUnauthorizedCerts",
+            "description": "Whether to download the response even if SSL certificate validation is not possible"
+          },
+          {
+            "name": "queryParameterArrays"
+          },
+          {
+            "name": "lowercaseHeaders",
+            "description": "Whether to lowercase header names"
+          },
+          {
+            "name": "redirect"
+          },
+          {
+            "name": "redirect"
+          },
+          {
+            "name": "response"
+          },
+          {
+            "name": "pagination"
+          },
+          {
+            "name": "proxy",
+            "description": "HTTP proxy to use"
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for the server to send response headers (and start the response body) before aborting the request"
+          },
+          {
+            "name": "sendCredentialsOnCrossOriginRedirect",
+            "description": "Whether to send credentials, like the \"Authorization\" header, on redirects to a different origin"
+          }
+        ]
+      },
+      {
+        "name": "optimizeResponse",
+        "displayName": "Optimize Response",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "@tool": [
+              true
+            ]
+          }
+        },
+        "description": "Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost"
+      },
+      {
+        "name": "responseType",
+        "displayName": "Expected Response Type",
+        "type": "options",
+        "default": "json",
+        "options": [
+          {
+            "name": "JSON",
+            "value": "json"
+          },
+          {
+            "name": "HTML",
+            "value": "html"
+          },
+          {
+            "name": "Text",
+            "value": "text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "optimizeResponse": [
+              true
+            ],
+            "@tool": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataField",
+        "displayName": "Field Containing Data",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "optimizeResponse": [
+              true
+            ],
+            "responseType": [
+              "json"
+            ],
+            "@tool": [
+              true
+            ]
+          }
+        },
+        "description": "Specify the name of the field in the response containing the data"
+      },
+      {
+        "name": "fieldsToInclude",
+        "displayName": "Include Fields",
+        "type": "options",
+        "default": "all",
+        "options": [
+          {
+            "name": "All",
+            "value": "all",
+            "description": "Include all fields"
+          },
+          {
+            "name": "Selected",
+            "value": "selected",
+            "description": "Include only fields specified below"
+          },
+          {
+            "name": "Except",
+            "value": "except",
+            "description": "Exclude fields specified below"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "optimizeResponse": [
+              true
+            ],
+            "responseType": [
+              "json"
+            ],
+            "@tool": [
+              true
+            ]
+          }
+        },
+        "description": "What fields response object should include"
+      },
+      {
+        "name": "fields",
+        "displayName": "Fields",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "optimizeResponse": [
+              true
+            ],
+            "responseType": [
+              "json"
+            ],
+            "@tool": [
+              true
+            ]
+          },
+          "hide": {
+            "fieldsToInclude": [
+              "all"
+            ]
+          }
+        },
+        "description": "Comma-separated list of the field names. Supports dot notation. You can drag the selected fields from the input panel."
+      },
+      {
+        "name": "cssSelector",
+        "displayName": "Selector (CSS)",
+        "type": "string",
+        "default": "body",
+        "displayOptions": {
+          "show": {
+            "optimizeResponse": [
+              true
+            ],
+            "responseType": [
+              "html"
+            ],
+            "@tool": [
+              true
+            ]
+          }
+        },
+        "description": "Select specific element(e.g. body) or multiple elements(e.g. div) of chosen type in the response HTML."
+      },
+      {
+        "name": "onlyContent",
+        "displayName": "Return Only Content",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "optimizeResponse": [
+              true
+            ],
+            "responseType": [
+              "html"
+            ],
+            "@tool": [
+              true
+            ]
+          }
+        },
+        "description": "Whether to return only content of html elements, stripping html tags and attributes"
+      },
+      {
+        "name": "elementsToOmit",
+        "displayName": "Elements To Omit",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "optimizeResponse": [
+              true
+            ],
+            "responseType": [
+              "html"
+            ],
+            "onlyContent": [
+              true
+            ],
+            "@tool": [
+              true
+            ]
+          }
+        },
+        "description": "Comma-separated list of selectors that would be excluded when extracting content"
+      },
+      {
+        "name": "truncateResponse",
+        "displayName": "Truncate Response",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "optimizeResponse": [
+              true
+            ],
+            "responseType": [
+              "text",
+              "html"
+            ],
+            "@tool": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "maxLength",
+        "displayName": "Max Response Characters",
+        "type": "number",
+        "default": 1000,
+        "displayOptions": {
+          "show": {
+            "optimizeResponse": [
+              true
+            ],
+            "responseType": [
+              "text",
+              "html"
+            ],
+            "truncateResponse": [
+              true
+            ],
+            "@tool": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "infoMessage",
+        "displayName": "You can view the raw requests this node makes in your browser's developer console",
+        "type": "notice"
+      }
+    ]
+  }
+}

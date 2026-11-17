@@ -1,0 +1,226 @@
+{
+  "id": "n8n-nodes-base.vonage",
+  "name": "Vonage",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.vonage",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Vonage node to automate work in Vonage, and integrate Vonage with other applications. n8n supports sending SMS with Vonage",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.vonage",
+  "credentials": {
+    "name": "Vonage",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/vonage",
+    "slug": "vonage",
+    "json_file": "credentials/vonage.json",
+    "markdown_file": "credentials/vonage.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "SMS",
+      "operation": "Send",
+      "description": "",
+      "doc": "",
+      "resource_value": "sms",
+      "operation_value": "send"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "send",
+    "sending",
+    "sms",
+    "vonage",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.vonage.md",
+      "title": "Vonage node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.vonage",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.vonage.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.vonage.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.vonage.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.vonage.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.vonage",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "vonageApi"
+  ],
+  "credential_details": [
+    {
+      "name": "vonageApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Vonage"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "sms",
+        "options": [
+          {
+            "name": "SMS",
+            "value": "sms"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ]
+          }
+        }
+      },
+      {
+        "name": "from",
+        "displayName": "From",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "The name or number the message should be sent from"
+      },
+      {
+        "name": "to",
+        "displayName": "To",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "The number that the message should be sent to. Numbers are specified in E.164 format."
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        },
+        "description": "The body of the message being sent"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "account-ref",
+            "description": "An optional string used to identify separate accounts using the SMS endpoint for billing purposes. To use this feature, please email support@nexmo.com."
+          },
+          {
+            "name": "callback",
+            "description": "The webhook endpoint the delivery receipt for this sms is sent to. This parameter overrides the webhook endpoint you set in Dashboard."
+          },
+          {
+            "name": "client-ref",
+            "description": "You can optionally include your own reference of up to 40 characters"
+          },
+          {
+            "name": "message-class",
+            "description": "The Data Coding Scheme value of the message"
+          },
+          {
+            "name": "protocol-id",
+            "description": "The value of the protocol identifier to use. Ensure that the value is aligned with udh."
+          },
+          {
+            "name": "status-report-req",
+            "description": "Whether to receive a Delivery Receipt"
+          },
+          {
+            "name": "ttl",
+            "description": "By default Nexmo attempt delivery for 72 hours"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ],
+            "operation": [
+              "send"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

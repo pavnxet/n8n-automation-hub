@@ -1,0 +1,216 @@
+{
+  "id": "n8n-nodes-langchain.chainsummarization",
+  "name": "Summarization Chain",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.chainsummarization",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Summarization Chain node to summarize multiple documents",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainsummarization",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Use Node Input (JSON)",
+      "description": "and Use Node Input (Binary): summarize the data coming into the node from the workflow"
+    },
+    {
+      "name": "Use Document Loader",
+      "description": "summarize data provided by a document loader sub-node"
+    },
+    {
+      "name": "Map Reduce",
+      "description": "summarizes each chunk on its own, then combines the summaries. This is the recommended option"
+    },
+    {
+      "name": "Refine",
+      "description": "summarizes the first chunk, then updates that summary with each next chunk in turn"
+    },
+    {
+      "name": "Stuff",
+      "description": "sends all the text to the model in one prompt. Use it for short text that fits in the model's context window"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "chain",
+    "chainsummarization",
+    "cluster",
+    "document",
+    "documents",
+    "input",
+    "json",
+    "loader",
+    "map",
+    "multiple",
+    "reduce",
+    "refine",
+    "root",
+    "stuff",
+    "summarization",
+    "summarize"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.chainsummarization.md",
+      "title": "Summarization Chain node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainsummarization",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainsummarization.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.chainsummarization.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.chainsummarization.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.chainsummarization.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.chainSummarization",
+  "type_version": 2.1,
+  "type_versions": [
+    2,
+    2.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Summarization Chain",
+    "color": "#909298"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{ ((parameter) => { function getInputs(parameters) {\n    const chunkingMode = parameters?.chunkingMode;\n    const operationMode = parameters?.operationMode;\n    const inputs = [\n        { displayName: '', type: 'main' },\n        {\n            displayName: 'Model',\n            maxConnections: 1,\n            type: 'ai_languageModel',\n            required: true,\n        },\n    ];\n    if (operationMode === 'documentLoader') {\n        inputs.push({\n            displayName: 'Document',\n            type: 'ai_document',\n            required: true,\n            maxConnections: 1,\n        });\n        return inputs;\n    }\n    if (chunkingMode === 'advanced') {\n        inputs.push({\n            displayName: 'Text Splitter',\n            type: 'ai_textSplitter',\n            required: false,\n            maxConnections: 1,\n        });\n        return inputs;\n    }\n    return inputs;\n}; return getInputs(parameter) })($parameter) }}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "Save time with an <a href=\"/templates/1951\" target=\"_blank\">example</a> of how this node works",
+        "type": "notice"
+      },
+      {
+        "name": "operationMode",
+        "displayName": "Data to Summarize",
+        "type": "options",
+        "default": "nodeInputJson",
+        "options": [
+          {
+            "name": "Use Node Input (JSON)",
+            "value": "nodeInputJson",
+            "description": "Summarize the JSON data coming into this node from the previous one"
+          },
+          {
+            "name": "Use Node Input (Binary)",
+            "value": "nodeInputBinary",
+            "description": "Summarize the binary data coming into this node from the previous one"
+          },
+          {
+            "name": "Use Document Loader",
+            "value": "documentLoader",
+            "description": "Use a loader sub-node with more configuration options"
+          }
+        ],
+        "description": "How to pass data into the summarization chain"
+      },
+      {
+        "name": "chunkingMode",
+        "displayName": "Chunking Strategy",
+        "type": "options",
+        "default": "simple",
+        "options": [
+          {
+            "name": "Simple (Define Below)",
+            "value": "simple"
+          },
+          {
+            "name": "Advanced",
+            "value": "advanced",
+            "description": "Use a splitter sub-node with more configuration options"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/operationMode": [
+              "nodeInputJson",
+              "nodeInputBinary"
+            ]
+          }
+        },
+        "description": "Chunk splitting strategy"
+      },
+      {
+        "name": "chunkSize",
+        "displayName": "Characters Per Chunk",
+        "type": "number",
+        "default": 1000,
+        "displayOptions": {
+          "show": {
+            "/chunkingMode": [
+              "simple"
+            ]
+          }
+        },
+        "description": "Controls the max size (in terms of number of characters) of the final document chunk"
+      },
+      {
+        "name": "chunkOverlap",
+        "displayName": "Chunk Overlap (Characters)",
+        "type": "number",
+        "default": 200,
+        "displayOptions": {
+          "show": {
+            "/chunkingMode": [
+              "simple"
+            ]
+          }
+        },
+        "description": "Specifies how much characters overlap there should be between chunks"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "binaryDataKey",
+            "description": "The name of the field in the agent or chain’s input that contains the binary file to be processed"
+          },
+          {
+            "name": "summarizationMethodAndPrompts"
+          },
+          {
+            "name": "batching",
+            "description": "Batch processing options for rate limiting"
+          }
+        ]
+      }
+    ]
+  }
+}

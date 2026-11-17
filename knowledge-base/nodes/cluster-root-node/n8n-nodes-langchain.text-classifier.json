@@ -1,0 +1,212 @@
+{
+  "id": "n8n-nodes-langchain.text-classifier",
+  "name": "Text Classifier",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.text-classifier",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Text Classifier node to classify (categorize) incoming data. Using the categories provided in the parameters (see below), each item is passed to the model to determine its category",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.text-classifier",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Input Prompt",
+      "description": "defines the input to classify. This is usually an expression that references a field from the input items. For example, this could be {{ $json.chatInput }} if the input is a chat trigger. By default it references the text field"
+    },
+    {
+      "name": "Categories",
+      "description": "Add the categories that you want to classify your input as. Categories have a name and a description. Use the description to tell the model what the category means. This is important if the meaning isn't obvious. You can add as many categories as you like"
+    },
+    {
+      "name": "Allow Multiple Classes To Be True",
+      "description": "You can configure the classifier to always output a single class per item (turned off), or allow the model to select multiple classes (turned on)"
+    },
+    {
+      "name": "When No Clear Match",
+      "description": "Define what happens if the model can't find a good match for an item. There are two options:"
+    },
+    {
+      "name": "System Prompt Template",
+      "description": "Use this option to change the system prompt that's used for the classification. It uses the {categories} placeholder for the categories"
+    },
+    {
+      "name": "Enable Auto-Fixing",
+      "description": "When enabled, the node automatically fixes model outputs to ensure they match the expected format. Do this by sending the schema parsing error to the LLM and asking it to fix it"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allow",
+    "auto",
+    "below",
+    "categories",
+    "categorize",
+    "category",
+    "classes",
+    "classifier",
+    "classify",
+    "clear",
+    "cluster",
+    "data",
+    "determine",
+    "enable",
+    "fixing",
+    "incoming",
+    "input",
+    "item",
+    "match",
+    "model",
+    "multiple",
+    "parameters",
+    "passed",
+    "prompt",
+    "provided",
+    "root",
+    "system",
+    "template",
+    "text",
+    "true"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.text-classifier.md",
+      "title": "Text Classifier node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.text-classifier",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.text-classifier.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.text-classifier.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.text-classifier.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.text-classifier.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.textClassifier",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Text Classifier"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      {
+        "displayName": "",
+        "type": "main"
+      },
+      {
+        "displayName": "Model",
+        "maxConnections": 1,
+        "type": "ai_languageModel",
+        "required": true
+      }
+    ],
+    "outputs": "={{((parameters) => {\n    const categories = parameters.categories?.categories ?? [];\n    const fallback = parameters.options?.fallback;\n    const ret = categories.map((cat) => {\n        return { type: 'main', displayName: cat.category };\n    });\n    if (fallback === 'other')\n        ret.push({ type: 'main', displayName: 'Other' });\n    return ret;\n})($parameter)}}"
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "inputText",
+        "displayName": "Text to Classify",
+        "type": "string",
+        "required": true,
+        "description": "Use an expression to reference data in previous nodes or enter static text"
+      },
+      {
+        "name": "categories",
+        "displayName": "Categories",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "categories",
+            "values": [
+              {
+                "name": "category",
+                "displayName": "Category",
+                "type": "string"
+              },
+              {
+                "name": "description",
+                "displayName": "Description",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "confidenceScoresNotice",
+        "displayName": "Confidence scores are estimates from the model, not measured probabilities. They can change between runs, so treat them as a rough signal, not a threshold.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.includeConfidenceScores": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "multiClass"
+          },
+          {
+            "name": "fallback",
+            "description": "What to do with items that don’t match the categories exactly"
+          },
+          {
+            "name": "includeConfidenceScores",
+            "description": "Whether to add a classification field to each item with the model's confidence score for every category"
+          },
+          {
+            "name": "systemPromptTemplate",
+            "description": "String to use directly as the system prompt template"
+          },
+          {
+            "name": "enableAutoFixing",
+            "description": "Whether to enable auto-fixing (may trigger an additional LLM call if output is broken)"
+          },
+          {
+            "name": "batching",
+            "description": "Batch processing options for rate limiting"
+          }
+        ]
+      }
+    ]
+  }
+}

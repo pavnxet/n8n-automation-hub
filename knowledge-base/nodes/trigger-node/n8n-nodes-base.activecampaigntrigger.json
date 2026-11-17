@@ -1,0 +1,137 @@
+{
+  "id": "n8n-nodes-base.activecampaigntrigger",
+  "name": "ActiveCampaign Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.activecampaigntrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "ActiveCampaign is a cloud software platform for small-to-mid-sized business. The company offers software for customer experience automation, which combines the email marketing, marketing automation, sales automation, and CRM categories",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.activecampaigntrigger",
+  "credentials": {
+    "name": "ActiveCampaign credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/activecampaign",
+    "slug": "activecampaign",
+    "json_file": "credentials/activecampaign.json",
+    "markdown_file": "credentials/activecampaign.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "activecampaign",
+    "activecampaigntrigger",
+    "automation",
+    "business",
+    "categories",
+    "cloud",
+    "combines",
+    "company",
+    "credentials",
+    "customer",
+    "email",
+    "experience",
+    "marketing",
+    "offers",
+    "platform",
+    "sales",
+    "sized",
+    "small",
+    "software",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.activecampaigntrigger.md",
+      "title": "ActiveCampaign Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.activecampaigntrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.activecampaigntrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.activecampaigntrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.activecampaigntrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.activecampaigntrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.activeCampaignTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "activeCampaignApi"
+  ],
+  "credential_details": [
+    {
+      "name": "activeCampaignApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "ActiveCampaign Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "events",
+        "displayName": "Event Names or IDs",
+        "type": "multiOptions",
+        "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "sources",
+        "displayName": "Source",
+        "type": "multiOptions",
+        "options": [
+          {
+            "name": "Public",
+            "value": "public",
+            "description": "Run the hooks when a contact triggers the action"
+          },
+          {
+            "name": "Admin",
+            "value": "admin",
+            "description": "Run the hooks when an admin user triggers the action"
+          },
+          {
+            "name": "Api",
+            "value": "api",
+            "description": "Run the hooks when an API call triggers the action"
+          },
+          {
+            "name": "System",
+            "value": "system",
+            "description": "Run the hooks when automated systems triggers the action"
+          }
+        ]
+      }
+    ]
+  }
+}

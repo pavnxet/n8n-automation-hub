@@ -1,0 +1,520 @@
+{
+  "id": "n8n-nodes-base.cockpit",
+  "name": "Cockpit",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.cockpit",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Cockpit node to automate work in Cockpit, and integrate Cockpit with other applications. n8n has built-in support for a wide range of Cockpit features, including creating a collection entry, storing data from a form submission, and getting singletons",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.cockpit",
+  "credentials": {
+    "name": "Cockpit",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/cockpit",
+    "slug": "cockpit",
+    "json_file": "credentials/cockpit.json",
+    "markdown_file": "credentials/cockpit.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Collection",
+      "operation": "Create a collection entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "collection"
+    },
+    {
+      "resource": "Collection",
+      "operation": "Get all collection entries",
+      "description": "",
+      "doc": "",
+      "resource_value": "collection"
+    },
+    {
+      "resource": "Collection",
+      "operation": "Update a collection entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "collection"
+    },
+    {
+      "resource": "Form",
+      "operation": "Store data from a form submission",
+      "description": "",
+      "doc": "",
+      "resource_value": "form"
+    },
+    {
+      "resource": "Singleton",
+      "operation": "Get a singleton",
+      "description": "",
+      "doc": "",
+      "resource_value": "singleton",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "cockpit",
+    "collection",
+    "create",
+    "creating",
+    "data",
+    "entries",
+    "entry",
+    "form",
+    "get",
+    "getting",
+    "including",
+    "singleton",
+    "singletons",
+    "store",
+    "storing",
+    "submission",
+    "update",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.cockpit.md",
+      "title": "Cockpit node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.cockpit",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.cockpit.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.cockpit.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.cockpit.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.cockpit.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.cockpit",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "cockpitApi"
+  ],
+  "credential_details": [
+    {
+      "name": "cockpitApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Cockpit"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 17,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "collection",
+        "options": [
+          {
+            "name": "Collection",
+            "value": "collection"
+          },
+          {
+            "name": "Form",
+            "value": "form"
+          },
+          {
+            "name": "Singleton",
+            "value": "singleton"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create an Entry",
+            "value": "create",
+            "description": "Create a collection entry"
+          },
+          {
+            "name": "Get Many Entries",
+            "value": "getAll",
+            "description": "Get many collection entries"
+          },
+          {
+            "name": "Update an Entry",
+            "value": "update",
+            "description": "Update a collection entry"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "collection"
+            ]
+          }
+        }
+      },
+      {
+        "name": "collection",
+        "displayName": "Collection Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "collection"
+            ]
+          }
+        },
+        "description": "Name of the collection to operate on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "collection"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "collection"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Comma-separated list of fields to get"
+          },
+          {
+            "name": "filter",
+            "description": "Filter query in <a href=\"https://jeroen.github.io/mongolite/query-data.html\">Mongolite format</a>"
+          },
+          {
+            "name": "language",
+            "description": "Return normalized language fields"
+          },
+          {
+            "name": "populate",
+            "description": "Whether to resolve linked collection items"
+          },
+          {
+            "name": "rawData",
+            "description": "Whether to return the data exactly in the way it got received from the API"
+          },
+          {
+            "name": "skip",
+            "description": "Skip number of entries"
+          },
+          {
+            "name": "sort",
+            "description": "Sort query in <a href=\"https://jeroen.github.io/mongolite/query-data.html\">Mongolite format</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "collection"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "collection"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonDataFields",
+        "displayName": "JSON Data Fields",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "collection"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        },
+        "description": "Whether new entry fields should be set via the value-key pair UI or JSON"
+      },
+      {
+        "name": "dataFieldsJson",
+        "displayName": "Entry Data",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "jsonDataFields": [
+              true
+            ],
+            "resource": [
+              "collection"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        },
+        "description": "Entry data to send as JSON"
+      },
+      {
+        "name": "dataFieldsUi",
+        "displayName": "Entry Data",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "field",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "jsonDataFields": [
+              false
+            ],
+            "resource": [
+              "collection"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        },
+        "description": "Entry data to send"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "submit",
+        "options": [
+          {
+            "name": "Submit a Form",
+            "value": "submit",
+            "description": "Store data from a form submission"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "form"
+            ]
+          }
+        }
+      },
+      {
+        "name": "form",
+        "displayName": "Form",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "form"
+            ]
+          }
+        },
+        "description": "Name of the form to operate on"
+      },
+      {
+        "name": "jsonDataFields",
+        "displayName": "JSON Data Fields",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "form"
+            ],
+            "operation": [
+              "submit"
+            ]
+          }
+        },
+        "description": "Whether form fields should be set via the value-key pair UI or JSON"
+      },
+      {
+        "name": "dataFieldsJson",
+        "displayName": "Form Data",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "jsonDataFields": [
+              true
+            ],
+            "resource": [
+              "form"
+            ],
+            "operation": [
+              "submit"
+            ]
+          }
+        },
+        "description": "Form data to send as JSON"
+      },
+      {
+        "name": "dataFieldsUi",
+        "displayName": "Form Data",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "field",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "jsonDataFields": [
+              false
+            ],
+            "resource": [
+              "form"
+            ],
+            "operation": [
+              "submit"
+            ]
+          }
+        },
+        "description": "Form data to send"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a singleton"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "singleton"
+            ]
+          }
+        }
+      },
+      {
+        "name": "singleton",
+        "displayName": "Singleton Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "singleton"
+            ]
+          }
+        },
+        "description": "Name of the singleton to operate on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      }
+    ]
+  }
+}

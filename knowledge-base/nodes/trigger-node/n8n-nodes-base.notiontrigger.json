@@ -1,0 +1,209 @@
+{
+  "id": "n8n-nodes-base.notiontrigger",
+  "name": "Notion Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.notiontrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Notion is an all-in-one workspace for your notes, tasks, wikis, and databases",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.notiontrigger",
+  "credentials": {
+    "name": "Notion credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/notion",
+    "slug": "notion",
+    "json_file": "credentials/notion.json",
+    "markdown_file": "credentials/notion.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "credentials",
+    "databases",
+    "notes",
+    "notion",
+    "notiontrigger",
+    "tasks",
+    "trigger",
+    "wikis",
+    "workspace"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.notiontrigger.md",
+      "title": "Notion Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.notiontrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.notiontrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.notiontrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.notiontrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.notiontrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.notionTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "notionApi"
+  ],
+  "credential_details": [
+    {
+      "name": "notionApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Notion Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "default": "pageAddedToDatabase",
+        "options": [
+          {
+            "name": "Page Added to Database",
+            "value": "pageAddedToDatabase"
+          },
+          {
+            "name": "Page Updated in Database",
+            "value": "pagedUpdatedInDatabase"
+          }
+        ]
+      },
+      {
+        "name": "notionNotice",
+        "displayName": "In Notion, make sure to <a href=\"https://www.notion.so/help/add-and-manage-connections-with-the-api\" target=\"_blank\">add your connection</a> to the pages you want to access.",
+        "type": "notice"
+      },
+      {
+        "name": "databaseId",
+        "displayName": "Database",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "event": [
+              "pageAddedToDatabase",
+              "pagedUpdatedInDatabase"
+            ]
+          }
+        },
+        "description": "The Notion Database to operate on"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "event": [
+              "pageAddedToDatabase",
+              "pagedUpdatedInDatabase"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      }
+    ]
+  }
+}

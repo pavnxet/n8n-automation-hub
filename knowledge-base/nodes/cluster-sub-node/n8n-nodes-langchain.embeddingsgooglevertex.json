@@ -1,0 +1,218 @@
+{
+  "id": "n8n-nodes-langchain.embeddingsgooglevertex",
+  "name": "Embeddings Google Vertex",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.embeddingsgooglevertex",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Embeddings Google Vertex node to generate embeddings[^1] for a given text",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsgooglevertex",
+  "credentials": {
+    "name": "Google Vertex AI",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/googlevertexai",
+    "slug": "googlevertexai",
+    "json_file": "credentials/googlevertexai.json",
+    "markdown_file": "credentials/googlevertexai.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Authentication",
+      "description": "Select Google Service Account (the default) or Google Vertex AI"
+    },
+    {
+      "name": "Project ID",
+      "description": "For Google Service Account authentication, n8n loads the project list using the service account's access. Select a listed project, or enter the project ID manually. For Google Vertex AI authentication, configure the project in the credential"
+    },
+    {
+      "name": "Model Name",
+      "description": "Enter the model name to use to generate the embedding"
+    },
+    {
+      "name": "Region",
+      "description": "Select Default (Use Credential Region) to use the region set in the credential. To override it, select Global, EU (Multi-Region), or US (Multi-Region)"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "authentication",
+    "cluster",
+    "embeddings",
+    "embeddingsgooglevertex",
+    "generate",
+    "given",
+    "google",
+    "model",
+    "name",
+    "project",
+    "region",
+    "sub",
+    "text",
+    "vertex"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.embeddingsgooglevertex.md",
+      "title": "Embeddings Google Vertex node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsgooglevertex",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsgooglevertex.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsgooglevertex.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsgooglevertex.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsgooglevertex.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.embeddingsGoogleVertex",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "googleApi",
+    "googleVertexAiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "googleApi"
+          ]
+        }
+      }
+    },
+    {
+      "name": "googleVertexAiApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "googleVertexAiApi"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Embeddings Google Vertex"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_embedding"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "googleApi",
+        "options": [
+          {
+            "name": "Google Service Account",
+            "value": "googleApi"
+          },
+          {
+            "name": "Google Vertex AI",
+            "value": "googleVertexAiApi"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_vectorStore'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "notice",
+        "displayName": "Each model is using different dimensional density for embeddings. Please make sure to use the same dimensionality for your vector store. The default model is using 768-dimensional embeddings. You can find available models <a href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-embeddings-api\">here</a>.",
+        "type": "notice"
+      },
+      {
+        "name": "projectId",
+        "displayName": "Project ID",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "googleApi"
+            ]
+          }
+        },
+        "description": "Select or enter your Google Cloud project ID"
+      },
+      {
+        "name": "modelName",
+        "displayName": "Model Name",
+        "type": "string",
+        "default": "text-embedding-005",
+        "description": "The model which will generate the embeddings. <a href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-embeddings-api\">Learn more</a>."
+      },
+      {
+        "name": "location",
+        "displayName": "Region",
+        "type": "options",
+        "options": [
+          {
+            "name": "Default (Use Credential Region)",
+            "value": ""
+          },
+          {
+            "name": "Global",
+            "value": "global"
+          },
+          {
+            "name": "EU (Multi-Region)",
+            "value": "eu"
+          },
+          {
+            "name": "US (Multi-Region)",
+            "value": "us"
+          }
+        ],
+        "description": "Where the model runs. Newer Gemini models (3.x) are only available on the Global or the EU/US multi-region locations. Leave as Default to use the region set in the credential."
+      }
+    ]
+  }
+}

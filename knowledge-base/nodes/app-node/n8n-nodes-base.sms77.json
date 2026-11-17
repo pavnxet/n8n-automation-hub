@@ -1,0 +1,289 @@
+{
+  "id": "n8n-nodes-base.sms77",
+  "name": "seven",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.sms77",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the seven node to automate work in seven, and integrate seven with other applications. n8n has built-in support for a wide range of seven features, including sending SMS, and converting text to voice",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.sms77",
+  "credentials": {
+    "name": "seven",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/sms77",
+    "slug": "sms77",
+    "json_file": "credentials/sms77.json",
+    "markdown_file": "credentials/sms77.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "SMS",
+      "operation": "Send SMS",
+      "description": "",
+      "doc": "",
+      "resource_value": "sms",
+      "operation_value": "send"
+    },
+    {
+      "resource": "Voice Call",
+      "operation": "Converts text to voice and calls a given number",
+      "description": "",
+      "doc": "",
+      "resource_value": "voice"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "call",
+    "calls",
+    "converting",
+    "converts",
+    "given",
+    "including",
+    "number",
+    "send",
+    "sending",
+    "seven",
+    "sms",
+    "sms77",
+    "text",
+    "voice",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.sms77.md",
+      "title": "seven node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.sms77",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.sms77.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.sms77.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.sms77.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.sms77.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.sms77",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "sms77Api"
+  ],
+  "credential_details": [
+    {
+      "name": "sms77Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "seven"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "sms",
+        "options": [
+          {
+            "name": "SMS",
+            "value": "sms"
+          },
+          {
+            "name": "Voice Call",
+            "value": "voice"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send SMS"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Converts text to voice and calls a given number"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "voice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "from",
+        "displayName": "From",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        },
+        "description": "The caller ID displayed in the receivers display. Max 16 numeric or 11 alphanumeric characters."
+      },
+      {
+        "name": "to",
+        "displayName": "To",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms",
+              "voice"
+            ]
+          }
+        },
+        "description": "The number of your recipient(s) separated by comma. Can be regular numbers or contact/groups from seven."
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms",
+              "voice"
+            ]
+          }
+        },
+        "description": "The message to send. Max. 1520 characters"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "delay",
+            "description": "Pick a date for time delayed dispatch"
+          },
+          {
+            "name": "foreign_id",
+            "description": "Custom foreign ID returned in DLR callbacks"
+          },
+          {
+            "name": "flash",
+            "description": "Send as flash message being displayed directly the receiver's display"
+          },
+          {
+            "name": "label",
+            "description": "Custom label used to group analytics"
+          },
+          {
+            "name": "performance_tracking",
+            "description": "Whether to enable performance tracking for URLs found in the message text"
+          },
+          {
+            "name": "ttl",
+            "description": "Custom time to live specifying the validity period of a message in minutes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "from",
+            "description": "The caller ID. Please use only verified sender IDs, one of your virtual inbound numbers or one of our shared virtual numbers."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "voice"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

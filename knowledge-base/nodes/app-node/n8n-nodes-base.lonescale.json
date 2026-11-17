@@ -1,0 +1,411 @@
+{
+  "id": "n8n-nodes-base.lonescale",
+  "name": "LoneScale",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.lonescale",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the LoneScale node to automate work in LoneScale and integrate LoneScale with other applications. n8n has built-in support for managing Lists and Items in LoneScale",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.lonescale",
+  "credentials": {
+    "name": "LoneScale credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/lonescale",
+    "slug": "lonescale",
+    "json_file": "credentials/lonescale.json",
+    "markdown_file": "credentials/lonescale.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "List",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "list",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Item",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "add"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "credentials",
+    "item",
+    "items",
+    "list",
+    "lists",
+    "lonescale",
+    "managing",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.lonescale.md",
+      "title": "LoneScale node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.lonescale",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.lonescale.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.lonescale.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.lonescale.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.lonescale.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.loneScale",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "loneScaleApi"
+  ],
+  "credential_details": [
+    {
+      "name": "loneScaleApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "LoneScale"
+  },
+  "subtitle": "={{$parameter[\"resource\"] + \": \" + $parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 12,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "list",
+        "options": [
+          {
+            "name": "List",
+            "value": "list",
+            "description": "Manipulate list"
+          },
+          {
+            "name": "Item",
+            "value": "item",
+            "description": "Manipulate item"
+          }
+        ],
+        "description": "Create a new list"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a list"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Create",
+            "value": "add",
+            "description": "Create an item"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ]
+          }
+        }
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "default": "PEOPLE",
+        "options": [
+          {
+            "name": "Company",
+            "value": "COMPANY",
+            "description": "List of company"
+          },
+          {
+            "name": "Contact",
+            "value": "PEOPLE",
+            "description": "List of contact"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ]
+          }
+        },
+        "description": "Type of your list"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "first_name",
+        "displayName": "First Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add"
+            ],
+            "resource": [
+              "item"
+            ],
+            "type": [
+              "PEOPLE"
+            ]
+          }
+        },
+        "description": "Contact first name"
+      },
+      {
+        "name": "last_name",
+        "displayName": "Last Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add"
+            ],
+            "resource": [
+              "item"
+            ],
+            "type": [
+              "PEOPLE"
+            ]
+          }
+        },
+        "description": "Contact last name"
+      },
+      {
+        "name": "company_name",
+        "displayName": "Company Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add"
+            ],
+            "resource": [
+              "item"
+            ],
+            "type": [
+              "COMPANY"
+            ]
+          }
+        },
+        "description": "Contact company name"
+      },
+      {
+        "name": "peopleAdditionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "full_name",
+            "description": "Contact full name"
+          },
+          {
+            "name": "email"
+          },
+          {
+            "name": "company_name",
+            "description": "Contact company name"
+          },
+          {
+            "name": "current_position",
+            "description": "Contact current position"
+          },
+          {
+            "name": "domain",
+            "description": "Contact company domain"
+          },
+          {
+            "name": "linkedin_url",
+            "description": "Contact Linkedin URL"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "contact_id",
+            "description": "Contact ID from your source"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add"
+            ],
+            "resource": [
+              "item"
+            ],
+            "type": [
+              "PEOPLE"
+            ]
+          }
+        }
+      },
+      {
+        "name": "companyAdditionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "linkedin_url",
+            "description": "Company Linkedin URL"
+          },
+          {
+            "name": "domain",
+            "description": "Company company domain"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "contact_id",
+            "description": "Contact ID from your source"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add"
+            ],
+            "resource": [
+              "item"
+            ],
+            "type": [
+              "COMPANY"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "list"
+            ]
+          }
+        },
+        "description": "Name of your list"
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "default": "COMPANY",
+        "options": [
+          {
+            "name": "Company",
+            "value": "COMPANY",
+            "description": "Create a list of companies"
+          },
+          {
+            "name": "Contact",
+            "value": "PEOPLE",
+            "description": "Create a list of contacts"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "list"
+            ]
+          }
+        },
+        "description": "Type of your list"
+      }
+    ]
+  }
+}

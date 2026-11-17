@@ -1,0 +1,203 @@
+{
+  "id": "n8n-nodes-base.code",
+  "name": "Code",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.code",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Code node lets you run your own JavaScript or Python inside a workflow, so you can transform data or add logic the built-in nodes don't cover",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Code doesn't return items properly",
+      "summary": "This error occurs when the code in your Code node doesn't return data in the expected format"
+    },
+    {
+      "title": "A 'json' property isn't an object",
+      "summary": "This error occurs when the Code node returns data where the json key isn't pointing to an object"
+    },
+    {
+      "title": "Code doesn't return an object",
+      "summary": "This error may occur when your Code node doesn't return anything or if it returns an unexpected result"
+    },
+    {
+      "title": "'import' and 'export' may only appear at the top level",
+      "summary": "This error occurs if you try to use import or export in the Code node. These aren't supported by n8n's JavaScript sandbox. Instead, use the require function to load modules"
+    },
+    {
+      "title": "Cannot find module '\\<module>'",
+      "summary": "This error occurs if you try to use require in the Code node and n8n can't find the module"
+    },
+    {
+      "title": "Using global variables",
+      "summary": "Sometimes you may wish to set and retrieve simple global data related to a workflow across and within executions. For example, you may wish to include the date of the previous report when compiling a report with a list of project updates"
+    },
+    {
+      "title": "Can't access credentials in a code node",
+      "summary": "By design, Code nodes can't access credentials. They don't have access to n8n’s internal credential management system. This prevents exposure of sensitive authentication data"
+    }
+  ],
+  "keywords": [
+    "code",
+    "core",
+    "cover",
+    "data",
+    "inside",
+    "javascript",
+    "lets",
+    "logic",
+    "python",
+    "transform"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "A6AUEJWQnhjgrypgRNwY",
+      "name": "code-node"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Code node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.code/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Code node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/common-issues",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.code/common-issues.md"
+    },
+    {
+      "page": "keyboard-shortcuts.md",
+      "title": "Code editor keyboard shortcuts",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/keyboard-shortcuts",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.code/keyboard-shortcuts.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.code.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.code.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.code/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.code",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "LangChain Code"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{ ((values) => { const connectorTypes = {\"ai_chain\":\"Chain\",\"ai_document\":\"Document\",\"ai_embedding\":\"Embedding\",\"ai_languageModel\":\"Language Model\",\"ai_memory\":\"Memory\",\"ai_outputParser\":\"Output Parser\",\"ai_textSplitter\":\"Text Splitter\",\"ai_tool\":\"Tool\",\"ai_vectorStore\":\"Vector Store\",\"main\":\"Main\"}; return values.map(value => { return { type: value.type, required: value.required, maxConnections: value.maxConnections === -1 ? undefined : value.maxConnections, displayName: connectorTypes[value.type] !== 'Main' ? connectorTypes[value.type] : undefined } } ) })($parameter.inputs.input) }}",
+    "outputs": "={{ ((values) => { const connectorTypes = {\"ai_chain\":\"Chain\",\"ai_document\":\"Document\",\"ai_embedding\":\"Embedding\",\"ai_languageModel\":\"Language Model\",\"ai_memory\":\"Memory\",\"ai_outputParser\":\"Output Parser\",\"ai_textSplitter\":\"Text Splitter\",\"ai_tool\":\"Tool\",\"ai_vectorStore\":\"Vector Store\",\"main\":\"Main\"}; return values.map(value => { return { type: value.type, displayName: connectorTypes[value.type] !== 'Main' ? connectorTypes[value.type] : undefined } } ) })($parameter.outputs.output) }}"
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "code",
+        "displayName": "Code",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "execute",
+            "values": [
+              {
+                "name": "code",
+                "displayName": "JavaScript - Execute",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "supplyData",
+            "values": [
+              {
+                "name": "code",
+                "displayName": "JavaScript - Supply Data",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "You can import LangChain and use all available functionality. Debug by using <code>console.log()</code> statements and viewing their output in the browser console.",
+        "type": "notice"
+      },
+      {
+        "name": "inputs",
+        "displayName": "Inputs",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "input",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "maxConnections",
+                "displayName": "Max Connections",
+                "type": "number"
+              },
+              {
+                "name": "required",
+                "displayName": "Required",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "description": "The input to add"
+      },
+      {
+        "name": "outputs",
+        "displayName": "Outputs",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "output",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "The output to add"
+      }
+    ]
+  }
+}

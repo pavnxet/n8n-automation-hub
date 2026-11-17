@@ -1,0 +1,415 @@
+{
+  "id": "n8n-nodes-base.chargebee",
+  "name": "Chargebee",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.chargebee",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Chargebee node to automate work in Chargebee, and integrate Chargebee with other applications. n8n has built-in support for a wide range of Chargebee features, including creating customers, returning invoices, and canceling subscriptions",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.chargebee",
+  "credentials": {
+    "name": "Chargebee",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/chargebee",
+    "slug": "chargebee",
+    "json_file": "credentials/chargebee.json",
+    "markdown_file": "credentials/chargebee.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Customer",
+      "operation": "Create a customer",
+      "description": "",
+      "doc": "",
+      "resource_value": "customer",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Return the invoices",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Get URL for the invoice PDF",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice"
+    },
+    {
+      "resource": "Subscription",
+      "operation": "Cancel a subscription",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscription",
+      "operation_value": "cancel"
+    },
+    {
+      "resource": "Subscription",
+      "operation": "Delete a subscription",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscription",
+      "operation_value": "delete"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "cancel",
+    "canceling",
+    "chargebee",
+    "create",
+    "creating",
+    "customer",
+    "customers",
+    "delete",
+    "get",
+    "including",
+    "invoice",
+    "invoices",
+    "pdf",
+    "return",
+    "returning",
+    "subscription",
+    "subscriptions",
+    "url",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.chargebee.md",
+      "title": "Chargebee node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.chargebee",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.chargebee.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.chargebee.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.chargebee.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.chargebee.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.chargebee",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "chargebeeApi"
+  ],
+  "credential_details": [
+    {
+      "name": "chargebeeApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Chargebee"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 11,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "invoice",
+        "options": [
+          {
+            "name": "Customer",
+            "value": "customer"
+          },
+          {
+            "name": "Invoice",
+            "value": "invoice"
+          },
+          {
+            "name": "Subscription",
+            "value": "subscription"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a customer"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "properties",
+        "displayName": "Properties",
+        "type": "collection",
+        "options": [
+          {
+            "name": "id",
+            "description": "ID for the new customer. If not given, this will be auto-generated."
+          },
+          {
+            "name": "first_name",
+            "description": "The first name of the customer"
+          },
+          {
+            "name": "last_name",
+            "description": "The last name of the customer"
+          },
+          {
+            "name": "email",
+            "description": "The email address of the customer"
+          },
+          {
+            "name": "phone",
+            "description": "The phone number of the customer"
+          },
+          {
+            "name": "company",
+            "description": "The company of the customer"
+          },
+          {
+            "name": "customProperties",
+            "description": "Adds a custom property to set also values which have not been predefined"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        },
+        "description": "Properties to set on the new user"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "list",
+        "options": [
+          {
+            "name": "List",
+            "value": "list",
+            "description": "Return the invoices"
+          },
+          {
+            "name": "PDF Invoice URL",
+            "value": "pdfUrl",
+            "description": "Get URL for the invoice PDF"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "maxResults",
+        "displayName": "Max Results",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "list"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        },
+        "description": "Max. amount of results to return(< 100)."
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "date",
+            "values": [
+              {
+                "name": "operation",
+                "displayName": "Operation",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Date",
+                "type": "dateTime"
+              }
+            ]
+          },
+          {
+            "name": "total",
+            "values": [
+              {
+                "name": "operation",
+                "displayName": "Operation",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Amount",
+                "type": "number"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "list"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        },
+        "description": "Filter for invoices"
+      },
+      {
+        "name": "invoiceId",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "pdfUrl"
+            ],
+            "resource": [
+              "invoice"
+            ]
+          }
+        },
+        "description": "The ID of the invoice to get"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "delete",
+        "options": [
+          {
+            "name": "Cancel",
+            "value": "cancel",
+            "description": "Cancel a subscription"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a subscription"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscription"
+            ]
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "displayName": "Subscription ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "cancel"
+            ],
+            "resource": [
+              "subscription"
+            ]
+          }
+        },
+        "description": "The ID of the subscription to cancel"
+      },
+      {
+        "name": "endOfTerm",
+        "displayName": "Schedule End of Term",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "cancel"
+            ],
+            "resource": [
+              "subscription"
+            ]
+          }
+        },
+        "description": "Whether it will not cancel it directly in will instead schedule the cancelation for the end of the term"
+      },
+      {
+        "name": "subscriptionId",
+        "displayName": "Subscription ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "subscription"
+            ]
+          }
+        },
+        "description": "The ID of the subscription to delete"
+      }
+    ]
+  }
+}

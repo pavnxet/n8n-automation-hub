@@ -1,0 +1,1760 @@
+{
+  "id": "n8n-nodes-base.googlecalendar",
+  "name": "Google Calendar",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googlecalendar",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Calendar node to automate work in Google Calendar, and integrate Google Calendar with other applications. n8n has built-in support for a wide range of Google Calendar features, including adding, retrieving, deleting and updating calendar events",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar",
+  "credentials": {
+    "name": "Google Calendar",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Calendar",
+      "operation": "Availability",
+      "description": "If a time-slot is available in a calendar",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/calendar-operations#availability",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Calendar"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Availability"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to check against. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Start Time",
+          "description": "The start time for the time-slot you want to check. By default, uses an expression evaluating to the current time ({{ $now }})"
+        },
+        {
+          "name": "End Time",
+          "description": "The end time for the time-slot you want to check. By default, uses an expression evaluating to an hour from now ({{ $now.plus(1, 'hour') }})"
+        }
+      ],
+      "options": [
+        {
+          "name": "Output Format",
+          "description": "Select the format for the availability information:"
+        },
+        {
+          "name": "Timezone",
+          "description": "The timezone used in the response. By default, uses the n8n timezone"
+        }
+      ],
+      "resource_value": "calendar",
+      "operation_value": "availability"
+    },
+    {
+      "resource": "Event",
+      "operation": "Create",
+      "description": "Add an event to calendar",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#create",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to add an event to. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Start Time",
+          "description": "The start time for the event. By default, uses an expression evaluating to the current time ({{ $now }})"
+        },
+        {
+          "name": "End Time",
+          "description": "The end time for the event. By default, this uses an expression evaluating to an hour from now ({{ $now.plus(1, 'hour') }})"
+        },
+        {
+          "name": "Use Default Reminders",
+          "description": "Whether to enable default reminders for the event according to the calendar configuration"
+        }
+      ],
+      "options": [
+        {
+          "name": "All Day",
+          "description": "Whether the event is all day or not"
+        },
+        {
+          "name": "Attendees",
+          "description": "Attendees to invite to the event"
+        },
+        {
+          "name": "Color Name or ID",
+          "description": "The color of the event. Choose from the list or specify the ID using an expression"
+        },
+        {
+          "name": "Conference Data",
+          "description": "Creates a conference link (Hangouts, Meet, etc.) and attaches it to the event"
+        },
+        {
+          "name": "Description",
+          "description": "A description for the event"
+        },
+        {
+          "name": "Guests Can Invite Others",
+          "description": "Whether attendees other than the organizer can invite others to the event"
+        },
+        {
+          "name": "Guests Can Modify",
+          "description": "Whether attendees other than the organizer can modify the event"
+        },
+        {
+          "name": "Guests Can See Other Guests",
+          "description": "Whether attendees other than the organizer can see who the event's attendees are"
+        },
+        {
+          "name": "ID",
+          "description": "Opaque identifier of the event"
+        },
+        {
+          "name": "Location",
+          "description": "Geographic location of the event as free-form text"
+        },
+        {
+          "name": "Max Attendees",
+          "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only returns the participant"
+        },
+        {
+          "name": "Repeat Frequency",
+          "description": "The repetition interval for recurring events"
+        },
+        {
+          "name": "Repeat How Many Times?",
+          "description": "The number of instances to create for recurring events"
+        },
+        {
+          "name": "Repeat Until",
+          "description": "The date at which recurring events should stop"
+        },
+        {
+          "name": "RRULE",
+          "description": "Recurrence rule. When set, ignores the Repeat Frequency, Repeat How Many Times, and Repeat Until parameters"
+        },
+        {
+          "name": "Send Updates",
+          "description": "Whether to send notifications about the creation of the new event"
+        },
+        {
+          "name": "Show Me As",
+          "description": "Whether the event blocks time on the calendar"
+        },
+        {
+          "name": "Summary",
+          "description": "The title of the event"
+        }
+      ],
+      "resource_value": "event",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Event",
+      "operation": "Delete",
+      "description": "Delete an event",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#delete",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to delete an event from. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Event ID",
+          "description": "The ID of the event to delete"
+        }
+      ],
+      "options": [
+        {
+          "name": "Send Updates",
+          "description": "Whether to send notifications about the deletion of the event"
+        }
+      ],
+      "resource_value": "event",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Event",
+      "operation": "Get",
+      "description": "Retrieve an event",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#get",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to get an event from. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Event ID",
+          "description": "The ID of the event to get"
+        }
+      ],
+      "options": [
+        {
+          "name": "Max Attendees",
+          "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only returns the participant"
+        },
+        {
+          "name": "Return Next Instance of Recurrent Event",
+          "description": "Whether to return the next instance of a recurring event instead of the event itself"
+        },
+        {
+          "name": "Timezone",
+          "description": "The timezone used in the response. By default, uses the n8n timezone"
+        }
+      ],
+      "resource_value": "event",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Event",
+      "operation": "Get Many",
+      "description": "Retrieve all events from a calendar",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#get-many",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to get an event from. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Return All",
+          "description": "Whether to return all results or only up to a given limit"
+        },
+        {
+          "name": "Limit",
+          "description": "(When \"Return All\" isn't selected) The maximum number of results to return"
+        },
+        {
+          "name": "After",
+          "description": "Retrieve events that occur after this time. At least part of the event must be after this time. By default, this uses an expression evaluating to the current time ({{ $now }}). Switch the field to \"fixed\" to select a date from a date widget"
+        },
+        {
+          "name": "Before",
+          "description": "Retrieve events that occur before this time. At least part of the event must be before this time. By default, this uses an expression evaluating to the current time plus a week ({{ $now.plus({ week: 1 }) }}). Switch the field to \"fixed\" to select a date from a date widget"
+        }
+      ],
+      "options": [
+        {
+          "name": "Fields",
+          "description": "Specify the fields to return. By default, returns a set of commonly used fields predefined by Google. Use \"\\*\" to return all fields. You can find out more in Google Calendar's documentation on working with partial resources"
+        },
+        {
+          "name": "iCalUID",
+          "description": "Specifies an event ID (in the iCalendar format) to include in the response"
+        },
+        {
+          "name": "Max Attendees",
+          "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only returns the participant"
+        },
+        {
+          "name": "Order By",
+          "description": "The order to use for the events in the response"
+        },
+        {
+          "name": "Query",
+          "description": "Free text search terms to find events that match. This searches all fields except for extended properties"
+        },
+        {
+          "name": "Recurring Event Handling",
+          "description": "What to do for recurring events:"
+        },
+        {
+          "name": "Show Deleted",
+          "description": "Whether to include deleted events (with status equal to \"cancelled\") in the results"
+        },
+        {
+          "name": "Show Hidden Invitations",
+          "description": "Whether to include hidden invitations in the results"
+        },
+        {
+          "name": "Timezone",
+          "description": "The timezone used in the response. By default, uses the n8n timezone"
+        },
+        {
+          "name": "Updated Min",
+          "description": "The lower bounds for an event's last modification time (as an RFC 3339 timestamp)"
+        }
+      ],
+      "resource_value": "event",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Event",
+      "operation": "Update",
+      "description": "Update an event",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#update",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to add an event to. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Event ID",
+          "description": "The ID of the event to update"
+        },
+        {
+          "name": "Modify",
+          "description": "For recurring events, choose whether to update the recurring event or a specific instance of the recurring event"
+        },
+        {
+          "name": "Use Default Reminders",
+          "description": "Whether to enable default reminders for the event according to the calendar configuration"
+        },
+        {
+          "name": "Update Fields",
+          "description": "The fields of the event to update:"
+        }
+      ],
+      "resource_value": "event",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 6,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Availability",
+      "page": "calendar-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/calendar-operations#availability",
+      "summary": "Use this operation to check if a time-slot is available in a calendar",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Calendar"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Availability"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to check against. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Start Time",
+          "description": "The start time for the time-slot you want to check. By default, uses an expression evaluating to the current time ({{ $now }})"
+        },
+        {
+          "name": "End Time",
+          "description": "The end time for the time-slot you want to check. By default, uses an expression evaluating to an hour from now ({{ $now.plus(1, 'hour') }})"
+        }
+      ],
+      "options": [
+        {
+          "name": "Output Format",
+          "description": "Select the format for the availability information:"
+        },
+        {
+          "name": "Timezone",
+          "description": "The timezone used in the response. By default, uses the n8n timezone"
+        }
+      ]
+    },
+    {
+      "operation": "Create",
+      "page": "event-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#create",
+      "summary": "Use this operation to add an event to a Google Calendar",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to add an event to. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Start Time",
+          "description": "The start time for the event. By default, uses an expression evaluating to the current time ({{ $now }})"
+        },
+        {
+          "name": "End Time",
+          "description": "The end time for the event. By default, this uses an expression evaluating to an hour from now ({{ $now.plus(1, 'hour') }})"
+        },
+        {
+          "name": "Use Default Reminders",
+          "description": "Whether to enable default reminders for the event according to the calendar configuration"
+        }
+      ],
+      "options": [
+        {
+          "name": "All Day",
+          "description": "Whether the event is all day or not"
+        },
+        {
+          "name": "Attendees",
+          "description": "Attendees to invite to the event"
+        },
+        {
+          "name": "Color Name or ID",
+          "description": "The color of the event. Choose from the list or specify the ID using an expression"
+        },
+        {
+          "name": "Conference Data",
+          "description": "Creates a conference link (Hangouts, Meet, etc.) and attaches it to the event"
+        },
+        {
+          "name": "Description",
+          "description": "A description for the event"
+        },
+        {
+          "name": "Guests Can Invite Others",
+          "description": "Whether attendees other than the organizer can invite others to the event"
+        },
+        {
+          "name": "Guests Can Modify",
+          "description": "Whether attendees other than the organizer can modify the event"
+        },
+        {
+          "name": "Guests Can See Other Guests",
+          "description": "Whether attendees other than the organizer can see who the event's attendees are"
+        },
+        {
+          "name": "ID",
+          "description": "Opaque identifier of the event"
+        },
+        {
+          "name": "Location",
+          "description": "Geographic location of the event as free-form text"
+        },
+        {
+          "name": "Max Attendees",
+          "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only returns the participant"
+        },
+        {
+          "name": "Repeat Frequency",
+          "description": "The repetition interval for recurring events"
+        },
+        {
+          "name": "Repeat How Many Times?",
+          "description": "The number of instances to create for recurring events"
+        },
+        {
+          "name": "Repeat Until",
+          "description": "The date at which recurring events should stop"
+        },
+        {
+          "name": "RRULE",
+          "description": "Recurrence rule. When set, ignores the Repeat Frequency, Repeat How Many Times, and Repeat Until parameters"
+        },
+        {
+          "name": "Send Updates",
+          "description": "Whether to send notifications about the creation of the new event"
+        },
+        {
+          "name": "Show Me As",
+          "description": "Whether the event blocks time on the calendar"
+        },
+        {
+          "name": "Summary",
+          "description": "The title of the event"
+        }
+      ]
+    },
+    {
+      "operation": "Delete",
+      "page": "event-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#delete",
+      "summary": "Use this operation to delete an event from a Google Calendar",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to delete an event from. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Event ID",
+          "description": "The ID of the event to delete"
+        }
+      ],
+      "options": [
+        {
+          "name": "Send Updates",
+          "description": "Whether to send notifications about the deletion of the event"
+        }
+      ]
+    },
+    {
+      "operation": "Get",
+      "page": "event-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#get",
+      "summary": "Use this operation to retrieve an event from a Google Calendar",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to get an event from. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Event ID",
+          "description": "The ID of the event to get"
+        }
+      ],
+      "options": [
+        {
+          "name": "Max Attendees",
+          "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only returns the participant"
+        },
+        {
+          "name": "Return Next Instance of Recurrent Event",
+          "description": "Whether to return the next instance of a recurring event instead of the event itself"
+        },
+        {
+          "name": "Timezone",
+          "description": "The timezone used in the response. By default, uses the n8n timezone"
+        }
+      ]
+    },
+    {
+      "operation": "Get Many",
+      "page": "event-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#get-many",
+      "summary": "Use this operation to retrieve more than one event from a Google Calendar",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to get an event from. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Return All",
+          "description": "Whether to return all results or only up to a given limit"
+        },
+        {
+          "name": "Limit",
+          "description": "(When \"Return All\" isn't selected) The maximum number of results to return"
+        },
+        {
+          "name": "After",
+          "description": "Retrieve events that occur after this time. At least part of the event must be after this time. By default, this uses an expression evaluating to the current time ({{ $now }}). Switch the field to \"fixed\" to select a date from a date widget"
+        },
+        {
+          "name": "Before",
+          "description": "Retrieve events that occur before this time. At least part of the event must be before this time. By default, this uses an expression evaluating to the current time plus a week ({{ $now.plus({ week: 1 }) }}). Switch the field to \"fixed\" to select a date from a date widget"
+        }
+      ],
+      "options": [
+        {
+          "name": "Fields",
+          "description": "Specify the fields to return. By default, returns a set of commonly used fields predefined by Google. Use \"\\*\" to return all fields. You can find out more in Google Calendar's documentation on working with partial resources"
+        },
+        {
+          "name": "iCalUID",
+          "description": "Specifies an event ID (in the iCalendar format) to include in the response"
+        },
+        {
+          "name": "Max Attendees",
+          "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only returns the participant"
+        },
+        {
+          "name": "Order By",
+          "description": "The order to use for the events in the response"
+        },
+        {
+          "name": "Query",
+          "description": "Free text search terms to find events that match. This searches all fields except for extended properties"
+        },
+        {
+          "name": "Recurring Event Handling",
+          "description": "What to do for recurring events:"
+        },
+        {
+          "name": "Show Deleted",
+          "description": "Whether to include deleted events (with status equal to \"cancelled\") in the results"
+        },
+        {
+          "name": "Show Hidden Invitations",
+          "description": "Whether to include hidden invitations in the results"
+        },
+        {
+          "name": "Timezone",
+          "description": "The timezone used in the response. By default, uses the n8n timezone"
+        },
+        {
+          "name": "Updated Min",
+          "description": "The lower bounds for an event's last modification time (as an RFC 3339 timestamp)"
+        }
+      ]
+    },
+    {
+      "operation": "Update",
+      "page": "event-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations#update",
+      "summary": "Use this operation to update an event in a Google Calendar",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Calendar credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Event"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update"
+        },
+        {
+          "name": "Calendar",
+          "description": "Choose a calendar you want to add an event to. Select From list to choose the title from the dropdown list or By ID to enter a calendar ID"
+        },
+        {
+          "name": "Event ID",
+          "description": "The ID of the event to update"
+        },
+        {
+          "name": "Modify",
+          "description": "For recurring events, choose whether to update the recurring event or a specific instance of the recurring event"
+        },
+        {
+          "name": "Use Default Reminders",
+          "description": "Whether to enable default reminders for the event according to the calendar configuration"
+        },
+        {
+          "name": "Update Fields",
+          "description": "The fields of the event to update:"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "adding",
+    "app",
+    "applications",
+    "availability",
+    "calendar",
+    "create",
+    "delete",
+    "deleting",
+    "event",
+    "events",
+    "get",
+    "google",
+    "googlecalendar",
+    "including",
+    "many",
+    "retrieving",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Google Calendar node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/index.md"
+    },
+    {
+      "page": "calendar-operations.md",
+      "title": "Google Calendar Calendar operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/calendar-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/calendar-operations.md"
+    },
+    {
+      "page": "event-operations.md",
+      "title": "Google Calendar Event operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googlecalendar.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googlecalendar.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googlecalendar/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleCalendar",
+  "type_version": 1.3,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleCalendarOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleCalendarOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Google Calendar"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 32,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "event",
+        "options": [
+          {
+            "name": "Calendar",
+            "value": "calendar"
+          },
+          {
+            "name": "Event",
+            "value": "event"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "availability",
+        "options": [
+          {
+            "name": "Availability",
+            "value": "availability",
+            "description": "If a time-slot is available in a calendar"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "calendar"
+            ]
+          }
+        }
+      },
+      {
+        "name": "calendar",
+        "displayName": "Calendar",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "calendar"
+            ]
+          }
+        },
+        "description": "Google Calendar to operate on"
+      },
+      {
+        "name": "timeMin",
+        "displayName": "Start Time",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "availability"
+            ],
+            "resource": [
+              "calendar"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "Start of the interval"
+      },
+      {
+        "name": "timeMax",
+        "displayName": "End Time",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "availability"
+            ],
+            "resource": [
+              "calendar"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "End of the interval"
+      },
+      {
+        "name": "timeMin",
+        "displayName": "Start Time",
+        "type": "dateTime",
+        "required": true,
+        "default": "={{ $now }}",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "availability"
+            ],
+            "resource": [
+              "calendar"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "Start of the interval, use <a href=\"https://docs.n8n.io/code/cookbook/luxon/\" target=\"_blank\">expression</a> to set a date, or switch to fixed mode to choose date from widget"
+      },
+      {
+        "name": "timeMax",
+        "displayName": "End Time",
+        "type": "dateTime",
+        "required": true,
+        "default": "={{ $now.plus(1, 'hour') }}",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "availability"
+            ],
+            "resource": [
+              "calendar"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "End of the interval, use <a href=\"https://docs.n8n.io/code/cookbook/luxon/\" target=\"_blank\">expression</a> to set a date, or switch to fixed mode to choose date from widget"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "outputFormat",
+            "description": "The format to return the data in"
+          },
+          {
+            "name": "timezone",
+            "description": "Time zone used in the response. By default n8n timezone is used."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "availability"
+            ],
+            "resource": [
+              "calendar"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Add a event to calendar"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an event"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve an event"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many events from a calendar"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an event"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "calendar",
+        "displayName": "Calendar",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ]
+          }
+        },
+        "description": "Google Calendar to operate on"
+      },
+      {
+        "name": "start",
+        "displayName": "Start",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "event"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "Start time of the event"
+      },
+      {
+        "name": "end",
+        "displayName": "End",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "event"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "End time of the event"
+      },
+      {
+        "name": "start",
+        "displayName": "Start",
+        "type": "dateTime",
+        "required": true,
+        "default": "={{ $now }}",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "event"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "Start time of the event, use <a href=\"https://docs.n8n.io/code/cookbook/luxon/\" target=\"_blank\">expression</a> to set a date, or switch to fixed mode to choose date from widget"
+      },
+      {
+        "name": "end",
+        "displayName": "End",
+        "type": "dateTime",
+        "required": true,
+        "default": "={{ $now.plus(1, 'hour') }}",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "event"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "End time of the event, use <a href=\"https://docs.n8n.io/code/cookbook/luxon/\" target=\"_blank\">expression</a> to set a date, or switch to fixed mode to choose date from widget"
+      },
+      {
+        "name": "useDefaultReminders",
+        "displayName": "Use Default Reminders",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allday",
+            "description": "Whether the event is all day or not"
+          },
+          {
+            "name": "attendees",
+            "description": "The attendees of the event. Multiple ones can be separated by comma."
+          },
+          {
+            "name": "color",
+            "description": "The color of the event. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "conferenceDataUi",
+            "description": "Creates a conference link (Hangouts, Meet etc) and attaches it to the event"
+          },
+          {
+            "name": "description"
+          },
+          {
+            "name": "guestsCanInviteOthers",
+            "description": "Whether attendees other than the organizer can invite others to the event"
+          },
+          {
+            "name": "guestsCanModify",
+            "description": "Whether attendees other than the organizer can modify the event"
+          },
+          {
+            "name": "guestsCanSeeOtherGuests",
+            "description": "Whether attendees other than the organizer can see who the event's attendees are"
+          },
+          {
+            "name": "id",
+            "description": "Opaque identifier of the event"
+          },
+          {
+            "name": "location",
+            "description": "Geographic location of the event as free-form text"
+          },
+          {
+            "name": "maxAttendees",
+            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned."
+          },
+          {
+            "name": "repeatFrecuency"
+          },
+          {
+            "name": "repeatHowManyTimes"
+          },
+          {
+            "name": "repeatUntil"
+          },
+          {
+            "name": "rrule",
+            "description": "Recurrence rule. When set, the parameters Repeat Frequency, Repeat How Many Times and Repeat Until are ignored."
+          },
+          {
+            "name": "sendUpdates",
+            "description": "Whether to send notifications about the creation of the new event"
+          },
+          {
+            "name": "showMeAs",
+            "description": "Whether the event blocks time on the calendar"
+          },
+          {
+            "name": "summary",
+            "description": "Title of the event"
+          },
+          {
+            "name": "visibility",
+            "description": "Visibility of the event"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "remindersUi",
+        "displayName": "Reminders",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "remindersValues",
+            "values": [
+              {
+                "name": "method",
+                "displayName": "Method",
+                "type": "options"
+              },
+              {
+                "name": "minutes",
+                "displayName": "Minutes Before",
+                "type": "number"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "create"
+            ],
+            "useDefaultReminders": [
+              false
+            ]
+          }
+        },
+        "description": "If the event doesn't use the default reminders, this lists the reminders specific to the event"
+      },
+      {
+        "name": "eventId",
+        "displayName": "Event ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "sendUpdates",
+            "description": "Whether to send notifications about the creation of the new event"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "eventId",
+        "displayName": "Event ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxAttendees",
+            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned."
+          },
+          {
+            "name": "returnNextInstance",
+            "description": "Whether to return the next instance of a recurring event instead of the event itself"
+          },
+          {
+            "name": "timeZone",
+            "description": "Time zone used in the response. The default is the time zone of the calendar."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "event"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "timeMin",
+        "displayName": "After",
+        "type": "dateTime",
+        "default": "={{ $now }}",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        },
+        "description": "At least some part of the event must be after this time, use <a href=\"https://docs.n8n.io/code/cookbook/luxon/\" target=\"_blank\">expression</a> to set a date, or switch to fixed mode to choose date from widget"
+      },
+      {
+        "name": "timeMax",
+        "displayName": "Before",
+        "type": "dateTime",
+        "default": "={{ $now.plus({ week: 1 }) }}",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        },
+        "description": "At least some part of the event must be before this time, use <a href=\"https://docs.n8n.io/code/cookbook/luxon/\" target=\"_blank\">expression</a> to set a date, or switch to fixed mode to choose date from widget"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "timeMin",
+            "description": "At least some part of the event must be after this time, use <a href=\"https://docs.n8n.io/code/cookbook/luxon/\" target=\"_blank\">expression</a> to set a date, or"
+          },
+          {
+            "name": "timeMax",
+            "description": "At least some part of the event must be before this time, use <a href=\"https://docs.n8n.io/code/cookbook/luxon/\" target=\"_blank\">expression</a> to set a date, o"
+          },
+          {
+            "name": "singleEvents",
+            "description": "Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring even"
+          },
+          {
+            "name": "fields",
+            "description": "Specify fields to return, by default a predefined by Google set of commonly used fields would be returned. To return all fields, use '*', <a href='https://devel"
+          },
+          {
+            "name": "iCalUID",
+            "description": "Specifies event ID in the iCalendar format to be included in the response"
+          },
+          {
+            "name": "maxAttendees",
+            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned."
+          },
+          {
+            "name": "orderBy",
+            "description": "The order of the events returned in the result"
+          },
+          {
+            "name": "query",
+            "description": "Free text search terms to find events that match these terms in any field, except for extended properties"
+          },
+          {
+            "name": "recurringEventHandling"
+          },
+          {
+            "name": "showDeleted",
+            "description": "Whether to include deleted events (with status equals \"cancelled\") in the result"
+          },
+          {
+            "name": "showHiddenInvitations",
+            "description": "Whether to include hidden invitations in the result"
+          },
+          {
+            "name": "timeZone",
+            "description": "Time zone used in the response. The default is the time zone of the calendar."
+          },
+          {
+            "name": "updatedMin",
+            "description": "Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "eventId",
+        "displayName": "Event ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modifyTarget",
+        "displayName": "Modify",
+        "type": "options",
+        "default": "instance",
+        "options": [
+          {
+            "name": "Recurring Event Instance",
+            "value": "instance"
+          },
+          {
+            "name": "Recurring Event",
+            "value": "event"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@tool": [
+              false
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ],
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "update"
+            ],
+            "eventId": [
+              {
+                "_cnd": {
+                  "includes": "_"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "useDefaultReminders",
+        "displayName": "Use Default Reminders",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allday",
+            "description": "Whether the event is all day or not"
+          },
+          {
+            "name": "attendeesUi"
+          },
+          {
+            "name": "attendees",
+            "description": "The attendees of the event. Multiple ones can be separated by comma."
+          },
+          {
+            "name": "color",
+            "description": "The color of the event. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "description"
+          },
+          {
+            "name": "end",
+            "description": "End time of the event"
+          },
+          {
+            "name": "guestsCanInviteOthers",
+            "description": "Whether attendees other than the organizer can invite others to the event"
+          },
+          {
+            "name": "guestsCanModify",
+            "description": "Whether attendees other than the organizer can modify the event"
+          },
+          {
+            "name": "guestsCanSeeOtherGuests",
+            "description": "Whether attendees other than the organizer can see who the event's attendees are"
+          },
+          {
+            "name": "id",
+            "description": "Opaque identifier of the event"
+          },
+          {
+            "name": "location",
+            "description": "Geographic location of the event as free-form text"
+          },
+          {
+            "name": "maxAttendees",
+            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned."
+          },
+          {
+            "name": "repeatFrecuency"
+          },
+          {
+            "name": "repeatHowManyTimes"
+          },
+          {
+            "name": "repeatUntil"
+          },
+          {
+            "name": "rrule",
+            "description": "Recurrence rule. When set, the parameters Repeat Frequency, Repeat How Many Times and Repeat Until are ignored."
+          },
+          {
+            "name": "sendUpdates",
+            "description": "Whether to send notifications about the creation of the new event"
+          },
+          {
+            "name": "showMeAs",
+            "description": "Whether the event blocks time on the calendar"
+          },
+          {
+            "name": "start",
+            "description": "Start time of the event"
+          },
+          {
+            "name": "summary",
+            "description": "Title of the event"
+          },
+          {
+            "name": "visibility",
+            "description": "Visibility of the event"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "remindersUi",
+        "displayName": "Reminders",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "remindersValues",
+            "values": [
+              {
+                "name": "method",
+                "displayName": "Method",
+                "type": "options"
+              },
+              {
+                "name": "minutes",
+                "displayName": "Minutes Before",
+                "type": "number"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "update"
+            ],
+            "useDefaultReminders": [
+              false
+            ]
+          }
+        },
+        "description": "If the event doesn't use the default reminders, this lists the reminders specific to the event"
+      },
+      {
+        "name": "useN8nTimeZone",
+        "displayName": "This node will use the time zone set in n8n’s settings, but you can override this in the workflow settings",
+        "type": "notice"
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "id": "n8n-nodes-base.coppertrigger",
+  "name": "Copper Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.coppertrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Copper is a CRM that focuses on strong integration with Google Workspace. It's mainly targeted towards small and medium-sized businesses",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.coppertrigger",
+  "credentials": {
+    "name": "Copper credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/copper",
+    "slug": "copper",
+    "json_file": "credentials/copper.json",
+    "markdown_file": "credentials/copper.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "businesses",
+    "copper",
+    "coppertrigger",
+    "credentials",
+    "focuses",
+    "google",
+    "mainly",
+    "medium",
+    "sized",
+    "small",
+    "strong",
+    "targeted",
+    "towards",
+    "trigger",
+    "workspace"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.coppertrigger.md",
+      "title": "Copper Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.coppertrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.coppertrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.coppertrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.coppertrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.coppertrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.copperTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "copperApi"
+  ],
+  "credential_details": [
+    {
+      "name": "copperApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Copper Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Company",
+            "value": "company"
+          },
+          {
+            "name": "Lead",
+            "value": "lead"
+          },
+          {
+            "name": "Opportunity",
+            "value": "opportunity"
+          },
+          {
+            "name": "Person",
+            "value": "person"
+          },
+          {
+            "name": "Project",
+            "value": "project"
+          },
+          {
+            "name": "Task",
+            "value": "task"
+          }
+        ],
+        "description": "The resource which will fire the event"
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "An existing record is removed"
+          },
+          {
+            "name": "New",
+            "value": "new",
+            "description": "A new record is created"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Any field in the existing entity record is changed"
+          }
+        ],
+        "description": "The event to listen to"
+      }
+    ]
+  }
+}

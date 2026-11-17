@@ -1,0 +1,296 @@
+{
+  "id": "n8n-nodes-langchain.memorylakebasechat",
+  "name": "Databricks Lakebase Chat Memory",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.memorylakebasechat",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Databricks Lakebase Chat Memory node to store chat history in a Databricks Lakebase table as memory[^1] for your AI agents. The node reads and writes the table over the Lakebase Data API, so it needs no connection string or database driver",
+  "doc_url": "https://docs.n8n.io/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorylakebasechat",
+  "credentials": {
+    "name": "Databricks credentials documentation",
+    "doc": "https://docs.n8n.io/credentials/databricks",
+    "slug": "databricks",
+    "json_file": "credentials/databricks.json",
+    "markdown_file": "credentials/databricks.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Project",
+      "description": "Select the Lakebase project from the list, or select By ID and enter its project ID"
+    },
+    {
+      "name": "Branch",
+      "description": "Select the branch of the project from the list, or select By ID and enter its branch ID, for example production"
+    },
+    {
+      "name": "Database",
+      "description": "Select the Postgres database on the branch from the list, or select By ID and enter its Postgres database name, for example databricks_postgres"
+    },
+    {
+      "name": "Schema",
+      "description": "The Postgres schema that holds the table. Defaults to public, and the list offers only public. For another schema, select By ID and enter its name. The Data API has to expose that schema"
+    },
+    {
+      "name": "Table Name",
+      "description": "Enter the name of the table to store the chat history in. Defaults to n8n_chat_histories. The node doesn't create the table. Refer to Create the table"
+    },
+    {
+      "name": "Session ID",
+      "description": "Select how the node finds the session ID:"
+    },
+    {
+      "name": "Context Window Length",
+      "description": "Enter the number of previous interactions to consider for context. Defaults to 5"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agents",
+    "branch",
+    "chat",
+    "cluster",
+    "connection",
+    "context",
+    "credentials",
+    "data",
+    "database",
+    "databricks",
+    "driver",
+    "history",
+    "lakebase",
+    "length",
+    "memory",
+    "memorylakebasechat",
+    "name",
+    "needs",
+    "over",
+    "project",
+    "reads",
+    "schema",
+    "session",
+    "store",
+    "string",
+    "sub",
+    "table",
+    "window",
+    "writes"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.memorylakebasechat.md",
+      "title": "",
+      "url": "",
+      "origpath": "cluster-nodes/sub-nodes/n8n-nodes-langchain.memorylakebasechat.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.memorylakebasechat.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.memorylakebasechat.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorylakebasechat.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.memoryLakebaseChat",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "databricksOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "databricksOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Databricks Lakebase Chat Memory"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_memory"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 13,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI agent. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "hidden",
+        "default": "oAuth2"
+      },
+      {
+        "name": "lakebaseProject",
+        "displayName": "Project",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "description": "The Lakebase project"
+      },
+      {
+        "name": "lakebaseBranch",
+        "displayName": "Branch",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "description": "The branch of the project"
+      },
+      {
+        "name": "lakebaseDatabase",
+        "displayName": "Database",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "description": "The Postgres database on the branch"
+      },
+      {
+        "name": "lakebaseSchema",
+        "displayName": "Schema",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "public",
+          "cachedResultName": "public"
+        },
+        "description": "The Postgres schema. To use a schema other than public, select By ID and enter its name."
+      },
+      {
+        "name": "lakebaseTable",
+        "displayName": "Table Name",
+        "type": "string",
+        "required": true,
+        "default": "n8n_chat_histories",
+        "description": "The table in the schema that stores the chat history"
+      },
+      {
+        "name": "createTableNotice",
+        "displayName": "This node cannot create the table. Create it in the Lakebase SQL editor before the first run. A run against a missing table shows the SQL to copy.",
+        "type": "notice"
+      },
+      {
+        "name": "sessionIdType",
+        "displayName": "Session ID",
+        "type": "options",
+        "default": "fromInput",
+        "options": [
+          {
+            "name": "Connected Chat Trigger Node",
+            "value": "fromInput",
+            "description": "Looks for an input field called 'sessionId' that is coming from a directly connected Chat Trigger"
+          },
+          {
+            "name": "Define below",
+            "value": "customKey",
+            "description": "Use an expression to reference data in previous nodes or enter static text"
+          }
+        ]
+      },
+      {
+        "name": "sessionKey",
+        "displayName": "Session Key From Previous Node",
+        "type": "string",
+        "default": "={{ $json.sessionId }}",
+        "displayOptions": {
+          "show": {
+            "sessionIdType": [
+              "fromInput"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "scopedSessionHintNotice",
+        "displayName": "Session is automatically scoped only to this memory node. To share a session between different memory nodes, switch \"Session ID\" to \"Define below\" and use the same key in each node.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1
+                }
+              }
+            ],
+            "sessionIdType": [
+              "fromInput"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sessionKey",
+        "displayName": "Key",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "sessionIdType": [
+              "customKey"
+            ]
+          }
+        },
+        "description": "The key to use to store session ID in the memory"
+      },
+      {
+        "name": "contextWindowLength",
+        "displayName": "Context Window Length",
+        "type": "number",
+        "default": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "id": "n8n-nodes-base.googleperspective",
+  "name": "Google Perspective",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googleperspective",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Perspective node to automate work in Google Perspective, and integrate Google Perspective with other applications. n8n has built-in support for a wide range of Google Perspective features, including analyzing comments",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googleperspective",
+  "credentials": {
+    "name": "Google Perspective",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Analyze Comment",
+      "description": "",
+      "doc": "",
+      "operation_value": "analyzeComment"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analyze",
+    "analyzing",
+    "app",
+    "applications",
+    "comment",
+    "comments",
+    "google",
+    "googleperspective",
+    "including",
+    "perspective",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googleperspective.md",
+      "title": "Google Perspective node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googleperspective",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googleperspective.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googleperspective.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googleperspective.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googleperspective.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googlePerspective",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googlePerspectiveOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googlePerspectiveOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Google Perspective"
+  },
+  "subtitle": "={{$parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "analyzeComment",
+        "options": [
+          {
+            "name": "Analyze Comment",
+            "value": "analyzeComment"
+          }
+        ]
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyzeComment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "requestedAttributesUi",
+        "displayName": "Attributes to Analyze",
+        "type": "fixedCollection",
+        "required": true,
+        "options": [
+          {
+            "name": "requestedAttributesValues",
+            "values": [
+              {
+                "name": "attributeName",
+                "displayName": "Attribute Name",
+                "type": "options"
+              },
+              {
+                "name": "scoreThreshold",
+                "displayName": "Score Threshold",
+                "type": "number"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyzeComment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "languages",
+            "description": "Languages of the text input. If unspecified, the API will auto-detect the comment language. Choose from the list, or specify an ID using an <a href=\"https://doc"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyzeComment"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

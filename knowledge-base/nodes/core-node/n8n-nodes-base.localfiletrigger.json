@@ -1,0 +1,209 @@
+{
+  "id": "n8n-nodes-base.localfiletrigger",
+  "name": "Local File Trigger",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.localfiletrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Local File Trigger node starts a workflow when it detects changes on the file system. These changes involve a file or folder getting added, changed, or deleted",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.localfiletrigger",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Examples for Ignore",
+      "description": "Ignore a single file:"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "added",
+    "changed",
+    "changes",
+    "core",
+    "deleted",
+    "detects",
+    "file",
+    "folder",
+    "getting",
+    "ignore",
+    "involve",
+    "local",
+    "localfiletrigger",
+    "starts",
+    "system",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.localfiletrigger.md",
+      "title": "Local File Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.localfiletrigger",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.localfiletrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.localfiletrigger.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.localfiletrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.localfiletrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.localFileTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Local File Trigger",
+    "color": "#404040"
+  },
+  "subtitle": "=Path: {{$parameter[\"path\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "triggerOn",
+        "displayName": "Trigger On",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Changes to a Specific File",
+            "value": "file"
+          },
+          {
+            "name": "Changes Involving a Specific Folder",
+            "value": "folder"
+          }
+        ]
+      },
+      {
+        "name": "path",
+        "displayName": "File to Watch",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "path",
+        "displayName": "Folder to Watch",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "events",
+        "displayName": "Watch for",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "File Added",
+            "value": "add",
+            "description": "Triggers whenever a new file was added"
+          },
+          {
+            "name": "File Changed",
+            "value": "change",
+            "description": "Triggers whenever a file was changed"
+          },
+          {
+            "name": "File Deleted",
+            "value": "unlink",
+            "description": "Triggers whenever a file was deleted"
+          },
+          {
+            "name": "Folder Added",
+            "value": "addDir",
+            "description": "Triggers whenever a new folder was added"
+          },
+          {
+            "name": "Folder Deleted",
+            "value": "unlinkDir",
+            "description": "Triggers whenever a folder was deleted"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "triggerOn": [
+              "folder"
+            ]
+          }
+        },
+        "description": "The events to listen to"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "awaitWriteFinish",
+            "description": "Whether to wait until files finished writing to avoid partially read"
+          },
+          {
+            "name": "followSymlinks",
+            "description": "Whether linked files/folders will also be watched (this includes symlinks, aliases on MacOS and shortcuts on Windows). Otherwise only the links themselves will "
+          },
+          {
+            "name": "ignored",
+            "description": "Files or paths to ignore. The whole path is tested, not just the filename. Supports <a href=\"https://github.com/micromatch/anymatch\">Anymatch</a>- syntax. Regex"
+          },
+          {
+            "name": "ignoreInitial",
+            "description": "Whether to ignore existing files/folders to not trigger an event"
+          },
+          {
+            "name": "depth",
+            "description": "How deep into the folder structure to watch for changes"
+          },
+          {
+            "name": "usePolling",
+            "description": "Whether to use polling for watching. Typically necessary to successfully watch files over a network."
+          },
+          {
+            "name": "ignoreMode",
+            "description": "Whether to ignore files using regex matching (Anymatch patterns) or by checking if the path contains a specified value"
+          }
+        ]
+      }
+    ]
+  }
+}

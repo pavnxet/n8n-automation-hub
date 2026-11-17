@@ -1,0 +1,476 @@
+{
+  "id": "n8n-nodes-base.ftp",
+  "name": "FTP",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.ftp",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The FTP node is useful to access and upload files to an FTP or SFTP server",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ftp",
+  "credentials": {
+    "name": "FTP",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/ftp",
+    "slug": "ftp",
+    "json_file": "credentials/ftp.json",
+    "markdown_file": "credentials/ftp.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Delete",
+      "description": "a file or folder",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ftp#delete",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "",
+      "operation": "Download",
+      "description": "a file",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ftp#download",
+      "operation_value": "download"
+    },
+    {
+      "resource": "",
+      "operation": "List",
+      "description": "folder content",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ftp#list",
+      "operation_value": "list"
+    },
+    {
+      "resource": "",
+      "operation": "Rename",
+      "description": "or move a file or folder",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ftp#rename",
+      "operation_value": "rename"
+    },
+    {
+      "resource": "",
+      "operation": "Upload",
+      "description": "a file",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ftp#upload",
+      "operation_value": "upload"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "access",
+    "core",
+    "delete",
+    "download",
+    "files",
+    "ftp",
+    "list",
+    "rename",
+    "server",
+    "sftp",
+    "upload",
+    "useful"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.ftp.md",
+      "title": "FTP",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ftp",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.ftp.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.ftp.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.ftp.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.ftp.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.ftp",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "ftp",
+    "sftp"
+  ],
+  "credential_details": [
+    {
+      "name": "ftp",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "protocol": [
+            "ftp"
+          ]
+        }
+      }
+    },
+    {
+      "name": "sftp",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "protocol": [
+            "sftp"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "FTP",
+    "color": "#303050"
+  },
+  "subtitle": "={{$parameter[\"protocol\"] + \": \" + $parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 18,
+    "parameters": [
+      {
+        "name": "protocol",
+        "displayName": "Protocol",
+        "type": "options",
+        "default": "ftp",
+        "options": [
+          {
+            "name": "FTP",
+            "value": "ftp"
+          },
+          {
+            "name": "SFTP",
+            "value": "sftp"
+          }
+        ],
+        "description": "File transfer protocol"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "download",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a file/folder"
+          },
+          {
+            "name": "Download",
+            "value": "download",
+            "description": "Download a file"
+          },
+          {
+            "name": "List",
+            "value": "list",
+            "description": "List folder content"
+          },
+          {
+            "name": "Rename",
+            "value": "rename",
+            "description": "Rename/move oldPath to newPath"
+          },
+          {
+            "name": "Upload",
+            "value": "upload",
+            "description": "Upload a file"
+          }
+        ]
+      },
+      {
+        "name": "path",
+        "displayName": "Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The file path of the file to delete. Has to contain the full path."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "folder",
+            "description": "Whether folders can be deleted"
+          },
+          {
+            "name": "recursive",
+            "description": "Whether to remove all files and directories in target directory"
+          },
+          {
+            "name": "timeout",
+            "description": "Connection timeout in milliseconds"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "path",
+        "displayName": "Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ]
+          }
+        },
+        "description": "The file path of the file to download. Has to contain the full path."
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "enableConcurrentReads",
+            "description": "Whether to enable concurrent reads for downloading files"
+          },
+          {
+            "name": "maxConcurrentReads"
+          },
+          {
+            "name": "chunkSize",
+            "description": "Size of each chunk in KB to download, Not all servers support this"
+          },
+          {
+            "name": "timeout",
+            "description": "Connection timeout in milliseconds"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ]
+          }
+        }
+      },
+      {
+        "name": "oldPath",
+        "displayName": "Old Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "rename"
+            ]
+          }
+        }
+      },
+      {
+        "name": "newPath",
+        "displayName": "New Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "rename"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "createDirectories",
+            "description": "Whether to recursively create destination directory when renaming an existing file or folder"
+          },
+          {
+            "name": "timeout",
+            "description": "Connection timeout in milliseconds"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "rename"
+            ]
+          }
+        }
+      },
+      {
+        "name": "path",
+        "displayName": "Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "The file path of the file to upload. Has to contain the full path."
+      },
+      {
+        "name": "binaryData",
+        "displayName": "Binary File",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "The text content of the file to upload"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "binaryData": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileContent",
+        "displayName": "File Content",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "The text content of the file to upload"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "timeout",
+            "description": "Connection timeout in milliseconds"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ]
+          }
+        }
+      },
+      {
+        "name": "path",
+        "displayName": "Path",
+        "type": "string",
+        "required": true,
+        "default": "/",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "list"
+            ]
+          }
+        },
+        "description": "Path of directory to list contents of"
+      },
+      {
+        "name": "recursive",
+        "displayName": "Recursive",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "list"
+            ]
+          }
+        },
+        "description": "Whether to return object representing all directories / objects recursively found within SFTP server"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "timeout",
+            "description": "Connection timeout in milliseconds"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "list"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

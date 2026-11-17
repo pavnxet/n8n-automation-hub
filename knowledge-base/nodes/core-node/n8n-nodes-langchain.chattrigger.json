@@ -1,0 +1,859 @@
+{
+  "id": "n8n-nodes-langchain.chattrigger",
+  "name": "Chat Trigger",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-langchain.chattrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Chat Trigger node when building AI workflows for chatbots and other chat interfaces. You can configure how users access the chat, using one of n8n's provided interfaces, or your own. You can add authentication",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.chattrigger",
+  "credentials": {
+    "name": "end-user",
+    "doc": "https://app.gitbook.com/s/wMJrGrimpx3PxCJpUswm/manage-credentials/end-user-credentials",
+    "slug": "end-user-credentials"
+  },
+  "authentication_methods": [
+    "Basic Auth: The chat uses basic authentication",
+    "None: The chat doesn't use authentication. Anyone can use the chat",
+    "n8n User Auth: Only users logged in to an n8n account can use the chat"
+  ],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Make Chat Publicly Available",
+      "description": "Set whether the chat should be publicly available (turned on) or only available through the manual chat interface (turned off)"
+    },
+    {
+      "name": "Mode",
+      "description": "Choose how users access the chat. Select from:"
+    },
+    {
+      "name": "Authentication",
+      "description": "Choose whether and how to restrict access to the chat. Select from:",
+      "options": [
+        "None: The chat doesn't use authentication. Anyone can use the chat",
+        "Basic Auth: The chat uses basic authentication",
+        "n8n User Auth: Only users logged in to an n8n account can use the chat"
+      ]
+    },
+    {
+      "name": "Initial Message(s)",
+      "description": "This parameter's only available if you're using Hosted Chat. Use it to configure the message the n8n chat interface displays when the user arrives on the page"
+    },
+    {
+      "name": "Make Available in n8n Chat",
+      "description": "Choose whether to make the agent available to Chat Hub"
+    },
+    {
+      "name": "Agent Name",
+      "description": "The name of the agent on Chat Hub"
+    },
+    {
+      "name": "Agent description",
+      "description": "The description of the agent on Chat Hub"
+    },
+    {
+      "name": "Hosted chat options"
+    },
+    {
+      "name": "Allowed Origin (CORS)",
+      "description": "Set the origins that can access the chat URL. Enter a comma-separated list of URLs allowed for cross-origin non-preflight requests"
+    },
+    {
+      "name": "Input Placeholder, Title, and Subtitle",
+      "description": "Enter the text for these elements in the chat interface"
+    },
+    {
+      "name": "Load Previous Session",
+      "description": "Select whether to load chat messages from a previous chat session"
+    },
+    {
+      "name": "Response Mode",
+      "description": "Use this option when building a workflow with steps after the agent or chain that's handling the chat. Choose from:"
+    },
+    {
+      "name": "Require Button Click to Start Chat",
+      "description": "Set whether to display a New Conversation button on the chat interface (turned on) or not (turned off)"
+    },
+    {
+      "name": "Embedded chat options"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Pass data from a website to an embedded Chat Trigger node",
+      "summary": "When embedding the Chat Trigger node in a website, you might want to pass extra information to the Chat Trigger. For example, passing a user ID stored in a site cookie"
+    },
+    {
+      "title": "Chat Trigger node doesn't fetch previous messages",
+      "summary": "When you configure a Chat Trigger node, you might experience problems fetching previous messages if you aren't careful about how you configure session loading. This often manifests as a workflow could not be started! error"
+    }
+  ],
+  "keywords": [
+    "access",
+    "agent",
+    "allowed",
+    "authentication",
+    "available",
+    "building",
+    "button",
+    "chat",
+    "chatbots",
+    "chattrigger",
+    "click",
+    "core",
+    "cors",
+    "description",
+    "embedded",
+    "end",
+    "hosted",
+    "initial",
+    "input",
+    "interfaces",
+    "load",
+    "make",
+    "message",
+    "mode",
+    "n8n",
+    "name",
+    "options",
+    "origin",
+    "placeholder",
+    "previous",
+    "provided",
+    "publicly",
+    "require",
+    "response",
+    "session",
+    "start",
+    "subtitle",
+    "title",
+    "trigger",
+    "user",
+    "users"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Chat Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.chattrigger",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-langchain.chattrigger/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Chat Trigger node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.chattrigger/common-issues",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-langchain.chattrigger/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-langchain.chattrigger.json",
+    "markdown": "nodes/core-node/n8n-nodes-langchain.chattrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-langchain.chattrigger/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.chatTrigger",
+  "type_version": 1.5,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "httpBasicAuth"
+  ],
+  "credential_details": [
+    {
+      "name": "httpBasicAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "basicAuth"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "When chat message received"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{ (() => {\n\t\t\tif (!['hostedChat', 'webhook'].includes($parameter.mode)) {\n\t\t\t\treturn [];\n\t\t\t}\n\t\t\tif ($parameter.options?.loadPreviousSession !== 'memory') {\n\t\t\t\treturn [];\n\t\t\t}\n\n\t\t\treturn [\n\t\t\t\t{\n\t\t\t\t\tdisplayName: 'Memory',\n\t\t\t\t\tmaxConnections: 1,\n\t\t\t\t\ttype: 'ai_memory',\n\t\t\t\t\trequired: true,\n\t\t\t\t}\n\t\t\t];\n\t\t })() }}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 22,
+    "parameters": [
+      {
+        "name": "public",
+        "displayName": "Make Chat Publicly Available",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether the chat should be publicly available or only accessible through the manual chat interface"
+      },
+      {
+        "name": "mode",
+        "displayName": "Mode",
+        "type": "options",
+        "default": "hostedChat",
+        "options": [
+          {
+            "name": "Hosted Chat",
+            "value": "hostedChat",
+            "description": "Chat on a page served by n8n"
+          },
+          {
+            "name": "Embedded Chat",
+            "value": "webhook",
+            "description": "Chat through a widget embedded in another page, or by calling a webhook"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "public": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "hostedChatNotice",
+        "displayName": "Chat will be live at the URL above once this workflow is published. Live executions will show up in the ‘executions’ tab",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "hostedChat"
+            ],
+            "public": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "embeddedChatNotice",
+        "displayName": "Follow the instructions <a href=\"https://www.npmjs.com/package/@n8n/chat\" target=\"_blank\">here</a> to embed chat in a webpage (or just call the webhook URL at the top of this section). Chat will be live once you publish this workflow",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "webhook"
+            ],
+            "public": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "Basic Auth",
+            "value": "basicAuth",
+            "description": "Simple username and password (the same one for all users)"
+          },
+          {
+            "name": "n8n User Auth",
+            "value": "n8nUserAuth",
+            "description": "Require user to be logged in with their n8n account"
+          },
+          {
+            "name": "None",
+            "value": "none"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "public": [
+              true
+            ]
+          }
+        },
+        "description": "The way to authenticate"
+      },
+      {
+        "name": "requireExecuteAccess",
+        "displayName": "Require Workflow Execute Permission",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "n8nUserAuth"
+            ],
+            "mode": [
+              "hostedChat"
+            ],
+            "public": [
+              true
+            ]
+          }
+        },
+        "description": "Whether the triggering user must also have permission to execute the workflow in the project it belongs to"
+      },
+      {
+        "name": "trustedSource",
+        "displayName": "Trusted Source Name or ID",
+        "type": "options",
+        "default": "n8n-internal",
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "n8nUserAuth"
+            ],
+            "mode": [
+              "hostedChat"
+            ],
+            "public": [
+              true
+            ]
+          }
+        },
+        "description": "The identity provider the visitor signs in with"
+      },
+      {
+        "name": "includeUserInOutput",
+        "displayName": "Include User in Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "n8nUserAuth"
+            ],
+            "public": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.5
+                }
+              }
+            ]
+          }
+        },
+        "description": "Whether to include the logged-in user's ID, email and name in the trigger output"
+      },
+      {
+        "name": "includeUserInOutput",
+        "displayName": "Include User in Output",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "n8nUserAuth"
+            ],
+            "public": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 1.5
+                }
+              }
+            ]
+          }
+        },
+        "description": "Whether to include the logged-in user's ID, email and name in the trigger output"
+      },
+      {
+        "name": "initialMessages",
+        "displayName": "Initial Message(s)",
+        "type": "string",
+        "default": "Hi there! 👋\nMy name is Nathan. How can I assist you today?",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "hostedChat"
+            ],
+            "public": [
+              true
+            ]
+          }
+        },
+        "description": "Default messages shown at the start of the chat, one per line"
+      },
+      {
+        "name": "availableInChat",
+        "displayName": "Make Available in n8n Chat Hub",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to make the agent available in n8n Chat Hub for n8n instance users to chat with"
+      },
+      {
+        "name": "availableInChatNotice",
+        "displayName": "Your Chat Trigger node is out of date. To update, delete this node and insert a new Chat Trigger node.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "availableInChat": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 1.2
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "availableInChatNotice",
+        "displayName": "Your n8n users will be able to use this agent in <a href=\"/home/chat/\" target=\"_blank\">Chat</a> once this workflow is published. Make sure to share this workflow with at least Project Chat User access to all users who should use it.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "availableInChat": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "agentIcon",
+        "displayName": "Agent Icon",
+        "type": "icon",
+        "default": {
+          "type": "icon",
+          "value": "bot"
+        },
+        "displayOptions": {
+          "show": {
+            "availableInChat": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The icon of the agent on n8n Chat"
+      },
+      {
+        "name": "agentName",
+        "displayName": "Agent Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "availableInChat": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The name of the agent on n8n Chat. Name of the workflow is used if left empty."
+      },
+      {
+        "name": "agentDescription",
+        "displayName": "Agent Description",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "availableInChat": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The description of the agent on n8n Chat"
+      },
+      {
+        "name": "suggestedPrompts",
+        "displayName": "Suggestions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "prompts",
+            "values": [
+              {
+                "name": "icon",
+                "displayName": "Icon",
+                "type": "icon"
+              },
+              {
+                "name": "text",
+                "displayName": "Prompt Text",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "availableInChat": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "Suggested prompts shown to users in n8n Chat Hub to start a conversation with the agent"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allowFileUploads",
+            "description": "Whether to allow file uploads in the chat"
+          },
+          {
+            "name": "allowedFilesMimeTypes",
+            "description": "Allowed file types for upload. Comma-separated list of <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types\" target"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "public": [
+              false
+            ],
+            "@version": [
+              1,
+              1.1
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allowedOrigins",
+            "description": "Comma-separated list of URLs allowed for cross-origin non-preflight requests. Use * (default) to allow all origins."
+          },
+          {
+            "name": "allowFileUploads",
+            "description": "Whether to allow file uploads in the chat"
+          },
+          {
+            "name": "allowedFilesMimeTypes",
+            "description": "Allowed file types for upload. Comma-separated list of <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types\" target"
+          },
+          {
+            "name": "inputPlaceholder",
+            "description": "Shown as placeholder text in the chat input field"
+          },
+          {
+            "name": "loadPreviousSession",
+            "description": "If loading messages of a previous session should be enabled"
+          },
+          {
+            "name": "showWelcomeScreen",
+            "description": "Whether to show the welcome screen at the start of the chat"
+          },
+          {
+            "name": "getStarted",
+            "description": "Shown as part of the welcome screen, in the middle of the chat window"
+          },
+          {
+            "name": "subtitle",
+            "description": "Shown at the top of the chat, under the title"
+          },
+          {
+            "name": "title",
+            "description": "Shown at the top of the chat"
+          },
+          {
+            "name": "customCss",
+            "description": "Override default styling of the public chat interface with CSS"
+          },
+          {
+            "name": "responseMode",
+            "description": "When and how to respond to the webhook"
+          },
+          {
+            "name": "autoSaveHighlightedData",
+            "description": "Whether to automatically save <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executiondata/\" target=\"_blank\">highlighted data</a>. "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "hostedChat",
+              "webhook"
+            ],
+            "public": [
+              true
+            ],
+            "@version": [
+              1,
+              1.1
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allowedOrigins",
+            "description": "Comma-separated list of URLs allowed for cross-origin non-preflight requests. Use * (default) to allow all origins."
+          },
+          {
+            "name": "allowFileUploads",
+            "description": "Whether to allow file uploads in the chat"
+          },
+          {
+            "name": "allowedFilesMimeTypes",
+            "description": "Allowed file types for upload. Comma-separated list of <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types\" target"
+          },
+          {
+            "name": "inputPlaceholder",
+            "description": "Shown as placeholder text in the chat input field"
+          },
+          {
+            "name": "loadPreviousSession",
+            "description": "If loading messages of a previous session should be enabled"
+          },
+          {
+            "name": "showWelcomeScreen",
+            "description": "Whether to show the welcome screen at the start of the chat"
+          },
+          {
+            "name": "getStarted",
+            "description": "Shown as part of the welcome screen, in the middle of the chat window"
+          },
+          {
+            "name": "subtitle",
+            "description": "Shown at the top of the chat, under the title"
+          },
+          {
+            "name": "title",
+            "description": "Shown at the top of the chat"
+          },
+          {
+            "name": "customCss",
+            "description": "Override default styling of the public chat interface with CSS"
+          },
+          {
+            "name": "responseMode",
+            "description": "When and how to respond to the webhook"
+          },
+          {
+            "name": "responseMode",
+            "description": "When and how to respond to the webhook"
+          },
+          {
+            "name": "autoSaveHighlightedData",
+            "description": "Whether to automatically save <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executiondata/\" target=\"_blank\">highlighted data</a>. "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "hostedChat",
+              "webhook"
+            ],
+            "public": [
+              true
+            ],
+            "@version": [
+              1.2
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allowFileUploads",
+            "description": "Whether to allow file uploads in the chat"
+          },
+          {
+            "name": "allowedFilesMimeTypes",
+            "description": "Allowed file types for upload. Comma-separated list of <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types\" target"
+          },
+          {
+            "name": "responseMode",
+            "description": "When and how to respond to the chat"
+          },
+          {
+            "name": "responseMode",
+            "description": "When and how to respond to the chat"
+          },
+          {
+            "name": "autoSaveHighlightedData",
+            "description": "Whether to automatically save <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executiondata/\" target=\"_blank\">highlighted data</a>. "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "public": [
+              false
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allowedOrigins",
+            "description": "Comma-separated list of URLs allowed for cross-origin non-preflight requests. Use * (default) to allow all origins."
+          },
+          {
+            "name": "allowFileUploads",
+            "description": "Whether to allow file uploads in the chat"
+          },
+          {
+            "name": "allowedFilesMimeTypes",
+            "description": "Allowed file types for upload. Comma-separated list of <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types\" target"
+          },
+          {
+            "name": "inputPlaceholder",
+            "description": "Shown as placeholder text in the chat input field"
+          },
+          {
+            "name": "loadPreviousSession",
+            "description": "If loading messages of a previous session should be enabled"
+          },
+          {
+            "name": "showWelcomeScreen",
+            "description": "Whether to show the welcome screen at the start of the chat"
+          },
+          {
+            "name": "getStarted",
+            "description": "Shown as part of the welcome screen, in the middle of the chat window"
+          },
+          {
+            "name": "subtitle",
+            "description": "Shown at the top of the chat, under the title"
+          },
+          {
+            "name": "title",
+            "description": "Shown at the top of the chat"
+          },
+          {
+            "name": "customCss",
+            "description": "Override default styling of the public chat interface with CSS"
+          },
+          {
+            "name": "responseMode",
+            "description": "When and how to respond to the chat"
+          },
+          {
+            "name": "responseMode",
+            "description": "When and how to respond to the chat"
+          },
+          {
+            "name": "responseMode",
+            "description": "When and how to respond to the chat"
+          },
+          {
+            "name": "responseMode",
+            "description": "When and how to respond to the chat"
+          },
+          {
+            "name": "autoSaveHighlightedData",
+            "description": "Whether to automatically save <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executiondata/\" target=\"_blank\">highlighted data</a>. "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "hostedChat",
+              "webhook"
+            ],
+            "public": [
+              true
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

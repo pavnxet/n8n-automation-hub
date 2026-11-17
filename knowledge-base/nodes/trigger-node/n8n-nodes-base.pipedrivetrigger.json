@@ -1,0 +1,377 @@
+{
+  "id": "n8n-nodes-base.pipedrivetrigger",
+  "name": "Pipedrive Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.pipedrivetrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Pipedrive is a cloud-based sales software company that aims to improve the productivity of businesses through the use of their software",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.pipedrivetrigger",
+  "credentials": {
+    "name": "Pipedrive credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/pipedrive",
+    "slug": "pipedrive",
+    "json_file": "credentials/pipedrive.json",
+    "markdown_file": "credentials/pipedrive.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "aims",
+    "based",
+    "businesses",
+    "cloud",
+    "company",
+    "credentials",
+    "improve",
+    "pipedrive",
+    "pipedrivetrigger",
+    "productivity",
+    "sales",
+    "software",
+    "their",
+    "through",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.pipedrivetrigger.md",
+      "title": "Pipedrive Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.pipedrivetrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.pipedrivetrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.pipedrivetrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.pipedrivetrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.pipedrivetrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.pipedriveTrigger",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "pipedriveApi",
+    "pipedriveOAuth2Api",
+    "httpBasicAuth"
+  ],
+  "credential_details": [
+    {
+      "name": "pipedriveApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "pipedriveOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    },
+    {
+      "name": "httpBasicAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "incomingAuthentication": [
+            "basicAuth"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Pipedrive Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiToken",
+        "options": [
+          {
+            "name": "API Token",
+            "value": "apiToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "incomingAuthentication",
+        "displayName": "Incoming Authentication",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "Basic Auth",
+            "value": "basicAuth"
+          },
+          {
+            "name": "None",
+            "value": "none"
+          }
+        ],
+        "description": "If authentication should be activated for the webhook (makes it more secure)"
+      },
+      {
+        "name": "action",
+        "displayName": "Action",
+        "type": "options",
+        "default": "*",
+        "options": [
+          {
+            "name": "Added",
+            "value": "added",
+            "description": "Data got added"
+          },
+          {
+            "name": "All",
+            "value": "*",
+            "description": "Any change"
+          },
+          {
+            "name": "Deleted",
+            "value": "deleted",
+            "description": "Data got deleted"
+          },
+          {
+            "name": "Merged",
+            "value": "merged",
+            "description": "Data got merged"
+          },
+          {
+            "name": "Updated",
+            "value": "updated",
+            "description": "Data got updated"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Type of action to receive notifications about"
+      },
+      {
+        "name": "action",
+        "displayName": "Action",
+        "type": "options",
+        "default": "*",
+        "options": [
+          {
+            "name": "All",
+            "value": "*",
+            "description": "Any change"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Data got added"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Data got deleted"
+          },
+          {
+            "name": "Change",
+            "value": "change",
+            "description": "Data got changed"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Type of action to receive notifications about"
+      },
+      {
+        "name": "entity",
+        "displayName": "Entity",
+        "type": "options",
+        "default": "*",
+        "options": [
+          {
+            "name": "Activity",
+            "value": "activity"
+          },
+          {
+            "name": "Activity Type",
+            "value": "activityType"
+          },
+          {
+            "name": "All",
+            "value": "*"
+          },
+          {
+            "name": "Deal",
+            "value": "deal"
+          },
+          {
+            "name": "Note",
+            "value": "note"
+          },
+          {
+            "name": "Organization",
+            "value": "organization"
+          },
+          {
+            "name": "Person",
+            "value": "person"
+          },
+          {
+            "name": "Pipeline",
+            "value": "pipeline"
+          },
+          {
+            "name": "Product",
+            "value": "product"
+          },
+          {
+            "name": "Stage",
+            "value": "stage"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Type of object to receive notifications about"
+      },
+      {
+        "name": "object",
+        "displayName": "Object",
+        "type": "options",
+        "default": "*",
+        "options": [
+          {
+            "name": "Activity",
+            "value": "activity"
+          },
+          {
+            "name": "Activity Type",
+            "value": "activityType"
+          },
+          {
+            "name": "All",
+            "value": "*"
+          },
+          {
+            "name": "Deal",
+            "value": "deal"
+          },
+          {
+            "name": "Note",
+            "value": "note"
+          },
+          {
+            "name": "Organization",
+            "value": "organization"
+          },
+          {
+            "name": "Person",
+            "value": "person"
+          },
+          {
+            "name": "Pipeline",
+            "value": "pipeline"
+          },
+          {
+            "name": "Product",
+            "value": "product"
+          },
+          {
+            "name": "Stage",
+            "value": "stage"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Type of object to receive notifications about"
+      }
+    ]
+  }
+}

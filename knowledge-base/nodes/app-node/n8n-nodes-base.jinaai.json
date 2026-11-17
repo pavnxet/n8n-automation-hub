@@ -1,0 +1,411 @@
+{
+  "id": "n8n-nodes-base.jinaai",
+  "name": "Jina AI",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.jinaai",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Jina AI node to automate work in Jina AI and integrate Jina AI with other applications. n8n has built-in support for a wide range of Jina AI features",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.jinaai",
+  "credentials": {
+    "name": "Jina AI credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/jinaai",
+    "slug": "jinaai",
+    "json_file": "credentials/jinaai.json",
+    "markdown_file": "credentials/jinaai.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Reader",
+      "operation": "Read",
+      "description": "Fetches content from a URL and converts it to clean, LLM-friendly formats",
+      "doc": "",
+      "resource_value": "reader",
+      "operation_value": "read"
+    },
+    {
+      "resource": "Reader",
+      "operation": "Search",
+      "description": "Performs a web search using Jina AI and returns the top results as clean, LLM-friendly formats",
+      "doc": "",
+      "resource_value": "reader",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Research",
+      "operation": "Deep Research",
+      "description": "Research a topic and generate a structured research report",
+      "doc": "",
+      "resource_value": "research",
+      "operation_value": "deepResearch"
+    }
+  ],
+  "operation_count": 3,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "ai",
+    "app",
+    "applications",
+    "credentials",
+    "deep",
+    "jina",
+    "jinaai",
+    "read",
+    "reader",
+    "research",
+    "search",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.jinaai.md",
+      "title": "Jina AI node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.jinaai",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.jinaai.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.jinaai.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.jinaai.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.jinaai.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.jinaAi",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "jinaAiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "jinaAiApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Jina AI"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 13,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "reader",
+        "options": [
+          {
+            "name": "Reader",
+            "value": "reader"
+          },
+          {
+            "name": "Research",
+            "value": "research"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "read",
+        "options": [
+          {
+            "name": "Read",
+            "value": "read",
+            "description": "Fetches content from a URL and converts it to clean, LLM-friendly formats"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Performs a web search via Jina AI and returns top results as clean, LLM-friendly formats"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reader"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "deepResearch",
+        "options": [
+          {
+            "name": "Deep Research",
+            "value": "deepResearch",
+            "description": "Research a topic and generate a structured research report"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "research"
+            ]
+          }
+        }
+      },
+      {
+        "name": "url",
+        "displayName": "URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reader"
+            ],
+            "operation": [
+              "read"
+            ]
+          }
+        },
+        "description": "The URL to fetch content from"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reader"
+            ],
+            "operation": [
+              "read"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "outputFormat",
+            "description": "Specify desired output format"
+          },
+          {
+            "name": "targetSelector",
+            "description": "CSS selector to focus on specific page elements"
+          },
+          {
+            "name": "excludeSelector",
+            "description": "CSS selector for elements to exclude"
+          },
+          {
+            "name": "enableImageCaptioning",
+            "description": "Whether to generate captions for images within the content"
+          },
+          {
+            "name": "waitForSelector",
+            "description": "Wait for a specific element to appear before extracting content (for dynamic pages)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reader"
+            ],
+            "operation": [
+              "read"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchQuery",
+        "displayName": "Search Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reader"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reader"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "outputFormat",
+            "description": "Specify desired output format"
+          },
+          {
+            "name": "siteFilter",
+            "description": "Restrict search to specific websites"
+          },
+          {
+            "name": "pageNumber",
+            "description": "The page number of the search results to retrieve"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "reader"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "researchQuery",
+        "displayName": "Research Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "research"
+            ],
+            "operation": [
+              "deepResearch"
+            ]
+          }
+        },
+        "description": "The topic or question for the AI to research"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "research"
+            ],
+            "operation": [
+              "deepResearch"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxReturnedSources",
+            "description": "The maximum number of URLs to include in the final answer"
+          },
+          {
+            "name": "prioritizeSources",
+            "description": "A list of domains that are given a higher priority for content retrieval"
+          },
+          {
+            "name": "excludeSources",
+            "description": "A list of domains to be strictly excluded from content retrieval"
+          },
+          {
+            "name": "siteFilter",
+            "description": "Restrict search to specific websites"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "research"
+            ],
+            "operation": [
+              "deepResearch"
+            ]
+          }
+        }
+      },
+      {
+        "name": "requestOptions",
+        "displayName": "Request Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batching"
+          },
+          {
+            "name": "allowUnauthorizedCerts",
+            "description": "Whether to accept the response even if SSL certificate validation is not possible"
+          },
+          {
+            "name": "proxy",
+            "description": "HTTP proxy to use. If authentication is required it can be defined as follow: http://username:password@myproxy:3128"
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for the server to send response headers (and start the response body) before aborting the request"
+          }
+        ]
+      }
+    ]
+  }
+}

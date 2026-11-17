@@ -1,0 +1,156 @@
+{
+  "id": "n8n-nodes-base.mailcheck",
+  "name": "Mailcheck",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.mailcheck",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Mailcheck node to automate work in Mailcheck, and integrate Mailcheck with other applications. n8n has built-in support for a wide range of Mailcheck features, including checking emails",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mailcheck",
+  "credentials": {
+    "name": "Mailcheck",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mailcheck",
+    "slug": "mailcheck",
+    "json_file": "credentials/mailcheck.json",
+    "markdown_file": "credentials/mailcheck.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Email",
+      "operation": "Check",
+      "description": "",
+      "doc": "",
+      "resource_value": "email",
+      "operation_value": "check"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "check",
+    "checking",
+    "email",
+    "emails",
+    "including",
+    "mailcheck",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mailcheck.md",
+      "title": "Mailcheck node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mailcheck",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mailcheck.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.mailcheck.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.mailcheck.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.mailcheck.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mailcheck",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mailcheckApi"
+  ],
+  "credential_details": [
+    {
+      "name": "mailcheckApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Mailcheck"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "email",
+        "options": [
+          {
+            "name": "Email",
+            "value": "email"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "check",
+        "options": [
+          {
+            "name": "Check",
+            "value": "check"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "email"
+            ],
+            "operation": [
+              "check"
+            ]
+          }
+        },
+        "description": "Email address to check"
+      }
+    ]
+  }
+}

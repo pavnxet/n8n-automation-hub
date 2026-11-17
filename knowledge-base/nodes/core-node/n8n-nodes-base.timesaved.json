@@ -1,0 +1,136 @@
+{
+  "id": "n8n-nodes-base.timesaved",
+  "name": "Track Time Saved",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.timesaved",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Track Time Saved node to record how many minutes a workflow saves, based on the path an execution actually takes. n8n adds up every Track Time Saved node that runs during an execution and reports the total in Insights",
+  "doc_url": "https://docs.n8n.io/core-nodes/n8n-nodes-base.timesaved",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Calculation Mode",
+      "description": "Choose how n8n counts the minutes:"
+    },
+    {
+      "name": "Minutes Saved",
+      "description": "The number of minutes this step saves. Whole minutes, zero or more. Defaults to 0"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "actually",
+    "adds",
+    "based",
+    "calculation",
+    "core",
+    "during",
+    "every",
+    "execution",
+    "insights",
+    "many",
+    "minutes",
+    "mode",
+    "path",
+    "record",
+    "reports",
+    "runs",
+    "saved",
+    "saves",
+    "takes",
+    "time",
+    "timesaved",
+    "total",
+    "track"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.timesaved.md",
+      "title": "",
+      "url": "",
+      "origpath": "core-nodes/n8n-nodes-base.timesaved.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.timesaved.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.timesaved.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.timesaved.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.timeSaved",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "organization"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Time Saved",
+    "color": "#1E90FF"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "For each run, time saved is the sum of all Time Saved nodes that execute. Use this when different execution paths or items save different amounts of time.",
+        "type": "notice"
+      },
+      {
+        "name": "mode",
+        "displayName": "Calculation Mode",
+        "type": "options",
+        "default": "once",
+        "options": [
+          {
+            "name": "Once For All Items",
+            "value": "once",
+            "description": "Counts minutes saved once for all input items"
+          },
+          {
+            "name": "Per Item",
+            "value": "perItem",
+            "description": "Multiply minutes saved by the number of input items"
+          }
+        ]
+      },
+      {
+        "name": "minutesSaved",
+        "displayName": "Minutes Saved",
+        "type": "number",
+        "default": 0,
+        "description": "Number of minutes saved by this workflow execution"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4811 @@
+{
+  "id": "n8n-nodes-base.clickup",
+  "name": "ClickUp",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.clickup",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the ClickUp node to automate work in ClickUp, and integrate ClickUp with other applications. n8n has built-in support for a wide range of ClickUp features, including creating, getting, deleting, and updating folders, checklists, tags, comments, and goals",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.clickup",
+  "credentials": {
+    "name": "ClickUp",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/clickup",
+    "slug": "clickup",
+    "json_file": "credentials/clickup.json",
+    "markdown_file": "credentials/clickup.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Checklist",
+      "operation": "Create a checklist",
+      "description": "",
+      "doc": "",
+      "resource_value": "checklist",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Checklist",
+      "operation": "Delete a checklist",
+      "description": "",
+      "doc": "",
+      "resource_value": "checklist",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Checklist",
+      "operation": "Update a checklist",
+      "description": "",
+      "doc": "",
+      "resource_value": "checklist",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Checklist Item",
+      "operation": "Create a checklist item",
+      "description": "",
+      "doc": "",
+      "resource_value": "checklistItem",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Checklist Item",
+      "operation": "Delete a checklist item",
+      "description": "",
+      "doc": "",
+      "resource_value": "checklistItem",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Checklist Item",
+      "operation": "Update a checklist item",
+      "description": "",
+      "doc": "",
+      "resource_value": "checklistItem",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Comment",
+      "operation": "Create a comment",
+      "description": "",
+      "doc": "",
+      "resource_value": "comment",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Comment",
+      "operation": "Delete a comment",
+      "description": "",
+      "doc": "",
+      "resource_value": "comment",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Comment",
+      "operation": "Get all comments",
+      "description": "",
+      "doc": "",
+      "resource_value": "comment"
+    },
+    {
+      "resource": "Comment",
+      "operation": "Update a comment",
+      "description": "",
+      "doc": "",
+      "resource_value": "comment",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Create a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Delete a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Get a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Get all folders",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Update a folder",
+      "description": "",
+      "doc": "",
+      "resource_value": "folder",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Goal",
+      "operation": "Create a goal",
+      "description": "",
+      "doc": "",
+      "resource_value": "goal",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Goal",
+      "operation": "Delete a goal",
+      "description": "",
+      "doc": "",
+      "resource_value": "goal",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Goal",
+      "operation": "Get a goal",
+      "description": "",
+      "doc": "",
+      "resource_value": "goal",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Goal",
+      "operation": "Get all goals",
+      "description": "",
+      "doc": "",
+      "resource_value": "goal",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Goal",
+      "operation": "Update a goal",
+      "description": "",
+      "doc": "",
+      "resource_value": "goal",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Goal Key Result",
+      "operation": "Create a key result",
+      "description": "",
+      "doc": "",
+      "resource_value": "goalKeyResult",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Goal Key Result",
+      "operation": "Delete a key result",
+      "description": "",
+      "doc": "",
+      "resource_value": "goalKeyResult",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Goal Key Result",
+      "operation": "Update a key result",
+      "description": "",
+      "doc": "",
+      "resource_value": "goalKeyResult",
+      "operation_value": "update"
+    },
+    {
+      "resource": "List",
+      "operation": "Create a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "list",
+      "operation_value": "create"
+    },
+    {
+      "resource": "List",
+      "operation": "Retrieve list's custom fields",
+      "description": "",
+      "doc": "",
+      "resource_value": "list",
+      "operation_value": "customFields"
+    },
+    {
+      "resource": "List",
+      "operation": "Delete a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "list",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "List",
+      "operation": "Get a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "list",
+      "operation_value": "get"
+    },
+    {
+      "resource": "List",
+      "operation": "Get all lists",
+      "description": "",
+      "doc": "",
+      "resource_value": "list",
+      "operation_value": "get"
+    },
+    {
+      "resource": "List",
+      "operation": "Get list members",
+      "description": "",
+      "doc": "",
+      "resource_value": "list",
+      "operation_value": "get"
+    },
+    {
+      "resource": "List",
+      "operation": "Update a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "list",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Space Tag",
+      "operation": "Create a space tag",
+      "description": "",
+      "doc": "",
+      "resource_value": "spaceTag",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Space Tag",
+      "operation": "Delete a space tag",
+      "description": "",
+      "doc": "",
+      "resource_value": "spaceTag",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Space Tag",
+      "operation": "Get all space tags",
+      "description": "",
+      "doc": "",
+      "resource_value": "spaceTag"
+    },
+    {
+      "resource": "Space Tag",
+      "operation": "Update a space tag",
+      "description": "",
+      "doc": "",
+      "resource_value": "spaceTag",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Task",
+      "operation": "Create a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Task",
+      "operation": "Delete a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get all tasks",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get task members",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Set a custom field",
+      "description": "",
+      "doc": "",
+      "resource_value": "task"
+    },
+    {
+      "resource": "Task",
+      "operation": "Update a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Task List",
+      "operation": "Add a task to a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "taskList",
+      "operation_value": "add"
+    },
+    {
+      "resource": "Task List",
+      "operation": "Remove a task from a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "taskList",
+      "operation_value": "remove"
+    },
+    {
+      "resource": "Task Tag",
+      "operation": "Add a tag to a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "taskTag",
+      "operation_value": "add"
+    },
+    {
+      "resource": "Task Tag",
+      "operation": "Remove a tag from a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "taskTag",
+      "operation_value": "remove"
+    },
+    {
+      "resource": "Task Dependency",
+      "operation": "Create a task dependency",
+      "description": "",
+      "doc": "",
+      "resource_value": "taskDependency",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Task Dependency",
+      "operation": "Delete a task dependency",
+      "description": "",
+      "doc": "",
+      "resource_value": "taskDependency",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Time Entry",
+      "operation": "Create a time entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntry",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Time Entry",
+      "operation": "Delete a time entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntry",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Time Entry",
+      "operation": "Get a time entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntry",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Time Entry",
+      "operation": "Get all time entries",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntry",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Time Entry",
+      "operation": "Start a time entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntry",
+      "operation_value": "start"
+    },
+    {
+      "resource": "Time Entry",
+      "operation": "Stop the current running timer",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntry",
+      "operation_value": "stop"
+    },
+    {
+      "resource": "Time Entry",
+      "operation": "Update a time Entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntry",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Time Entry Tag",
+      "operation": "Add tag to time entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntryTag",
+      "operation_value": "add"
+    },
+    {
+      "resource": "Time Entry Tag",
+      "operation": "Get all time entry tags",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntryTag"
+    },
+    {
+      "resource": "Time Entry Tag",
+      "operation": "Remove tag from time entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "timeEntryTag",
+      "operation_value": "remove"
+    }
+  ],
+  "operation_count": 57,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "app",
+    "applications",
+    "checklist",
+    "checklists",
+    "clickup",
+    "comment",
+    "comments",
+    "create",
+    "creating",
+    "current",
+    "custom",
+    "delete",
+    "deleting",
+    "dependency",
+    "entries",
+    "entry",
+    "field",
+    "fields",
+    "folder",
+    "folders",
+    "get",
+    "getting",
+    "goal",
+    "goals",
+    "including",
+    "item",
+    "key",
+    "list",
+    "lists",
+    "members",
+    "remove",
+    "result",
+    "retrieve",
+    "running",
+    "set",
+    "space",
+    "start",
+    "stop",
+    "tag",
+    "tags",
+    "task",
+    "tasks",
+    "time",
+    "timer",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.clickup.md",
+      "title": "ClickUp node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.clickup",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.clickup.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.clickup.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.clickup.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.clickup.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.clickUp",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "clickUpApi",
+    "clickUpOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "clickUpApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "clickUpOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "ClickUp"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \":\" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 201,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "task",
+        "options": [
+          {
+            "name": "Checklist",
+            "value": "checklist"
+          },
+          {
+            "name": "Checklist Item",
+            "value": "checklistItem"
+          },
+          {
+            "name": "Comment",
+            "value": "comment"
+          },
+          {
+            "name": "Folder",
+            "value": "folder"
+          },
+          {
+            "name": "Goal",
+            "value": "goal"
+          },
+          {
+            "name": "Goal Key Result",
+            "value": "goalKeyResult"
+          },
+          {
+            "name": "List",
+            "value": "list"
+          },
+          {
+            "name": "Space Tag",
+            "value": "spaceTag"
+          },
+          {
+            "name": "Task",
+            "value": "task"
+          },
+          {
+            "name": "Task Dependency",
+            "value": "taskDependency"
+          },
+          {
+            "name": "Task List",
+            "value": "taskList"
+          },
+          {
+            "name": "Task Tag",
+            "value": "taskTag"
+          },
+          {
+            "name": "Time Entry",
+            "value": "timeEntry"
+          },
+          {
+            "name": "Time Entry Tag",
+            "value": "timeEntryTag"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a checklist"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a checklist"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a checklist"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklist"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklist"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklist"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "checklist",
+        "displayName": "Checklist ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklist"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "checklist",
+        "displayName": "Checklist ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklist"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "name"
+          },
+          {
+            "name": "position"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklist"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a checklist item"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a checklist item"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a checklist item"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklistItem"
+            ]
+          }
+        }
+      },
+      {
+        "name": "checklist",
+        "displayName": "Checklist ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklistItem"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklistItem"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignee"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklistItem"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "checklist",
+        "displayName": "Checklist ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklistItem"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "checklistItem",
+        "displayName": "Checklist Item ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklistItem"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "checklist",
+        "displayName": "Checklist ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklistItem"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "checklistItem",
+        "displayName": "Checklist Item ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklistItem"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignee"
+          },
+          {
+            "name": "name"
+          },
+          {
+            "name": "parent",
+            "description": "Checklist item that you want to nest the target checklist item underneath"
+          },
+          {
+            "name": "resolved"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "checklistItem"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a comment"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a comment"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many comments"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a comment"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "commentOn",
+        "displayName": "Comment On",
+        "type": "options",
+        "options": [
+          {
+            "name": "List",
+            "value": "list"
+          },
+          {
+            "name": "Task",
+            "value": "task"
+          },
+          {
+            "name": "View",
+            "value": "view"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "commentText",
+        "displayName": "Comment Text",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignee"
+          },
+          {
+            "name": "notifyAll",
+            "description": "Whether creation notifications will be sent to everyone including the creator of the comment"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "comment",
+        "displayName": "Comment ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "commentsOn",
+        "displayName": "Comments On",
+        "type": "options",
+        "options": [
+          {
+            "name": "List",
+            "value": "list"
+          },
+          {
+            "name": "Task",
+            "value": "task"
+          },
+          {
+            "name": "View",
+            "value": "view"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "comment",
+        "displayName": "Comment ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignee"
+          },
+          {
+            "name": "commentText"
+          },
+          {
+            "name": "resolved"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a folder"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a folder"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a folder"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many folders"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a folder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "archived"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "name"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a goal"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a goal"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a goal"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many goals"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a goal"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "color"
+          },
+          {
+            "name": "description"
+          },
+          {
+            "name": "dueDate"
+          },
+          {
+            "name": "multipleOwners"
+          },
+          {
+            "name": "owners"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "goal",
+        "displayName": "Goal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "goal",
+        "displayName": "Goal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "goal",
+        "displayName": "Goal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "addOwners"
+          },
+          {
+            "name": "color"
+          },
+          {
+            "name": "description"
+          },
+          {
+            "name": "dueDate"
+          },
+          {
+            "name": "name"
+          },
+          {
+            "name": "removeOwners"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goal"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a key result"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a key result"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a key result"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goalKeyResult"
+            ]
+          }
+        }
+      },
+      {
+        "name": "goal",
+        "displayName": "Goal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goalKeyResult"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goalKeyResult"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Automatic",
+            "value": "automatic"
+          },
+          {
+            "name": "Boolean",
+            "value": "boolean"
+          },
+          {
+            "name": "Currency",
+            "value": "currency"
+          },
+          {
+            "name": "Number",
+            "value": "number"
+          },
+          {
+            "name": "Percentage",
+            "value": "percentage"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goalKeyResult"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "listIds"
+          },
+          {
+            "name": "owners"
+          },
+          {
+            "name": "stepsStart",
+            "description": "Required for Percentage, Automatic, Number and Currency"
+          },
+          {
+            "name": "stepsEnd",
+            "description": "Required for Percentage, Automatic, Number and Currency"
+          },
+          {
+            "name": "taskIds"
+          },
+          {
+            "name": "unit",
+            "description": "Only matters for type Number and Currency. For Currency the unit must be a valid currency code."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goalKeyResult"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "keyResult",
+        "displayName": "Key Result ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goalKeyResult"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "keyResult",
+        "displayName": "Key Result ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goalKeyResult"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "name"
+          },
+          {
+            "name": "note"
+          },
+          {
+            "name": "stepsCurrent"
+          },
+          {
+            "name": "stepsEnd"
+          },
+          {
+            "name": "stepsStart"
+          },
+          {
+            "name": "unit",
+            "description": "Only matters for type Number and Currency. For Currency the unit must be a valid currency code."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "goalKeyResult"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add",
+            "description": "Add a tag to a task"
+          },
+          {
+            "name": "Remove",
+            "value": "remove",
+            "description": "Remove a tag from a task"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskTag"
+            ]
+          }
+        }
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskTag"
+            ],
+            "operation": [
+              "remove",
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tagName",
+        "displayName": "Tag Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskTag"
+            ],
+            "operation": [
+              "remove",
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "custom_task_ids",
+            "description": "Whether to reference a task by it's custom task ID"
+          },
+          {
+            "name": "team_id",
+            "description": "Only used when the parameter is set to custom_task_ids=true. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">exp"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskTag"
+            ],
+            "operation": [
+              "remove",
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add",
+            "description": "Add a task to a list"
+          },
+          {
+            "name": "Remove",
+            "value": "remove",
+            "description": "Remove a task from a list"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskList"
+            ]
+          }
+        }
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskList"
+            ],
+            "operation": [
+              "remove",
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "listId",
+        "displayName": "List ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskList"
+            ],
+            "operation": [
+              "remove",
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a space tag"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a space tag"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many space tags"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a space tag"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spaceTag"
+            ]
+          }
+        }
+      },
+      {
+        "name": "space",
+        "displayName": "Space ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spaceTag"
+            ],
+            "operation": [
+              "create",
+              "delete",
+              "getAll",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spaceTag"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spaceTag"
+            ],
+            "operation": [
+              "delete",
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "newName",
+        "displayName": "New Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spaceTag"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "New name to set for the tag"
+      },
+      {
+        "name": "foregroundColor",
+        "displayName": "Foreground Color",
+        "type": "color",
+        "required": true,
+        "default": "#000000",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spaceTag"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "backgroundColor",
+        "displayName": "Background Color",
+        "type": "color",
+        "required": true,
+        "default": "#000000",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spaceTag"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spaceTag"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "spaceTag"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a task"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a task"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a task"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many tasks"
+          },
+          {
+            "name": "Member",
+            "value": "member",
+            "description": "Get task members"
+          },
+          {
+            "name": "Set Custom Field",
+            "value": "setCustomField",
+            "description": "Set a custom field"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a task"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ],
+            "folderless": [
+              true
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The first name on the task"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignees",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "customFieldsJson",
+            "description": "Custom fields to set as JSON in the format: <code>[ {\"id\": \"\", \"value\": \"\"} ]</code>"
+          },
+          {
+            "name": "content"
+          },
+          {
+            "name": "dueDate"
+          },
+          {
+            "name": "dueDateTime"
+          },
+          {
+            "name": "markdownContent"
+          },
+          {
+            "name": "notifyAll"
+          },
+          {
+            "name": "parentId"
+          },
+          {
+            "name": "priority",
+            "description": "Integer mapping as 1 : Urgent, 2 : High, 3 : Normal, 4 : Low"
+          },
+          {
+            "name": "startDate"
+          },
+          {
+            "name": "startDateTime"
+          },
+          {
+            "name": "status",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "tags",
+            "description": "The array of tags applied to this task. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "timeEstimate",
+            "description": "Time estimate in minutes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "addAssignees",
+            "description": "Assignees IDs. Multiple ca be added separated by comma."
+          },
+          {
+            "name": "content"
+          },
+          {
+            "name": "dueDate"
+          },
+          {
+            "name": "dueDateTime"
+          },
+          {
+            "name": "markdownContent"
+          },
+          {
+            "name": "name"
+          },
+          {
+            "name": "notifyAll"
+          },
+          {
+            "name": "parentId"
+          },
+          {
+            "name": "priority",
+            "description": "Integer mapping as 1 : Urgent, 2 : High, 3 : Normal, 4 : Low"
+          },
+          {
+            "name": "removeAssignees",
+            "description": "Assignees IDs. Multiple ca be added separated by comma."
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "startDate"
+          },
+          {
+            "name": "startDateTime"
+          },
+          {
+            "name": "timeEstimate",
+            "description": "Time estimate in minutes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "includeSubtasks",
+        "displayName": "Include Subtasks",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether to also fetch and include subtasks for this task"
+      },
+      {
+        "name": "includeMarkdownDescription",
+        "displayName": "Include Markdown Description",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether to include the markdown_description field in the response. This is important for preserving links in the description."
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "folderless": [
+              true
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "archived"
+          },
+          {
+            "name": "assignees",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "customFieldsUi",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "dateCreatedGt",
+            "description": "Filter date created greater"
+          },
+          {
+            "name": "dateCreatedLt",
+            "description": "Filter date created less than posix time"
+          },
+          {
+            "name": "dateUpdatedGt",
+            "description": "Filter date updated greater than"
+          },
+          {
+            "name": "dateUpdatedLt",
+            "description": "Filter date updated less than"
+          },
+          {
+            "name": "dueDateGt",
+            "description": "Filter due date greater than"
+          },
+          {
+            "name": "dueDateLt",
+            "description": "Filter due date less than"
+          },
+          {
+            "name": "includeClosed",
+            "description": "The response does by default not include closed tasks. Set this to true and dont send a status filter to include closed tasks."
+          },
+          {
+            "name": "orderBy"
+          },
+          {
+            "name": "statuses",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "subtasks",
+            "description": "Whether to include subtasks, default false"
+          },
+          {
+            "name": "tags",
+            "description": "The array of tags applied to this task. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "member"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "member"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "member"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "task",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "setCustomField"
+            ]
+          }
+        },
+        "description": "The ID of the task to add custom field to"
+      },
+      {
+        "name": "field",
+        "displayName": "Field ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "setCustomField"
+            ]
+          }
+        },
+        "description": "The ID of the field to add custom field to"
+      },
+      {
+        "name": "jsonParse",
+        "displayName": "Value Is JSON",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "setCustomField"
+            ]
+          }
+        },
+        "description": "The value is JSON and will be parsed as such. Is needed if for example needed for labels which expects the value to be an array."
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "setCustomField"
+            ]
+          }
+        },
+        "description": "The value to set on custom field"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a task dependency"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a task dependency"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskDependency"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskDependency"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dependsOnTask",
+        "displayName": "Depends On Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskDependency"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskDependency"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dependsOnTask",
+        "displayName": "Depends On Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskDependency"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a time entry"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a time entry"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a time entry"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many time entries"
+          },
+          {
+            "name": "Start",
+            "value": "start",
+            "description": "Start a time entry"
+          },
+          {
+            "name": "Stop",
+            "value": "stop",
+            "description": "Stop the current running timer"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a time Entry"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "end_date"
+          },
+          {
+            "name": "start_date"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "running",
+        "displayName": "Running",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether to return just the current running time entry"
+      },
+      {
+        "name": "timeEntry",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "get"
+            ],
+            "running": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ],
+            "folderless": [
+              true
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "start",
+        "displayName": "Start",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "duration",
+        "displayName": "Duration (Minutes)",
+        "type": "number",
+        "required": true,
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Duration in minutes"
+      },
+      {
+        "name": "task",
+        "displayName": "Task Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignee",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "billable"
+          },
+          {
+            "name": "description",
+            "description": "Description of the time entry"
+          },
+          {
+            "name": "tags",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "start"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "task",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "start"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "billable"
+          },
+          {
+            "name": "description",
+            "description": "Description of the time entry"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "start"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "stop"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "timeEntry",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "update"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "update"
+            ],
+            "folderless": [
+              true
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "update"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "archived",
+        "displayName": "Archived",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "timeEntry",
+        "displayName": "Time Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignee",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "billable"
+          },
+          {
+            "name": "description",
+            "description": "Description of the time entry"
+          },
+          {
+            "name": "duration",
+            "description": "Duration in minutes"
+          },
+          {
+            "name": "start"
+          },
+          {
+            "name": "tags",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "task",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntry"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskDependency"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dependsOnTask",
+        "displayName": "Depends On Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskDependency"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskDependency"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dependsOnTask",
+        "displayName": "Depends On Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "taskDependency"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add",
+            "description": "Add tag to time entry"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many time entry tags"
+          },
+          {
+            "name": "Remove",
+            "value": "remove",
+            "description": "Remove tag from time entry"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "timeEntryIds",
+        "displayName": "Time Entry IDs",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tagsUi",
+        "displayName": "Tags",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "tagsValues",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "tag_bg",
+                "displayName": "Background Color",
+                "type": "color"
+              },
+              {
+                "name": "tag_fg",
+                "displayName": "Foreground Color",
+                "type": "color"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "timeEntryIds",
+        "displayName": "Time Entry IDs",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tagNames",
+        "displayName": "Tag Names or IDs",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "timeEntryTag"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "customFields",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a list"
+          },
+          {
+            "name": "Custom Fields",
+            "value": "customFields",
+            "description": "Retrieve list's custom fields"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a list"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a list"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many lists"
+          },
+          {
+            "name": "Member",
+            "value": "member",
+            "description": "Get list members"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a list"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "create"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignee"
+          },
+          {
+            "name": "content"
+          },
+          {
+            "name": "dueDate"
+          },
+          {
+            "name": "dueDateTime"
+          },
+          {
+            "name": "priority",
+            "description": "Integer mapping as 1 : Urgent, 2 : High, 3 : Normal, 4 : Low"
+          },
+          {
+            "name": "status",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "List ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "member"
+            ]
+          }
+        },
+        "description": "Task ID"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "member"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "member"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "customFields"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "customFields"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "customFields"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "customFields"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "customFields"
+            ],
+            "folderless": [
+              true
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "customFields"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "get"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "archived"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "team",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "space",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderless",
+        "displayName": "Folderless List",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folder",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "update"
+            ],
+            "folderless": [
+              false
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "list",
+        "displayName": "List ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignee",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "content"
+          },
+          {
+            "name": "dueDate"
+          },
+          {
+            "name": "dueDateTime"
+          },
+          {
+            "name": "name"
+          },
+          {
+            "name": "priority",
+            "description": "Integer mapping as 1 : Urgent, 2 : High, 3 : Normal, 4 : Low"
+          },
+          {
+            "name": "unsetStatus"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,678 @@
+{
+  "id": "n8n-nodes-base.twitter",
+  "name": "X (Formerly Twitter)",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.twitter",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the X node to automate work in X and integrate X with other applications. n8n has built-in support for a wide range of X features, including creating direct messages and deleting, searching, liking, and retweeting a tweet",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.twitter",
+  "credentials": {
+    "name": "X",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/twitter",
+    "slug": "twitter",
+    "json_file": "credentials/twitter.json",
+    "markdown_file": "credentials/twitter.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Direct Message",
+      "operation": "Create a direct message",
+      "description": "",
+      "doc": "",
+      "resource_value": "directMessage",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Tweet",
+      "operation": "Create or reply a tweet",
+      "description": "",
+      "doc": "",
+      "resource_value": "tweet",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Tweet",
+      "operation": "Delete a tweet",
+      "description": "",
+      "doc": "",
+      "resource_value": "tweet",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Tweet",
+      "operation": "Search tweets",
+      "description": "",
+      "doc": "",
+      "resource_value": "tweet",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Tweet",
+      "operation": "Like a tweet",
+      "description": "",
+      "doc": "",
+      "resource_value": "tweet",
+      "operation_value": "like"
+    },
+    {
+      "resource": "Tweet",
+      "operation": "Retweet a tweet",
+      "description": "",
+      "doc": "",
+      "resource_value": "tweet",
+      "operation_value": "retweet"
+    },
+    {
+      "resource": "User",
+      "operation": "Get a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "searchUser"
+    },
+    {
+      "resource": "List",
+      "operation": "Add a member to a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "list"
+    }
+  ],
+  "operation_count": 8,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "direct",
+    "formerly",
+    "get",
+    "including",
+    "like",
+    "liking",
+    "list",
+    "member",
+    "message",
+    "messages",
+    "reply",
+    "retweet",
+    "retweeting",
+    "search",
+    "searching",
+    "tweet",
+    "tweets",
+    "twitter",
+    "user",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.twitter.md",
+      "title": "X (Formerly Twitter) node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.twitter",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.twitter.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.twitter.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.twitter.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.twitter.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.twitter",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "twitterOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "twitterOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "X"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \":\" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 23,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "tweet",
+        "options": [
+          {
+            "name": "Direct Message",
+            "value": "directMessage",
+            "description": "Send a direct message to a user"
+          },
+          {
+            "name": "List",
+            "value": "list",
+            "description": "Add a user to a list"
+          },
+          {
+            "name": "Tweet",
+            "value": "tweet",
+            "description": "Create, like, search, or delete a tweet"
+          },
+          {
+            "name": "User",
+            "value": "user",
+            "description": "Search users by username"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Send a direct message to a user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "directMessage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "user",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "username",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "directMessage"
+            ]
+          }
+        },
+        "description": "The user you want to send the message to"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "directMessage"
+            ]
+          }
+        },
+        "description": "The text of the direct message. URL encoding is required. Max length of 10,000 characters."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attachments",
+            "description": "The attachment ID to associate with the message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "directMessage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add Member",
+            "value": "add",
+            "description": "Add a member to a list"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ]
+          }
+        }
+      },
+      {
+        "name": "list",
+        "displayName": "List",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "id",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add"
+            ],
+            "resource": [
+              "list"
+            ]
+          }
+        },
+        "description": "The list you want to add the user to"
+      },
+      {
+        "name": "user",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "username",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add"
+            ],
+            "resource": [
+              "list"
+            ]
+          }
+        },
+        "description": "The user you want to add to the list"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create, quote, or reply to a tweet"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a tweet"
+          },
+          {
+            "name": "Like",
+            "value": "like",
+            "description": "Like a tweet"
+          },
+          {
+            "name": "Retweet",
+            "value": "retweet",
+            "description": "Retweet a tweet"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Search for tweets from the last seven days"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "tweet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "tweet"
+            ]
+          }
+        },
+        "description": "The text of the status update. URLs must be encoded. Links wrapped with the t.co shortener will affect character count"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "location",
+            "description": "Location information for the tweet"
+          },
+          {
+            "name": "attachments",
+            "description": "The attachment ID to associate with the message"
+          },
+          {
+            "name": "inQuoteToStatusId",
+            "description": "The tweet being quoted"
+          },
+          {
+            "name": "inReplyToStatusId",
+            "description": "The tweet being replied to"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "tweet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "noticeLocation",
+        "displayName": "Locations are not supported due to Twitter V2 API limitations",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/additionalFields.location": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "noticeAttachments",
+        "displayName": "Attachements are not supported due to Twitter V2 API limitations",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/additionalFields.attachments": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "tweetDeleteId",
+        "displayName": "Tweet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "id",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "tweet"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The tweet to delete"
+      },
+      {
+        "name": "tweetId",
+        "displayName": "Tweet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "id",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "like"
+            ],
+            "resource": [
+              "tweet"
+            ]
+          }
+        },
+        "description": "The tweet to like"
+      },
+      {
+        "name": "searchText",
+        "displayName": "Search Term",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "tweet"
+            ]
+          }
+        },
+        "description": "A UTF-8, URL-encoded search query of 500 characters maximum, including operators. Queries may additionally be limited by complexity. Check the searching examples <a href=\"https://developer.twitter.com/en/docs/tweets/sear"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "tweet"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "tweet"
+            ],
+            "operation": [
+              "search"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "sortOrder",
+            "description": "The order in which to return results"
+          },
+          {
+            "name": "startTime",
+            "description": "Tweets before this date will not be returned. This date must be within the last 7 days if you don't have Academic Research access."
+          },
+          {
+            "name": "endTime",
+            "description": "Tweets after this date will not be returned. This date must be within the last 7 days if you don't have Academic Research access."
+          },
+          {
+            "name": "tweetFieldsObject",
+            "description": "The fields to add to each returned tweet object. Default fields are: ID, text, edit_history_tweet_ids."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "tweet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tweetId",
+        "displayName": "Tweet",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "id",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "retweet"
+            ],
+            "resource": [
+              "tweet"
+            ]
+          }
+        },
+        "description": "The tweet to retweet"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "searchUser",
+        "options": [
+          {
+            "name": "Get",
+            "value": "searchUser",
+            "description": "Retrieve a user by username"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "user",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "username",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "searchUser"
+            ],
+            "resource": [
+              "user"
+            ]
+          },
+          "hide": {
+            "me": [
+              true
+            ]
+          }
+        },
+        "description": "The user you want to search"
+      },
+      {
+        "name": "me",
+        "displayName": "Me",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "searchUser"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        },
+        "description": "Whether you want to search the authenticated user"
+      }
+    ]
+  }
+}

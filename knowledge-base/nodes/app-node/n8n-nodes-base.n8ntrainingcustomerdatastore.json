@@ -1,0 +1,137 @@
+{
+  "id": "n8n-nodes-base.n8ntrainingcustomerdatastore",
+  "name": "Customer Datastore (n8n Training)",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.n8ntrainingcustomerdatastore",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use this node only for the n8n new user onboarding tutorial. It provides dummy data for testing purposes and has no further functionality",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.n8ntrainingcustomerdatastore",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "customer",
+    "data",
+    "datastore",
+    "dummy",
+    "functionality",
+    "further",
+    "n8n",
+    "n8ntrainingcustomerdatastore",
+    "onboarding",
+    "only",
+    "provides",
+    "purposes",
+    "testing",
+    "training",
+    "tutorial",
+    "user"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.n8ntrainingcustomerdatastore.md",
+      "title": "Customer Datastore (n8n Training) node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.n8ntrainingcustomerdatastore",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.n8ntrainingcustomerdatastore.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.n8ntrainingcustomerdatastore.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.n8ntrainingcustomerdatastore.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.n8ntrainingcustomerdatastore.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.n8nTrainingCustomerDatastore",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Customer Datastore (n8n training)"
+  },
+  "subtitle": "={{$parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getOnePerson",
+        "options": [
+          {
+            "name": "Get One Person",
+            "value": "getOnePerson"
+          },
+          {
+            "name": "Get All People",
+            "value": "getAllPeople"
+          }
+        ]
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAllPeople"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAllPeople"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      }
+    ]
+  }
+}

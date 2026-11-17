@@ -1,0 +1,1647 @@
+{
+  "id": "n8n-nodes-base.salesmate",
+  "name": "Salesmate",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.salesmate",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Salesmate node to automate work in Salesmate, and integrate Salesmate with other applications. n8n has built-in support for a wide range of Salesmate features, including creating, updating, deleting, and getting activities, companies, and deals",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.salesmate",
+  "credentials": {
+    "name": "Salesmate",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/salesmate",
+    "slug": "salesmate",
+    "json_file": "credentials/salesmate.json",
+    "markdown_file": "credentials/salesmate.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Activity",
+      "operation": "Create an activity",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Delete an activity",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Get an activity",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Get all companies",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Update an activity",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Company",
+      "operation": "Create a company",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Company",
+      "operation": "Delete a company",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Company",
+      "operation": "Get a company",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Company",
+      "operation": "Get all companies",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Company",
+      "operation": "Update a company",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Create a deal",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Delete a deal",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Get a deal",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Get all deals",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Update a deal",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 15,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "activities",
+    "activity",
+    "app",
+    "applications",
+    "companies",
+    "company",
+    "create",
+    "creating",
+    "deal",
+    "deals",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "salesmate",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.salesmate.md",
+      "title": "Salesmate node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.salesmate",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.salesmate.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.salesmate.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.salesmate.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.salesmate.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.salesmate",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "salesmateApi"
+  ],
+  "credential_details": [
+    {
+      "name": "salesmateApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Salesmate"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \":\" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 58,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "activity",
+        "options": [
+          {
+            "name": "Activity",
+            "value": "activity"
+          },
+          {
+            "name": "Company",
+            "value": "company"
+          },
+          {
+            "name": "Deal",
+            "value": "deal"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a company"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a company"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a company"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many companies"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a company"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an activity"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an activity"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an activity"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many companies"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an activity"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a deal"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a deal"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a deal"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many deals"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a deal"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "owner",
+        "displayName": "Owner Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether the data should include the fields details"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "website"
+          },
+          {
+            "name": "phone"
+          },
+          {
+            "name": "otherPhone"
+          },
+          {
+            "name": "facebookHandle"
+          },
+          {
+            "name": "googlePlusHandle"
+          },
+          {
+            "name": "linkedInHandle"
+          },
+          {
+            "name": "skypeId"
+          },
+          {
+            "name": "twitterHandle"
+          },
+          {
+            "name": "currency"
+          },
+          {
+            "name": "billingAddressLine1"
+          },
+          {
+            "name": "billingAddressLine2"
+          },
+          {
+            "name": "billingCity"
+          },
+          {
+            "name": "billingZipCode"
+          },
+          {
+            "name": "billingState"
+          },
+          {
+            "name": "billingState"
+          },
+          {
+            "name": "description"
+          },
+          {
+            "name": "tags"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Company ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Whether the data should include the fields details"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "name"
+          },
+          {
+            "name": "owner",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "website"
+          },
+          {
+            "name": "phone"
+          },
+          {
+            "name": "otherPhone"
+          },
+          {
+            "name": "facebookHandle"
+          },
+          {
+            "name": "googlePlusHandle"
+          },
+          {
+            "name": "linkedInHandle"
+          },
+          {
+            "name": "skypeId"
+          },
+          {
+            "name": "twitterHandle"
+          },
+          {
+            "name": "currency"
+          },
+          {
+            "name": "billingAddressLine1"
+          },
+          {
+            "name": "billingAddressLine2"
+          },
+          {
+            "name": "billingCity"
+          },
+          {
+            "name": "billingZipCode"
+          },
+          {
+            "name": "billingState"
+          },
+          {
+            "name": "billingState"
+          },
+          {
+            "name": "description"
+          },
+          {
+            "name": "tags"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Company ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether the data should include the fields details"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Comma-separated list of fields to return"
+          },
+          {
+            "name": "sortBy",
+            "description": "The field to sort by"
+          },
+          {
+            "name": "sortOrder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filtersJson",
+        "displayName": "Filters",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "company"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "filtersUi",
+            "values": [
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "conditions",
+                "displayName": "Conditions",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Company ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "If more than one company add them separated by ,"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "owner",
+        "displayName": "Owner Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "This field displays activity type such as call, meeting etc"
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether the data should include the fields details"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "description",
+            "description": "This field contains details related to the activity"
+          },
+          {
+            "name": "tags",
+            "description": "This field contains tags associated with an activity"
+          },
+          {
+            "name": "dueDate",
+            "description": "Expiry date of an activity"
+          },
+          {
+            "name": "duration",
+            "description": "Time duration of an activity"
+          },
+          {
+            "name": "isCalendarInvite",
+            "description": "Whether to send calendar invite"
+          },
+          {
+            "name": "isCompleted",
+            "description": "Whether the activity is completed or not"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Activity ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Whether the data should include the fields details"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "title"
+          },
+          {
+            "name": "type"
+          },
+          {
+            "name": "owner"
+          },
+          {
+            "name": "description",
+            "description": "This field contains details related to the activity"
+          },
+          {
+            "name": "tags",
+            "description": "This field contains tags associated with an activity"
+          },
+          {
+            "name": "dueDate",
+            "description": "Expiry date of an activity"
+          },
+          {
+            "name": "duration",
+            "description": "Time duration of an activity"
+          },
+          {
+            "name": "isCalendarInvite",
+            "description": "Whether to send calendar invite"
+          },
+          {
+            "name": "isCompleted",
+            "description": "Whether the activity is completed or not"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Activity ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether the data should include the fields details"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "activity"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Comma-separated list of fields to return"
+          },
+          {
+            "name": "sortBy",
+            "description": "The field to sort by"
+          },
+          {
+            "name": "sortOrder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filtersJson",
+        "displayName": "Filters",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "activity"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "filtersUi",
+            "values": [
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "conditions",
+                "displayName": "Conditions",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Activity ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "If more than one activity add them separated by ,"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "owner",
+        "displayName": "Owner Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "primaryContact",
+        "displayName": "Primary Contact Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Primary contact for the deal. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "pipeline",
+        "displayName": "Pipeline",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Sales",
+            "value": "Sales"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "status",
+        "displayName": "Status",
+        "type": "options",
+        "required": true,
+        "default": "Open",
+        "options": [
+          {
+            "name": "Open",
+            "value": "Open"
+          },
+          {
+            "name": "Close",
+            "value": "Close"
+          },
+          {
+            "name": "Lost",
+            "value": "Lost"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "stage",
+        "displayName": "Stage",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "New (Untouched)",
+            "value": "New (Untouched)"
+          },
+          {
+            "name": "Contacted",
+            "value": "Contacted"
+          },
+          {
+            "name": "Qualified",
+            "value": "Qualified"
+          },
+          {
+            "name": "In Negotiation",
+            "value": "In Negotiation"
+          },
+          {
+            "name": "Proposal Presented",
+            "value": "Proposal Presented"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether the data should include the fields details"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "description",
+            "description": "This field contains details related to the deal"
+          },
+          {
+            "name": "tags",
+            "description": "This field contains tags associated with an deal"
+          },
+          {
+            "name": "primaryCompany",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "source"
+          },
+          {
+            "name": "estimatedCloseDate"
+          },
+          {
+            "name": "dealValue"
+          },
+          {
+            "name": "priority"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Deal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Whether the data should include the fields details"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "title"
+          },
+          {
+            "name": "owner",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "primaryContact",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "pipeline"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "stage"
+          },
+          {
+            "name": "currency"
+          },
+          {
+            "name": "description",
+            "description": "This field contains details related to the deal"
+          },
+          {
+            "name": "tags",
+            "description": "This field contains tags associated with an deal"
+          },
+          {
+            "name": "primaryCompany",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "source"
+          },
+          {
+            "name": "estimatedCloseDate"
+          },
+          {
+            "name": "dealValue"
+          },
+          {
+            "name": "priority"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Deal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "rawData",
+        "displayName": "RAW Data",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether the data should include the fields details"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "deal"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Comma-separated list of fields to return"
+          },
+          {
+            "name": "sortBy",
+            "description": "The field to sort by"
+          },
+          {
+            "name": "sortOrder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filtersJson",
+        "displayName": "Filters",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "deal"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "filtersUi",
+            "values": [
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "conditions",
+                "displayName": "Conditions",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Deal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "If more than one deal add them separated by ,"
+      }
+    ]
+  }
+}

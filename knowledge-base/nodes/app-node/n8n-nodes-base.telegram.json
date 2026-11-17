@@ -1,0 +1,3883 @@
+{
+  "id": "n8n-nodes-base.telegram",
+  "name": "Telegram",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.telegram",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Telegram node to automate work in Telegram and integrate Telegram with other applications. n8n has built-in support for a wide range of Telegram features, including getting files as well as deleting and editing messages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram",
+  "credentials": {
+    "name": "Telegram",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/telegram",
+    "slug": "telegram",
+    "json_file": "credentials/telegram.json",
+    "markdown_file": "credentials/telegram.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Chat operations",
+      "operation": "Get",
+      "description": "up-to-date information about a chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#get-chat",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the target channel in the format @channelusername"
+        }
+      ],
+      "resource_value": "chat",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Chat operations",
+      "operation": "Get Administrators",
+      "description": "Get a list of all administrators in a chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#get-administrators",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Administrators"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the target channel in the format @channelusername"
+        }
+      ],
+      "resource_value": "chat",
+      "operation_value": "administrators"
+    },
+    {
+      "resource": "Chat operations",
+      "operation": "Get Member",
+      "description": "Get the details of a chat member",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#get-chat-member",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Member"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the target channel in the format @channelusername"
+        },
+        {
+          "name": "User ID",
+          "description": "Enter the unique identifier of the user whose information you want to get"
+        }
+      ],
+      "resource_value": "chat",
+      "operation_value": "member"
+    },
+    {
+      "resource": "Chat operations",
+      "operation": "Leave",
+      "description": "a chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#leave-chat",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Leave"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to leave in the format @channelusername"
+        }
+      ],
+      "resource_value": "chat",
+      "operation_value": "leave"
+    },
+    {
+      "resource": "Chat operations",
+      "operation": "Set Description",
+      "description": "of a chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#set-description",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Set Description"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to leave in the format @channelusername"
+        },
+        {
+          "name": "Description",
+          "description": "Enter the new description you'd like to set the chat to use, maximum of 255 characters"
+        }
+      ],
+      "resource_value": "chat",
+      "operation_value": "setDescription"
+    },
+    {
+      "resource": "Chat operations",
+      "operation": "Set Title",
+      "description": "of a chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#set-title",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Set Title"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to leave in the format @channelusername"
+        },
+        {
+          "name": "Title",
+          "description": "Enter the new title you'd like to set the chat to use, maximum of 255 characters"
+        }
+      ],
+      "resource_value": "chat",
+      "operation_value": "setTitle"
+    },
+    {
+      "resource": "Callback operations",
+      "operation": "Answer Query",
+      "description": "Send answers to callback queries sent from inline keyboards",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/callback-operations#answer-query",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Callback"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Answer Query"
+        },
+        {
+          "name": "Query ID",
+          "description": "Enter the unique identifier of the query you want to answer"
+        },
+        {
+          "name": "Results",
+          "description": "Enter a JSON-serialized array of results you want to use as answers to the query. Refer to the Telegram InlineQueryResults documentation for more information on formatting your array"
+        }
+      ],
+      "options": [
+        {
+          "name": "Cache Time",
+          "description": "Enter the maximum amount of time in seconds that the client may cache the result of the callback query. Telegram defaults to 0 seconds for this method"
+        },
+        {
+          "name": "Show Alert",
+          "description": "Telegram can display the answer as a notification at the top of the chat screen or as an alert. Choose whether you want to keep the default notification display (turned off) or display the answer as an alert (turned on)"
+        },
+        {
+          "name": "Text",
+          "description": "If you want the answer to show text, enter up to 200 characters of text here"
+        },
+        {
+          "name": "URL",
+          "description": "Enter a URL that will be opened by the user's client. Refer to the url parameter instructions at the Telegram Bot API answerCallbackQuery documentation for more information"
+        }
+      ],
+      "resource_value": "callback",
+      "operation_value": "answerQuery"
+    },
+    {
+      "resource": "Callback operations",
+      "operation": "Answer Inline Query",
+      "description": "Send answers to callback queries sent from inline queries",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/callback-operations#answer-inline-query",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Callback"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Answer Inline Query"
+        },
+        {
+          "name": "Query ID",
+          "description": "Enter the unique identifier of the query you want to answer"
+        },
+        {
+          "name": "Results",
+          "description": "Enter a JSON-serialized array of results you want to use as answers to the query. Refer to the Telegram InlineQueryResults documentation for more information on formatting your array"
+        }
+      ],
+      "options": [
+        {
+          "name": "Cache Time",
+          "description": "The maximum amount of time in seconds that the client may cache the result of the callback query. Telegram defaults to 300 seconds for this method"
+        },
+        {
+          "name": "Show Alert",
+          "description": "Telegram can display the answer as a notification at the top of the chat screen or as an alert. Choose whether you want to keep the default notification display (turned off) or display the answer as an alert (turned on)"
+        },
+        {
+          "name": "Text",
+          "description": "If you want the answer to show text, enter up to 200 characters of text here"
+        },
+        {
+          "name": "URL",
+          "description": "Enter a URL that the user's client will open"
+        }
+      ],
+      "resource_value": "callback",
+      "operation_value": "answerInlineQuery"
+    },
+    {
+      "resource": "File operations",
+      "operation": "Get File",
+      "description": "from Telegram",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/file-operations#get-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "File ID",
+          "description": "Enter the ID of the file you want to get"
+        },
+        {
+          "name": "Download",
+          "description": "Choose whether you want the node to download the file (turned on) or not (turned off)"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Delete Chat Message",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#delete-chat-message",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete Chat Message"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to delete in the format @channelusername"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the unique identifier of the message you want to delete"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "deleteMessage"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Edit Message Text",
+      "description": "Edit the text of an existing message",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#edit-message-text",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Edit Message Text"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to leave in the format @channelusername"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the unique identifier of the message you want to edit"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Select whether to use the Inline Keyboard to display the InlineKeyboardMarkup None not to. This sets the reply_markup parameter. Refer to the InlineKeyboardMarkup documentation for more information"
+        },
+        {
+          "name": "Text",
+          "description": "Enter the text you want to edit the message to"
+        }
+      ],
+      "options": [
+        {
+          "name": "Disable WebPage Preview",
+          "description": "Select whether you want to enable link previews for links in this message (turned off) or disable link previews for links in this message (turned on). This sets the link_preview_options parameter for is_disabled. Refer to the LinkPreviewOptions documentation for more information"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Choose whether the message should be parsed using HTML (default), Markdown (Legacy), or MarkdownV2. This sets the parse_mode parameter"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "editMessageText"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Pin Chat Message",
+      "description": "for the chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#pin-chat-message",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Pin Chat Message"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to pin the message to in the format @channelusername"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the unique identifier of the message you want to pin"
+        }
+      ],
+      "options": [
+        {
+          "name": "Disable Notifications",
+          "description": "By default, Telegram will notify all chat members that the message has been pinned. If you don't want these notifications to go out, turn this control on. Sets the disable_notification parameter to true"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "pinChatMessage"
+    },
+    {
+      "resource": "Message operations / Send Animation",
+      "operation": "For use with GIFs or H.264/MPEG-4 AVC videos without sound up to 50 MB in size",
+      "description": "",
+      "doc": "",
+      "resource_value": "message"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Send Audio",
+      "description": "file to the chat and display it in the music player",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-audio",
+      "resource_value": "message",
+      "operation_value": "sendAudio"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Send Chat Action",
+      "description": "Tell the user that something is happening on the bot's side. The status is set for 5 seconds or less",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-chat-action",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Chat Action"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the chat action to in the format @channelusername"
+        },
+        {
+          "name": "Action",
+          "description": "Select the action you'd like to broadcast the bot as taking. The options here include: Find Location, Typing, Recording audio or video, and Uploading file types"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "sendChatAction"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Send Document",
+      "description": "to the chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-document",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Document"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the document to in the format @channelusername"
+        },
+        {
+          "name": "Binary File",
+          "description": "To send a binary file from the node itself, turn this option on. If you turn this parameter on, you must enter the Input Binary Field containing the file you want to send"
+        },
+        {
+          "name": "Document",
+          "description": "If you aren't using the Binary File, enter the document to send here. Pass a file_id to send a file that exists on the Telegram servers (recommended) or an HTTP URL for Telegram to get a file from the internet"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Caption",
+          "description": "Enter a caption text for the file, max of 1024 characters"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Formatting options for more information on these options"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        },
+        {
+          "name": "Thumbnail",
+          "description": "Add the thumbnail of the file sent. Ignore this field if thumbnail generation for the file is supported server-side. The thumbnail should meet these specs:"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "sendDocument"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Send Location",
+      "description": "Send a geolocation to the chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-location",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Location"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the location to in the format @channelusername"
+        },
+        {
+          "name": "Latitude",
+          "description": "Enter the latitude of the location"
+        },
+        {
+          "name": "Longitude",
+          "description": "Enter the longitude of the location"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "sendLocation"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Send Media Group",
+      "description": "Send a group of photos and/or videos",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-media-group",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Media Group"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the media group to in the format @channelusername"
+        },
+        {
+          "name": "Media",
+          "description": "Use Add Media to add different media types to your media group. For each medium, select:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "sendMediaGroup"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Send Message",
+      "description": "to the chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-message",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Message"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the message to in the format @channelusername"
+        },
+        {
+          "name": "Text",
+          "description": "Enter the text to send, max 4096 characters after entities parsing"
+        }
+      ],
+      "options": [
+        {
+          "name": "Append n8n Attribution",
+          "description": "Choose whether to include the phrase This message was sent automatically with n8n to the end of the message (turned on, default) or not (turned off)"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Disable WebPage Preview",
+          "description": "Select whether you want to enable link previews for links in this message (turned off) or disable link previews for links in this message (turned on). This sets the link_preview_options parameter for is_disabled. Refer to the LinkPreviewOptions documentation for more information"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Telegram's Formatting options for more information on these options"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "sendMessage"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Send Photo",
+      "description": "to the chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-photo",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Photo"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the photo to in the format @channelusername"
+        },
+        {
+          "name": "Binary File",
+          "description": "To send a binary file from the node itself, turn this option on. If you turn this parameter on, you must enter the Input Binary Field containing the file you want to send"
+        },
+        {
+          "name": "Photo",
+          "description": "If you aren't using the Binary File, enter the photo to send here. Pass a file_id to send a file that exists on the Telegram servers (recommended) or an HTTP URL for Telegram to get a file from the internet"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Caption",
+          "description": "Enter a caption text for the file, max of 1024 characters"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Telegram's Formatting options for more information on these options"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "sendPhoto"
+    },
+    {
+      "resource": "Message operations / Send Sticker",
+      "operation": "For use with static .WEBP, animated .TGS, or video .WEBM stickers",
+      "description": "",
+      "doc": "",
+      "resource_value": "message"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Send Video",
+      "description": "to the chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-video",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Video"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the video to in the format @channelusername"
+        },
+        {
+          "name": "Binary File",
+          "description": "To send a binary file from the node itself, turn this option on. If you turn this parameter on, you must enter the Input Binary Field containing the file you want to send"
+        },
+        {
+          "name": "Video",
+          "description": "If you aren't using the Binary File, enter the video to send here. Pass a file_id to send a file that exists on the Telegram servers (recommended) or an HTTP URL for Telegram to get a file from the internet"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Caption",
+          "description": "Enter a caption text for the video, max of 1024 characters"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Duration",
+          "description": "Enter the video's duration in seconds"
+        },
+        {
+          "name": "Height",
+          "description": "Enter the height of the video"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Telegram's Formatting options for more information on these options"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        },
+        {
+          "name": "Thumbnail",
+          "description": "Add the thumbnail of the file sent. Ignore this field if thumbnail generation for the file is supported server-side. The thumbnail should meet these specs:"
+        },
+        {
+          "name": "Width",
+          "description": "Enter the width of the video"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "sendVideo"
+    },
+    {
+      "resource": "Message operations",
+      "operation": "Unpin Chat Message",
+      "description": "from the chat",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#unpin-chat-message",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Pin Chat Message"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to unpin the message from in the format @channelusername"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the unique identifier of the message you want to unpin"
+        }
+      ],
+      "resource_value": "message",
+      "operation_value": "unpinChatMessage"
+    }
+  ],
+  "operation_count": 23,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Answer Query",
+      "page": "callback-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/callback-operations#answer-query",
+      "summary": "Use this operation to send answers to callback queries sent from inline keyboards using the Bot API answerCallbackQuery method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Callback"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Answer Query"
+        },
+        {
+          "name": "Query ID",
+          "description": "Enter the unique identifier of the query you want to answer"
+        },
+        {
+          "name": "Results",
+          "description": "Enter a JSON-serialized array of results you want to use as answers to the query. Refer to the Telegram InlineQueryResults documentation for more information on formatting your array"
+        }
+      ],
+      "options": [
+        {
+          "name": "Cache Time",
+          "description": "Enter the maximum amount of time in seconds that the client may cache the result of the callback query. Telegram defaults to 0 seconds for this method"
+        },
+        {
+          "name": "Show Alert",
+          "description": "Telegram can display the answer as a notification at the top of the chat screen or as an alert. Choose whether you want to keep the default notification display (turned off) or display the answer as an alert (turned on)"
+        },
+        {
+          "name": "Text",
+          "description": "If you want the answer to show text, enter up to 200 characters of text here"
+        },
+        {
+          "name": "URL",
+          "description": "Enter a URL that will be opened by the user's client. Refer to the url parameter instructions at the Telegram Bot API answerCallbackQuery documentation for more information"
+        }
+      ]
+    },
+    {
+      "operation": "Answer Inline Query",
+      "page": "callback-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/callback-operations#answer-inline-query",
+      "summary": "Use this operation to send answers to callback queries sent from inline queries using the Bot API answerInlineQuery method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Callback"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Answer Inline Query"
+        },
+        {
+          "name": "Query ID",
+          "description": "Enter the unique identifier of the query you want to answer"
+        },
+        {
+          "name": "Results",
+          "description": "Enter a JSON-serialized array of results you want to use as answers to the query. Refer to the Telegram InlineQueryResults documentation for more information on formatting your array"
+        }
+      ],
+      "options": [
+        {
+          "name": "Cache Time",
+          "description": "The maximum amount of time in seconds that the client may cache the result of the callback query. Telegram defaults to 300 seconds for this method"
+        },
+        {
+          "name": "Show Alert",
+          "description": "Telegram can display the answer as a notification at the top of the chat screen or as an alert. Choose whether you want to keep the default notification display (turned off) or display the answer as an alert (turned on)"
+        },
+        {
+          "name": "Text",
+          "description": "If you want the answer to show text, enter up to 200 characters of text here"
+        },
+        {
+          "name": "URL",
+          "description": "Enter a URL that the user's client will open"
+        }
+      ]
+    },
+    {
+      "operation": "Get Chat",
+      "page": "chat-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#get-chat",
+      "summary": "Use this operation to get up to date information about a chat using the Bot API getChat method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the target channel in the format @channelusername"
+        }
+      ]
+    },
+    {
+      "operation": "Get Administrators",
+      "page": "chat-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#get-administrators",
+      "summary": "Use this operation to get a list of all administrators in a chat using the Bot API getChatAdministrators method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Administrators"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the target channel in the format @channelusername"
+        }
+      ]
+    },
+    {
+      "operation": "Get Chat Member",
+      "page": "chat-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#get-chat-member",
+      "summary": "Use this operation to get the details of a chat member using the Bot API getChatMember method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Member"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the target channel in the format @channelusername"
+        },
+        {
+          "name": "User ID",
+          "description": "Enter the unique identifier of the user whose information you want to get"
+        }
+      ]
+    },
+    {
+      "operation": "Leave Chat",
+      "page": "chat-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#leave-chat",
+      "summary": "Use this operation to leave a chat using the Bot API leaveChat method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Leave"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to leave in the format @channelusername"
+        }
+      ]
+    },
+    {
+      "operation": "Set Description",
+      "page": "chat-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#set-description",
+      "summary": "Use this operation to set the description of a chat using the Bot API setChatDescription method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Set Description"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to leave in the format @channelusername"
+        },
+        {
+          "name": "Description",
+          "description": "Enter the new description you'd like to set the chat to use, maximum of 255 characters"
+        }
+      ]
+    },
+    {
+      "operation": "Set Title",
+      "page": "chat-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations#set-title",
+      "summary": "Use this operation to set the title of a chat using the Bot API setChatTitle method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Chat"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Set Title"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to leave in the format @channelusername"
+        },
+        {
+          "name": "Title",
+          "description": "Enter the new title you'd like to set the chat to use, maximum of 255 characters"
+        }
+      ]
+    },
+    {
+      "operation": "Get File",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/file-operations#get-file",
+      "summary": "Use this operation to get a file from Telegram using the Bot API getFile method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "File ID",
+          "description": "Enter the ID of the file you want to get"
+        },
+        {
+          "name": "Download",
+          "description": "Choose whether you want the node to download the file (turned on) or not (turned off)"
+        }
+      ]
+    },
+    {
+      "operation": "Delete Chat Message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#delete-chat-message",
+      "summary": "Use this operation to delete a message from chat using the Bot API deleteMessage method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete Chat Message"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to delete in the format @channelusername"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the unique identifier of the message you want to delete"
+        }
+      ]
+    },
+    {
+      "operation": "Edit Message Text",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#edit-message-text",
+      "summary": "Use this operation to edit the text of an existing message using the Bot API editMessageText method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Edit Message Text"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to leave in the format @channelusername"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the unique identifier of the message you want to edit"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Select whether to use the Inline Keyboard to display the InlineKeyboardMarkup None not to. This sets the reply_markup parameter. Refer to the InlineKeyboardMarkup documentation for more information"
+        },
+        {
+          "name": "Text",
+          "description": "Enter the text you want to edit the message to"
+        }
+      ],
+      "options": [
+        {
+          "name": "Disable WebPage Preview",
+          "description": "Select whether you want to enable link previews for links in this message (turned off) or disable link previews for links in this message (turned on). This sets the link_preview_options parameter for is_disabled. Refer to the LinkPreviewOptions documentation for more information"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Choose whether the message should be parsed using HTML (default), Markdown (Legacy), or MarkdownV2. This sets the parse_mode parameter"
+        }
+      ]
+    },
+    {
+      "operation": "Pin Chat Message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#pin-chat-message",
+      "summary": "Use this operation to pin a message for the chat using the Bot API pinChatMessage method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Pin Chat Message"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to pin the message to in the format @channelusername"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the unique identifier of the message you want to pin"
+        }
+      ],
+      "options": [
+        {
+          "name": "Disable Notifications",
+          "description": "By default, Telegram will notify all chat members that the message has been pinned. If you don't want these notifications to go out, turn this control on. Sets the disable_notification parameter to true"
+        }
+      ]
+    },
+    {
+      "operation": "Send Animation",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-animation",
+      "summary": "Use this operation to send GIFs or H.264/MPEG-4 AVC videos without sound up to 50 MB in size to the chat using the Bot API sendAnimation method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Animation"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the animation to in the format @channelusername"
+        },
+        {
+          "name": "Binary File",
+          "description": "To send a binary file from the node itself, turn this option on. If you turn this parameter on, you must enter the Input Binary Field containing the file you want to send"
+        },
+        {
+          "name": "Animation",
+          "description": "If you aren't using the Binary File, enter the animation to send here. Pass a file_id to send a file that exists on the Telegram servers (recommended) or an HTTP URL for Telegram to get a file from the internet"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Caption",
+          "description": "Enter a caption text for the animation, max of 1024 characters"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Duration",
+          "description": "Enter the animation's duration in seconds"
+        },
+        {
+          "name": "Height",
+          "description": "Enter the height of the animation"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Telegram's Formatting options for more information on these options"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        },
+        {
+          "name": "Thumbnail",
+          "description": "Add the thumbnail of the file sent. Ignore this field if thumbnail generation for the file is supported server-side. The thumbnail should meet these specs:"
+        },
+        {
+          "name": "Width",
+          "description": "Enter the width of the video clip"
+        },
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Audio"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the audio to in the format @channelusername"
+        },
+        {
+          "name": "Binary File",
+          "description": "To send a binary file from the node itself, turn this option on. If you turn this parameter on, you must enter the Input Binary Field containing the file you want to send"
+        },
+        {
+          "name": "Audio",
+          "description": "If you aren't using the Binary File, enter the audio to send here. Pass a file_id to send a file that exists on the Telegram servers (recommended) or an HTTP URL for Telegram to get a file from the internet"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        },
+        {
+          "name": "Caption",
+          "description": "Enter a caption text for the audio, max of 1024 characters"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Duration",
+          "description": "Enter the audio's duration in seconds"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Telegram's Formatting options for more information on these options"
+        },
+        {
+          "name": "Performer",
+          "description": "Enter the name of the performer"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        },
+        {
+          "name": "Title",
+          "description": "Enter the audio track's name"
+        },
+        {
+          "name": "Thumbnail",
+          "description": "Add the thumbnail of the file sent. Ignore this field if thumbnail generation for the file is supported server-side. The thumbnail should meet these specs:"
+        }
+      ]
+    },
+    {
+      "operation": "Send Chat Action",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-chat-action",
+      "summary": "Use this operation when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less using the Bot API sendChatAction method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Chat Action"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the chat action to in the format @channelusername"
+        },
+        {
+          "name": "Action",
+          "description": "Select the action you'd like to broadcast the bot as taking. The options here include: Find Location, Typing, Recording audio or video, and Uploading file types"
+        }
+      ]
+    },
+    {
+      "operation": "Send Document",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-document",
+      "summary": "Use this operation to send a document to the chat using the Bot API sendDocument method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Document"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the document to in the format @channelusername"
+        },
+        {
+          "name": "Binary File",
+          "description": "To send a binary file from the node itself, turn this option on. If you turn this parameter on, you must enter the Input Binary Field containing the file you want to send"
+        },
+        {
+          "name": "Document",
+          "description": "If you aren't using the Binary File, enter the document to send here. Pass a file_id to send a file that exists on the Telegram servers (recommended) or an HTTP URL for Telegram to get a file from the internet"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Caption",
+          "description": "Enter a caption text for the file, max of 1024 characters"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Formatting options for more information on these options"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        },
+        {
+          "name": "Thumbnail",
+          "description": "Add the thumbnail of the file sent. Ignore this field if thumbnail generation for the file is supported server-side. The thumbnail should meet these specs:"
+        }
+      ]
+    },
+    {
+      "operation": "Send Location",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-location",
+      "summary": "Use this operation to send a geolocation to the chat using the Bot API sendLocation method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Location"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the location to in the format @channelusername"
+        },
+        {
+          "name": "Latitude",
+          "description": "Enter the latitude of the location"
+        },
+        {
+          "name": "Longitude",
+          "description": "Enter the longitude of the location"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        }
+      ]
+    },
+    {
+      "operation": "Send Media Group",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-media-group",
+      "summary": "Use this operation to send a group of photos and/or videos using the Bot API sendMediaGroup method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Media Group"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the media group to in the format @channelusername"
+        },
+        {
+          "name": "Media",
+          "description": "Use Add Media to add different media types to your media group. For each medium, select:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        }
+      ]
+    },
+    {
+      "operation": "Send Message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-message",
+      "summary": "Use this operation to send a message to the chat using the Bot API sendMessage method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Message"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the message to in the format @channelusername"
+        },
+        {
+          "name": "Text",
+          "description": "Enter the text to send, max 4096 characters after entities parsing"
+        }
+      ],
+      "options": [
+        {
+          "name": "Append n8n Attribution",
+          "description": "Choose whether to include the phrase This message was sent automatically with n8n to the end of the message (turned on, default) or not (turned off)"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Disable WebPage Preview",
+          "description": "Select whether you want to enable link previews for links in this message (turned off) or disable link previews for links in this message (turned on). This sets the link_preview_options parameter for is_disabled. Refer to the LinkPreviewOptions documentation for more information"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Telegram's Formatting options for more information on these options"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        }
+      ]
+    },
+    {
+      "operation": "Send and Wait for Response",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-and-wait-for-response",
+      "summary": "Use this operation to send a message to the chat using the Bot API sendMessage method and pause the workflow execution until the user confirms the operation",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send and Wait for Response"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the message to in the format @channelusername"
+        },
+        {
+          "name": "Message",
+          "description": "Enter the text to send"
+        },
+        {
+          "name": "Response Type",
+          "description": "The approval or response type to use:"
+        }
+      ]
+    },
+    {
+      "operation": "Send Photo",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-photo",
+      "summary": "Use this operation to send a photo to the chat using the Bot API sendPhoto method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Photo"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the photo to in the format @channelusername"
+        },
+        {
+          "name": "Binary File",
+          "description": "To send a binary file from the node itself, turn this option on. If you turn this parameter on, you must enter the Input Binary Field containing the file you want to send"
+        },
+        {
+          "name": "Photo",
+          "description": "If you aren't using the Binary File, enter the photo to send here. Pass a file_id to send a file that exists on the Telegram servers (recommended) or an HTTP URL for Telegram to get a file from the internet"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Caption",
+          "description": "Enter a caption text for the file, max of 1024 characters"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Telegram's Formatting options for more information on these options"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        }
+      ]
+    },
+    {
+      "operation": "Send Sticker",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-sticker",
+      "summary": "Use this method to send static .WEBP, animated .TGS, or video .WEBM stickers using the Bot API sendSticker method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Sticker"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the sticker to in the format @channelusername"
+        },
+        {
+          "name": "Binary File",
+          "description": "To send a binary file from the node itself, turn this option on. If you turn this parameter on, you must enter the Input Binary Field containing the file you want to send"
+        },
+        {
+          "name": "Sticker",
+          "description": "If you aren't using the Binary File, enter the photo to send here. Pass a file_id to send a file that exists on the Telegram servers (recommended) or an HTTP URL for Telegram to get a file from the internet"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        }
+      ]
+    },
+    {
+      "operation": "Send Video",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#send-video",
+      "summary": "Use this operation to send a video to the chat using the Bot API sendVideo method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Send Video"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to send the video to in the format @channelusername"
+        },
+        {
+          "name": "Binary File",
+          "description": "To send a binary file from the node itself, turn this option on. If you turn this parameter on, you must enter the Input Binary Field containing the file you want to send"
+        },
+        {
+          "name": "Video",
+          "description": "If you aren't using the Binary File, enter the video to send here. Pass a file_id to send a file that exists on the Telegram servers (recommended) or an HTTP URL for Telegram to get a file from the internet"
+        },
+        {
+          "name": "Reply Markup",
+          "description": "Use this parameter to set more interface options. Refer to Reply Markup parameters for more information on these options and how to use them"
+        }
+      ],
+      "options": [
+        {
+          "name": "Caption",
+          "description": "Enter a caption text for the video, max of 1024 characters"
+        },
+        {
+          "name": "Disable Notification",
+          "description": "Choose whether to send the notification silently (turned on) or with a standard notification (turned off)"
+        },
+        {
+          "name": "Duration",
+          "description": "Enter the video's duration in seconds"
+        },
+        {
+          "name": "Height",
+          "description": "Enter the height of the video"
+        },
+        {
+          "name": "Parse Mode",
+          "description": "Enter the parser to use for any related text. Options include HTML (default), Markdown (Legacy), MarkdownV2. Refer to Telegram's Formatting options for more information on these options"
+        },
+        {
+          "name": "Reply To Message ID",
+          "description": "If the message is a reply, enter the ID of the message it's replying to"
+        },
+        {
+          "name": "Message Thread ID",
+          "description": "Enter a unique identifier for the target message thread (topic) of the forum; for forum supergroups only"
+        },
+        {
+          "name": "Thumbnail",
+          "description": "Add the thumbnail of the file sent. Ignore this field if thumbnail generation for the file is supported server-side. The thumbnail should meet these specs:"
+        },
+        {
+          "name": "Width",
+          "description": "Enter the width of the video"
+        }
+      ]
+    },
+    {
+      "operation": "Unpin Chat Message",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#unpin-chat-message",
+      "summary": "Use this operation to unpin a message from the chat using the Bot API unpinChatMessage method",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Telegram credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Message"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Pin Chat Message"
+        },
+        {
+          "name": "Chat ID",
+          "description": "Enter the Chat ID or username of the channel you wish to unpin the message from in the format @channelusername"
+        },
+        {
+          "name": "Message ID",
+          "description": "Enter the unique identifier of the message you want to unpin"
+        }
+      ]
+    },
+    {
+      "operation": "Reply Markup parameters",
+      "page": "message-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations#reply-markup-parameters",
+      "summary": "For most of the Message Send actions (such as Send Animation, Send Audio), use the Reply Markup parameter to set more interface options:",
+      "parameters": [
+        {
+          "name": "Force Reply",
+          "description": "The Telegram client will act as if the user has selected the bot's message and tapped Reply, automatically displaying a reply interface to the user. Refer to Force Reply parameters for further guidance on this option"
+        },
+        {
+          "name": "Inline Keyboard",
+          "description": "Display an inline keyboard right next to the message. Refer to Inline Keyboard parameters for further guidance on this option"
+        },
+        {
+          "name": "Reply Keyboard",
+          "description": "Display a custom keyboard with reply options. Refer to Reply Keyboard parameters for further guidance on this option"
+        },
+        {
+          "name": "Reply Keyboard Remove",
+          "description": "The Telegram client will remove the current custom keyboard and display the default letter-keyboard. Refer to Reply Keyboard parameters for further guidance on this option"
+        }
+      ],
+      "options": [
+        {
+          "name": "Force Reply",
+          "description": "Turn on to show the reply interface to the user, as described above"
+        },
+        {
+          "name": "Selective",
+          "description": "Turn this on if you want to force reply from these users only:"
+        },
+        {
+          "name": "Resize Keyboard",
+          "description": "Choose whether to request the Telegram client to resize the keyboard vertically for optimal fit (turned on) or whether to use the same height as the app's standard keyboard (turned off)"
+        },
+        {
+          "name": "One Time Keyboard",
+          "description": "Choose whether the Telegram client should hide the keyboard as soon as a user uses it (turned on) or to keep displaying it (turned off)"
+        },
+        {
+          "name": "Selective",
+          "description": "Turn this on if you want to show the keyboard to these users only:"
+        },
+        {
+          "name": "Remove Keyboard",
+          "description": "Choose whether to request the Telegram client to remove the custom keyboard (turned on) or to keep it (turned off)"
+        },
+        {
+          "name": "Selective",
+          "description": "Turn this on if you want to remove the keyboard for these users only:"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Add a bot to a Telegram channel",
+      "summary": "For a bot to send a message to a channel, you must add the bot to the channel. If you haven't added the bot to the channel, you'll see an error with a description like: Error: Forbidden: bot is not a participant of the channel"
+    },
+    {
+      "title": "Get the Chat ID",
+      "summary": "You can only use @channelusername on public channels. To interact with a Telegram group, you need that group's Chat ID"
+    },
+    {
+      "title": "Send more than 30 messages per second",
+      "summary": "The Telegram API has a limitation of sending only 30 messages per second. Follow these steps to send more than 30 messages:"
+    },
+    {
+      "title": "Remove the n8n attribution from sent messages",
+      "summary": "If you're using the node to send Telegram messages, the message automatically gets an n8n attribution appended to the end:"
+    }
+  ],
+  "keywords": [
+    "264",
+    "action",
+    "administrators",
+    "animated",
+    "animation",
+    "answer",
+    "app",
+    "applications",
+    "audio",
+    "avc",
+    "callback",
+    "chat",
+    "delete",
+    "deleting",
+    "description",
+    "document",
+    "edit",
+    "editing",
+    "file",
+    "files",
+    "get",
+    "getting",
+    "gifs",
+    "group",
+    "including",
+    "inline",
+    "leave",
+    "location",
+    "media",
+    "member",
+    "message",
+    "messages",
+    "mpeg",
+    "operations",
+    "photo",
+    "pin",
+    "query",
+    "send",
+    "set",
+    "size",
+    "sound",
+    "static",
+    "sticker",
+    "stickers",
+    "telegram",
+    "text",
+    "tgs",
+    "title",
+    "unpin",
+    "video",
+    "videos",
+    "webm",
+    "webp",
+    "well",
+    "without",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "sYWM3IB0LEL4RkPx8ndF",
+      "name": "hitl-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Telegram node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.telegram/index.md"
+    },
+    {
+      "page": "callback-operations.md",
+      "title": "Telegram node Callback operations documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/callback-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.telegram/callback-operations.md"
+    },
+    {
+      "page": "chat-operations.md",
+      "title": "Telegram node Chat operations documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.telegram/chat-operations.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Telegram node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.telegram/common-issues.md"
+    },
+    {
+      "page": "file-operations.md",
+      "title": "Telegram node File operations documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/file-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.telegram/file-operations.md"
+    },
+    {
+      "page": "message-operations.md",
+      "title": "Telegram node Message operations documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.telegram/message-operations.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.telegram.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.telegram.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.telegram/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.telegram",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "telegramApi"
+  ],
+  "credential_details": [
+    {
+      "name": "telegramApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Telegram"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 55,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Chat",
+            "value": "chat"
+          },
+          {
+            "name": "Callback",
+            "value": "callback"
+          },
+          {
+            "name": "File",
+            "value": "file"
+          },
+          {
+            "name": "Message",
+            "value": "message"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get up to date information about a chat"
+          },
+          {
+            "name": "Get Administrators",
+            "value": "administrators",
+            "description": "Get the Administrators of a chat"
+          },
+          {
+            "name": "Get Member",
+            "value": "member",
+            "description": "Get the member of a chat"
+          },
+          {
+            "name": "Leave",
+            "value": "leave",
+            "description": "Leave a group, supergroup or channel"
+          },
+          {
+            "name": "Set Description",
+            "value": "setDescription",
+            "description": "Set the description of a chat"
+          },
+          {
+            "name": "Set Title",
+            "value": "setTitle",
+            "description": "Set the title of a chat"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "answerQuery",
+        "options": [
+          {
+            "name": "Answer Query",
+            "value": "answerQuery",
+            "description": "Send answer to callback query sent from inline keyboard"
+          },
+          {
+            "name": "Answer Inline Query",
+            "value": "answerInlineQuery",
+            "description": "Send answer to callback query sent from inline bot"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "callback"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "sendMessage",
+        "options": [
+          {
+            "name": "Delete Chat Message",
+            "value": "deleteMessage",
+            "description": "Delete a chat message"
+          },
+          {
+            "name": "Edit Message Text",
+            "value": "editMessageText",
+            "description": "Edit a text message"
+          },
+          {
+            "name": "Pin Chat Message",
+            "value": "pinChatMessage",
+            "description": "Pin a chat message"
+          },
+          {
+            "name": "Send Animation",
+            "value": "sendAnimation",
+            "description": "Send an animated file"
+          },
+          {
+            "name": "Send Audio",
+            "value": "sendAudio",
+            "description": "Send a audio file"
+          },
+          {
+            "name": "Send Chat Action",
+            "value": "sendChatAction",
+            "description": "Send a chat action"
+          },
+          {
+            "name": "Send Document",
+            "value": "sendDocument",
+            "description": "Send a document"
+          },
+          {
+            "name": "Send Location",
+            "value": "sendLocation",
+            "description": "Send a location"
+          },
+          {
+            "name": "Send Media Group",
+            "value": "sendMediaGroup",
+            "description": "Send group of photos or videos to album"
+          },
+          {
+            "name": "Send Message",
+            "value": "sendMessage",
+            "description": "Send a text message"
+          },
+          {
+            "name": "Send and Wait for Response",
+            "value": "sendAndWait",
+            "description": "Send a message and wait for response"
+          },
+          {
+            "name": "Send Photo",
+            "value": "sendPhoto",
+            "description": "Send a photo"
+          },
+          {
+            "name": "Send Sticker",
+            "value": "sendSticker",
+            "description": "Send a sticker"
+          },
+          {
+            "name": "Send Video",
+            "value": "sendVideo",
+            "description": "Send a video"
+          },
+          {
+            "name": "Unpin Chat Message",
+            "value": "unpinChatMessage",
+            "description": "Unpin a chat message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "chatId",
+        "displayName": "Chat ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "administrators",
+              "deleteMessage",
+              "get",
+              "leave",
+              "member",
+              "pinChatMessage",
+              "setDescription",
+              "setTitle",
+              "sendAnimation",
+              "sendAudio",
+              "sendChatAction",
+              "sendDocument",
+              "sendLocation",
+              "sendMessage",
+              "sendMediaGroup",
+              "sendPhoto",
+              "sendSticker",
+              "sendVideo",
+              "unpinChatMessage"
+            ],
+            "resource": [
+              "chat",
+              "message"
+            ]
+          }
+        },
+        "description": "Unique identifier for the target chat or username, To find your chat ID ask @get_id_bot"
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "deleteMessage"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Unique identifier of the message to delete"
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "pinChatMessage",
+              "unpinChatMessage"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Unique identifier of the message to pin or unpin"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "disable_notification",
+            "description": "Whether to send a notification to all chat members about the new pinned message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "pinChatMessage"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "member"
+            ],
+            "resource": [
+              "chat"
+            ]
+          }
+        },
+        "description": "Unique identifier of the target user"
+      },
+      {
+        "name": "description",
+        "displayName": "Description",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "setDescription"
+            ],
+            "resource": [
+              "chat"
+            ]
+          }
+        },
+        "description": "New chat description, 0-255 characters"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "setTitle"
+            ],
+            "resource": [
+              "chat"
+            ]
+          }
+        },
+        "description": "New chat title, 1-255 characters"
+      },
+      {
+        "name": "queryId",
+        "displayName": "Query ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "answerQuery"
+            ],
+            "resource": [
+              "callback"
+            ]
+          }
+        },
+        "description": "Unique identifier for the query to be answered"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cache_time",
+            "description": "The maximum amount of time in seconds that the result of the callback query may be cached client-side"
+          },
+          {
+            "name": "show_alert",
+            "description": "Whether an alert will be shown by the client instead of a notification at the top of the chat screen"
+          },
+          {
+            "name": "text",
+            "description": "Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters."
+          },
+          {
+            "name": "url",
+            "description": "URL that will be opened by the user's client"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "answerQuery"
+            ],
+            "resource": [
+              "callback"
+            ]
+          }
+        }
+      },
+      {
+        "name": "queryId",
+        "displayName": "Query ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "answerInlineQuery"
+            ],
+            "resource": [
+              "callback"
+            ]
+          }
+        },
+        "description": "Unique identifier for the answered query"
+      },
+      {
+        "name": "results",
+        "displayName": "Results",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "answerInlineQuery"
+            ],
+            "resource": [
+              "callback"
+            ]
+          }
+        },
+        "description": "A JSON-serialized array of results for the inline query"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cache_time",
+            "description": "The maximum amount of time in seconds that the result of the callback query may be cached client-side"
+          },
+          {
+            "name": "show_alert",
+            "description": "Whether an alert will be shown by the client instead of a notification at the top of the chat screen"
+          },
+          {
+            "name": "text",
+            "description": "Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters."
+          },
+          {
+            "name": "url",
+            "description": "URL that will be opened by the user's client"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "answerInlineQuery"
+            ],
+            "resource": [
+              "callback"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "The ID of the file"
+      },
+      {
+        "name": "download",
+        "displayName": "Download",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Whether to download the file"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "mimeType",
+            "description": "The MIME type of the file. If not specified, the MIME type will be determined by the file extension."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "file"
+            ],
+            "download": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageType",
+        "displayName": "Message Type",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Inline Message",
+            "value": "inlineMessage"
+          },
+          {
+            "name": "Message",
+            "value": "message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "editMessageText"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "The type of the message to edit"
+      },
+      {
+        "name": "chatId",
+        "displayName": "Chat ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "messageType": [
+              "message"
+            ],
+            "operation": [
+              "editMessageText"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Unique identifier for the target chat or username, To find your chat ID ask @get_id_bot"
+      },
+      {
+        "name": "binaryData",
+        "displayName": "Binary File",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendAnimation",
+              "sendAudio",
+              "sendDocument",
+              "sendPhoto",
+              "sendVideo",
+              "sendSticker"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Whether the data to upload should be taken from binary field"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendAnimation",
+              "sendAudio",
+              "sendDocument",
+              "sendPhoto",
+              "sendVideo",
+              "sendSticker"
+            ],
+            "resource": [
+              "message"
+            ],
+            "binaryData": [
+              true
+            ]
+          }
+        },
+        "description": "Name of the binary property that contains the data to upload"
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "messageType": [
+              "message"
+            ],
+            "operation": [
+              "editMessageText"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Unique identifier of the message to edit"
+      },
+      {
+        "name": "inlineMessageId",
+        "displayName": "Inline Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "messageType": [
+              "inlineMessage"
+            ],
+            "operation": [
+              "editMessageText"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Unique identifier of the inline message to edit"
+      },
+      {
+        "name": "replyMarkup",
+        "displayName": "Reply Markup",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Inline Keyboard",
+            "value": "inlineKeyboard"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "editMessageText"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Additional interface options"
+      },
+      {
+        "name": "file",
+        "displayName": "Animation",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendAnimation"
+            ],
+            "resource": [
+              "message"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "Animation to send. Pass a file_id to send an animation that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get an animation from the Internet."
+      },
+      {
+        "name": "file",
+        "displayName": "Audio",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendAudio"
+            ],
+            "resource": [
+              "message"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "Audio file to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get a file from the Internet."
+      },
+      {
+        "name": "action",
+        "displayName": "Action",
+        "type": "options",
+        "default": "typing",
+        "options": [
+          {
+            "name": "Find Location",
+            "value": "find_location"
+          },
+          {
+            "name": "Record Audio",
+            "value": "record_audio"
+          },
+          {
+            "name": "Record Video",
+            "value": "record_video"
+          },
+          {
+            "name": "Record Video Note",
+            "value": "record_video_note"
+          },
+          {
+            "name": "Typing",
+            "value": "typing"
+          },
+          {
+            "name": "Upload Audio",
+            "value": "upload_audio"
+          },
+          {
+            "name": "Upload Document",
+            "value": "upload_document"
+          },
+          {
+            "name": "Upload Photo",
+            "value": "upload_photo"
+          },
+          {
+            "name": "Upload Video",
+            "value": "upload_video"
+          },
+          {
+            "name": "Upload Video Note",
+            "value": "upload_video_note"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendChatAction"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Type of action to broadcast. Choose one, depending on what the user is about to receive. The status is set for 5 seconds or less (when a message arrives from your bot)."
+      },
+      {
+        "name": "file",
+        "displayName": "Document",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendDocument"
+            ],
+            "resource": [
+              "message"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "Document to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get a file from the Internet."
+      },
+      {
+        "name": "latitude",
+        "displayName": "Latitude",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendLocation"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Location latitude"
+      },
+      {
+        "name": "longitude",
+        "displayName": "Longitude",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendLocation"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Location longitude"
+      },
+      {
+        "name": "media",
+        "displayName": "Media",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "media",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "media",
+                "displayName": "Media File",
+                "type": "string"
+              },
+              {
+                "name": "additionalFields",
+                "displayName": "Additional Fields",
+                "type": "collection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendMediaGroup"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "The media to add"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "editMessageText",
+              "sendMessage"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Text of the message to be sent"
+      },
+      {
+        "name": "file",
+        "displayName": "Photo",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendPhoto"
+            ],
+            "resource": [
+              "message"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "Photo to send. Pass a file_id to send a photo that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get a photo from the Internet."
+      },
+      {
+        "name": "file",
+        "displayName": "Sticker",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendSticker"
+            ],
+            "resource": [
+              "message"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "Sticker to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get a .webp file from the Internet."
+      },
+      {
+        "name": "file",
+        "displayName": "Video",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendVideo"
+            ],
+            "resource": [
+              "message"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "Video file to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get a file from the Internet."
+      },
+      {
+        "name": "replyMarkup",
+        "displayName": "Reply Markup",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "Force Reply",
+            "value": "forceReply"
+          },
+          {
+            "name": "Inline Keyboard",
+            "value": "inlineKeyboard"
+          },
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Reply Keyboard",
+            "value": "replyKeyboard"
+          },
+          {
+            "name": "Reply Keyboard Remove",
+            "value": "replyKeyboardRemove"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendAnimation",
+              "sendDocument",
+              "sendMessage",
+              "sendPhoto",
+              "sendSticker",
+              "sendVideo",
+              "sendAudio",
+              "sendLocation"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Additional interface options"
+      },
+      {
+        "name": "forceReply",
+        "displayName": "Force Reply",
+        "type": "collection",
+        "options": [
+          {
+            "name": "force_reply",
+            "description": "Whether to show reply interface to the user, as if they manually selected the bot‘s message and tapped ’Reply"
+          },
+          {
+            "name": "selective",
+            "description": "Whether to force reply from specific users only"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "replyMarkup": [
+              "forceReply"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inlineKeyboard",
+        "displayName": "Inline Keyboard",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "rows",
+            "values": [
+              {
+                "name": "row",
+                "displayName": "Row",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "replyMarkup": [
+              "inlineKeyboard"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        },
+        "description": "Adds an inline keyboard that appears right next to the message it belongs to"
+      },
+      {
+        "name": "replyKeyboard",
+        "displayName": "Reply Keyboard",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "rows",
+            "values": [
+              {
+                "name": "row",
+                "displayName": "Row",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "replyMarkup": [
+              "replyKeyboard"
+            ]
+          }
+        },
+        "description": "Adds a custom keyboard with reply options"
+      },
+      {
+        "name": "replyKeyboardOptions",
+        "displayName": "Reply Keyboard Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "resize_keyboard",
+            "description": "Whether to request clients to resize the keyboard vertically for optimal fit"
+          },
+          {
+            "name": "one_time_keyboard",
+            "description": "Whether to request clients to hide the keyboard as soon as it's been used"
+          },
+          {
+            "name": "selective",
+            "description": "Whether to show the keyboard to specific users only"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "replyMarkup": [
+              "replyKeyboard"
+            ]
+          }
+        }
+      },
+      {
+        "name": "replyKeyboardRemove",
+        "displayName": "Reply Keyboard Remove",
+        "type": "collection",
+        "options": [
+          {
+            "name": "remove_keyboard",
+            "description": "Whether to request clients to remove the custom keyboard"
+          },
+          {
+            "name": "selective",
+            "description": "Whether to force reply from specific users only"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "replyMarkup": [
+              "replyKeyboardRemove"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase “This message was sent automatically with n8n” to the end of the message"
+          },
+          {
+            "name": "caption",
+            "description": "Caption text to set, 0-1024 characters"
+          },
+          {
+            "name": "disable_notification",
+            "description": "Whether to send the message silently. Users will receive a notification with no sound."
+          },
+          {
+            "name": "disable_web_page_preview",
+            "description": "Whether to disable link previews for links in this message"
+          },
+          {
+            "name": "duration",
+            "description": "Duration of clip in seconds"
+          },
+          {
+            "name": "fileName"
+          },
+          {
+            "name": "height",
+            "description": "Height of the video"
+          },
+          {
+            "name": "parse_mode",
+            "description": "How to parse the text"
+          },
+          {
+            "name": "performer",
+            "description": "Name of the performer"
+          },
+          {
+            "name": "reply_to_message_id",
+            "description": "If the message is a reply, ID of the original message"
+          },
+          {
+            "name": "message_thread_id",
+            "description": "The unique identifier of the forum topic"
+          },
+          {
+            "name": "title",
+            "description": "Title of the track"
+          },
+          {
+            "name": "thumb",
+            "description": "Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 2"
+          },
+          {
+            "name": "width",
+            "description": "Width of the video"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "editMessageText",
+              "sendAnimation",
+              "sendAudio",
+              "sendDocument",
+              "sendLocation",
+              "sendMessage",
+              "sendMediaGroup",
+              "sendPhoto",
+              "sendSticker",
+              "sendVideo"
+            ],
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "chatId",
+        "displayName": "Chat ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        },
+        "description": "Unique identifier for the target chat or username of the target channel (in the format @channelusername). To find your chat ID ask @get_id_bot."
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responseType",
+        "displayName": "Response Type",
+        "type": "options",
+        "default": "approval",
+        "options": [
+          {
+            "name": "Approval",
+            "value": "approval",
+            "description": "User can approve/disapprove from within the message"
+          },
+          {
+            "name": "Free Text",
+            "value": "freeText",
+            "description": "User can submit a response via a form"
+          },
+          {
+            "name": "Custom Form",
+            "value": "customForm",
+            "description": "User can submit a response via a custom form"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "defineForm",
+        "displayName": "Define Form",
+        "type": "options",
+        "default": "fields",
+        "options": [
+          {
+            "name": "Using Fields Below",
+            "value": "fields"
+          },
+          {
+            "name": "Using JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonOutput",
+        "displayName": "Form Fields",
+        "type": "json",
+        "default": "[\n  {\n    \"fieldLabel\": \"Name\",\n    \"placeholder\": \"enter your name\",\n    \"requiredField\": true\n  },\n  {\n    \"fieldLabel\": \"Age\",\n    \"fieldType\": \"number\",\n    \"placeholder\": \"enter your age\"\n  },\n  {\n    \"fieldLabel\": \"Email\",\n    \"fieldType\": \"email\",\n    \"requiredField\": true\n  },\n  {\n    \"field",
+        "displayOptions": {
+          "show": {
+            "defineForm": [
+              "json"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "approvalOptions",
+        "displayName": "Approval Options",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "approvalType",
+                "displayName": "Type of Approval",
+                "type": "options"
+              },
+              {
+                "name": "approveLabel",
+                "displayName": "Approve Button Label",
+                "type": "string"
+              },
+              {
+                "name": "disapproveLabel",
+                "displayName": "Disapprove Button Label",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "approval"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "limitWaitTime",
+            "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+          },
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase \"This message was sent automatically with n8n\" to the end of the message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "approval"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "messageButtonLabel"
+          },
+          {
+            "name": "responseFormTitle",
+            "description": "Title of the form that the user can access to provide their response"
+          },
+          {
+            "name": "responseFormDescription",
+            "description": "Description of the form that the user can access to provide their response"
+          },
+          {
+            "name": "responseFormButtonLabel"
+          },
+          {
+            "name": "responseFormCustomCss",
+            "description": "Override default styling of the response form with CSS"
+          },
+          {
+            "name": "limitWaitTime",
+            "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+          },
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase \"This message was sent automatically with n8n\" to the end of the message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "freeText",
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

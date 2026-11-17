@@ -1,0 +1,966 @@
+{
+  "id": "n8n-nodes-base.azurecosmosdb",
+  "name": "Azure Cosmos DB",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.azurecosmosdb",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Azure Cosmos DB node to automate work in Azure Cosmos DB and integrate Azure Cosmos DB with other applications. n8n has built-in support for a wide range of Azure Cosmos DB features, which includes creating, getting, updating, and deleting containers and items",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.azurecosmosdb",
+  "credentials": {
+    "name": "Azure Cosmos DB credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/azurecosmosdb",
+    "slug": "azurecosmosdb",
+    "json_file": "credentials/azurecosmosdb.json",
+    "markdown_file": "credentials/azurecosmosdb.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Container",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "container",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Container",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "container",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Container",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "container",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Container",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "container",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Item",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Item",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Item",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Item",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Item",
+      "operation": "Execute Query",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "query"
+    },
+    {
+      "resource": "Item",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "item",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 10,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "azure",
+    "azurecosmosdb",
+    "container",
+    "containers",
+    "cosmos",
+    "create",
+    "creating",
+    "credentials",
+    "db",
+    "delete",
+    "deleting",
+    "execute",
+    "get",
+    "getting",
+    "item",
+    "items",
+    "many",
+    "query",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.azurecosmosdb.md",
+      "title": "Azure Cosmos DB node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.azurecosmosdb",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.azurecosmosdb.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.azurecosmosdb.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.azurecosmosdb.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.azurecosmosdb.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.azureCosmosDb",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "microsoftAzureCosmosDbSharedKeyApi"
+  ],
+  "credential_details": [
+    {
+      "name": "microsoftAzureCosmosDbSharedKeyApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Azure Cosmos DB"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 34,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "container",
+        "options": [
+          {
+            "name": "Container",
+            "value": "container"
+          },
+          {
+            "name": "Item",
+            "value": "item"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a container"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a container"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a container"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve a list of containers"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "container"
+            ]
+          }
+        }
+      },
+      {
+        "name": "containerCreate",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "container"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Unique identifier for the new container"
+      },
+      {
+        "name": "partitionKey",
+        "displayName": "Partition Key",
+        "type": "json",
+        "required": true,
+        "default": "{\n\t\"paths\": [\n\t\t\"/id\"\n\t],\n\t\"kind\": \"Hash\",\n\t\"version\": 2\n}",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "container"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The partition key is used to automatically distribute data across partitions for scalability. Choose a property in your JSON document that has a wide range of values and evenly distributes request volume."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "indexingPolicy",
+            "description": "This value is used to configure indexing policy"
+          },
+          {
+            "name": "maxThroughput",
+            "description": "The user specified autoscale max RU/s"
+          },
+          {
+            "name": "offerThroughput",
+            "description": "The user specified manual throughput (RU/s) for the collection expressed in units of 100 request units per second"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "container"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "container",
+        "displayName": "Container",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "container"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Select the container you want to delete"
+      },
+      {
+        "name": "container",
+        "displayName": "Container",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "container"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Select the container you want to retrieve"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "container"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "container"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "container"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "container"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new item"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an existing item"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve an item"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve a list of items"
+          },
+          {
+            "name": "Execute Query",
+            "value": "query"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an existing item"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ]
+          }
+        }
+      },
+      {
+        "name": "container",
+        "displayName": "Container",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Select the container you want to use"
+      },
+      {
+        "name": "customProperties",
+        "displayName": "Item Contents",
+        "type": "json",
+        "required": true,
+        "default": "{\n\t\"id\": \"replace_with_new_document_id\"\n}",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "create"
+            ]
+          },
+          "hide": {
+            "container": [
+              ""
+            ]
+          }
+        },
+        "description": "The item contents as a JSON object"
+      },
+      {
+        "name": "container",
+        "displayName": "Container",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Select the container you want to use"
+      },
+      {
+        "name": "item",
+        "displayName": "Item",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "delete"
+            ]
+          },
+          "hide": {
+            "container": [
+              ""
+            ]
+          }
+        },
+        "description": "Select the item to be deleted"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "partitionKey"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "delete"
+            ]
+          },
+          "hide": {
+            "container": [
+              ""
+            ],
+            "item": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "container",
+        "displayName": "Container",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Select the container you want to use"
+      },
+      {
+        "name": "item",
+        "displayName": "Item",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "container": [
+              ""
+            ]
+          }
+        },
+        "description": "Select the item you want to retrieve"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "container": [
+              ""
+            ],
+            "item": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "partitionKey"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "container": [
+              ""
+            ],
+            "item": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "container",
+        "displayName": "Container",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Select the container you want to use"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "container",
+        "displayName": "Container",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "query"
+            ]
+          }
+        },
+        "description": "Select the container you want to use"
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "query"
+            ]
+          }
+        },
+        "description": "The SQL query to execute. Use $1, $2, $3, etc., to reference the 'Query Parameters' set in the options below."
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "query"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "queryOptions",
+            "values": [
+              {
+                "name": "queryParameters",
+                "displayName": "Query Parameters",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "query"
+            ]
+          }
+        }
+      },
+      {
+        "name": "container",
+        "displayName": "Container",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Select the container you want to use"
+      },
+      {
+        "name": "item",
+        "displayName": "Item",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "container": [
+              ""
+            ]
+          }
+        },
+        "description": "Select the item to be updated"
+      },
+      {
+        "name": "customProperties",
+        "displayName": "Item Contents",
+        "type": "json",
+        "required": true,
+        "default": "{}",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "container": [
+              ""
+            ],
+            "item": [
+              ""
+            ]
+          }
+        },
+        "description": "The item contents as a JSON object"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "partitionKey"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "item"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "container": [
+              ""
+            ],
+            "item": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "requestOptions",
+        "displayName": "Request Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batching"
+          },
+          {
+            "name": "allowUnauthorizedCerts",
+            "description": "Whether to accept the response even if SSL certificate validation is not possible"
+          },
+          {
+            "name": "proxy",
+            "description": "HTTP proxy to use. If authentication is required it can be defined as follow: http://username:password@myproxy:3128"
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for the server to send response headers (and start the response body) before aborting the request"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,4761 @@
+{
+  "id": "n8n-nodes-base.zohocrm",
+  "name": "Zoho CRM",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.zohocrm",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Zoho CRM node to automate work in Zoho CRM, and integrate Zoho CRM with other applications. n8n has built-in support for a wide range of Zoho CRM features, including creating and deleting accounts, contacts, and deals",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.zohocrm",
+  "credentials": {
+    "name": "Zoho CRM",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/zoho",
+    "slug": "zoho",
+    "json_file": "credentials/zoho.json",
+    "markdown_file": "credentials/zoho.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Account",
+      "operation": "Create an account",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Account",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Account",
+      "operation": "Delete an account",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Account",
+      "operation": "Get an account",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Account",
+      "operation": "Get all accounts",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Account",
+      "operation": "Update an account",
+      "description": "",
+      "doc": "",
+      "resource_value": "account",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Create a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Delete a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Get a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Get all contacts",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Update a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Create a deal",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Delete a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Get a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Get all contacts",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Deal",
+      "operation": "Update a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "deal",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Create an invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Delete an invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Get an invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Get all invoices",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Invoice",
+      "operation": "Update an invoice",
+      "description": "",
+      "doc": "",
+      "resource_value": "invoice",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Create a lead",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Delete a lead",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Get a lead",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Get all leads",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Get lead fields",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Update a lead",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Product",
+      "operation": "Create a product",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Product",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Product",
+      "operation": "Delete a product",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Product",
+      "operation": "Get a product",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Product",
+      "operation": "Get all products",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Product",
+      "operation": "Update a product",
+      "description": "",
+      "doc": "",
+      "resource_value": "product",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Purchase Order",
+      "operation": "Create a purchase order",
+      "description": "",
+      "doc": "",
+      "resource_value": "purchaseOrder",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Purchase Order",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "purchaseOrder",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Purchase Order",
+      "operation": "Delete a purchase order",
+      "description": "",
+      "doc": "",
+      "resource_value": "purchaseOrder",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Purchase Order",
+      "operation": "Get a purchase order",
+      "description": "",
+      "doc": "",
+      "resource_value": "purchaseOrder",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Purchase Order",
+      "operation": "Get all purchase orders",
+      "description": "",
+      "doc": "",
+      "resource_value": "purchaseOrder",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Purchase Order",
+      "operation": "Update a purchase order",
+      "description": "",
+      "doc": "",
+      "resource_value": "purchaseOrder",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Create a quote",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Delete a quote",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Get a quote",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Get all quotes",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Quote",
+      "operation": "Update a quote",
+      "description": "",
+      "doc": "",
+      "resource_value": "quote",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Sales Order",
+      "operation": "Create a sales order",
+      "description": "",
+      "doc": "",
+      "resource_value": "salesOrder",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Sales Order",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "salesOrder",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Sales Order",
+      "operation": "Delete a sales order",
+      "description": "",
+      "doc": "",
+      "resource_value": "salesOrder",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Sales Order",
+      "operation": "Get a sales order",
+      "description": "",
+      "doc": "",
+      "resource_value": "salesOrder",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Sales Order",
+      "operation": "Get all sales orders",
+      "description": "",
+      "doc": "",
+      "resource_value": "salesOrder",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Sales Order",
+      "operation": "Update a sales order",
+      "description": "",
+      "doc": "",
+      "resource_value": "salesOrder",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Vendor",
+      "operation": "Create a vendor",
+      "description": "",
+      "doc": "",
+      "resource_value": "vendor",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Vendor",
+      "operation": "Create a new record, or update the current one if it already exists (upsert)",
+      "description": "",
+      "doc": "",
+      "resource_value": "vendor",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Vendor",
+      "operation": "Delete a vendor",
+      "description": "",
+      "doc": "",
+      "resource_value": "vendor",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Vendor",
+      "operation": "Get a vendor",
+      "description": "",
+      "doc": "",
+      "resource_value": "vendor",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Vendor",
+      "operation": "Get all vendors",
+      "description": "",
+      "doc": "",
+      "resource_value": "vendor",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Vendor",
+      "operation": "Update a vendor",
+      "description": "",
+      "doc": "",
+      "resource_value": "vendor",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 61,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "account",
+    "accounts",
+    "already",
+    "app",
+    "applications",
+    "contact",
+    "contacts",
+    "create",
+    "creating",
+    "crm",
+    "current",
+    "deal",
+    "deals",
+    "delete",
+    "deleting",
+    "exists",
+    "fields",
+    "get",
+    "including",
+    "invoice",
+    "invoices",
+    "lead",
+    "leads",
+    "new",
+    "order",
+    "orders",
+    "product",
+    "products",
+    "purchase",
+    "quote",
+    "quotes",
+    "record",
+    "sales",
+    "update",
+    "upsert",
+    "vendor",
+    "vendors",
+    "work",
+    "zoho",
+    "zohocrm"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.zohocrm.md",
+      "title": "Zoho CRM node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.zohocrm",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.zohocrm.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.zohocrm.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.zohocrm.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.zohocrm.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.zohoCrm",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "zohoOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "zohoOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Zoho CRM"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 122,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "account",
+        "options": [
+          {
+            "name": "Account",
+            "value": "account"
+          },
+          {
+            "name": "Contact",
+            "value": "contact"
+          },
+          {
+            "name": "Deal",
+            "value": "deal"
+          },
+          {
+            "name": "Invoice",
+            "value": "invoice"
+          },
+          {
+            "name": "Lead",
+            "value": "lead"
+          },
+          {
+            "name": "Product",
+            "value": "product"
+          },
+          {
+            "name": "Purchase Order",
+            "value": "purchaseOrder"
+          },
+          {
+            "name": "Quote",
+            "value": "quote"
+          },
+          {
+            "name": "Sales Order",
+            "value": "salesOrder"
+          },
+          {
+            "name": "Vendor",
+            "value": "vendor"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an account"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an account"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an account"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many accounts"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an account"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ]
+          }
+        }
+      },
+      {
+        "name": "accountName",
+        "displayName": "Account Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "accountName",
+        "displayName": "Account Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Name of the account. If a record with this account name exists it will be updated, otherwise a new one will be created."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Account_Number"
+          },
+          {
+            "name": "Account_Site",
+            "description": "Name of the account’s location, e.g. Headquarters or London"
+          },
+          {
+            "name": "Account_Type",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "Annual_Revenue"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Contact_Details"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Employees",
+            "description": "Number of employees in the account’s company"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Fax"
+          },
+          {
+            "name": "Industry"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Ticker_Symbol"
+          },
+          {
+            "name": "Website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "accountId",
+        "displayName": "Account ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the account to delete. Can be found at the end of the URL."
+      },
+      {
+        "name": "accountId",
+        "displayName": "Account ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the account to retrieve. Can be found at the end of the URL."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "accountId",
+        "displayName": "Account ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the account to update. Can be found at the end of the URL."
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Account_Name"
+          },
+          {
+            "name": "Account_Number"
+          },
+          {
+            "name": "Account_Site",
+            "description": "Name of the account’s location, e.g. Headquarters or London"
+          },
+          {
+            "name": "Account_Type",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "Annual_Revenue"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Contact_Details"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Employees",
+            "description": "Number of employees in the account’s company"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Fax"
+          },
+          {
+            "name": "Industry"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Ticker_Symbol"
+          },
+          {
+            "name": "Website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "account"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a contact"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a contact"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a contact"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many contacts"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a contact"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "lastName",
+        "displayName": "Last Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Assistant",
+            "description": "Name of the contact’s assistant"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Date_of_Birth"
+          },
+          {
+            "name": "Department",
+            "description": "Company department to which the contact belongs"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Email"
+          },
+          {
+            "name": "Secondary_Email"
+          },
+          {
+            "name": "Fax"
+          },
+          {
+            "name": "First_Name"
+          },
+          {
+            "name": "Full_Name"
+          },
+          {
+            "name": "Mailing_Address"
+          },
+          {
+            "name": "Mobile"
+          },
+          {
+            "name": "Other_Address"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Asst_Phone",
+            "description": "Phone number of the contact’s assistant"
+          },
+          {
+            "name": "Home_Phone"
+          },
+          {
+            "name": "Other_Phone"
+          },
+          {
+            "name": "Salutation"
+          },
+          {
+            "name": "Skype_ID"
+          },
+          {
+            "name": "Title",
+            "description": "Position of the contact at their company"
+          },
+          {
+            "name": "Twitter"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "lastName",
+        "displayName": "Last Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Assistant",
+            "description": "Name of the contact’s assistant"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Date_of_Birth"
+          },
+          {
+            "name": "Department",
+            "description": "Company department to which the contact belongs"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Email",
+            "description": "Email of the contact. If a record with this email exists it will be updated, otherwise a new one will be created."
+          },
+          {
+            "name": "Secondary_Email"
+          },
+          {
+            "name": "Fax"
+          },
+          {
+            "name": "First_Name"
+          },
+          {
+            "name": "Full_Name"
+          },
+          {
+            "name": "Mailing_Address"
+          },
+          {
+            "name": "Mobile"
+          },
+          {
+            "name": "Other_Address"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Asst_Phone",
+            "description": "Phone number of the contact’s assistant"
+          },
+          {
+            "name": "Home_Phone"
+          },
+          {
+            "name": "Other_Phone"
+          },
+          {
+            "name": "Salutation"
+          },
+          {
+            "name": "Skype_ID"
+          },
+          {
+            "name": "Title",
+            "description": "Position of the contact at their company"
+          },
+          {
+            "name": "Twitter"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the contact to delete"
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the contact to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the contact to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Assistant"
+          },
+          {
+            "name": "Asst_Phone",
+            "description": "Phone number of the contact’s assistant"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Date_of_Birth"
+          },
+          {
+            "name": "Department"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Email"
+          },
+          {
+            "name": "Secondary_Email"
+          },
+          {
+            "name": "Fax"
+          },
+          {
+            "name": "First_Name"
+          },
+          {
+            "name": "Full_Name"
+          },
+          {
+            "name": "Home_Phone"
+          },
+          {
+            "name": "Last_Name"
+          },
+          {
+            "name": "Mailing_Address"
+          },
+          {
+            "name": "Mobile"
+          },
+          {
+            "name": "Other_Address"
+          },
+          {
+            "name": "Other_Phone"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Salutation"
+          },
+          {
+            "name": "Skype_ID"
+          },
+          {
+            "name": "Title",
+            "description": "Position of the contact at their company"
+          },
+          {
+            "name": "Twitter"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a deal"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a contact"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a contact"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many contacts"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a contact"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dealName",
+        "displayName": "Deal Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dealName",
+        "displayName": "Deal Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Name of the deal. If a record with this deal name exists it will be updated, otherwise a new one will be created."
+      },
+      {
+        "name": "stage",
+        "displayName": "Stage Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Amount",
+            "description": "Monetary amount of the deal"
+          },
+          {
+            "name": "Closing_Date"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Lead_Conversion_Time",
+            "description": "Average number of days to convert the lead into a deal"
+          },
+          {
+            "name": "Next_Step",
+            "description": "Description of the next step in the sales process"
+          },
+          {
+            "name": "Overall_Sales_Duration",
+            "description": "Average number of days to convert the lead into a deal and to win the deal"
+          },
+          {
+            "name": "Probability",
+            "description": "Probability of deal closure as a percentage. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Sales_Cycle_Duration",
+            "description": "Average number of days for the deal to be won"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dealId",
+        "displayName": "Deal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the deal to delete"
+      },
+      {
+        "name": "dealId",
+        "displayName": "Deal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the deal to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dealId",
+        "displayName": "Deal ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the deal to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Amount",
+            "description": "Monetary amount of the deal"
+          },
+          {
+            "name": "Closing_Date"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Deal_Name"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Lead_Conversion_Time",
+            "description": "Average number of days to convert the lead into a deal"
+          },
+          {
+            "name": "Next_Step",
+            "description": "Description of the next step in the sales process"
+          },
+          {
+            "name": "Overall_Sales_Duration",
+            "description": "Average number of days to convert the lead into a deal and to win the deal"
+          },
+          {
+            "name": "Probability",
+            "description": "Probability of deal closure as a percentage. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Sales_Cycle_Duration",
+            "description": "Average number of days to win the deal"
+          },
+          {
+            "name": "Stage",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deal"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an invoice"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an invoice"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an invoice"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many invoices"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an invoice"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Subject or title of the invoice"
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Subject or title of the invoice. If a record with this subject exists it will be updated, otherwise a new one will be created."
+      },
+      {
+        "name": "Product_Details",
+        "displayName": "Products",
+        "type": "collection",
+        "options": [
+          {
+            "name": "list_price"
+          },
+          {
+            "name": "id",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "product_description"
+          },
+          {
+            "name": "quantity"
+          },
+          {
+            "name": "quantity_in_stock"
+          },
+          {
+            "name": "Tax"
+          },
+          {
+            "name": "total"
+          },
+          {
+            "name": "total_after_discount"
+          },
+          {
+            "name": "net_total"
+          },
+          {
+            "name": "unit_price"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "accountId",
+            "description": "ID of the account associated with this invoice. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "Adjustment",
+            "description": "Adjustment in the grand total, if any"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Due_Date"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Grand_Total",
+            "description": "Total amount for the product after deducting tax and discounts"
+          },
+          {
+            "name": "Invoice_Date"
+          },
+          {
+            "name": "Invoice_Number"
+          },
+          {
+            "name": "Sales_Commission",
+            "description": "Commission of sales person on deal closure as a percentage. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Status"
+          },
+          {
+            "name": "Sub_Total",
+            "description": "Total amount for the product excluding tax"
+          },
+          {
+            "name": "Tax",
+            "description": "Tax amount as the sum of sales tax and value-added tax"
+          },
+          {
+            "name": "Terms_and_Conditions",
+            "description": "Terms and conditions associated with the invoice"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "invoiceId",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the invoice to delete"
+      },
+      {
+        "name": "invoiceId",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the invoice to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "invoiceId",
+        "displayName": "Invoice ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the invoice to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "accountId",
+            "description": "ID of the account associated with this invoice. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "Adjustment",
+            "description": "Adjustment in the grand total, if any"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Due_Date"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Grand_Total",
+            "description": "Total amount for the product after deducting tax and discounts"
+          },
+          {
+            "name": "Invoice_Date"
+          },
+          {
+            "name": "Invoice_Number"
+          },
+          {
+            "name": "Product_Details"
+          },
+          {
+            "name": "Sales_Commission",
+            "description": "Commission of sales person on deal closure as a percentage. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Status"
+          },
+          {
+            "name": "Sub_Total",
+            "description": "Total amount for the product excluding tax"
+          },
+          {
+            "name": "Subject",
+            "description": "Subject or title of the invoice"
+          },
+          {
+            "name": "Tax",
+            "description": "Tax amount as the sum of sales tax and value-added tax"
+          },
+          {
+            "name": "Terms_and_Conditions",
+            "description": "Terms and conditions associated with the invoice"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "invoice"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a lead"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a lead"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a lead"
+          },
+          {
+            "name": "Get Fields",
+            "value": "getFields",
+            "description": "Get lead fields"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many leads"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a lead"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Company",
+        "displayName": "Company",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Company at which the lead works"
+      },
+      {
+        "name": "lastName",
+        "displayName": "Last Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Address"
+          },
+          {
+            "name": "Annual_Revenue",
+            "description": "Annual revenue of the lead’s company"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Designation",
+            "description": "Position of the lead at their company"
+          },
+          {
+            "name": "Email"
+          },
+          {
+            "name": "Email_Opt_Out"
+          },
+          {
+            "name": "Fax"
+          },
+          {
+            "name": "First_Name"
+          },
+          {
+            "name": "Full_Name"
+          },
+          {
+            "name": "Industry",
+            "description": "Industry to which the lead belongs"
+          },
+          {
+            "name": "Industry_Type",
+            "description": "Type of industry to which the lead belongs"
+          },
+          {
+            "name": "Lead_Source",
+            "description": "Source from which the lead was created"
+          },
+          {
+            "name": "Lead_Status"
+          },
+          {
+            "name": "Mobile"
+          },
+          {
+            "name": "No_of_Employees",
+            "description": "Number of employees in the lead’s company"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Salutation"
+          },
+          {
+            "name": "Secondary_Email"
+          },
+          {
+            "name": "Skype_ID"
+          },
+          {
+            "name": "Twitter"
+          },
+          {
+            "name": "Website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Company",
+        "displayName": "Company",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Company at which the lead works"
+      },
+      {
+        "name": "lastName",
+        "displayName": "Last Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Address"
+          },
+          {
+            "name": "Annual_Revenue",
+            "description": "Annual revenue of the lead’s company"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Designation",
+            "description": "Position of the lead at their company"
+          },
+          {
+            "name": "Email",
+            "description": "Email of the lead. If a record with this email exists it will be updated, otherwise a new one will be created."
+          },
+          {
+            "name": "Email_Opt_Out"
+          },
+          {
+            "name": "Fax"
+          },
+          {
+            "name": "First_Name"
+          },
+          {
+            "name": "Full_Name"
+          },
+          {
+            "name": "Industry",
+            "description": "Industry to which the lead belongs"
+          },
+          {
+            "name": "Industry_Type",
+            "description": "Type of industry to which the lead belongs"
+          },
+          {
+            "name": "Lead_Source",
+            "description": "Source from which the lead was created"
+          },
+          {
+            "name": "Lead_Status"
+          },
+          {
+            "name": "Mobile"
+          },
+          {
+            "name": "No_of_Employees",
+            "description": "Number of employees in the lead’s company"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Salutation"
+          },
+          {
+            "name": "Secondary_Email"
+          },
+          {
+            "name": "Skype_ID"
+          },
+          {
+            "name": "Twitter"
+          },
+          {
+            "name": "Website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "leadId",
+        "displayName": "Lead ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the lead to delete"
+      },
+      {
+        "name": "leadId",
+        "displayName": "Lead ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the lead to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "leadId",
+        "displayName": "Lead ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the lead to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Address"
+          },
+          {
+            "name": "Annual_Revenue",
+            "description": "Annual revenue of the lead’s company"
+          },
+          {
+            "name": "Company",
+            "description": "Company at which the lead works"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Designation",
+            "description": "Position of the lead at their company"
+          },
+          {
+            "name": "Email"
+          },
+          {
+            "name": "Email_Opt_Out"
+          },
+          {
+            "name": "Fax"
+          },
+          {
+            "name": "First_Name"
+          },
+          {
+            "name": "Full_Name"
+          },
+          {
+            "name": "Industry",
+            "description": "Industry to which the lead belongs"
+          },
+          {
+            "name": "Industry_Type",
+            "description": "Type of industry to which the lead belongs"
+          },
+          {
+            "name": "Last_Name"
+          },
+          {
+            "name": "Lead_Source",
+            "description": "Source from which the lead was created"
+          },
+          {
+            "name": "Lead_Status"
+          },
+          {
+            "name": "Mobile"
+          },
+          {
+            "name": "No_of_Employees",
+            "description": "Number of employees in the lead’s company"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Salutation"
+          },
+          {
+            "name": "Secondary_Email"
+          },
+          {
+            "name": "Skype_ID"
+          },
+          {
+            "name": "Twitter"
+          },
+          {
+            "name": "Website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a product"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a product"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a product"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many products"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a product"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ]
+          }
+        }
+      },
+      {
+        "name": "productName",
+        "displayName": "Product Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "productName",
+        "displayName": "Product Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Name of the product. If a record with this product name exists it will be updated, otherwise a new one will be created."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Commission_Rate",
+            "description": "Commission rate for the product. For example, enter 12 for 12%."
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Manufacturer"
+          },
+          {
+            "name": "Product_Active"
+          },
+          {
+            "name": "Product_Category"
+          },
+          {
+            "name": "Qty_in_Demand"
+          },
+          {
+            "name": "Qty_in_Stock"
+          },
+          {
+            "name": "Taxable"
+          },
+          {
+            "name": "Unit_Price"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "productId",
+        "displayName": "Product ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the product to delete"
+      },
+      {
+        "name": "productId",
+        "displayName": "Product ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the product to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "productId",
+        "displayName": "Product ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the product to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Commission_Rate",
+            "description": "Commission rate for the product. For example, enter 12 for 12%."
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Manufacturer"
+          },
+          {
+            "name": "Product_Active"
+          },
+          {
+            "name": "Product_Category"
+          },
+          {
+            "name": "Qty_in_Demand"
+          },
+          {
+            "name": "Qty_in_Stock"
+          },
+          {
+            "name": "Taxable"
+          },
+          {
+            "name": "Unit_Price"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "product"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a purchase order"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a purchase order"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a purchase order"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many purchase orders"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a purchase order"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Subject or title of the purchase order"
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Subject or title of the purchase order. If a record with this subject exists it will be updated, otherwise a new one will be created."
+      },
+      {
+        "name": "vendorId",
+        "displayName": "Vendor Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        },
+        "description": "ID of the vendor associated with the purchase order. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "Product_Details",
+        "displayName": "Products",
+        "type": "collection",
+        "options": [
+          {
+            "name": "list_price"
+          },
+          {
+            "name": "id",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "product_description"
+          },
+          {
+            "name": "quantity"
+          },
+          {
+            "name": "quantity_in_stock"
+          },
+          {
+            "name": "Tax"
+          },
+          {
+            "name": "total"
+          },
+          {
+            "name": "total_after_discount"
+          },
+          {
+            "name": "net_total"
+          },
+          {
+            "name": "unit_price"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Adjustment",
+            "description": "Adjustment in the grand total, if any"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Carrier",
+            "description": "Name of the carrier"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Discount",
+            "description": "Discount applied to the purchase order. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Due_Date"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Grand_Total",
+            "description": "Total amount for the product after deducting tax and discounts"
+          },
+          {
+            "name": "PO_Date",
+            "description": "Date on which the purchase order was issued"
+          },
+          {
+            "name": "PO_Number",
+            "description": "ID of the purchase order after creating a case"
+          },
+          {
+            "name": "Sales_Commission",
+            "description": "Commission of sales person on deal closure as a percentage. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Status",
+            "description": "Status of the purchase order. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "Sub_Total",
+            "description": "Total amount for the product excluding tax"
+          },
+          {
+            "name": "Tax",
+            "description": "Tax amount as the sum of sales tax and value-added tax"
+          },
+          {
+            "name": "Terms_and_Conditions",
+            "description": "Terms and conditions associated with the purchase order"
+          },
+          {
+            "name": "Tracking_Number"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "purchaseOrderId",
+        "displayName": "Purchase Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the purchase order to delete"
+      },
+      {
+        "name": "purchaseOrderId",
+        "displayName": "Purchase Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the purchase order to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "purchaseOrderId",
+        "displayName": "Purchase Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the purchase order to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Adjustment",
+            "description": "Adjustment in the grand total, if any"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Carrier",
+            "description": "Name of the carrier"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Discount"
+          },
+          {
+            "name": "Due_Date"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Grand_Total",
+            "description": "Total amount for the product after deducting tax and discounts"
+          },
+          {
+            "name": "PO_Date",
+            "description": "Date on which the purchase order was issued"
+          },
+          {
+            "name": "PO_Number",
+            "description": "ID of the purchase order after creating a case"
+          },
+          {
+            "name": "Sales_Commission",
+            "description": "Commission of sales person on deal closure as a percentage. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Status",
+            "description": "Status of the purchase order. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "Sub_Total",
+            "description": "Total amount for the product excluding tax"
+          },
+          {
+            "name": "Subject",
+            "description": "Subject or title of the purchase order"
+          },
+          {
+            "name": "Tax",
+            "description": "Tax amount as the sum of sales tax and value-added tax"
+          },
+          {
+            "name": "Terms_and_Conditions",
+            "description": "Terms and conditions associated with the purchase order"
+          },
+          {
+            "name": "Tracking_Number"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "purchaseOrder"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a quote"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a quote"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a quote"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many quotes"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a quote"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Subject or title of the quote"
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Subject or title of the quote. If a record with this subject exists it will be updated, otherwise a new one will be created."
+      },
+      {
+        "name": "Product_Details",
+        "displayName": "Products",
+        "type": "collection",
+        "options": [
+          {
+            "name": "list_price"
+          },
+          {
+            "name": "id",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "product_description"
+          },
+          {
+            "name": "quantity"
+          },
+          {
+            "name": "quantity_in_stock"
+          },
+          {
+            "name": "Tax"
+          },
+          {
+            "name": "total"
+          },
+          {
+            "name": "total_after_discount"
+          },
+          {
+            "name": "net_total"
+          },
+          {
+            "name": "unit_price"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Adjustment",
+            "description": "Adjustment in the grand total, if any"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Carrier"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Grand_Total",
+            "description": "Total amount for the product after deducting tax and discounts"
+          },
+          {
+            "name": "Quote_Stage",
+            "description": "Stage of the quote. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Sub_Total",
+            "description": "Total amount for the product excluding tax"
+          },
+          {
+            "name": "Tax",
+            "description": "Total amount as the sum of sales tax and value-added tax"
+          },
+          {
+            "name": "Team",
+            "description": "Team for whom the quote is created"
+          },
+          {
+            "name": "Terms_and_Conditions",
+            "description": "Terms and conditions associated with the quote"
+          },
+          {
+            "name": "Valid_Till",
+            "description": "Date until when the quote is valid"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "quoteId",
+        "displayName": "Quote ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the quote to delete"
+      },
+      {
+        "name": "quoteId",
+        "displayName": "Quote ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the quote to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "quoteId",
+        "displayName": "Quote ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the quote to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Adjustment",
+            "description": "Adjustment in the grand total, if any"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Carrier"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Grand_Total",
+            "description": "Total amount for the product after deducting tax and discounts"
+          },
+          {
+            "name": "Quote_Stage",
+            "description": "Stage of the quote. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Sub_Total",
+            "description": "Total amount for the product excluding tax"
+          },
+          {
+            "name": "Subject",
+            "description": "Subject or title of the quote"
+          },
+          {
+            "name": "Tax",
+            "description": "Tax amount as the sum of sales tax and value-added tax"
+          },
+          {
+            "name": "Team",
+            "description": "Team for whom the quote is created"
+          },
+          {
+            "name": "Terms_and_Conditions",
+            "description": "Terms and conditions associated with the quote"
+          },
+          {
+            "name": "Valid_Till",
+            "description": "Date until when the quote is valid"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "quote"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a sales order"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a sales order"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a sales order"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many sales orders"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a sales order"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "accountId",
+        "displayName": "Account Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Subject or title of the sales order"
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Subject or title of the sales order. If a record with this subject exists it will be updated, otherwise a new one will be created."
+      },
+      {
+        "name": "Product_Details",
+        "displayName": "Products",
+        "type": "collection",
+        "options": [
+          {
+            "name": "list_price"
+          },
+          {
+            "name": "id",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "product_description"
+          },
+          {
+            "name": "quantity"
+          },
+          {
+            "name": "quantity_in_stock"
+          },
+          {
+            "name": "Tax"
+          },
+          {
+            "name": "total"
+          },
+          {
+            "name": "total_after_discount"
+          },
+          {
+            "name": "net_total"
+          },
+          {
+            "name": "unit_price"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Adjustment",
+            "description": "Adjustment in the grand total, if any"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Carrier",
+            "description": "Name of the carrier"
+          },
+          {
+            "name": "contactId",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "dealId",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Discount",
+            "description": "Discount applied to the sales order. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Due_Date"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Grand_Total",
+            "description": "Total amount for the product after deducting tax and discounts"
+          },
+          {
+            "name": "SO_Number",
+            "description": "ID of the sales order after creating a case"
+          },
+          {
+            "name": "Sales_Commission",
+            "description": "Commission of sales person on deal closure as a percentage. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Status",
+            "description": "Status of the sales order. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "Sub_Total",
+            "description": "Total amount for the product excluding tax"
+          },
+          {
+            "name": "Tax",
+            "description": "Tax amount as the sum of sales tax and value-added tax"
+          },
+          {
+            "name": "Terms_and_Conditions",
+            "description": "Terms and conditions associated with the purchase order"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "salesOrderId",
+        "displayName": "Sales Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the sales order to delete"
+      },
+      {
+        "name": "salesOrderId",
+        "displayName": "Sales Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the sales order to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "salesOrderId",
+        "displayName": "Sales Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the sales order to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "accountId",
+            "description": "ID of the account associated with this invoice. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "Adjustment",
+            "description": "Adjustment in the grand total, if any"
+          },
+          {
+            "name": "Billing_Address"
+          },
+          {
+            "name": "Carrier",
+            "description": "Name of the carrier"
+          },
+          {
+            "name": "contactId",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "Currency",
+            "description": "Symbol of the currency in which revenue is generated"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "dealId",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Discount"
+          },
+          {
+            "name": "Due_Date"
+          },
+          {
+            "name": "Exchange_Rate",
+            "description": "Exchange rate of the default currency to the home currency"
+          },
+          {
+            "name": "Grand_Total",
+            "description": "Total amount for the product after deducting tax and discounts"
+          },
+          {
+            "name": "SO_Number",
+            "description": "ID of the sales order after creating a case"
+          },
+          {
+            "name": "Sales_Commission",
+            "description": "Commission of sales person on deal closure as a percentage. For example, enter 12 for 12%."
+          },
+          {
+            "name": "Shipping_Address"
+          },
+          {
+            "name": "Status",
+            "description": "Status of the sales order. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "Sub_Total",
+            "description": "Total amount for the product excluding tax"
+          },
+          {
+            "name": "Subject",
+            "description": "Subject or title of the sales order"
+          },
+          {
+            "name": "Tax",
+            "description": "Tax amount as the sum of sales tax and value-added tax"
+          },
+          {
+            "name": "Terms_and_Conditions",
+            "description": "Terms and conditions associated with the purchase order"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "salesOrder"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a vendor"
+          },
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new record, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a vendor"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a vendor"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many vendors"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a vendor"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ]
+          }
+        }
+      },
+      {
+        "name": "vendorName",
+        "displayName": "Vendor Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "vendorName",
+        "displayName": "Vendor Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Name of the vendor. If a record with this vendor name exists it will be updated, otherwise a new one will be created."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Address"
+          },
+          {
+            "name": "Category"
+          },
+          {
+            "name": "Currency"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Email"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "create",
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "vendorId",
+        "displayName": "Vendor ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of the vendor to delete"
+      },
+      {
+        "name": "vendorId",
+        "displayName": "Vendor ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the vendor to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "approved",
+            "description": "Whether to retrieve only approved records. Defaults to true."
+          },
+          {
+            "name": "converted",
+            "description": "Whether to retrieve only converted records. Defaults to false."
+          },
+          {
+            "name": "fields",
+            "description": "Return only these fields"
+          },
+          {
+            "name": "include_child",
+            "description": "Whether to retrieve only records from child territories"
+          },
+          {
+            "name": "sort_by",
+            "description": "Field to sort records by"
+          },
+          {
+            "name": "sort_order",
+            "description": "Ascending or descending order sort order"
+          },
+          {
+            "name": "territory_id",
+            "description": "Retrieve only records from this territory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "vendorId",
+        "displayName": "Vendor ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of the vendor to update"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Address"
+          },
+          {
+            "name": "Category"
+          },
+          {
+            "name": "Currency"
+          },
+          {
+            "name": "customFields",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "Description"
+          },
+          {
+            "name": "Email"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Vendor_Name"
+          },
+          {
+            "name": "Website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vendor"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

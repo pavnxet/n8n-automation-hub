@@ -1,0 +1,417 @@
+{
+  "id": "n8n-nodes-base.ssh",
+  "name": "SSH",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.ssh",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The SSH node is useful for executing commands using the Secure Shell Protocol",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ssh",
+  "credentials": {
+    "name": "SSH credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/ssh",
+    "slug": "ssh",
+    "json_file": "credentials/ssh.json",
+    "markdown_file": "credentials/ssh.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Execute a command",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ssh#execute-command",
+      "resource_value": "command",
+      "operation_value": "execute"
+    },
+    {
+      "resource": "",
+      "operation": "Download a file",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ssh#download-file",
+      "resource_value": "command"
+    },
+    {
+      "resource": "",
+      "operation": "Upload a file",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ssh#upload-file",
+      "resource_value": "command"
+    },
+    {
+      "resource": "Execute Command",
+      "operation": "Credential to connect with",
+      "description": "Select an existing or create a new SSH credential to connect with",
+      "doc": "",
+      "resource_value": "command"
+    },
+    {
+      "resource": "Execute Command",
+      "operation": "Command",
+      "description": "Enter the command to execute on the remote device",
+      "doc": "",
+      "resource_value": "command"
+    },
+    {
+      "resource": "Execute Command",
+      "operation": "Working Directory",
+      "description": "Enter the directory where n8n should execute the command",
+      "doc": "",
+      "resource_value": "command"
+    },
+    {
+      "resource": "Download File",
+      "operation": "Credential to connect with",
+      "description": "Select an existing or create a new SSH credential to connect with",
+      "doc": "",
+      "resource_value": "file"
+    },
+    {
+      "resource": "Download File",
+      "operation": "Path",
+      "description": "Enter the path for the file you want to download. This path must include the file name. The downloaded file will use this file name. To use a different name, use the File Name option. Refer to Download File options for more information",
+      "doc": "",
+      "resource_value": "file"
+    },
+    {
+      "resource": "Download File",
+      "operation": "File Property",
+      "description": "Enter the name of the object property that holds the binary data you want to download",
+      "doc": "",
+      "resource_value": "file"
+    },
+    {
+      "resource": "Upload File",
+      "operation": "Credential to connect with",
+      "description": "Select an existing or create a new SSH credential to connect with",
+      "doc": "",
+      "resource_value": "file"
+    },
+    {
+      "resource": "Upload File",
+      "operation": "Input Binary Field",
+      "description": "Enter the name of the input binary field that contains the file you want to upload",
+      "doc": "",
+      "resource_value": "file"
+    },
+    {
+      "resource": "Upload File",
+      "operation": "Target Directory",
+      "description": "The directory to upload the file to. The name of the file is taken from the binary data file name. To enter a different name, use the File Name option. Refer to Upload File options for more information",
+      "doc": "",
+      "resource_value": "file"
+    }
+  ],
+  "operation_count": 12,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "binary",
+    "command",
+    "commands",
+    "connect",
+    "core",
+    "credential",
+    "credentials",
+    "directory",
+    "download",
+    "execute",
+    "executing",
+    "field",
+    "file",
+    "input",
+    "path",
+    "property",
+    "protocol",
+    "secure",
+    "shell",
+    "ssh",
+    "target",
+    "upload",
+    "useful",
+    "working"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.ssh.md",
+      "title": "SSH",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ssh",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.ssh.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.ssh.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.ssh.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.ssh.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.ssh",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "sshPassword",
+    "sshPrivateKey"
+  ],
+  "credential_details": [
+    {
+      "name": "sshPassword",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "password"
+          ]
+        }
+      }
+    },
+    {
+      "name": "sshPrivateKey",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "privateKey"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "SSH",
+    "color": "#000000"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 11,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "password",
+        "options": [
+          {
+            "name": "Password",
+            "value": "password"
+          },
+          {
+            "name": "Private Key",
+            "value": "privateKey"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "command",
+        "options": [
+          {
+            "name": "Command",
+            "value": "command"
+          },
+          {
+            "name": "File",
+            "value": "file"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "execute",
+        "options": [
+          {
+            "name": "Execute",
+            "value": "execute",
+            "description": "Execute a command"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "command"
+            ]
+          }
+        }
+      },
+      {
+        "name": "command",
+        "displayName": "Command",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "command"
+            ],
+            "operation": [
+              "execute"
+            ]
+          }
+        },
+        "description": "The command to be executed on a remote device"
+      },
+      {
+        "name": "cwd",
+        "displayName": "Working Directory",
+        "type": "string",
+        "required": true,
+        "default": "/",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "command"
+            ],
+            "operation": [
+              "execute"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upload",
+        "options": [
+          {
+            "name": "Download",
+            "value": "download",
+            "description": "Download a file"
+          },
+          {
+            "name": "Upload",
+            "value": "upload",
+            "description": "Upload a file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "path",
+        "displayName": "Target Directory",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "The directory to upload the file to. The name of the file does not need to be specified, it's taken from the binary data file name. To override this behavior, set the parameter \"File Name\" under options."
+      },
+      {
+        "name": "path",
+        "displayName": "Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "download"
+            ]
+          }
+        },
+        "description": "The file path of the file to download. Has to contain the full path including file name."
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "File Property",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "download"
+            ]
+          }
+        },
+        "description": "Object property name which holds binary data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fileName",
+            "description": "Overrides the binary data file name"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "upload",
+              "download"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

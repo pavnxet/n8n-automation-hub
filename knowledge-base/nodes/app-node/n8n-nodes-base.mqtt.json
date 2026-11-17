@@ -1,0 +1,140 @@
+{
+  "id": "n8n-nodes-base.mqtt",
+  "name": "MQTT",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.mqtt",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the MQTT node to automate work in MQTT, and integrate MQTT with other applications. n8n supports transporting messages with MQTT",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mqtt",
+  "credentials": {
+    "name": "MQTT",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mqtt",
+    "slug": "mqtt",
+    "json_file": "credentials/mqtt.json",
+    "markdown_file": "credentials/mqtt.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "messages",
+    "mqtt",
+    "transporting",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mqtt.md",
+      "title": "MQTT node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mqtt",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mqtt.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.mqtt.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.mqtt.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.mqtt.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mqtt",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mqtt"
+  ],
+  "credential_details": [
+    {
+      "name": "mqtt",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "MQTT"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "topic",
+        "displayName": "Topic",
+        "type": "string",
+        "required": true,
+        "description": "The topic to publish to"
+      },
+      {
+        "name": "sendInputData",
+        "displayName": "Send Input Data",
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to send the data the node receives as JSON"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "sendInputData": [
+              false
+            ]
+          }
+        },
+        "description": "The message to publish"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "qos",
+            "description": "QoS subscription level"
+          },
+          {
+            "name": "retain",
+            "description": "Normally if a publisher publishes a message to a topic, and no one is subscribed to that topic the message is simply discarded by the broker. However the publis"
+          }
+        ]
+      }
+    ]
+  }
+}

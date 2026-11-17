@@ -1,0 +1,1051 @@
+{
+  "id": "n8n-nodes-base.splunk",
+  "name": "Splunk",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.splunk",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Splunk node to automate work in Splunk, and integrate Splunk with other applications. n8n has built-in support for a wide range of Splunk features, including getting fired alerts reports, as well as deleting and getting search configuration",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.splunk",
+  "credentials": {
+    "name": "Splunk",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/splunk",
+    "slug": "splunk",
+    "json_file": "credentials/splunk.json",
+    "markdown_file": "credentials/splunk.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Fired Alert",
+      "operation": "Get a fired alerts report",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert"
+    },
+    {
+      "resource": "Search Configuration",
+      "operation": "Delete a search configuration",
+      "description": "",
+      "doc": "",
+      "resource_value": "search",
+      "operation_value": "deleteJob"
+    },
+    {
+      "resource": "Search Configuration",
+      "operation": "Get a search configuration",
+      "description": "",
+      "doc": "",
+      "resource_value": "search",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Search Configuration",
+      "operation": "Get many search configurations",
+      "description": "",
+      "doc": "",
+      "resource_value": "search",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Search Job",
+      "operation": "Create a search job",
+      "description": "",
+      "doc": "",
+      "resource_value": "search",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Search Job",
+      "operation": "Delete a search job",
+      "description": "",
+      "doc": "",
+      "resource_value": "search",
+      "operation_value": "deleteJob"
+    },
+    {
+      "resource": "Search Job",
+      "operation": "Get a search job",
+      "description": "",
+      "doc": "",
+      "resource_value": "search",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Search Job",
+      "operation": "Get many search jobs",
+      "description": "",
+      "doc": "",
+      "resource_value": "search",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Search Result",
+      "operation": "Get many search results",
+      "description": "",
+      "doc": "",
+      "resource_value": "search",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Create a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "create"
+    },
+    {
+      "resource": "User",
+      "operation": "Delete a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "deleteUser"
+    },
+    {
+      "resource": "User",
+      "operation": "Get a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Get many users",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Update a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 14,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "alert",
+    "alerts",
+    "app",
+    "applications",
+    "configurations",
+    "create",
+    "delete",
+    "deleting",
+    "fired",
+    "get",
+    "getting",
+    "including",
+    "job",
+    "jobs",
+    "many",
+    "report",
+    "reports",
+    "result",
+    "results",
+    "search",
+    "splunk",
+    "update",
+    "user",
+    "users",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.splunk.md",
+      "title": "Splunk node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.splunk",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.splunk.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.splunk.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.splunk.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.splunk.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.splunk",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "splunkApi"
+  ],
+  "credential_details": [
+    {
+      "name": "splunkApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Splunk"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 34,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "search",
+        "options": [
+          {
+            "name": "Alert",
+            "value": "alert"
+          },
+          {
+            "name": "Report",
+            "value": "report"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getReport",
+        "options": [
+          {
+            "name": "Get Fired Alerts",
+            "value": "getReport",
+            "description": "Retrieve a fired alerts report"
+          },
+          {
+            "name": "Get Metrics",
+            "value": "getMetrics",
+            "description": "Retrieve metrics"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Create From Search",
+            "value": "create",
+            "description": "Create a search report from a search job"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteReport",
+            "description": "Delete a search report"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a search report"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many search reports"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchJobId",
+        "displayName": "Search Job",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The name of the report"
+      },
+      {
+        "name": "reportId",
+        "displayName": "Report",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "deleteReport"
+            ]
+          }
+        }
+      },
+      {
+        "name": "reportId",
+        "displayName": "Report",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "add_orphan_field",
+            "description": "Whether to include a boolean value for each saved search to show whether the search is orphaned, meaning that it has no valid owner"
+          },
+          {
+            "name": "listDefaultActionArgs"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a search job"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteJob",
+            "description": "Delete a search job"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a search job"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many search jobs"
+          },
+          {
+            "name": "Get Result",
+            "value": "getResult",
+            "description": "Get the result of a search job"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "search",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Search language string to execute, in Splunk's <a href=\"https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/WhatsInThisManual\">Search Processing Language</a>"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "adhoc_search_level"
+          },
+          {
+            "name": "auto_cancel",
+            "description": "Seconds after which the search job automatically cancels"
+          },
+          {
+            "name": "auto_finalize_ec",
+            "description": "Auto-finalize the search after at least this many events are processed"
+          },
+          {
+            "name": "auto_pause",
+            "description": "Seconds of inactivity after which the search job automatically pauses"
+          },
+          {
+            "name": "index_earliest",
+            "description": "The earliest index time for the search (inclusive)"
+          },
+          {
+            "name": "earliest_time",
+            "description": "The earliest cut-off for the search (inclusive)"
+          },
+          {
+            "name": "exec_mode"
+          },
+          {
+            "name": "indexedRealtimeOffset",
+            "description": "Seconds of disk sync delay for indexed real-time search"
+          },
+          {
+            "name": "index_latest",
+            "description": "The latest index time for the search (inclusive)"
+          },
+          {
+            "name": "latest_time",
+            "description": "The latest cut-off for the search (inclusive)"
+          },
+          {
+            "name": "max_time",
+            "description": "Number of seconds to run this search before finalizing. Enter <code>0</code> to never finalize."
+          },
+          {
+            "name": "namespace",
+            "description": "Application namespace in which to restrict searches"
+          },
+          {
+            "name": "reduce_freq",
+            "description": "How frequently to run the MapReduce reduce phase on accumulated map values"
+          },
+          {
+            "name": "remote_server_list",
+            "description": "Comma-separated list of (possibly wildcarded) servers from which raw events should be pulled. This same server list is to be used in subsearches."
+          },
+          {
+            "name": "reuse_max_seconds_ago",
+            "description": "Number of seconds ago to check when an identical search is started and return the job’s search ID instead of starting a new job"
+          },
+          {
+            "name": "rf",
+            "description": "Name of a required field to add to the search. Even if not referenced or used directly by the search, a required field is still included in events and summary e"
+          },
+          {
+            "name": "search_mode"
+          },
+          {
+            "name": "status_buckets",
+            "description": "The most status buckets to generate. Set <code>0</code> generate no timeline information."
+          },
+          {
+            "name": "timeout",
+            "description": "Number of seconds to keep this search after processing has stopped"
+          },
+          {
+            "name": "workload_pool",
+            "description": "New workload pool where the existing running search should be placed"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchJobId",
+        "displayName": "Search Job",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "deleteJob"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchJobId",
+        "displayName": "Search Job",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "sort_dir",
+                "displayName": "Sort Direction",
+                "type": "options"
+              },
+              {
+                "name": "sort_key",
+                "displayName": "Sort Key",
+                "type": "string"
+              },
+              {
+                "name": "sort_mode",
+                "displayName": "Sort Mode",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchJobId",
+        "displayName": "Search Job",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "getResult"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "getResult"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "getResult"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "keyValueMatch",
+            "description": "Key-value pair to match against. Example: if \"Key\" is set to <code>user</code> and \"Field\" is set to <code>john</code>, only the results where <code>user</code>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "getResult"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "add_summary_to_metadata",
+            "description": "Whether to include field summary statistics in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "search"
+            ],
+            "operation": [
+              "getResult"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an user"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteUser",
+            "description": "Delete an user"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve an user"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many users"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Login name of the user"
+      },
+      {
+        "name": "roles",
+        "displayName": "Roles",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Comma-separated list of roles to assign to the user. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "password",
+        "displayName": "Password",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "email"
+          },
+          {
+            "name": "realname",
+            "description": "Full name of the user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "deleteUser"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "userId",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "email"
+          },
+          {
+            "name": "realname",
+            "description": "Full name of the user"
+          },
+          {
+            "name": "password"
+          },
+          {
+            "name": "roles",
+            "description": "Comma-separated list of roles to assign to the user. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "id": "n8n-nodes-base.awslambda",
+  "name": "AWS Lambda",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.awslambda",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the AWS Lambda node to automate work in AWS Lambda, and integrate AWS Lambda with other applications. n8n has built-in support for a wide range of AWS Lambda features, including invoking functions",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awslambda",
+  "credentials": {
+    "name": "AWS Lambda",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/aws",
+    "slug": "aws",
+    "json_file": "credentials/aws.json",
+    "markdown_file": "credentials/aws.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Invoke a function",
+      "description": "",
+      "doc": "",
+      "operation_value": "invoke"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "aws",
+    "awslambda",
+    "function",
+    "functions",
+    "including",
+    "invoke",
+    "invoking",
+    "lambda",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.awslambda.md",
+      "title": "AWS Lambda node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awslambda",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.awslambda.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.awslambda.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.awslambda.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.awslambda.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.awsLambda",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "aws",
+    "awsAssumeRole"
+  ],
+  "credential_details": [
+    {
+      "name": "aws",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "iam"
+          ]
+        }
+      }
+    },
+    {
+      "name": "awsAssumeRole",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "assumeRole"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "AWS Lambda"
+  },
+  "subtitle": "={{$parameter[\"function\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "iam",
+        "options": [
+          {
+            "name": "AWS (IAM)",
+            "value": "iam"
+          },
+          {
+            "name": "AWS (Assume Role)",
+            "value": "assumeRole"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "invoke",
+        "options": [
+          {
+            "name": "Invoke",
+            "value": "invoke",
+            "description": "Invoke a function"
+          }
+        ]
+      },
+      {
+        "name": "function",
+        "displayName": "Function Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "invoke"
+            ]
+          }
+        },
+        "description": "The function you want to invoke. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "qualifier",
+        "displayName": "Qualifier",
+        "type": "string",
+        "required": true,
+        "default": "$LATEST",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "invoke"
+            ]
+          }
+        },
+        "description": "Specify a version or alias to invoke a published version of the function"
+      },
+      {
+        "name": "invocationType",
+        "displayName": "Invocation Type",
+        "type": "options",
+        "default": "RequestResponse",
+        "options": [
+          {
+            "name": "Wait for Results",
+            "value": "RequestResponse",
+            "description": "Invoke the function synchronously and wait for the response"
+          },
+          {
+            "name": "Continue Workflow",
+            "value": "Event",
+            "description": "Invoke the function and immediately continue the workflow"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "invoke"
+            ]
+          }
+        },
+        "description": "Specify if the workflow should wait for the function to return the results"
+      },
+      {
+        "name": "payload",
+        "displayName": "JSON Input",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "invoke"
+            ]
+          }
+        },
+        "description": "The JSON that you want to provide to your Lambda function as input"
+      }
+    ]
+  }
+}

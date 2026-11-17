@@ -1,0 +1,154 @@
+{
+  "id": "n8n-nodes-langchain.toolsearxng",
+  "name": "SearXNG Tool",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.toolsearxng",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The SearXNG Tool node allows you to integrate search capabilities into your workflows using SearXNG. SearXNG aggregates results from multiple search engines without tracking you",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolsearxng",
+  "credentials": {
+    "name": "SearXNG credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/searxng",
+    "slug": "searxng",
+    "json_file": "credentials/searxng.json",
+    "markdown_file": "credentials/searxng.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Number of Results",
+      "description": "The number of results to retrieve. The default is 10"
+    },
+    {
+      "name": "Page Number",
+      "description": "The page number of the search results to retrieve. The default is 1"
+    },
+    {
+      "name": "Language",
+      "description": "A two-letter language code to filter search results by language. For example: en for English, fr for French. The default is en"
+    },
+    {
+      "name": "Safe Search",
+      "description": "Enables or disables filtering explicit content in the search results. Can be None, Moderate, or Strict. The default is None"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "aggregates",
+    "allows",
+    "capabilities",
+    "cluster",
+    "credentials",
+    "engines",
+    "language",
+    "multiple",
+    "number",
+    "results",
+    "safe",
+    "search",
+    "searxng",
+    "sub",
+    "tool",
+    "toolsearxng",
+    "tracking",
+    "without"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.toolsearxng.md",
+      "title": "SearXNG Tool node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolsearxng",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolsearxng.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.toolsearxng.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.toolsearxng.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolsearxng.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.toolSearXng",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "searXngApi"
+  ],
+  "credential_details": [
+    {
+      "name": "searXngApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "SearXNG"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_tool"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI agent. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "numResults"
+          },
+          {
+            "name": "pageNumber"
+          },
+          {
+            "name": "language",
+            "description": "Defines the language to use. It's a two-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French). Head to <a href=\"https://docs.sear"
+          },
+          {
+            "name": "safesearch",
+            "description": "Filter search results of engines which support safe search"
+          }
+        ]
+      }
+    ]
+  }
+}

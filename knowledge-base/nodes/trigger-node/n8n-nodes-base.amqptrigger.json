@@ -1,0 +1,165 @@
+{
+  "id": "n8n-nodes-base.amqptrigger",
+  "name": "AMQP Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.amqptrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "AMQP is an open standard application layer protocol for message-oriented middleware. The defining features of AMQP are message orientation, queuing, routing, reliability and security. This node supports AMQP 1.0 compatible message brokers",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.amqptrigger",
+  "credentials": {
+    "name": "AMQP credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/amqp",
+    "slug": "amqp",
+    "json_file": "credentials/amqp.json",
+    "markdown_file": "credentials/amqp.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "amqp",
+    "amqptrigger",
+    "application",
+    "brokers",
+    "compatible",
+    "credentials",
+    "defining",
+    "layer",
+    "message",
+    "middleware",
+    "open",
+    "orientation",
+    "oriented",
+    "protocol",
+    "queuing",
+    "reliability",
+    "routing",
+    "security",
+    "standard",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.amqptrigger.md",
+      "title": "AMQP Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.amqptrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.amqptrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.amqptrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.amqptrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.amqptrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.amqpTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "amqp"
+  ],
+  "credential_details": [
+    {
+      "name": "amqp",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "AMQP Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "sink",
+        "displayName": "Queue / Topic",
+        "type": "string",
+        "description": "Name of the queue of topic to listen to"
+      },
+      {
+        "name": "clientname",
+        "displayName": "Clientname",
+        "type": "string",
+        "description": "Leave empty for non-durable topic subscriptions or queues"
+      },
+      {
+        "name": "subscription",
+        "displayName": "Subscription",
+        "type": "string",
+        "description": "Leave empty for non-durable topic subscriptions or queues"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "containerId",
+            "description": "Will be used to pass to the RHEA Backend as container_id"
+          },
+          {
+            "name": "jsonConvertByteArrayToString",
+            "description": "Whether to convert JSON Body content ([\"body\"][\"content\"]) from Byte Array to string. Needed for Azure Service Bus."
+          },
+          {
+            "name": "jsonParseBody",
+            "description": "Whether to parse the body to an object"
+          },
+          {
+            "name": "pullMessagesNumber",
+            "description": "Number of messages to pull from the bus for every cicle"
+          },
+          {
+            "name": "onlyBody",
+            "description": "Whether to return only the body property"
+          },
+          {
+            "name": "parallelProcessing",
+            "description": "Whether to process messages in parallel"
+          },
+          {
+            "name": "reconnect",
+            "description": "Whether to automatically reconnect if disconnected"
+          },
+          {
+            "name": "reconnectLimit",
+            "description": "Maximum number of reconnect attempts"
+          },
+          {
+            "name": "sleepTime",
+            "description": "Milliseconds to sleep after every cicle"
+          }
+        ]
+      }
+    ]
+  }
+}

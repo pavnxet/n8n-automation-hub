@@ -1,0 +1,257 @@
+{
+  "id": "n8n-nodes-langchain.lmchatollama",
+  "name": "Ollama Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatollama",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Ollama Chat Model node allows you use local Llama 2 models with conversational agents[^1]",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatollama",
+  "credentials": {
+    "name": "Ollama",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/ollama",
+    "slug": "ollama",
+    "json_file": "credentials/ollama.json",
+    "markdown_file": "credentials/ollama.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "Select the model that generates the completion. Choose from:"
+    },
+    {
+      "name": "Sampling Temperature",
+      "description": "Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations"
+    },
+    {
+      "name": "Top K",
+      "description": "Enter the number of token choices the model uses to generate the next token"
+    },
+    {
+      "name": "Top P",
+      "description": "Use this option to set the probability the completion should use. Use a lower value to ignore less probable options"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Processing parameters",
+      "summary": "The Ollama Chat Model node is a sub-node[^1]. Sub-nodes behave differently than other nodes when processing multiple items using expressions"
+    },
+    {
+      "title": "Can't connect to a remote Ollama instance",
+      "summary": "The Ollama Chat Model node supports Bearer token authentication for connecting to remote Ollama instances behind authenticated proxies (such as Open WebUI)"
+    },
+    {
+      "title": "Can't connect to a local Ollama instance when using Docker",
+      "summary": "The Ollama Chat Model node connects to a locally hosted Ollama instance using the base URL defined by Ollama credentials. When you run either n8n or Ollama in Docker, you need to configure the network so that n8n can connect to Ollama"
+    },
+    {
+      "title": "Error: connect ECONNREFUSED ::1:11434",
+      "summary": "This error occurs when your computer has IPv6 enabled, but Ollama is listening to an IPv4 address"
+    },
+    {
+      "title": "Ollama and HTTP/HTTPS proxies",
+      "summary": "Ollama doesn't support custom HTTP agents in its configuration. This makes it difficult to use Ollama behind custom HTTP/HTTPS proxies. Depending on your proxy configuration, it might not work at all, despite setting the HTTP_PROXY or HTTPS_PROXY environment variables"
+    }
+  ],
+  "keywords": [
+    "agents",
+    "allows",
+    "chat",
+    "cluster",
+    "conversational",
+    "llama",
+    "lmchatollama",
+    "local",
+    "model",
+    "models",
+    "ollama",
+    "sampling",
+    "sub",
+    "temperature",
+    "top"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    },
+    {
+      "id": "dN5Se1JVH7wYGtmN4n0v",
+      "name": "self-hosted-ai-starter-kit"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Ollama Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatollama",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatollama/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Ollama Chat Model node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatollama/common-issues",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatollama/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatollama.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatollama.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatollama/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "ollamaApi"
+  ],
+  "credential_details": [
+    {
+      "name": "ollamaApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Ollama Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "required": true,
+        "default": "llama3.2",
+        "description": "The model which will generate the completion. To download models, visit <a href=\"https://ollama.ai/library\">Ollama Models Library</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "think",
+            "description": "Whether to enable (default) thinking mode for supported models. When enabled, the model's thinking process is separated from the output. When disabled, the mode"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls the randomness of the generated text. Lower values make the output more focused and deterministic, while higher values make it more diverse and random."
+          },
+          {
+            "name": "topK",
+            "description": "Limits the number of highest probability vocabulary tokens to consider at each step. A higher value increases diversity but may reduce coherence. Set to -1 to d"
+          },
+          {
+            "name": "topP",
+            "description": "Chooses from the smallest possible set of tokens whose cumulative probability exceeds the probability top_p. Helps generate more human-like text by reducing rep"
+          },
+          {
+            "name": "frequencyPenalty",
+            "description": "Adjusts the penalty for tokens that have already appeared in the generated text. Higher values discourage repetition."
+          },
+          {
+            "name": "keepAlive",
+            "description": "Specifies the duration to keep the loaded model in memory after use. Useful for frequently used models. Format: 1h30m (1 hour 30 minutes)."
+          },
+          {
+            "name": "lowVram",
+            "description": "Whether to Activate low VRAM mode, which reduces memory usage at the cost of slower generation speed. Useful for GPUs with limited memory."
+          },
+          {
+            "name": "mainGpu",
+            "description": "Specifies the ID of the GPU to use for the main computation. Only change this if you have multiple GPUs."
+          },
+          {
+            "name": "numBatch",
+            "description": "Sets the batch size for prompt processing. Larger batch sizes may improve generation speed but increase memory usage."
+          },
+          {
+            "name": "numCtx",
+            "description": "The maximum number of tokens to use as context for generating the next token. Smaller values reduce memory usage, while larger values provide more context to th"
+          },
+          {
+            "name": "numGpu",
+            "description": "Specifies the number of GPUs to use for parallel processing. Set to -1 for auto-detection."
+          },
+          {
+            "name": "numPredict",
+            "description": "The maximum number of tokens to generate. Set to -1 for no limit. Be cautious when setting this to a large value, as it can lead to very long outputs."
+          },
+          {
+            "name": "numThread",
+            "description": "Specifies the number of CPU threads to use for processing. Set to 0 for auto-detection."
+          },
+          {
+            "name": "penalizeNewline",
+            "description": "Whether the model will be less likely to generate newline characters, encouraging longer continuous sequences of text"
+          },
+          {
+            "name": "presencePenalty",
+            "description": "Adjusts the penalty for tokens based on their presence in the generated text so far. Positive values penalize tokens that have already appeared, encouraging div"
+          },
+          {
+            "name": "repeatPenalty",
+            "description": "Adjusts the penalty factor for repeated tokens. Higher values more strongly discourage repetition. Set to 1.0 to disable repetition penalty."
+          },
+          {
+            "name": "useMLock",
+            "description": "Whether to lock the model in memory to prevent swapping. This can improve performance but requires sufficient available memory."
+          },
+          {
+            "name": "useMMap",
+            "description": "Whether to use memory mapping for loading the model. This can reduce memory usage but may impact performance. Recommended to keep enabled."
+          },
+          {
+            "name": "vocabOnly",
+            "description": "Whether to only load the model vocabulary without the weights. Useful for quickly testing tokenization."
+          },
+          {
+            "name": "format",
+            "description": "Specifies the format of the API response"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

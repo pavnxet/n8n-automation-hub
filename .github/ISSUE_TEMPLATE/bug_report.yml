@@ -1,0 +1,44 @@
+name: Bug report
+description: Something in the knowledge base, a workflow or the tooling is wrong.
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Knowledge base (node record, operation, credential)
+        - Automation (workflow JSON)
+        - Community node index
+        - Tooling / CI
+        - Documentation
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: File or path
+      placeholder: knowledge-base/nodes/app-node/n8n-nodes-base.gmail.json
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong
+      description: Quote the current value, then the correct one if you know it.
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source for the correction
+      placeholder: Link to docs.n8n.io page, package version, or a screenshot
+
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: n8n 2.x, n8n-nodes-base@2.15.1, self-hosted or Cloud

@@ -1,0 +1,273 @@
+{
+  "id": "n8n-nodes-base.thehivetrigger",
+  "name": "TheHive Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.thehivetrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "On this page, you'll find a list of events the TheHive Trigger node can respond to and links to more resources",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.thehivetrigger",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "events",
+    "find",
+    "list",
+    "respond",
+    "thehive",
+    "thehivetrigger",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.thehivetrigger.md",
+      "title": "TheHive Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.thehivetrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.thehivetrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.thehivetrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.thehivetrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.thehivetrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.theHiveTrigger",
+  "type_version": 2.0,
+  "type_versions": [
+    1,
+    2
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "TheHive Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "You must set up the webhook in TheHive — instructions <a href=\"https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.thehivetrigger/#configure-a-webhook-in-thehive\" target=\"_blank\">here</a>",
+        "type": "notice"
+      },
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "*",
+            "value": "*",
+            "description": "Any time any event is triggered (Wildcard Event)"
+          },
+          {
+            "name": "Alert Created",
+            "value": "alert_create",
+            "description": "Triggered when an alert is created"
+          },
+          {
+            "name": "Alert Deleted",
+            "value": "alert_delete",
+            "description": "Triggered when an alert is deleted"
+          },
+          {
+            "name": "Alert Updated",
+            "value": "alert_update",
+            "description": "Triggered when an alert is updated"
+          },
+          {
+            "name": "Case Created",
+            "value": "case_create",
+            "description": "Triggered when a case is created"
+          },
+          {
+            "name": "Case Deleted",
+            "value": "case_delete",
+            "description": "Triggered when a case is deleted"
+          },
+          {
+            "name": "Case Updated",
+            "value": "case_update",
+            "description": "Triggered when a case is updated"
+          },
+          {
+            "name": "Log Created",
+            "value": "case_task_log_create",
+            "description": "Triggered when a task log is created"
+          },
+          {
+            "name": "Log Deleted",
+            "value": "case_task_log_delete",
+            "description": "Triggered when a task log is deleted"
+          },
+          {
+            "name": "Log Updated",
+            "value": "case_task_log_update",
+            "description": "Triggered when a task log is updated"
+          },
+          {
+            "name": "Observable Created",
+            "value": "case_artifact_create",
+            "description": "Triggered when an observable is created"
+          },
+          {
+            "name": "Observable Deleted",
+            "value": "case_artifact_delete",
+            "description": "Triggered when an observable is deleted"
+          },
+          {
+            "name": "Observable Updated",
+            "value": "case_artifact_update",
+            "description": "Triggered when an observable is updated"
+          },
+          {
+            "name": "Task Created",
+            "value": "case_task_create",
+            "description": "Triggered when a task is created"
+          },
+          {
+            "name": "Task Deleted",
+            "value": "case_task_delete",
+            "description": "Triggered when a task is deleted"
+          },
+          {
+            "name": "Task Updated",
+            "value": "case_task_update",
+            "description": "Triggered when a task is updated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Events types"
+      },
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "*",
+            "value": "*",
+            "description": "Any time any event is triggered (Wildcard Event)"
+          },
+          {
+            "name": "Alert Created",
+            "value": "alert_create",
+            "description": "Triggered when an alert is created"
+          },
+          {
+            "name": "Alert Deleted",
+            "value": "alert_delete",
+            "description": "Triggered when an alert is deleted"
+          },
+          {
+            "name": "Alert Updated",
+            "value": "alert_update",
+            "description": "Triggered when an alert is updated"
+          },
+          {
+            "name": "Case Created",
+            "value": "case_create",
+            "description": "Triggered when a case is created"
+          },
+          {
+            "name": "Case Deleted",
+            "value": "case_delete",
+            "description": "Triggered when a case is deleted"
+          },
+          {
+            "name": "Case Updated",
+            "value": "case_update",
+            "description": "Triggered when a case is updated"
+          },
+          {
+            "name": "Log Created",
+            "value": "case_task_log_create",
+            "description": "Triggered when a task log is created"
+          },
+          {
+            "name": "Log Deleted",
+            "value": "case_task_log_delete",
+            "description": "Triggered when a task log is deleted"
+          },
+          {
+            "name": "Log Updated",
+            "value": "case_task_log_update",
+            "description": "Triggered when a task log is updated"
+          },
+          {
+            "name": "Observable Created",
+            "value": "case_artifact_create",
+            "description": "Triggered when an observable is created"
+          },
+          {
+            "name": "Observable Deleted",
+            "value": "case_artifact_delete",
+            "description": "Triggered when an observable is deleted"
+          },
+          {
+            "name": "Observable Updated",
+            "value": "case_artifact_update",
+            "description": "Triggered when an observable is updated"
+          },
+          {
+            "name": "Task Created",
+            "value": "case_task_create",
+            "description": "Triggered when a task is created"
+          },
+          {
+            "name": "Task Updated",
+            "value": "case_task_update",
+            "description": "Triggered when a task is updated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2
+            ]
+          }
+        },
+        "description": "Events types"
+      }
+    ]
+  }
+}

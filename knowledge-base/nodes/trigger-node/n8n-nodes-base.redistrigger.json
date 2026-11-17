@@ -1,0 +1,120 @@
+{
+  "id": "n8n-nodes-base.redistrigger",
+  "name": "Redis Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.redistrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Redis is an open-source, in-memory data structure store, used as a database, cache and message broker",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.redistrigger",
+  "credentials": {
+    "name": "Redis credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/redis",
+    "slug": "redis",
+    "json_file": "credentials/redis.json",
+    "markdown_file": "credentials/redis.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "broker",
+    "cache",
+    "credentials",
+    "data",
+    "database",
+    "memory",
+    "message",
+    "open",
+    "redis",
+    "redistrigger",
+    "source",
+    "store",
+    "structure",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.redistrigger.md",
+      "title": "Redis Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.redistrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.redistrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.redistrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.redistrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.redistrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.redisTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "redis"
+  ],
+  "credential_details": [
+    {
+      "name": "redis",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Redis Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "channels",
+        "displayName": "Channels",
+        "type": "string",
+        "required": true,
+        "description": "Channels to subscribe to, multiple channels be defined with comma. Wildcard character(*) is supported."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "jsonParseBody",
+            "description": "Whether to try to parse the message to an object"
+          },
+          {
+            "name": "onlyMessage",
+            "description": "Whether to return only the message property"
+          }
+        ]
+      }
+    ]
+  }
+}

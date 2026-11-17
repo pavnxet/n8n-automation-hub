@@ -1,0 +1,182 @@
+{
+  "id": "n8n-nodes-base.calendlytrigger",
+  "name": "Calendly Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.calendlytrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Calendly is an automated scheduling software that's designed to help find meeting times",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.calendlytrigger",
+  "credentials": {
+    "name": "Calendly credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/calendly",
+    "slug": "calendly",
+    "json_file": "credentials/calendly.json",
+    "markdown_file": "credentials/calendly.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "automated",
+    "calendly",
+    "calendlytrigger",
+    "credentials",
+    "designed",
+    "find",
+    "help",
+    "meeting",
+    "scheduling",
+    "software",
+    "times",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.calendlytrigger.md",
+      "title": "Calendly Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.calendlytrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.calendlytrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.calendlytrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.calendlytrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.calendlytrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.calendlyTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "calendlyApi",
+    "calendlyOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "calendlyApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiKey"
+          ]
+        }
+      }
+    },
+    {
+      "name": "calendlyOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Calendly Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiKey",
+        "options": [
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          },
+          {
+            "name": "API Key or Personal Access Token",
+            "value": "apiKey"
+          }
+        ]
+      },
+      {
+        "name": "deprecationNotice",
+        "displayName": "Action required: Calendly will discontinue API Key authentication on May 31, 2025. Update node to use OAuth2 authentication now to ensure your workflows continue to work.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "apiKey"
+            ]
+          }
+        }
+      },
+      {
+        "name": "scope",
+        "displayName": "Scope",
+        "type": "options",
+        "required": true,
+        "default": "user",
+        "options": [
+          {
+            "name": "Organization",
+            "value": "organization",
+            "description": "Triggers the webhook for all subscribed events within the organization"
+          },
+          {
+            "name": "User",
+            "value": "user",
+            "description": "Triggers the webhook for subscribed events that belong to the current user"
+          }
+        ]
+      },
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Event Created",
+            "value": "invitee.created",
+            "description": "Receive notifications when a new Calendly event is created"
+          },
+          {
+            "name": "Event Canceled",
+            "value": "invitee.canceled",
+            "description": "Receive notifications when a Calendly event is canceled"
+          }
+        ]
+      }
+    ]
+  }
+}

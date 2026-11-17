@@ -1,0 +1,625 @@
+{
+  "id": "n8n-nodes-base.emelia",
+  "name": "Emelia",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.emelia",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Emelia node to automate work in Emelia, and integrate Emelia with other applications. n8n has built-in support for a wide range of Emelia features, including creating campaigns, and adding contacts to a list",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.emelia",
+  "credentials": {
+    "name": "Emelia",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/emelia",
+    "slug": "emelia",
+    "json_file": "credentials/emelia.json",
+    "markdown_file": "credentials/emelia.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Campaign",
+      "operation": "Add Contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "campaign",
+      "operation_value": "addContact"
+    },
+    {
+      "resource": "Campaign",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "campaign",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Campaign",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "campaign",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Campaign",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "campaign",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Campaign",
+      "operation": "Pause",
+      "description": "",
+      "doc": "",
+      "resource_value": "campaign",
+      "operation_value": "pause"
+    },
+    {
+      "resource": "Campaign",
+      "operation": "Start",
+      "description": "",
+      "doc": "",
+      "resource_value": "campaign",
+      "operation_value": "start"
+    },
+    {
+      "resource": "Contact List",
+      "operation": "Add",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactList",
+      "operation_value": "add"
+    },
+    {
+      "resource": "Contact List",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactList"
+    }
+  ],
+  "operation_count": 8,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "adding",
+    "app",
+    "applications",
+    "campaign",
+    "campaigns",
+    "contact",
+    "contacts",
+    "create",
+    "creating",
+    "emelia",
+    "get",
+    "including",
+    "list",
+    "pause",
+    "start",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.emelia.md",
+      "title": "Emelia node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.emelia",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.emelia.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.emelia.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.emelia.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.emelia.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.emelia",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "emeliaApi"
+  ],
+  "credential_details": [
+    {
+      "name": "emeliaApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Emelia"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 20,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "campaign",
+        "options": [
+          {
+            "name": "Campaign",
+            "value": "campaign"
+          },
+          {
+            "name": "Contact List",
+            "value": "contactList"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Add Contact",
+            "value": "addContact"
+          },
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Duplicate",
+            "value": "duplicate"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          },
+          {
+            "name": "Pause",
+            "value": "pause"
+          },
+          {
+            "name": "Start",
+            "value": "start"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ]
+          }
+        }
+      },
+      {
+        "name": "campaignId",
+        "displayName": "Campaign Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "addContact"
+            ]
+          }
+        },
+        "description": "The ID of the campaign to add the contact to. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "contactEmail",
+        "displayName": "Contact Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "addContact"
+            ]
+          }
+        },
+        "description": "The email of the contact to add to the campaign"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customFieldsUi",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "firstName",
+            "description": "First name of the contact to add"
+          },
+          {
+            "name": "lastContacted",
+            "description": "Last contacted date of the contact to add"
+          },
+          {
+            "name": "lastName",
+            "description": "Last name of the contact to add"
+          },
+          {
+            "name": "lastOpen",
+            "description": "Last opened date of the contact to add"
+          },
+          {
+            "name": "lastReplied",
+            "description": "Last replied date of the contact to add"
+          },
+          {
+            "name": "mailsSent",
+            "description": "Number of emails sent to the contact to add"
+          },
+          {
+            "name": "phoneNumber",
+            "description": "Phone number of the contact to add"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "addContact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "campaignName",
+        "displayName": "Campaign Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The name of the campaign to create"
+      },
+      {
+        "name": "campaignId",
+        "displayName": "Campaign ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The ID of the campaign to retrieve"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "campaignId",
+        "displayName": "Campaign ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "pause"
+            ]
+          }
+        },
+        "description": "The ID of the campaign to pause. The campaign must be in RUNNING mode."
+      },
+      {
+        "name": "campaignId",
+        "displayName": "Campaign ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "start"
+            ]
+          }
+        },
+        "description": "The ID of the campaign to start. Email provider and contacts must be set."
+      },
+      {
+        "name": "campaignId",
+        "displayName": "Campaign Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "duplicate"
+            ]
+          }
+        },
+        "description": "The ID of the campaign to duplicate. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "campaignName",
+        "displayName": "New Campaign Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "duplicate"
+            ]
+          }
+        },
+        "description": "The name of the new campaign to create"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "copyContacts",
+            "description": "Whether to copy all the contacts from the original campaign"
+          },
+          {
+            "name": "copyProvider",
+            "description": "Whether to set the same email provider than the original campaign"
+          },
+          {
+            "name": "copyMails",
+            "description": "Whether to copy all the steps of the email sequence from the original campaign"
+          },
+          {
+            "name": "copySettings",
+            "description": "Whether to copy all the general settings from the original campaign"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "duplicate"
+            ],
+            "resource": [
+              "campaign"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactList"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactListId",
+        "displayName": "Contact List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactList"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "The ID of the contact list to add the contact to. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "contactEmail",
+        "displayName": "Contact Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactList"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "The email of the contact to add to the contact list"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customFieldsUi",
+            "description": "Filter by custom fields"
+          },
+          {
+            "name": "firstName",
+            "description": "First name of the contact to add"
+          },
+          {
+            "name": "lastContacted",
+            "description": "Last contacted date of the contact to add"
+          },
+          {
+            "name": "lastName",
+            "description": "Last name of the contact to add"
+          },
+          {
+            "name": "lastOpen",
+            "description": "Last opened date of the contact to add"
+          },
+          {
+            "name": "lastReplied",
+            "description": "Last replied date of the contact to add"
+          },
+          {
+            "name": "mailsSent",
+            "description": "Number of emails sent to the contact to add"
+          },
+          {
+            "name": "phoneNumber",
+            "description": "Phone number of the contact to add"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactList"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactList"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactList"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      }
+    ]
+  }
+}

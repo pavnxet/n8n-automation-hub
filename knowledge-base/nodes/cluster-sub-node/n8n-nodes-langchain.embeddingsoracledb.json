@@ -1,0 +1,140 @@
+{
+  "id": "n8n-nodes-langchain.embeddingsoracledb",
+  "name": "Embeddings Oracle Database",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.embeddingsoracledb",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Embeddings Oracle Database node to generate embeddings[^1] with ONNX models stored in Oracle Database. This node is useful for workflows that perform semantic search, similarity matching, retrieval-augmented generation, or other tasks that require vector representations of text",
+  "doc_url": "https://docs.n8n.io/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsoracledb",
+  "credentials": {
+    "name": "Oracle Database credentials documentation",
+    "doc": "https://docs.n8n.io/credentials/oracledb",
+    "slug": "oracledb",
+    "json_file": "credentials/oracledb.json",
+    "markdown_file": "credentials/oracledb.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "Select the ONNX model used to generate embeddings. Choose a model from the list of models available in your Oracle Database instance or specify a model ID manually. The selected model determines the embedding dimensions and supported input types"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "augmented",
+    "cluster",
+    "credentials",
+    "database",
+    "embeddings",
+    "embeddingsoracledb",
+    "generate",
+    "generation",
+    "matching",
+    "model",
+    "models",
+    "onnx",
+    "oracle",
+    "perform",
+    "representations",
+    "require",
+    "retrieval",
+    "search",
+    "semantic",
+    "similarity",
+    "stored",
+    "sub",
+    "tasks",
+    "text",
+    "useful",
+    "vector"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.embeddingsoracledb.md",
+      "title": "Embeddings Oracle Database node documentation",
+      "url": "",
+      "origpath": "cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsoracledb.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsoracledb.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.embeddingsoracledb.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsoracledb.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.embeddingsOracleDb",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "oracleDBApi"
+  ],
+  "credential_details": [
+    {
+      "name": "oracleDBApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Embeddings ONNX"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_embedding"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_vectorStore'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "ALL_MINILM_L12_V2"
+        },
+        "description": "The model. Choose from the list, or specify an ID."
+      }
+    ]
+  }
+}

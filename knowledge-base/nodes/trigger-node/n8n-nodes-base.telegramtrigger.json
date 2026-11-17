@@ -1,0 +1,336 @@
+{
+  "id": "n8n-nodes-base.telegramtrigger",
+  "name": "Telegram Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.telegramtrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Telegram is a cloud-based instant messaging and voice over IP service. Users can send messages and exchange photos, videos, stickers, audio, and files of any type. On this page, you'll find a list of events the Telegram Trigger node can respond to and links to more resources",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.telegramtrigger",
+  "credentials": {
+    "name": "Telegram credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/telegram",
+    "slug": "telegram",
+    "json_file": "credentials/telegram.json",
+    "markdown_file": "credentials/telegram.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Download Images/Files",
+      "description": "Whether to download attached images or files to include in the output data"
+    },
+    {
+      "name": "Restrict to Chat IDs",
+      "description": "Only trigger for events with the listed chat IDs. You can include multiple chat IDs separated by commas"
+    },
+    {
+      "name": "Restrict to User IDs",
+      "description": "Only trigger for events with the listed user IDs. You can include multiple user IDs separated by commas"
+    }
+  ],
+  "events": [
+    {
+      "name": "Business Connection",
+      "description": "Trigger when the bot is connected to or disconnected from a business account, or a user edited an existing connection with the bot"
+    },
+    {
+      "name": "Business Message",
+      "description": "Trigger on a new message from a connected business account"
+    },
+    {
+      "name": "Callback Query",
+      "description": "Trigger on new incoming callback query"
+    },
+    {
+      "name": "Channel Post",
+      "description": "Trigger on new incoming channel post of any kind — including text, photo, sticker, and so on"
+    },
+    {
+      "name": "Chat Boost",
+      "description": "Trigger when a chat boost is added or changed. The bot must be an administrator in the chat to receive these updates"
+    },
+    {
+      "name": "Chat Join Request",
+      "description": "Trigger when a request to join the chat is sent. The bot must have the can_invite_users administrator right in the chat to receive these updates"
+    },
+    {
+      "name": "Chat Member",
+      "description": "Trigger when a chat member's status is updated. The bot must be an administrator in the chat"
+    },
+    {
+      "name": "Chosen Inline Result",
+      "description": "Trigger when the result of an inline query chosen by a user is sent. Please see Telegram's API documentation on feedback collection for details on how to enable these updates for your bot"
+    },
+    {
+      "name": "Deleted Business Messages",
+      "description": "Trigger when messages are deleted from a connected business account"
+    },
+    {
+      "name": "Edited Business Message",
+      "description": "Trigger on new version of a message from a connected business account"
+    },
+    {
+      "name": "Edited Channel Post",
+      "description": "Trigger on new version of a channel post that is known to the bot is edited"
+    },
+    {
+      "name": "Edited Message",
+      "description": "Trigger on new version of a message that is known to the bot and was edited"
+    },
+    {
+      "name": "Inline Query",
+      "description": "Trigger on new incoming inline query"
+    },
+    {
+      "name": "Message",
+      "description": "Trigger on new incoming message of any kind — text, photo, sticker, and so on"
+    },
+    {
+      "name": "Message Reaction",
+      "description": "Trigger when a reaction to a message is changed by a user. The bot must be an administrator in the chat. The update isn't received for reactions set by bots"
+    },
+    {
+      "name": "Message Reaction Count",
+      "description": "Trigger when reactions to a message with anonymous reactions are changed. The bot must be an administrator in the chat. The updates are grouped and can be sent with delay up to a few minutes"
+    },
+    {
+      "name": "My Chat Member",
+      "description": "Trigger when the bot's chat member status is updated in a chat. For private chats, this update is received only when the bot is blocked or unblocked by the user"
+    },
+    {
+      "name": "Poll",
+      "description": "Trigger on new poll state. Bots only receive updates about stopped polls and polls which are sent by the bot"
+    },
+    {
+      "name": "Poll Answer",
+      "description": "Trigger when user changes their answer in a non-anonymous poll. Bots only receive new votes in polls that were sent by the bot itself"
+    },
+    {
+      "name": "Pre-Checkout Query",
+      "description": "Trigger on new incoming pre-checkout query. Contains full information about checkout"
+    },
+    {
+      "name": "Purchased Paid Media",
+      "description": "Trigger when a user purchases paid media with a non-empty payload sent by the bot in a non-channel chat"
+    },
+    {
+      "name": "Removed Chat Boost",
+      "description": "Trigger when a boost is removed from a chat. The bot must be an administrator in the chat to receive these updates"
+    },
+    {
+      "name": "Shipping Query",
+      "description": "Trigger on new incoming shipping query. Only for invoices with flexible price"
+    }
+  ],
+  "trigger_methods": [
+    "polling",
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Stuck waiting for trigger event",
+      "summary": "When testing the Telegram Trigger node with the Execute step or Execute workflow buttons, the execution may appear stuck and unable to stop listening for events. If this occurs, you may need to exit the workflow and open it again to reset the canvas"
+    },
+    {
+      "title": "Bad request: bad webhook: An HTTPS URL must be provided for webhook",
+      "summary": "This error occurs when you run n8n behind a reverse proxy and there is a problem with your instance's webhook URL"
+    },
+    {
+      "title": "Workflow only works in testing or production",
+      "summary": "Telegram only allows you to register a single webhook per app. This means that every time you switch from using the testing URL to the production URL (and vice versa), Telegram overwrites the registered webhook URL"
+    }
+  ],
+  "keywords": [
+    "audio",
+    "based",
+    "chat",
+    "cloud",
+    "credentials",
+    "download",
+    "events",
+    "exchange",
+    "files",
+    "find",
+    "ids",
+    "images",
+    "instant",
+    "list",
+    "messages",
+    "messaging",
+    "over",
+    "photos",
+    "respond",
+    "restrict",
+    "send",
+    "service",
+    "stickers",
+    "telegram",
+    "telegramtrigger",
+    "trigger",
+    "type",
+    "user",
+    "users",
+    "videos",
+    "voice"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Telegram Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.telegramtrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.telegramtrigger/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Telegram Trigger node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.telegramtrigger/common-issues",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.telegramtrigger/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.telegramtrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.telegramtrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.telegramtrigger/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.telegramTrigger",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "telegramApi"
+  ],
+  "credential_details": [
+    {
+      "name": "telegramApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Telegram Trigger"
+  },
+  "subtitle": "=Updates: {{$parameter[\"updates\"].join(\", \")}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "telegramTriggerNotice",
+        "displayName": "Due to Telegram API limitations, you can use just one Telegram trigger for each bot at a time",
+        "type": "notice"
+      },
+      {
+        "name": "updates",
+        "displayName": "Trigger On",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "*",
+            "value": "*",
+            "description": "All updates"
+          },
+          {
+            "name": "Callback Query",
+            "value": "callback_query",
+            "description": "Trigger on new incoming callback query"
+          },
+          {
+            "name": "Channel Post",
+            "value": "channel_post",
+            "description": "Trigger on new incoming channel post of any kind — text, photo, sticker, etc"
+          },
+          {
+            "name": "Edited Channel Post",
+            "value": "edited_channel_post",
+            "description": "Trigger on new version of a channel post that is known to the bot and was edited"
+          },
+          {
+            "name": "Edited Message",
+            "value": "edited_message",
+            "description": "Trigger on new version of a channel post that is known to the bot and was edited"
+          },
+          {
+            "name": "Inline Query",
+            "value": "inline_query",
+            "description": "Trigger on new incoming inline query"
+          },
+          {
+            "name": "Message",
+            "value": "message",
+            "description": "Trigger on new incoming message of any kind — text, photo, sticker, etc"
+          },
+          {
+            "name": "Poll",
+            "value": "poll",
+            "description": "Trigger on new poll state. Bots receive only updates about stopped polls and polls, which are sent by the bot."
+          },
+          {
+            "name": "Pre-Checkout Query",
+            "value": "pre_checkout_query",
+            "description": "Trigger on new incoming pre-checkout query. Contains full information about checkout."
+          },
+          {
+            "name": "Shipping Query",
+            "value": "shipping_query",
+            "description": "Trigger on new incoming shipping query. Only for invoices with flexible price."
+          }
+        ]
+      },
+      {
+        "name": "attachmentNotice",
+        "displayName": "Every uploaded attachment, even if sent in a group, will trigger a separate event. You can identify that an attachment belongs to a certain group by <code>media_group_id</code> .",
+        "type": "notice"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "download",
+            "description": "Telegram delivers the image in multiple sizes. By default, just the large image would be downloaded. If you want to change the size, set the field 'Image Size'."
+          },
+          {
+            "name": "imageSize",
+            "description": "The size of the image to be downloaded"
+          },
+          {
+            "name": "chatIds",
+            "description": "The chat IDs to restrict the trigger to. Multiple can be defined separated by comma."
+          },
+          {
+            "name": "userIds",
+            "description": "The user IDs to restrict the trigger to. Multiple can be defined separated by comma."
+          }
+        ]
+      }
+    ]
+  }
+}

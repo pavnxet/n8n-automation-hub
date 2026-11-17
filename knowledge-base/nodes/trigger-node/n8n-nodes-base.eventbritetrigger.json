@@ -1,0 +1,225 @@
+{
+  "id": "n8n-nodes-base.eventbritetrigger",
+  "name": "Eventbrite Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.eventbritetrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Eventbrite is an event management and ticketing website. The service allows users to browse, create, and promote local events",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.eventbritetrigger",
+  "credentials": {
+    "name": "Eventbrite credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/eventbrite",
+    "slug": "eventbrite",
+    "json_file": "credentials/eventbrite.json",
+    "markdown_file": "credentials/eventbrite.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allows",
+    "browse",
+    "create",
+    "credentials",
+    "event",
+    "eventbrite",
+    "eventbritetrigger",
+    "events",
+    "local",
+    "management",
+    "promote",
+    "service",
+    "ticketing",
+    "trigger",
+    "users",
+    "website"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.eventbritetrigger.md",
+      "title": "Eventbrite Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.eventbritetrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.eventbritetrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.eventbritetrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.eventbritetrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.eventbritetrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.eventbriteTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "eventbriteApi",
+    "eventbriteOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "eventbriteApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "privateKey"
+          ]
+        }
+      }
+    },
+    {
+      "name": "eventbriteOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Eventbrite Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 5,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "privateKey",
+        "options": [
+          {
+            "name": "Private Key",
+            "value": "privateKey"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "organization",
+        "displayName": "Organization Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "The Eventbrite Organization to work on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "event",
+        "displayName": "Event Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Limit the triggers to this event. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "actions",
+        "displayName": "Actions",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "attendee.checked_in",
+            "value": "attendee.checked_in"
+          },
+          {
+            "name": "attendee.checked_out",
+            "value": "attendee.checked_out"
+          },
+          {
+            "name": "attendee.updated",
+            "value": "attendee.updated"
+          },
+          {
+            "name": "event.created",
+            "value": "event.created"
+          },
+          {
+            "name": "event.published",
+            "value": "event.published"
+          },
+          {
+            "name": "event.unpublished",
+            "value": "event.unpublished"
+          },
+          {
+            "name": "event.updated",
+            "value": "event.updated"
+          },
+          {
+            "name": "order.placed",
+            "value": "order.placed"
+          },
+          {
+            "name": "order.refunded",
+            "value": "order.refunded"
+          },
+          {
+            "name": "order.updated",
+            "value": "order.updated"
+          },
+          {
+            "name": "organizer.updated",
+            "value": "organizer.updated"
+          },
+          {
+            "name": "ticket_class.created",
+            "value": "ticket_class.created"
+          },
+          {
+            "name": "ticket_class.deleted",
+            "value": "ticket_class.deleted"
+          },
+          {
+            "name": "ticket_class.updated",
+            "value": "ticket_class.updated"
+          },
+          {
+            "name": "venue.updated",
+            "value": "venue.updated"
+          }
+        ],
+        "description": "One or more action to subscribe to"
+      },
+      {
+        "name": "resolveData",
+        "displayName": "Resolve Data",
+        "type": "boolean",
+        "default": true,
+        "description": "By default does the webhook-data only contain the URL to receive the object data manually. If this option gets activated, it will resolve the data automatically."
+      }
+    ]
+  }
+}

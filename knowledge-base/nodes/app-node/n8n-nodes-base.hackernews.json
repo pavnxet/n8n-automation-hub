@@ -1,0 +1,313 @@
+{
+  "id": "n8n-nodes-base.hackernews",
+  "name": "Hacker News",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.hackernews",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Hacker News node to automate work in Hacker News, and integrate Hacker News with other applications. n8n has built-in support for a wide range of Hacker News features, including getting articles, and users",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.hackernews",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "All",
+      "operation": "Get all items",
+      "description": "",
+      "doc": "",
+      "resource_value": "all"
+    },
+    {
+      "resource": "Article",
+      "operation": "Get a Hacker News article",
+      "description": "",
+      "doc": "",
+      "resource_value": "article",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Get a Hacker News user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 3,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "article",
+    "articles",
+    "get",
+    "getting",
+    "hacker",
+    "hackernews",
+    "including",
+    "items",
+    "news",
+    "user",
+    "users",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.hackernews.md",
+      "title": "Hacker News node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.hackernews",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.hackernews.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.hackernews.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.hackernews.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.hackernews.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.hackerNews",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Hacker News"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "article",
+        "options": [
+          {
+            "name": "All",
+            "value": "all"
+          },
+          {
+            "name": "Article",
+            "value": "article"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many items"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "all"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a Hacker News article"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "article"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a Hacker News user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "articleId",
+        "displayName": "Article ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "article"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The ID of the Hacker News article to be returned"
+      },
+      {
+        "name": "username",
+        "displayName": "Username",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The Hacker News user to be returned"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "all"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "all"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "includeComments",
+            "description": "Whether to include all the comments in a Hacker News article"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "article"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "keyword",
+            "description": "The keyword for filtering the results of the query"
+          },
+          {
+            "name": "tags",
+            "description": "Tags for filtering the results of the query"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "all"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

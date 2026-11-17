@@ -1,0 +1,1391 @@
+{
+  "id": "n8n-nodes-base.datatable",
+  "name": "Data table",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.datatable",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Data Table node to create and manage internal data tables. Data tables allow you to store structured data directly inside n8n and use it across workflows",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Delete row",
+      "page": "rows.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/rows#delete-row",
+      "summary": "Use this operation to delete one or more rows from a data table, based on a defined condition(s)",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Row"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Data table:",
+          "description": "Select how to identify the data table to operate on:"
+        },
+        {
+          "name": "Must Match:",
+          "description": "Select whether to delete rows that match Any Condition or All Conditions defined in the next step"
+        },
+        {
+          "name": "Conditions:",
+          "description": "Click Add Condition to define which rows from the data table to operate on. You can add multiple conditions. For each one:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Dry Run:",
+          "description": "Enable to simulate deletion without modifying the table. The node returns rows that would be deleted, including their state before and after the operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get row",
+      "page": "rows.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/rows#get-row",
+      "summary": "Use this operation to retrieve one or more rows from a data table, based on a defined condition(s)",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Row"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select Get"
+        },
+        {
+          "name": "Data table:",
+          "description": "Select how to identify the data table to operate on:"
+        },
+        {
+          "name": "Must Match:",
+          "description": "Select whether to get rows that match Any Condition or All Conditions defined in the next step"
+        },
+        {
+          "name": "Conditions:",
+          "description": "Click Add Condition to define which rows from the data table to operate on. You can add multiple conditions. For each one:"
+        },
+        {
+          "name": "Return All:",
+          "description": "Enable to return all matching rows. Or, disable and enter a Limit for the number of rows to return, for example 50"
+        },
+        {
+          "name": "Order By:",
+          "description": "Enable to define the column to order results on, and the direction (ascending or descending). Or, disable for no ordering of results"
+        }
+      ],
+      "options": [
+        {
+          "name": "To get a fully accurate result:",
+          "description": "Make sure no one is adding, editing, or deleting records until the fetch is completely finished"
+        },
+        {
+          "name": "If you're using \"Return All\":",
+          "description": "If new matching records keep getting added while the fetch is running, Return All may never finish, since there's always more data to retrieve. If that happens, you can cancel the operation, and it will stop after the current batch finishes"
+        }
+      ]
+    },
+    {
+      "operation": "If row exists",
+      "page": "rows.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/rows#if-row-exists",
+      "summary": "Use this operation to check whether a row matching the defined condition(s) exists in a data table. If a matching row is found, the node outputs the same input item it received, unchanged. If no matching rows exist, it outputs nothing",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Row"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select If Row Exists"
+        },
+        {
+          "name": "Data table:",
+          "description": "Select how to identify the data table to operate on:"
+        },
+        {
+          "name": "Must Match:",
+          "description": "Select whether rows must match Any Condition or All Conditions defined in the next step"
+        },
+        {
+          "name": "Conditions:",
+          "description": "Click Add Condition to define the data table rows to operate on. You can add multiple conditions. For each one:"
+        }
+      ]
+    },
+    {
+      "operation": "If row does not exist",
+      "page": "rows.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/rows#if-row-does-not-exist",
+      "summary": "Use this operation to check that no rows matching the defined condition(s) exists in a data table. If no matching row is found, the node outputs the same input item it received, unchanged. If a matching row exists, it outputs nothing",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Row"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select If Row Does Not Exist"
+        },
+        {
+          "name": "Data table:",
+          "description": "Select how to identify the data table to operate on:"
+        },
+        {
+          "name": "Must Match:",
+          "description": "Select whether rows must match Any Condition or All Conditions defined in the next step"
+        },
+        {
+          "name": "Conditions:",
+          "description": "Click Add Condition to define the data table rows to operate on. You can add multiple conditions. For each one:"
+        }
+      ]
+    },
+    {
+      "operation": "Insert row",
+      "page": "rows.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/rows#insert-row",
+      "summary": "Use this operation to insert a new row into a data table",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Row"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select Insert"
+        },
+        {
+          "name": "Data table:",
+          "description": "Select how to identify the data table to operate on:"
+        },
+        {
+          "name": "Mapping Column Mode:",
+          "description": "Select whether to:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Optimize Bulk:",
+          "description": "Enable to prevent inserted data from being returned. This improves bulk insert performance by up to 5x"
+        }
+      ]
+    },
+    {
+      "operation": "Update row",
+      "page": "rows.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/rows#update-row",
+      "summary": "Use this operation to update one or more rows in a data table, based on a defined condition(s)",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Row"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select Update"
+        },
+        {
+          "name": "Data table:",
+          "description": "Select how to identify the data table to operate on:"
+        },
+        {
+          "name": "Must Match:",
+          "description": "Select whether to update rows that match Any Condition or All Conditions defined in the next step"
+        },
+        {
+          "name": "Conditions:",
+          "description": "Click Add Condition to define the data table rows to operate on. You can add multiple conditions. For each one:"
+        },
+        {
+          "name": "Mapping Column Mode:",
+          "description": "Select whether to:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Dry Run:",
+          "description": "Enable to simulate updating, without modifying the table. The node returns rows that would be updated, including their state before and after the operation"
+        }
+      ]
+    },
+    {
+      "operation": "Upsert row",
+      "page": "rows.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/rows#upsert-row",
+      "summary": "Use this operation to upsert into a data table. If a row matching the defined condition(s) exists, it's updated with the provided values. If no matching row exists, a new row is created",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Row"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select Upsert"
+        },
+        {
+          "name": "Data table:",
+          "description": "Select how to identify the data table to operate on:"
+        },
+        {
+          "name": "Must Match:",
+          "description": "Select whether to upsert rows that match Any Condition or All Conditions defined in the next step"
+        },
+        {
+          "name": "Conditions:",
+          "description": "Click Add Condition to define the data table rows to operate on. You can add multiple conditions. For each one:"
+        },
+        {
+          "name": "Mapping Column Mode:",
+          "description": "Select whether to:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Dry Run:",
+          "description": "Enable to simulate the upsert operation without modifying the table. The node returns rows that would be affected, including their state before and after the operation"
+        }
+      ]
+    },
+    {
+      "operation": "Create a data table",
+      "page": "tables.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/tables#create-a-data-table",
+      "summary": "Use this operation to create a new data table",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Table"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select Create"
+        },
+        {
+          "name": "Name:",
+          "description": "Enter a name for the data table, or define using an expression"
+        },
+        {
+          "name": "Columns:",
+          "description": "Click Add Column to define parameters for the columns of the data table. You can add multiple columns. For each one:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Reuse Existing Tables:",
+          "description": "Enable to return an existing table if one exists with the same name, without throwing an error"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a data table",
+      "page": "tables.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/tables#delete-a-data-table",
+      "summary": "Use this operation to permanently delete an existing data table. This action can't be undone",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Table"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Data table:",
+          "description": "Select how to identify the data table to delete:"
+        }
+      ]
+    },
+    {
+      "operation": "List data tables",
+      "page": "tables.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/tables#list-data-tables",
+      "summary": "Use this operation to list existing data tables. You can return all tables, all tables up to a defined limit, or filter for tables to return",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Table"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select List"
+        },
+        {
+          "name": "Return All:",
+          "description": "Enable to return all matching tables. Or, disable and enter a Limit for the number of tables to return, for example 50"
+        }
+      ],
+      "options": [
+        {
+          "name": "Filter by Name:",
+          "description": "Enter a value or expression to return data tables whose names contain the specified text. Matching is case-insensitive"
+        },
+        {
+          "name": "Sort Field:",
+          "description": "Select a field to sort results on"
+        },
+        {
+          "name": "Sort Direction:",
+          "description": "Select whether to sort results in Ascending or Descending direction"
+        }
+      ]
+    },
+    {
+      "operation": "Update a data table",
+      "page": "tables.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/tables#update-a-data-table",
+      "summary": "Use this operation to update the name of an existing data tables",
+      "parameters": [
+        {
+          "name": "Resource:",
+          "description": "Select Table"
+        },
+        {
+          "name": "Operation:",
+          "description": "Select Update"
+        },
+        {
+          "name": "Data table:",
+          "description": "Select how to identify the data table to update:"
+        },
+        {
+          "name": "New name:",
+          "description": "Enter a value or expression to set a new name for the data table"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "across",
+    "allow",
+    "core",
+    "create",
+    "data",
+    "datatable",
+    "directly",
+    "inside",
+    "internal",
+    "manage",
+    "store",
+    "structured",
+    "table",
+    "tables"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Data table",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.datatable/index.md"
+    },
+    {
+      "page": "rows.md",
+      "title": "Data Table node row operations",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/rows",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.datatable/rows.md"
+    },
+    {
+      "page": "tables.md",
+      "title": "Data Table node table operations",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/tables",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.datatable/tables.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.datatable.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.datatable.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.datatable/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.dataTable",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "input",
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Data table"
+  },
+  "subtitle": "={{$parameter[\"action\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 37,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "row",
+        "options": [
+          {
+            "name": "Row",
+            "value": "row"
+          },
+          {
+            "name": "Table",
+            "value": "table"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "insert",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "deleteRows",
+            "description": "Delete row(s)"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get row(s)"
+          },
+          {
+            "name": "If Row Exists",
+            "value": "rowExists",
+            "description": "Match input items that are in the data table"
+          },
+          {
+            "name": "If Row Does Not Exist",
+            "value": "rowNotExists",
+            "description": "Match input items that are not in the data table"
+          },
+          {
+            "name": "Insert",
+            "value": "insert",
+            "description": "Insert a new row"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update row(s) matching certain fields"
+          },
+          {
+            "name": "Upsert",
+            "value": "upsert",
+            "description": "Update row(s), or insert if there is no match"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataTableId",
+        "displayName": "Data table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ]
+          }
+        }
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyCondition",
+        "options": [
+          {
+            "name": "Any Condition",
+            "value": "anyCondition"
+          },
+          {
+            "name": "All Conditions",
+            "value": "allConditions"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "deleteRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "deleteRows"
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dryRun",
+            "description": "Whether the operation simulates and returns affected rows in their \"before\" and \"after\" states"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "deleteRows"
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "insert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "optimizeBulk",
+            "description": "Whether to improve bulk insert performance 5x by not returning inserted data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "insert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyCondition",
+        "options": [
+          {
+            "name": "Any Condition",
+            "value": "anyCondition"
+          },
+          {
+            "name": "All Conditions",
+            "value": "allConditions"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "get"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "orderBy",
+        "displayName": "Order By",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether to sort the results by a column"
+      },
+      {
+        "name": "orderByColumn",
+        "displayName": "Order By Column",
+        "type": "options",
+        "default": "createdAt",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "get"
+            ],
+            "orderBy": [
+              true
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "orderByDirection",
+        "displayName": "Order By Direction",
+        "type": "options",
+        "default": "DESC",
+        "options": [
+          {
+            "name": "Ascending",
+            "value": "ASC"
+          },
+          {
+            "name": "Descending",
+            "value": "DESC"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "get"
+            ],
+            "orderBy": [
+              true
+            ]
+          }
+        },
+        "description": "Sort direction for the column"
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyCondition",
+        "options": [
+          {
+            "name": "Any Condition",
+            "value": "anyCondition"
+          },
+          {
+            "name": "All Conditions",
+            "value": "allConditions"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "rowExists"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "rowExists"
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get"
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyCondition",
+        "options": [
+          {
+            "name": "Any Condition",
+            "value": "anyCondition"
+          },
+          {
+            "name": "All Conditions",
+            "value": "allConditions"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "rowNotExists"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "rowNotExists"
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get"
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyCondition",
+        "options": [
+          {
+            "name": "Any Condition",
+            "value": "anyCondition"
+          },
+          {
+            "name": "All Conditions",
+            "value": "allConditions"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get"
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dryRun",
+            "description": "Whether the operation simulates and returns affected rows in their \"before\" and \"after\" states"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyCondition",
+        "options": [
+          {
+            "name": "Any Condition",
+            "value": "anyCondition"
+          },
+          {
+            "name": "All Conditions",
+            "value": "allConditions"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get"
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dryRun",
+            "description": "Whether the operation simulates and returns affected rows in their \"before\" and \"after\" states"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "list",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new data table"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a data table"
+          },
+          {
+            "name": "List",
+            "value": "list",
+            "description": "List all data tables"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a data table name"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataTableId",
+        "displayName": "Data table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "delete",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tableName",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The name of the data table to create"
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "column",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The columns to create in the data table"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "createIfNotExists",
+            "description": "Whether to return existing table if one exists with the same name without throwing an error"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "deleteWarning",
+        "displayName": "This will permanently delete the data table and all its data. This action cannot be undone.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "list"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "filterName",
+            "description": "Filter data tables by name (case-insensitive)"
+          },
+          {
+            "name": "sortField",
+            "description": "Field to sort by"
+          },
+          {
+            "name": "sortDirection"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        }
+      },
+      {
+        "name": "newName",
+        "displayName": "New Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "table"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The new name for the data table"
+      }
+    ]
+  }
+}

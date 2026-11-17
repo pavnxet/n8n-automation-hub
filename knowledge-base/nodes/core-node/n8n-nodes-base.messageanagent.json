@@ -1,0 +1,105 @@
+{
+  "id": "n8n-nodes-base.messageanagent",
+  "name": "Message an Agent",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.messageanagent",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Message an Agent node to send a message to an agent from a workflow, then use the agent's reply in the nodes that follow. The agent runs its own reasoning loop, calls its own tools and skills, and returns a response to the workflow",
+  "doc_url": "https://docs.n8n.io/core-nodes/n8n-nodes-base.messageanagent",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Agent",
+      "description": "Select the agent you want to message",
+      "options": [
+        "Production executions use the agent's published version"
+      ]
+    },
+    {
+      "name": "Message",
+      "description": "Enter the message to send to the agent. Write it the way you'd write a request to a person, and use expressions to include data from earlier nodes"
+    },
+    {
+      "name": "Require Specific Output Format",
+      "description": "Turn this on when later nodes need a predictable shape instead of free text. The agent then returns an object on the structuredOutput field that matches the schema you define"
+    },
+    {
+      "name": "Enable Streaming",
+      "description": "Whether to stream the agent's response as it generates text, instead of waiting for the complete reply. Enabled by default"
+    },
+    {
+      "name": "Invoke Agent",
+      "description": "Whether to call the agent once for all input items or once for each input item:",
+      "options": [
+        "Once Per Item: make one agent call for each input item"
+      ]
+    },
+    {
+      "name": "Session",
+      "description": "Sessions let the agent remember earlier messages. Without one, each execution starts a fresh conversation"
+    },
+    {
+      "name": "Allow Agent to Access Other Nodes' Data",
+      "description": "Whether to give the agent a tool that reads the execution data of other nodes in the workflow. Turned off by default, which limits the agent to its own input"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "access",
+    "agent",
+    "allow",
+    "calls",
+    "core",
+    "data",
+    "enable",
+    "format",
+    "invoke",
+    "loop",
+    "message",
+    "messageanagent",
+    "output",
+    "reasoning",
+    "reply",
+    "require",
+    "response",
+    "returns",
+    "runs",
+    "send",
+    "session",
+    "skills",
+    "specific",
+    "streaming",
+    "tools"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.messageanagent.md",
+      "title": "Message an Agent node documentation",
+      "url": "",
+      "origpath": "core-nodes/n8n-nodes-base.messageanagent.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.messageanagent.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.messageanagent.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.messageanagent.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.messageanagent",
+  "node_schema": null
+}

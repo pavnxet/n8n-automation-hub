@@ -1,0 +1,750 @@
+{
+  "id": "n8n-nodes-base.onesimpleapi",
+  "name": "One Simple API",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.onesimpleapi",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the One Simple API node to automate work in One Simple API, and integrate One Simple API with other applications. n8n has built-in support for a wide range of One Simple API features, including getting profiles, retrieving information, and generating utilities",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.onesimpleapi",
+  "credentials": {
+    "name": "One Simple API",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/onesimpleapi",
+    "slug": "onesimpleapi",
+    "json_file": "credentials/onesimpleapi.json",
+    "markdown_file": "credentials/onesimpleapi.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Information",
+      "operation": "Convert a value between currencies",
+      "description": "",
+      "doc": "",
+      "resource_value": "information"
+    },
+    {
+      "resource": "Information",
+      "operation": "Retrieve image metadata from a URL",
+      "description": "",
+      "doc": "",
+      "resource_value": "information",
+      "operation_value": "imageMetadata"
+    },
+    {
+      "resource": "Social Profile",
+      "operation": "Get details about an Instagram profile",
+      "description": "",
+      "doc": "",
+      "resource_value": "socialProfile",
+      "operation_value": "instagramProfile"
+    },
+    {
+      "resource": "Social Profile",
+      "operation": "Get details about a Spotify Artist",
+      "description": "",
+      "doc": "",
+      "resource_value": "socialProfile",
+      "operation_value": "spotifyArtistProfile"
+    },
+    {
+      "resource": "Utility",
+      "operation": "Expand a shortened url",
+      "description": "",
+      "doc": "",
+      "resource_value": "utility"
+    },
+    {
+      "resource": "Utility",
+      "operation": "Generate a QR Code",
+      "description": "",
+      "doc": "",
+      "resource_value": "utility"
+    },
+    {
+      "resource": "Utility",
+      "operation": "Validate an email address",
+      "description": "",
+      "doc": "",
+      "resource_value": "utility"
+    },
+    {
+      "resource": "Website",
+      "operation": "Generate a PDF from a webpage",
+      "description": "",
+      "doc": "",
+      "resource_value": "website"
+    },
+    {
+      "resource": "Website",
+      "operation": "Get SEO information from website",
+      "description": "",
+      "doc": "",
+      "resource_value": "website"
+    },
+    {
+      "resource": "Website",
+      "operation": "Create a screenshot from a webpage",
+      "description": "",
+      "doc": "",
+      "resource_value": "website"
+    }
+  ],
+  "operation_count": 10,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "address",
+    "api",
+    "app",
+    "applications",
+    "artist",
+    "between",
+    "code",
+    "convert",
+    "create",
+    "currencies",
+    "email",
+    "expand",
+    "generate",
+    "generating",
+    "get",
+    "getting",
+    "image",
+    "including",
+    "instagram",
+    "metadata",
+    "onesimpleapi",
+    "pdf",
+    "profile",
+    "profiles",
+    "retrieve",
+    "retrieving",
+    "screenshot",
+    "seo",
+    "shortened",
+    "simple",
+    "social",
+    "spotify",
+    "url",
+    "utilities",
+    "utility",
+    "validate",
+    "value",
+    "webpage",
+    "website",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.onesimpleapi.md",
+      "title": "One Simple API node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.onesimpleapi",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.onesimpleapi.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.onesimpleapi.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.onesimpleapi.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.onesimpleapi.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.oneSimpleApi",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "oneSimpleApi"
+  ],
+  "credential_details": [
+    {
+      "name": "oneSimpleApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "One Simple API"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 27,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "website",
+        "options": [
+          {
+            "name": "Information",
+            "value": "information"
+          },
+          {
+            "name": "Social Profile",
+            "value": "socialProfile"
+          },
+          {
+            "name": "Utility",
+            "value": "utility"
+          },
+          {
+            "name": "Website",
+            "value": "website"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "pdf",
+        "options": [
+          {
+            "name": "Generate PDF",
+            "value": "pdf",
+            "description": "Generate a PDF from a webpage"
+          },
+          {
+            "name": "Get SEO Data",
+            "value": "seo",
+            "description": "Get SEO information from website"
+          },
+          {
+            "name": "Take Screenshot",
+            "value": "screenshot",
+            "description": "Create a screenshot from a webpage"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "website"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "instagramProfile",
+        "options": [
+          {
+            "name": "Instagram",
+            "value": "instagramProfile",
+            "description": "Get details about an Instagram profile"
+          },
+          {
+            "name": "Spotify",
+            "value": "spotifyArtistProfile",
+            "description": "Get details about a Spotify Artist"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "socialProfile"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "exchangeRate",
+        "options": [
+          {
+            "name": "Exchange Rate",
+            "value": "exchangeRate",
+            "description": "Convert a value between currencies"
+          },
+          {
+            "name": "Image Metadata",
+            "value": "imageMetadata",
+            "description": "Retrieve image metadata from a URL"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "information"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "validateEmail",
+        "options": [
+          {
+            "name": "Expand URL",
+            "value": "expandURL",
+            "description": "Expand a shortened URL"
+          },
+          {
+            "name": "Generate QR Code",
+            "value": "qrCode",
+            "description": "Generate a QR Code"
+          },
+          {
+            "name": "Validate Email",
+            "value": "validateEmail",
+            "description": "Validate an email address"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "utility"
+            ]
+          }
+        }
+      },
+      {
+        "name": "link",
+        "displayName": "Webpage URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "pdf"
+            ],
+            "resource": [
+              "website"
+            ]
+          }
+        },
+        "description": "Link to webpage to convert"
+      },
+      {
+        "name": "download",
+        "displayName": "Download PDF?",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "pdf"
+            ],
+            "resource": [
+              "website"
+            ]
+          }
+        },
+        "description": "Whether to download the PDF or return a link to it"
+      },
+      {
+        "name": "output",
+        "displayName": "Put Output In Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "pdf"
+            ],
+            "resource": [
+              "website"
+            ],
+            "download": [
+              true
+            ]
+          }
+        },
+        "description": "The name of the output field to put the binary file data in"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "page"
+          },
+          {
+            "name": "force",
+            "description": "Normally the API will reuse a previously taken screenshot of the URL to give a faster response. This option allows you to retake the screenshot at that exact ti"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "website"
+            ],
+            "operation": [
+              "pdf"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "QR Content",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "qrCode"
+            ],
+            "resource": [
+              "utility"
+            ]
+          }
+        },
+        "description": "The text that should be turned into a QR code - like a website URL"
+      },
+      {
+        "name": "download",
+        "displayName": "Download Image?",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "qrCode"
+            ],
+            "resource": [
+              "utility"
+            ]
+          }
+        },
+        "description": "Whether to download the QR code or return a link to it"
+      },
+      {
+        "name": "output",
+        "displayName": "Put Output In Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "qrCode"
+            ],
+            "resource": [
+              "utility"
+            ],
+            "download": [
+              true
+            ]
+          }
+        },
+        "description": "The name of the output field to put the binary file data in"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "size",
+            "description": "The QR Code size"
+          },
+          {
+            "name": "format",
+            "description": "The QR Code format"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "utility"
+            ],
+            "operation": [
+              "qrCode"
+            ]
+          }
+        }
+      },
+      {
+        "name": "link",
+        "displayName": "Webpage URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "screenshot"
+            ],
+            "resource": [
+              "website"
+            ]
+          }
+        },
+        "description": "Link to webpage to convert"
+      },
+      {
+        "name": "download",
+        "displayName": "Download Screenshot?",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "screenshot"
+            ],
+            "resource": [
+              "website"
+            ]
+          }
+        },
+        "description": "Whether to download the screenshot or return a link to it"
+      },
+      {
+        "name": "output",
+        "displayName": "Put Output In Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "screenshot"
+            ],
+            "resource": [
+              "website"
+            ],
+            "download": [
+              true
+            ]
+          }
+        },
+        "description": "The name of the output field to put the binary file data in"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "screen"
+          },
+          {
+            "name": "force",
+            "description": "Normally the API will reuse a previously taken screenshot of the URL to give a faster response. This option allows you to retake the screenshot at that exact ti"
+          },
+          {
+            "name": "fullpage",
+            "description": "The API takes a screenshot of the viewable area for the desired screen size. If you need a screenshot of the whole length of the page, use this option."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "website"
+            ],
+            "operation": [
+              "screenshot"
+            ]
+          }
+        }
+      },
+      {
+        "name": "profileName",
+        "displayName": "Profile Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "instagramProfile"
+            ],
+            "resource": [
+              "socialProfile"
+            ]
+          }
+        },
+        "description": "Profile name to get details of"
+      },
+      {
+        "name": "artistName",
+        "displayName": "Artist Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "spotifyArtistProfile"
+            ],
+            "resource": [
+              "socialProfile"
+            ]
+          }
+        },
+        "description": "Artist name to get details for"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "exchangeRate"
+            ],
+            "resource": [
+              "information"
+            ]
+          }
+        },
+        "description": "Value to convert"
+      },
+      {
+        "name": "fromCurrency",
+        "displayName": "From Currency",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "exchangeRate"
+            ],
+            "resource": [
+              "information"
+            ]
+          }
+        }
+      },
+      {
+        "name": "toCurrency",
+        "displayName": "To Currency",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "exchangeRate"
+            ],
+            "resource": [
+              "information"
+            ]
+          }
+        }
+      },
+      {
+        "name": "link",
+        "displayName": "Link To Image",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "imageMetadata"
+            ],
+            "resource": [
+              "information"
+            ]
+          }
+        },
+        "description": "Image to get metadata from"
+      },
+      {
+        "name": "link",
+        "displayName": "Webpage URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "seo"
+            ],
+            "resource": [
+              "website"
+            ]
+          }
+        },
+        "description": "Webpage to get SEO information for"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "headers"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "website"
+            ],
+            "operation": [
+              "seo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "emailAddress",
+        "displayName": "Email Address",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "validateEmail"
+            ],
+            "resource": [
+              "utility"
+            ]
+          }
+        }
+      },
+      {
+        "name": "link",
+        "displayName": "URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "expandURL"
+            ],
+            "resource": [
+              "utility"
+            ]
+          }
+        },
+        "description": "URL to unshorten"
+      }
+    ]
+  }
+}

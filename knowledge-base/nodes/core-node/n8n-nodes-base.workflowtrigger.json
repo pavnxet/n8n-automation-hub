@@ -1,0 +1,113 @@
+{
+  "id": "n8n-nodes-base.workflowtrigger",
+  "name": "Workflow Trigger",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.workflowtrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Workflow Trigger node gets triggered when a workflow is updated or activated",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.workflowtrigger",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Active Workflow Updated",
+      "description": "If you select this event, the node triggers when this workflow is updated"
+    },
+    {
+      "name": "Workflow Activated",
+      "description": "If you select this event, the node triggers when this workflow is activated"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "activated",
+    "active",
+    "core",
+    "gets",
+    "trigger",
+    "triggered",
+    "updated",
+    "workflowtrigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.workflowtrigger.md",
+      "title": "Workflow Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.workflowtrigger",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.workflowtrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.workflowtrigger.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.workflowtrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.workflowtrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.workflowTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Workflow Trigger",
+    "color": "#ff6d5a"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "oldVersionNotice",
+        "displayName": "This node is deprecated and would not be updated in the future. Please use 'n8n Trigger' node instead.",
+        "type": "notice"
+      },
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Active Workflow Updated",
+            "value": "update",
+            "description": "Triggers when this workflow is updated"
+          },
+          {
+            "name": "Workflow Activated",
+            "value": "activate",
+            "description": "Triggers when this workflow is activated"
+          }
+        ],
+        "description": "Specifies under which conditions an execution should happen:\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li><b>Active Workflow Updated</b>: Triggers when this workflow is updated</li>\n\t\t\t\t\t\t<li><b>Workflow Activated</b>: Triggers when this workflo"
+      }
+    ]
+  }
+}

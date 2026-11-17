@@ -1,0 +1,274 @@
+{
+  "id": "n8n-nodes-base.jwt",
+  "name": "JWT",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.jwt",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Documentation for the JWT node in n8n, a workflow automation platform. Includes guidance on usage, and links to examples.",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.jwt",
+  "credentials": {
+    "name": "JWT credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/jwt",
+    "slug": "jwt",
+    "json_file": "credentials/jwt.json",
+    "markdown_file": "credentials/jwt.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Decode",
+      "description": "",
+      "doc": "",
+      "operation_value": "decode"
+    },
+    {
+      "resource": "",
+      "operation": "Sign",
+      "description": "",
+      "doc": "",
+      "operation_value": "sign"
+    },
+    {
+      "resource": "",
+      "operation": "Verify",
+      "description": "",
+      "doc": "",
+      "operation_value": "verify"
+    }
+  ],
+  "operation_count": 3,
+  "parameters": [
+    {
+      "name": "Decode node options",
+      "description": "The Return Additional Info toggle controls how much information the node returns"
+    },
+    {
+      "name": "Sign node options",
+      "description": "Use the Override Algorithm control to select the algorithm to use for verifying the token. This algorithm will override the algorithm selected in the credentials"
+    },
+    {
+      "name": "Verify node options",
+      "description": "This operation includes several node options:"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "automation",
+    "core",
+    "credentials",
+    "decode",
+    "jwt",
+    "options",
+    "platform",
+    "sign",
+    "usage",
+    "verify"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.jwt.md",
+      "title": "JWT",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.jwt",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.jwt.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.jwt.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.jwt.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.jwt.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.jwt",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "jwtAuth"
+  ],
+  "credential_details": [
+    {
+      "name": "jwtAuth",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "JWT"
+  },
+  "subtitle": "={{((operation) => {\n    if (operation === 'sign') {\n        return 'Sign a JWT';\n    }\n    if (operation === 'decode') {\n        return 'Decode a JWT';\n    }\n    if (operation === 'verify') {\n        return 'Verify a JWT';\n    }\n    return operation;\n})($parameter.operation)}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "sign",
+        "options": [
+          {
+            "name": "Decode",
+            "value": "decode"
+          },
+          {
+            "name": "Sign",
+            "value": "sign"
+          },
+          {
+            "name": "Verify",
+            "value": "verify"
+          }
+        ]
+      },
+      {
+        "name": "useJson",
+        "displayName": "Use JSON to Build Payload",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sign"
+            ]
+          }
+        },
+        "description": "Whether to use JSON to build the claims"
+      },
+      {
+        "name": "claims",
+        "displayName": "Payload Claims",
+        "type": "collection",
+        "options": [
+          {
+            "name": "audience",
+            "description": "Identifies the recipients that the JWT is intended for"
+          },
+          {
+            "name": "expiresIn",
+            "description": "The lifetime of the token in seconds"
+          },
+          {
+            "name": "issuer",
+            "description": "Identifies the principal that issued the JWT"
+          },
+          {
+            "name": "jwtid",
+            "description": "Unique identifier for the JWT"
+          },
+          {
+            "name": "notBefore",
+            "description": "The time before which the JWT must not be accepted for processing"
+          },
+          {
+            "name": "subject",
+            "description": "Identifies the principal that is the subject of the JWT"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sign"
+            ],
+            "useJson": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "claimsJson",
+        "displayName": "Payload Claims (JSON)",
+        "type": "json",
+        "default": "{\n  \"my_field_1\": \"value 1\",\n  \"my_field_2\": \"value 2\"\n}\n",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sign"
+            ],
+            "useJson": [
+              true
+            ]
+          }
+        },
+        "description": "Claims to add to the token in JSON format"
+      },
+      {
+        "name": "token",
+        "displayName": "Token",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "verify",
+              "decode"
+            ]
+          }
+        },
+        "description": "The token to verify or decode"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "complete",
+            "description": "Whether to return the complete decoded token with information about the header and signature or just the payload"
+          },
+          {
+            "name": "ignoreExpiration",
+            "description": "Whether to ignore the expiration of the token"
+          },
+          {
+            "name": "ignoreNotBefore",
+            "description": "Whether to ignore the not before claim of the token"
+          },
+          {
+            "name": "clockTolerance",
+            "description": "Number of seconds to tolerate when checking the nbf and exp claims, to deal with small clock differences among different servers"
+          },
+          {
+            "name": "kid",
+            "description": "The kid (key ID) claim is an optional header claim, used to specify the key for validating the signature"
+          },
+          {
+            "name": "algorithm",
+            "description": "The algorithm to use for signing or verifying the token, overrides algorithm in credentials"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "id": "n8n-nodes-langchain.chainretrievalqa",
+  "name": "Question and Answer Chain",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.chainretrievalqa",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Question and Answer Chain node to use a vector store[^1] as a retriever",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainretrievalqa",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Query",
+      "description": "The question you want to ask"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Can't produce longer responses",
+      "page": "common-issues.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainretrievalqa/common-issues#cant-produce-longer-responses",
+      "summary": "If you need to generate longer responses than the Question and Answer Chain node produces by default, you can try one or more of the following techniques:",
+      "parameters": [
+        {
+          "name": "Connect a more verbose model",
+          "description": "Some AI models produce more terse results than others. Swapping your model for one with a larger context window and more verbose output can increase the word length of your responses"
+        },
+        {
+          "name": "Increase the maximum number of tokens",
+          "description": "Many model nodes (for example the OpenAI Chat Model) include a Maximum Number of Tokens option. You can set this to increase the maximum number of tokens the model can use to produce a response"
+        },
+        {
+          "name": "Build larger responses in stages",
+          "description": "For more detailed answers, you may want to construct replies in stages using a variety of AI nodes. You can use AI split up a single question into multiple prompts and create responses for each. You can then compose a final reply by combining the responses again. Though the details are different, yo"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "No prompt specified error",
+      "summary": "This error displays when the Prompt is empty or invalid"
+    },
+    {
+      "title": "A Retriever sub-node must be connected error",
+      "summary": "This error displays when n8n tries to execute the node without having a Retriever connected"
+    },
+    {
+      "title": "Can't produce longer responses",
+      "summary": "If you need to generate longer responses than the Question and Answer Chain node produces by default, you can try one or more of the following techniques:"
+    }
+  ],
+  "keywords": [
+    "answer",
+    "chain",
+    "chainretrievalqa",
+    "cluster",
+    "query",
+    "question",
+    "retriever",
+    "root",
+    "store",
+    "vector"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Question and Answer Chain node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainretrievalqa",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainretrievalqa/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Question and Answer Chain node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainretrievalqa/common-issues",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainretrievalqa/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.chainretrievalqa.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.chainretrievalqa.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.chainretrievalqa/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+  "type_version": 1.7,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6,
+    1.7
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Question and Answer Chain"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main",
+      {
+        "displayName": "Model",
+        "maxConnections": 1,
+        "type": "ai_languageModel",
+        "required": true
+      },
+      {
+        "displayName": "Retriever",
+        "maxConnections": 1,
+        "type": "ai_retriever",
+        "required": true
+      }
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "Save time with an <a href=\"/templates/1960\" target=\"_blank\">example</a> of how this node works",
+        "type": "notice"
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "default": "={{ $json.input }}",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "default": "={{ $json.chat_input }}",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.1
+            ]
+          }
+        }
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "default": "={{ $json.chatInput }}",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.2
+            ]
+          }
+        }
+      },
+      {
+        "name": "promptType",
+        "displayName": "Source for Prompt (User Message)",
+        "type": "options",
+        "default": "auto",
+        "options": [
+          {
+            "name": "Connected Chat Trigger Node",
+            "value": "auto",
+            "description": "Looks for an input field called 'chatInput' that is coming from a directly connected Chat Trigger"
+          },
+          {
+            "name": "Connected Guardrails Node",
+            "value": "guardrails",
+            "description": "Looks for an input field called 'guardrailsInput' that is coming from a directly connected Guardrails Node"
+          },
+          {
+            "name": "Define below",
+            "value": "define",
+            "description": "Use an expression to reference data in previous nodes or enter static text"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1.2
+                }
+              },
+              {
+                "_cnd": {
+                  "gte": 1.7
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "promptType",
+        "displayName": "Source for Prompt (User Message)",
+        "type": "options",
+        "default": "auto",
+        "options": [
+          {
+            "name": "Connected Chat Trigger Node",
+            "value": "auto",
+            "description": "Looks for an input field called 'chatInput' that is coming from a directly connected Chat Trigger"
+          },
+          {
+            "name": "Define below",
+            "value": "define",
+            "description": "Use an expression to reference data in previous nodes or enter static text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.7
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Prompt (User Message)",
+        "type": "string",
+        "required": true,
+        "default": "={{ $json.guardrailsInput }}",
+        "displayOptions": {
+          "show": {
+            "promptType": [
+              "guardrails"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.4
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Prompt (User Message)",
+        "type": "string",
+        "required": true,
+        "default": "={{ $json.chatInput }}",
+        "displayOptions": {
+          "show": {
+            "promptType": [
+              "auto"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.4
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Prompt (User Message)",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "promptType": [
+              "define"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "systemPromptTemplate",
+            "description": "Template string used for the system prompt. This should include the variable `{context}` for the provided context. For text completion models, you should also i"
+          },
+          {
+            "name": "systemPromptTemplate",
+            "description": "Template string used for the system prompt. This should include the variable `{context}` for the provided context. For text completion models, you should also i"
+          },
+          {
+            "name": "batching",
+            "description": "Batch processing options for rate limiting"
+          }
+        ]
+      }
+    ]
+  }
+}

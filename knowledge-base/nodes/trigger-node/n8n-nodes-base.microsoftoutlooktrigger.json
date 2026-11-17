@@ -1,0 +1,352 @@
+{
+  "id": "n8n-nodes-base.microsoftoutlooktrigger",
+  "name": "Microsoft Outlook Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.microsoftoutlooktrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Microsoft Outlook Trigger node to respond to events in Microsoft Outlook and integrate Microsoft Outlook with other applications",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.microsoftoutlooktrigger",
+  "credentials": {
+    "name": "Microsoft Entra Service Principal",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/microsoftentraserviceprincipal",
+    "slug": "microsoftentraserviceprincipal",
+    "json_file": "credentials/microsoftentraserviceprincipal.json",
+    "markdown_file": "credentials/microsoftentraserviceprincipal.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "applications",
+    "entra",
+    "events",
+    "microsoft",
+    "microsoftoutlooktrigger",
+    "outlook",
+    "principal",
+    "respond",
+    "service",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.microsoftoutlooktrigger.md",
+      "title": "Microsoft Outlook Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.microsoftoutlooktrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.microsoftoutlooktrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.microsoftoutlooktrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.microsoftoutlooktrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.microsoftoutlooktrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.microsoftOutlookTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "microsoftOutlookOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "microsoftOutlookOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Microsoft Outlook Trigger"
+  },
+  "subtitle": "={{\"Microsoft Outlook Trigger\"}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "event",
+        "displayName": "Trigger On",
+        "type": "options",
+        "default": "messageReceived",
+        "options": [
+          {
+            "name": "Message Received",
+            "value": "messageReceived"
+          }
+        ]
+      },
+      {
+        "name": "output",
+        "displayName": "Output",
+        "type": "options",
+        "default": "simple",
+        "options": [
+          {
+            "name": "Simplified",
+            "value": "simple"
+          },
+          {
+            "name": "Raw",
+            "value": "raw"
+          },
+          {
+            "name": "Select Included Fields",
+            "value": "fields"
+          }
+        ]
+      },
+      {
+        "name": "fields",
+        "displayName": "Fields",
+        "type": "multiOptions",
+        "options": [
+          {
+            "name": "bccRecipients",
+            "value": "bccRecipients"
+          },
+          {
+            "name": "body",
+            "value": "body"
+          },
+          {
+            "name": "bodyPreview",
+            "value": "bodyPreview"
+          },
+          {
+            "name": "categories",
+            "value": "categories"
+          },
+          {
+            "name": "ccRecipients",
+            "value": "ccRecipients"
+          },
+          {
+            "name": "changeKey",
+            "value": "changeKey"
+          },
+          {
+            "name": "conversationId",
+            "value": "conversationId"
+          },
+          {
+            "name": "createdDateTime",
+            "value": "createdDateTime"
+          },
+          {
+            "name": "flag",
+            "value": "flag"
+          },
+          {
+            "name": "from",
+            "value": "from"
+          },
+          {
+            "name": "hasAttachments",
+            "value": "hasAttachments"
+          },
+          {
+            "name": "importance",
+            "value": "importance"
+          },
+          {
+            "name": "inferenceClassification",
+            "value": "inferenceClassification"
+          },
+          {
+            "name": "internetMessageId",
+            "value": "internetMessageId"
+          },
+          {
+            "name": "isDeliveryReceiptRequested",
+            "value": "isDeliveryReceiptRequested"
+          },
+          {
+            "name": "isDraft",
+            "value": "isDraft"
+          },
+          {
+            "name": "isRead",
+            "value": "isRead"
+          },
+          {
+            "name": "isReadReceiptRequested",
+            "value": "isReadReceiptRequested"
+          },
+          {
+            "name": "lastModifiedDateTime",
+            "value": "lastModifiedDateTime"
+          },
+          {
+            "name": "parentFolderId",
+            "value": "parentFolderId"
+          },
+          {
+            "name": "receivedDateTime",
+            "value": "receivedDateTime"
+          },
+          {
+            "name": "replyTo",
+            "value": "replyTo"
+          },
+          {
+            "name": "sender",
+            "value": "sender"
+          },
+          {
+            "name": "sentDateTime",
+            "value": "sentDateTime"
+          },
+          {
+            "name": "subject",
+            "value": "subject"
+          },
+          {
+            "name": "toRecipients",
+            "value": "toRecipients"
+          },
+          {
+            "name": "webLink",
+            "value": "webLink"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "output": [
+              "fields"
+            ]
+          }
+        },
+        "description": "The fields to add to the output"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "custom"
+          },
+          {
+            "name": "hasAttachments"
+          },
+          {
+            "name": "foldersToExclude",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "foldersToInclude",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "readStatus"
+          },
+          {
+            "name": "sender",
+            "description": "Sender name or email to filter by"
+          }
+        ]
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attachmentsPrefix",
+            "description": "Prefix for name of the output fields to put the binary files data in. An index starting from 0 will be added. So if name is \"attachment_\" the first attachment i"
+          },
+          {
+            "name": "downloadAttachments",
+            "description": "Whether the message's attachments will be downloaded and included in the output"
+          }
+        ]
+      }
+    ]
+  }
+}

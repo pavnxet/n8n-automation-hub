@@ -1,0 +1,263 @@
+{
+  "id": "n8n-nodes-base.mocean",
+  "name": "Mocean",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.mocean",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Mocean node to automate work in Mocean, and integrate Mocean with other applications. n8n has built-in support for a wide range of Mocean features, including sending SMS, and voice messages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mocean",
+  "credentials": {
+    "name": "Mocean",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mocean",
+    "slug": "mocean",
+    "json_file": "credentials/mocean.json",
+    "markdown_file": "credentials/mocean.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "SMS",
+      "operation": "Send SMS/Voice message",
+      "description": "",
+      "doc": "",
+      "resource_value": "sms",
+      "operation_value": "send"
+    },
+    {
+      "resource": "Voice",
+      "operation": "Send SMS/Voice message",
+      "description": "",
+      "doc": "",
+      "resource_value": "voice",
+      "operation_value": "send"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "including",
+    "message",
+    "messages",
+    "mocean",
+    "send",
+    "sending",
+    "sms",
+    "voice",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mocean.md",
+      "title": "Mocean node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mocean",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mocean.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.mocean.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.mocean.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.mocean.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mocean",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "moceanApi"
+  ],
+  "credential_details": [
+    {
+      "name": "moceanApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Mocean"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "sms",
+        "options": [
+          {
+            "name": "SMS",
+            "value": "sms"
+          },
+          {
+            "name": "Voice",
+            "value": "voice"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send SMS/Voice message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "sms",
+              "voice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "from",
+        "displayName": "From",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms",
+              "voice"
+            ]
+          }
+        },
+        "description": "Number to which to send the message"
+      },
+      {
+        "name": "to",
+        "displayName": "To",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms",
+              "voice"
+            ]
+          }
+        },
+        "description": "Number from which to send the message"
+      },
+      {
+        "name": "language",
+        "displayName": "Language",
+        "type": "options",
+        "default": "en-US",
+        "options": [
+          {
+            "name": "Chinese Mandarin (China)",
+            "value": "cmn-CN"
+          },
+          {
+            "name": "English (United Kingdom)",
+            "value": "en-GB"
+          },
+          {
+            "name": "English (United States)",
+            "value": "en-US"
+          },
+          {
+            "name": "Japanese (Japan)",
+            "value": "ja-JP"
+          },
+          {
+            "name": "Korean (Korea)",
+            "value": "ko-KR"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "voice"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms",
+              "voice"
+            ]
+          }
+        },
+        "description": "Message to send"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dlrUrl"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "sms"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

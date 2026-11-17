@@ -1,0 +1,165 @@
+{
+  "id": "n8n-nodes-base.mautictrigger",
+  "name": "Mautic Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.mautictrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Mautic is an open-source marketing automation software that helps online businesses automate their repetitive marketing tasks such as lead generation, contact scoring, contact segmentation, and marketing campaigns",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mautictrigger",
+  "credentials": {
+    "name": "Mautic credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mautic",
+    "slug": "mautic",
+    "json_file": "credentials/mautic.json",
+    "markdown_file": "credentials/mautic.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "automation",
+    "businesses",
+    "campaigns",
+    "contact",
+    "credentials",
+    "generation",
+    "helps",
+    "lead",
+    "marketing",
+    "mautic",
+    "mautictrigger",
+    "online",
+    "open",
+    "repetitive",
+    "scoring",
+    "segmentation",
+    "software",
+    "source",
+    "such",
+    "tasks",
+    "their",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mautictrigger.md",
+      "title": "Mautic Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mautictrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.mautictrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.mautictrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.mautictrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.mautictrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mauticTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mauticApi",
+    "mauticOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "mauticApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "credentials"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mauticOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Mautic Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "credentials",
+        "options": [
+          {
+            "name": "Credentials",
+            "value": "credentials"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "events",
+        "displayName": "Event Names or IDs",
+        "type": "multiOptions",
+        "required": true,
+        "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "eventsOrder",
+        "displayName": "Events Order",
+        "type": "options",
+        "default": "ASC",
+        "options": [
+          {
+            "name": "ASC",
+            "value": "ASC"
+          },
+          {
+            "name": "DESC",
+            "value": "DESC"
+          }
+        ],
+        "description": "Order direction for queued events in one webhook. Can be “DESC” or “ASC”."
+      }
+    ]
+  }
+}

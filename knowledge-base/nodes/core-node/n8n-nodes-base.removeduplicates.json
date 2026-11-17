@@ -1,0 +1,300 @@
+{
+  "id": "n8n-nodes-base.removeduplicates",
+  "name": "Remove Duplicates",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.removeduplicates",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Remove Duplicates node to identify and delete items that are:",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.removeduplicates",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "core",
+    "delete",
+    "duplicates",
+    "identify",
+    "items",
+    "remove",
+    "removeduplicates"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "0nvcx1EqJQgGVzUXOOMN",
+      "name": "data-section-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Remove Duplicates node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.removeduplicates",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.removeduplicates/index.md"
+    },
+    {
+      "page": "templates-and-examples.md",
+      "title": "Remove Duplicates node templates and Examples",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.removeduplicates/templates-and-examples",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.removeduplicates/templates-and-examples.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.removeduplicates.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.removeduplicates.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.removeduplicates/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.removeDuplicates",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Remove Duplicates"
+  },
+  "subtitle": "",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "removeDuplicateInputItems",
+        "options": [
+          {
+            "name": "Remove Items Repeated Within Current Input",
+            "value": "removeDuplicateInputItems",
+            "description": "Remove duplicates from incoming items"
+          },
+          {
+            "name": "Remove Items Processed in Previous Executions",
+            "value": "removeItemsSeenInPreviousExecutions",
+            "description": "Deduplicate items already seen in previous executions"
+          },
+          {
+            "name": "Clear Deduplication History",
+            "value": "clearDeduplicationHistory",
+            "description": "Wipe the store of previous items"
+          }
+        ]
+      },
+      {
+        "name": "compare",
+        "displayName": "Compare",
+        "type": "options",
+        "default": "allFields",
+        "options": [
+          {
+            "name": "All Fields",
+            "value": "allFields"
+          },
+          {
+            "name": "All Fields Except",
+            "value": "allFieldsExcept"
+          },
+          {
+            "name": "Selected Fields",
+            "value": "selectedFields"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "removeDuplicateInputItems"
+            ]
+          }
+        },
+        "description": "The fields of the input items to compare to see if they are the same"
+      },
+      {
+        "name": "fieldsToExclude",
+        "displayName": "Fields To Exclude",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "compare": [
+              "allFieldsExcept"
+            ]
+          }
+        },
+        "description": "Fields in the input to exclude from the comparison"
+      },
+      {
+        "name": "fieldsToCompare",
+        "displayName": "Fields To Compare",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "compare": [
+              "selectedFields"
+            ]
+          }
+        },
+        "description": "Fields in the input to add to the comparison"
+      },
+      {
+        "name": "logic",
+        "displayName": "Keep Items Where",
+        "type": "options",
+        "default": "removeItemsWithAlreadySeenKeyValues",
+        "options": [
+          {
+            "name": "Value Is New",
+            "value": "removeItemsWithAlreadySeenKeyValues",
+            "description": "Remove all input items with values matching those already processed"
+          },
+          {
+            "name": "Value Is Higher than Any Previous Value",
+            "value": "removeItemsUpToStoredIncrementalKey",
+            "description": "Works with incremental values, removes all input items with values up to the stored value"
+          },
+          {
+            "name": "Value Is a Date Later than Any Previous Date",
+            "value": "removeItemsUpToStoredDate",
+            "description": "Works with date values, removes all input items with values up to the stored date"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "removeItemsSeenInPreviousExecutions"
+            ]
+          }
+        },
+        "description": "How to select input items to remove by comparing them with key values previously processed"
+      },
+      {
+        "name": "dedupeValue",
+        "displayName": "Value to Dedupe On",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "logic": [
+              "removeItemsWithAlreadySeenKeyValues"
+            ],
+            "/operation": [
+              "removeItemsSeenInPreviousExecutions"
+            ]
+          }
+        },
+        "description": "Use an input field (or a combination of fields) that has a unique ID value"
+      },
+      {
+        "name": "incrementalDedupeValue",
+        "displayName": "Value to Dedupe On",
+        "type": "number",
+        "displayOptions": {
+          "show": {
+            "logic": [
+              "removeItemsUpToStoredIncrementalKey"
+            ],
+            "/operation": [
+              "removeItemsSeenInPreviousExecutions"
+            ]
+          }
+        },
+        "description": "Use an input field (or a combination of fields) that has an incremental value"
+      },
+      {
+        "name": "dateDedupeValue",
+        "displayName": "Value to Dedupe On",
+        "type": "dateTime",
+        "displayOptions": {
+          "show": {
+            "logic": [
+              "removeItemsUpToStoredDate"
+            ],
+            "/operation": [
+              "removeItemsSeenInPreviousExecutions"
+            ]
+          }
+        },
+        "description": "Use an input field that has a date value in ISO format"
+      },
+      {
+        "name": "mode",
+        "displayName": "Mode",
+        "type": "options",
+        "default": "cleanDatabase",
+        "options": [
+          {
+            "name": "Clean Database",
+            "value": "cleanDatabase",
+            "description": "Clear all values stored for a key in the database"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "clearDeduplicationHistory"
+            ]
+          }
+        },
+        "description": "How you want to modify the key values stored on the database. None of these modes removes input items."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "disableDotNotation",
+            "description": "Whether to disallow referencing child fields using `parent.child` in the field name"
+          },
+          {
+            "name": "removeOtherFields",
+            "description": "Whether to remove any fields that are not being compared. If disabled, will keep the values from the first of the duplicates."
+          },
+          {
+            "name": "scope",
+            "description": "If set to ‘workflow,’ key values will be shared across all nodes in the workflow. If set to ‘node,’ key values will be specific to this node."
+          },
+          {
+            "name": "historySize"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "removeDuplicateInputItems",
+              "removeItemsSeenInPreviousExecutions",
+              "clearDeduplicationHistory"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

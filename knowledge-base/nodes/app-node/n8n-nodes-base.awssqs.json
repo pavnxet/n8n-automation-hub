@@ -1,0 +1,254 @@
+{
+  "id": "n8n-nodes-base.awssqs",
+  "name": "AWS SQS",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.awssqs",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the AWS SQS node to automate work in AWS SNS, and integrate AWS SQS with other applications. n8n has built-in support for a wide range of AWS SQS features, including sending messages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awssqs",
+  "credentials": {
+    "name": "AWS SQS",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/aws",
+    "slug": "aws",
+    "json_file": "credentials/aws.json",
+    "markdown_file": "credentials/aws.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Send a message to a queue",
+      "description": "",
+      "doc": ""
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "aws",
+    "awssqs",
+    "including",
+    "message",
+    "messages",
+    "queue",
+    "send",
+    "sending",
+    "sqs",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.awssqs.md",
+      "title": "AWS SQS node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awssqs",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.awssqs.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.awssqs.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.awssqs.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.awssqs.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.awsSqs",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "aws",
+    "awsAssumeRole"
+  ],
+  "credential_details": [
+    {
+      "name": "aws",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "iam"
+          ]
+        }
+      }
+    },
+    {
+      "name": "awsAssumeRole",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "assumeRole"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "AWS SQS"
+  },
+  "subtitle": "={{$parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "iam",
+        "options": [
+          {
+            "name": "AWS (IAM)",
+            "value": "iam"
+          },
+          {
+            "name": "AWS (Assume Role)",
+            "value": "assumeRole"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "sendMessage",
+        "options": [
+          {
+            "name": "Send Message",
+            "value": "sendMessage",
+            "description": "Send a message to a queue"
+          }
+        ]
+      },
+      {
+        "name": "queue",
+        "displayName": "Queue Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendMessage"
+            ]
+          }
+        },
+        "description": "Queue to send a message to. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "queueType",
+        "displayName": "Queue Type",
+        "type": "options",
+        "default": "standard",
+        "options": [
+          {
+            "name": "FIFO",
+            "value": "fifo",
+            "description": "FIFO SQS queue"
+          },
+          {
+            "name": "Standard",
+            "value": "standard",
+            "description": "Standard SQS queue"
+          }
+        ]
+      },
+      {
+        "name": "sendInputData",
+        "displayName": "Send Input Data",
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to send the data the node receives as JSON to SQS"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendMessage"
+            ],
+            "sendInputData": [
+              false
+            ]
+          }
+        },
+        "description": "Message to send to the queue"
+      },
+      {
+        "name": "messageGroupId",
+        "displayName": "Message Group ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "queueType": [
+              "fifo"
+            ]
+          }
+        },
+        "description": "Tag that specifies that a message belongs to a specific message group. Applies only to FIFO (first-in-first-out) queues."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "delaySeconds",
+            "description": "How long, in seconds, to delay a message for"
+          },
+          {
+            "name": "messageAttributes",
+            "description": "Attributes to set"
+          },
+          {
+            "name": "messageDeduplicationId",
+            "description": "Token used for deduplication of sent messages. Applies only to FIFO (first-in-first-out) queues."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendMessage"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

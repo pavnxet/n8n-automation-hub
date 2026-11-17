@@ -1,0 +1,810 @@
+{
+  "id": "n8n-nodes-base.merge",
+  "name": "Merge",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.merge",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Merge node to combine data from multiple streams, once data of all streams is available",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.merge",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Append",
+      "description": "Keep data from all inputs. Choose a Number of Inputs to output items of each input, one after another. The node waits for the execution of all connected inputs"
+    },
+    {
+      "name": "Combine",
+      "description": "Combine data from two inputs. Select an option in Combine By to determine how you want to merge the input data"
+    },
+    {
+      "name": "Matching Fields",
+      "description": "Compare items by field values. Enter the fields you want to compare in Fields to Match",
+      "options": [
+        "Keep Matches: Merge items that match. This is like an inner join",
+        "Keep Non-Matches: Merge items that don't match"
+      ]
+    },
+    {
+      "name": "Position",
+      "description": "Combine items based on their order. The item at index 0 in Input 1 merges with the item at index 0 in Input 2, and so on"
+    },
+    {
+      "name": "All Possible Combinations",
+      "description": "Output all possible item combinations, while merging fields with the same name"
+    },
+    {
+      "name": "Combine mode options",
+      "description": "When merging data by Mode > Combine, you can set these Options:"
+    },
+    {
+      "name": "Clash Handling"
+    },
+    {
+      "name": "SQL Query",
+      "description": "Write a custom SQL Query to merge the data"
+    },
+    {
+      "name": "Use query parameters",
+      "description": "When creating a SQL query in the Merge node, you can use the Query Parameters field in the Options section to load values into the query. n8n treats query parameter values as data, which helps avoid changing the SQL query structure with dynamic values"
+    },
+    {
+      "name": "Handle queries that return no rows",
+      "description": "Use Options > Empty Query Result to choose what the node outputs when the query runs without errors but returns no rows:",
+      "options": [
+        "Empty Result (default): the node outputs no items",
+        "Success: the node outputs a single item, { \"success\": true }"
+      ]
+    },
+    {
+      "name": "Choose Branch",
+      "description": "Choose which input to keep. This option always waits until the data from both inputs is available. You can choose to Output:",
+      "options": [
+        "The Input 1 Data",
+        "The Input 2 Data",
+        "A Single, Empty Item"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "append",
+    "available",
+    "branch",
+    "choose",
+    "clash",
+    "combinations",
+    "combine",
+    "core",
+    "data",
+    "fields",
+    "handle",
+    "handling",
+    "matching",
+    "merge",
+    "mode",
+    "multiple",
+    "once",
+    "options",
+    "parameters",
+    "position",
+    "possible",
+    "queries",
+    "query",
+    "return",
+    "rows",
+    "sql",
+    "streams"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "VJPiDgC5Bx5FmuGODmCq",
+      "name": "field-value-clash"
+    },
+    {
+      "id": "o5sVhTw0cyO5aAAkAVDj",
+      "name": "if-merge-branch-execution"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.merge.md",
+      "title": "Merge",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.merge",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.merge.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.merge.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.merge.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.merge.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.merge",
+  "type_version": 3.2,
+  "type_versions": [
+    3,
+    3.1,
+    3.2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Merge"
+  },
+  "subtitle": "={{$parameter[\"mode\"]}}",
+  "io": {
+    "inputs": "={{((parameters) => {\n    return Array.from({ length: parameters.numberInputs || 2 }, (_, i) => ({\n        type: 'main',\n        displayName: `Input ${(i + 1).toString()}`,\n    }));\n})($parameter)}}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 20,
+    "parameters": [
+      {
+        "name": "mode",
+        "displayName": "Mode",
+        "type": "options",
+        "default": "append",
+        "options": [
+          {
+            "name": "Append",
+            "value": "append",
+            "description": "Output items of each input, one after the other"
+          },
+          {
+            "name": "Combine",
+            "value": "combine",
+            "description": "Merge matching items together"
+          },
+          {
+            "name": "SQL Query",
+            "value": "combineBySql",
+            "description": "Write a query to do the merge"
+          },
+          {
+            "name": "Choose Branch",
+            "value": "chooseBranch",
+            "description": "Output data from a specific branch, without modifying it"
+          }
+        ],
+        "description": "How input data should be merged"
+      },
+      {
+        "name": "combineBy",
+        "displayName": "Combine By",
+        "type": "options",
+        "default": "combineByFields",
+        "options": [
+          {
+            "name": "Matching Fields",
+            "value": "combineByFields",
+            "description": "Combine items with the same field values"
+          },
+          {
+            "name": "Position",
+            "value": "combineByPosition",
+            "description": "Combine items based on their order"
+          },
+          {
+            "name": "All Possible Combinations",
+            "value": "combineAll",
+            "description": "Every pairing of every two items (cross join)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "combine"
+            ]
+          }
+        },
+        "description": "How input data should be merged"
+      },
+      {
+        "name": "numberInputs",
+        "displayName": "Number of Inputs",
+        "type": "options",
+        "default": 2,
+        "options": [
+          {
+            "name": "2",
+            "value": 2
+          },
+          {
+            "name": "3",
+            "value": 3
+          },
+          {
+            "name": "4",
+            "value": 4
+          },
+          {
+            "name": "5",
+            "value": 5
+          },
+          {
+            "name": "6",
+            "value": 6
+          },
+          {
+            "name": "7",
+            "value": 7
+          },
+          {
+            "name": "8",
+            "value": 8
+          },
+          {
+            "name": "9",
+            "value": 9
+          },
+          {
+            "name": "10",
+            "value": 10
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "append"
+            ]
+          }
+        },
+        "description": "The number of data inputs you want to merge. The node waits for all connected inputs to be executed."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "clashHandling"
+          },
+          {
+            "name": "fuzzyCompare",
+            "description": "Whether to tolerate small type differences when comparing fields. E.g. the number 3 and the string '3' are treated as the same."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "advanced",
+        "displayName": "Fields To Match Have Different Names",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineByFields"
+            ]
+          }
+        },
+        "description": "Whether name(s) of field to match are different in input 1 and input 2"
+      },
+      {
+        "name": "fieldsToMatchString",
+        "displayName": "Fields to Match",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "advanced": [
+              false
+            ],
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineByFields"
+            ]
+          }
+        },
+        "description": "Specify the fields to use for matching input items"
+      },
+      {
+        "name": "mergeByFields",
+        "displayName": "Fields to Match",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "field1": "",
+              "field2": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field1",
+                "displayName": "Input 1 Field",
+                "type": "string"
+              },
+              {
+                "name": "field2",
+                "displayName": "Input 2 Field",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "advanced": [
+              true
+            ],
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineByFields"
+            ]
+          }
+        },
+        "description": "Specify the fields to use for matching input items"
+      },
+      {
+        "name": "joinMode",
+        "displayName": "Output Type",
+        "type": "options",
+        "default": "keepMatches",
+        "options": [
+          {
+            "name": "Keep Matches",
+            "value": "keepMatches",
+            "description": "Items that match, merged together (inner join)"
+          },
+          {
+            "name": "Keep Non-Matches",
+            "value": "keepNonMatches",
+            "description": "Items that don't match"
+          },
+          {
+            "name": "Keep Everything",
+            "value": "keepEverything",
+            "description": "Items that match merged together, plus items that don't match (outer join)"
+          },
+          {
+            "name": "Enrich Input 1",
+            "value": "enrichInput1",
+            "description": "All of input 1, with data from input 2 added in (left join)"
+          },
+          {
+            "name": "Enrich Input 2",
+            "value": "enrichInput2",
+            "description": "All of input 2, with data from input 1 added in (right join)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineByFields"
+            ]
+          }
+        },
+        "description": "How to select the items to send to output"
+      },
+      {
+        "name": "outputDataFrom",
+        "displayName": "Output Data From",
+        "type": "options",
+        "default": "both",
+        "options": [
+          {
+            "name": "Both Inputs Merged Together",
+            "value": "both"
+          },
+          {
+            "name": "Input 1",
+            "value": "input1"
+          },
+          {
+            "name": "Input 2",
+            "value": "input2"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "joinMode": [
+              "keepMatches"
+            ],
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineByFields"
+            ]
+          }
+        }
+      },
+      {
+        "name": "outputDataFrom",
+        "displayName": "Output Data From",
+        "type": "options",
+        "default": "both",
+        "options": [
+          {
+            "name": "Both Inputs Appended Together",
+            "value": "both"
+          },
+          {
+            "name": "Input 1",
+            "value": "input1"
+          },
+          {
+            "name": "Input 2",
+            "value": "input2"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "joinMode": [
+              "keepNonMatches"
+            ],
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineByFields"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "clashHandling"
+          },
+          {
+            "name": "clashHandling"
+          },
+          {
+            "name": "disableDotNotation",
+            "description": "Whether to disallow referencing child fields using `parent.child` in the field name"
+          },
+          {
+            "name": "fuzzyCompare",
+            "description": "Whether to tolerate small type differences when comparing fields. E.g. the number 3 and the string '3' are treated as the same."
+          },
+          {
+            "name": "multipleMatches"
+          },
+          {
+            "name": "multipleMatches"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineByFields"
+            ]
+          }
+        }
+      },
+      {
+        "name": "numberInputs",
+        "displayName": "Number of Inputs",
+        "type": "options",
+        "default": 2,
+        "options": [
+          {
+            "name": "2",
+            "value": 2
+          },
+          {
+            "name": "3",
+            "value": 3
+          },
+          {
+            "name": "4",
+            "value": 4
+          },
+          {
+            "name": "5",
+            "value": 5
+          },
+          {
+            "name": "6",
+            "value": 6
+          },
+          {
+            "name": "7",
+            "value": 7
+          },
+          {
+            "name": "8",
+            "value": 8
+          },
+          {
+            "name": "9",
+            "value": 9
+          },
+          {
+            "name": "10",
+            "value": 10
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "combineBySql"
+            ]
+          }
+        },
+        "description": "The number of data inputs you want to merge. The node waits for all connected inputs to be executed."
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "default": "SELECT * FROM input1 LEFT JOIN input2 ON input1.name = input2.id",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "combineBySql"
+            ]
+          }
+        },
+        "description": "Input data available as tables with corresponding number, e.g. input1, input2"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "emptyQueryResult",
+            "description": "What to return if the query executed successfully but returned no results"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              3.2
+            ],
+            "mode": [
+              "combineBySql"
+            ]
+          }
+        }
+      },
+      {
+        "name": "numberInputs",
+        "displayName": "Number of Inputs",
+        "type": "options",
+        "default": 2,
+        "options": [
+          {
+            "name": "2",
+            "value": 2
+          },
+          {
+            "name": "3",
+            "value": 3
+          },
+          {
+            "name": "4",
+            "value": 4
+          },
+          {
+            "name": "5",
+            "value": 5
+          },
+          {
+            "name": "6",
+            "value": 6
+          },
+          {
+            "name": "7",
+            "value": 7
+          },
+          {
+            "name": "8",
+            "value": 8
+          },
+          {
+            "name": "9",
+            "value": 9
+          },
+          {
+            "name": "10",
+            "value": 10
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineByPosition"
+            ]
+          }
+        },
+        "description": "The number of data inputs you want to merge. The node waits for all connected inputs to be executed."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "clashHandling"
+          },
+          {
+            "name": "includeUnpaired",
+            "description": "Whether unpaired items should be included in the result when there are differing numbers of items among the inputs"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "combine"
+            ],
+            "combineBy": [
+              "combineByPosition"
+            ]
+          }
+        }
+      },
+      {
+        "name": "numberInputs",
+        "displayName": "Number of Inputs",
+        "type": "options",
+        "default": 2,
+        "options": [
+          {
+            "name": "2",
+            "value": 2
+          },
+          {
+            "name": "3",
+            "value": 3
+          },
+          {
+            "name": "4",
+            "value": 4
+          },
+          {
+            "name": "5",
+            "value": 5
+          },
+          {
+            "name": "6",
+            "value": 6
+          },
+          {
+            "name": "7",
+            "value": 7
+          },
+          {
+            "name": "8",
+            "value": 8
+          },
+          {
+            "name": "9",
+            "value": 9
+          },
+          {
+            "name": "10",
+            "value": 10
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "chooseBranch"
+            ]
+          }
+        },
+        "description": "The number of data inputs you want to merge. The node waits for all connected inputs to be executed."
+      },
+      {
+        "name": "chooseBranchMode",
+        "displayName": "Output Type",
+        "type": "options",
+        "default": "waitForAll",
+        "options": [
+          {
+            "name": "Wait for All Inputs to Arrive",
+            "value": "waitForAll"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "chooseBranch"
+            ]
+          }
+        }
+      },
+      {
+        "name": "output",
+        "displayName": "Output",
+        "type": "options",
+        "default": "specifiedInput",
+        "options": [
+          {
+            "name": "Data of Specified Input",
+            "value": "specifiedInput"
+          },
+          {
+            "name": "A Single, Empty Item",
+            "value": "empty"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "chooseBranchMode": [
+              "waitForAll"
+            ],
+            "mode": [
+              "chooseBranch"
+            ]
+          }
+        }
+      },
+      {
+        "name": "useDataOfInput",
+        "displayName": "Use Data of Input",
+        "type": "options",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "output": [
+              "specifiedInput"
+            ],
+            "mode": [
+              "chooseBranch"
+            ]
+          }
+        },
+        "description": "The number of the input to use data of"
+      }
+    ]
+  }
+}

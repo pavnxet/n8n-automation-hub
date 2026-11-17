@@ -1,0 +1,132 @@
+{
+  "id": "n8n-nodes-base.if",
+  "name": "If",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.if",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the If node to split a workflow conditionally based on comparison operations",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.if",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "based",
+    "comparison",
+    "conditionally",
+    "core",
+    "if",
+    "operations",
+    "split"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "o5sVhTw0cyO5aAAkAVDj",
+      "name": "if-merge-branch-execution"
+    },
+    {
+      "id": "bMMOCQFbQ4YpKDnWQQOg",
+      "name": "data-types"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.if.md",
+      "title": "If",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.if",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.if.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.if.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.if.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.if.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.if",
+  "type_version": 2.3,
+  "type_versions": [
+    2,
+    2.1,
+    2.2,
+    2.3
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "If",
+    "color": "#408000"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main",
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "conditions",
+        "displayName": "Conditions",
+        "type": "filter"
+      },
+      {
+        "name": "looseTypeValidation",
+        "displayName": "Convert types where required",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "If the type of an expression doesn't match the type of the comparison, n8n will try to cast the expression to the required type. E.g. for booleans <code>\"false\"</code> or <code>0</code> will be cast to <code>false</code>"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "ignoreCase",
+            "description": "Whether to ignore letter case when evaluating conditions"
+          },
+          {
+            "name": "looseTypeValidation",
+            "description": "If the type of an expression doesn't match the type of the comparison, n8n will try to cast the expression to the required type. E.g. for booleans <code>\"false\""
+          }
+        ]
+      }
+    ]
+  }
+}

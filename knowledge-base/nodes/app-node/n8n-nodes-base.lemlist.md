@@ -1,0 +1,36 @@
+<!-- n8n built-in node reference: n8n-nodes-base.lemlist | source: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.lemlist -->
+
+Use the Lemlist node to automate work in Lemlist, and integrate Lemlist with other applications. n8n has built-in support for a wide range of Lemlist features, including getting activities, teams and campaigns, as well as creating, updating, and deleting leads. 
+
+On this page, you'll find a list of operations the Lemlist node supports and links to more resources.
+
+> **Credentials:**
+> Refer to [Lemlist credentials](https://docs.n8n.io/integrations/builtin/credentials/lemlist) for guidance on setting up authentication.
+
+## Operations
+
+* Activity
+    * Get Many: Get many activities
+* Campaign
+    * Get Many: Get many campaigns
+    * Get Stats: Get campaign stats
+* Enrichment
+	* Get: Fetches a previously completed enrichment
+	* Enrich Lead: Enrich a lead using an email or LinkedIn URL
+	* Enrich Person: Enrich a person using an email or LinkedIn URL
+* Lead
+    * Create: Create a new lead
+    * Delete: Delete an existing lead
+    * Get: Get an existing lead
+    * Unsubscribe: Unsubscribe an existing lead
+* Team
+    * Get: Get an existing team
+	* Get Credits: Get an existing team's credits
+* Unsubscribe
+    * Add: Add an email to an unsubscribe list
+    * Delete: Delete an email from an unsubscribe list
+    * Get Many: Get many unsubscribed emails
+
+## Templates and examples
+
+[Browse Lemlist node documentation integration templates](https://n8n.io/integrations/lemlist) or [search all templates](https://n8n.io/workflows/)

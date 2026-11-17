@@ -1,0 +1,684 @@
+{
+  "id": "n8n-nodes-base.autopilot",
+  "name": "Autopilot",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.autopilot",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Autopilot node to automate work in Autopilot, and integrate Autopilot with other applications. n8n has built-in support for a wide range of Autopilot features, including creating, deleting, and updating contacts, as well as adding contacts to a list",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.autopilot",
+  "credentials": {
+    "name": "Autopilot",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/autopilot",
+    "slug": "autopilot",
+    "json_file": "credentials/autopilot.json",
+    "markdown_file": "credentials/autopilot.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Contact",
+      "operation": "Create/Update a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Delete a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Get a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Get all contacts",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Contact Journey",
+      "operation": "Add contact to list",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactJourney",
+      "operation_value": "add"
+    },
+    {
+      "resource": "Contact List",
+      "operation": "Add contact to list",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactList",
+      "operation_value": "add"
+    },
+    {
+      "resource": "Contact List",
+      "operation": "Check if contact is on list",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactList"
+    },
+    {
+      "resource": "Contact List",
+      "operation": "Get all contacts on list",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactList"
+    },
+    {
+      "resource": "Contact List",
+      "operation": "Remove a contact from a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactList",
+      "operation_value": "remove"
+    },
+    {
+      "resource": "List",
+      "operation": "Create a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "list",
+      "operation_value": "create"
+    },
+    {
+      "resource": "List",
+      "operation": "Get all lists",
+      "description": "",
+      "doc": "",
+      "resource_value": "list"
+    }
+  ],
+  "operation_count": 11,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "adding",
+    "app",
+    "applications",
+    "autopilot",
+    "check",
+    "contact",
+    "contacts",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "including",
+    "journey",
+    "list",
+    "lists",
+    "remove",
+    "update",
+    "updating",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.autopilot.md",
+      "title": "Autopilot node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.autopilot",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.autopilot.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.autopilot.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.autopilot.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.autopilot.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.autopilot",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "autopilotApi"
+  ],
+  "credential_details": [
+    {
+      "name": "autopilotApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Autopilot"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 20,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "contact",
+        "options": [
+          {
+            "name": "Contact",
+            "value": "contact"
+          },
+          {
+            "name": "Contact Journey",
+            "value": "contactJourney"
+          },
+          {
+            "name": "Contact List",
+            "value": "contactList"
+          },
+          {
+            "name": "List",
+            "value": "list"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upsert",
+        "options": [
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new contact, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a contact"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a contact"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many contacts"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upsert"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "Email address of the contact"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Company"
+          },
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "Fax"
+          },
+          {
+            "name": "FirstName"
+          },
+          {
+            "name": "Industry"
+          },
+          {
+            "name": "LastName"
+          },
+          {
+            "name": "LeadSource"
+          },
+          {
+            "name": "LinkedIn"
+          },
+          {
+            "name": "autopilotList",
+            "description": "List to which this contact will be added on creation. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression"
+          },
+          {
+            "name": "MailingCountry"
+          },
+          {
+            "name": "MailingPostalCode"
+          },
+          {
+            "name": "MailingState"
+          },
+          {
+            "name": "MailingStreet"
+          },
+          {
+            "name": "MailingCity"
+          },
+          {
+            "name": "MobilePhone"
+          },
+          {
+            "name": "newEmail",
+            "description": "If provided, will change the email address of the contact identified by the Email field"
+          },
+          {
+            "name": "notify",
+            "description": "By default Autopilot notifies registered REST hook endpoints for contact_added/contact_updated events when a new contact is added or an existing contact is upda"
+          },
+          {
+            "name": "NumberOfEmployees"
+          },
+          {
+            "name": "owner_name"
+          },
+          {
+            "name": "Phone"
+          },
+          {
+            "name": "Salutation"
+          },
+          {
+            "name": "autopilotSessionId",
+            "description": "Used to associate a contact with a session"
+          },
+          {
+            "name": "Status"
+          },
+          {
+            "name": "Title"
+          },
+          {
+            "name": "unsubscribed",
+            "description": "Whether to subscribe or un-subscribe a contact"
+          },
+          {
+            "name": "Website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upsert"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "Can be ID or email"
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "Can be ID or email"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contact"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add",
+            "description": "Add contact to list"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactJourney"
+            ]
+          }
+        }
+      },
+      {
+        "name": "triggerId",
+        "displayName": "Trigger Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add"
+            ],
+            "resource": [
+              "contactJourney"
+            ]
+          }
+        },
+        "description": "List ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add"
+            ],
+            "resource": [
+              "contactJourney"
+            ]
+          }
+        },
+        "description": "Can be ID or email"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add",
+            "description": "Add contact to list"
+          },
+          {
+            "name": "Exist",
+            "value": "exist",
+            "description": "Check if contact is on list"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many contacts from a list"
+          },
+          {
+            "name": "Remove",
+            "value": "remove",
+            "description": "Remove a contact from a list"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactList"
+            ]
+          }
+        }
+      },
+      {
+        "name": "listId",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add",
+              "remove",
+              "exist",
+              "getAll"
+            ],
+            "resource": [
+              "contactList"
+            ]
+          }
+        },
+        "description": "ID of the list to operate on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "add",
+              "remove",
+              "exist"
+            ],
+            "resource": [
+              "contactList"
+            ]
+          }
+        },
+        "description": "Can be ID or email"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contactList"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contactList"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a list"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many lists"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "list"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "list"
+            ]
+          }
+        },
+        "description": "Name of the list to create"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "list"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "list"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      }
+    ]
+  }
+}

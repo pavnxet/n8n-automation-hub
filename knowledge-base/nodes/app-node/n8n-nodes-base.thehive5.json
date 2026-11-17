@@ -1,0 +1,4583 @@
+{
+  "id": "n8n-nodes-base.thehive5",
+  "name": "TheHive 5",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.thehive5",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the TheHive 5 node to automate work in TheHive, and integrate TheHive with other applications. n8n has built-in support for a wide range of TheHive features, including creating alerts, counting tasks logs, cases, and observables",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.thehive5",
+  "credentials": {
+    "name": "TheHive",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/thehive5",
+    "slug": "thehive5",
+    "json_file": "credentials/thehive5.json",
+    "markdown_file": "credentials/thehive5.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Alert",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "deleteAlert"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Execute Responder",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "executeResponder"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Merge Into Case",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "merge"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Promote to Case",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "promote"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Search",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Update Status",
+      "description": "",
+      "doc": "",
+      "resource_value": "alert",
+      "operation_value": "status"
+    },
+    {
+      "resource": "Case",
+      "operation": "Add Attachment",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "addAttachment"
+    },
+    {
+      "resource": "Case",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Case",
+      "operation": "Delete Attachment",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "deleteAttachment"
+    },
+    {
+      "resource": "Case",
+      "operation": "Delete Case",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "deleteCase"
+    },
+    {
+      "resource": "Case",
+      "operation": "Execute Responder",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "executeResponder"
+    },
+    {
+      "resource": "Case",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Case",
+      "operation": "Get Attachment",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "getAttachment"
+    },
+    {
+      "resource": "Case",
+      "operation": "Get Timeline",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "getTimeline"
+    },
+    {
+      "resource": "Case",
+      "operation": "Search",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Case",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "case",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Comment",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "comment",
+      "operation_value": "add"
+    },
+    {
+      "resource": "Comment",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "comment",
+      "operation_value": "deleteComment"
+    },
+    {
+      "resource": "Comment",
+      "operation": "Search",
+      "description": "",
+      "doc": "",
+      "resource_value": "comment",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Comment",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "comment",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Observable",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "observable",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Observable",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "observable",
+      "operation_value": "deleteObservable"
+    },
+    {
+      "resource": "Observable",
+      "operation": "Execute Analyzer",
+      "description": "",
+      "doc": "",
+      "resource_value": "observable",
+      "operation_value": "executeAnalyzer"
+    },
+    {
+      "resource": "Observable",
+      "operation": "Execute Responder",
+      "description": "",
+      "doc": "",
+      "resource_value": "observable",
+      "operation_value": "executeResponder"
+    },
+    {
+      "resource": "Observable",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "observable",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Observable",
+      "operation": "Search",
+      "description": "",
+      "doc": "",
+      "resource_value": "observable",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Observable",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "observable",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Page",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Page",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "deletePage"
+    },
+    {
+      "resource": "Page",
+      "operation": "Search",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Page",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Query",
+      "operation": "Execute Query",
+      "description": "",
+      "doc": "",
+      "resource_value": "query",
+      "operation_value": "executeQuery"
+    },
+    {
+      "resource": "Task",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Task",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "deleteTask"
+    },
+    {
+      "resource": "Task",
+      "operation": "Execute Responder",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "executeResponder"
+    },
+    {
+      "resource": "Task",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task",
+      "operation": "Search",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Task",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Task Log",
+      "operation": "Add Attachment",
+      "description": "",
+      "doc": "",
+      "resource_value": "log",
+      "operation_value": "addAttachment"
+    },
+    {
+      "resource": "Task Log",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "log",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Task Log",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "log",
+      "operation_value": "deleteLog"
+    },
+    {
+      "resource": "Task Log",
+      "operation": "Delete Attachment",
+      "description": "",
+      "doc": "",
+      "resource_value": "log",
+      "operation_value": "deleteAttachment"
+    },
+    {
+      "resource": "Task Log",
+      "operation": "Execute Responder",
+      "description": "",
+      "doc": "",
+      "resource_value": "log",
+      "operation_value": "executeResponder"
+    },
+    {
+      "resource": "Task Log",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "log",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Task Log",
+      "operation": "Search",
+      "description": "",
+      "doc": "",
+      "resource_value": "log",
+      "operation_value": "search"
+    }
+  ],
+  "operation_count": 48,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "alert",
+    "alerts",
+    "analyzer",
+    "app",
+    "applications",
+    "attachment",
+    "case",
+    "cases",
+    "comment",
+    "counting",
+    "create",
+    "creating",
+    "delete",
+    "execute",
+    "get",
+    "including",
+    "log",
+    "logs",
+    "merge",
+    "observable",
+    "observables",
+    "promote",
+    "query",
+    "responder",
+    "search",
+    "status",
+    "task",
+    "tasks",
+    "thehive",
+    "thehive5",
+    "timeline",
+    "update",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.thehive5.md",
+      "title": "TheHive 5 node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.thehive5",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.thehive5.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.thehive5.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.thehive5.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.thehive5.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.theHiveProject",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "theHiveProjectApi"
+  ],
+  "credential_details": [
+    {
+      "name": "theHiveProjectApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "TheHive 5"
+  },
+  "subtitle": "={{$parameter[\"operation\"]}} : {{$parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 139,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "alert",
+        "options": [
+          {
+            "name": "Alert",
+            "value": "alert"
+          },
+          {
+            "name": "Case",
+            "value": "case"
+          },
+          {
+            "name": "Comment",
+            "value": "comment"
+          },
+          {
+            "name": "Observable",
+            "value": "observable"
+          },
+          {
+            "name": "Page",
+            "value": "page"
+          },
+          {
+            "name": "Query",
+            "value": "query"
+          },
+          {
+            "name": "Task",
+            "value": "task"
+          },
+          {
+            "name": "Task Log",
+            "value": "log"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteAlert"
+          },
+          {
+            "name": "Execute Responder",
+            "value": "executeResponder"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Merge Into Case",
+            "value": "merge"
+          },
+          {
+            "name": "Promote to Case",
+            "value": "promote"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          },
+          {
+            "name": "Update Status",
+            "value": "status"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alertFields",
+        "displayName": "Fields",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "observableUi",
+        "displayName": "Observables",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "dataType",
+                "displayName": "Data Type",
+                "type": "options"
+              },
+              {
+                "name": "data",
+                "displayName": "Data",
+                "type": "string"
+              },
+              {
+                "name": "binaryProperty",
+                "displayName": "Input Binary Field",
+                "type": "string"
+              },
+              {
+                "name": "message",
+                "displayName": "Message",
+                "type": "string"
+              },
+              {
+                "name": "tags",
+                "displayName": "Tags",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alertId",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "deleteAlert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "alertId",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "includeSimilarAlerts",
+            "description": "Whether to include similar cases"
+          },
+          {
+            "name": "includeSimilarCases",
+            "description": "Whether to include similar cases"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "values",
+                "displayName": "Values",
+                "type": "string"
+              },
+              {
+                "name": "from",
+                "displayName": "From",
+                "type": "string"
+              },
+              {
+                "name": "to",
+                "displayName": "To",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fields",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnCount",
+            "description": "Whether to return only the count of results"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alertId",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "status"
+            ]
+          }
+        }
+      },
+      {
+        "name": "status",
+        "displayName": "Status Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "status"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "alertId",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "merge"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "merge"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alertId",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "promote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "caseTemplate",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "promote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alertUpdateFields",
+        "displayName": "Fields",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alert"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Add Attachment",
+            "value": "addAttachment"
+          },
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete Attachment",
+            "value": "deleteAttachment"
+          },
+          {
+            "name": "Delete Case",
+            "value": "deleteCase"
+          },
+          {
+            "name": "Execute Responder",
+            "value": "executeResponder"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Get Attachment",
+            "value": "getAttachment"
+          },
+          {
+            "name": "Get Timeline",
+            "value": "getTimeline"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "addAttachment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentsUi",
+        "displayName": "Attachments",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Attachment Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "addAttachment"
+            ]
+          }
+        },
+        "description": "Array of supported attachments to add to the message"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "canRename",
+            "description": "Whether to rename the file in case a file with the same name already exists"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "addAttachment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseFields",
+        "displayName": "Fields",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "deleteAttachment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentId",
+        "displayName": "Attachment Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "deleteAttachment"
+            ]
+          }
+        },
+        "description": "ID of the attachment. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "deleteCase"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "getAttachment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentId",
+        "displayName": "Attachment Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "getAttachment"
+            ]
+          }
+        },
+        "description": "ID of the attachment. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fileName",
+            "description": "Rename the file when downloading"
+          },
+          {
+            "name": "dataPropertyName",
+            "description": "Name of the binary property to which write the data of the attachment"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "getAttachment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "values",
+                "displayName": "Values",
+                "type": "string"
+              },
+              {
+                "name": "from",
+                "displayName": "From",
+                "type": "string"
+              },
+              {
+                "name": "to",
+                "displayName": "To",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fields",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnCount",
+            "description": "Whether to return only the count of results"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "getTimeline"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseUpdateFields",
+        "displayName": "Fields",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "case"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "add",
+        "options": [
+          {
+            "name": "Create",
+            "value": "add"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteComment"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "addTo",
+        "displayName": "Add to",
+        "type": "options",
+        "default": "alert",
+        "options": [
+          {
+            "name": "Alert",
+            "value": "alert"
+          },
+          {
+            "name": "Case",
+            "value": "case"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "addTo": [
+              "case"
+            ],
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "addTo": [
+              "alert"
+            ],
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "commentId",
+        "displayName": "Comment",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "deleteComment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchIn",
+        "displayName": "Search in",
+        "type": "options",
+        "default": "all",
+        "options": [
+          {
+            "name": "Alerts and Cases",
+            "value": "all"
+          },
+          {
+            "name": "Alert",
+            "value": "alert"
+          },
+          {
+            "name": "Case",
+            "value": "case"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to search for comments in all alerts and cases or in a specific case or alert"
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "searchIn": [
+              "case"
+            ],
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alertId",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "searchIn": [
+              "alert"
+            ],
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "values",
+                "displayName": "Values",
+                "type": "string"
+              },
+              {
+                "name": "from",
+                "displayName": "From",
+                "type": "string"
+              },
+              {
+                "name": "to",
+                "displayName": "To",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fields",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnCount",
+            "description": "Whether to return only the count of results"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "commentId",
+        "displayName": "Comment",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "comment"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Add Attachment",
+            "value": "addAttachment"
+          },
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteLog"
+          },
+          {
+            "name": "Delete Attachment",
+            "value": "deleteAttachment"
+          },
+          {
+            "name": "Execute Responder",
+            "value": "executeResponder"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ]
+          }
+        }
+      },
+      {
+        "name": "logId",
+        "displayName": "Task Log",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "addAttachment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentsUi",
+        "displayName": "Attachments",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Attachment Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "addAttachment"
+            ]
+          }
+        },
+        "description": "Array of supported attachments to add to the message"
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "logFields",
+        "displayName": "Fields",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentsUi",
+        "displayName": "Attachments",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Attachment Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Array of supported attachments to add to the message"
+      },
+      {
+        "name": "logId",
+        "displayName": "Task Log",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "deleteAttachment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentId",
+        "displayName": "Attachment Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "deleteAttachment"
+            ]
+          }
+        },
+        "description": "ID of the attachment. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "logId",
+        "displayName": "Task Log",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "deleteLog"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Task Log",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "logId",
+        "displayName": "Task Log",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "allTasks",
+        "displayName": "Search in All Tasks",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to search in all tasks or only in selected task"
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "allTasks": [
+              false
+            ],
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "values",
+                "displayName": "Values",
+                "type": "string"
+              },
+              {
+                "name": "from",
+                "displayName": "From",
+                "type": "string"
+              },
+              {
+                "name": "to",
+                "displayName": "To",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fields",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnCount",
+            "description": "Whether to return only the count of results"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "log"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteObservable"
+          },
+          {
+            "name": "Execute Analyzer",
+            "value": "executeAnalyzer"
+          },
+          {
+            "name": "Execute Responder",
+            "value": "executeResponder"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "createIn",
+        "displayName": "Create in",
+        "type": "options",
+        "default": "case",
+        "options": [
+          {
+            "name": "Case",
+            "value": "case"
+          },
+          {
+            "name": "Alert",
+            "value": "alert"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "createIn": [
+              "case"
+            ],
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "createIn": [
+              "alert"
+            ],
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataType",
+        "displayName": "Data Type",
+        "type": "options",
+        "required": true,
+        "default": "file",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "data",
+        "displayName": "Data",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          },
+          "hide": {
+            "dataType": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentsUi",
+        "displayName": "Attachments",
+        "type": "fixedCollection",
+        "required": true,
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Attachment Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataType": [
+              "file"
+            ],
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Array of supported attachments to add to the message"
+      },
+      {
+        "name": "observableFields",
+        "displayName": "Fields",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "observableId",
+        "displayName": "Observable",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "deleteObservable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "observableId",
+        "displayName": "Observable",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "executeAnalyzer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataType",
+        "displayName": "Data Type",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "executeAnalyzer"
+            ]
+          }
+        },
+        "description": "Type of the observable. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "analyzers",
+        "displayName": "Analyzer Names or IDs",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "executeAnalyzer"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "id",
+        "displayName": "Observable",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "observableId",
+        "displayName": "Observable",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchIn",
+        "displayName": "Search in",
+        "type": "options",
+        "default": "all",
+        "options": [
+          {
+            "name": "Alerts and Cases",
+            "value": "all"
+          },
+          {
+            "name": "Alert",
+            "value": "alert"
+          },
+          {
+            "name": "Case",
+            "value": "case"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to search for observables in all alerts and cases or in a specific case or alert"
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "searchIn": [
+              "case"
+            ],
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alertId",
+        "displayName": "Alert",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "searchIn": [
+              "alert"
+            ],
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "values",
+                "displayName": "Values",
+                "type": "string"
+              },
+              {
+                "name": "from",
+                "displayName": "From",
+                "type": "string"
+              },
+              {
+                "name": "to",
+                "displayName": "To",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fields",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnCount",
+            "description": "Whether to return only the count of results"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "observableUpdateFields",
+        "displayName": "Fields",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "observable"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "deletePage"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "location",
+        "displayName": "Create in",
+        "type": "options",
+        "default": "case",
+        "options": [
+          {
+            "name": "Case",
+            "value": "case"
+          },
+          {
+            "name": "Knowledge Base",
+            "value": "knowledgeBase"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "location": [
+              "case"
+            ],
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "category",
+        "displayName": "Category",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "content",
+        "displayName": "Content",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "location",
+        "displayName": "Delete From ...",
+        "type": "options",
+        "default": "knowledgeBase",
+        "options": [
+          {
+            "name": "Case",
+            "value": "case"
+          },
+          {
+            "name": "Knowledge Base",
+            "value": "knowledgeBase"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "deletePage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "location": [
+              "case"
+            ],
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "deletePage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "pageId",
+        "displayName": "Page",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "deletePage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchInKnowledgeBase",
+        "displayName": "Search in Knowledge Base",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to search in knowledge base or only in the selected case"
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "searchInKnowledgeBase": [
+              false
+            ],
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "values",
+                "displayName": "Values",
+                "type": "string"
+              },
+              {
+                "name": "from",
+                "displayName": "From",
+                "type": "string"
+              },
+              {
+                "name": "to",
+                "displayName": "To",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fields",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnCount",
+            "description": "Whether to return only the count of results"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              true
+            ],
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "location",
+        "displayName": "Update in",
+        "type": "options",
+        "default": "case",
+        "options": [
+          {
+            "name": "Case",
+            "value": "case"
+          },
+          {
+            "name": "Knowledge Base",
+            "value": "knowledgeBase"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "location": [
+              "case"
+            ],
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "pageId",
+        "displayName": "Page",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "content",
+        "displayName": "Content",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "category"
+          },
+          {
+            "name": "title"
+          },
+          {
+            "name": "order"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "executeQuery",
+        "options": [
+          {
+            "name": "Execute Query",
+            "value": "executeQuery"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "query"
+            ]
+          }
+        }
+      },
+      {
+        "name": "queryJson",
+        "displayName": "Query",
+        "type": "json",
+        "required": true,
+        "default": "=[\n  {\n    \"_name\": \"listOrganisation\"\n  }\n]",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "query"
+            ],
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "Search for objects with filtering and sorting capabilities"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteTask"
+          },
+          {
+            "name": "Execute Responder",
+            "value": "executeResponder"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Search",
+            "value": "search"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "taskFields",
+        "displayName": "Fields",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "deleteTask"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "Task",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "executeResponder"
+            ]
+          },
+          "hide": {
+            "id": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "allCases",
+        "displayName": "Search in All Cases",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to search in all cases or only in a selected case"
+      },
+      {
+        "name": "caseId",
+        "displayName": "Case",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "allCases": [
+              false
+            ],
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "values",
+                "displayName": "Values",
+                "type": "string"
+              },
+              {
+                "name": "from",
+                "displayName": "From",
+                "type": "string"
+              },
+              {
+                "name": "to",
+                "displayName": "To",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fields",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "returnCount",
+            "description": "Whether to return only the count of results"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          },
+          {
+            "name": "extraData",
+            "description": "Additional data to include in the response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "taskUpdateFields",
+        "displayName": "Fields",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

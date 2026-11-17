@@ -1,0 +1,24 @@
+<!-- n8n built-in node reference: n8n-nodes-base.linear | source: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.linear -->
+
+Use the Linear node to automate work in Linear, and integrate Linear with other applications. n8n has built-in support for a wide range of Linear features, including creating, updating, deleting, and getting issues. 
+
+On this page, you'll find a list of operations the Linear node supports and links to more resources.
+
+> **Credentials:**
+> Refer to [Linear credentials](https://docs.n8n.io/integrations/builtin/credentials/linear) for guidance on setting up authentication.
+
+## Operations
+
+* Comment
+	* Add Comment
+* Issue
+	* Add Link
+    * Create
+    * Delete
+    * Get
+    * Get Many
+    * Update
+
+## Templates and examples
+
+[Browse Linear node documentation integration templates](https://n8n.io/integrations/linear) or [search all templates](https://n8n.io/workflows/)

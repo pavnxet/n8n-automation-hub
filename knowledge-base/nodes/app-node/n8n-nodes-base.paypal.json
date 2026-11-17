@@ -1,0 +1,427 @@
+{
+  "id": "n8n-nodes-base.paypal",
+  "name": "PayPal",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.paypal",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the PayPal node to automate work in PayPal, and integrate PayPal with other applications. n8n has built-in support for a wide range of PayPal features, including creating a batch payout and canceling unclaimed payout items",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.paypal",
+  "credentials": {
+    "name": "PayPal",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/paypal",
+    "slug": "paypal",
+    "json_file": "credentials/paypal.json",
+    "markdown_file": "credentials/paypal.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Payout",
+      "operation": "Create a batch payout",
+      "description": "",
+      "doc": "",
+      "resource_value": "payout",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Payout",
+      "operation": "Show batch payout details",
+      "description": "",
+      "doc": "",
+      "resource_value": "payout"
+    },
+    {
+      "resource": "Payout Item",
+      "operation": "Cancels an unclaimed payout item",
+      "description": "",
+      "doc": "",
+      "resource_value": "payoutItem",
+      "operation_value": "cancel"
+    },
+    {
+      "resource": "Payout Item",
+      "operation": "Show payout item details",
+      "description": "",
+      "doc": "",
+      "resource_value": "payoutItem"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "batch",
+    "canceling",
+    "cancels",
+    "create",
+    "creating",
+    "including",
+    "item",
+    "items",
+    "payout",
+    "paypal",
+    "show",
+    "unclaimed",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.paypal.md",
+      "title": "PayPal node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.paypal",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.paypal.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.paypal.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.paypal.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.paypal.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.payPal",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "payPalApi"
+  ],
+  "credential_details": [
+    {
+      "name": "payPalApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "PayPal"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 13,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "payout",
+        "options": [
+          {
+            "name": "Payout",
+            "value": "payout"
+          },
+          {
+            "name": "Payout Item",
+            "value": "payoutItem"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a batch payout"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Show batch payout details"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payout"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Cancel",
+            "value": "cancel",
+            "description": "Cancels an unclaimed payout item"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Show payout item details"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payoutItem"
+            ]
+          }
+        }
+      },
+      {
+        "name": "senderBatchId",
+        "displayName": "Sender Batch ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payout"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "A sender-specified ID number. Tracks the payout in an accounting system."
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payout"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "itemsUi",
+        "displayName": "Items",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "itemsValues",
+            "values": [
+              {
+                "name": "recipientType",
+                "displayName": "Recipient Type",
+                "type": "options"
+              },
+              {
+                "name": "receiverValue",
+                "displayName": "Receiver Value",
+                "type": "string"
+              },
+              {
+                "name": "currency",
+                "displayName": "Currency",
+                "type": "options"
+              },
+              {
+                "name": "amount",
+                "displayName": "Amount",
+                "type": "string"
+              },
+              {
+                "name": "note",
+                "displayName": "Note",
+                "type": "string"
+              },
+              {
+                "name": "senderItemId",
+                "displayName": "Sender Item ID",
+                "type": "string"
+              },
+              {
+                "name": "recipientWallet",
+                "displayName": "Recipient Wallet",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payout"
+            ],
+            "operation": [
+              "create"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "itemsJson",
+        "displayName": "Items",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payout"
+            ],
+            "operation": [
+              "create"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "An array of individual payout items"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "emailSubject",
+            "description": "The subject line for the email that PayPal sends when payment for a payout item completes. The subject line is the same for all recipients. Max length: 255 char"
+          },
+          {
+            "name": "emailMessage",
+            "description": "The email message that PayPal sends when the payout item completes. The message is the same for all recipients."
+          },
+          {
+            "name": "note",
+            "description": "The payouts and item-level notes are concatenated in the email. Max length: 1000 characters."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payout"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "payoutBatchId",
+        "displayName": "Payout Batch ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payout"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The ID of the payout for which to show details"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payout"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payout"
+            ],
+            "operation": [
+              "get"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "payoutItemId",
+        "displayName": "Payout Item ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payoutItem"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The ID of the payout item for which to show details"
+      },
+      {
+        "name": "payoutItemId",
+        "displayName": "Payout Item ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "payoutItem"
+            ],
+            "operation": [
+              "cancel"
+            ]
+          }
+        },
+        "description": "The ID of the payout item to cancel"
+      }
+    ]
+  }
+}

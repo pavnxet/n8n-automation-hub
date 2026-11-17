@@ -1,0 +1,833 @@
+{
+  "id": "n8n-nodes-base.supabase",
+  "name": "Supabase",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.supabase",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Supabase node to automate work in Supabase, and integrate Supabase with other applications. n8n has built-in support for a wide range of Supabase features, including creating, deleting, and getting rows",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.supabase",
+  "credentials": {
+    "name": "Supabase",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/supabase",
+    "slug": "supabase",
+    "json_file": "credentials/supabase.json",
+    "markdown_file": "credentials/supabase.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Row",
+      "operation": "Create a new row",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Row",
+      "operation": "Delete a row",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Row",
+      "operation": "Get a row",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Row",
+      "operation": "Get all rows",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Row",
+      "operation": "Update a row",
+      "description": "",
+      "doc": "",
+      "resource_value": "row",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Filtering rows by metadata",
+      "summary": "To filter rows by Supabase metadata, set the Select Type to String"
+    },
+    {
+      "title": "Can't connect to a local Supabase database when using Docker",
+      "summary": "When you run Supabase in Docker, you need to configure the network so that n8n can connect to Supabase"
+    },
+    {
+      "title": "Records are accessible through Postgres but not Supabase",
+      "summary": "If queries for records return empty using the Supabase node, but are available through the Postgres node or with a Postgres client, there may be a conflict with Supabase's Row Level Security (RLS) policy"
+    }
+  ],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "new",
+    "row",
+    "rows",
+    "supabase",
+    "update",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Supabase node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.supabase",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.supabase/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Supabase node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.supabase/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.supabase/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.supabase.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.supabase.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.supabase/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.supabase",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "supabaseApi"
+  ],
+  "credential_details": [
+    {
+      "name": "supabaseApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Supabase"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 26,
+    "parameters": [
+      {
+        "name": "useCustomSchema",
+        "displayName": "Use Custom Schema",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to use a database schema different from the default \"public\" schema (requires schema exposure in the <a href=\"https://supabase.com/docs/guides/api/using-custom-schemas?queryGroups=language&language=curl#exposing-"
+      },
+      {
+        "name": "schema",
+        "displayName": "Schema",
+        "type": "string",
+        "default": "public",
+        "displayOptions": {
+          "show": {
+            "useCustomSchema": [
+              true
+            ]
+          }
+        },
+        "description": "Name of database schema to use for table"
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "row",
+        "options": [
+          {
+            "name": "Row",
+            "value": "row"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new row"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a row"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a row"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many rows"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a row"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tableId",
+        "displayName": "Table Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create",
+              "delete",
+              "get",
+              "getAll",
+              "update"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "filterType",
+        "displayName": "Select Type",
+        "type": "options",
+        "default": "manual",
+        "options": [
+          {
+            "name": "Build Manually",
+            "value": "manual"
+          },
+          {
+            "name": "String",
+            "value": "string"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyFilter",
+        "options": [
+          {
+            "name": "Any Select Condition",
+            "value": "anyFilter"
+          },
+          {
+            "name": "All Select Conditions",
+            "value": "allFilters"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ],
+            "filterType": [
+              "manual"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Select Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Field Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "searchFunction",
+                "displayName": "Search Function",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Field Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ],
+            "filterType": [
+              "manual"
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get updated"
+      },
+      {
+        "name": "jsonNotice",
+        "displayName": "See <a href=\"https://postgrest.org/en/stable/references/api/tables_views.html#horizontal-filtering\" target=\"_blank\">PostgREST guide</a> to creating filters",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ],
+            "filterType": [
+              "string"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filterString",
+        "displayName": "Filters (String)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "update"
+            ],
+            "filterType": [
+              "string"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataToSend",
+        "displayName": "Data to Send",
+        "type": "options",
+        "default": "defineBelow",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties match destination column names"
+          },
+          {
+            "name": "Define Below for Each Column",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputsToIgnore",
+        "displayName": "Inputs to Ignore",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ],
+            "dataToSend": [
+              "autoMapInputData"
+            ]
+          }
+        },
+        "description": "List of input properties to avoid sending, separated by commas. Leave empty to send all properties."
+      },
+      {
+        "name": "fieldsUi",
+        "displayName": "Fields to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "fieldValues",
+            "values": [
+              {
+                "name": "fieldId",
+                "displayName": "Field Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ],
+            "dataToSend": [
+              "defineBelow"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filterType",
+        "displayName": "Select Type",
+        "type": "options",
+        "default": "manual",
+        "options": [
+          {
+            "name": "Build Manually",
+            "value": "manual"
+          },
+          {
+            "name": "String",
+            "value": "string"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyFilter",
+        "options": [
+          {
+            "name": "Any Select Condition",
+            "value": "anyFilter"
+          },
+          {
+            "name": "All Select Conditions",
+            "value": "allFilters"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "filterType": [
+              "manual"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Select Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Field Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "searchFunction",
+                "displayName": "Search Function",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Field Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "filterType": [
+              "manual"
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get deleted"
+      },
+      {
+        "name": "jsonNotice",
+        "displayName": "See <a href=\"https://postgrest.org/en/stable/references/api/tables_views.html#horizontal-filtering\" target=\"_blank\">PostgREST guide</a> to creating filters",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "filterType": [
+              "string"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filterString",
+        "displayName": "Filters (String)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "delete"
+            ],
+            "filterType": [
+              "string"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Select Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filterType",
+        "displayName": "Filter",
+        "type": "options",
+        "default": "manual",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Build Manually",
+            "value": "manual"
+          },
+          {
+            "name": "String",
+            "value": "string"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyFilter",
+        "options": [
+          {
+            "name": "Any Filter",
+            "value": "anyFilter"
+          },
+          {
+            "name": "All Filters",
+            "value": "allFilters"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "filterType": [
+              "manual"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "keyName",
+                "displayName": "Field Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "searchFunction",
+                "displayName": "Search Function",
+                "type": "options"
+              },
+              {
+                "name": "keyValue",
+                "displayName": "Field Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "filterType": [
+              "manual"
+            ]
+          }
+        },
+        "description": "Filter to decide which rows get retrieved"
+      },
+      {
+        "name": "jsonNotice",
+        "displayName": "See <a href=\"https://postgrest.org/en/stable/references/api/tables_views.html#horizontal-filtering\" target=\"_blank\">PostgREST guide</a> to creating filters",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "filterType": [
+              "string"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filterString",
+        "displayName": "Filters (String)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "row"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "filterType": [
+              "string"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

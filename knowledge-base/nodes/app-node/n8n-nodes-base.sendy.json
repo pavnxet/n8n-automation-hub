@@ -1,0 +1,603 @@
+{
+  "id": "n8n-nodes-base.sendy",
+  "name": "Sendy",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.sendy",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Sendy node to automate work in Sendy, and integrate Sendy with other applications. n8n has built-in support for a wide range of Sendy features, including creating campaigns, and adding, counting, deleting, and getting subscribers",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.sendy",
+  "credentials": {
+    "name": "Sendy",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/sendy",
+    "slug": "sendy",
+    "json_file": "credentials/sendy.json",
+    "markdown_file": "credentials/sendy.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Campaign",
+      "operation": "Create a campaign",
+      "description": "",
+      "doc": "",
+      "resource_value": "campaign",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Subscriber",
+      "operation": "Add a subscriber to a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscriber",
+      "operation_value": "add"
+    },
+    {
+      "resource": "Subscriber",
+      "operation": "Count subscribers",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscriber",
+      "operation_value": "count"
+    },
+    {
+      "resource": "Subscriber",
+      "operation": "Delete a subscriber from a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscriber",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Subscriber",
+      "operation": "Unsubscribe user from a list",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscriber"
+    },
+    {
+      "resource": "Subscriber",
+      "operation": "Get the status of subscriber",
+      "description": "",
+      "doc": "",
+      "resource_value": "subscriber",
+      "operation_value": "status"
+    }
+  ],
+  "operation_count": 6,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "adding",
+    "app",
+    "applications",
+    "campaign",
+    "campaigns",
+    "count",
+    "counting",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "list",
+    "sendy",
+    "status",
+    "subscriber",
+    "subscribers",
+    "unsubscribe",
+    "user",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.sendy.md",
+      "title": "Sendy node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.sendy",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.sendy.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.sendy.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.sendy.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.sendy.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.sendy",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "sendyApi"
+  ],
+  "credential_details": [
+    {
+      "name": "sendyApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Sendy"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 22,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "subscriber",
+        "options": [
+          {
+            "name": "Campaign",
+            "value": "campaign"
+          },
+          {
+            "name": "Subscriber",
+            "value": "subscriber"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a campaign"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fromName",
+        "displayName": "From Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The 'From name' of your campaign"
+      },
+      {
+        "name": "fromEmail",
+        "displayName": "From Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The 'From email' of your campaign"
+      },
+      {
+        "name": "replyTo",
+        "displayName": "Reply To",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The 'Reply to' of your campaign"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The 'Title' of your campaign"
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The 'Subject' of your campaign"
+      },
+      {
+        "name": "htmlText",
+        "displayName": "HTML Text",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The 'HTML version' of your campaign"
+      },
+      {
+        "name": "sendCampaign",
+        "displayName": "Send Campaign",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether to send the campaign as well and not just create a draft. Default is false."
+      },
+      {
+        "name": "brandId",
+        "displayName": "Brand ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "campaign"
+            ],
+            "sendCampaign": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "excludeListIds",
+            "description": "Lists to exclude from your campaign. List IDs should be single or comma-separated."
+          },
+          {
+            "name": "excludeSegmentIds",
+            "description": "Segments to exclude from your campaign. Segment IDs should be single or comma-separated."
+          },
+          {
+            "name": "listIds",
+            "description": "List IDs should be single or comma-separated"
+          },
+          {
+            "name": "plainText",
+            "description": "The 'Plain text version' of your campaign"
+          },
+          {
+            "name": "queryString",
+            "description": "Google Analytics tags"
+          },
+          {
+            "name": "segmentIds",
+            "description": "Segment IDs should be single or comma-separated"
+          },
+          {
+            "name": "trackClicks",
+            "description": "Whether to disable clicks tracking. Default is true."
+          },
+          {
+            "name": "trackOpens",
+            "description": "Whether to disable opens tracking. Default is true."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "campaign"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add",
+            "description": "Add a subscriber to a list"
+          },
+          {
+            "name": "Count",
+            "value": "count",
+            "description": "Count subscribers"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a subscriber from a list"
+          },
+          {
+            "name": "Remove",
+            "value": "remove",
+            "description": "Unsubscribe user from a list"
+          },
+          {
+            "name": "Status",
+            "value": "status",
+            "description": "Get the status of subscriber"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ]
+          }
+        }
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "Email address of the subscriber"
+      },
+      {
+        "name": "listId",
+        "displayName": "List ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "The list ID you want to subscribe a user to. This encrypted & hashed ID can be found under View all lists section named ID."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "country",
+            "description": "User's 2 letter country code"
+          },
+          {
+            "name": "gdpr",
+            "description": "Whether you're signing up EU users in a GDPR compliant manner"
+          },
+          {
+            "name": "hp",
+            "description": "Include this 'honeypot' field to prevent spambots from signing up via this API call. When spambots fills in this field, this API call will exit, preventing them"
+          },
+          {
+            "name": "ipaddress",
+            "description": "User's IP address"
+          },
+          {
+            "name": "name",
+            "description": "User's name"
+          },
+          {
+            "name": "referrer",
+            "description": "The URL where the user signed up from"
+          },
+          {
+            "name": "silent",
+            "description": "Set to \"true\" if your list is 'Double opt-in' but you want to bypass that and signup the user to the list as 'Single Opt-in instead' (optional)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "listId",
+        "displayName": "List ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "count"
+            ]
+          }
+        },
+        "description": "The list ID you want to subscribe a user to. This encrypted & hashed ID can be found under View all lists section named ID."
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Email address of the subscriber"
+      },
+      {
+        "name": "listId",
+        "displayName": "List ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The list ID you want to subscribe a user to. This encrypted & hashed ID can be found under View all lists section named ID."
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "Email address of the subscriber"
+      },
+      {
+        "name": "listId",
+        "displayName": "List ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "remove"
+            ]
+          }
+        },
+        "description": "The list ID you want to subscribe a user to. This encrypted & hashed ID can be found under View all lists section named ID."
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "status"
+            ]
+          }
+        },
+        "description": "Email address of the subscriber"
+      },
+      {
+        "name": "listId",
+        "displayName": "List ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "subscriber"
+            ],
+            "operation": [
+              "status"
+            ]
+          }
+        },
+        "description": "The list ID you want to subscribe a user to. This encrypted & hashed ID can be found under View all lists section named ID."
+      }
+    ]
+  }
+}

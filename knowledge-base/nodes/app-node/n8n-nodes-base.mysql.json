@@ -1,0 +1,1348 @@
+{
+  "id": "n8n-nodes-base.mysql",
+  "name": "MySQL",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.mysql",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the MySQL node to automate work in MySQL, and integrate MySQL with other applications. n8n has built-in support for a wide range of MySQL features, including executing an SQL query, as well as inserting, and updating rows in a database",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mysql",
+  "credentials": {
+    "name": "MySQL",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mysql",
+    "slug": "mysql",
+    "json_file": "credentials/mysql.json",
+    "markdown_file": "credentials/mysql.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "database",
+      "operation_value": "deleteTable"
+    },
+    {
+      "resource": "",
+      "operation": "Execute SQL",
+      "description": "",
+      "doc": "",
+      "resource_value": "database",
+      "operation_value": "executeQuery"
+    },
+    {
+      "resource": "",
+      "operation": "Insert",
+      "description": "",
+      "doc": "",
+      "resource_value": "database",
+      "operation_value": "insert"
+    },
+    {
+      "resource": "",
+      "operation": "Insert or Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "database",
+      "operation_value": "upsert"
+    },
+    {
+      "resource": "",
+      "operation": "Select",
+      "description": "",
+      "doc": "",
+      "resource_value": "database",
+      "operation_value": "select"
+    },
+    {
+      "resource": "",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "database",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 6,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Update rows by composite key",
+      "summary": "The MySQL node's Update operation lets you to update rows in a table by providing a Column to Match On and a value. This works for tables where single column values can uniquely identify individual rows"
+    },
+    {
+      "title": "Can't connect to a local MySQL server when using Docker",
+      "summary": "When you run either n8n or MySQL in Docker, you need to configure the network so that n8n can connect to MySQL"
+    },
+    {
+      "title": "Decimal numbers returned as strings",
+      "summary": "By default, the MySQL node returns DECIMAL values as strings. This is done intentionally to avoid loss of precision that can occur due to limitation with the way JavaScript represents numbers. You can learn more about the decision in the documentation for the MySQL library that n8n uses"
+    }
+  ],
+  "keywords": [
+    "app",
+    "applications",
+    "database",
+    "delete",
+    "execute",
+    "executing",
+    "including",
+    "insert",
+    "inserting",
+    "mysql",
+    "query",
+    "rows",
+    "select",
+    "sql",
+    "update",
+    "updating",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "MySQL node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mysql",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mysql/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "MySQL node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mysql/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mysql/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.mysql.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.mysql.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.mysql/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mySql",
+  "type_version": 2.5,
+  "type_versions": [
+    2,
+    2.1,
+    2.2,
+    2.3,
+    2.4,
+    2.5
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mySql"
+  ],
+  "credential_details": [
+    {
+      "name": "mySql",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "MySQL"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 31,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "hidden",
+        "default": "database",
+        "options": [
+          {
+            "name": "Database",
+            "value": "database"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "insert",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "deleteTable",
+            "description": "Delete an entire table or rows in a table"
+          },
+          {
+            "name": "Execute SQL",
+            "value": "executeQuery",
+            "description": "Execute an SQL query"
+          },
+          {
+            "name": "Insert",
+            "value": "insert",
+            "description": "Insert rows in a table"
+          },
+          {
+            "name": "Insert or Update",
+            "value": "upsert",
+            "description": "Insert or update rows in a table"
+          },
+          {
+            "name": "Select",
+            "value": "select",
+            "description": "Select rows from a table"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update rows in a table"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ]
+          }
+        }
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "hide": {
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "The table you want to work on"
+      },
+      {
+        "name": "deleteCommand",
+        "displayName": "Command",
+        "type": "options",
+        "default": "truncate",
+        "options": [
+          {
+            "name": "Truncate",
+            "value": "truncate",
+            "description": "Only removes the table's data and preserves the table's structure"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete the rows that match the 'Select Rows' conditions below. If no selection is made, all rows in the table are deleted."
+          },
+          {
+            "name": "Drop",
+            "value": "drop",
+            "description": "Deletes the table's data and also the table's structure permanently"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "where",
+        "displayName": "Select Rows",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "deleteCommand": [
+              "delete"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "If not set, all rows will be selected"
+      },
+      {
+        "name": "combineConditions",
+        "displayName": "Combine Conditions",
+        "type": "options",
+        "default": "AND",
+        "options": [
+          {
+            "name": "AND",
+            "value": "AND",
+            "description": "Only rows that meet all the conditions are selected"
+          },
+          {
+            "name": "OR",
+            "value": "OR",
+            "description": "Rows that meet at least one condition are selected"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "deleteCommand": [
+              "delete"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "How to combine the conditions defined in \"Select Rows\": AND requires all conditions to be true, OR requires at least one condition to be true"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "connectionTimeoutMillis",
+            "description": "Number of milliseconds reserved for connecting to the database"
+          },
+          {
+            "name": "connectionLimit",
+            "description": "Maximum amount of connections to the database, setting high value can lead to performance issues and potential database crashes"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. You can drag the values from the input panel on the left. <a href=\"https://docs.n8n.io/i"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "decimalNumbers",
+            "description": "Whether to output DECIMAL types as numbers instead of strings"
+          },
+          {
+            "name": "priority",
+            "description": "Ignore any ignorable errors that occur while executing the INSERT statement"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          },
+          {
+            "name": "selectDistinct",
+            "description": "Whether to remove these duplicate rows"
+          },
+          {
+            "name": "detailedOutput",
+            "description": "Whether to show in output details of the ofexecuted query for each statement, or just confirmation of success"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "connectionTimeoutMillis",
+            "description": "Number of milliseconds reserved for connecting to the database"
+          },
+          {
+            "name": "connectionLimit",
+            "description": "Maximum amount of connections to the database, setting high value can lead to performance issues and potential database crashes"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. You can drag the values from the input panel on the left. <a href=\"https://docs.n8n.io/i"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "decimalNumbers",
+            "description": "Whether to output DECIMAL types as numbers instead of strings"
+          },
+          {
+            "name": "priority",
+            "description": "Ignore any ignorable errors that occur while executing the INSERT statement"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          },
+          {
+            "name": "selectDistinct",
+            "description": "Whether to remove these duplicate rows"
+          },
+          {
+            "name": "detailedOutput",
+            "description": "Whether to show in output details of the ofexecuted query for each statement, or just confirmation of success"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "autoMapInputData",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties names exactly match the table column names"
+          },
+          {
+            "name": "Map Each Column Manually",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column manually"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "insert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to map node input properties and the table data automatically or manually"
+      },
+      {
+        "name": "notice",
+        "displayName": "\n\t\tIn this mode, make sure incoming data fields are named the same as the columns in your table. If needed, use an 'Edit Fields' node before this node to change the field names.\n\t\t",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMapInputData"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "insert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "valuesToSend",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "insert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "connectionTimeoutMillis",
+            "description": "Number of milliseconds reserved for connecting to the database"
+          },
+          {
+            "name": "connectionLimit",
+            "description": "Maximum amount of connections to the database, setting high value can lead to performance issues and potential database crashes"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. You can drag the values from the input panel on the left. <a href=\"https://docs.n8n.io/i"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "decimalNumbers",
+            "description": "Whether to output DECIMAL types as numbers instead of strings"
+          },
+          {
+            "name": "priority",
+            "description": "Ignore any ignorable errors that occur while executing the INSERT statement"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          },
+          {
+            "name": "selectDistinct",
+            "description": "Whether to remove these duplicate rows"
+          },
+          {
+            "name": "detailedOutput",
+            "description": "Whether to show in output details of the ofexecuted query for each statement, or just confirmation of success"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "insert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "where",
+        "displayName": "Select Rows",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "If not set, all rows will be selected"
+      },
+      {
+        "name": "combineConditions",
+        "displayName": "Combine Conditions",
+        "type": "options",
+        "default": "AND",
+        "options": [
+          {
+            "name": "AND",
+            "value": "AND",
+            "description": "Only rows that meet all the conditions are selected"
+          },
+          {
+            "name": "OR",
+            "value": "OR",
+            "description": "Rows that meet at least one condition are selected"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "How to combine the conditions defined in \"Select Rows\": AND requires all conditions to be true, OR requires at least one condition to be true"
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "connectionTimeoutMillis",
+            "description": "Number of milliseconds reserved for connecting to the database"
+          },
+          {
+            "name": "connectionLimit",
+            "description": "Maximum amount of connections to the database, setting high value can lead to performance issues and potential database crashes"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. You can drag the values from the input panel on the left. <a href=\"https://docs.n8n.io/i"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "decimalNumbers",
+            "description": "Whether to output DECIMAL types as numbers instead of strings"
+          },
+          {
+            "name": "priority",
+            "description": "Ignore any ignorable errors that occur while executing the INSERT statement"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          },
+          {
+            "name": "selectDistinct",
+            "description": "Whether to remove these duplicate rows"
+          },
+          {
+            "name": "detailedOutput",
+            "description": "Whether to show in output details of the ofexecuted query for each statement, or just confirmation of success"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "autoMapInputData",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties names exactly match the table column names"
+          },
+          {
+            "name": "Map Each Column Below",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column manually"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to map node input properties and the table data automatically or manually"
+      },
+      {
+        "name": "notice",
+        "displayName": "\n\t\tIn this mode, make sure incoming data fields are named the same as the columns in your table. If needed, use an 'Edit Fields' node before this node to change the field names.\n\t\t",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMapInputData"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columnToMatchOn",
+        "displayName": "Column to Match On",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+      },
+      {
+        "name": "valueToMatchOn",
+        "displayName": "Value of Column to Match On",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Rows with a value in the specified \"Column to Match On\" that corresponds to the value in this field will be updated"
+      },
+      {
+        "name": "valuesToSend",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "connectionTimeoutMillis",
+            "description": "Number of milliseconds reserved for connecting to the database"
+          },
+          {
+            "name": "connectionLimit",
+            "description": "Maximum amount of connections to the database, setting high value can lead to performance issues and potential database crashes"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. You can drag the values from the input panel on the left. <a href=\"https://docs.n8n.io/i"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "decimalNumbers",
+            "description": "Whether to output DECIMAL types as numbers instead of strings"
+          },
+          {
+            "name": "priority",
+            "description": "Ignore any ignorable errors that occur while executing the INSERT statement"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          },
+          {
+            "name": "selectDistinct",
+            "description": "Whether to remove these duplicate rows"
+          },
+          {
+            "name": "detailedOutput",
+            "description": "Whether to show in output details of the ofexecuted query for each statement, or just confirmation of success"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "autoMapInputData",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties names exactly match the table column names"
+          },
+          {
+            "name": "Map Each Column Below",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column manually"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to map node input properties and the table data automatically or manually"
+      },
+      {
+        "name": "notice",
+        "displayName": "\n\t\tIn this mode, make sure incoming data fields are named the same as the columns in your table. If needed, use an 'Edit Fields' node before this node to change the field names.\n\t\t",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMapInputData"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columnToMatchOn",
+        "displayName": "Column to Match On",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "The column to compare when finding the rows to update. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>."
+      },
+      {
+        "name": "valueToMatchOn",
+        "displayName": "Value of Column to Match On",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Rows with a value in the specified \"Column to Match On\" that corresponds to the value in this field will be updated. New rows will be created for non-matching items."
+      },
+      {
+        "name": "valuesToSend",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "connectionTimeoutMillis",
+            "description": "Number of milliseconds reserved for connecting to the database"
+          },
+          {
+            "name": "connectionLimit",
+            "description": "Maximum amount of connections to the database, setting high value can lead to performance issues and potential database crashes"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. You can drag the values from the input panel on the left. <a href=\"https://docs.n8n.io/i"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "decimalNumbers",
+            "description": "Whether to output DECIMAL types as numbers instead of strings"
+          },
+          {
+            "name": "priority",
+            "description": "Ignore any ignorable errors that occur while executing the INSERT statement"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          },
+          {
+            "name": "selectDistinct",
+            "description": "Whether to remove these duplicate rows"
+          },
+          {
+            "name": "detailedOutput",
+            "description": "Whether to show in output details of the ofexecuted query for each statement, or just confirmation of success"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

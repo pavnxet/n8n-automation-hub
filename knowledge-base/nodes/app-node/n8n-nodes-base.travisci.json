@@ -1,0 +1,384 @@
+{
+  "id": "n8n-nodes-base.travisci",
+  "name": "Travis CI",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.travisci",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Travis CI node to automate work in Travis CI, and integrate Travis CI with other applications. n8n has built-in support for a wide range of Travis CI features, including cancelling and getting builds",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.travisci",
+  "credentials": {
+    "name": "Travis CI",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/travisci",
+    "slug": "travisci",
+    "json_file": "credentials/travisci.json",
+    "markdown_file": "credentials/travisci.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Build",
+      "operation": "Cancel a build",
+      "description": "",
+      "doc": "",
+      "resource_value": "build",
+      "operation_value": "cancel"
+    },
+    {
+      "resource": "Build",
+      "operation": "Get a build",
+      "description": "",
+      "doc": "",
+      "resource_value": "build",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Build",
+      "operation": "Get all builds",
+      "description": "",
+      "doc": "",
+      "resource_value": "build",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Build",
+      "operation": "Restart a build",
+      "description": "",
+      "doc": "",
+      "resource_value": "build",
+      "operation_value": "restart"
+    },
+    {
+      "resource": "Build",
+      "operation": "Trigger a build",
+      "description": "",
+      "doc": "",
+      "resource_value": "build",
+      "operation_value": "trigger"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "build",
+    "builds",
+    "cancel",
+    "cancelling",
+    "ci",
+    "get",
+    "getting",
+    "including",
+    "restart",
+    "travis",
+    "travisci",
+    "trigger",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.travisci.md",
+      "title": "Travis CI node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.travisci",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.travisci.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.travisci.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.travisci.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.travisci.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.travisCi",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "travisCiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "travisCiApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "TravisCI"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 12,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "build",
+        "options": [
+          {
+            "name": "Build",
+            "value": "build"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "cancel",
+        "options": [
+          {
+            "name": "Cancel",
+            "value": "cancel",
+            "description": "Cancel a build"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a build"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many builds"
+          },
+          {
+            "name": "Restart",
+            "value": "restart",
+            "description": "Restart a build"
+          },
+          {
+            "name": "Trigger",
+            "value": "trigger",
+            "description": "Trigger a build"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "build"
+            ]
+          }
+        }
+      },
+      {
+        "name": "buildId",
+        "displayName": "Build ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "cancel"
+            ],
+            "resource": [
+              "build"
+            ]
+          }
+        },
+        "description": "Value uniquely identifying the build"
+      },
+      {
+        "name": "buildId",
+        "displayName": "Build ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "build"
+            ]
+          }
+        },
+        "description": "Value uniquely identifying the build"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include",
+            "description": "List of attributes to eager load"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "build"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "build"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "build"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include",
+            "description": "List of attributes to eager load"
+          },
+          {
+            "name": "order",
+            "description": "You may specify order to sort your response"
+          },
+          {
+            "name": "sortBy"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "build"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "buildId",
+        "displayName": "Build ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "restart"
+            ],
+            "resource": [
+              "build"
+            ]
+          }
+        },
+        "description": "Value uniquely identifying the build"
+      },
+      {
+        "name": "slug",
+        "displayName": "Slug",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "trigger"
+            ],
+            "resource": [
+              "build"
+            ]
+          }
+        },
+        "description": "Same as {ownerName}/{repositoryName}"
+      },
+      {
+        "name": "branch",
+        "displayName": "Branch",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "trigger"
+            ],
+            "resource": [
+              "build"
+            ]
+          }
+        },
+        "description": "Branch requested to be built"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "message",
+            "description": "Travis-ci status message attached to the request"
+          },
+          {
+            "name": "mergeMode"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "build"
+            ],
+            "operation": [
+              "trigger"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

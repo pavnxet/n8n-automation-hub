@@ -1,0 +1,272 @@
+{
+  "id": "n8n-nodes-base.profitwell",
+  "name": "ProfitWell",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.profitwell",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the ProfitWell node to automate work in ProfitWell, and integrate ProfitWell with other applications. n8n supports getting your company's account settings and retrieving financial metrics from ProfitWell",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.profitwell",
+  "credentials": {
+    "name": "ProfitWell",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/profitwell",
+    "slug": "profitwell",
+    "json_file": "credentials/profitwell.json",
+    "markdown_file": "credentials/profitwell.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Company",
+      "operation": "Get your company's ProfitWell account settings",
+      "description": "",
+      "doc": "",
+      "resource_value": "company"
+    },
+    {
+      "resource": "Metric",
+      "operation": "Retrieve financial metric broken down by day for either the current month or the last",
+      "description": "",
+      "doc": "",
+      "resource_value": "metric"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "account",
+    "app",
+    "applications",
+    "broken",
+    "company",
+    "current",
+    "day",
+    "down",
+    "either",
+    "financial",
+    "get",
+    "getting",
+    "last",
+    "metric",
+    "metrics",
+    "month",
+    "profitwell",
+    "retrieve",
+    "retrieving",
+    "settings",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.profitwell.md",
+      "title": "ProfitWell node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.profitwell",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.profitwell.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.profitwell.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.profitwell.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.profitwell.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.profitWell",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "profitWellApi"
+  ],
+  "credential_details": [
+    {
+      "name": "profitWellApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "ProfitWell"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "metric",
+        "options": [
+          {
+            "name": "Company",
+            "value": "company"
+          },
+          {
+            "name": "Metric",
+            "value": "metric"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getSetting",
+        "options": [
+          {
+            "name": "Get Settings",
+            "value": "getSetting",
+            "description": "Get your company's ProfitWell account settings"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve financial metric broken down by day for either the current month or the last"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "metric"
+            ]
+          }
+        }
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Daily",
+            "value": "daily",
+            "description": "Retrieve financial metric broken down by day for either the current month or the last"
+          },
+          {
+            "name": "Monthly",
+            "value": "monthly",
+            "description": "Retrieve all monthly financial metric for your company"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "metric"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "month",
+        "displayName": "Month",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "metric"
+            ],
+            "operation": [
+              "get"
+            ],
+            "type": [
+              "daily"
+            ]
+          }
+        },
+        "description": "Can only be the current or previous month. Format should be YYYY-MM."
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "metric"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "plan_id",
+            "description": "Only return the metric for this Plan ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "dailyMetrics",
+            "description": "Comma-separated list of metric trends to return (the default is to return all metric)"
+          },
+          {
+            "name": "monthlyMetrics",
+            "description": "Comma-separated list of metric trends to return (the default is to return all metric)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "metric"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "id": "n8n-nodes-langchain.mcptrigger",
+  "name": "MCP Server Trigger",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-langchain.mcptrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the MCP Server Trigger node to allow n8n to act as a Model Context Protocol (MCP) server, making n8n tools and workflows available to MCP clients",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.mcptrigger",
+  "credentials": {
+    "name": "HTTP request",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/httprequest",
+    "slug": "httprequest",
+    "json_file": "credentials/httprequest.json",
+    "markdown_file": "credentials/httprequest.md"
+  },
+  "authentication_methods": [
+    "Bearer auth",
+    "Header auth",
+    "None"
+  ],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "MCP URL",
+      "description": "The MCP Server Trigger node has two MCP URLs: test and production. n8n displays the URLs at the top of the node panel"
+    },
+    {
+      "name": "Authentication",
+      "description": "You can require authentication for clients connecting to your MCP URL. Choose from:",
+      "options": [
+        "None",
+        "Bearer auth",
+        "Header auth"
+      ]
+    },
+    {
+      "name": "Path",
+      "description": "By default, this field contains a randomly generated MCP URL path, to avoid conflicts with other MCP Server Trigger nodes"
+    },
+    {
+      "name": "Instructions",
+      "description": "Optional instructions sent to MCP clients when they connect. Clients that support server instructions typically add them to the model's system prompt. Use them for guidance that spans multiple tools, such as tool-choice rules or multi-step workflows"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allow",
+    "authentication",
+    "available",
+    "clients",
+    "context",
+    "core",
+    "http",
+    "instructions",
+    "making",
+    "mcp",
+    "mcptrigger",
+    "model",
+    "path",
+    "protocol",
+    "request",
+    "server",
+    "tools",
+    "trigger",
+    "url"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.mcptrigger.md",
+      "title": "MCP Server Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.mcptrigger",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-langchain.mcptrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-langchain.mcptrigger.json",
+    "markdown": "nodes/core-node/n8n-nodes-langchain.mcptrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-langchain.mcptrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+  "type_version": 2.1,
+  "type_versions": [
+    1,
+    1.1,
+    2,
+    2.1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "httpBearerAuth",
+    "httpHeaderAuth"
+  ],
+  "credential_details": [
+    {
+      "name": "httpBearerAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "bearerAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "httpHeaderAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "headerAuth"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "MCP Server Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      {
+        "type": "ai_tool",
+        "displayName": "Tools"
+      }
+    ],
+    "outputs": []
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "n8n User Auth (OAuth2)",
+            "value": "n8nOAuth2",
+            "description": "Require user to give consent to use their n8n account"
+          },
+          {
+            "name": "Bearer Auth",
+            "value": "bearerAuth"
+          },
+          {
+            "name": "Header Auth",
+            "value": "headerAuth"
+          }
+        ],
+        "description": "The way to authenticate"
+      },
+      {
+        "name": "requireExecuteAccess",
+        "displayName": "Require Workflow Execute Permission",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "n8nOAuth2"
+            ]
+          }
+        },
+        "description": "Whether the triggering user must also have permission to execute the workflow in the project it belongs to"
+      },
+      {
+        "name": "trustedSource",
+        "displayName": "Trusted Source Name or ID",
+        "type": "options",
+        "default": "n8n-internal",
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "n8nOAuth2"
+            ]
+          }
+        },
+        "description": "The identity provider whose access tokens can call this MCP server"
+      },
+      {
+        "name": "includeUserInOutput",
+        "displayName": "Include User in Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "n8nOAuth2"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Whether to include the calling user's ID, email and name in the trigger output and in the request the connected tools receive"
+      },
+      {
+        "name": "path",
+        "displayName": "Path",
+        "type": "string",
+        "required": true,
+        "description": "The base path for this MCP server"
+      },
+      {
+        "name": "instructions",
+        "displayName": "Instructions",
+        "type": "string",
+        "description": "Sent to MCP clients when they connect. Clients that support server instructions typically add them to the model's system prompt — use for guidance that spans multiple tools, such as tool-choice rules or multi-step workfl"
+      }
+    ]
+  }
+}

@@ -1,0 +1,546 @@
+{
+  "id": "n8n-nodes-base.ldap",
+  "name": "LDAP",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.ldap",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "This node allows you to interact with your LDAP servers to create, find, and update objects",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ldap",
+  "credentials": {
+    "name": "LDAP credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/ldap",
+    "slug": "ldap",
+    "json_file": "credentials/ldap.json",
+    "markdown_file": "credentials/ldap.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Compare",
+      "description": "an attribute",
+      "doc": "#compare",
+      "operation_value": "compare"
+    },
+    {
+      "resource": "",
+      "operation": "Create",
+      "description": "a new entry",
+      "doc": "#create",
+      "operation_value": "create"
+    },
+    {
+      "resource": "",
+      "operation": "Delete",
+      "description": "an entry",
+      "doc": "#delete",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "",
+      "operation": "Rename",
+      "description": "the DN of an existing entry",
+      "doc": "#rename",
+      "operation_value": "rename"
+    },
+    {
+      "resource": "",
+      "operation": "Search",
+      "description": "LDAP",
+      "doc": "#search",
+      "operation_value": "search"
+    },
+    {
+      "resource": "",
+      "operation": "Update",
+      "description": "attributes",
+      "doc": "#update",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 6,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allows",
+    "compare",
+    "core",
+    "create",
+    "credentials",
+    "delete",
+    "find",
+    "interact",
+    "ldap",
+    "objects",
+    "rename",
+    "search",
+    "servers",
+    "update"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.ldap.md",
+      "title": "LDAP",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ldap",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.ldap.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.ldap.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.ldap.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.ldap.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.ldap",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "ldap"
+  ],
+  "credential_details": [
+    {
+      "name": "ldap",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "LDAP"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 21,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "search",
+        "options": [
+          {
+            "name": "Compare",
+            "value": "compare",
+            "description": "Compare an attribute"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new entry"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an entry"
+          },
+          {
+            "name": "Rename",
+            "value": "rename",
+            "description": "Rename the DN of an existing entry"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Search LDAP"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update attributes"
+          }
+        ]
+      },
+      {
+        "name": "nodeDebug",
+        "displayName": "Debug",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "dn",
+        "displayName": "DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "compare"
+            ]
+          }
+        },
+        "description": "The distinguished name of the entry to compare"
+      },
+      {
+        "name": "dn",
+        "displayName": "DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The distinguished name of the entry to create"
+      },
+      {
+        "name": "dn",
+        "displayName": "DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The distinguished name of the entry to delete"
+      },
+      {
+        "name": "dn",
+        "displayName": "DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "rename"
+            ]
+          }
+        },
+        "description": "The distinguished name of the entry to rename"
+      },
+      {
+        "name": "dn",
+        "displayName": "DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "modify"
+            ]
+          }
+        },
+        "description": "The distinguished name of the entry to modify"
+      },
+      {
+        "name": "dn",
+        "displayName": "DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The distinguished name of the entry to update"
+      },
+      {
+        "name": "id",
+        "displayName": "Attribute ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "compare"
+            ]
+          }
+        },
+        "description": "The ID of the attribute to compare"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "compare"
+            ]
+          }
+        },
+        "description": "The value to compare"
+      },
+      {
+        "name": "targetDn",
+        "displayName": "New DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "rename"
+            ]
+          }
+        },
+        "description": "The new distinguished name for the entry"
+      },
+      {
+        "name": "attributes",
+        "displayName": "Attributes",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "attribute",
+            "values": [
+              {
+                "name": "id",
+                "displayName": "Attribute ID",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Attributes to add to the entry"
+      },
+      {
+        "name": "attributes",
+        "displayName": "Update Attributes",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "add",
+            "values": [
+              {
+                "name": "id",
+                "displayName": "Attribute ID",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "replace",
+            "values": [
+              {
+                "name": "id",
+                "displayName": "Attribute ID",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "delete",
+            "values": [
+              {
+                "name": "id",
+                "displayName": "Attribute ID",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Update entry attributes"
+      },
+      {
+        "name": "baseDN",
+        "displayName": "Base DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "The distinguished name of the subtree to search in"
+      },
+      {
+        "name": "searchFor",
+        "displayName": "Search For",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Directory object class to search for"
+      },
+      {
+        "name": "customFilter",
+        "displayName": "Custom Filter",
+        "type": "string",
+        "default": "(objectclass=*)",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "searchFor": [
+              "custom"
+            ]
+          }
+        },
+        "description": "Custom LDAP filter. Escape these chars * ( ) \\ with a backslash \"\\\"."
+      },
+      {
+        "name": "attribute",
+        "displayName": "Attribute",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ]
+          },
+          "hide": {
+            "searchFor": [
+              "custom"
+            ]
+          }
+        },
+        "description": "Attribute to search for"
+      },
+      {
+        "name": "searchText",
+        "displayName": "Search Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ]
+          },
+          "hide": {
+            "searchFor": [
+              "custom"
+            ]
+          }
+        },
+        "description": "Text to search for, Use * for a wildcard"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attributes",
+            "description": "Comma-separated list of attributes to return. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "pageSize",
+            "description": "Maximum number of results to request at one time. Set to 0 to disable paging."
+          },
+          {
+            "name": "scope",
+            "description": "The set of entries at or below the BaseDN that may be considered potential matches"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

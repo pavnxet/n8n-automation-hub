@@ -1,0 +1,396 @@
+{
+  "id": "n8n-nodes-langchain.lmchatopenai",
+  "name": "OpenAI Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatopenai",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the OpenAI Chat Model node to use OpenAI's chat models with conversational agents[^1]",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai",
+  "credentials": {
+    "name": "OpenAI credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/openai",
+    "slug": "openai",
+    "json_file": "credentials/openai.json",
+    "markdown_file": "credentials/openai.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "Select the model to use to generate the completion"
+    },
+    {
+      "name": "Use Responses API",
+      "description": "OpenAI provides two endpoints for generating output from a model:"
+    },
+    {
+      "name": "Built-in Tools",
+      "description": "The OpenAI Responses API provides a range of built-in tools to enrich the model's response. Toggle to Use Responses API if you want the model to have access to the following built-in tools:"
+    },
+    {
+      "name": "Frequency Penalty",
+      "description": "Use this option to control the chances of the model repeating itself. Higher values reduce the chance of the model repeating itself"
+    },
+    {
+      "name": "Maximum Number of Tokens",
+      "description": "Enter the maximum number of tokens used, which sets the completion length"
+    },
+    {
+      "name": "Presence Penalty",
+      "description": "Use this option to control the chances of the model talking about new topics. Higher values increase the chance of the model talking about new topics"
+    },
+    {
+      "name": "Sampling Temperature",
+      "description": "Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations"
+    },
+    {
+      "name": "Timeout",
+      "description": "Enter the maximum request time in milliseconds"
+    },
+    {
+      "name": "Max Retries",
+      "description": "Enter the maximum number of times to retry a request"
+    },
+    {
+      "name": "Top P",
+      "description": "Use this option to set the probability the completion should use. Use a lower value to ignore less probable options"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Processing parameters",
+      "summary": "The OpenAI Chat Model node is a sub-node[^1]. Sub-nodes behave differently than other nodes when processing multiple items using expressions"
+    }
+  ],
+  "keywords": [
+    "agents",
+    "api",
+    "chat",
+    "cluster",
+    "conversational",
+    "credentials",
+    "frequency",
+    "lmchatopenai",
+    "max",
+    "maximum",
+    "model",
+    "models",
+    "number",
+    "openai",
+    "penalty",
+    "presence",
+    "responses",
+    "retries",
+    "sampling",
+    "sub",
+    "temperature",
+    "timeout",
+    "tokens",
+    "tools",
+    "top"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    },
+    {
+      "id": "wqdQXLzKrIsqxA7CuhxT",
+      "name": "openai-api-issues"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "OpenAI Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "OpenAI Chat Model node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai/common-issues",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatopenai.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatopenai.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+  "type_version": 1.3,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "openAiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "openAiApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "OpenAI Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "notice",
+        "displayName": "If using JSON response format, you must include word \"json\" in the prompt in your chain or agent. Also, make sure to select latest models released post November 2023.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.responseFormat": [
+              "json_object"
+            ]
+          }
+        }
+      },
+      {
+        "name": "notice",
+        "displayName": "If using JSON response format, you must include word \"json\" in the prompt in your chain or agent. Also, make sure to select latest models released post November 2023.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.textFormat.textOptions.type": [
+              "json_object"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "gpt-5-mini",
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The model which will generate the completion. <a href=\"https://developers.openai.com/api/docs/models\">Learn more</a>."
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "displayOptions": {
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "The model. Choose from the list, or specify an ID."
+      },
+      {
+        "name": "notice",
+        "displayName": "When using non-OpenAI models via \"Base URL\" override, not all models might be chat-compatible or support other features, like tools calling or JSON response format",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.baseURL": [
+              {
+                "_cnd": {
+                  "exists": true
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "responsesApiEnabled",
+        "displayName": "Use Responses API",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "Whether to use the Responses API to generate the response. <a href=\"https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai/#use-responses-api\">Learn more</a>."
+      },
+      {
+        "name": "builtInTools",
+        "displayName": "Built-in Tools",
+        "type": "collection",
+        "options": [
+          {
+            "name": "webSearch"
+          },
+          {
+            "name": "fileSearch"
+          },
+          {
+            "name": "codeInterpreter",
+            "description": "Whether to allow the model to execute code in a sandboxed environment"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ],
+            "/responsesApiEnabled": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "baseURL",
+            "description": "Override the default base URL for the API"
+          },
+          {
+            "name": "frequencyPenalty",
+            "description": "Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 32,768"
+          },
+          {
+            "name": "responseFormat"
+          },
+          {
+            "name": "responseFormat"
+          },
+          {
+            "name": "textFormat"
+          },
+          {
+            "name": "presencePenalty",
+            "description": "Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "reasoningEffort",
+            "description": "Controls the amount of reasoning tokens to use. A value of \"low\" will favor speed and economical token usage, \"high\" will favor more complete reasoning at the c"
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in milliseconds"
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt"
+          },
+          {
+            "name": "topP",
+            "description": "Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We generally recommend altering this or temperature b"
+          },
+          {
+            "name": "extraBody",
+            "description": "Optional additional JSON properties to include in the request body when making requests to OpenAI-compatible APIs"
+          },
+          {
+            "name": "conversationId",
+            "description": "The conversation that this response belongs to. Input items and output items from this response are automatically added to this conversation after this response"
+          },
+          {
+            "name": "promptCacheKey",
+            "description": "Used by OpenAI to cache responses for similar requests to optimize your cache hit rates"
+          },
+          {
+            "name": "safetyIdentifier",
+            "description": "A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies. The IDs should be a string that uniquely identi"
+          },
+          {
+            "name": "serviceTier",
+            "description": "The service tier to use for the request"
+          },
+          {
+            "name": "metadata",
+            "description": "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and "
+          },
+          {
+            "name": "topLogprobs",
+            "description": "An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability"
+          },
+          {
+            "name": "promptConfig",
+            "description": "Configure the reusable prompt template configured via OpenAI Dashboard. <a href=\"https://platform.openai.com/docs/guides/prompt-engineering#reusable-prompts\">Le"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

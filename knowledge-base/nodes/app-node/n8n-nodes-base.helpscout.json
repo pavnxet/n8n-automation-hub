@@ -1,0 +1,1409 @@
+{
+  "id": "n8n-nodes-base.helpscout",
+  "name": "Help Scout",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.helpscout",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Help Scout node to automate work in Help Scout, and integrate Help Scout with other applications. n8n has built-in support for a wide range of Help Scout features, including creating, updating, deleting, and getting conversations, and customers",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.helpscout",
+  "credentials": {
+    "name": "Help Scout",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/helpscout",
+    "slug": "helpscout",
+    "json_file": "credentials/helpscout.json",
+    "markdown_file": "credentials/helpscout.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Conversation",
+      "operation": "Create a new conversation",
+      "description": "",
+      "doc": "",
+      "resource_value": "conversation",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Conversation",
+      "operation": "Delete a conversation",
+      "description": "",
+      "doc": "",
+      "resource_value": "conversation",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Conversation",
+      "operation": "Get a conversation",
+      "description": "",
+      "doc": "",
+      "resource_value": "conversation",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Conversation",
+      "operation": "Get all conversations",
+      "description": "",
+      "doc": "",
+      "resource_value": "conversation",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Customer",
+      "operation": "Create a new customer",
+      "description": "",
+      "doc": "",
+      "resource_value": "customer",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Customer",
+      "operation": "Get a customer",
+      "description": "",
+      "doc": "",
+      "resource_value": "customer",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Customer",
+      "operation": "Get all customers",
+      "description": "",
+      "doc": "",
+      "resource_value": "customer",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Customer",
+      "operation": "Get customer property definitions",
+      "description": "",
+      "doc": "",
+      "resource_value": "customer",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Customer",
+      "operation": "Update a customer",
+      "description": "",
+      "doc": "",
+      "resource_value": "customer",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Mailbox",
+      "operation": "Get data of a mailbox",
+      "description": "",
+      "doc": "",
+      "resource_value": "mailbox",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Mailbox",
+      "operation": "Get all mailboxes",
+      "description": "",
+      "doc": "",
+      "resource_value": "mailbox",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Create a new chat thread",
+      "description": "",
+      "doc": "",
+      "resource_value": "thread",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Thread",
+      "operation": "Get all chat threads",
+      "description": "",
+      "doc": "",
+      "resource_value": "thread"
+    }
+  ],
+  "operation_count": 13,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "chat",
+    "conversation",
+    "conversations",
+    "create",
+    "creating",
+    "customer",
+    "customers",
+    "data",
+    "definitions",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "help",
+    "helpscout",
+    "including",
+    "mailbox",
+    "mailboxes",
+    "new",
+    "property",
+    "scout",
+    "thread",
+    "threads",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.helpscout.md",
+      "title": "Help Scout node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.helpscout",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.helpscout.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.helpscout.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.helpscout.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.helpscout.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.helpScout",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "helpScoutOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "helpScoutOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Help Scout"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 42,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "conversation",
+        "options": [
+          {
+            "name": "Conversation",
+            "value": "conversation"
+          },
+          {
+            "name": "Customer",
+            "value": "customer"
+          },
+          {
+            "name": "Mailbox",
+            "value": "mailbox"
+          },
+          {
+            "name": "Thread",
+            "value": "thread"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new conversation"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a conversation"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a conversation"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many conversations"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "conversation"
+            ]
+          }
+        }
+      },
+      {
+        "name": "mailboxId",
+        "displayName": "Mailbox Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "ID of a mailbox where the conversation is being created. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "status",
+        "displayName": "Status",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Active",
+            "value": "active"
+          },
+          {
+            "name": "Closed",
+            "value": "closed"
+          },
+          {
+            "name": "Pending",
+            "value": "pending"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "Conversation status"
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "Conversation’s subject"
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Chat",
+            "value": "chat"
+          },
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "Phone",
+            "value": "phone"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "Conversation type"
+      },
+      {
+        "name": "resolveData",
+        "displayName": "Resolve Data",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "By default the response only contain the ID to resource. If this option gets activated, it will resolve the data automatically."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignTo",
+            "description": "The Help Scout user assigned to the conversation"
+          },
+          {
+            "name": "autoReply",
+            "description": "Whether set to true, an auto reply will be sent as long as there is at least one customer thread in the conversation"
+          },
+          {
+            "name": "closedAt",
+            "description": "When the conversation was closed, only applicable for imported conversations"
+          },
+          {
+            "name": "createdAt",
+            "description": "When this conversation was created - ISO 8601 date time"
+          },
+          {
+            "name": "customerEmail"
+          },
+          {
+            "name": "customerId"
+          },
+          {
+            "name": "imported",
+            "description": "Whether set to true, no outgoing emails or notifications will be generated"
+          },
+          {
+            "name": "tags",
+            "description": "List of tags to be added to the conversation. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "user",
+            "description": "ID of the user who is adding the conversation and threads"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        }
+      },
+      {
+        "name": "threadsUi",
+        "displayName": "Threads",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "threadsValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "bcc",
+                "displayName": "Bcc",
+                "type": "string"
+              },
+              {
+                "name": "cc",
+                "displayName": "Cc",
+                "type": "string"
+              },
+              {
+                "name": "draft",
+                "displayName": "Draft",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        }
+      },
+      {
+        "name": "conversationId",
+        "displayName": "Conversation ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "conversation"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "conversationId",
+        "displayName": "Conversation ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "conversation"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "conversation"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "assignTo",
+            "description": "Filters conversations by assignee ID"
+          },
+          {
+            "name": "embed",
+            "description": "Allows embedding/loading of sub-entities"
+          },
+          {
+            "name": "folder",
+            "description": "Filters conversations from a specific folder ID"
+          },
+          {
+            "name": "mailbox",
+            "description": "Filters conversations from a specific mailbox"
+          },
+          {
+            "name": "modifiedSince",
+            "description": "Returns only conversations that were modified after this date"
+          },
+          {
+            "name": "number",
+            "description": "Looks up conversation by conversation number"
+          },
+          {
+            "name": "query",
+            "description": "Advanced search <a href=\"https://developer.helpscout.com/mailbox-api/endpoints/conversations/list/#query\">Examples</a>"
+          },
+          {
+            "name": "sortField",
+            "description": "Sorts the result by specified field"
+          },
+          {
+            "name": "sortOrder"
+          },
+          {
+            "name": "status",
+            "description": "Filter conversation by status"
+          },
+          {
+            "name": "tags",
+            "description": "Filter conversation by tags. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "conversation"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new customer"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a customer"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many customers"
+          },
+          {
+            "name": "Properties",
+            "value": "properties",
+            "description": "Get customer property definitions"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a customer"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "resolveData",
+        "displayName": "Resolve Data",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        },
+        "description": "By default the response only contain the ID to resource. If this option gets activated, it will resolve the data automatically."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "age",
+            "description": "Customer’s age"
+          },
+          {
+            "name": "firstName",
+            "description": "First name of the customer. When defined it must be between 1 and 40 characters."
+          },
+          {
+            "name": "gender",
+            "description": "Gender of this customer"
+          },
+          {
+            "name": "jobTitle",
+            "description": "Job title. Max length 60 characters."
+          },
+          {
+            "name": "lastName",
+            "description": "Last name of the customer"
+          },
+          {
+            "name": "location",
+            "description": "Location of the customer"
+          },
+          {
+            "name": "background"
+          },
+          {
+            "name": "organization"
+          },
+          {
+            "name": "photoUrl",
+            "description": "URL of the customer’s photo"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "addressUi",
+        "displayName": "Address",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "addressValue",
+            "values": [
+              {
+                "name": "line1",
+                "displayName": "Line 1",
+                "type": "string"
+              },
+              {
+                "name": "line2",
+                "displayName": "Line 2",
+                "type": "string"
+              },
+              {
+                "name": "city",
+                "displayName": "City",
+                "type": "string"
+              },
+              {
+                "name": "state",
+                "displayName": "State",
+                "type": "string"
+              },
+              {
+                "name": "country",
+                "displayName": "Country Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "postalCode",
+                "displayName": "Postal Code",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "chatsUi",
+        "displayName": "Chat Handles",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "chatsValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "emailsUi",
+        "displayName": "Emails",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "emailsValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "phonesUi",
+        "displayName": "Phones",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "phonesValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "socialProfilesUi",
+        "displayName": "Social Profiles",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "socialProfilesValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "websitesUi",
+        "displayName": "Websites",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "websitesValues",
+            "values": [
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "customer"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "firstName",
+            "description": "Filters customers by first name"
+          },
+          {
+            "name": "lastName",
+            "description": "Filters customers by last name"
+          },
+          {
+            "name": "mailbox",
+            "description": "Filters customers from a specific mailbox"
+          },
+          {
+            "name": "modifiedSince",
+            "description": "Returns only customers that were modified after this date"
+          },
+          {
+            "name": "sortField",
+            "description": "Sorts the result by specified field"
+          },
+          {
+            "name": "sortOrder"
+          },
+          {
+            "name": "query",
+            "description": "Advanced search <a href=\"https://developer.helpscout.com/mailbox-api/endpoints/customers/list/#query\">Examples</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "customer"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "customerId",
+        "displayName": "Customer ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "customer"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "customerId",
+        "displayName": "Customer ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "age",
+            "description": "Customer’s age"
+          },
+          {
+            "name": "firstName",
+            "description": "First name of the customer. When defined it must be between 1 and 40 characters."
+          },
+          {
+            "name": "gender",
+            "description": "Gender of this customer"
+          },
+          {
+            "name": "jobTitle",
+            "description": "Job title. Max length 60 characters."
+          },
+          {
+            "name": "lastName",
+            "description": "Last name of the customer"
+          },
+          {
+            "name": "location",
+            "description": "Location of the customer"
+          },
+          {
+            "name": "background"
+          },
+          {
+            "name": "organization"
+          },
+          {
+            "name": "photoUrl",
+            "description": "URL of the customer’s photo"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "customer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a mailbox"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many mailboxes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "mailbox"
+            ]
+          }
+        }
+      },
+      {
+        "name": "mailboxId",
+        "displayName": "Mailbox ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "mailbox"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "mailbox"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "mailbox"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new chat thread"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many chat threads"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ]
+          }
+        }
+      },
+      {
+        "name": "conversationId",
+        "displayName": "Conversation ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Chat",
+            "value": "chat"
+          },
+          {
+            "name": "Customer",
+            "value": "customer"
+          },
+          {
+            "name": "Note",
+            "value": "note"
+          },
+          {
+            "name": "Phone",
+            "value": "phone"
+          },
+          {
+            "name": "Reply",
+            "value": "reply"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The chat text"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "createdAt"
+          },
+          {
+            "name": "customerEmail"
+          },
+          {
+            "name": "customerId"
+          },
+          {
+            "name": "draft",
+            "description": "Whether a draft reply is created"
+          },
+          {
+            "name": "imported",
+            "description": "Whether no outgoing emails or notifications will be generated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "thread"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentsUi",
+        "displayName": "Attachments",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "attachmentsValues",
+            "values": [
+              {
+                "name": "fileName",
+                "displayName": "FileName",
+                "type": "string"
+              },
+              {
+                "name": "mimeType",
+                "displayName": "Mime Type",
+                "type": "string"
+              },
+              {
+                "name": "data",
+                "displayName": "Data",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "attachmentsBinary",
+            "values": [
+              {
+                "name": "property",
+                "displayName": "Property",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "thread"
+            ]
+          }
+        },
+        "description": "Array of supported attachments to add to the message"
+      },
+      {
+        "name": "conversationId",
+        "displayName": "Conversation ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "thread"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "thread"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "thread"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      }
+    ]
+  }
+}

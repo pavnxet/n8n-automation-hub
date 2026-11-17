@@ -1,0 +1,841 @@
+{
+  "id": "n8n-nodes-base.converttofile",
+  "name": "Convert to File",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.converttofile",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Convert to File node to take input data and output it as a file. This converts the input JSON data into a binary format",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.converttofile",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Convert to CSV",
+      "description": "",
+      "doc": "#convert-to-csv",
+      "operation_value": "csv"
+    },
+    {
+      "resource": "",
+      "operation": "Convert to HTML",
+      "description": "",
+      "doc": "#convert-to-html",
+      "operation_value": "html"
+    },
+    {
+      "resource": "",
+      "operation": "Convert to ICS",
+      "description": "",
+      "doc": "#convert-to-ics",
+      "operation_value": "iCal"
+    },
+    {
+      "resource": "",
+      "operation": "Convert to JSON",
+      "description": "",
+      "doc": "#convert-to-json",
+      "operation_value": "toJson"
+    },
+    {
+      "resource": "",
+      "operation": "Convert to ODS",
+      "description": "",
+      "doc": "#convert-to-ods",
+      "operation_value": "ods"
+    },
+    {
+      "resource": "",
+      "operation": "Convert to RTF",
+      "description": "",
+      "doc": "#convert-to-rtf",
+      "operation_value": "rtf"
+    },
+    {
+      "resource": "",
+      "operation": "Convert to Text File",
+      "description": "",
+      "doc": "#convert-to-text-file",
+      "operation_value": "toText"
+    },
+    {
+      "resource": "",
+      "operation": "Convert to XLS",
+      "description": "",
+      "doc": "#convert-to-xls",
+      "operation_value": "xls"
+    },
+    {
+      "resource": "",
+      "operation": "Convert to XLSX",
+      "description": "",
+      "doc": "#convert-to-xlsx",
+      "operation_value": "xlsx"
+    },
+    {
+      "resource": "",
+      "operation": "Move Base64 String to File",
+      "description": "",
+      "doc": "#move-base64-string-to-file",
+      "operation_value": "toBinary"
+    },
+    {
+      "resource": "",
+      "operation": "File Name",
+      "description": "Enter the file name for the generated output file",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "If the first row of the file contains header names, turn on the Header Row option",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Convert to ICS",
+      "operation": "Put Output File in Field",
+      "description": "Enter the name of the field in the output data to contain the file",
+      "doc": ""
+    },
+    {
+      "resource": "Convert to ICS",
+      "operation": "Event Title",
+      "description": "Enter the title for the event",
+      "doc": ""
+    },
+    {
+      "resource": "Convert to ICS",
+      "operation": "Start",
+      "description": "Enter the date and time the event will start. All-day events ignore the time",
+      "doc": ""
+    },
+    {
+      "resource": "Convert to ICS",
+      "operation": "End",
+      "description": "Enter the date and time the event will end. All-day events ignore the time. If unset, the node uses the start date",
+      "doc": ""
+    },
+    {
+      "resource": "Convert to ICS",
+      "operation": "All Day",
+      "description": "Select whether the event is an all day event (turned on) or not (turned off)",
+      "doc": ""
+    },
+    {
+      "resource": "Attendees",
+      "operation": "Name",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Attendees",
+      "operation": "Email",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Attendees",
+      "operation": "RSVP",
+      "description": "Select whether the attendee needs to confirm attendance (turned on) or doesn't (turned off)",
+      "doc": ""
+    },
+    {
+      "resource": "Busy Status",
+      "operation": "Busy",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Busy Status",
+      "operation": "Tentative",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Calendar Name",
+      "description": "For Apple and Microsoft calendars, enter the calendar name for the event",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Description",
+      "description": "Enter an event description",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Geolocation",
+      "description": "Enter the Latitude and Longitude for the event's location",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Location",
+      "description": "Enter the event's intended venue/location",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Recurrence Rule",
+      "description": "Enter a rule to define the repeat pattern of the event (RRULE). Generate rules using the iCalendar.org RRULE Tool",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Organizer",
+      "description": "Enter the organizer's Name and Email",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Sequence",
+      "description": "If you're sending an update for an event with the same universally unique ID (UID), enter the revision sequence number",
+      "doc": ""
+    },
+    {
+      "resource": "Status",
+      "operation": "Confirmed",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Status",
+      "operation": "Cancelled",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Status",
+      "operation": "Tentative",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "UID",
+      "description": "Enter a universally unique ID (UID) for the event. The UID should be globally unique. The node automatically generates a UID if you don't enter one",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "URL",
+      "description": "Enter a URL associated with the event",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Use Workflow Timezone",
+      "description": "Whether to use UTC time zone (turned off) or the workflow's timezone (turned on). Set the workflow's timezone in the Workflow Settings",
+      "doc": ""
+    },
+    {
+      "resource": "Convert to JSON",
+      "operation": "All Items to One File",
+      "description": "Send all input items to a single file",
+      "doc": ""
+    },
+    {
+      "resource": "Convert to JSON",
+      "operation": "Each Item to Separate File",
+      "description": "Create a file for every input item",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Format",
+      "description": "Choose whether to format the JSON for easier reading (turned on) or not (turned off)",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Encoding",
+      "description": "Choose the character set to use to encode the data. The default is utf8",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Compression",
+      "description": "Choose whether to compress and reduce the file's output size",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Header Row",
+      "description": "Turn on if the first row of the file contains header names",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Sheet Name",
+      "description": "Enter the Sheet Name to create in the spreadsheet",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "MIME Type",
+      "description": "Enter the MIME type of the output file. Refer to Common MIME types for a list of common MIME types and the file extensions they relate to",
+      "doc": ""
+    }
+  ],
+  "operation_count": 43,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "attendees",
+    "base64",
+    "binary",
+    "busy",
+    "calendar",
+    "cancelled",
+    "compression",
+    "confirmed",
+    "contains",
+    "convert",
+    "converts",
+    "converttofile",
+    "core",
+    "csv",
+    "data",
+    "day",
+    "description",
+    "email",
+    "encoding",
+    "end",
+    "event",
+    "field",
+    "file",
+    "first",
+    "format",
+    "geolocation",
+    "header",
+    "html",
+    "ics",
+    "input",
+    "item",
+    "items",
+    "json",
+    "location",
+    "mime",
+    "move",
+    "name",
+    "names",
+    "ods",
+    "option",
+    "organizer",
+    "output",
+    "put",
+    "recurrence",
+    "row",
+    "rsvp",
+    "rtf",
+    "rule",
+    "separate",
+    "sequence",
+    "sheet",
+    "start",
+    "status",
+    "string",
+    "take",
+    "tentative",
+    "text",
+    "timezone",
+    "title",
+    "turn",
+    "type",
+    "uid",
+    "url",
+    "xls",
+    "xlsx"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.converttofile.md",
+      "title": "Convert to File",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.converttofile",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.converttofile.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.converttofile.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.converttofile.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.converttofile.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.convertToFile",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Convert to File"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 18,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "csv",
+        "options": [
+          {
+            "name": "Convert to CSV",
+            "value": "csv",
+            "description": "Transform input data into a CSV file"
+          },
+          {
+            "name": "Convert to HTML",
+            "value": "html",
+            "description": "Transform input data into a table in an HTML file"
+          },
+          {
+            "name": "Convert to ICS",
+            "value": "iCal",
+            "description": "Converts each input item to an ICS event file"
+          },
+          {
+            "name": "Convert to JSON",
+            "value": "toJson",
+            "description": "Transform input data into a single or multiple JSON files"
+          },
+          {
+            "name": "Convert to ODS",
+            "value": "ods",
+            "description": "Transform input data into an ODS file"
+          },
+          {
+            "name": "Convert to RTF",
+            "value": "rtf",
+            "description": "Transform input data into a table in an RTF file"
+          },
+          {
+            "name": "Convert to Text File",
+            "value": "toText",
+            "description": "Transform input data string into a file"
+          },
+          {
+            "name": "Convert to XLS",
+            "value": "xls",
+            "description": "Transform input data into an Excel file"
+          },
+          {
+            "name": "Convert to XLSX",
+            "value": "xlsx",
+            "description": "Transform input data into an Excel file"
+          },
+          {
+            "name": "Move Base64 String to File",
+            "value": "toBinary",
+            "description": "Convert a base64-encoded string into its original file format"
+          }
+        ]
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "csv",
+              "html",
+              "rtf",
+              "ods",
+              "xls",
+              "xlsx"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "compression",
+            "description": "Whether to reduce the output file size"
+          },
+          {
+            "name": "delimiter",
+            "description": "The character to use to separate fields"
+          },
+          {
+            "name": "fileName",
+            "description": "Name of the output file"
+          },
+          {
+            "name": "headerRow",
+            "description": "Whether the first row of the file contains the header names"
+          },
+          {
+            "name": "sheetName",
+            "description": "Name of the sheet to create in the spreadsheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "csv",
+              "html",
+              "rtf",
+              "ods",
+              "xls",
+              "xlsx"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sourceProperty",
+        "displayName": "Base64 Input Field",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "toBinary"
+            ]
+          }
+        },
+        "description": "The name of the input field that contains the base64 string to convert to a file. Use dot-notation for deep fields (e.g. 'level1.level2.currentKey')."
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "toBinary"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "addBOM",
+            "description": "Whether to add special marker at the start of your text file. This marker helps some programs understand how to read the file correctly."
+          },
+          {
+            "name": "dataIsBase64",
+            "description": "Whether the data is already base64 encoded"
+          },
+          {
+            "name": "encoding",
+            "description": "Choose the character set to use to encode the data"
+          },
+          {
+            "name": "fileName",
+            "description": "Name of the output file"
+          },
+          {
+            "name": "mimeType",
+            "description": "The MIME type of the output file. <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types\" target=\"_blank\">Common MIME"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "toBinary"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sourceProperty",
+        "displayName": "Text Input Field",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "toText"
+            ]
+          }
+        },
+        "description": "The name of the input field that contains a string to convert to a file. Use dot-notation for deep fields (e.g. 'level1.level2.currentKey')."
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "toText"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "addBOM",
+            "description": "Whether to add special marker at the start of your text file. This marker helps some programs understand how to read the file correctly."
+          },
+          {
+            "name": "encoding",
+            "description": "Choose the character set to use to encode the data"
+          },
+          {
+            "name": "fileName",
+            "description": "Name of the output file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "toText"
+            ]
+          }
+        }
+      },
+      {
+        "name": "mode",
+        "displayName": "Mode",
+        "type": "options",
+        "default": "once",
+        "options": [
+          {
+            "name": "All Items to One File",
+            "value": "once"
+          },
+          {
+            "name": "Each Item to Separate File",
+            "value": "each"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "toJson"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "toJson"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "addBOM",
+            "description": "Whether to add special marker at the start of your text file. This marker helps some programs understand how to read the file correctly."
+          },
+          {
+            "name": "format",
+            "description": "Whether to format the JSON data for easier reading"
+          },
+          {
+            "name": "encoding",
+            "description": "Choose the character set to use to encode the data"
+          },
+          {
+            "name": "fileName",
+            "description": "Name of the output file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "toJson"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Event Title",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "iCal"
+            ]
+          }
+        }
+      },
+      {
+        "name": "start",
+        "displayName": "Start",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "iCal"
+            ]
+          }
+        },
+        "description": "Date and time at which the event begins. (For all-day events, the time will be ignored.)."
+      },
+      {
+        "name": "end",
+        "displayName": "End",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "iCal"
+            ]
+          }
+        },
+        "description": "Date and time at which the event ends. (For all-day events, the time will be ignored.)."
+      },
+      {
+        "name": "allDay",
+        "displayName": "All Day",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "iCal"
+            ]
+          }
+        },
+        "description": "Whether the event lasts all day or not"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "iCal"
+            ]
+          }
+        },
+        "description": "The field that your iCalendar file will be available under in the output"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "attendeesUi"
+          },
+          {
+            "name": "busyStatus",
+            "description": "Used to specify busy status for Microsoft applications, like Outlook"
+          },
+          {
+            "name": "calName",
+            "description": "Specifies the calendar (not event) name. Used by Apple iCal and Microsoft Outlook. <a href=\"https://docs.microsoft.com/en-us/openspecs/exchange_server_protocols"
+          },
+          {
+            "name": "description"
+          },
+          {
+            "name": "fileName",
+            "description": "The name of the file to be generated. Default name is event.ics."
+          },
+          {
+            "name": "geolocationUi"
+          },
+          {
+            "name": "location",
+            "description": "The intended venue"
+          },
+          {
+            "name": "recurrenceRule",
+            "description": "A rule to define the repeat pattern of the event (RRULE). (<a href=\"https://icalendar.org/rrule-tool.html\">Rule generator</a>)."
+          },
+          {
+            "name": "organizerUi"
+          },
+          {
+            "name": "sequence",
+            "description": "When sending an update for an event (with the same uid), defines the revision sequence number"
+          },
+          {
+            "name": "status"
+          },
+          {
+            "name": "uid",
+            "description": "Universally unique ID for the event (will be auto-generated if not specified here). Should be globally unique."
+          },
+          {
+            "name": "url",
+            "description": "URL associated with event"
+          },
+          {
+            "name": "useWorkflowTimezone",
+            "description": "Whether to use the workflow timezone set in node's settings rather than UTC"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "iCal"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

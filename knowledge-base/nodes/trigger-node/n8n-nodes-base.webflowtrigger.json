@@ -1,0 +1,146 @@
+{
+  "id": "n8n-nodes-base.webflowtrigger",
+  "name": "Webflow Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.webflowtrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Webflow is an application that allows you to build responsive websites with browser-based visual editing software",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.webflowtrigger",
+  "credentials": {
+    "name": "Webflow credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/webflow",
+    "slug": "webflow",
+    "json_file": "credentials/webflow.json",
+    "markdown_file": "credentials/webflow.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "allows",
+    "application",
+    "based",
+    "browser",
+    "build",
+    "credentials",
+    "editing",
+    "responsive",
+    "software",
+    "trigger",
+    "visual",
+    "webflow",
+    "webflowtrigger",
+    "websites"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.webflowtrigger.md",
+      "title": "Webflow Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.webflowtrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.webflowtrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.webflowtrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.webflowtrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.webflowtrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.webflowTrigger",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "webflowOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "webflowOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Webflow Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "site",
+        "displayName": "Site Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Site that will trigger the events. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "default": "form_submission",
+        "options": [
+          {
+            "name": "Collection Item Created",
+            "value": "collection_item_created"
+          },
+          {
+            "name": "Collection Item Deleted",
+            "value": "collection_item_deleted"
+          },
+          {
+            "name": "Collection Item Updated",
+            "value": "collection_item_changed"
+          },
+          {
+            "name": "Ecomm Inventory Changed",
+            "value": "ecomm_inventory_changed"
+          },
+          {
+            "name": "Ecomm New Order",
+            "value": "ecomm_new_order"
+          },
+          {
+            "name": "Ecomm Order Changed",
+            "value": "ecomm_order_changed"
+          },
+          {
+            "name": "Form Submission",
+            "value": "form_submission"
+          },
+          {
+            "name": "Site Publish",
+            "value": "site_publish"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "id": "n8n-nodes-base.uplead",
+  "name": "UpLead",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.uplead",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the UpLead node to automate work in UpLead, and integrate UpLead with other applications. n8n supports several UpLead operations, including getting company information",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.uplead",
+  "credentials": {
+    "name": "UpLead",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/uplead",
+    "slug": "uplead",
+    "json_file": "credentials/uplead.json",
+    "markdown_file": "credentials/uplead.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Company",
+      "operation": "Enrich",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "enrich"
+    },
+    {
+      "resource": "Person",
+      "operation": "Enrich",
+      "description": "",
+      "doc": "",
+      "resource_value": "person",
+      "operation_value": "enrich"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "company",
+    "enrich",
+    "getting",
+    "including",
+    "operations",
+    "person",
+    "several",
+    "uplead",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.uplead.md",
+      "title": "UpLead node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.uplead",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.uplead.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.uplead.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.uplead.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.uplead.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.uplead",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "upleadApi"
+  ],
+  "credential_details": [
+    {
+      "name": "upleadApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Uplead"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \":\" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "company",
+        "options": [
+          {
+            "name": "Company",
+            "value": "company",
+            "description": "Company API lets you lookup company data via a domain name or company name"
+          },
+          {
+            "name": "Person",
+            "value": "person",
+            "description": "Person API lets you lookup a person based on an email address OR based on a domain name + first name + last name"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "enrich",
+        "options": [
+          {
+            "name": "Enrich",
+            "value": "enrich"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "company",
+        "displayName": "Company",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        },
+        "description": "The name of the company (e.g – amazon)"
+      },
+      {
+        "name": "domain",
+        "displayName": "Domain",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        },
+        "description": "The domain name (e.g – amazon.com)"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "enrich",
+        "options": [
+          {
+            "name": "Enrich",
+            "value": "enrich"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "person"
+            ]
+          }
+        }
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "person"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        },
+        "description": "Email address (e.g – mbenioff@salesforce.com)"
+      },
+      {
+        "name": "firstname",
+        "displayName": "First Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "person"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        },
+        "description": "First name of the person (e.g – Marc)"
+      },
+      {
+        "name": "lastname",
+        "displayName": "Last Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "person"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        },
+        "description": "Last name of the person (e.g – Benioff)"
+      },
+      {
+        "name": "domain",
+        "displayName": "Domain",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "person"
+            ],
+            "operation": [
+              "enrich"
+            ]
+          }
+        },
+        "description": "The domain name (e.g – salesforce.com)"
+      }
+    ]
+  }
+}

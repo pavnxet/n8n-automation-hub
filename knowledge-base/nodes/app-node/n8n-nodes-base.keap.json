@@ -1,0 +1,2615 @@
+{
+  "id": "n8n-nodes-base.keap",
+  "name": "Keap",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.keap",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Keap node to automate work in Keap, and integrate Keap with other applications. n8n has built-in support for a wide range of Keap features, including creating, updating, deleting, and getting companies, products, ecommerce orders, emails, and files",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.keap",
+  "credentials": {
+    "name": "Keap",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/keap",
+    "slug": "keap",
+    "json_file": "credentials/keap.json",
+    "markdown_file": "credentials/keap.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Company",
+      "operation": "Create a company",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Company",
+      "operation": "Retrieve all companies",
+      "description": "",
+      "doc": "",
+      "resource_value": "company"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Create/update a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Delete an contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Retrieve an contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Retrieve all contacts",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact"
+    },
+    {
+      "resource": "Contact Note",
+      "operation": "Create a note",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactNote",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Contact Note",
+      "operation": "Delete a note",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactNote",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Contact Note",
+      "operation": "Get a notes",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactNote",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Contact Note",
+      "operation": "Retrieve all notes",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactNote"
+    },
+    {
+      "resource": "Contact Note",
+      "operation": "Update a note",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactNote",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Contact Tag",
+      "operation": "Add a list of tags to a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactTag"
+    },
+    {
+      "resource": "Contact Tag",
+      "operation": "Delete a contact's tag",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactTag",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Contact Tag",
+      "operation": "Retrieve all contact's tags",
+      "description": "",
+      "doc": "",
+      "resource_value": "contactTag"
+    },
+    {
+      "resource": "Ecommerce Order",
+      "operation": "Create an ecommerce order",
+      "description": "",
+      "doc": "",
+      "resource_value": "ecommerceOrder",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Ecommerce Order",
+      "operation": "Get an ecommerce order",
+      "description": "",
+      "doc": "",
+      "resource_value": "ecommerceOrder",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Ecommerce Order",
+      "operation": "Delete an ecommerce order",
+      "description": "",
+      "doc": "",
+      "resource_value": "ecommerceOrder",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Ecommerce Order",
+      "operation": "Retrieve all ecommerce orders",
+      "description": "",
+      "doc": "",
+      "resource_value": "ecommerceOrder"
+    },
+    {
+      "resource": "Ecommerce Product",
+      "operation": "Create an ecommerce product",
+      "description": "",
+      "doc": "",
+      "resource_value": "ecommerceProduct",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Ecommerce Product",
+      "operation": "Delete an ecommerce product",
+      "description": "",
+      "doc": "",
+      "resource_value": "ecommerceProduct",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Ecommerce Product",
+      "operation": "Get an ecommerce product",
+      "description": "",
+      "doc": "",
+      "resource_value": "ecommerceProduct",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Ecommerce Product",
+      "operation": "Retrieve all ecommerce product",
+      "description": "",
+      "doc": "",
+      "resource_value": "ecommerceProduct"
+    },
+    {
+      "resource": "Email",
+      "operation": "Create a record of an email sent to a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "email"
+    },
+    {
+      "resource": "Email",
+      "operation": "Retrieve all sent emails",
+      "description": "",
+      "doc": "",
+      "resource_value": "email"
+    },
+    {
+      "resource": "Email",
+      "operation": "Send Email",
+      "description": "",
+      "doc": "",
+      "resource_value": "email",
+      "operation_value": "send"
+    },
+    {
+      "resource": "File",
+      "operation": "Delete a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "File",
+      "operation": "Retrieve all files",
+      "description": "",
+      "doc": "",
+      "resource_value": "file"
+    },
+    {
+      "resource": "File",
+      "operation": "Upload a file",
+      "description": "",
+      "doc": "",
+      "resource_value": "file",
+      "operation_value": "upload"
+    }
+  ],
+  "operation_count": 28,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "app",
+    "applications",
+    "companies",
+    "company",
+    "contact",
+    "contacts",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "ecommerce",
+    "email",
+    "emails",
+    "file",
+    "files",
+    "get",
+    "getting",
+    "including",
+    "keap",
+    "list",
+    "note",
+    "notes",
+    "order",
+    "orders",
+    "product",
+    "products",
+    "record",
+    "retrieve",
+    "send",
+    "sent",
+    "tag",
+    "tags",
+    "update",
+    "updating",
+    "upload",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.keap.md",
+      "title": "Keap node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.keap",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.keap.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.keap.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.keap.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.keap.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.keap",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "keapOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "keapOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Keap"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 88,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "company",
+        "options": [
+          {
+            "name": "Company",
+            "value": "company"
+          },
+          {
+            "name": "Contact",
+            "value": "contact"
+          },
+          {
+            "name": "Contact Note",
+            "value": "contactNote"
+          },
+          {
+            "name": "Contact Tag",
+            "value": "contactTag"
+          },
+          {
+            "name": "Ecommerce Order",
+            "value": "ecommerceOrder"
+          },
+          {
+            "name": "Ecommerce Product",
+            "value": "ecommerceProduct"
+          },
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "File",
+            "value": "file"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a company"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many companies"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "companyName",
+        "displayName": "Company Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "emailAddress"
+          },
+          {
+            "name": "notes"
+          },
+          {
+            "name": "optInReason"
+          },
+          {
+            "name": "website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "addressesUi",
+        "displayName": "Addresses",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "addressesValues",
+            "values": [
+              {
+                "name": "countryCode",
+                "displayName": "Country Code",
+                "type": "string"
+              },
+              {
+                "name": "line1",
+                "displayName": "Line 1",
+                "type": "string"
+              },
+              {
+                "name": "line2",
+                "displayName": "Line 2",
+                "type": "string"
+              },
+              {
+                "name": "locality",
+                "displayName": "Locality",
+                "type": "string"
+              },
+              {
+                "name": "postalCode",
+                "displayName": "Postal Code",
+                "type": "string"
+              },
+              {
+                "name": "region",
+                "displayName": "Region",
+                "type": "string"
+              },
+              {
+                "name": "zipCode",
+                "displayName": "Zip Code",
+                "type": "string"
+              },
+              {
+                "name": "zipFour",
+                "displayName": "Zip Four",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "faxesUi",
+        "displayName": "Faxes",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "faxesValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "string"
+              },
+              {
+                "name": "number",
+                "displayName": "Number",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "phonesUi",
+        "displayName": "Phones",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "phonesValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "string"
+              },
+              {
+                "name": "number",
+                "displayName": "Number",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "company"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "company"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "companyName",
+            "description": "Company name to query on"
+          },
+          {
+            "name": "order",
+            "description": "Attribute to order items by"
+          },
+          {
+            "name": "orderDirection"
+          },
+          {
+            "name": "fields",
+            "description": "Comma-delimited list of Company properties to include in the response. (Fields such as notes, fax_number and custom_fields aren't included, by default.)."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upsert",
+        "options": [
+          {
+            "name": "Create or Update",
+            "value": "upsert",
+            "description": "Create a new contact, or update the current one if it already exists (upsert)"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an contact"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve an contact"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many contacts"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "duplicateOption",
+        "displayName": "Duplicate Option",
+        "type": "options",
+        "required": true,
+        "default": "email",
+        "options": [
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "Email And Name",
+            "value": "emailAndName"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upsert"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "Performs duplicate checking by one of the following options: Email, EmailAndName. If a match is found using the option provided, the existing contact will be updated."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "anniversary"
+          },
+          {
+            "name": "companyId"
+          },
+          {
+            "name": "contactType",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "familyName"
+          },
+          {
+            "name": "givenName"
+          },
+          {
+            "name": "ipAddress"
+          },
+          {
+            "name": "jobTitle"
+          },
+          {
+            "name": "leadSourceId"
+          },
+          {
+            "name": "middleName"
+          },
+          {
+            "name": "optInReason"
+          },
+          {
+            "name": "ownerId",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "preferredLocale"
+          },
+          {
+            "name": "preferredName"
+          },
+          {
+            "name": "sourceType"
+          },
+          {
+            "name": "spouseName"
+          },
+          {
+            "name": "timezone",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "website"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upsert"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "addressesUi",
+        "displayName": "Addresses",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "addressesValues",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "countryCode",
+                "displayName": "Country Code Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "line1",
+                "displayName": "Line 1",
+                "type": "string"
+              },
+              {
+                "name": "line2",
+                "displayName": "Line 2",
+                "type": "string"
+              },
+              {
+                "name": "locality",
+                "displayName": "Locality",
+                "type": "string"
+              },
+              {
+                "name": "postalCode",
+                "displayName": "Postal Code",
+                "type": "string"
+              },
+              {
+                "name": "region",
+                "displayName": "Region",
+                "type": "string"
+              },
+              {
+                "name": "zipCode",
+                "displayName": "Zip Code",
+                "type": "string"
+              },
+              {
+                "name": "zipFour",
+                "displayName": "Zip Four",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "emailsUi",
+        "displayName": "Emails",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "emailsValues",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "email",
+                "displayName": "Email",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "faxesUi",
+        "displayName": "Faxes",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "faxesValues",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "number",
+                "displayName": "Number",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "phonesUi",
+        "displayName": "Phones",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "phonesValues",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "number",
+                "displayName": "Number",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "socialAccountsUi",
+        "displayName": "Social Accounts",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "socialAccountsValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Comma-delimited list of Contact properties to include in the response. (Some fields such as lead_source_id, custom_fields, and job_title aren't included, by def"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contact"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "email"
+          },
+          {
+            "name": "givenName"
+          },
+          {
+            "name": "familyName"
+          },
+          {
+            "name": "order",
+            "description": "Attribute to order items by"
+          },
+          {
+            "name": "orderDirection"
+          },
+          {
+            "name": "since",
+            "description": "Date to start searching from on LastUpdated"
+          },
+          {
+            "name": "until",
+            "description": "Date to search to on LastUpdated"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a note"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a note"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a notes"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many notes"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a note"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactNote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "contactNote"
+            ]
+          }
+        },
+        "description": "The infusionsoft user to create the note on behalf of. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "contactNote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "body"
+          },
+          {
+            "name": "title"
+          },
+          {
+            "name": "type"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "contactNote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "noteId",
+        "displayName": "Note ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "contactNote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "noteId",
+        "displayName": "Note ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "contactNote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contactNote"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contactNote"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "contactId"
+          },
+          {
+            "name": "userId",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contactNote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "noteId",
+        "displayName": "Note ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "contactNote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "body"
+          },
+          {
+            "name": "contactId"
+          },
+          {
+            "name": "title"
+          },
+          {
+            "name": "type"
+          },
+          {
+            "name": "userId",
+            "description": "The infusionsoft user to create the note on behalf of. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expressio"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "contactNote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Add a list of tags to a contact"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a contact's tag"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many contact's tags"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contactTag"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "contactTag"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tagIds",
+        "displayName": "Tag Names or IDs",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "contactTag"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "contactTag"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tagIds",
+        "displayName": "Tag IDs",
+        "type": "string",
+        "required": true,
+        "default": "Tag IDs, multiple IDs can be set separated by comma.",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "contactTag"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contactTag"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contactTag"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contactTag"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an ecommerce order"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an ecommerce order"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an ecommerce order"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many ecommerce orders"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "orderDate",
+        "displayName": "Order Date",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "orderTitle",
+        "displayName": "Order Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "orderType",
+        "displayName": "Order Type",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Offline",
+            "value": "offline"
+          },
+          {
+            "name": "Online",
+            "value": "online"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "leadAffiliateId"
+          },
+          {
+            "name": "promoCodes",
+            "description": "Uses multiple strings separated by comma as promo codes. The corresponding discount will be applied to the order."
+          },
+          {
+            "name": "salesAffiliateId"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "addressUi",
+        "displayName": "Shipping Address",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "addressValues",
+            "values": [
+              {
+                "name": "company",
+                "displayName": "Company",
+                "type": "string"
+              },
+              {
+                "name": "countryCode",
+                "displayName": "Country Code Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "firstName",
+                "displayName": "First Name",
+                "type": "string"
+              },
+              {
+                "name": "middleName",
+                "displayName": "Middle Name",
+                "type": "string"
+              },
+              {
+                "name": "lastName",
+                "displayName": "Last Name",
+                "type": "string"
+              },
+              {
+                "name": "line1",
+                "displayName": "Line 1",
+                "type": "string"
+              },
+              {
+                "name": "line2",
+                "displayName": "Line 2",
+                "type": "string"
+              },
+              {
+                "name": "locality",
+                "displayName": "Locality",
+                "type": "string"
+              },
+              {
+                "name": "region",
+                "displayName": "Region",
+                "type": "string"
+              },
+              {
+                "name": "zipCode",
+                "displayName": "Zip Code",
+                "type": "string"
+              },
+              {
+                "name": "zipFour",
+                "displayName": "Zip Four",
+                "type": "string"
+              },
+              {
+                "name": "phone",
+                "displayName": "Phone",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "ecommerceOrder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "orderItemsUi",
+        "displayName": "Order Items",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "orderItemsValues",
+            "values": [
+              {
+                "name": "description",
+                "displayName": "Description",
+                "type": "string"
+              },
+              {
+                "name": "price",
+                "displayName": "Price",
+                "type": "number"
+              },
+              {
+                "name": "product ID",
+                "displayName": "Product ID",
+                "type": "number"
+              },
+              {
+                "name": "quantity",
+                "displayName": "Quantity",
+                "type": "number"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "ecommerceOrder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "orderId",
+        "displayName": "Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "orderId",
+        "displayName": "Order ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "since",
+            "description": "Date to start searching from"
+          },
+          {
+            "name": "until",
+            "description": "Date to search to"
+          },
+          {
+            "name": "paid"
+          },
+          {
+            "name": "order",
+            "description": "Attribute to order items by"
+          },
+          {
+            "name": "contactId"
+          },
+          {
+            "name": "productId"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "ecommerceOrder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an ecommerce product"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an ecommerce product"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an ecommerce product"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many ecommerce products"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "ecommerceProduct"
+            ]
+          }
+        }
+      },
+      {
+        "name": "productName",
+        "displayName": "Product Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "ecommerceProduct"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "active"
+          },
+          {
+            "name": "productDesc"
+          },
+          {
+            "name": "productPrice"
+          },
+          {
+            "name": "productShortDesc"
+          },
+          {
+            "name": "sku"
+          },
+          {
+            "name": "subscriptionOnly"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "ecommerceProduct"
+            ]
+          }
+        }
+      },
+      {
+        "name": "productId",
+        "displayName": "Product ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "ecommerceProduct"
+            ]
+          }
+        }
+      },
+      {
+        "name": "productId",
+        "displayName": "Product ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "ecommerceProduct"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "ecommerceProduct"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "ecommerceProduct"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "active"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "ecommerceProduct"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "createRecord",
+        "options": [
+          {
+            "name": "Create Record",
+            "value": "createRecord",
+            "description": "Create a record of an email sent to a contact"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many sent emails"
+          },
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send Email"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sentToAddress",
+        "displayName": "Sent To Address",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createRecord"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sentFromAddress",
+        "displayName": "Sent From Address",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createRecord"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "clickedDate"
+          },
+          {
+            "name": "contactId"
+          },
+          {
+            "name": "headers"
+          },
+          {
+            "name": "htmlContent",
+            "description": "Base64 encoded HTML"
+          },
+          {
+            "name": "openedDate"
+          },
+          {
+            "name": "originalProvider",
+            "description": "Provider that sent the email case insensitive, must be in list"
+          },
+          {
+            "name": "originalProviderId",
+            "description": "Provider ID that sent the email, must be unique when combined with provider. If omitted a UUID without dashes is autogenerated for the record."
+          },
+          {
+            "name": "plainContent",
+            "description": "Base64 encoded text"
+          },
+          {
+            "name": "providerSourceId"
+          },
+          {
+            "name": "receivedDate"
+          },
+          {
+            "name": "sentDate"
+          },
+          {
+            "name": "sentFromReplyAddress"
+          },
+          {
+            "name": "sentToBccAddresses"
+          },
+          {
+            "name": "sentToCCAddresses"
+          },
+          {
+            "name": "subject"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createRecord"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "email"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "contactId"
+          },
+          {
+            "name": "email"
+          },
+          {
+            "name": "sinceSentDate",
+            "description": "Emails sent since the provided date, must be present if untilDate is provided"
+          },
+          {
+            "name": "untilSentDate",
+            "description": "Email sent until the provided date"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        },
+        "description": "The infusionsoft user to send the email on behalf of. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "contactIds",
+        "displayName": "Contact IDs",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        },
+        "description": "Contact IDs to receive the email. Multiple can be added seperated by comma."
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        },
+        "description": "The subject line of the email"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "addressField",
+            "description": "Email field of each Contact record to address the email to, such as 'EmailAddress1', 'EmailAddress2', 'EmailAddress3', defaulting to the contact's primary email"
+          },
+          {
+            "name": "htmlContent",
+            "description": "The HTML-formatted content of the email, encoded in Base64"
+          },
+          {
+            "name": "plainContent",
+            "description": "The plain-text content of the email, encoded in Base64"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentsUi",
+        "displayName": "Attachments",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "attachmentsValues",
+            "values": [
+              {
+                "name": "fileData",
+                "displayName": "File Data",
+                "type": "string"
+              },
+              {
+                "name": "fileName",
+                "displayName": "File Name",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "attachmentsBinary",
+            "values": [
+              {
+                "name": "property",
+                "displayName": "Property",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "send"
+            ],
+            "resource": [
+              "email"
+            ]
+          }
+        },
+        "description": "Attachments to be sent with each copy of the email, maximum of 10 with size of 1MB each"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "delete",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a file"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many files"
+          },
+          {
+            "name": "Upload",
+            "value": "upload",
+            "description": "Upload a file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryData",
+        "displayName": "Binary File",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Whether the data to upload should be taken from binary field"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ],
+            "binaryData": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileAssociation",
+        "displayName": "File Association",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Company",
+            "value": "company"
+          },
+          {
+            "name": "Contact",
+            "value": "contact"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ],
+            "fileAssociation": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileName",
+        "displayName": "File Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "The filename of the attached file, including extension"
+      },
+      {
+        "name": "fileData",
+        "displayName": "File Data",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "The content of the attachment, encoded in Base64"
+      },
+      {
+        "name": "isPublic",
+        "displayName": "Is Public",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "file"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "contactId",
+            "description": "Filter based on Contact ID, if user has permission to see Contact files"
+          },
+          {
+            "name": "name",
+            "description": "Filter files based on name, with '*' preceding or following to indicate LIKE queries"
+          },
+          {
+            "name": "permission",
+            "description": "Filter based on the permission of files"
+          },
+          {
+            "name": "type",
+            "description": "Filter based on the type of file"
+          },
+          {
+            "name": "viewable",
+            "description": "Include public or private files in response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

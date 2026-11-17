@@ -1,0 +1,348 @@
+{
+  "id": "n8n-nodes-base.rabbitmq",
+  "name": "RabbitMQ",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.rabbitmq",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the RabbitMQ node to automate work in RabbitMQ, and integrate RabbitMQ with other applications. n8n has built-in support for a wide range of RabbitMQ features, including accepting, and forwarding messages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.rabbitmq",
+  "credentials": {
+    "name": "RabbitMQ",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/rabbitmq",
+    "slug": "rabbitmq",
+    "json_file": "credentials/rabbitmq.json",
+    "markdown_file": "credentials/rabbitmq.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Delete From Queue",
+      "description": "",
+      "doc": "",
+      "operation_value": "deleteMessage"
+    },
+    {
+      "resource": "",
+      "operation": "Send a Message to RabbitMQ",
+      "description": "",
+      "doc": "",
+      "operation_value": "sendMessage"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "accepting",
+    "app",
+    "applications",
+    "delete",
+    "forwarding",
+    "including",
+    "message",
+    "messages",
+    "queue",
+    "rabbitmq",
+    "send",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.rabbitmq.md",
+      "title": "RabbitMQ node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.rabbitmq",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.rabbitmq.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.rabbitmq.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.rabbitmq.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.rabbitmq.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.rabbitmq",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "rabbitmq"
+  ],
+  "credential_details": [
+    {
+      "name": "rabbitmq",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "RabbitMQ"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 11,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "hidden",
+        "default": "sendMessage",
+        "options": [
+          {
+            "name": "Send a Message to RabbitMQ",
+            "value": "sendMessage"
+          },
+          {
+            "name": "Delete From Queue",
+            "value": "deleteMessage"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "sendMessage",
+        "options": [
+          {
+            "name": "Send a Message to RabbitMQ",
+            "value": "sendMessage"
+          },
+          {
+            "name": "Delete From Queue",
+            "value": "deleteMessage"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.1
+            ]
+          }
+        }
+      },
+      {
+        "name": "deleteMessage",
+        "displayName": "Will delete an item from the queue triggered earlier in the workflow by a RabbitMQ Trigger node",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "deleteMessage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "mode",
+        "displayName": "Mode",
+        "type": "options",
+        "default": "queue",
+        "options": [
+          {
+            "name": "Queue",
+            "value": "queue",
+            "description": "Publish data to queue"
+          },
+          {
+            "name": "Exchange",
+            "value": "exchange",
+            "description": "Publish data to exchange"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "operation": [
+              "deleteMessage"
+            ]
+          }
+        },
+        "description": "To where data should be moved"
+      },
+      {
+        "name": "queue",
+        "displayName": "Queue / Topic",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "queue"
+            ]
+          },
+          "hide": {
+            "operation": [
+              "deleteMessage"
+            ]
+          }
+        },
+        "description": "Name of the queue to publish to"
+      },
+      {
+        "name": "exchange",
+        "displayName": "Exchange",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "exchange"
+            ]
+          }
+        },
+        "description": "Name of the exchange to publish to"
+      },
+      {
+        "name": "exchangeType",
+        "displayName": "Type",
+        "type": "options",
+        "default": "fanout",
+        "options": [
+          {
+            "name": "Direct",
+            "value": "direct",
+            "description": "Direct exchange type"
+          },
+          {
+            "name": "Topic",
+            "value": "topic",
+            "description": "Topic exchange type"
+          },
+          {
+            "name": "Headers",
+            "value": "headers",
+            "description": "Headers exchange type"
+          },
+          {
+            "name": "Fanout",
+            "value": "fanout",
+            "description": "Fanout exchange type"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "exchange"
+            ]
+          }
+        },
+        "description": "Type of exchange"
+      },
+      {
+        "name": "routingKey",
+        "displayName": "Routing Key",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "exchange"
+            ]
+          }
+        },
+        "description": "The routing key for the message"
+      },
+      {
+        "name": "sendInputData",
+        "displayName": "Send Input Data",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendMessage"
+            ]
+          }
+        },
+        "description": "Whether to send the data the node receives as JSON"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "sendInputData": [
+              false
+            ]
+          }
+        },
+        "description": "The message to be sent"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "alternateExchange",
+            "description": "An exchange to send messages to if this exchange can’t route them to any queues"
+          },
+          {
+            "name": "arguments",
+            "description": "Arguments to add, See <a href=\"https://amqp-node.github.io/amqplib/channel_api.html#channel_publish\" target=\"_blank\">here</a> for valid options"
+          },
+          {
+            "name": "autoDelete",
+            "description": "Whether the queue will be deleted when the number of consumers drops to zero"
+          },
+          {
+            "name": "durable",
+            "description": "Whether the queue will survive broker restarts"
+          },
+          {
+            "name": "exclusive",
+            "description": "Whether to scope the queue to the connection"
+          },
+          {
+            "name": "headers",
+            "description": "Headers to add"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendMessage"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "id": "n8n-nodes-base.philipshue",
+  "name": "Philips Hue",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.philipshue",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Philips Hue node to automate work in Philips Hue, and integrate Philips Hue with other applications. n8n has built-in support for a wide range of Philips Hue features, including deleting, retrieving, and updating lights",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.philipshue",
+  "credentials": {
+    "name": "Philips Hue",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/philipshue",
+    "slug": "philipshue",
+    "json_file": "credentials/philipshue.json",
+    "markdown_file": "credentials/philipshue.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Light",
+      "operation": "Delete a light",
+      "description": "",
+      "doc": "",
+      "resource_value": "light",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Light",
+      "operation": "Retrieve a light",
+      "description": "",
+      "doc": "",
+      "resource_value": "light"
+    },
+    {
+      "resource": "Light",
+      "operation": "Retrieve all lights",
+      "description": "",
+      "doc": "",
+      "resource_value": "light"
+    },
+    {
+      "resource": "Light",
+      "operation": "Update a light",
+      "description": "",
+      "doc": "",
+      "resource_value": "light",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "delete",
+    "deleting",
+    "hue",
+    "including",
+    "light",
+    "lights",
+    "philips",
+    "philipshue",
+    "retrieve",
+    "retrieving",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.philipshue.md",
+      "title": "Philips Hue node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.philipshue",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.philipshue.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.philipshue.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.philipshue.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.philipshue.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.philipsHue",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "philipsHueOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "philipsHueOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Philips Hue"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "light",
+        "options": [
+          {
+            "name": "Light",
+            "value": "light"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "update",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a light"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a light"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many lights"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a light"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "light"
+            ]
+          }
+        }
+      },
+      {
+        "name": "lightId",
+        "displayName": "Light ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "light"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "light"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "light"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "lightId",
+        "displayName": "Light ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "light"
+            ]
+          }
+        }
+      },
+      {
+        "name": "lightId",
+        "displayName": "Light Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "light"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "on",
+        "displayName": "On",
+        "type": "boolean",
+        "required": true,
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "light"
+            ]
+          }
+        },
+        "description": "On/Off state of the light"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "alert",
+            "description": "The alert effect, is a temporary change to the bulb’s state"
+          },
+          {
+            "name": "bri",
+            "description": "The brightness value to set the light to. Brightness is a scale from 1 (the minimum the light is capable of) to 254 (the maximum)."
+          },
+          {
+            "name": "bri_inc",
+            "description": "Increments or decrements the value of the brightness. This value is ignored if the Brightness attribute is provided."
+          },
+          {
+            "name": "ct",
+            "description": "The Mired color temperature of the light. 2012 connected lights are capable of 153 (6500K) to 500 (2000K)."
+          },
+          {
+            "name": "ct_inc",
+            "description": "Increments or decrements the value of the ct. ct_inc is ignored if the ct attribute is provided."
+          },
+          {
+            "name": "xy",
+            "description": "The x and y coordinates of a color in CIE color space. The first entry is the x coordinate and the second entry is the y coordinate. Both x and y are between 0 "
+          },
+          {
+            "name": "xy_inc",
+            "description": "Increments or decrements the value of the xy. This value is ignored if the Coordinates attribute is provided. Any ongoing color transition is stopped. Max value"
+          },
+          {
+            "name": "effect",
+            "description": "The dynamic effect of the light"
+          },
+          {
+            "name": "hue",
+            "description": "The hue value to set light to.The hue value is a wrapping value between 0 and 65535. Both 0 and 65535 are red, 25500 is green and 46920 is blue."
+          },
+          {
+            "name": "hue_inc",
+            "description": "Increments or decrements the value of the hue. Hue Increments is ignored if the Hue attribute is provided."
+          },
+          {
+            "name": "sat",
+            "description": "Saturation of the light. 254 is the most saturated (colored) and 0 is the least saturated (white)."
+          },
+          {
+            "name": "sat_inc",
+            "description": "Increments or decrements the value of the sat. This value is ignored if the Saturation attribute is provided."
+          },
+          {
+            "name": "transitiontime",
+            "description": "The duration in seconds of the transition from the light’s current state to the new state"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "light"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

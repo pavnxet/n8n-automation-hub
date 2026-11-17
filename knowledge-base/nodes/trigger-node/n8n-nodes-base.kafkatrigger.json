@@ -1,0 +1,320 @@
+{
+  "id": "n8n-nodes-base.kafkatrigger",
+  "name": "Kafka Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.kafkatrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Kafka is an open-source distributed event streaming platform that one can use for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.kafkatrigger",
+  "credentials": {
+    "name": "Kafka credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/kafka",
+    "slug": "kafka",
+    "json_file": "credentials/kafka.json",
+    "markdown_file": "credentials/kafka.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analytics",
+    "applications",
+    "credentials",
+    "critical",
+    "data",
+    "distributed",
+    "event",
+    "high",
+    "kafka",
+    "kafkatrigger",
+    "mission",
+    "open",
+    "performance",
+    "pipelines",
+    "platform",
+    "source",
+    "streaming",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.kafkatrigger.md",
+      "title": "Kafka Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.kafkatrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.kafkatrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.kafkatrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.kafkatrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.kafkatrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.kafkaTrigger",
+  "type_version": 1.3,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "kafka"
+  ],
+  "credential_details": [
+    {
+      "name": "kafka",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Kafka Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "topic",
+        "displayName": "Topic",
+        "type": "string",
+        "required": true,
+        "description": "Name of the queue of topic to consume from"
+      },
+      {
+        "name": "groupId",
+        "displayName": "Group ID",
+        "type": "string",
+        "required": true,
+        "description": "ID of the consumer group"
+      },
+      {
+        "name": "resolveOffset",
+        "displayName": "Resolve Offset",
+        "type": "options",
+        "default": "onCompletion",
+        "options": [
+          {
+            "name": "On Execution Completion",
+            "value": "onCompletion",
+            "description": "Resolve offset after execution completion regardless of the status"
+          },
+          {
+            "name": "On Execution Success",
+            "value": "onSuccess",
+            "description": "Resolve offset only if execution status equals success"
+          },
+          {
+            "name": "On Allowed Execution Statuses",
+            "value": "onStatus",
+            "description": "Resolve offset only if execution status in the list of selected statuses"
+          },
+          {
+            "name": "Immediately",
+            "value": "immediately",
+            "description": "Resolve offset immediately after message received. This option is not recommended as it can cause messages loss."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ]
+          }
+        },
+        "description": "Select on which condition the offsets should be resolved. In the manual mode, when execution started by clicking on Execute Workflow or Execute Step button, offsets are always resolved immediately after message received."
+      },
+      {
+        "name": "allowedStatuses",
+        "displayName": "Allowed Statuses",
+        "type": "multiOptions",
+        "options": [
+          {
+            "name": "Canceled",
+            "value": "canceled"
+          },
+          {
+            "name": "Crashed",
+            "value": "crashed"
+          },
+          {
+            "name": "Error",
+            "value": "error"
+          },
+          {
+            "name": "New",
+            "value": "new"
+          },
+          {
+            "name": "Running",
+            "value": "running"
+          },
+          {
+            "name": "Success",
+            "value": "success"
+          },
+          {
+            "name": "Unknown",
+            "value": "unknown"
+          },
+          {
+            "name": "Waiting",
+            "value": "waiting"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.3
+                }
+              }
+            ],
+            "resolveOffset": [
+              "onStatus"
+            ]
+          }
+        }
+      },
+      {
+        "name": "useSchemaRegistry",
+        "displayName": "Use Schema Registry",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to use Confluent Schema Registry"
+      },
+      {
+        "name": "schemaRegistryUrl",
+        "displayName": "Schema Registry URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "useSchemaRegistry": [
+              true
+            ]
+          }
+        },
+        "description": "URL of the schema registry"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "allowAutoTopicCreation",
+            "description": "Whether to allow sending message to a previously non-existing topic"
+          },
+          {
+            "name": "autoCommitThreshold",
+            "description": "The consumer will commit offsets after resolving a given number of messages"
+          },
+          {
+            "name": "autoCommitInterval",
+            "description": "The consumer will commit offsets after a given period, for example, five seconds"
+          },
+          {
+            "name": "batchSize",
+            "description": "Number of messages to process in each batch, when set to 1, message-by-message processing is enabled"
+          },
+          {
+            "name": "eachBatchAutoResolve",
+            "description": "Whether to auto resolve offsets for each batch"
+          },
+          {
+            "name": "fetchMaxBytes",
+            "description": "Maximum amount of data the server should return for a fetch request. In bytes. Default is 1MB. Higher values allow fetching more messages at once."
+          },
+          {
+            "name": "fetchMinBytes",
+            "description": "Minimum amount of data the server should return for a fetch request. In bytes. Server will wait up to fetchMaxWaitTime for this amount to accumulate."
+          },
+          {
+            "name": "heartbeatInterval",
+            "description": "Controls how often the consumer sends heartbeats to the broker to indicate it is still alive. Must be lower than Session Timeout. Recommended value is approxima"
+          },
+          {
+            "name": "heartbeatInterval",
+            "description": "Heartbeats are used to ensure that the consumer's session stays active"
+          },
+          {
+            "name": "maxInFlightRequests",
+            "description": "The maximum number of unacknowledged requests the client will send on a single connection"
+          },
+          {
+            "name": "fromBeginning",
+            "description": "Whether to read message from beginning"
+          },
+          {
+            "name": "jsonParseMessage",
+            "description": "Whether to try to parse the message to an object"
+          },
+          {
+            "name": "keepBinaryData",
+            "description": "Whether to keep message value as binary data for downstream processing (e.g., Avro deserialization)"
+          },
+          {
+            "name": "parallelProcessing",
+            "description": "Whether to process messages in parallel resolving offsets independently or in order resolving offsets after execution completion. In the manual mode, when execu"
+          },
+          {
+            "name": "partitionsConsumedConcurrently",
+            "description": "Number of Kafka partitions to process in parallel. Controls how many partitions are processed concurrently by the consumer."
+          },
+          {
+            "name": "onlyMessage",
+            "description": "Whether to return only the message property"
+          },
+          {
+            "name": "returnHeaders",
+            "description": "Whether to return the headers received from Kafka"
+          },
+          {
+            "name": "rebalanceTimeout",
+            "description": "The maximum time allowed for a consumer to join the group"
+          },
+          {
+            "name": "errorRetryDelay",
+            "description": "Delay in milliseconds before retrying after a failed offset resolution. This prevents rapid retry loops that could overwhelm the Kafka broker."
+          },
+          {
+            "name": "sessionTimeout",
+            "description": "Timeout in milliseconds used to detect failures. Has to be higher than Heartbeat Interval. During the workflow execution heartbeat will be sent periodically to "
+          }
+        ]
+      }
+    ]
+  }
+}

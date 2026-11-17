@@ -1,0 +1,138 @@
+{
+  "id": "n8n-nodes-base.formiotrigger",
+  "name": "Form.io Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.formiotrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Form.io is an enterprise class combined form and API data management platform for building complex form-based business process applications",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.formiotrigger",
+  "credentials": {
+    "name": "Form.io Trigger credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/formiotrigger",
+    "slug": "formiotrigger",
+    "json_file": "credentials/formiotrigger.json",
+    "markdown_file": "credentials/formiotrigger.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "applications",
+    "based",
+    "building",
+    "business",
+    "class",
+    "combined",
+    "complex",
+    "credentials",
+    "data",
+    "enterprise",
+    "form",
+    "form.io",
+    "formiotrigger",
+    "management",
+    "platform",
+    "process",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.formiotrigger.md",
+      "title": "Form.io Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.formiotrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.formiotrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.formiotrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.formiotrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.formiotrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.formIoTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "formIoApi"
+  ],
+  "credential_details": [
+    {
+      "name": "formIoApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Form.io Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "projectId",
+        "displayName": "Project Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "formId",
+        "displayName": "Form Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "events",
+        "displayName": "Trigger Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Submission Created",
+            "value": "create"
+          },
+          {
+            "name": "Submission Updated",
+            "value": "update"
+          }
+        ]
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      }
+    ]
+  }
+}

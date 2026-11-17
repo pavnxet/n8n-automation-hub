@@ -1,0 +1,204 @@
+{
+  "id": "n8n-nodes-base.googlebusinessprofiletrigger",
+  "name": "Google Business Profile Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.googlebusinessprofiletrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Google Business Profile Trigger node to respond to events in Google Business Profile and integrate Google Business Profile with other applications. n8n has built-in support for responding to new reviews",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googlebusinessprofiletrigger",
+  "credentials": {
+    "name": "Google credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "applications",
+    "business",
+    "credentials",
+    "events",
+    "google",
+    "googlebusinessprofiletrigger",
+    "profile",
+    "respond",
+    "responding",
+    "reviews",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googlebusinessprofiletrigger.md",
+      "title": "Google Business Profile Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.googlebusinessprofiletrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.googlebusinessprofiletrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.googlebusinessprofiletrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.googlebusinessprofiletrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.googlebusinessprofiletrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleBusinessProfileTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleBusinessProfileOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleBusinessProfileOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Google Business Profile Trigger"
+  },
+  "subtitle": "={{\"Google Business Profile Trigger\"}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "default": "reviewAdded",
+        "options": [
+          {
+            "name": "Review Added",
+            "value": "reviewAdded"
+          }
+        ]
+      },
+      {
+        "name": "account",
+        "displayName": "Account",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "event": [
+              "reviewAdded"
+            ]
+          }
+        },
+        "description": "The Google Business Profile account"
+      },
+      {
+        "name": "location",
+        "displayName": "Location",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "event": [
+              "reviewAdded"
+            ]
+          }
+        },
+        "description": "The specific location or business associated with the account"
+      }
+    ]
+  }
+}

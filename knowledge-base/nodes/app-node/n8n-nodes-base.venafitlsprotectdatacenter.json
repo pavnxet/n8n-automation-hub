@@ -1,0 +1,635 @@
+{
+  "id": "n8n-nodes-base.venafitlsprotectdatacenter",
+  "name": "Venafi TLS Protect Datacenter",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.venafitlsprotectdatacenter",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Venafi TLS Protect Datacenter node to automate work in Venafi TLS Protect Datacenter, and integrate Venafi TLS Protect Datacenter with other applications. n8n has built-in support for a wide range of Venafi TLS Protect Datacenter features, including creating, deleting, and getting certificates",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.venafitlsprotectdatacenter",
+  "credentials": {
+    "name": "Venafi TLS Protect Datacenter",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/venafitlsprotectdatacenter",
+    "slug": "venafitlsprotectdatacenter",
+    "json_file": "credentials/venafitlsprotectdatacenter.json",
+    "markdown_file": "credentials/venafitlsprotectdatacenter.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Certificate",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Certificate",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Certificate",
+      "operation": "Download",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "download"
+    },
+    {
+      "resource": "Certificate",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Certificate",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "getMany"
+    },
+    {
+      "resource": "Certificate",
+      "operation": "Renew",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "renew"
+    },
+    {
+      "resource": "Policy",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "policy",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 7,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "certificate",
+    "certificates",
+    "create",
+    "creating",
+    "datacenter",
+    "delete",
+    "deleting",
+    "download",
+    "get",
+    "getting",
+    "including",
+    "many",
+    "policy",
+    "protect",
+    "renew",
+    "tls",
+    "venafi",
+    "venafitlsprotectdatacenter",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.venafitlsprotectdatacenter.md",
+      "title": "Venafi TLS Protect Datacenter node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.venafitlsprotectdatacenter",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.venafitlsprotectdatacenter.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.venafitlsprotectdatacenter.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.venafitlsprotectdatacenter.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.venafitlsprotectdatacenter.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.venafiTlsProtectDatacenter",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "venafiTlsProtectDatacenterApi"
+  ],
+  "credential_details": [
+    {
+      "name": "venafiTlsProtectDatacenterApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Venafi TLS Protect Datacenter"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 19,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "certificate",
+        "options": [
+          {
+            "name": "Certificate",
+            "value": "certificate"
+          },
+          {
+            "name": "Policy",
+            "value": "policy"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Provision a new certificate"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a certificate"
+          },
+          {
+            "name": "Download",
+            "value": "download",
+            "description": "Download a certificate"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a certificate"
+          },
+          {
+            "name": "Get Many",
+            "value": "getMany",
+            "description": "Retrieve many certificates"
+          },
+          {
+            "name": "Renew",
+            "value": "renew",
+            "description": "Renew a certificate"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "PolicyDN",
+        "displayName": "Policy DN",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "The folder DN for the new certificate. If the value is missing, the folder name is the system default. If no system default is configured"
+      },
+      {
+        "name": "Subject",
+        "displayName": "Subject",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "The Common Name field for the certificate Subject (DN)"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "Approvers",
+            "description": "An array of one or more identities for certificate workflow approvers"
+          },
+          {
+            "name": "CADN",
+            "description": "Only required when no policy sets a CA template. The Distinguished Name (DN) of the Trust Protection Platform Certificate Authority Template object for enrollin"
+          },
+          {
+            "name": "CertificateType",
+            "description": "One of the following Certificate objects. Ignores any other value."
+          },
+          {
+            "name": "City",
+            "description": "The City field for the certificate Subject DN. Specify a value when requesting a centrally generated CSR."
+          },
+          {
+            "name": "Contacts",
+            "description": "An array of one or more identities for users or groups who receive notifications about events pertaining to the object"
+          },
+          {
+            "name": "Country",
+            "description": "The Country field for the certificate Subject DN. Specify a value when requesting a centrally generated CSR."
+          },
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "CreatedBy",
+            "description": "The person, entity, or caller of this request. The default is Web SDK. Avoid overriding the default unless the caller is a significant enterprise application th"
+          },
+          {
+            "name": "Devices"
+          },
+          {
+            "name": "DisableAutomaticRenewal",
+            "description": "The setting to control whether manual intervention is required for certificate renewal"
+          },
+          {
+            "name": "EllipticCurve",
+            "description": "For Elliptic Curve Cryptography (ECC), use this parameter in conjunction with KeyAlgorithm"
+          },
+          {
+            "name": "KeyAlgorithm",
+            "description": "The encryption algorithm for the public ke:"
+          },
+          {
+            "name": "KeyBitSize",
+            "description": "Use this parameter when KeyAlgorithm is RSA. The number of bits to allow for key generation."
+          },
+          {
+            "name": "ManagementType",
+            "description": "The level of management that Trust Protection Platform applies to the certificate"
+          },
+          {
+            "name": "origin",
+            "description": "Additional information, such as the name and version of the calling application, that describes the source of this enrollment, renewal, or provisioning request."
+          },
+          {
+            "name": "Organization",
+            "description": "The Organization field for the certificate Subject DN. Specify a value when the CSR centrally generates."
+          },
+          {
+            "name": "OrganizationalUnit",
+            "description": "The department or division within the organization that is responsible for maintaining the certificate"
+          },
+          {
+            "name": "PKCS10",
+            "description": "The PKCS#10 Certificate Signing Request (CSR). Omit escape characters such as or . If this value is provided, any Subject DN fields and the KeyBitSize in the re"
+          },
+          {
+            "name": "Reenable",
+            "description": "The action to control a previously disabled certificate"
+          },
+          {
+            "name": "SetWorkToDo",
+            "description": "The setting to control certificate processing"
+          },
+          {
+            "name": "State",
+            "description": "The State field for the certificate Subject DN. Specify a value when requesting a centrally generated CSR."
+          },
+          {
+            "name": "SubjectAltNamesUi"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "certificateDn",
+        "displayName": "Certificate DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "includePrivateKey",
+        "displayName": "Include Private Key",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "certificate"
+            ],
+            "operation": [
+              "download"
+            ]
+          }
+        }
+      },
+      {
+        "name": "password",
+        "displayName": "Password",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "certificate"
+            ],
+            "operation": [
+              "download"
+            ],
+            "includePrivateKey": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryProperty",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "The name of the input field containing the binary file data to be uploaded"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "IncludeChain"
+          },
+          {
+            "name": "RootFirstOrder"
+          },
+          {
+            "name": "KeystorePassword"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "certificateId",
+        "displayName": "Certificate GUID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get",
+              "delete"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "A GUID that uniquely identifies the certificate"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getMany"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getMany"
+            ],
+            "resource": [
+              "certificate"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Include one or more of the following certificate attributes in the return value"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getMany"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "certificateDN",
+        "displayName": "Certificate DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "renew"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "The Distinguished Name (DN) of the certificate to renew"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "PKCS10",
+            "description": "The PKCS#10 Certificate Signing Request (CSR). Omit escape characters such as or . If this value is provided, any Subject DN fields and the KeyBitSize in the re"
+          },
+          {
+            "name": "Reenable",
+            "description": "The action to control a previously disabled certificate"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "renew"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a policy"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "policy"
+            ]
+          }
+        }
+      },
+      {
+        "name": "policyDn",
+        "displayName": "Policy DN",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "policy"
+            ]
+          }
+        },
+        "description": "The Distinguished Name (DN) of the policy folder"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "PKCS10",
+            "description": "The PKCS#10 policy Signing Request (CSR). Omit escape characters such as or . If this value is provided, any Subject DN fields and the KeyBitSize in the request"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "policy"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

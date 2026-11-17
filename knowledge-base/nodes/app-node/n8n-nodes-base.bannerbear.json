@@ -1,0 +1,329 @@
+{
+  "id": "n8n-nodes-base.bannerbear",
+  "name": "Bannerbear",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.bannerbear",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Bannerbear node to automate work in Bannerbear, and integrate Bannerbear with other applications. n8n has built-in support for a wide range of Bannerbear features, including creating and getting images and templates",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.bannerbear",
+  "credentials": {
+    "name": "Bannerbear",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/bannerbear",
+    "slug": "bannerbear",
+    "json_file": "credentials/bannerbear.json",
+    "markdown_file": "credentials/bannerbear.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Image",
+      "operation": "Create an image",
+      "description": "",
+      "doc": "",
+      "resource_value": "image",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Image",
+      "operation": "Get an image",
+      "description": "",
+      "doc": "",
+      "resource_value": "image",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Template",
+      "operation": "Get a template",
+      "description": "",
+      "doc": "",
+      "resource_value": "template",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Template",
+      "operation": "Get all templates",
+      "description": "",
+      "doc": "",
+      "resource_value": "template",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "bannerbear",
+    "create",
+    "creating",
+    "get",
+    "getting",
+    "image",
+    "images",
+    "including",
+    "template",
+    "templates",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.bannerbear.md",
+      "title": "Bannerbear node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.bannerbear",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.bannerbear.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.bannerbear.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.bannerbear.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.bannerbear.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.bannerbear",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "bannerbearApi"
+  ],
+  "credential_details": [
+    {
+      "name": "bannerbearApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Bannerbear"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "image",
+        "options": [
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Template",
+            "value": "template"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an image"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an image"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "templateId",
+        "displayName": "Template Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The template ID you want to use. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "metadata",
+            "description": "Metadata that you need to store e.g. ID of a record in your DB"
+          },
+          {
+            "name": "waitForImage",
+            "description": "Whether to wait for the image to be proccesed before returning. If after three tries the images is not ready, an error will be thrown. Number of tries can be in"
+          },
+          {
+            "name": "waitForImageMaxTries",
+            "description": "How often it should check if the image is available before it fails"
+          },
+          {
+            "name": "webhookUrl",
+            "description": "A URL to POST the Image object to upon rendering completed"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modificationsUi",
+        "displayName": "Modifications",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "modificationsValues",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "color",
+                "displayName": "Color",
+                "type": "color"
+              },
+              {
+                "name": "background",
+                "displayName": "Background",
+                "type": "color"
+              },
+              {
+                "name": "imageUrl",
+                "displayName": "Image URL",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "imageId",
+        "displayName": "Image ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for the image"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a template"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many templates"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "template"
+            ]
+          }
+        }
+      },
+      {
+        "name": "templateId",
+        "displayName": "Template ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "template"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for the template"
+      }
+    ]
+  }
+}

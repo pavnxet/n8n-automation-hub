@@ -1,0 +1,34 @@
+<!-- n8n built-in node reference: n8n-nodes-langchain.lmchatgooglevertex | source: https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatgooglevertex -->
+
+Use the Google Vertex AI Chat Model node to use Google's Vertex AI chat models with conversational agents[^1].
+
+On this page, you'll find the node parameters for the Google Vertex AI Chat Model node, and links to more resources.
+
+> **Credentials:**
+> Use [Google Vertex AI credentials](https://docs.n8n.io/integrations/builtin/credentials/googlevertexai) to store the project and region with your service account details. This node also supports [Google Service Account credentials](https://docs.n8n.io/integrations/builtin/credentials/google/service-account).
+
+## Node parameters
+
+* **Authentication**: Select **Google Service Account** (the default) or **Google Vertex AI**.
+* **Project ID**: For **Google Service Account** authentication, n8n loads the project list using the service account's access. Select a listed project, or enter the project ID manually. For **Google Vertex AI** authentication, configure the project in the credential.
+* **Model Name**: Enter the name of the model to use for completions, for example `gemini-2.5-flash`. Refer to [Google models](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models) for a list of available models.
+* **Region**: Select **Default (Use Credential Region)** to use the region set in the credential. To override it, select **Global**, **EU (Multi-Region)**, or **US (Multi-Region)**.
+
+## Node options
+
+* **Maximum Number of Tokens**: Enter the maximum number of tokens used, which sets the completion length.
+* **Sampling Temperature**: Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations.
+* **Thinking Budget**: Controls reasoning tokens for thinking models. Set to `0` to disable automatic thinking. Set to `-1` for dynamic thinking. Leave empty for auto mode.
+* **Top K**: Enter the number of token choices the model uses to generate the next token.
+* **Top P**: Use this option to set the probability the completion should use. Use a lower value to ignore less probable options.
+* **Safety Settings**: Gemini supports adjustable safety settings. Refer to Google's [Gemini API safety settings](https://ai.google.dev/docs/safety_setting_gemini) for information on the available filters and levels.
+
+## Templates and examples
+
+[Browse Google Vertex Chat Model node documentation integration templates](https://n8n.io/integrations/google-vertex-chat-model) or [search all templates](https://n8n.io/workflows/)
+
+## Related resources
+
+Refer to [LangChain's Google Vertex AI documentation](https://docs.langchain.com/oss/javascript/integrations/chat/google_vertex_ai) for more information about the service.
+
+[^1]: AI agents are artificial intelligence systems capable of responding to requests, making decisions, and performing real-world tasks for users. They use large language models (LLMs) to interpret user input and make decisions about how to best process requests using the information and resources they have available.

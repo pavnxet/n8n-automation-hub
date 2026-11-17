@@ -1,0 +1,1865 @@
+{
+  "id": "n8n-nodes-base.postgres",
+  "name": "Postgres",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.postgres",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Postgres node to automate work in Postgres, and integrate Postgres with other applications. n8n has built-in support for a wide range of Postgres features, including executing queries, as well as inserting and updating rows in a database",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres",
+  "credentials": {
+    "name": "Postgres",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/postgres",
+    "slug": "postgres",
+    "json_file": "credentials/postgres.json",
+    "markdown_file": "credentials/postgres.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Delete",
+      "description": "Delete an entire table or rows in a table",
+      "doc": "#delete",
+      "resource_value": "database",
+      "operation_value": "deleteTable"
+    },
+    {
+      "resource": "",
+      "operation": "Execute Query",
+      "description": "Execute an SQL query",
+      "doc": "#execute-query",
+      "resource_value": "database",
+      "operation_value": "executeQuery"
+    },
+    {
+      "resource": "",
+      "operation": "Insert",
+      "description": "Insert rows in a table",
+      "doc": "#insert",
+      "resource_value": "database",
+      "operation_value": "insert"
+    },
+    {
+      "resource": "",
+      "operation": "Insert or Update",
+      "description": "Insert or update rows in a table",
+      "doc": "#insert-or-update",
+      "resource_value": "database",
+      "operation_value": "upsert"
+    },
+    {
+      "resource": "",
+      "operation": "Select",
+      "description": "Select rows from a table",
+      "doc": "#select",
+      "resource_value": "database",
+      "operation_value": "select"
+    },
+    {
+      "resource": "",
+      "operation": "Update",
+      "description": "Update rows in a table",
+      "doc": "#update",
+      "resource_value": "database",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Delete",
+      "operation": "Credential to connect with",
+      "description": "Create or select an existing Postgres credential",
+      "doc": ""
+    },
+    {
+      "resource": "Delete",
+      "operation": "Operation",
+      "description": "Select Delete",
+      "doc": ""
+    },
+    {
+      "resource": "Delete",
+      "operation": "Schema",
+      "description": "Choose the schema that contains the table you want to work on. Select From list to choose the schema from the dropdown list or By Name to enter the schema name",
+      "doc": ""
+    },
+    {
+      "resource": "Delete",
+      "operation": "Table",
+      "description": "Choose the table that you want to work on. Select From list to choose the table from the dropdown list or By Name to enter the table name",
+      "doc": ""
+    },
+    {
+      "resource": "Delete / Command / Truncate",
+      "operation": "Restart Sequences",
+      "description": "Whether to reset auto increment columns to their initial values as part of the Truncate process",
+      "doc": ""
+    },
+    {
+      "resource": "Delete / Command / Delete",
+      "operation": "Select Rows",
+      "description": "Define a Column, Operator, and Value to match rows on",
+      "doc": "",
+      "operation_value": "select"
+    },
+    {
+      "resource": "Delete / Command / Delete",
+      "operation": "Combine Conditions",
+      "description": "How to combine the conditions in \"Select Rows\". AND requires all conditions to be true, while OR requires at least one condition to be true",
+      "doc": ""
+    },
+    {
+      "resource": "Delete / Command",
+      "operation": "Drop",
+      "description": "Deletes the table's data and structure permanently",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Cascade",
+      "description": "Whether to also drop all objects that depend on the table, like views and sequences. Available if using Truncate or Drop commands",
+      "doc": "",
+      "resource_value": "database"
+    },
+    {
+      "resource": "",
+      "operation": "Connection Timeout",
+      "description": "The number of seconds to try to connect to the database",
+      "doc": "",
+      "resource_value": "database"
+    },
+    {
+      "resource": "",
+      "operation": "Delay Closing Idle Connection",
+      "description": "The number of seconds to wait before considering idle connections eligible for closing",
+      "doc": "",
+      "resource_value": "database"
+    },
+    {
+      "resource": "Query Batching",
+      "operation": "Single Query",
+      "description": "A single query for all incoming items",
+      "doc": ""
+    },
+    {
+      "resource": "Query Batching",
+      "operation": "Independently",
+      "description": "Execute one query per incoming item of the execution",
+      "doc": ""
+    },
+    {
+      "resource": "Query Batching",
+      "operation": "Transaction",
+      "description": "Execute all queries in a transaction. If a failure occurs, Postgres rolls back all changes",
+      "doc": ""
+    },
+    {
+      "resource": "Output Large-Format Numbers As",
+      "operation": "Numbers",
+      "description": "Use this for standard numbers",
+      "doc": ""
+    },
+    {
+      "resource": "Output Large-Format Numbers As",
+      "operation": "Text",
+      "description": "Use this if you expect numbers longer than 16 digits. Without this, numbers may be incorrect",
+      "doc": ""
+    },
+    {
+      "resource": "Execute Query",
+      "operation": "Credential to connect with",
+      "description": "Create or select an existing Postgres credential",
+      "doc": ""
+    },
+    {
+      "resource": "Execute Query",
+      "operation": "Operation",
+      "description": "Select Execute Query",
+      "doc": ""
+    },
+    {
+      "resource": "Execute Query",
+      "operation": "Query",
+      "description": "The SQL query to execute. You can use n8n expressions and tokens like $1, $2, and $3 to build prepared statements to use with query parameters",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Query Parameters",
+      "description": "A comma-separated list of values that you want to use as query parameters",
+      "doc": "",
+      "resource_value": "database"
+    },
+    {
+      "resource": "",
+      "operation": "Replace Empty Strings with NULL",
+      "description": "Whether to replace empty strings with NULL in input. This may be useful when working with data exported from spreadsheet software",
+      "doc": "",
+      "resource_value": "database"
+    },
+    {
+      "resource": "Insert",
+      "operation": "Credential to connect with",
+      "description": "Create or select an existing Postgres credential",
+      "doc": ""
+    },
+    {
+      "resource": "Insert",
+      "operation": "Operation",
+      "description": "Select Insert",
+      "doc": ""
+    },
+    {
+      "resource": "Insert",
+      "operation": "Schema",
+      "description": "Choose the schema that contains the table you want to work on. Select From list to choose the schema from the dropdown list or By Name to enter the schema name",
+      "doc": ""
+    },
+    {
+      "resource": "Insert",
+      "operation": "Table",
+      "description": "Choose the table that you want to work on. Select From list to choose the table from the dropdown list or By Name to enter the table name",
+      "doc": ""
+    },
+    {
+      "resource": "Insert / Mapping Column Mode",
+      "operation": "Map Each Column Manually",
+      "description": "Select the values to use for each column",
+      "doc": ""
+    },
+    {
+      "resource": "Insert / Mapping Column Mode",
+      "operation": "Map Automatically",
+      "description": "Automatically map incoming data to matching column names in Postgres. The incoming data field names must match the column names in Postgres for this to work. If necessary, consider using the edit fields (set) node before this node to adjust the format as needed",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Output Columns",
+      "description": "Choose which columns to output. You can select from a list of available columns or specify IDs using expressions",
+      "doc": "",
+      "resource_value": "database"
+    },
+    {
+      "resource": "",
+      "operation": "Skip on Conflict",
+      "description": "Whether to skip the row if the insert violates a unique or exclusion constraint instead of throwing an error",
+      "doc": "",
+      "resource_value": "database"
+    },
+    {
+      "resource": "Insert or Update",
+      "operation": "Credential to connect with",
+      "description": "Create or select an existing Postgres credential",
+      "doc": ""
+    },
+    {
+      "resource": "Insert or Update",
+      "operation": "Operation",
+      "description": "Select Insert or Update",
+      "doc": ""
+    },
+    {
+      "resource": "Insert or Update",
+      "operation": "Schema",
+      "description": "Choose the schema that contains the table you want to work on. Select From list to choose the schema from the dropdown list or By Name to enter the schema name",
+      "doc": ""
+    },
+    {
+      "resource": "Insert or Update",
+      "operation": "Table",
+      "description": "Choose the table that you want to work on. Select From list to choose the table from the dropdown list or By Name to enter the table name",
+      "doc": ""
+    },
+    {
+      "resource": "Insert or Update / Mapping Column Mode",
+      "operation": "Map Each Column Manually",
+      "description": "Select the values to use for each column",
+      "doc": ""
+    },
+    {
+      "resource": "Insert or Update / Mapping Column Mode",
+      "operation": "Map Automatically",
+      "description": "Automatically map incoming data to matching column names in Postgres. The incoming data field names must match the column names in Postgres for this to work. If necessary, consider using the edit fields (set) node before this node to adjust the format as needed",
+      "doc": ""
+    },
+    {
+      "resource": "Select",
+      "operation": "Credential to connect with",
+      "description": "Create or select an existing Postgres credential",
+      "doc": ""
+    },
+    {
+      "resource": "Select",
+      "operation": "Operation",
+      "description": "Select Select",
+      "doc": ""
+    },
+    {
+      "resource": "Select",
+      "operation": "Schema",
+      "description": "Choose the schema that contains the table you want to work on. Select From list to choose the schema from the dropdown list or By Name to enter the schema name",
+      "doc": ""
+    },
+    {
+      "resource": "Select",
+      "operation": "Table",
+      "description": "Choose the table that you want to work on. Select From list to choose the table from the dropdown list or By Name to enter the table name",
+      "doc": ""
+    },
+    {
+      "resource": "Select",
+      "operation": "Return All",
+      "description": "Whether to return all results or only up to a given limit",
+      "doc": ""
+    },
+    {
+      "resource": "Select",
+      "operation": "Limit",
+      "description": "The maximum number of items to return when Return All is disabled",
+      "doc": ""
+    },
+    {
+      "resource": "Select",
+      "operation": "Select Rows",
+      "description": "Set the conditions to select rows. Define a Column, Operator, and Value to match rows on. If you don't select anything, Postgres selects all rows",
+      "doc": "",
+      "operation_value": "select"
+    },
+    {
+      "resource": "Select",
+      "operation": "Combine Conditions",
+      "description": "How to combine the conditions in Select Rows. AND requires all conditions to be true, while OR requires at least one condition to be true",
+      "doc": ""
+    },
+    {
+      "resource": "Select",
+      "operation": "Sort",
+      "description": "Choose how to sort the selected rows. Choose a Column from a list or by ID and a sort Direction",
+      "doc": ""
+    },
+    {
+      "resource": "Update",
+      "operation": "Credential to connect with",
+      "description": "Create or select an existing Postgres credential",
+      "doc": ""
+    },
+    {
+      "resource": "Update",
+      "operation": "Operation",
+      "description": "Select Update",
+      "doc": ""
+    },
+    {
+      "resource": "Update",
+      "operation": "Schema",
+      "description": "Choose the schema that contains the table you want to work on. Select From list to choose the schema from the dropdown list or By Name to enter the schema name",
+      "doc": ""
+    },
+    {
+      "resource": "Update",
+      "operation": "Table",
+      "description": "Choose the table that you want to work on. Select From list to choose the table from the dropdown list or By Name to enter the table name",
+      "doc": ""
+    },
+    {
+      "resource": "Update / Mapping Column Mode",
+      "operation": "Map Each Column Manually",
+      "description": "Select the values to use for each column",
+      "doc": ""
+    },
+    {
+      "resource": "Update / Mapping Column Mode",
+      "operation": "Map Automatically",
+      "description": "Automatically map incoming data to matching column names in Postgres. The incoming data field names must match the column names in Postgres for this to work. If necessary, consider using the edit fields (set) node before this node to adjust the format as needed",
+      "doc": ""
+    }
+  ],
+  "operation_count": 56,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Working with timestamps and time zones",
+      "page": "common-issues.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/common-issues#working-with-timestamps-and-time-zones",
+      "summary": "To avoid complications with how n8n and Postgres interpret timestamp and time zone data, follow these general tips:",
+      "parameters": [
+        {
+          "name": "Use UTC when storing and passing dates",
+          "description": "Using UTC helps avoid confusion over timezone conversions when converting dates between different representations and systems"
+        },
+        {
+          "name": "Set the execution timezone",
+          "description": "Set the global timezone in n8n using either environment variables (for self-hosted) or in the settings (for n8n Cloud). You can set a workflow-specific timezone in the workflow settings"
+        },
+        {
+          "name": "Use ISO 8601 format",
+          "description": "The ISO 8601 format encodes the day of the month, month, year, hour, minutes, and seconds in a standardized string. n8n passes dates between nodes as strings and uses Luxon to parse dates. If you need to cast to ISO 8601 explicitly, you can use the Date & Time node and a custom format set to the str"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Dynamically populate SQL `IN` groups with parameters",
+      "summary": "In Postgres, you can use the SQL IN comparison construct to make comparisons between groups of values:"
+    },
+    {
+      "title": "Working with timestamps and time zones",
+      "summary": "To avoid complications with how n8n and Postgres interpret timestamp and time zone data, follow these general tips:"
+    },
+    {
+      "title": "Outputting Date columns as date strings instead of ISO datetime strings",
+      "summary": "n8n's uses the pg package to integrate with Postgres, which affects how n8n processes date, timestamp, and related types from Postgres"
+    }
+  ],
+  "keywords": [
+    "app",
+    "applications",
+    "automatically",
+    "batching",
+    "cascade",
+    "closing",
+    "column",
+    "columns",
+    "combine",
+    "command",
+    "conditions",
+    "conflict",
+    "connect",
+    "connection",
+    "credential",
+    "database",
+    "delay",
+    "delete",
+    "drop",
+    "empty",
+    "execute",
+    "executing",
+    "format",
+    "idle",
+    "including",
+    "independently",
+    "insert",
+    "inserting",
+    "large",
+    "limit",
+    "manually",
+    "map",
+    "mapping",
+    "mode",
+    "null",
+    "numbers",
+    "operation",
+    "output",
+    "parameters",
+    "postgres",
+    "queries",
+    "query",
+    "replace",
+    "restart",
+    "return",
+    "rows",
+    "schema",
+    "select",
+    "sequences",
+    "single",
+    "skip",
+    "sort",
+    "strings",
+    "table",
+    "text",
+    "timeout",
+    "transaction",
+    "truncate",
+    "update",
+    "updating",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Postgres node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.postgres/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Postgres node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.postgres/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.postgres.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.postgres.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.postgres/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.postgres",
+  "type_version": 2.6,
+  "type_versions": [
+    2,
+    2.1,
+    2.2,
+    2.3,
+    2.4,
+    2.5,
+    2.6
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "postgres"
+  ],
+  "credential_details": [
+    {
+      "name": "postgres",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Postgres"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 36,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "hidden",
+        "default": "database",
+        "options": [
+          {
+            "name": "Database",
+            "value": "database"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "insert",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "deleteTable",
+            "description": "Delete an entire table or rows in a table"
+          },
+          {
+            "name": "Execute Query",
+            "value": "executeQuery",
+            "description": "Execute an SQL query"
+          },
+          {
+            "name": "Insert",
+            "value": "insert",
+            "description": "Insert rows in a table"
+          },
+          {
+            "name": "Insert or Update",
+            "value": "upsert",
+            "description": "Insert or update rows in a table"
+          },
+          {
+            "name": "Select",
+            "value": "select",
+            "description": "Select rows from a table"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update rows in a table"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ]
+          }
+        }
+      },
+      {
+        "name": "schema",
+        "displayName": "Schema",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "public"
+        },
+        "displayOptions": {
+          "hide": {
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "The schema that contains the table you want to work on"
+      },
+      {
+        "name": "table",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "hide": {
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "The table you want to work on"
+      },
+      {
+        "name": "deleteCommand",
+        "displayName": "Command",
+        "type": "options",
+        "default": "truncate",
+        "options": [
+          {
+            "name": "Truncate",
+            "value": "truncate",
+            "description": "Only removes the table's data and preserves the table's structure"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete the rows that match the 'Select Rows' conditions below. If no selection is made, all rows in the table are deleted."
+          },
+          {
+            "name": "Drop",
+            "value": "drop",
+            "description": "Deletes the table's data and also the table's structure permanently"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "restartSequences",
+        "displayName": "Restart Sequences",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "deleteCommand": [
+              "truncate"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to reset identity (auto-increment) columns to their initial values"
+      },
+      {
+        "name": "where",
+        "displayName": "Select Rows",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "deleteCommand": [
+              "delete"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "If not set, all rows will be selected"
+      },
+      {
+        "name": "combineConditions",
+        "displayName": "Combine Conditions",
+        "type": "options",
+        "default": "AND",
+        "options": [
+          {
+            "name": "AND",
+            "value": "AND",
+            "description": "Only rows that meet all the conditions are selected"
+          },
+          {
+            "name": "OR",
+            "value": "OR",
+            "description": "Rows that meet at least one condition are selected"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "deleteCommand": [
+              "delete"
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "How to combine the conditions defined in \"Select Rows\": AND requires all conditions to be true, OR requires at least one condition to be true"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cascade",
+            "description": "Whether to drop all objects that depend on the table, such as views and sequences"
+          },
+          {
+            "name": "connectionTimeout",
+            "description": "Number of seconds reserved for connecting to the database"
+          },
+          {
+            "name": "delayClosingIdleConnection",
+            "description": "Number of seconds to wait before idle connection would be eligible for closing"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. <a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/#use"
+          },
+          {
+            "name": "treatQueryParametersInSingleQuotesAsText",
+            "description": "Whether to treat query parameters enclosed in single quotes as text e.g. '$1'"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "deleteTable"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cascade",
+            "description": "Whether to drop all objects that depend on the table, such as views and sequences"
+          },
+          {
+            "name": "connectionTimeout",
+            "description": "Number of seconds reserved for connecting to the database"
+          },
+          {
+            "name": "delayClosingIdleConnection",
+            "description": "Number of seconds to wait before idle connection would be eligible for closing"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. <a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/#use"
+          },
+          {
+            "name": "treatQueryParametersInSingleQuotesAsText",
+            "description": "Whether to treat query parameters enclosed in single quotes as text e.g. '$1'"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "autoMapInputData",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties names exactly match the table column names"
+          },
+          {
+            "name": "Map Each Column Manually",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column manually"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "insert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to map node input properties and the table data automatically or manually"
+      },
+      {
+        "name": "notice",
+        "displayName": "\n\t\tIn this mode, make sure incoming data fields are named the same as the columns in your table. If needed, use an 'Edit Fields' node before this node to change the field names.\n\t\t",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMapInputData"
+            ],
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "insert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "valuesToSend",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "insert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.2
+                }
+              }
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "insert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cascade",
+            "description": "Whether to drop all objects that depend on the table, such as views and sequences"
+          },
+          {
+            "name": "connectionTimeout",
+            "description": "Number of seconds reserved for connecting to the database"
+          },
+          {
+            "name": "delayClosingIdleConnection",
+            "description": "Number of seconds to wait before idle connection would be eligible for closing"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. <a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/#use"
+          },
+          {
+            "name": "treatQueryParametersInSingleQuotesAsText",
+            "description": "Whether to treat query parameters enclosed in single quotes as text e.g. '$1'"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "insert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "where",
+        "displayName": "Select Rows",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "If not set, all rows will be selected"
+      },
+      {
+        "name": "combineConditions",
+        "displayName": "Combine Conditions",
+        "type": "options",
+        "default": "AND",
+        "options": [
+          {
+            "name": "AND",
+            "value": "AND",
+            "description": "Only rows that meet all the conditions are selected"
+          },
+          {
+            "name": "OR",
+            "value": "OR",
+            "description": "Rows that meet at least one condition are selected"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "How to combine the conditions defined in \"Select Rows\": AND requires all conditions to be true, OR requires at least one condition to be true"
+      },
+      {
+        "name": "sort",
+        "displayName": "Sort",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "direction",
+                "displayName": "Direction",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cascade",
+            "description": "Whether to drop all objects that depend on the table, such as views and sequences"
+          },
+          {
+            "name": "connectionTimeout",
+            "description": "Number of seconds reserved for connecting to the database"
+          },
+          {
+            "name": "delayClosingIdleConnection",
+            "description": "Number of seconds to wait before idle connection would be eligible for closing"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. <a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/#use"
+          },
+          {
+            "name": "treatQueryParametersInSingleQuotesAsText",
+            "description": "Whether to treat query parameters enclosed in single quotes as text e.g. '$1'"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "select"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "autoMapInputData",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties names exactly match the table column names"
+          },
+          {
+            "name": "Map Each Column Manually",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column manually"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to map node input properties and the table data automatically or manually"
+      },
+      {
+        "name": "notice",
+        "displayName": "\n\t\tIn this mode, make sure incoming data fields are named the same as the columns in your table. If needed, use an 'Edit Fields' node before this node to change the field names.\n\t\t",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMapInputData"
+            ],
+            "@version": [
+              2
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columnToMatchOn",
+        "displayName": "Column to Match On",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "The column to compare when finding the rows to update. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>."
+      },
+      {
+        "name": "valueToMatchOn",
+        "displayName": "Value of Column to Match On",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Rows with a value in the specified \"Column to Match On\" that corresponds to the value in this field will be updated"
+      },
+      {
+        "name": "valuesToSend",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.2
+                }
+              }
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cascade",
+            "description": "Whether to drop all objects that depend on the table, such as views and sequences"
+          },
+          {
+            "name": "connectionTimeout",
+            "description": "Number of seconds reserved for connecting to the database"
+          },
+          {
+            "name": "delayClosingIdleConnection",
+            "description": "Number of seconds to wait before idle connection would be eligible for closing"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. <a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/#use"
+          },
+          {
+            "name": "treatQueryParametersInSingleQuotesAsText",
+            "description": "Whether to treat query parameters enclosed in single quotes as text e.g. '$1'"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataMode",
+        "displayName": "Data Mode",
+        "type": "options",
+        "default": "autoMapInputData",
+        "options": [
+          {
+            "name": "Auto-Map Input Data to Columns",
+            "value": "autoMapInputData",
+            "description": "Use when node input properties names exactly match the table column names"
+          },
+          {
+            "name": "Map Each Column Manually",
+            "value": "defineBelow",
+            "description": "Set the value for each destination column manually"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Whether to map node input properties and the table data automatically or manually"
+      },
+      {
+        "name": "notice",
+        "displayName": "\n\t\tIn this mode, make sure incoming data fields are named the same as the columns in your table. If needed, use an 'Edit Fields' node before this node to change the field names.\n\t\t",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "autoMapInputData"
+            ],
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columnToMatchOn",
+        "displayName": "Unique Column",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "The column to compare when finding the rows to update. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>."
+      },
+      {
+        "name": "valueToMatchOn",
+        "displayName": "Value of Unique Column",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        },
+        "description": "Rows with a value in the specified \"Column to Match On\" that corresponds to the value in this field will be updated. New rows will be created for non-matching items."
+      },
+      {
+        "name": "valuesToSend",
+        "displayName": "Values to Send",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "column",
+                "displayName": "Column",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataMode": [
+              "defineBelow"
+            ],
+            "@version": [
+              2,
+              2.1
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.2
+                }
+              }
+            ],
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "cascade",
+            "description": "Whether to drop all objects that depend on the table, such as views and sequences"
+          },
+          {
+            "name": "connectionTimeout",
+            "description": "Number of seconds reserved for connecting to the database"
+          },
+          {
+            "name": "delayClosingIdleConnection",
+            "description": "Number of seconds to wait before idle connection would be eligible for closing"
+          },
+          {
+            "name": "queryBatching",
+            "description": "The way queries should be sent to the database"
+          },
+          {
+            "name": "queryReplacement",
+            "description": "Comma-separated list of the values you want to use as query parameters. <a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/#use"
+          },
+          {
+            "name": "treatQueryParametersInSingleQuotesAsText",
+            "description": "Whether to treat query parameters enclosed in single quotes as text e.g. '$1'"
+          },
+          {
+            "name": "outputColumns",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\" target=\"_blank\">expression</a>"
+          },
+          {
+            "name": "largeNumbersOutput"
+          },
+          {
+            "name": "skipOnConflict",
+            "description": "Whether to skip the row and do not throw error if a unique constraint or exclusion constraint is violated"
+          },
+          {
+            "name": "replaceEmptyStrings",
+            "description": "Whether to replace empty strings with NULL in input, could be useful when data come from spreadsheet"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "upsert"
+            ]
+          },
+          "hide": {
+            "table": [
+              ""
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

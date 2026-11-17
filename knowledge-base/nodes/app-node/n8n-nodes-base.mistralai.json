@@ -1,0 +1,344 @@
+{
+  "id": "n8n-nodes-base.mistralai",
+  "name": "Mistral AI",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.mistralai",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Mistral AI node to automate work in Mistral AI and integrate Mistral AI with other applications. n8n has built-in support for extracting text with various models, file types, and input methods",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mistralai",
+  "credentials": {
+    "name": "Mistral Cloud credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mistral",
+    "slug": "mistral",
+    "json_file": "credentials/mistral.json",
+    "markdown_file": "credentials/mistral.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Resource",
+      "description": "The resource that Mistral AI should operate on. The current implementation supports the \"Document\" resource"
+    },
+    {
+      "name": "Operation",
+      "description": "The operation to perform:"
+    },
+    {
+      "name": "Model",
+      "description": "The model to use for the given operation. The current version requires the mistral-ocr-latest model"
+    },
+    {
+      "name": "Document Type",
+      "description": "The document format to process. Can be \"Document\" or \"Image\""
+    },
+    {
+      "name": "Input Type",
+      "description": "How to input the document:"
+    },
+    {
+      "name": "Input Binary Field",
+      "description": "When using the \"Binary Data\" input type, defines the name of the input binary field containing the file"
+    },
+    {
+      "name": "URL",
+      "description": "When using the \"URL\" input type, the URL of the document or image to process"
+    },
+    {
+      "name": "Enable Batch Processing",
+      "description": "Whether to process multiple documents in the same API call. This may reduce your costs by bundling requests"
+    },
+    {
+      "name": "Batch Size",
+      "description": "When using \"Enable Batch Processing\", sets the maximum number of documents to process per batch"
+    },
+    {
+      "name": "Delete Files After Processing",
+      "description": "When using \"Enable Batch Processing\", whether to delete the files from Mistral Cloud after processing"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "after",
+    "ai",
+    "app",
+    "applications",
+    "batch",
+    "binary",
+    "cloud",
+    "credentials",
+    "delete",
+    "document",
+    "enable",
+    "extracting",
+    "field",
+    "file",
+    "files",
+    "input",
+    "methods",
+    "mistral",
+    "mistralai",
+    "model",
+    "models",
+    "operation",
+    "processing",
+    "size",
+    "text",
+    "type",
+    "types",
+    "url",
+    "various",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mistralai.md",
+      "title": "MistralAI node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mistralai",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mistralai.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.mistralai.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.mistralai.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.mistralai.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mistralAi",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mistralCloudApi"
+  ],
+  "credential_details": [
+    {
+      "name": "mistralCloudApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Mistral AI"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "document",
+        "options": [
+          {
+            "name": "Document",
+            "value": "document"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "extractText",
+        "options": [
+          {
+            "name": "Extract Text",
+            "value": "extractText",
+            "description": "Extract text from document using OCR"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "required": true,
+        "default": "mistral-ocr-latest",
+        "options": [
+          {
+            "name": "mistral-ocr-latest",
+            "value": "mistral-ocr-latest"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "extractText"
+            ]
+          }
+        },
+        "description": "The OCR model to use"
+      },
+      {
+        "name": "documentType",
+        "displayName": "Document Type",
+        "type": "options",
+        "required": true,
+        "default": "document_url",
+        "options": [
+          {
+            "name": "Document",
+            "value": "document_url"
+          },
+          {
+            "name": "Image",
+            "value": "image_url"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "extractText"
+            ]
+          }
+        },
+        "description": "The type of document to process"
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "required": true,
+        "default": "binary",
+        "options": [
+          {
+            "name": "Binary Data",
+            "value": "binary"
+          },
+          {
+            "name": "URL",
+            "value": "url"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "extractText"
+            ]
+          }
+        },
+        "description": "How the document will be provided"
+      },
+      {
+        "name": "binaryProperty",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "binary"
+            ],
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "extractText"
+            ]
+          }
+        },
+        "description": "Name of the input binary field that contains the file to process"
+      },
+      {
+        "name": "url",
+        "displayName": "URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "extractText"
+            ]
+          }
+        },
+        "description": "URL of the document or image to process"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batch",
+            "description": "Whether to process multiple documents in a single API call (more cost-efficient)"
+          },
+          {
+            "name": "batchSize",
+            "description": "Maximum number of documents to process in a single batch"
+          },
+          {
+            "name": "deleteFiles",
+            "description": "Whether to delete the files on Mistral Cloud after processing"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "extractText"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

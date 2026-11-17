@@ -1,0 +1,126 @@
+{
+  "id": "n8n-nodes-base.n8ntrigger",
+  "name": "n8n Trigger",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.n8ntrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The n8n Trigger node triggers when the workflow containing this node updates or gets published, or when the n8n instance starts or restarts. This node only responds to events in its own workflow; changes to other workflows won't trigger it",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.n8ntrigger",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Published Workflow Updated",
+      "description": "If you select this event, the node triggers when the workflow containing this node is updated. Changes to other workflows won't trigger this node"
+    },
+    {
+      "name": "Instance started",
+      "description": "If you select this event, the node triggers when the n8n instance starts or restarts"
+    },
+    {
+      "name": "Workflow Published",
+      "description": "If you select this event, the node triggers when the workflow containing this node is published. Publishing other workflows won't trigger this node"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "changes",
+    "containing",
+    "core",
+    "events",
+    "gets",
+    "instance",
+    "n8n",
+    "n8ntrigger",
+    "only",
+    "published",
+    "responds",
+    "restarts",
+    "started",
+    "starts",
+    "trigger",
+    "triggers",
+    "updated",
+    "updates"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.n8ntrigger.md",
+      "title": "n8n Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.n8ntrigger",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.n8ntrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.n8ntrigger.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.n8ntrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.n8ntrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.n8nTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "n8n Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 1,
+    "parameters": [
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Published Workflow Updated",
+            "value": "update",
+            "description": "Triggers when workflow version is published from a published state (workflow was already published)"
+          },
+          {
+            "name": "Instance Started",
+            "value": "init",
+            "description": "Triggers when this n8n instance is started or re-started"
+          },
+          {
+            "name": "Workflow Published",
+            "value": "activate",
+            "description": "Triggers when workflow version is published from an unpublished state (workflow was not published)"
+          }
+        ],
+        "description": "Specifies under which conditions an execution should happen:\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Published Workflow Updated</b>: Triggers when workflow version is published from a published state (workflow was already published)</li>\n\t"
+      }
+    ]
+  }
+}

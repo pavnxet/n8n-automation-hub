@@ -1,0 +1,423 @@
+{
+  "id": "n8n-nodes-base.awstranscribe",
+  "name": "AWS Transcribe",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.awstranscribe",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the AWS Transcribe node to automate work in AWS Transcribe, and integrate AWS Transcribe with other applications. n8n has built-in support for a wide range of AWS Transcribe features, including creating, deleting, and getting transcription jobs",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awstranscribe",
+  "credentials": {
+    "name": "AWS Transcribe",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/aws",
+    "slug": "aws",
+    "json_file": "credentials/aws.json",
+    "markdown_file": "credentials/aws.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Create a transcription job",
+      "description": "",
+      "doc": "",
+      "resource_value": "transcriptionJob",
+      "operation_value": "create"
+    },
+    {
+      "resource": "",
+      "operation": "Delete a transcription job",
+      "description": "",
+      "doc": "",
+      "resource_value": "transcriptionJob",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "",
+      "operation": "Get a transcription job",
+      "description": "",
+      "doc": "",
+      "resource_value": "transcriptionJob",
+      "operation_value": "get"
+    },
+    {
+      "resource": "",
+      "operation": "Get all transcriptions job",
+      "description": "",
+      "doc": "",
+      "resource_value": "transcriptionJob",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "aws",
+    "awstranscribe",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "job",
+    "jobs",
+    "transcribe",
+    "transcription",
+    "transcriptions",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.awstranscribe.md",
+      "title": "AWS Transcribe node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awstranscribe",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.awstranscribe.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.awstranscribe.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.awstranscribe.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.awstranscribe.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.awsTranscribe",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "aws"
+  ],
+  "credential_details": [
+    {
+      "name": "aws",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "AWS Transcribe"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 12,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "transcriptionJob",
+        "options": [
+          {
+            "name": "Transcription Job",
+            "value": "transcriptionJob"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a transcription job"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a transcription job"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a transcription job"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many transcription jobs"
+          }
+        ]
+      },
+      {
+        "name": "transcriptionJobName",
+        "displayName": "Job Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "transcriptionJob"
+            ],
+            "operation": [
+              "create",
+              "get",
+              "delete"
+            ]
+          }
+        },
+        "description": "The name of the job"
+      },
+      {
+        "name": "mediaFileUri",
+        "displayName": "Media File URI",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "transcriptionJob"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The S3 object location of the input media file"
+      },
+      {
+        "name": "detectLanguage",
+        "displayName": "Detect Language",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "transcriptionJob"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether to set this field to true to enable automatic language identification"
+      },
+      {
+        "name": "languageCode",
+        "displayName": "Language",
+        "type": "options",
+        "default": "en-US",
+        "options": [
+          {
+            "name": "American English",
+            "value": "en-US"
+          },
+          {
+            "name": "British English",
+            "value": "en-GB"
+          },
+          {
+            "name": "German",
+            "value": "de-DE"
+          },
+          {
+            "name": "Indian English",
+            "value": "en-IN"
+          },
+          {
+            "name": "Irish English",
+            "value": "en-IE"
+          },
+          {
+            "name": "Russian",
+            "value": "ru-RU"
+          },
+          {
+            "name": "Spanish",
+            "value": "es-ES"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "transcriptionJob"
+            ],
+            "operation": [
+              "create"
+            ],
+            "detectLanguage": [
+              false
+            ]
+          }
+        },
+        "description": "Language used in the input media file"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "channelIdentification",
+            "description": "Instructs Amazon Transcribe to process each audiochannel separately and then merge the transcription output of each channel into a single transcription. You can"
+          },
+          {
+            "name": "maxAlternatives",
+            "description": "The number of alternative transcriptions that the service should return"
+          },
+          {
+            "name": "maxSpeakerLabels",
+            "description": "The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this number, multiple speakers are identified as a s"
+          },
+          {
+            "name": "vocabularyName",
+            "description": "Name of vocabulary to use when processing the transcription job"
+          },
+          {
+            "name": "vocabularyFilterName",
+            "description": "The name of the vocabulary filter to use when transcribing the audio. The filter that you specify must have the same language code as the transcription job."
+          },
+          {
+            "name": "vocabularyFilterMethod",
+            "description": "<p>Set to mask to remove filtered text from the transcript and replace it with three asterisks (\"***\") as placeholder text.</p><p>Set to remove to remove filter"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnTranscript",
+        "displayName": "Return Transcript",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "transcriptionJob"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "By default, the response only contains metadata about the transcript. Enable this option to retrieve the transcript instead."
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "transcriptionJob"
+            ],
+            "operation": [
+              "get"
+            ],
+            "returnTranscript": [
+              true
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "transcriptionJob"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 20,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "transcriptionJob"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "jobNameContains",
+            "description": "Return only transcription jobs whose name contains the specified string"
+          },
+          {
+            "name": "status",
+            "description": "Return only transcription jobs with the specified status"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "transcriptionJob"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

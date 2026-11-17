@@ -1,0 +1,447 @@
+{
+  "id": "n8n-nodes-langchain.vectorstoredatabricks",
+  "name": "Databricks Vector Store",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.vectorstoredatabricks",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Databricks Vector Store node to work with Databricks Vector Search indexes in your workflows. You can run a similarity search over an index, insert documents into a Direct Access index, hand the index to a retriever connected to a chain[^1], or connect it to an AI agent[^2] as a tool[^3]. Indexes live in Unity Catalog, so the node sees only the data the credential's identity can access",
+  "doc_url": "https://docs.n8n.io/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoredatabricks",
+  "credentials": {
+    "name": "Databricks",
+    "doc": "https://docs.n8n.io/credentials/databricks",
+    "slug": "databricks",
+    "json_file": "credentials/databricks.json",
+    "markdown_file": "credentials/databricks.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Rerank Results"
+    },
+    {
+      "name": "Get Many parameters",
+      "description": "Each output item holds the document and its score, in the form { \"document\": { \"pageContent\": \"...\", \"metadata\": { ... } }, \"score\": 0.73 }. Scores aren't comparable across indexes or search modes"
+    },
+    {
+      "name": "Insert Documents parameters",
+      "description": "Connect a document loader, such as the Default Data Loader, to the Document input. The node embeds the documents with the connected Embeddings Databricks node and writes one row for each document. It outputs the documents it inserted. Rows become searchable within seconds"
+    },
+    {
+      "name": "Retrieve Documents (As Vector Store for Chain/Tool) parameters",
+      "description": "This mode has no fields of its own beyond Index and Content Column. The connected retriever or tool controls how many documents it fetches: set the Limit on the Vector Store Retriever or Vector Store Question Answer Tool node. The node options you set here apply to every search those nodes run"
+    },
+    {
+      "name": "Retrieve Documents (As Tool for AI Agent) parameters",
+      "options": [
+        "Limit: Enter how many documents each tool call returns. Default 4"
+      ]
+    },
+    {
+      "name": "Metadata Columns",
+      "description": "The columns to return in the document metadata. By default the node returns every column of the index except the primary key, the content column, and the vector column. Pick a subset to keep the payload an agent reads small. The list doesn't offer the primary key or the vector column"
+    },
+    {
+      "name": "Search Mode"
+    },
+    {
+      "name": "Metadata Filter",
+      "description": "A JSON object that restricts results to rows matching a condition on the index's columns. The node sends it as filters_json. Keys in one object combine with AND. The key holds the column name and, for anything other than equality, the operator:",
+      "options": [
+        "Equal to a value",
+        "Not equal",
+        "Comparison (<, <=, >, >=)",
+        "Range on one column",
+        "Any of several values",
+        "Token match (no % wildcards)",
+        "Several columns (AND)"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Behavior changes to expect",
+      "page": "migrate-from-the-community-package.md",
+      "doc": "https://docs.n8n.io/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoredatabricks/migrate-from-the-community-package#behavior-changes-to-expect",
+      "parameters": [
+        {
+          "name": "Searches on managed indexes work",
+          "description": "The community node always sent query_vector, so every search on a Delta Sync index with Databricks-computed embeddings failed. The built-in node sends query_text or query_vector as the index requires. Refer to Index types and embeddings"
+        },
+        {
+          "name": "No results dropped by a threshold",
+          "description": "The community node's Score Threshold defaulted to 0.8, which discarded every result on indexes whose similarity scores sit far below that. The built-in node returns the top Limit results"
+        },
+        {
+          "name": "Hybrid search and metadata filters",
+          "description": "are available in all search modes, including when an agent uses the index as a tool"
+        },
+        {
+          "name": "Inserts are checked before the request",
+          "description": "A Delta Sync index or a wrong Content Column fails with a message that names the problem instead of a raw API error"
+        },
+        {
+          "name": "The agent doesn't drift",
+          "description": "The built-in Databricks AI Agent runs the AI Agent node's own code instead of a fork, so it has the same options and gets the same fixes"
+        },
+        {
+          "name": "Traces keep landing in the same experiment",
+          "description": "when you replace the agent node inside an existing workflow, because the default experiment path contains the workflow ID"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "access",
+    "agent",
+    "catalog",
+    "chain",
+    "cluster",
+    "columns",
+    "connect",
+    "connected",
+    "credential",
+    "data",
+    "databricks",
+    "direct",
+    "documents",
+    "filter",
+    "get",
+    "hand",
+    "identity",
+    "index",
+    "indexes",
+    "insert",
+    "live",
+    "many",
+    "metadata",
+    "mode",
+    "only",
+    "over",
+    "parameters",
+    "rerank",
+    "results",
+    "retrieve",
+    "retriever",
+    "root",
+    "search",
+    "sees",
+    "similarity",
+    "store",
+    "tool",
+    "unity",
+    "vector",
+    "vectorstoredatabricks",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "eiIkcF23uZ2A8BkFVQM5",
+      "name": "Operation Mode"
+    },
+    {
+      "id": "KcxcfJWhy81cjCSzO4vQ",
+      "name": "vector-store-rerank-results"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    },
+    {
+      "id": "dN5Se1JVH7wYGtmN4n0v",
+      "name": "self-hosted-ai-starter-kit"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "",
+      "url": "",
+      "origpath": "cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoredatabricks/README.md"
+    },
+    {
+      "page": "migrate-from-the-community-package.md",
+      "title": "",
+      "url": "",
+      "origpath": "cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoredatabricks/migrate-from-the-community-package.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.vectorstoredatabricks.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.vectorstoredatabricks.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoredatabricks/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.vectorStoreDatabricks",
+  "type_version": 1.4,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3,
+    1.4
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "databricksOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "databricksOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Databricks Vector Store"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{\n\t\t\t((parameters) => {\n\t\t\t\tconst mode = parameters?.mode;\n\t\t\t\tconst useReranker = parameters?.useReranker;\n\t\t\t\tconst inputs = [{ displayName: \"Embedding\", type: \"ai_embedding\", required: true, maxConnections: 1}]\n\n\t\t\t\tif (['load', 'retrieve', 'retrieve-as-tool'].includes(mode) && useReranker) {\n\t\t\t\t\tinputs.push({ displayName: \"Reranker\", type: \"ai_reranker\", required: true, maxConnections: 1})\n\t\t\t\t}\n\n\t\t\t\tif (mode === 'retrieve-as-tool') {\n\t\t\t\t\treturn inputs;\n\t\t\t\t}\n\n\t\t\t\tif (['insert', 'load', 'update'].includes(mode)) {\n\t\t\t\t\tinputs.push({ displayName: \"\", type: \"main\"})\n\t\t\t\t}\n\n\t\t\t\tif (['insert'].includes(mode)) {\n\t\t\t\t\tinputs.push({ displayName: \"Document\", type: \"ai_document\", required: true, maxConnections: 1})\n\t\t\t\t}\n\t\t\t\treturn inputs\n\t\t\t})($parameter)\n\t\t}}",
+    "outputs": "={{\n\t\t\t((parameters) => {\n\t\t\t\tconst mode = parameters?.mode ?? 'retrieve';\n\n\t\t\t\tif (mode === 'retrieve-as-tool') {\n\t\t\t\t\treturn [{ displayName: \"Tool\", type: \"ai_tool\"}]\n\t\t\t\t}\n\n\t\t\t\tif (mode === 'retrieve') {\n\t\t\t\t\treturn [{ displayName: \"Vector Store\", type: \"ai_vectorStore\"}]\n\t\t\t\t}\n\t\t\t\treturn [{ displayName: \"\", type: \"main\"}]\n\t\t\t})($parameter)\n\t\t}}"
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 14,
+    "parameters": [
+      {
+        "name": "ragStarterCallout",
+        "displayName": "Tip: Get a feel for vector stores in n8n with our",
+        "type": "callout"
+      },
+      {
+        "name": "mode",
+        "displayName": "Operation Mode",
+        "type": "options",
+        "default": "retrieve",
+        "options": [
+          {
+            "name": "Get Many",
+            "value": "load",
+            "description": "Get many ranked documents from vector store for query"
+          },
+          {
+            "name": "Insert Documents",
+            "value": "insert",
+            "description": "Insert documents into vector store"
+          },
+          {
+            "name": "Retrieve Documents (As Vector Store for Chain/Tool)",
+            "value": "retrieve",
+            "description": "Retrieve documents from vector store to be used as vector store with AI nodes"
+          },
+          {
+            "name": "Retrieve Documents (As Tool for AI Agent)",
+            "value": "retrieve-as-tool",
+            "description": "Retrieve documents from vector store to be used as tool with AI nodes"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store retriever. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_retriever'>Insert one</a>",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "retrieve"
+            ]
+          }
+        }
+      },
+      {
+        "name": "toolName",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1.2
+                }
+              }
+            ],
+            "mode": [
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Name of the vector store"
+      },
+      {
+        "name": "toolDescription",
+        "displayName": "Description",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Explain to the LLM what this tool does, a good, specific description would allow LLMs to produce expected results much more often"
+      },
+      {
+        "name": "databricksIndex",
+        "displayName": "Index",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        }
+      },
+      {
+        "name": "contentColumn",
+        "displayName": "Content Column",
+        "type": "options",
+        "description": "Column that becomes the document text. Leave empty on a managed-embedding index to use its embedding source column. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expressi"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "metadataColumns",
+            "description": "Columns to return in document metadata. Defaults to all columns except the key, content and vector columns. Choose from the list, or specify IDs using an <a hre"
+          },
+          {
+            "name": "searchMode",
+            "description": "Vector ranks purely by semantic similarity. Hybrid adds keyword matching on top, using the search text. Sent as query_type ANN or HYBRID."
+          },
+          {
+            "name": "searchFilterJson",
+            "description": "Restrict results to rows matching this metadata condition, for example {\"source\": \"handbook\"}. Sent as filters_json. Works on STANDARD endpoints only."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve",
+              "retrieve-as-tool"
+            ]
+          }
+        }
+      },
+      {
+        "name": "embeddingBatchSize",
+        "displayName": "Embedding Batch Size",
+        "type": "number",
+        "default": 200,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "insert"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Number of documents to embed in a single batch"
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load"
+            ]
+          }
+        },
+        "description": "Search prompt to retrieve matching documents from the vector store using similarity-based ranking"
+      },
+      {
+        "name": "topK",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 4,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Number of top results to fetch from vector store"
+      },
+      {
+        "name": "includeDocumentMetadata",
+        "displayName": "Include Metadata",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Whether or not to include document metadata"
+      },
+      {
+        "name": "useReranker",
+        "displayName": "Rerank Results",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve",
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Whether or not to rerank results"
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of an embedding entry"
+      }
+    ]
+  }
+}

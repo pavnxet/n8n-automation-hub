@@ -1,0 +1,256 @@
+{
+  "id": "n8n-nodes-base.emailimap",
+  "name": "Email Trigger (IMAP)",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.emailimap",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the IMAP Email node to receive emails using an IMAP email server. This node is a trigger node",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.emailimap",
+  "credentials": {
+    "name": "IMAP credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/imap",
+    "slug": "imap",
+    "json_file": "credentials/imap.json",
+    "markdown_file": "credentials/imap.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Receive an email",
+      "description": "",
+      "doc": ""
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [
+    {
+      "name": "Credential to connect with",
+      "description": "Select or create an IMAP credential to connect to the server with"
+    },
+    {
+      "name": "Mailbox Name",
+      "description": "Enter the mailbox from which you want to receive emails"
+    },
+    {
+      "name": "Action",
+      "description": "Choose whether you want an email marked as read when n8n receives it. None will leave it marked unread. Mark as Read will mark it as read"
+    },
+    {
+      "name": "Download Attachments",
+      "description": "This toggle controls whether to download email attachments (turned on) or not (turned off). Only set this if necessary, since it increases processing"
+    },
+    {
+      "name": "Format",
+      "description": "Choose the format to return the message in from these options:"
+    },
+    {
+      "name": "Custom Email Rules",
+      "description": "Enter custom email fetching rules to determine which emails the node fetches"
+    },
+    {
+      "name": "Force Reconnect Every Minutes",
+      "description": "Set an interval in minutes to force reconnection"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "action",
+    "attachments",
+    "connect",
+    "core",
+    "credential",
+    "credentials",
+    "custom",
+    "download",
+    "email",
+    "emailimap",
+    "emails",
+    "every",
+    "force",
+    "format",
+    "imap",
+    "mailbox",
+    "minutes",
+    "name",
+    "receive",
+    "reconnect",
+    "rules",
+    "server",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.emailimap.md",
+      "title": "Email Trigger (IMAP) node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.emailimap",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.emailimap.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.emailimap.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.emailimap.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.emailimap.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.emailReadImap",
+  "type_version": 2.1,
+  "type_versions": [
+    2,
+    2.1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "imap"
+  ],
+  "credential_details": [
+    {
+      "name": "imap",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Email Trigger (IMAP)",
+    "color": "#44AA22"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "mailbox",
+        "displayName": "Mailbox Name",
+        "type": "string",
+        "default": "INBOX"
+      },
+      {
+        "name": "postProcessAction",
+        "displayName": "Action",
+        "type": "options",
+        "default": "read",
+        "options": [
+          {
+            "name": "Mark as Read",
+            "value": "read"
+          },
+          {
+            "name": "Nothing",
+            "value": "nothing"
+          }
+        ],
+        "description": "What to do after the email has been received. If \"nothing\" gets selected it will be processed multiple times."
+      },
+      {
+        "name": "downloadAttachments",
+        "displayName": "Download Attachments",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "format": [
+              "simple"
+            ]
+          }
+        },
+        "description": "Whether attachments of emails should be downloaded. Only set if needed as it increases processing."
+      },
+      {
+        "name": "format",
+        "displayName": "Format",
+        "type": "options",
+        "default": "simple",
+        "options": [
+          {
+            "name": "RAW",
+            "value": "raw",
+            "description": "Returns the full email message data with body content in the raw field as a base64url encoded string; the payload field is not used"
+          },
+          {
+            "name": "Resolved",
+            "value": "resolved",
+            "description": "Returns the full email with all data resolved and attachments saved as binary data"
+          },
+          {
+            "name": "Simple",
+            "value": "simple",
+            "description": "Returns the full email; do not use if you wish to gather inline attachments"
+          }
+        ],
+        "description": "The format to return the message in"
+      },
+      {
+        "name": "dataPropertyAttachmentsPrefixName",
+        "displayName": "Property Prefix Name",
+        "type": "string",
+        "default": "attachment_",
+        "displayOptions": {
+          "show": {
+            "format": [
+              "resolved"
+            ]
+          }
+        },
+        "description": "Prefix for name of the binary property to which to write the attachments. An index starting with 0 will be added. So if name is \"attachment_\" the first attachment is saved to \"attachment_0\""
+      },
+      {
+        "name": "dataPropertyAttachmentsPrefixName",
+        "displayName": "Property Prefix Name",
+        "type": "string",
+        "default": "attachment_",
+        "displayOptions": {
+          "show": {
+            "format": [
+              "simple"
+            ],
+            "downloadAttachments": [
+              true
+            ]
+          }
+        },
+        "description": "Prefix for name of the binary property to which to write the attachments. An index starting with 0 will be added. So if name is \"attachment_\" the first attachment is saved to \"attachment_0\""
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customEmailConfig",
+            "description": "Custom email fetching rules. See <a href=\"https://github.com/mscdex/node-imap\">node-imap</a>'s search function for more details."
+          },
+          {
+            "name": "forceReconnect",
+            "description": "Sets an interval (in minutes) to force a reconnection"
+          },
+          {
+            "name": "trackLastMessageId",
+            "description": "Whether to fetch only new emails since the last run, or all emails that match the \"Custom Email Rules\" ([\"UNSEEN\"] by default)"
+          }
+        ]
+      }
+    ]
+  }
+}

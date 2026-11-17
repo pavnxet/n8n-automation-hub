@@ -1,0 +1,2470 @@
+{
+  "id": "n8n-nodes-base.discord",
+  "name": "Discord",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.discord",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Discord node to automate work in Discord, and integrate Discord with other applications. n8n has built-in support for a wide range of Discord features, including sending messages in a Discord channel and managing channels",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.discord",
+  "credentials": {
+    "name": "Discord",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/discord",
+    "slug": "discord",
+    "json_file": "credentials/discord.json",
+    "markdown_file": "credentials/discord.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Channel",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "channel",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Channel",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "channel",
+      "operation_value": "deleteChannel"
+    },
+    {
+      "resource": "Channel",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "channel",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Channel",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "channel",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Channel",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "channel",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Message",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "deleteMessage"
+    },
+    {
+      "resource": "Message",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Message",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Message",
+      "operation": "React with Emoji",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "react"
+    },
+    {
+      "resource": "Message",
+      "operation": "Send",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "send"
+    },
+    {
+      "resource": "Message",
+      "operation": "Send and Wait for Response",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "sendAndWait"
+    },
+    {
+      "resource": "Member",
+      "operation": "Ban",
+      "description": "",
+      "doc": "",
+      "resource_value": "member"
+    },
+    {
+      "resource": "Member",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "member",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Member",
+      "operation": "Kick",
+      "description": "",
+      "doc": "",
+      "resource_value": "member"
+    },
+    {
+      "resource": "Member",
+      "operation": "Role Add",
+      "description": "",
+      "doc": "",
+      "resource_value": "member",
+      "operation_value": "roleAdd"
+    },
+    {
+      "resource": "Member",
+      "operation": "Role Remove",
+      "description": "",
+      "doc": "",
+      "resource_value": "member",
+      "operation_value": "roleRemove"
+    },
+    {
+      "resource": "Member",
+      "operation": "Timeout",
+      "description": "",
+      "doc": "",
+      "resource_value": "member"
+    },
+    {
+      "resource": "Member",
+      "operation": "Unban",
+      "description": "",
+      "doc": "",
+      "resource_value": "member"
+    }
+  ],
+  "operation_count": 18,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Mention users and channels",
+      "page": "common-issues.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.discord/common-issues#mention-users-and-channels",
+      "summary": "To mention users and channels in Discord messages, you need to format your message according to Discord's message formatting guidelines",
+      "parameters": [
+        {
+          "name": "User",
+          "description": "<@USER_ID>"
+        },
+        {
+          "name": "Channel",
+          "description": "<#CHANNEL_ID>"
+        },
+        {
+          "name": "Role",
+          "description": "<@&ROLE_ID>"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Add extra fields to embeds",
+      "summary": "Discord messages can optionally include embeds, a rich preview component that can include a title, description, image, link, and more"
+    },
+    {
+      "title": "Mention users and channels",
+      "summary": "To mention users and channels in Discord messages, you need to format your message according to Discord's message formatting guidelines"
+    },
+    {
+      "title": "Moderation actions fail with a permissions error",
+      "summary": "The Ban, Kick, and Timeout operations on the Member resource need the bot to have the matching permission and to sit above the target member in the server's role hierarchy. When either check fails, Discord returns a Missing Permissions error"
+    }
+  ],
+  "keywords": [
+    "add",
+    "app",
+    "applications",
+    "ban",
+    "channel",
+    "channels",
+    "create",
+    "delete",
+    "discord",
+    "emoji",
+    "get",
+    "including",
+    "kick",
+    "managing",
+    "many",
+    "member",
+    "message",
+    "messages",
+    "react",
+    "remove",
+    "response",
+    "role",
+    "send",
+    "sending",
+    "timeout",
+    "unban",
+    "update",
+    "wait",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "sYWM3IB0LEL4RkPx8ndF",
+      "name": "hitl-tools"
+    },
+    {
+      "id": "c0Jp2CWNEFSR2IfIVdlL",
+      "name": "send-and-wait-operation"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Discord node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.discord",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.discord/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Discord node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.discord/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.discord/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.discord.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.discord.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.discord/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.discord",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "discordBotApi",
+    "discordOAuth2Api",
+    "discordWebhookApi"
+  ],
+  "credential_details": [
+    {
+      "name": "discordBotApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "botToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "discordOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    },
+    {
+      "name": "discordWebhookApi",
+      "required": false,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "webhook"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Discord"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 63,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Connection Type",
+        "type": "options",
+        "default": "botToken",
+        "options": [
+          {
+            "name": "Bot Token",
+            "value": "botToken",
+            "description": "Manage messages, channels, and members on a server"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2",
+            "description": "Same features as 'Bot Token' with easier Bot installation"
+          },
+          {
+            "name": "Webhook",
+            "value": "webhook",
+            "description": "Send messages to a specific channel"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "channel",
+        "options": [
+          {
+            "name": "Channel",
+            "value": "channel"
+          },
+          {
+            "name": "Message",
+            "value": "message"
+          },
+          {
+            "name": "Member",
+            "value": "member"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "send",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "deleteMessage",
+            "description": "Delete a message in a channel"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a message in a channel"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve the latest messages in a channel"
+          },
+          {
+            "name": "React with Emoji",
+            "value": "react",
+            "description": "React to a message with an emoji"
+          },
+          {
+            "name": "Send",
+            "value": "send",
+            "description": "Send a message to a channel, thread, or member"
+          },
+          {
+            "name": "Send and Wait for Response",
+            "value": "sendAndWait",
+            "description": "Send a message and wait for response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        }
+      },
+      {
+        "name": "guildId",
+        "displayName": "Server",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        },
+        "description": "Select the server (guild) that your bot is connected to"
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the channel by name, URL, or ID"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "simplify",
+            "description": "Whether to return a simplified version of the response instead of the raw data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "react"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the channel by name, URL, or ID"
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "react"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "The ID of the message"
+      },
+      {
+        "name": "emoji",
+        "displayName": "Emoji",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "react"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "The emoji you want to react with"
+      },
+      {
+        "name": "sendTo",
+        "displayName": "Send To",
+        "type": "options",
+        "default": "channel",
+        "options": [
+          {
+            "name": "User",
+            "value": "user"
+          },
+          {
+            "name": "Channel",
+            "value": "channel"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Send message to a channel or DM to a user"
+      },
+      {
+        "name": "userId",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "sendTo": [
+              "user"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the user you want to assign a role to"
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "sendTo": [
+              "channel"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the channel by name, URL, or ID"
+      },
+      {
+        "name": "content",
+        "displayName": "Message",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "The content of the message (up to 2000 characters)"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "flags",
+            "description": "Message flags. <a href=\"https://discord.com/developers/docs/resources/channel#message-object-message-flags\" target=\"_blank\">More info</a>.”."
+          },
+          {
+            "name": "message_reference",
+            "description": "Fill this to make your message a reply. Add the message ID."
+          },
+          {
+            "name": "tts",
+            "description": "Whether to have a bot reading the message directly in the channel"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "embeds",
+        "displayName": "Embeds",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "inputMethod",
+                "displayName": "Input Method",
+                "type": "options"
+              },
+              {
+                "name": "json",
+                "displayName": "Value",
+                "type": "json"
+              },
+              {
+                "name": "description",
+                "displayName": "Description",
+                "type": "string"
+              },
+              {
+                "name": "author",
+                "displayName": "Author",
+                "type": "string"
+              },
+              {
+                "name": "color",
+                "displayName": "Color",
+                "type": "color"
+              },
+              {
+                "name": "timestamp",
+                "displayName": "Timestamp",
+                "type": "dateTime"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "url",
+                "displayName": "URL",
+                "type": "string"
+              },
+              {
+                "name": "image",
+                "displayName": "URL Image",
+                "type": "string"
+              },
+              {
+                "name": "thumbnail",
+                "displayName": "URL Thumbnail",
+                "type": "string"
+              },
+              {
+                "name": "video",
+                "displayName": "URL Video",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "files",
+        "displayName": "Files",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "inputFieldName",
+                "displayName": "Input Data Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "send"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "deleteMessage"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the channel by name, URL, or ID"
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "deleteMessage"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "The ID of the message"
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the channel by name, URL, or ID"
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "The ID of the message"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "simplify",
+            "description": "Whether to return a simplified version of the response instead of the raw data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "sendTo",
+        "displayName": "Send To",
+        "type": "options",
+        "default": "channel",
+        "options": [
+          {
+            "name": "User",
+            "value": "user"
+          },
+          {
+            "name": "Channel",
+            "value": "channel"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        },
+        "description": "Send message to a channel or DM to a user"
+      },
+      {
+        "name": "userId",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "sendTo": [
+              "user"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        },
+        "description": "Select the user you want to assign a role to"
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "sendTo": [
+              "channel"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        },
+        "description": "Select the channel by name, URL, or ID"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responseType",
+        "displayName": "Response Type",
+        "type": "options",
+        "default": "approval",
+        "options": [
+          {
+            "name": "Approval",
+            "value": "approval",
+            "description": "User can approve/disapprove from within the message"
+          },
+          {
+            "name": "Free Text",
+            "value": "freeText",
+            "description": "User can submit a response via a form"
+          },
+          {
+            "name": "Custom Form",
+            "value": "customForm",
+            "description": "User can submit a response via a custom form"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "defineForm",
+        "displayName": "Define Form",
+        "type": "options",
+        "default": "fields",
+        "options": [
+          {
+            "name": "Using Fields Below",
+            "value": "fields"
+          },
+          {
+            "name": "Using JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonOutput",
+        "displayName": "Form Fields",
+        "type": "json",
+        "default": "[\n  {\n    \"fieldLabel\": \"Name\",\n    \"placeholder\": \"enter your name\",\n    \"requiredField\": true\n  },\n  {\n    \"fieldLabel\": \"Age\",\n    \"fieldType\": \"number\",\n    \"placeholder\": \"enter your age\"\n  },\n  {\n    \"fieldLabel\": \"Email\",\n    \"fieldType\": \"email\",\n    \"requiredField\": true\n  },\n  {\n    \"field",
+        "displayOptions": {
+          "show": {
+            "defineForm": [
+              "json"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "approvalOptions",
+        "displayName": "Approval Options",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "approvalType",
+                "displayName": "Type of Approval",
+                "type": "options"
+              },
+              {
+                "name": "approveLabel",
+                "displayName": "Approve Button Label",
+                "type": "string"
+              },
+              {
+                "name": "disapproveLabel",
+                "displayName": "Disapprove Button Label",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "approval"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "limitWaitTime",
+            "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+          },
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase \"This message was sent automatically with n8n\" to the end of the message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "approval"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "messageButtonLabel"
+          },
+          {
+            "name": "responseFormTitle",
+            "description": "Title of the form that the user can access to provide their response"
+          },
+          {
+            "name": "responseFormDescription",
+            "description": "Description of the form that the user can access to provide their response"
+          },
+          {
+            "name": "responseFormButtonLabel"
+          },
+          {
+            "name": "responseFormCustomCss",
+            "description": "Override default styling of the response form with CSS"
+          },
+          {
+            "name": "limitWaitTime",
+            "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+          },
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase \"This message was sent automatically with n8n\" to the end of the message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "freeText",
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new channel"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteChannel",
+            "description": "Delete a channel"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a channel"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve the channels of a server"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a channel"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        }
+      },
+      {
+        "name": "guildId",
+        "displayName": "Server",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        },
+        "description": "Select the server (guild) that your bot is connected to"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "create"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "The name of the channel"
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "default": "0",
+        "options": [
+          {
+            "name": "Guild Text",
+            "value": "0"
+          },
+          {
+            "name": "Guild Voice",
+            "value": "2"
+          },
+          {
+            "name": "Guild Category",
+            "value": "4"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "create"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "The type of channel to create"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "nsfw",
+            "description": "Whether the content of the channel might be nsfw (not safe for work)"
+          },
+          {
+            "name": "bitrate",
+            "description": "The bitrate (in bits) of the voice channel"
+          },
+          {
+            "name": "categoryId",
+            "description": "The parent category where you want the channel to appear"
+          },
+          {
+            "name": "position"
+          },
+          {
+            "name": "rate_limit_per_user",
+            "description": "Amount of seconds a user has to wait before sending another message"
+          },
+          {
+            "name": "topic",
+            "description": "The channel topic description (0-1024 characters)"
+          },
+          {
+            "name": "user_limit",
+            "description": "The limit for the number of members that can be in the channel (0 refers to no limit)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "create"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "deleteChannel"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the channel by name, URL, or ID"
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the channel by name, URL, or ID"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "filter"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "channelId",
+        "displayName": "Channel",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the channel by name, URL, or ID"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "The new name of the channel. Fill this field only if you want to change the channel's name."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "nsfw",
+            "description": "Whether the content of the channel might be nsfw (not safe for work)"
+          },
+          {
+            "name": "bitrate",
+            "description": "The bitrate (in bits) of the voice channel"
+          },
+          {
+            "name": "categoryId",
+            "description": "The parent category where you want the channel to appear"
+          },
+          {
+            "name": "position"
+          },
+          {
+            "name": "rate_limit_per_user",
+            "description": "Amount of seconds a user has to wait before sending another message"
+          },
+          {
+            "name": "topic",
+            "description": "The channel topic description (0-1024 characters)"
+          },
+          {
+            "name": "user_limit",
+            "description": "The limit for the number of members that can be in the channel (0 refers to no limit)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "channel"
+            ],
+            "operation": [
+              "update"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve the members of a server"
+          },
+          {
+            "name": "Role Add",
+            "value": "roleAdd",
+            "description": "Add a role to a member"
+          },
+          {
+            "name": "Role Remove",
+            "value": "roleRemove",
+            "description": "Remove a role from a member"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        }
+      },
+      {
+        "name": "guildId",
+        "displayName": "Server",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        },
+        "description": "Select the server (guild) that your bot is connected to"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "after",
+        "displayName": "After",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "The ID of the user after which to return the members"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "simplify",
+            "description": "Whether to return a simplified version of the response instead of the raw data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "roleAdd"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the user you want to assign a role to"
+      },
+      {
+        "name": "role",
+        "displayName": "Role",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "roleAdd"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the roles you want to add to the user"
+      },
+      {
+        "name": "userId",
+        "displayName": "User",
+        "type": "resourceLocator",
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "roleRemove"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the user you want to assign a role to"
+      },
+      {
+        "name": "role",
+        "displayName": "Role",
+        "type": "multiOptions",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "roleRemove"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        },
+        "description": "Select the roles you want to add to the user"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "sendLegacy",
+        "options": [
+          {
+            "name": "Send a Message",
+            "value": "sendLegacy",
+            "description": "Send a message to a channel using the webhook"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "webhook"
+            ]
+          }
+        }
+      },
+      {
+        "name": "content",
+        "displayName": "Message",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendLegacy"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        },
+        "description": "The content of the message (up to 2000 characters)"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "avatar_url",
+            "description": "Override the default avatar of the webhook"
+          },
+          {
+            "name": "flags",
+            "description": "Message flags. <a href=\"https://discord.com/developers/docs/resources/channel#message-object-message-flags\" target=\"_blank\">More info</a>.”."
+          },
+          {
+            "name": "tts",
+            "description": "Whether to have a bot reading the message directly in the channel"
+          },
+          {
+            "name": "username",
+            "description": "Override the default username of the webhook"
+          },
+          {
+            "name": "wait",
+            "description": "Whether wait for the message to be created before returning its response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendLegacy"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        }
+      },
+      {
+        "name": "embeds",
+        "displayName": "Embeds",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "inputMethod",
+                "displayName": "Input Method",
+                "type": "options"
+              },
+              {
+                "name": "json",
+                "displayName": "Value",
+                "type": "json"
+              },
+              {
+                "name": "description",
+                "displayName": "Description",
+                "type": "string"
+              },
+              {
+                "name": "author",
+                "displayName": "Author",
+                "type": "string"
+              },
+              {
+                "name": "color",
+                "displayName": "Color",
+                "type": "color"
+              },
+              {
+                "name": "timestamp",
+                "displayName": "Timestamp",
+                "type": "dateTime"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "url",
+                "displayName": "URL",
+                "type": "string"
+              },
+              {
+                "name": "image",
+                "displayName": "URL Image",
+                "type": "string"
+              },
+              {
+                "name": "thumbnail",
+                "displayName": "URL Thumbnail",
+                "type": "string"
+              },
+              {
+                "name": "video",
+                "displayName": "URL Video",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendLegacy"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        }
+      },
+      {
+        "name": "files",
+        "displayName": "Files",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "inputFieldName",
+                "displayName": "Input Data Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "sendLegacy"
+            ]
+          },
+          "hide": {
+            "authentication": [
+              "botToken",
+              "oAuth2"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

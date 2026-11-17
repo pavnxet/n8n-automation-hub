@@ -1,0 +1,1288 @@
+{
+  "id": "n8n-nodes-base.googlechat",
+  "name": "Google Chat",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googlechat",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Chat node to automate work in Google Chat, and integrate Google Chat with other applications. n8n has built-in support for a wide range of Google Chat features, including getting membership and spaces, as well as creating and deleting messages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlechat",
+  "credentials": {
+    "name": "Google",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Member",
+      "operation": "Get a membership",
+      "description": "",
+      "doc": "",
+      "resource_value": "member",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Member",
+      "operation": "Get all memberships in a space",
+      "description": "",
+      "doc": "",
+      "resource_value": "member",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Message",
+      "operation": "Create a message",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Message",
+      "operation": "Delete a message",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Message",
+      "operation": "Get a message",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Message",
+      "operation": "Send and Wait for Response",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "sendAndWait"
+    },
+    {
+      "resource": "Message",
+      "operation": "Update a message",
+      "description": "",
+      "doc": "",
+      "resource_value": "message",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Space",
+      "operation": "Get a space",
+      "description": "",
+      "doc": "",
+      "resource_value": "space",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Space",
+      "operation": "Get all spaces the caller is a member of",
+      "description": "",
+      "doc": "",
+      "resource_value": "space",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 9,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "caller",
+    "chat",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "google",
+    "googlechat",
+    "including",
+    "member",
+    "membership",
+    "memberships",
+    "message",
+    "messages",
+    "response",
+    "send",
+    "space",
+    "spaces",
+    "update",
+    "wait",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "sYWM3IB0LEL4RkPx8ndF",
+      "name": "hitl-tools"
+    },
+    {
+      "id": "c0Jp2CWNEFSR2IfIVdlL",
+      "name": "send-and-wait-operation"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googlechat.md",
+      "title": "Google Chat node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlechat",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googlechat.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googlechat.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googlechat.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googlechat.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleChat",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleApi",
+    "googleChatOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "serviceAccount"
+          ]
+        }
+      }
+    },
+    {
+      "name": "googleChatOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Google Chat"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 35,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "serviceAccount",
+        "options": [
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          },
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "message",
+        "options": [
+          {
+            "name": "Member",
+            "value": "member"
+          },
+          {
+            "name": "Message",
+            "value": "message"
+          },
+          {
+            "name": "Space",
+            "value": "space"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a membership"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many memberships in a space"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ]
+          }
+        }
+      },
+      {
+        "name": "memberId",
+        "displayName": "Member ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Member to be retrieved in the form \"spaces/*/members/*\""
+      },
+      {
+        "name": "spaceId",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "The name of the space for which to retrieve members, in the form \"spaces/*\". Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "member"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a message"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a message"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a message"
+          },
+          {
+            "name": "Send and Wait for Response",
+            "value": "sendAndWait",
+            "description": "Send a message and wait for response"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ]
+          }
+        }
+      },
+      {
+        "name": "spaceId",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Space resource name, in the form \"spaces/*\". Example: spaces/AAAAMpdlehY. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether to pass the message object as JSON"
+      },
+      {
+        "name": "messageUi",
+        "displayName": "Message",
+        "type": "collection",
+        "required": true,
+        "options": [
+          {
+            "name": "text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonNotice",
+        "displayName": "See <a href=\"https://developers.google.com/chat/reference/rest/v1/spaces.messages#Message\" target=\"_blank\">Google Chat Guide</a> To Creating Messages",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageJson",
+        "displayName": "Message (JSON)",
+        "type": "json",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "Message input as JSON Object or JSON String"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "requestId",
+            "description": "A unique request ID for this message. If a message has already been created in the space with this request ID, the subsequent request will return the existing m"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Resource name of the message to be deleted, in the form \"spaces//messages/\""
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Resource name of the message to be retrieved, in the form \"spaces//messages/\""
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Resource name of the message to be updated, in the form \"spaces//messages/\""
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Whether to pass the update fields object as JSON"
+      },
+      {
+        "name": "updateFieldsUi",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "required": true,
+        "options": [
+          {
+            "name": "text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "update"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonNotice",
+        "displayName": "See <a href=\"https://developers.google.com/chat/reference/rest/v1/spaces.messages#Message\" target=\"_blank\">Google Chat Guide</a> To Creating Messages",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "update"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFieldsJson",
+        "displayName": "Update Fields (JSON)",
+        "type": "json",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "update"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "Message input as JSON Object or JSON String"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a space"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many spaces the caller is a member of"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "space"
+            ]
+          }
+        }
+      },
+      {
+        "name": "spaceId",
+        "displayName": "Space ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "space"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Resource name of the space, in the form \"spaces/*\""
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "space"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "space"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "spaceId",
+        "displayName": "Space Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        },
+        "description": "Space resource name, in the form \"spaces/*\". Example: spaces/AAAAMpdlehY. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responseType",
+        "displayName": "Response Type",
+        "type": "options",
+        "default": "approval",
+        "options": [
+          {
+            "name": "Approval",
+            "value": "approval",
+            "description": "User can approve/disapprove from within the message"
+          },
+          {
+            "name": "Free Text",
+            "value": "freeText",
+            "description": "User can submit a response via a form"
+          },
+          {
+            "name": "Custom Form",
+            "value": "customForm",
+            "description": "User can submit a response via a custom form"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "defineForm",
+        "displayName": "Define Form",
+        "type": "options",
+        "default": "fields",
+        "options": [
+          {
+            "name": "Using Fields Below",
+            "value": "fields"
+          },
+          {
+            "name": "Using JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonOutput",
+        "displayName": "Form Fields",
+        "type": "json",
+        "default": "[\n  {\n    \"fieldLabel\": \"Name\",\n    \"placeholder\": \"enter your name\",\n    \"requiredField\": true\n  },\n  {\n    \"fieldLabel\": \"Age\",\n    \"fieldType\": \"number\",\n    \"placeholder\": \"enter your age\"\n  },\n  {\n    \"fieldLabel\": \"Email\",\n    \"fieldType\": \"email\",\n    \"requiredField\": true\n  },\n  {\n    \"field",
+        "displayOptions": {
+          "show": {
+            "defineForm": [
+              "json"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "formFields",
+        "displayName": "Form Elements",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Label",
+                "type": "string"
+              },
+              {
+                "name": "fieldLabel",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Field Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldType",
+                "displayName": "Element Type",
+                "type": "options"
+              },
+              {
+                "name": "elementName",
+                "displayName": "Element Name",
+                "type": "string"
+              },
+              {
+                "name": "fieldName",
+                "displayName": "Custom Field Name",
+                "type": "string"
+              },
+              {
+                "name": "placeholder",
+                "displayName": "Placeholder",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "dateTime"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "defaultValue",
+                "displayName": "Default Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldValue",
+                "displayName": "Field Value",
+                "type": "string"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Field Options",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Checkboxes",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "fieldOptions",
+                "displayName": "Radio Buttons",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "multiselectLegacyNotice",
+                "displayName": "Multiple Choice is a legacy option, please use Checkboxes or Radio Buttons field type instead",
+                "type": "notice"
+              },
+              {
+                "name": "multiselect",
+                "displayName": "Multiple Choice",
+                "type": "boolean"
+              },
+              {
+                "name": "limitSelection",
+                "displayName": "Limit Selection",
+                "type": "options"
+              },
+              {
+                "name": "numberOfSelections",
+                "displayName": "Number of Selections",
+                "type": "number"
+              },
+              {
+                "name": "minSelections",
+                "displayName": "Minimum Selections",
+                "type": "number"
+              },
+              {
+                "name": "maxSelections",
+                "displayName": "Maximum Selections",
+                "type": "number"
+              },
+              {
+                "name": "html",
+                "displayName": "HTML",
+                "type": "string"
+              },
+              {
+                "name": "multipleFiles",
+                "displayName": "Multiple Files",
+                "type": "boolean"
+              },
+              {
+                "name": "acceptFileTypes",
+                "displayName": "Accepted File Types",
+                "type": "string"
+              },
+              {
+                "name": "formatDate",
+                "displayName": "The displayed date is formatted based on the locale of the user's browser",
+                "type": "notice"
+              },
+              {
+                "name": "requiredField",
+                "displayName": "Required Field",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.5
+                }
+              }
+            ],
+            "defineForm": [
+              "fields"
+            ],
+            "responseType": [
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "approvalOptions",
+        "displayName": "Approval Options",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "approvalType",
+                "displayName": "Type of Approval",
+                "type": "options"
+              },
+              {
+                "name": "approveLabel",
+                "displayName": "Approve Button Label",
+                "type": "string"
+              },
+              {
+                "name": "disapproveLabel",
+                "displayName": "Disapprove Button Label",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "approval"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "limitWaitTime",
+            "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+          },
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase \"This message was sent automatically with n8n\" to the end of the message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "approval"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "messageButtonLabel"
+          },
+          {
+            "name": "responseFormTitle",
+            "description": "Title of the form that the user can access to provide their response"
+          },
+          {
+            "name": "responseFormDescription",
+            "description": "Description of the form that the user can access to provide their response"
+          },
+          {
+            "name": "responseFormButtonLabel"
+          },
+          {
+            "name": "responseFormCustomCss",
+            "description": "Override default styling of the response form with CSS"
+          },
+          {
+            "name": "limitWaitTime",
+            "description": "Whether to limit the time this node should wait for a user response before execution resumes"
+          },
+          {
+            "name": "appendAttribution",
+            "description": "Whether to include the phrase \"This message was sent automatically with n8n\" to the end of the message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "responseType": [
+              "freeText",
+              "customForm"
+            ],
+            "resource": [
+              "message"
+            ],
+            "operation": [
+              "sendAndWait"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

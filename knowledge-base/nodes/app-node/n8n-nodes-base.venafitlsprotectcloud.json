@@ -1,0 +1,812 @@
+{
+  "id": "n8n-nodes-base.venafitlsprotectcloud",
+  "name": "Venafi TLS Protect Cloud",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.venafitlsprotectcloud",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Venafi TLS Protect Cloud node to automate work in Venafi TLS Protect Cloud, and integrate Venafi TLS Protect Cloud with other applications. n8n has built-in support for a wide range of Venafi TLS Protect Cloud features, including deleting and downloading certificates, as well as creating certificates requests",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.venafitlsprotectcloud",
+  "credentials": {
+    "name": "Venafi TLS Protect Cloud",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/venafitlsprotectcloud",
+    "slug": "venafitlsprotectcloud",
+    "json_file": "credentials/venafitlsprotectcloud.json",
+    "markdown_file": "credentials/venafitlsprotectcloud.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Certificate",
+      "operation": "Delete",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Certificate",
+      "operation": "Download",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "download"
+    },
+    {
+      "resource": "Certificate",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Certificate",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "getMany"
+    },
+    {
+      "resource": "Certificate",
+      "operation": "Renew",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificate",
+      "operation_value": "renew"
+    },
+    {
+      "resource": "Certificate Request",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificateRequest",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Certificate Request",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificateRequest",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Certificate Request",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "certificateRequest",
+      "operation_value": "getMany"
+    }
+  ],
+  "operation_count": 8,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "certificate",
+    "certificates",
+    "cloud",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "download",
+    "downloading",
+    "get",
+    "including",
+    "many",
+    "protect",
+    "renew",
+    "request",
+    "requests",
+    "tls",
+    "venafi",
+    "venafitlsprotectcloud",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.venafitlsprotectcloud.md",
+      "title": "Venafi TLS Protect Cloud node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.venafitlsprotectcloud",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.venafitlsprotectcloud.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.venafitlsprotectcloud.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.venafitlsprotectcloud.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.venafitlsprotectcloud.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.venafiTlsProtectCloud",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "venafiTlsProtectCloudApi"
+  ],
+  "credential_details": [
+    {
+      "name": "venafiTlsProtectCloudApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Venafi TLS Protect Cloud"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 30,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "certificateRequest",
+        "options": [
+          {
+            "name": "Certificate",
+            "value": "certificate"
+          },
+          {
+            "name": "Certificate Request",
+            "value": "certificateRequest"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "delete",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a certificate"
+          },
+          {
+            "name": "Download",
+            "value": "download",
+            "description": "Download a certificate"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a certificate"
+          },
+          {
+            "name": "Get Many",
+            "value": "getMany",
+            "description": "Retrieve many certificates"
+          },
+          {
+            "name": "Renew",
+            "value": "renew",
+            "description": "Renew a certificate"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "certificateId",
+        "displayName": "Certificate ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "downloadItem",
+        "displayName": "Download Item",
+        "type": "options",
+        "default": "certificate",
+        "options": [
+          {
+            "name": "Certificate",
+            "value": "certificate"
+          },
+          {
+            "name": "Keystore",
+            "value": "keystore"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "keystoreType",
+        "displayName": "Keystore Type",
+        "type": "options",
+        "default": "PEM",
+        "options": [
+          {
+            "name": "JKS",
+            "value": "JKS"
+          },
+          {
+            "name": "PKCS12",
+            "value": "PKCS12"
+          },
+          {
+            "name": "PEM",
+            "value": "PEM"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ],
+            "downloadItem": [
+              "keystore"
+            ]
+          }
+        }
+      },
+      {
+        "name": "certificateLabel",
+        "displayName": "Certificate Label",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ],
+            "downloadItem": [
+              "keystore"
+            ]
+          }
+        }
+      },
+      {
+        "name": "privateKeyPassphrase",
+        "displayName": "Private Key Passphrase",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ],
+            "downloadItem": [
+              "keystore"
+            ]
+          }
+        }
+      },
+      {
+        "name": "keystorePassphrase",
+        "displayName": "Keystore Passphrase",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ],
+            "downloadItem": [
+              "keystore"
+            ],
+            "keystoreType": [
+              "JKS"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryProperty",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "The name of the input field containing the binary file data to be uploaded"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "chainOrder"
+          },
+          {
+            "name": "format"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "download"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "certificateId",
+        "displayName": "Certificate ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get",
+              "delete"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getMany"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getMany"
+            ],
+            "resource": [
+              "certificate"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "subject"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getMany"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "applicationId",
+        "displayName": "Application Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "renew"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "existingCertificateId",
+        "displayName": "Existing Certificate ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "renew"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "certificateIssuingTemplateId",
+        "displayName": "Certificate Issuing Template Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "renew"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "certificateSigningRequest",
+        "displayName": "Certificate Signing Request",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "renew"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "validityPeriod"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "renew"
+            ],
+            "resource": [
+              "certificate"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new certificate request"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a certificate request"
+          },
+          {
+            "name": "Get Many",
+            "value": "getMany",
+            "description": "Retrieve many certificate requests"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "certificateRequest"
+            ]
+          }
+        }
+      },
+      {
+        "name": "applicationId",
+        "displayName": "Application Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificateRequest"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "certificateIssuingTemplateId",
+        "displayName": "Certificate Issuing Template Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificateRequest"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "generateCsr",
+        "displayName": "Generate CSR",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificateRequest"
+            ]
+          }
+        }
+      },
+      {
+        "name": "commonName",
+        "displayName": "Common Name",
+        "type": "string",
+        "required": true,
+        "default": "n8n.io",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificateRequest"
+            ],
+            "generateCsr": [
+              true
+            ]
+          }
+        },
+        "description": "The Common Name field for the certificate Subject (CN)"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "keyType",
+            "description": "The encryption algorithm for the public key"
+          },
+          {
+            "name": "keyCurve"
+          },
+          {
+            "name": "keyLength",
+            "description": "The number of bits to allow for key generation"
+          },
+          {
+            "name": "organization",
+            "description": "The name of a company or organization"
+          },
+          {
+            "name": "organizationalUnits",
+            "description": "The name of a department or section"
+          },
+          {
+            "name": "locality",
+            "description": "The name of a city or town"
+          },
+          {
+            "name": "state",
+            "description": "The name of a state or province"
+          },
+          {
+            "name": "country",
+            "description": "A 2 letter country code"
+          },
+          {
+            "name": "SubjectAltNamesUi"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificateRequest"
+            ],
+            "generateCsr": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "certificateSigningRequest",
+        "displayName": "Certificate Signing Request",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificateRequest"
+            ],
+            "generateCsr": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "validityPeriod",
+            "description": "Specify how long the issued certificate should be valid for. Use ISO8601 format."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "certificateRequest"
+            ]
+          }
+        }
+      },
+      {
+        "name": "certificateRequestId",
+        "displayName": "Certificate Request ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "certificateRequest"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getMany"
+            ],
+            "resource": [
+              "certificateRequest"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getMany"
+            ],
+            "resource": [
+              "certificateRequest"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      }
+    ]
+  }
+}

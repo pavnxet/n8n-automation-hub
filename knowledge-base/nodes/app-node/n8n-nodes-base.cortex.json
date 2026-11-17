@@ -1,0 +1,813 @@
+{
+  "id": "n8n-nodes-base.cortex",
+  "name": "Cortex",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.cortex",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Cortex node to automate work in Cortex, and integrate Cortex with other applications. n8n has built-in support for a wide range of Cortex features, including executing analyzers, and responders, as well as getting job details",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.cortex",
+  "credentials": {
+    "name": "Cortex",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/cortex",
+    "slug": "cortex",
+    "json_file": "credentials/cortex.json",
+    "markdown_file": "credentials/cortex.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Analyzer",
+      "operation": "Execute Analyzer",
+      "description": "",
+      "doc": "",
+      "resource_value": "analyzer",
+      "operation_value": "execute"
+    },
+    {
+      "resource": "Job",
+      "operation": "Get job details",
+      "description": "",
+      "doc": "",
+      "resource_value": "job",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Job",
+      "operation": "Get job report",
+      "description": "",
+      "doc": "",
+      "resource_value": "job",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Responder",
+      "operation": "Execute Responder",
+      "description": "",
+      "doc": "",
+      "resource_value": "responder",
+      "operation_value": "execute"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analyzer",
+    "analyzers",
+    "app",
+    "applications",
+    "cortex",
+    "execute",
+    "executing",
+    "get",
+    "getting",
+    "including",
+    "job",
+    "report",
+    "responder",
+    "responders",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.cortex.md",
+      "title": "Cortex node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.cortex",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.cortex.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.cortex.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.cortex.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.cortex.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.cortex",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "cortexApi"
+  ],
+  "credential_details": [
+    {
+      "name": "cortexApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Cortex"
+  },
+  "subtitle": "={{$parameter[\"operation\"]+ \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 20,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "analyzer",
+        "options": [
+          {
+            "name": "Analyzer",
+            "value": "analyzer"
+          },
+          {
+            "name": "Job",
+            "value": "job"
+          },
+          {
+            "name": "Responder",
+            "value": "responder"
+          }
+        ],
+        "description": "Choose a resource"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "execute",
+        "options": [
+          {
+            "name": "Execute",
+            "value": "execute",
+            "description": "Execute Analyzer"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "analyzer"
+            ]
+          }
+        },
+        "description": "Choose an operation"
+      },
+      {
+        "name": "analyzer",
+        "displayName": "Analyzer Type Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "analyzer"
+            ],
+            "operation": [
+              "execute"
+            ]
+          }
+        },
+        "description": "Choose the analyzer. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "observableType",
+        "displayName": "Observable Type Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "analyzer"
+            ],
+            "operation": [
+              "execute"
+            ]
+          },
+          "hide": {
+            "analyzer": [
+              ""
+            ]
+          }
+        },
+        "description": "Choose the observable type. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "observableValue",
+        "displayName": "Observable Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "analyzer"
+            ],
+            "operation": [
+              "execute"
+            ]
+          },
+          "hide": {
+            "observableType": [
+              "file"
+            ],
+            "analyzer": [
+              ""
+            ]
+          }
+        },
+        "description": "Enter the observable value"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "observableType": [
+              "file"
+            ],
+            "resource": [
+              "analyzer"
+            ],
+            "operation": [
+              "execute"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tlp",
+        "displayName": "TLP",
+        "type": "options",
+        "default": 2,
+        "options": [
+          {
+            "name": "White",
+            "value": 0
+          },
+          {
+            "name": "Green",
+            "value": 1
+          },
+          {
+            "name": "Amber",
+            "value": 2
+          },
+          {
+            "name": "Red",
+            "value": 3
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "analyzer"
+            ],
+            "operation": [
+              "execute"
+            ]
+          },
+          "hide": {
+            "observableType": [
+              ""
+            ],
+            "analyzer": [
+              ""
+            ]
+          }
+        },
+        "description": "The TLP of the analyzed observable"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "force",
+            "description": "Whether to force bypassing the cache"
+          },
+          {
+            "name": "timeout",
+            "description": "Timeout to wait for the report in case it is not available at the time the query was made"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "analyzer"
+            ],
+            "operation": [
+              "execute"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "execute",
+        "options": [
+          {
+            "name": "Execute",
+            "value": "execute",
+            "description": "Execute Responder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ]
+          }
+        },
+        "description": "Choose an operation"
+      },
+      {
+        "name": "responder",
+        "displayName": "Responder Type Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ]
+          }
+        },
+        "description": "Choose the responder. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "entityType",
+        "displayName": "Entity Type Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ]
+          }
+        },
+        "description": "Choose the Data type. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "jsonObject",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ]
+          }
+        },
+        "description": "Choose between providing JSON object or seperated attributes"
+      },
+      {
+        "name": "objectData",
+        "displayName": "Entity Object (JSON)",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ],
+            "jsonObject": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "parameters",
+        "displayName": "Parameters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "description",
+                "displayName": "Description",
+                "type": "string"
+              },
+              {
+                "name": "flag",
+                "displayName": "Flag",
+                "type": "boolean"
+              },
+              {
+                "name": "owner",
+                "displayName": "Owner",
+                "type": "string"
+              },
+              {
+                "name": "severity",
+                "displayName": "Severity",
+                "type": "options"
+              },
+              {
+                "name": "startDate",
+                "displayName": "Start Date",
+                "type": "dateTime"
+              },
+              {
+                "name": "tags",
+                "displayName": "Tags",
+                "type": "string"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "tlp",
+                "displayName": "TLP",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ],
+            "jsonObject": [
+              false
+            ],
+            "entityType": [
+              "case"
+            ]
+          },
+          "hide": {
+            "entityType": [
+              "",
+              "alert",
+              "case_artifact",
+              "case_task",
+              "case_task_log"
+            ]
+          }
+        }
+      },
+      {
+        "name": "parameters",
+        "displayName": "Parameters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "artifacts",
+                "displayName": "Artifacts",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "date",
+                "displayName": "Date",
+                "type": "dateTime"
+              },
+              {
+                "name": "description",
+                "displayName": "Description",
+                "type": "string"
+              },
+              {
+                "name": "follow",
+                "displayName": "Follow",
+                "type": "boolean"
+              },
+              {
+                "name": "severity",
+                "displayName": "Severity",
+                "type": "options"
+              },
+              {
+                "name": "source",
+                "displayName": "Source",
+                "type": "string"
+              },
+              {
+                "name": "sourceRef",
+                "displayName": "SourceRef",
+                "type": "string"
+              },
+              {
+                "name": "status",
+                "displayName": "Status",
+                "type": "options"
+              },
+              {
+                "name": "tags",
+                "displayName": "Tags",
+                "type": "string"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "tlp",
+                "displayName": "TLP",
+                "type": "options"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ],
+            "jsonObject": [
+              false
+            ],
+            "entityType": [
+              "alert"
+            ]
+          },
+          "hide": {
+            "responder": [
+              ""
+            ],
+            "entityType": [
+              "",
+              "case",
+              "case_artifact",
+              "case_task",
+              "case_task_log"
+            ]
+          }
+        }
+      },
+      {
+        "name": "parameters",
+        "displayName": "Parameters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "binaryPropertyName",
+                "displayName": "Input Binary Field",
+                "type": "string"
+              },
+              {
+                "name": "data",
+                "displayName": "Data",
+                "type": "string"
+              },
+              {
+                "name": "dataType",
+                "displayName": "DataType",
+                "type": "options"
+              },
+              {
+                "name": "ioc",
+                "displayName": "IOC",
+                "type": "boolean"
+              },
+              {
+                "name": "message",
+                "displayName": "Message",
+                "type": "string"
+              },
+              {
+                "name": "startDate",
+                "displayName": "Start Date",
+                "type": "dateTime"
+              },
+              {
+                "name": "status",
+                "displayName": "Status",
+                "type": "options"
+              },
+              {
+                "name": "tlp",
+                "displayName": "TLP",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ],
+            "jsonObject": [
+              false
+            ],
+            "entityType": [
+              "case_artifact"
+            ]
+          },
+          "hide": {
+            "responder": [
+              ""
+            ],
+            "entityType": [
+              "",
+              "case",
+              "alert",
+              "case_task",
+              "case_task_log"
+            ]
+          }
+        }
+      },
+      {
+        "name": "parameters",
+        "displayName": "Parameters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "status",
+                "displayName": "Status",
+                "type": "options"
+              },
+              {
+                "name": "flag",
+                "displayName": "Flag",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ],
+            "jsonObject": [
+              false
+            ],
+            "entityType": [
+              "case_task"
+            ]
+          },
+          "hide": {
+            "responder": [
+              ""
+            ],
+            "entityType": [
+              "",
+              "case",
+              "alert",
+              "case_artifact",
+              "case_task_log"
+            ]
+          }
+        }
+      },
+      {
+        "name": "parameters",
+        "displayName": "Parameters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "message",
+                "displayName": "Message",
+                "type": "string"
+              },
+              {
+                "name": "startDate",
+                "displayName": "Start Date",
+                "type": "dateTime"
+              },
+              {
+                "name": "status",
+                "displayName": "Status",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "responder"
+            ],
+            "jsonObject": [
+              false
+            ],
+            "entityType": [
+              "case_task_log"
+            ]
+          },
+          "hide": {
+            "responder": [
+              ""
+            ],
+            "entityType": [
+              "",
+              "case",
+              "alert",
+              "case_artifact",
+              "case_task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get job details"
+          },
+          {
+            "name": "Report",
+            "value": "report",
+            "description": "Get job report"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "job"
+            ]
+          }
+        },
+        "description": "Choose an operation"
+      },
+      {
+        "name": "jobId",
+        "displayName": "Job ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "job"
+            ],
+            "operation": [
+              "get",
+              "report"
+            ]
+          }
+        },
+        "description": "ID of the job"
+      }
+    ]
+  }
+}

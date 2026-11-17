@@ -1,0 +1,456 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/n8n-node-kb/node-record.schema.json",
+  "title": "n8n node record",
+  "description": "One built-in n8n node, merged from docs.n8n.io and the published node package.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "category",
+    "workflow_type",
+    "description",
+    "operations"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Docs-based slug, also the file name (e.g. n8n-nodes-base.gmail). Not always the workflow type."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human display name (e.g. Gmail)."
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "app-node",
+        "trigger-node",
+        "core-node",
+        "cluster-root-node",
+        "cluster-sub-node"
+      ]
+    },
+    "category_description": {
+      "type": "string"
+    },
+    "node_type": {
+      "type": "string",
+      "description": "Same as id (docs naming)."
+    },
+    "workflow_type": {
+      "type": "string",
+      "description": "The exact string to use as `type` in n8n workflow JSON, e.g. n8n-nodes-base.gmail or @n8n/n8n-nodes-langchain.agent."
+    },
+    "package": {
+      "type": "string",
+      "enum": [
+        "n8n-nodes-base",
+        "@n8n/n8n-nodes-langchain"
+      ]
+    },
+    "type_version": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Latest typeVersion for the node."
+    },
+    "type_versions": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "subtitle": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "defaults": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "io": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "inputs/outputs of the node."
+    },
+    "is_trigger": {
+      "type": "boolean"
+    },
+    "is_ai_tool": {
+      "type": "boolean",
+      "description": "Can be attached to an AI Agent Tools input."
+    },
+    "is_credential_only": {
+      "type": "boolean"
+    },
+    "usable_as_tool": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "doc_url": {
+      "type": "string"
+    },
+    "credentials": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "doc": {
+          "type": "string"
+        },
+        "json_file": {
+          "type": "string"
+        },
+        "markdown_file": {
+          "type": "string"
+        }
+      }
+    },
+    "credential_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Internal credential names used by the node (e.g. gmailOAuth2)."
+    },
+    "credential_details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "displayOptions": {
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "authentication_methods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "resource",
+          "operation"
+        ],
+        "properties": {
+          "resource": {
+            "type": "string",
+            "description": "Display label; empty for nodes without resources."
+          },
+          "operation": {
+            "type": "string"
+          },
+          "resource_value": {
+            "type": "string",
+            "description": "Internal value for workflow JSON."
+          },
+          "operation_value": {
+            "type": "string",
+            "description": "Internal value for workflow JSON."
+          },
+          "description": {
+            "type": "string"
+          },
+          "doc": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operation_count": {
+      "type": "integer"
+    },
+    "parameters": {
+      "type": "array",
+      "description": "Node-level parameters as documented on the node's page.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "node_schema": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Authoritative parameter schema from the published node package.",
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "parameter_count": {
+          "type": "integer"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "type"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "JSON key to use in node parameters."
+              },
+              "displayName": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "description": "string, number, boolean, options, multiOptions, collection, fixedCollection, resourceLocator, json, dateTime ..."
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "default": {},
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {},
+                    "values": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "displayOptions": {
+                "type": "object",
+                "properties": {
+                  "show": {
+                    "type": "object"
+                  },
+                  "hide": {
+                    "type": "object"
+                  }
+                }
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "description": "Trigger nodes: events this node can fire on.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "trigger_methods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "polling",
+          "webhook",
+          "schedule"
+        ]
+      }
+    },
+    "operation_details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "page": {
+            "type": "string"
+          },
+          "doc": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "examples": {
+      "type": "array",
+      "description": "Full example workflows embedded in the node's docs page.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "source_url": {
+            "type": "string"
+          },
+          "node_count": {
+            "type": "integer"
+          },
+          "workflow": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "common_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reusable_blocks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "files": {
+      "type": "object",
+      "properties": {
+        "json": {
+          "type": "string"
+        },
+        "markdown": {
+          "type": "string"
+        }
+      }
+    },
+    "source": {
+      "type": "object"
+    },
+    "generated": {
+      "type": "string"
+    }
+  }
+}

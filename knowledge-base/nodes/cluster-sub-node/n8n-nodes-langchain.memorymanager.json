@@ -1,0 +1,304 @@
+{
+  "id": "n8n-nodes-langchain.memorymanager",
+  "name": "Chat Memory Manager",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.memorymanager",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Chat Memory Manager node manages chat message memories[^1] within your workflows. Use this node to load, insert, and delete chat messages in an in-memory vector store[^2]",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorymanager",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Operation Mode",
+      "description": "Choose between Get Many Messages, Insert Messages, and Delete Messages operations"
+    },
+    {
+      "name": "Insert Mode",
+      "description": "Available in Insert Messages mode. Choose from:"
+    },
+    {
+      "name": "Delete Mode",
+      "description": "available in Delete Messages mode. Choose from:"
+    },
+    {
+      "name": "Chat Messages",
+      "description": "available in Insert Messages mode. Define the chat messages to insert into the memory, including:"
+    },
+    {
+      "name": "Messages Count",
+      "description": "Available in Delete Messages mode when you select Last N. Enter the number of latest messages to delete"
+    },
+    {
+      "name": "Simplify Output",
+      "description": "Available in Get Many Messages mode. Turn on to simplify the output to include only the sender (AI, user, or system) and the text"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "chat",
+    "cluster",
+    "count",
+    "delete",
+    "insert",
+    "load",
+    "manager",
+    "manages",
+    "memories",
+    "memory",
+    "memorymanager",
+    "message",
+    "messages",
+    "mode",
+    "operation",
+    "output",
+    "simplify",
+    "store",
+    "sub",
+    "vector",
+    "within"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "ipTfg43EHN14P930L6JP",
+      "name": "chat-memory-manager-purpose"
+    },
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.memorymanager.md",
+      "title": "Chat Memory Manager node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorymanager",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorymanager.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.memorymanager.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.memorymanager.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorymanager.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.memoryManager",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Chat Memory Manager"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      {
+        "displayName": "",
+        "type": "main"
+      },
+      {
+        "displayName": "Memory",
+        "type": "ai_memory",
+        "required": true,
+        "maxConnections": 1
+      }
+    ],
+    "outputs": [
+      {
+        "displayName": "",
+        "type": "main"
+      }
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "mode",
+        "displayName": "Operation Mode",
+        "type": "options",
+        "default": "load",
+        "options": [
+          {
+            "name": "Get Many Messages",
+            "value": "load",
+            "description": "Retrieve chat messages from connected memory"
+          },
+          {
+            "name": "Insert Messages",
+            "value": "insert",
+            "description": "Insert chat messages into connected memory"
+          },
+          {
+            "name": "Delete Messages",
+            "value": "delete",
+            "description": "Delete chat messages from connected memory"
+          }
+        ]
+      },
+      {
+        "name": "insertMode",
+        "displayName": "Insert Mode",
+        "type": "options",
+        "default": "insert",
+        "options": [
+          {
+            "name": "Insert Messages",
+            "value": "insert",
+            "description": "Add messages alongside existing ones"
+          },
+          {
+            "name": "Override All Messages",
+            "value": "override",
+            "description": "Replace the current memory with new messages"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "insert"
+            ]
+          }
+        },
+        "description": "Choose how new messages are inserted into the memory"
+      },
+      {
+        "name": "deleteMode",
+        "displayName": "Delete Mode",
+        "type": "options",
+        "default": "lastN",
+        "options": [
+          {
+            "name": "Last N",
+            "value": "lastN",
+            "description": "Delete the last N messages"
+          },
+          {
+            "name": "All Messages",
+            "value": "all",
+            "description": "Clear all messages from memory"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "delete"
+            ]
+          }
+        },
+        "description": "How messages are deleted from memory"
+      },
+      {
+        "name": "messages",
+        "displayName": "Chat Messages",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "messageValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "message",
+                "displayName": "Message",
+                "type": "string"
+              },
+              {
+                "name": "hideFromUI",
+                "displayName": "Hide Message in Chat",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "insert"
+            ]
+          }
+        },
+        "description": "Chat messages to insert into memory"
+      },
+      {
+        "name": "lastMessagesCount",
+        "displayName": "Messages Count",
+        "type": "number",
+        "default": 2,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "delete"
+            ],
+            "deleteMode": [
+              "lastN"
+            ]
+          }
+        },
+        "description": "The amount of last messages to delete"
+      },
+      {
+        "name": "simplifyOutput",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load"
+            ]
+          }
+        },
+        "description": "Whether to simplify the output to only include the sender and the text"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "groupMessages",
+            "description": "Whether to group messages into a single item or return each message as a separate item"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

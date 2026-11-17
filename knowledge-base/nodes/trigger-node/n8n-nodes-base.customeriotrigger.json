@@ -1,0 +1,279 @@
+{
+  "id": "n8n-nodes-base.customeriotrigger",
+  "name": "Customer.io Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.customeriotrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Customer.io enables users to send newsletters to selected segments of customers using their website data. You can send targeted emails, push notifications, and SMS to lower churn, create stronger relationships, and drive subscriptions",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.customeriotrigger",
+  "credentials": {
+    "name": "Customer.io credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/customerio",
+    "slug": "customerio",
+    "json_file": "credentials/customerio.json",
+    "markdown_file": "credentials/customerio.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "churn",
+    "create",
+    "credentials",
+    "customer",
+    "customer.io",
+    "customeriotrigger",
+    "customers",
+    "data",
+    "drive",
+    "emails",
+    "enables",
+    "lower",
+    "newsletters",
+    "notifications",
+    "push",
+    "relationships",
+    "segments",
+    "selected",
+    "send",
+    "stronger",
+    "subscriptions",
+    "targeted",
+    "their",
+    "trigger",
+    "users",
+    "website"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.customeriotrigger.md",
+      "title": "Customer.io Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.customeriotrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.customeriotrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.customeriotrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.customeriotrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.customeriotrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.customerIoTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "customerIoApi"
+  ],
+  "credential_details": [
+    {
+      "name": "customerIoApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Customer.io Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 1,
+    "parameters": [
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Customer Subscribed",
+            "value": "customer.subscribed",
+            "description": "Whether the webhook is triggered when a list subscriber is added"
+          },
+          {
+            "name": "Customer Unsubscribe",
+            "value": "customer.unsubscribed",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Attempted",
+            "value": "email.attempted",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Bounced",
+            "value": "email.bounced",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Clicked",
+            "value": "email.clicked",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Converted",
+            "value": "email.converted",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Delivered",
+            "value": "email.delivered",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Drafted",
+            "value": "email.drafted",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Failed",
+            "value": "email.failed",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Opened",
+            "value": "email.opened",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Sent",
+            "value": "email.sent",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Email Spammed",
+            "value": "email.spammed",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Push Attempted",
+            "value": "push.attempted",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Push Bounced",
+            "value": "push.bounced",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Push Clicked",
+            "value": "push.clicked",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Push Delivered",
+            "value": "push.delivered",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Push Drafted",
+            "value": "push.drafted",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Push Failed",
+            "value": "push.failed",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Push Opened",
+            "value": "push.opened",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Push Sent",
+            "value": "push.sent",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Slack Attempted",
+            "value": "slack.attempted",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Slack Clicked",
+            "value": "slack.clicked",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Slack Drafted",
+            "value": "slack.drafted",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Slack Failed",
+            "value": "slack.failed",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "Slack Sent",
+            "value": "slack.sent",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "SMS Attempted",
+            "value": "sms.attempted",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "SMS Bounced",
+            "value": "sms.bounced",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "SMS Clicked",
+            "value": "sms.clicked",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "SMS Delivered",
+            "value": "sms.delivered",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "SMS Drafted",
+            "value": "sms.drafted",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "SMS Failed",
+            "value": "sms.failed",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          },
+          {
+            "name": "SMS Sent",
+            "value": "sms.sent",
+            "description": "Whether the webhook is triggered when a list member unsubscribes"
+          }
+        ],
+        "description": "The events that can trigger the webhook and whether they are enabled"
+      }
+    ]
+  }
+}

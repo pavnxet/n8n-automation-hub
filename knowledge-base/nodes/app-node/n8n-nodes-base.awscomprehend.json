@@ -1,0 +1,312 @@
+{
+  "id": "n8n-nodes-base.awscomprehend",
+  "name": "AWS Comprehend",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.awscomprehend",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the AWS Comprehend node to automate work in AWS Comprehend, and integrate AWS Comprehend with other applications. n8n has built-in support for a wide range of AWS Comprehend features, including identifying and analyzing texts",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awscomprehend",
+  "credentials": {
+    "name": "AWS Comprehend",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/aws",
+    "slug": "aws",
+    "json_file": "credentials/aws.json",
+    "markdown_file": "credentials/aws.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Identify the dominant language",
+      "description": "",
+      "doc": "",
+      "resource_value": "text"
+    },
+    {
+      "resource": "",
+      "operation": "Analyse the sentiment of the text",
+      "description": "",
+      "doc": "",
+      "resource_value": "text"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analyse",
+    "analyzing",
+    "app",
+    "applications",
+    "aws",
+    "awscomprehend",
+    "comprehend",
+    "dominant",
+    "identify",
+    "identifying",
+    "including",
+    "language",
+    "sentiment",
+    "text",
+    "texts",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.awscomprehend.md",
+      "title": "AWS Comprehend node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.awscomprehend",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.awscomprehend.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.awscomprehend.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.awscomprehend.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.awscomprehend.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.awsComprehend",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "aws",
+    "awsAssumeRole"
+  ],
+  "credential_details": [
+    {
+      "name": "aws",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "iam"
+          ]
+        }
+      }
+    },
+    {
+      "name": "awsAssumeRole",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "assumeRole"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "AWS Comprehend"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "iam",
+        "options": [
+          {
+            "name": "AWS (IAM)",
+            "value": "iam"
+          },
+          {
+            "name": "AWS (Assume Role)",
+            "value": "assumeRole"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "text",
+        "options": [
+          {
+            "name": "Text",
+            "value": "text"
+          }
+        ],
+        "description": "The resource to perform"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "detectDominantLanguage",
+        "options": [
+          {
+            "name": "Detect Dominant Language",
+            "value": "detectDominantLanguage",
+            "description": "Identify the dominant language"
+          },
+          {
+            "name": "Detect Entities",
+            "value": "detectEntities",
+            "description": "Inspects text for named entities, and returns information about them"
+          },
+          {
+            "name": "Detect Sentiment",
+            "value": "detectSentiment",
+            "description": "Analyse the sentiment of the text"
+          }
+        ]
+      },
+      {
+        "name": "languageCode",
+        "displayName": "Language Code",
+        "type": "options",
+        "default": "en",
+        "options": [
+          {
+            "name": "Arabic",
+            "value": "ar"
+          },
+          {
+            "name": "Chinese",
+            "value": "zh"
+          },
+          {
+            "name": "Chinese (T)",
+            "value": "zh-TW"
+          },
+          {
+            "name": "English",
+            "value": "en"
+          },
+          {
+            "name": "French",
+            "value": "fr"
+          },
+          {
+            "name": "German",
+            "value": "de"
+          },
+          {
+            "name": "Hindi",
+            "value": "hi"
+          },
+          {
+            "name": "Italian",
+            "value": "it"
+          },
+          {
+            "name": "Japanese",
+            "value": "ja"
+          },
+          {
+            "name": "Korean",
+            "value": "ko"
+          },
+          {
+            "name": "Portuguese",
+            "value": "pt"
+          },
+          {
+            "name": "Spanish",
+            "value": "es"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ],
+            "operation": [
+              "detectSentiment",
+              "detectEntities"
+            ]
+          }
+        },
+        "description": "The language code for text"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "The text to send"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ],
+            "operation": [
+              "detectDominantLanguage"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "endpointArn",
+            "description": "The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ],
+            "operation": [
+              "detectEntities"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

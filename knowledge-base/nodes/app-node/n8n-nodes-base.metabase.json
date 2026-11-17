@@ -1,0 +1,666 @@
+{
+  "id": "n8n-nodes-base.metabase",
+  "name": "Metabase",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.metabase",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Metabase node to automate work in Metabase, and integrate Metabase with other applications. n8n has built-in support for a wide range of Metabase features, including adding, and getting alerts, databases, metrics, and questions",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.metabase",
+  "credentials": {
+    "name": "Metabase",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/metabase",
+    "slug": "metabase",
+    "json_file": "credentials/metabase.json",
+    "markdown_file": "credentials/metabase.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Alert",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "alerts",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Alert",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "alerts",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Database",
+      "operation": "Add",
+      "description": "",
+      "doc": "",
+      "resource_value": "databases",
+      "operation_value": "addNewDatasource"
+    },
+    {
+      "resource": "Database",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "databases"
+    },
+    {
+      "resource": "Database",
+      "operation": "Get Fields",
+      "description": "",
+      "doc": "",
+      "resource_value": "databases",
+      "operation_value": "getFields"
+    },
+    {
+      "resource": "Metric",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "metrics",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Metric",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "metrics",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Question",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "questions",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Question",
+      "operation": "Get All",
+      "description": "",
+      "doc": "",
+      "resource_value": "questions",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Question",
+      "operation": "Result Data",
+      "description": "",
+      "doc": "",
+      "resource_value": "questions",
+      "operation_value": "resultData"
+    }
+  ],
+  "operation_count": 10,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "adding",
+    "alert",
+    "alerts",
+    "app",
+    "applications",
+    "data",
+    "database",
+    "databases",
+    "fields",
+    "get",
+    "getting",
+    "including",
+    "metabase",
+    "metric",
+    "metrics",
+    "question",
+    "questions",
+    "result",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.metabase.md",
+      "title": "Metabase node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.metabase",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.metabase.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.metabase.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.metabase.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.metabase.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.metabase",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "metabaseApi"
+  ],
+  "credential_details": [
+    {
+      "name": "metabaseApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Metabase"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 21,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "questions",
+        "options": [
+          {
+            "name": "Alert",
+            "value": "alerts"
+          },
+          {
+            "name": "Database",
+            "value": "databases"
+          },
+          {
+            "name": "Metric",
+            "value": "metrics"
+          },
+          {
+            "name": "Question",
+            "value": "questions"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a specific question"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many questions"
+          },
+          {
+            "name": "Result Data",
+            "value": "resultData",
+            "description": "Return the result of the question to a specific file format"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "questions"
+            ]
+          }
+        }
+      },
+      {
+        "name": "questionId",
+        "displayName": "Question ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "questions"
+            ],
+            "operation": [
+              "get",
+              "resultData"
+            ]
+          }
+        }
+      },
+      {
+        "name": "format",
+        "displayName": "Format",
+        "type": "options",
+        "required": true,
+        "default": "csv",
+        "options": [
+          {
+            "name": "CSV",
+            "value": "csv"
+          },
+          {
+            "name": "JSON",
+            "value": "json"
+          },
+          {
+            "name": "XLSX",
+            "value": "xlsx"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "questions"
+            ],
+            "operation": [
+              "resultData"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a specific metric"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many metrics"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "metrics"
+            ]
+          }
+        }
+      },
+      {
+        "name": "metricId",
+        "displayName": "Metric ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "metrics"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Add",
+            "value": "addNewDatasource",
+            "description": "Add a new datasource to the metabase instance"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many databases"
+          },
+          {
+            "name": "Get Fields",
+            "value": "getFields",
+            "description": "Get fields from database"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ]
+          }
+        }
+      },
+      {
+        "name": "databaseId",
+        "displayName": "Database ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "getFields"
+            ]
+          }
+        }
+      },
+      {
+        "name": "engine",
+        "displayName": "Engine",
+        "type": "options",
+        "required": true,
+        "default": "postgres",
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "MongoDB",
+            "value": "mongo"
+          },
+          {
+            "name": "Mysql",
+            "value": "mysql"
+          },
+          {
+            "name": "PostgreSQL",
+            "value": "postgres"
+          },
+          {
+            "name": "Redshift",
+            "value": "redshift"
+          },
+          {
+            "name": "Sqlite",
+            "value": "sqlite"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "addNewDatasource"
+            ]
+          }
+        }
+      },
+      {
+        "name": "host",
+        "displayName": "Host",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "addNewDatasource"
+            ],
+            "engine": [
+              "postgres",
+              "redshift",
+              "mysql",
+              "mongo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "addNewDatasource"
+            ]
+          }
+        }
+      },
+      {
+        "name": "port",
+        "displayName": "Port",
+        "type": "number",
+        "required": true,
+        "default": 5432,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "addNewDatasource"
+            ],
+            "engine": [
+              "postgres",
+              "redshift",
+              "mysql",
+              "mongo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "user",
+        "displayName": "User",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "addNewDatasource"
+            ],
+            "engine": [
+              "postgres",
+              "redshift",
+              "mysql",
+              "mongo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "password",
+        "displayName": "Password",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "addNewDatasource"
+            ],
+            "engine": [
+              "postgres",
+              "redshift",
+              "mysql",
+              "mongo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dbName",
+        "displayName": "Database Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "addNewDatasource"
+            ],
+            "engine": [
+              "postgres",
+              "redshift",
+              "mysql",
+              "mongo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filePath",
+        "displayName": "File Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "addNewDatasource"
+            ],
+            "engine": [
+              "h2",
+              "sqlite"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fullSync",
+        "displayName": "Full Sync",
+        "type": "boolean",
+        "required": true,
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "addNewDatasource"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databases"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get specific alert"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many alerts"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alerts"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alertId",
+        "displayName": "Alert ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "alerts"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "requestOptions",
+        "displayName": "Request Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "batching"
+          },
+          {
+            "name": "allowUnauthorizedCerts",
+            "description": "Whether to accept the response even if SSL certificate validation is not possible"
+          },
+          {
+            "name": "proxy",
+            "description": "HTTP proxy to use. If authentication is required it can be defined as follow: http://username:password@myproxy:3128"
+          },
+          {
+            "name": "timeout",
+            "description": "Time in ms to wait for the server to send response headers (and start the response body) before aborting the request"
+          }
+        ]
+      }
+    ]
+  }
+}

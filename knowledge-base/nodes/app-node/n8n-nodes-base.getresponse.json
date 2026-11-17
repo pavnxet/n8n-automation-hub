@@ -1,0 +1,551 @@
+{
+  "id": "n8n-nodes-base.getresponse",
+  "name": "GetResponse",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.getresponse",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the GetResponse node to automate work in GetResponse, and integrate GetResponse with other applications. n8n has built-in support for a wide range of GetResponse features, including creating, updating, deleting, and getting contacts",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.getresponse",
+  "credentials": {
+    "name": "GetResponse",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/getresponse",
+    "slug": "getresponse",
+    "json_file": "credentials/getresponse.json",
+    "markdown_file": "credentials/getresponse.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Contact",
+      "operation": "Create a new contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Delete a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Get a contact",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Get all contacts",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Contact",
+      "operation": "Update contact properties",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "contact",
+    "contacts",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getresponse",
+    "getting",
+    "including",
+    "new",
+    "properties",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.getresponse.md",
+      "title": "GetResponse node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.getresponse",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.getresponse.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.getresponse.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.getresponse.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.getresponse.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.getResponse",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "getResponseApi",
+    "getResponseOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "getResponseApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiKey"
+          ]
+        }
+      }
+    },
+    {
+      "name": "getResponseOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "GetResponse"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 15,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiKey",
+        "options": [
+          {
+            "name": "API Key",
+            "value": "apiKey"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "contact",
+        "options": [
+          {
+            "name": "Contact",
+            "value": "contact"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new contact"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a contact"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a contact"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many contacts"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update contact properties"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "campaignId",
+        "displayName": "Campaign Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "dayOfCycle",
+            "description": "The day on which the contact is in the Autoresponder cycle. null indicates the contacts is not in the cycle."
+          },
+          {
+            "name": "ipAddress",
+            "description": "The contact's IP address. IPv4 and IPv6 formats are accepted."
+          },
+          {
+            "name": "name"
+          },
+          {
+            "name": "note"
+          },
+          {
+            "name": "scoring",
+            "description": "Contact scoring, pass null to remove the score from a contact"
+          },
+          {
+            "name": "tags",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "ID of contact to delete"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "ipAddress",
+            "description": "This makes it possible to pass the IP from which the contact unsubscribed. Used only if the messageId was send."
+          },
+          {
+            "name": "messageId",
+            "description": "The ID of a message (such as a newsletter, an autoresponder, or an RSS-newsletter). When passed, this method will simulate the unsubscribe process, as if the co"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for a particular contact"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "List of fields that should be returned. ID is always returned. Fields should be separated by comma"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 20,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "campaignId",
+            "description": "Search contacts by campaign ID"
+          },
+          {
+            "name": "changeOnFrom",
+            "description": "Search contacts edited from this date"
+          },
+          {
+            "name": "changeOnTo",
+            "description": "Search contacts edited to this date"
+          },
+          {
+            "name": "createdOnFrom",
+            "description": "Count data from this date"
+          },
+          {
+            "name": "createdOnTo",
+            "description": "Count data from this date"
+          },
+          {
+            "name": "exactMatch",
+            "description": "Whether to search for contacts with the exact value of the email and name provided in the query string. Without this flag, matching is done via a standard 'like"
+          },
+          {
+            "name": "fields",
+            "description": "List of fields that should be returned. ID is always returned. Fields should be separated by comma"
+          },
+          {
+            "name": "name",
+            "description": "Search contacts by name"
+          },
+          {
+            "name": "origin",
+            "description": "Search contacts by origin"
+          },
+          {
+            "name": "sortBy"
+          },
+          {
+            "name": "sortOrder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Unique identifier for a particular contact"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "campaignId",
+            "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          },
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "dayOfCycle",
+            "description": "The day on which the contact is in the Autoresponder cycle. null indicates the contacts is not in the cycle."
+          },
+          {
+            "name": "email"
+          },
+          {
+            "name": "ipAddress",
+            "description": "The contact's IP address. IPv4 and IPv6 formats are accepted."
+          },
+          {
+            "name": "name"
+          },
+          {
+            "name": "note"
+          },
+          {
+            "name": "scoring",
+            "description": "Contact scoring, pass null to remove the score from a contact"
+          },
+          {
+            "name": "tags",
+            "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

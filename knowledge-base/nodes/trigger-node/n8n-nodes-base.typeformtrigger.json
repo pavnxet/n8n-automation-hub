@@ -1,0 +1,160 @@
+{
+  "id": "n8n-nodes-base.typeformtrigger",
+  "name": "Typeform Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.typeformtrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Typeform is an online software as a service company that specializes in online form building and online surveys. Its main software creates dynamic forms based on user needs",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.typeformtrigger",
+  "credentials": {
+    "name": "Typeform credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/typeform",
+    "slug": "typeform",
+    "json_file": "credentials/typeform.json",
+    "markdown_file": "credentials/typeform.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "based",
+    "building",
+    "company",
+    "creates",
+    "credentials",
+    "dynamic",
+    "form",
+    "forms",
+    "main",
+    "needs",
+    "online",
+    "service",
+    "software",
+    "specializes",
+    "surveys",
+    "trigger",
+    "typeform",
+    "typeformtrigger",
+    "user"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.typeformtrigger.md",
+      "title": "Typeform Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.typeformtrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.typeformtrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.typeformtrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.typeformtrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.typeformtrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.typeformTrigger",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "typeformApi",
+    "typeformOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "typeformApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "typeformOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Typeform Trigger"
+  },
+  "subtitle": "=Form ID: {{$parameter[\"formId\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "formId",
+        "displayName": "Form Name or ID",
+        "type": "options",
+        "required": true,
+        "description": "Form which should trigger workflow on submission. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "simplifyAnswers",
+        "displayName": "Simplify Answers",
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to convert the answers to a key:value pair (\"FIELD_TITLE\":\"USER_ANSER\") to be easily processable"
+      },
+      {
+        "name": "onlyAnswers",
+        "displayName": "Only Answers",
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to return only the answers of the form and not any of the other data"
+      }
+    ]
+  }
+}

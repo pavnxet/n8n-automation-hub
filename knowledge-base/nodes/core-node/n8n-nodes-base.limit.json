@@ -1,0 +1,130 @@
+{
+  "id": "n8n-nodes-base.limit",
+  "name": "Limit",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.limit",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Limit node to remove items beyond a defined maximum number. You can choose whether n8n takes the items from the beginning or end of the input data",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.limit",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Max Items",
+      "description": "Enter the maximum number of items that n8n should keep. If the input data contains more than this value, n8n removes the items"
+    },
+    {
+      "name": "Keep",
+      "description": "If the node has to remove items, select where it keeps the input items from:",
+      "options": [
+        "Last Items: Keeps the Max Items number of items from the end of the input data"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "beginning",
+    "beyond",
+    "choose",
+    "core",
+    "data",
+    "defined",
+    "input",
+    "items",
+    "keep",
+    "limit",
+    "max",
+    "maximum",
+    "number",
+    "remove",
+    "takes",
+    "whether"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "0nvcx1EqJQgGVzUXOOMN",
+      "name": "data-section-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.limit.md",
+      "title": "Limit",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.limit",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.limit.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.limit.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.limit.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.limit.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.limit",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Limit"
+  },
+  "subtitle": "",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "maxItems",
+        "displayName": "Max Items",
+        "type": "number",
+        "default": 1,
+        "description": "If there are more items than this number, some are removed"
+      },
+      {
+        "name": "keep",
+        "displayName": "Keep",
+        "type": "options",
+        "default": "firstItems",
+        "options": [
+          {
+            "name": "First Items",
+            "value": "firstItems"
+          },
+          {
+            "name": "Last Items",
+            "value": "lastItems"
+          }
+        ],
+        "description": "When removing items, whether to keep the ones at the start or the ending"
+      }
+    ]
+  }
+}

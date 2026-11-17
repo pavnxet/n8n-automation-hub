@@ -1,0 +1,167 @@
+{
+  "id": "n8n-nodes-base.lingvanex",
+  "name": "LingvaNex",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.lingvanex",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the LingvaNex node to automate work in LingvaNex, and integrate LingvaNex with other applications. n8n has built-in support for translating data with LingvaNex",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.lingvanex",
+  "credentials": {
+    "name": "LingvaNex",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/lingvanex",
+    "slug": "lingvanex",
+    "json_file": "credentials/lingvanex.json",
+    "markdown_file": "credentials/lingvanex.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Translate data",
+      "description": "",
+      "doc": "",
+      "operation_value": "translate"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "data",
+    "lingvanex",
+    "translate",
+    "translating",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.lingvanex.md",
+      "title": "LingvaNex node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.lingvanex",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.lingvanex.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.lingvanex.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.lingvanex.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.lingvanex.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.lingvaNex",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "lingvaNexApi"
+  ],
+  "credential_details": [
+    {
+      "name": "lingvaNexApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "LingvaNex"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "translate",
+        "options": [
+          {
+            "name": "Translate",
+            "value": "translate",
+            "description": "Translate data"
+          }
+        ]
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "translate"
+            ]
+          }
+        },
+        "description": "The input text to translate"
+      },
+      {
+        "name": "translateTo",
+        "displayName": "Translate To",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "translate"
+            ]
+          }
+        },
+        "description": "The language to use for translation of the input text, set to one of the language codes listed in <a href=\"https://cloud.google.com/translate/docs/languages\">Language Support</a>. Choose from the list, or specify an ID u"
+      },
+      {
+        "name": "options",
+        "displayName": "Additional Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "from",
+            "description": "The language code in the format “language code_code of the country”. If this parameter is not present, the auto-detect language mode is enabled. Choose from the"
+          },
+          {
+            "name": "platform"
+          },
+          {
+            "name": "translateMode",
+            "description": "Describe the input text format. Possible value is \"html\" for translating and preserving html structure. If value is not specified or is other than \"html\" than p"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "translate"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

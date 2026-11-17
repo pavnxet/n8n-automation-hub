@@ -1,0 +1,184 @@
+{
+  "id": "n8n-nodes-base.getresponsetrigger",
+  "name": "GetResponse Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.getresponsetrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "GetResponse is an online platform that offers email marketing software, landing page creator, webinar hosting, and much more",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.getresponsetrigger",
+  "credentials": {
+    "name": "GetResponse credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/getresponse",
+    "slug": "getresponse",
+    "json_file": "credentials/getresponse.json",
+    "markdown_file": "credentials/getresponse.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "creator",
+    "credentials",
+    "email",
+    "getresponse",
+    "getresponsetrigger",
+    "hosting",
+    "landing",
+    "marketing",
+    "much",
+    "offers",
+    "online",
+    "platform",
+    "software",
+    "trigger",
+    "webinar"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.getresponsetrigger.md",
+      "title": "GetResponse Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.getresponsetrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.getresponsetrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.getresponsetrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.getresponsetrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.getresponsetrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.getResponseTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "getResponseApi",
+    "getResponseOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "getResponseApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiKey"
+          ]
+        }
+      }
+    },
+    {
+      "name": "getResponseOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "GetResponse Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiKey",
+        "options": [
+          {
+            "name": "API Key",
+            "value": "apiKey"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Customer Subscribed",
+            "value": "subscribe",
+            "description": "Receive notifications when a customer is subscribed to a list"
+          },
+          {
+            "name": "Customer Unsubscribed",
+            "value": "unsubscribe",
+            "description": "Receive notifications when a customer is unsubscribed from a list"
+          },
+          {
+            "name": "Email Clicked",
+            "value": "click",
+            "description": "Receive notifications when a email is clicked"
+          },
+          {
+            "name": "Email Opened",
+            "value": "open",
+            "description": "Receive notifications when a email is opened"
+          },
+          {
+            "name": "Survey Submitted",
+            "value": "survey",
+            "description": "Receive notifications when a survey is submitted"
+          }
+        ]
+      },
+      {
+        "name": "listIds",
+        "displayName": "List Names or IDs",
+        "type": "multiOptions",
+        "description": "Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "delete",
+            "description": "Whether to delete the current subscription"
+          }
+        ]
+      }
+    ]
+  }
+}

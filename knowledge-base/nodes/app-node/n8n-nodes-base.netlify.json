@@ -1,0 +1,394 @@
+{
+  "id": "n8n-nodes-base.netlify",
+  "name": "Netlify",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.netlify",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Netlify node to automate work in Netlify, and integrate Netlify with other applications. n8n has built-in support for a wide range of Netlify features, including getting and cancelling deployments, as well as deleting, and getting sites",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.netlify",
+  "credentials": {
+    "name": "Netlify",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/netlify",
+    "slug": "netlify",
+    "json_file": "credentials/netlify.json",
+    "markdown_file": "credentials/netlify.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Deploy",
+      "operation": "Cancel a deployment",
+      "description": "",
+      "doc": "",
+      "resource_value": "deploy",
+      "operation_value": "cancel"
+    },
+    {
+      "resource": "Deploy",
+      "operation": "Create a new deployment",
+      "description": "",
+      "doc": "",
+      "resource_value": "deploy",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Deploy",
+      "operation": "Get a deployment",
+      "description": "",
+      "doc": "",
+      "resource_value": "deploy",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Deploy",
+      "operation": "Get all deployments",
+      "description": "",
+      "doc": "",
+      "resource_value": "deploy",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Site",
+      "operation": "Delete a site",
+      "description": "",
+      "doc": "",
+      "resource_value": "site",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Site",
+      "operation": "Get a site",
+      "description": "",
+      "doc": "",
+      "resource_value": "site",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Site",
+      "operation": "Returns all sites",
+      "description": "",
+      "doc": "",
+      "resource_value": "site"
+    }
+  ],
+  "operation_count": 7,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "cancel",
+    "cancelling",
+    "create",
+    "delete",
+    "deleting",
+    "deploy",
+    "deployment",
+    "deployments",
+    "get",
+    "getting",
+    "including",
+    "netlify",
+    "new",
+    "returns",
+    "site",
+    "sites",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.netlify.md",
+      "title": "Netlify node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.netlify",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.netlify.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.netlify.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.netlify.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.netlify.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.netlify",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "netlifyApi"
+  ],
+  "credential_details": [
+    {
+      "name": "netlifyApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Netlify"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 11,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "deploy",
+        "options": [
+          {
+            "name": "Deploy",
+            "value": "deploy"
+          },
+          {
+            "name": "Site",
+            "value": "site"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "getAll",
+        "options": [
+          {
+            "name": "Cancel",
+            "value": "cancel",
+            "description": "Cancel a deployment"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new deployment"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a deployment"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many deployments"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deploy"
+            ]
+          }
+        }
+      },
+      {
+        "name": "siteId",
+        "displayName": "Site Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deploy"
+            ],
+            "operation": [
+              "get",
+              "create",
+              "getAll"
+            ]
+          }
+        },
+        "description": "Enter the Site ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "deployId",
+        "displayName": "Deploy ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deploy"
+            ],
+            "operation": [
+              "get",
+              "cancel"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "deploy"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "deploy"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "branch"
+          },
+          {
+            "name": "title"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "deploy"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "delete",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a site"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a site"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Returns many sites"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "site"
+            ]
+          }
+        }
+      },
+      {
+        "name": "siteId",
+        "displayName": "Site ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "site"
+            ],
+            "operation": [
+              "get",
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "site"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "site"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      }
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "id": "n8n-nodes-langchain.retrievermultiquery",
+  "name": "MultiQuery Retriever",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.retrievermultiquery",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The MultiQuery Retriever node automates the process of prompt tuning by using an LLM to generate multiple queries from different perspectives for a given user input query",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrievermultiquery",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Query Count",
+      "description": "Enter how many different versions of the query to generate"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "automates",
+    "cluster",
+    "count",
+    "different",
+    "generate",
+    "given",
+    "input",
+    "multiple",
+    "multiquery",
+    "perspectives",
+    "process",
+    "prompt",
+    "queries",
+    "query",
+    "retriever",
+    "retrievermultiquery",
+    "sub",
+    "tuning",
+    "user"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.retrievermultiquery.md",
+      "title": "MultiQuery Retriever node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrievermultiquery",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrievermultiquery.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.retrievermultiquery.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.retrievermultiquery.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrievermultiquery.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.retrieverMultiQuery",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "MultiQuery Retriever"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      {
+        "displayName": "Model",
+        "maxConnections": 1,
+        "type": "ai_languageModel",
+        "required": true
+      },
+      {
+        "displayName": "Retriever",
+        "maxConnections": 1,
+        "type": "ai_retriever",
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "displayName": "Retriever",
+        "maxConnections": 1,
+        "type": "ai_retriever"
+      }
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 1,
+    "parameters": [
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "queryCount",
+            "description": "Number of different versions of the given question to generate"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "id": "n8n-nodes-base.airtabletrigger",
+  "name": "Airtable Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.airtabletrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Airtable is a spreadsheet-database hybrid, with the features of a database but applied to a spreadsheet. The fields in an Airtable table are similar to cells in a spreadsheet, but have types such as 'checkbox', 'phone number', and 'drop-down list', and can reference file attachments like images",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.airtabletrigger",
+  "credentials": {
+    "name": "Airtable credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/airtable",
+    "slug": "airtable",
+    "json_file": "credentials/airtable.json",
+    "markdown_file": "credentials/airtable.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Poll Times",
+      "description": "n8n's Airtable node uses polling for check for updates on configured Airtable resources. The Poll Times parameter configures the querying frequency:",
+      "options": [
+        "Every Minute",
+        "Every Hour",
+        "Every Day",
+        "Every Week",
+        "Every Month",
+        "Every X: Check for updates every given number of minutes or hours",
+        "Custom: Customize the polling interval by providing a cron expression"
+      ]
+    },
+    {
+      "name": "Base",
+      "description": "The Airtable base you want to check for updates on. You can provide your base's URL or base ID"
+    },
+    {
+      "name": "Table",
+      "description": "The Airtable table within the Airtable base that you want to check for updates on. You can provide the table's URL or table ID"
+    },
+    {
+      "name": "Trigger Field",
+      "description": "A created or last modified field in your table. The Airtable Trigger node uses this to determine what updates occurred since the previous check"
+    },
+    {
+      "name": "Download Attachments",
+      "description": "Whether to download attachments from the table. When enabled, the Download Fields parameter defines the attachment fields"
+    },
+    {
+      "name": "Download Fields",
+      "description": "When you enable the Download Attachments toggle, this field defines which table fields to download. Field names are case sensitive. Use a comma to separate multiple field names"
+    },
+    {
+      "name": "Additional Fields",
+      "description": "Use the Add Field button to add the following parameters:"
+    }
+  ],
+  "events": [
+    {
+      "name": "New Airtable event",
+      "description": ""
+    }
+  ],
+  "trigger_methods": [
+    "polling",
+    "schedule"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "additional",
+    "airtable",
+    "airtabletrigger",
+    "applied",
+    "attachments",
+    "base",
+    "cells",
+    "checkbox",
+    "credentials",
+    "database",
+    "down",
+    "download",
+    "drop",
+    "field",
+    "fields",
+    "file",
+    "hybrid",
+    "images",
+    "like",
+    "list",
+    "number",
+    "phone",
+    "poll",
+    "reference",
+    "similar",
+    "spreadsheet",
+    "such",
+    "table",
+    "times",
+    "trigger",
+    "types"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.airtabletrigger.md",
+      "title": "Airtable Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.airtabletrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.airtabletrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.airtabletrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.airtabletrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.airtabletrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.airtableTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "airtableApi",
+    "airtableTokenApi",
+    "airtableOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "airtableApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "airtableApi"
+          ]
+        }
+      }
+    },
+    {
+      "name": "airtableTokenApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "airtableTokenApi"
+          ]
+        }
+      }
+    },
+    {
+      "name": "airtableOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "airtableOAuth2Api"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Airtable Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "pollTimes",
+        "displayName": "Poll Times",
+        "type": "fixedCollection",
+        "default": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "item",
+            "values": [
+              {
+                "name": "mode",
+                "displayName": "Mode",
+                "type": "options"
+              },
+              {
+                "name": "hour",
+                "displayName": "Hour",
+                "type": "number"
+              },
+              {
+                "name": "minute",
+                "displayName": "Minute",
+                "type": "number"
+              },
+              {
+                "name": "dayOfMonth",
+                "displayName": "Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "weekday",
+                "displayName": "Weekday",
+                "type": "options"
+              },
+              {
+                "name": "cronExpression",
+                "displayName": "Cron Expression",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "number"
+              },
+              {
+                "name": "unit",
+                "displayName": "Unit",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "description": "Time at which polling should occur"
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "airtableApi",
+        "options": [
+          {
+            "name": "API Key",
+            "value": "airtableApi"
+          },
+          {
+            "name": "Access Token",
+            "value": "airtableTokenApi"
+          },
+          {
+            "name": "OAuth2",
+            "value": "airtableOAuth2Api"
+          }
+        ]
+      },
+      {
+        "name": "baseId",
+        "displayName": "Base",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        },
+        "description": "The Airtable Base in which to operate on"
+      },
+      {
+        "name": "tableId",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        }
+      },
+      {
+        "name": "triggerField",
+        "displayName": "Trigger Field",
+        "type": "string",
+        "required": true,
+        "description": "A Created Time or Last Modified Time field that will be used to sort records. If you do not have a Created Time or Last Modified Time field in your schema, please create one, because without this field trigger will not w"
+      },
+      {
+        "name": "downloadAttachments",
+        "displayName": "Download Attachments",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether the attachment fields define in 'Download Fields' will be downloaded"
+      },
+      {
+        "name": "downloadFieldNames",
+        "displayName": "Download Fields",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "downloadAttachments": [
+              true
+            ]
+          }
+        },
+        "description": "Name of the fields of type 'attachment' that should be downloaded. Multiple ones can be defined separated by comma. Case sensitive."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Fields to be included in the response. Multiple ones can be set separated by comma. Example: <code>name, id</code>. By default just the trigger field will be in"
+          },
+          {
+            "name": "formula",
+            "description": "Formulas may involve functions, numeric operations, logical operations, and text operations that operate on fields. More info <a href=\"https://support.airtable."
+          },
+          {
+            "name": "viewId",
+            "description": "The name or ID of a view in the table. If set, only the records in that view will be returned."
+          }
+        ]
+      }
+    ]
+  }
+}

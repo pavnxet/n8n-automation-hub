@@ -1,0 +1,1625 @@
+{
+  "id": "n8n-nodes-langchain.minimax",
+  "name": "MiniMax",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-langchain.minimax",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "The MiniMax node connects n8n workflows to MiniMax AI models. Use it to generate images from text prompts, synthesize speech, create videos from text or images, and send messages to MiniMax language models",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.minimax",
+  "credentials": {
+    "name": "MiniMax credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/minimax",
+    "slug": "minimax",
+    "json_file": "credentials/minimax.json",
+    "markdown_file": "credentials/minimax.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "connects",
+    "create",
+    "credentials",
+    "generate",
+    "images",
+    "language",
+    "messages",
+    "minimax",
+    "models",
+    "prompts",
+    "send",
+    "speech",
+    "synthesize",
+    "text",
+    "videos"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.minimax.md",
+      "title": "MiniMax node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.minimax",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.minimax.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-langchain.minimax.json",
+    "markdown": "nodes/app-node/n8n-nodes-langchain.minimax.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-langchain.minimax.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.minimax",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "minimaxApi"
+  ],
+  "credential_details": [
+    {
+      "name": "minimaxApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "MiniMax"
+  },
+  "subtitle": "={{ $parameter[\"operation\"] + \": \" + $parameter[\"resource\"] }}",
+  "io": {
+    "inputs": "={{\n\t\t(() => {\n\t\t\tconst resource = $parameter.resource;\n\t\t\tconst operation = $parameter.operation;\n\t\t\tif (resource === 'text' && operation === 'message') {\n\t\t\t\treturn [{ type: 'main' }, { type: 'ai_tool', displayName: 'Tools' }];\n\t\t\t}\n\n\t\t\treturn ['main'];\n\t\t})()\n\t}}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 46,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "text",
+        "options": [
+          {
+            "name": "Audio",
+            "value": "audio"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Text",
+            "value": "text"
+          },
+          {
+            "name": "Video",
+            "value": "video"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "textToSpeech",
+        "options": [
+          {
+            "name": "Text to Speech",
+            "value": "textToSpeech",
+            "description": "Generate speech audio from text input"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "speech-2.8-hd",
+        "options": [
+          {
+            "name": "Speech 02 HD",
+            "value": "speech-02-hd",
+            "description": "Superior rhythm and stability with outstanding quality"
+          },
+          {
+            "name": "Speech 02 Turbo",
+            "value": "speech-02-turbo",
+            "description": "Enhanced multilingual capabilities and performance"
+          },
+          {
+            "name": "Speech 2.6 HD",
+            "value": "speech-2.6-hd",
+            "description": "HD model with outstanding prosody and cloning similarity"
+          },
+          {
+            "name": "Speech 2.6 Turbo",
+            "value": "speech-2.6-turbo",
+            "description": "Turbo model with support for 40 languages"
+          },
+          {
+            "name": "Speech 2.8 HD",
+            "value": "speech-2.8-hd",
+            "description": "Latest HD model with ultra-realistic quality and sound tags"
+          },
+          {
+            "name": "Speech 2.8 Turbo",
+            "value": "speech-2.8-turbo",
+            "description": "Latest Turbo model with seamless speed and natural flow"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "audio"
+            ],
+            "operation": [
+              "textToSpeech"
+            ]
+          }
+        },
+        "description": "The speech synthesis model to use"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "audio"
+            ],
+            "operation": [
+              "textToSpeech"
+            ]
+          }
+        },
+        "description": "The text to convert to speech (max 10,000 characters)"
+      },
+      {
+        "name": "voiceId",
+        "displayName": "Voice ID",
+        "type": "string",
+        "required": true,
+        "default": "English_Graceful_Lady",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "audio"
+            ],
+            "operation": [
+              "textToSpeech"
+            ]
+          }
+        },
+        "description": "Voice ID to use for speech synthesis. Browse available voices in the <a href=\"https://platform.minimax.io/docs/faq/system-voice-id\">MiniMax documentation</a>."
+      },
+      {
+        "name": "downloadAudio",
+        "displayName": "Download Audio",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "audio"
+            ],
+            "operation": [
+              "textToSpeech"
+            ]
+          }
+        },
+        "description": "Whether to download the generated audio as binary data. When disabled, only the audio URL is returned."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "audioFormat",
+            "description": "Output audio format. WAV is only supported in non-streaming mode."
+          },
+          {
+            "name": "emotion",
+            "description": "Emotion for synthesized speech. By default the model auto-selects the most natural emotion."
+          },
+          {
+            "name": "languageBoost",
+            "description": "Enhance recognition for a specific language"
+          },
+          {
+            "name": "pitch",
+            "description": "Speech pitch adjustment (-12 to 12, 0 = original pitch)"
+          },
+          {
+            "name": "speed",
+            "description": "Speech speed (0.5-2, higher = faster)"
+          },
+          {
+            "name": "volume",
+            "description": "Speech volume (0.1-10, higher = louder)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "audio"
+            ],
+            "operation": [
+              "textToSpeech"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "generate",
+        "options": [
+          {
+            "name": "Generate an Image",
+            "value": "generate",
+            "description": "Create an image from a text prompt"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "image-01",
+        "options": [
+          {
+            "name": "Image-01",
+            "value": "image-01",
+            "description": "High-quality image generation with fine-grained details"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The model to use for image generation"
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Text description of the image to generate (max 1500 characters)"
+      },
+      {
+        "name": "aspectRatio",
+        "displayName": "Aspect Ratio",
+        "type": "options",
+        "default": "1:1",
+        "options": [
+          {
+            "name": "1:1 (1024x1024)",
+            "value": "1:1"
+          },
+          {
+            "name": "16:9 (1280x720)",
+            "value": "16:9"
+          },
+          {
+            "name": "2:3 (832x1248)",
+            "value": "2:3"
+          },
+          {
+            "name": "21:9 (1344x576)",
+            "value": "21:9"
+          },
+          {
+            "name": "3:2 (1248x832)",
+            "value": "3:2"
+          },
+          {
+            "name": "3:4 (864x1152)",
+            "value": "3:4"
+          },
+          {
+            "name": "4:3 (1152x864)",
+            "value": "4:3"
+          },
+          {
+            "name": "9:16 (720x1280)",
+            "value": "9:16"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Aspect ratio of the generated image"
+      },
+      {
+        "name": "numberOfImages",
+        "displayName": "Number of Images",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Number of images to generate per request (1-9)"
+      },
+      {
+        "name": "downloadImage",
+        "displayName": "Download Image",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Whether to download the generated image as binary data. When disabled, only the image URL is returned."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "promptOptimizer",
+            "description": "Whether to automatically optimize the prompt for better results"
+          },
+          {
+            "name": "seed",
+            "description": "Random seed for reproducible outputs. Using the same seed and parameters produces the same image."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "message",
+        "options": [
+          {
+            "name": "Message a Model",
+            "value": "message",
+            "description": "Send a message and get a response from a MiniMax model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "MiniMax-M2.7",
+        "options": [
+          {
+            "name": "MiniMax-M2",
+            "value": "MiniMax-M2"
+          },
+          {
+            "name": "MiniMax-M2.1",
+            "value": "MiniMax-M2.1"
+          },
+          {
+            "name": "MiniMax-M2.1-Highspeed",
+            "value": "MiniMax-M2.1-highspeed"
+          },
+          {
+            "name": "MiniMax-M2.5",
+            "value": "MiniMax-M2.5"
+          },
+          {
+            "name": "MiniMax-M2.5-Highspeed",
+            "value": "MiniMax-M2.5-highspeed"
+          },
+          {
+            "name": "MiniMax-M2.7",
+            "value": "MiniMax-M2.7"
+          },
+          {
+            "name": "MiniMax-M2.7-Highspeed",
+            "value": "MiniMax-M2.7-highspeed"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "The model to use for generating the response"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "MiniMax-M3",
+        "options": [
+          {
+            "name": "MiniMax-M2",
+            "value": "MiniMax-M2"
+          },
+          {
+            "name": "MiniMax-M2.1",
+            "value": "MiniMax-M2.1"
+          },
+          {
+            "name": "MiniMax-M2.1-Highspeed",
+            "value": "MiniMax-M2.1-highspeed"
+          },
+          {
+            "name": "MiniMax-M2.5",
+            "value": "MiniMax-M2.5"
+          },
+          {
+            "name": "MiniMax-M2.5-Highspeed",
+            "value": "MiniMax-M2.5-highspeed"
+          },
+          {
+            "name": "MiniMax-M2.7",
+            "value": "MiniMax-M2.7"
+          },
+          {
+            "name": "MiniMax-M2.7-Highspeed",
+            "value": "MiniMax-M2.7-highspeed"
+          },
+          {
+            "name": "MiniMax-M3",
+            "value": "MiniMax-M3"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.1
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "The model to use for generating the response"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "MiniMax-M3"
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ],
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "The model to use for generating the response"
+      },
+      {
+        "name": "messages",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "content": "",
+              "role": "user"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "content",
+                "displayName": "Prompt",
+                "type": "string"
+              },
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "hideThinking",
+            "description": "Whether to strip chain-of-thought reasoning from the response, returning only the final answer"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion"
+          },
+          {
+            "name": "maxToolsIterations",
+            "description": "The maximum number of tool iteration cycles the LLM will run before stopping. A single iteration can contain multiple tool calls. Set to 0 for no limit."
+          },
+          {
+            "name": "temperature",
+            "description": "Controls the randomness of the output. Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and "
+          },
+          {
+            "name": "topP",
+            "description": "The maximum cumulative probability of tokens to consider when sampling"
+          },
+          {
+            "name": "system"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "message"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "textToVideo",
+        "options": [
+          {
+            "name": "Generate Video From Text",
+            "value": "textToVideo",
+            "description": "Generate a video from a text prompt"
+          },
+          {
+            "name": "Generate Video From Image",
+            "value": "imageToVideo",
+            "description": "Generate a video from an image, with optional last frame and subject reference"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "MiniMax-Hailuo-2.3",
+        "options": [
+          {
+            "name": "MiniMax-Hailuo-2.3",
+            "value": "MiniMax-Hailuo-2.3",
+            "description": "Hailuo 2.3 video generation model with enhanced realism"
+          },
+          {
+            "name": "MiniMax-Hailuo-02",
+            "value": "MiniMax-Hailuo-02",
+            "description": "Video model supporting higher resolution and longer duration"
+          },
+          {
+            "name": "T2V-01-Director",
+            "value": "T2V-01-Director",
+            "description": "Text-to-video model with camera control commands"
+          },
+          {
+            "name": "T2V-01",
+            "value": "T2V-01",
+            "description": "Standard text-to-video model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "The model to use for video generation"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "MiniMax-H3",
+        "options": [
+          {
+            "name": "MiniMax-H3",
+            "value": "MiniMax-H3",
+            "description": "Latest multimodal video generation model"
+          },
+          {
+            "name": "MiniMax-Hailuo-2.3",
+            "value": "MiniMax-Hailuo-2.3",
+            "description": "Hailuo 2.3 video generation model with enhanced realism"
+          },
+          {
+            "name": "MiniMax-Hailuo-02",
+            "value": "MiniMax-Hailuo-02",
+            "description": "Video model supporting higher resolution and longer duration"
+          },
+          {
+            "name": "T2V-01-Director",
+            "value": "T2V-01-Director",
+            "description": "Text-to-video model with camera control commands"
+          },
+          {
+            "name": "T2V-01",
+            "value": "T2V-01",
+            "description": "Standard text-to-video model"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "The model to use for video generation"
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          },
+          "hide": {
+            "modelId": [
+              "MiniMax-H3"
+            ]
+          }
+        },
+        "description": "Text description of the video (max 2000 characters). Camera movements can be controlled using [command] syntax, e.g. [Push in], [Pan left]."
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "modelId": [
+              "MiniMax-H3"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Text description of the video (max 7000 characters)"
+      },
+      {
+        "name": "h3Duration",
+        "displayName": "Duration (Seconds)",
+        "type": "options",
+        "default": 5,
+        "options": [
+          {
+            "name": "4 Seconds",
+            "value": 4
+          },
+          {
+            "name": "5 Seconds",
+            "value": 5
+          },
+          {
+            "name": "6 Seconds",
+            "value": 6
+          },
+          {
+            "name": "7 Seconds",
+            "value": 7
+          },
+          {
+            "name": "8 Seconds",
+            "value": 8
+          },
+          {
+            "name": "9 Seconds",
+            "value": 9
+          },
+          {
+            "name": "10 Seconds",
+            "value": 10
+          },
+          {
+            "name": "11 Seconds",
+            "value": 11
+          },
+          {
+            "name": "12 Seconds",
+            "value": 12
+          },
+          {
+            "name": "13 Seconds",
+            "value": 13
+          },
+          {
+            "name": "14 Seconds",
+            "value": 14
+          },
+          {
+            "name": "15 Seconds",
+            "value": 15
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "modelId": [
+              "MiniMax-H3"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Duration of the generated video"
+      },
+      {
+        "name": "h3Resolution",
+        "displayName": "Resolution",
+        "type": "options",
+        "default": "2K",
+        "options": [
+          {
+            "name": "768P",
+            "value": "768P"
+          },
+          {
+            "name": "2K",
+            "value": "2K"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "modelId": [
+              "MiniMax-H3"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Resolution of the generated video"
+      },
+      {
+        "name": "duration",
+        "displayName": "Duration (Seconds)",
+        "type": "options",
+        "default": 6,
+        "options": [
+          {
+            "name": "6 Seconds",
+            "value": 6
+          },
+          {
+            "name": "10 Seconds",
+            "value": 10
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          },
+          "hide": {
+            "modelId": [
+              "MiniMax-H3"
+            ]
+          }
+        },
+        "description": "Duration of the generated video"
+      },
+      {
+        "name": "resolution",
+        "displayName": "Resolution",
+        "type": "options",
+        "default": "768P",
+        "options": [
+          {
+            "name": "720P",
+            "value": "720P"
+          },
+          {
+            "name": "768P",
+            "value": "768P"
+          },
+          {
+            "name": "1080P",
+            "value": "1080P"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          },
+          "hide": {
+            "modelId": [
+              "MiniMax-H3"
+            ]
+          }
+        },
+        "description": "Resolution of the generated video. Available options depend on the model."
+      },
+      {
+        "name": "ratio",
+        "displayName": "Aspect Ratio",
+        "type": "options",
+        "default": "16:9",
+        "options": [
+          {
+            "name": "1:1",
+            "value": "1:1"
+          },
+          {
+            "name": "16:9",
+            "value": "16:9"
+          },
+          {
+            "name": "21:9",
+            "value": "21:9"
+          },
+          {
+            "name": "3:4",
+            "value": "3:4"
+          },
+          {
+            "name": "4:3",
+            "value": "4:3"
+          },
+          {
+            "name": "9:16",
+            "value": "9:16"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "modelId": [
+              "MiniMax-H3"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Aspect ratio of the generated video"
+      },
+      {
+        "name": "downloadVideo",
+        "displayName": "Download Video",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          }
+        },
+        "description": "Whether to download the generated video as binary data. When disabled, only the video URL is returned."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "promptOptimizer",
+            "description": "Whether to automatically optimize the prompt for better results"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "textToVideo"
+            ]
+          },
+          "hide": {
+            "modelId": [
+              "MiniMax-H3"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "MiniMax-Hailuo-2.3",
+        "options": [
+          {
+            "name": "I2V-01",
+            "value": "I2V-01",
+            "description": "Standard image-to-video model"
+          },
+          {
+            "name": "I2V-01-Director",
+            "value": "I2V-01-Director",
+            "description": "Image-to-video with camera control commands"
+          },
+          {
+            "name": "I2V-01-Live",
+            "value": "I2V-01-live",
+            "description": "Image-to-video live model"
+          },
+          {
+            "name": "MiniMax-Hailuo-02",
+            "value": "MiniMax-Hailuo-02",
+            "description": "Model supporting higher resolution and longer duration"
+          },
+          {
+            "name": "MiniMax-Hailuo-2.3",
+            "value": "MiniMax-Hailuo-2.3",
+            "description": "Hailuo 2.3 model with enhanced realism"
+          },
+          {
+            "name": "MiniMax-Hailuo-2.3-Fast",
+            "value": "MiniMax-Hailuo-2.3-Fast",
+            "description": "Faster image-to-video model for value and efficiency"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "The model to use for video generation"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "options",
+        "default": "MiniMax-H3",
+        "options": [
+          {
+            "name": "MiniMax-H3",
+            "value": "MiniMax-H3",
+            "description": "Latest multimodal video generation model"
+          },
+          {
+            "name": "I2V-01",
+            "value": "I2V-01",
+            "description": "Standard image-to-video model"
+          },
+          {
+            "name": "I2V-01-Director",
+            "value": "I2V-01-Director",
+            "description": "Image-to-video with camera control commands"
+          },
+          {
+            "name": "I2V-01-Live",
+            "value": "I2V-01-live",
+            "description": "Image-to-video live model"
+          },
+          {
+            "name": "MiniMax-Hailuo-02",
+            "value": "MiniMax-Hailuo-02",
+            "description": "Model supporting higher resolution and longer duration"
+          },
+          {
+            "name": "MiniMax-Hailuo-2.3",
+            "value": "MiniMax-Hailuo-2.3",
+            "description": "Hailuo 2.3 model with enhanced realism"
+          },
+          {
+            "name": "MiniMax-Hailuo-2.3-Fast",
+            "value": "MiniMax-Hailuo-2.3-Fast",
+            "description": "Faster image-to-video model for value and efficiency"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "The model to use for video generation"
+      },
+      {
+        "name": "imageInputType",
+        "displayName": "Image Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "URL",
+            "value": "url"
+          },
+          {
+            "name": "Binary File",
+            "value": "binary"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "How to provide the first frame image"
+      },
+      {
+        "name": "imageUrl",
+        "displayName": "Image URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "imageInputType": [
+              "url"
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Public URL of the image to use as first frame (JPG, JPEG, PNG, WebP, <20MB)"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "imageInputType": [
+              "binary"
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          },
+          "hide": {
+            "modelId": [
+              "MiniMax-H3"
+            ]
+          }
+        },
+        "description": "Optional text description of the video (max 2000 characters). Camera movements can be controlled using [command] syntax."
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "modelId": [
+              "MiniMax-H3"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Text description of the video (max 7000 characters)"
+      },
+      {
+        "name": "h3Duration",
+        "displayName": "Duration (Seconds)",
+        "type": "options",
+        "default": 5,
+        "options": [
+          {
+            "name": "4 Seconds",
+            "value": 4
+          },
+          {
+            "name": "5 Seconds",
+            "value": 5
+          },
+          {
+            "name": "6 Seconds",
+            "value": 6
+          },
+          {
+            "name": "7 Seconds",
+            "value": 7
+          },
+          {
+            "name": "8 Seconds",
+            "value": 8
+          },
+          {
+            "name": "9 Seconds",
+            "value": 9
+          },
+          {
+            "name": "10 Seconds",
+            "value": 10
+          },
+          {
+            "name": "11 Seconds",
+            "value": 11
+          },
+          {
+            "name": "12 Seconds",
+            "value": 12
+          },
+          {
+            "name": "13 Seconds",
+            "value": 13
+          },
+          {
+            "name": "14 Seconds",
+            "value": 14
+          },
+          {
+            "name": "15 Seconds",
+            "value": 15
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "modelId": [
+              "MiniMax-H3"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Duration of the generated video"
+      },
+      {
+        "name": "h3Resolution",
+        "displayName": "Resolution",
+        "type": "options",
+        "default": "2K",
+        "options": [
+          {
+            "name": "768P",
+            "value": "768P"
+          },
+          {
+            "name": "2K",
+            "value": "2K"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "modelId": [
+              "MiniMax-H3"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Resolution of the generated video"
+      },
+      {
+        "name": "duration",
+        "displayName": "Duration (Seconds)",
+        "type": "options",
+        "default": 6,
+        "options": [
+          {
+            "name": "6 Seconds",
+            "value": 6
+          },
+          {
+            "name": "10 Seconds",
+            "value": 10
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          },
+          "hide": {
+            "modelId": [
+              "MiniMax-H3"
+            ]
+          }
+        },
+        "description": "Duration of the generated video"
+      },
+      {
+        "name": "resolution",
+        "displayName": "Resolution",
+        "type": "options",
+        "default": "768P",
+        "options": [
+          {
+            "name": "512P",
+            "value": "512P"
+          },
+          {
+            "name": "720P",
+            "value": "720P"
+          },
+          {
+            "name": "768P",
+            "value": "768P"
+          },
+          {
+            "name": "1080P",
+            "value": "1080P"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          },
+          "hide": {
+            "modelId": [
+              "MiniMax-H3"
+            ]
+          }
+        },
+        "description": "Resolution of the generated video. Available options depend on the model."
+      },
+      {
+        "name": "downloadVideo",
+        "displayName": "Download Video",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        },
+        "description": "Whether to download the generated video as binary data. When disabled, only the video URL is returned."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "promptOptimizer",
+            "description": "Whether to automatically optimize the prompt"
+          },
+          {
+            "name": "lastFrameInputType",
+            "description": "Provide a last frame image to generate a first-and-last-frame video. Available only for supported models."
+          },
+          {
+            "name": "lastFrameImageUrl"
+          },
+          {
+            "name": "lastFrameBinaryPropertyName"
+          },
+          {
+            "name": "subjectReferenceInputType",
+            "description": "Provide a face photo for facial consistency in the generated video. Only supported by MiniMax-Hailuo-2.3."
+          },
+          {
+            "name": "subjectReferenceImageUrl"
+          },
+          {
+            "name": "subjectReferenceBinaryPropertyName"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ],
+            "operation": [
+              "imageToVideo"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

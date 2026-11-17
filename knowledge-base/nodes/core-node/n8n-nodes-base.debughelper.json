@@ -1,0 +1,371 @@
+{
+  "id": "n8n-nodes-base.debughelper",
+  "name": "Debug Helper",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.debughelper",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Debug Helper node to trigger different error types or generate random datasets to help test n8n workflows",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.debughelper",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Do Nothing",
+      "description": "Don't do anything",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Throw Error",
+      "description": "Throw an error with the specified type and message",
+      "doc": "#throw-error"
+    },
+    {
+      "resource": "",
+      "operation": "Out Of Memory",
+      "description": "Generate a specific memory size to simulate being out of memory",
+      "doc": "#out-of-memory"
+    },
+    {
+      "resource": "",
+      "operation": "Generate Random Data",
+      "description": "Generate some random data in a selected format",
+      "doc": "#generate-random-data"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [
+    {
+      "name": "Throw Error",
+      "options": [
+        "Error Type: Select the type of error to throw. Choose from:",
+        "NodeApiError",
+        "NodeOperationError",
+        "Error",
+        "Error Message: Enter the error message to throw"
+      ]
+    },
+    {
+      "name": "Out Of Memory",
+      "description": "The Out of Memory Category adds one parameter, the Memory Size to Generate. Enter the approximate amount of memory to generate"
+    },
+    {
+      "name": "Generate Random Data",
+      "options": [
+        "Address",
+        "Coordinates",
+        "Credit Card",
+        "Email",
+        "IPv4",
+        "IPv6",
+        "MAC",
+        "Nanoids: If you select this data type, you'll also need to enter:",
+        "Nanoid Alphabet: The alphabet the generator will use to generate the nanoids",
+        "Nanoid Length: The length of each nanoid",
+        "URL",
+        "User Data",
+        "UUID",
+        "Version"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "core",
+    "data",
+    "datasets",
+    "debug",
+    "debughelper",
+    "different",
+    "error",
+    "generate",
+    "help",
+    "helper",
+    "memory",
+    "nothing",
+    "out",
+    "random",
+    "test",
+    "throw",
+    "trigger",
+    "types"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.debughelper.md",
+      "title": "Debug Helper",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.debughelper",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.debughelper.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.debughelper.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.debughelper.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.debughelper.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.debugHelper",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "DebugHelper"
+  },
+  "subtitle": "={{$parameter[\"category\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "category",
+        "displayName": "Category",
+        "type": "options",
+        "default": "throwError",
+        "options": [
+          {
+            "name": "Do Nothing",
+            "value": "doNothing",
+            "description": "Does nothing"
+          },
+          {
+            "name": "Throw Error",
+            "value": "throwError",
+            "description": "Throws an error with the specified type and message"
+          },
+          {
+            "name": "Out Of Memory",
+            "value": "oom",
+            "description": "Generates a large amount of memory to cause an out of memory error"
+          },
+          {
+            "name": "Generate Random Data",
+            "value": "randomData",
+            "description": "Generates random data sets"
+          }
+        ]
+      },
+      {
+        "name": "throwErrorType",
+        "displayName": "Error Type",
+        "type": "options",
+        "default": "NodeApiError",
+        "options": [
+          {
+            "name": "NodeApiError",
+            "value": "NodeApiError"
+          },
+          {
+            "name": "NodeOperationError",
+            "value": "NodeOperationError"
+          },
+          {
+            "name": "Error",
+            "value": "Error"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "category": [
+              "throwError"
+            ]
+          }
+        }
+      },
+      {
+        "name": "throwErrorMessage",
+        "displayName": "Error Message",
+        "type": "string",
+        "default": "Node has thrown an error",
+        "displayOptions": {
+          "show": {
+            "category": [
+              "throwError"
+            ]
+          }
+        },
+        "description": "The message to send as part of the error"
+      },
+      {
+        "name": "memorySizeValue",
+        "displayName": "Memory Size to Generate",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "category": [
+              "oom"
+            ]
+          }
+        },
+        "description": "The approximate amount of memory to generate. Be generous..."
+      },
+      {
+        "name": "randomDataType",
+        "displayName": "Data Type",
+        "type": "options",
+        "default": "user",
+        "options": [
+          {
+            "name": "Address",
+            "value": "address"
+          },
+          {
+            "name": "Coordinates",
+            "value": "latLong"
+          },
+          {
+            "name": "Credit Card",
+            "value": "creditCard"
+          },
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "IPv4",
+            "value": "ipv4"
+          },
+          {
+            "name": "IPv6",
+            "value": "ipv6"
+          },
+          {
+            "name": "MAC",
+            "value": "macAddress"
+          },
+          {
+            "name": "NanoIds",
+            "value": "nanoid"
+          },
+          {
+            "name": "URL",
+            "value": "url"
+          },
+          {
+            "name": "User Data",
+            "value": "user"
+          },
+          {
+            "name": "UUID",
+            "value": "uuid"
+          },
+          {
+            "name": "Version",
+            "value": "semver"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "category": [
+              "randomData"
+            ]
+          }
+        }
+      },
+      {
+        "name": "nanoidAlphabet",
+        "displayName": "NanoId Alphabet",
+        "type": "string",
+        "default": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "displayOptions": {
+          "show": {
+            "category": [
+              "randomData"
+            ],
+            "randomDataType": [
+              "nanoid"
+            ]
+          }
+        },
+        "description": "The alphabet to use for generating the nanoIds"
+      },
+      {
+        "name": "nanoidLength",
+        "displayName": "NanoId Length",
+        "type": "string",
+        "default": "16",
+        "displayOptions": {
+          "show": {
+            "category": [
+              "randomData"
+            ],
+            "randomDataType": [
+              "nanoid"
+            ]
+          }
+        },
+        "description": "The length of each nanoIds"
+      },
+      {
+        "name": "randomDataSeed",
+        "displayName": "Seed",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "category": [
+              "randomData"
+            ]
+          }
+        },
+        "description": "If set, seed to use for generating the data (same seed will generate the same data)"
+      },
+      {
+        "name": "randomDataCount",
+        "displayName": "Number of Items to Generate",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "category": [
+              "randomData"
+            ]
+          }
+        },
+        "description": "The number of random data items to generate into an array"
+      },
+      {
+        "name": "randomDataSingleArray",
+        "displayName": "Output as Single Array",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "category": [
+              "randomData"
+            ]
+          }
+        },
+        "description": "Whether to output a single array instead of multiple items"
+      }
+    ]
+  }
+}

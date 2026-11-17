@@ -1,0 +1,665 @@
+{
+  "id": "n8n-nodes-langchain.vectorstoreweaviate",
+  "name": "Weaviate Vector Store",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.vectorstoreweaviate",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Weaviate node to interact with your Weaviate collection as a vector store[^1]. You can insert documents into or retrieve documents from a vector database. You can also retrieve documents to provide them to a retriever connected to a chain[^2] or connect this node directly to an agent[^3] to use as a tool[^4]. On this page, you'll find the node parameters for the Weaviate node, and...",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreweaviate",
+  "credentials": {
+    "name": "Weaviate credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/weaviate",
+    "slug": "weaviate",
+    "json_file": "credentials/weaviate.json",
+    "markdown_file": "credentials/weaviate.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Get Many parameters",
+      "options": [
+        "Weaviate Collection: Enter the name of the Weaviate collection to use",
+        "Prompt: Enter the search query"
+      ]
+    },
+    {
+      "name": "Insert Documents parameters",
+      "options": [
+        "Weaviate Collection: Enter the name of the Weaviate collection to use"
+      ]
+    },
+    {
+      "name": "Retrieve Documents (As Vector Store for Chain/Tool) parameters",
+      "options": [
+        "Weaviate Collection: Enter the name of the Weaviate collection to use"
+      ]
+    },
+    {
+      "name": "Retrieve Documents (As Tool for AI Agent) parameters",
+      "options": [
+        "Weaviate Collection: The name of the vector store",
+        "Weaviate Collection: Enter the name of the Weaviate collection to use"
+      ]
+    },
+    {
+      "name": "Include Metadata",
+      "description": "Whether to include document metadata"
+    },
+    {
+      "name": "Rerank Results"
+    },
+    {
+      "name": "Search Filters",
+      "description": "Available for the Get Many, Retrieve Documents (As Vector Store for Chain/Tool), and Retrieve Documents (As Tool for AI Agent) operation modes",
+      "options": [
+        "'equal'",
+        "'like'",
+        "'containsAny'",
+        "'containsAll'",
+        "'greaterThan'",
+        "'lessThan'",
+        "'isNull'",
+        "'withinGeoRange'"
+      ]
+    },
+    {
+      "name": "Metadata Keys",
+      "description": "You can define which metadata keys you want Weaviate to return on your queries. This can reduce network load, as you will only get properties you have defined. Returns all properties from the server by default"
+    },
+    {
+      "name": "Hybrid: Query Text",
+      "description": "Provide a query text to combine vector search with a keyword/text search"
+    },
+    {
+      "name": "Hybrid: Explain Score",
+      "description": "Whether to show the score fused between hybrid and vector search explanation"
+    },
+    {
+      "name": "Hybrid: Fusion Type",
+      "description": "Select the fusion type for combining vector and keyword search results. Learn more about fusion algorithms",
+      "options": [
+        "Relative Score: Uses relative score fusion",
+        "Ranked: Uses ranked fusion"
+      ]
+    },
+    {
+      "name": "Hybrid: Auto Cut Limit",
+      "description": "Limit result groups by detecting sudden jumps in score. Learn more about autocut"
+    },
+    {
+      "name": "Hybrid: Alpha",
+      "description": "Change the relative weights of the keyword and vector components. 1.0 = pure vector, 0.0 = pure keyword. Default is 0.5. Learn more about the alpha parameter"
+    },
+    {
+      "name": "Hybrid: Query Properties",
+      "description": "Comma-separated list of properties to include in the query with optionally weighted values, e.g., \"question^2,answer\". Learn more about setting weights on property values"
+    },
+    {
+      "name": "Hybrid: Max Vector Distance",
+      "description": "Set the maximum allowable distance for the vector search component"
+    },
+    {
+      "name": "Tenant Name",
+      "description": "The specific tenant to store or retrieve documents for. Learn more about multi-tenancy"
+    },
+    {
+      "name": "Text Key",
+      "description": "The key in the document that contains the embedded text"
+    },
+    {
+      "name": "Skip Init Checks",
+      "description": "Whether to skip initialization checks when instantiating the client"
+    },
+    {
+      "name": "Init Timeout",
+      "description": "Number of seconds to wait before timing out during initial checks"
+    },
+    {
+      "name": "Insert Timeout",
+      "description": "Number of seconds to wait before timing out during inserts"
+    },
+    {
+      "name": "Query Timeout",
+      "description": "Number of seconds to wait before timing out during queries"
+    },
+    {
+      "name": "GRPC Proxy",
+      "description": "A proxy to use for gRPC requests"
+    },
+    {
+      "name": "Clear Data",
+      "description": "Available for the Insert Documents operation mode"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agent",
+    "alpha",
+    "auto",
+    "chain",
+    "checks",
+    "clear",
+    "cluster",
+    "collection",
+    "connect",
+    "connected",
+    "credentials",
+    "cut",
+    "data",
+    "database",
+    "directly",
+    "distance",
+    "documents",
+    "explain",
+    "filters",
+    "find",
+    "fusion",
+    "get",
+    "grpc",
+    "hybrid",
+    "include",
+    "init",
+    "insert",
+    "interact",
+    "key",
+    "keys",
+    "limit",
+    "many",
+    "max",
+    "metadata",
+    "name",
+    "parameters",
+    "properties",
+    "provide",
+    "proxy",
+    "query",
+    "rerank",
+    "results",
+    "retrieve",
+    "retriever",
+    "root",
+    "score",
+    "search",
+    "skip",
+    "store",
+    "tenant",
+    "text",
+    "them",
+    "timeout",
+    "tool",
+    "type",
+    "vector",
+    "vectorstoreweaviate",
+    "weaviate"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "eiIkcF23uZ2A8BkFVQM5",
+      "name": "Operation Mode"
+    },
+    {
+      "id": "KcxcfJWhy81cjCSzO4vQ",
+      "name": "vector-store-rerank-results"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.vectorstoreweaviate.md",
+      "title": "Weaviate Vector Store node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreweaviate",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreweaviate.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.vectorstoreweaviate.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.vectorstoreweaviate.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreweaviate.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.vectorStoreWeaviate",
+  "type_version": 1.4,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3,
+    1.4
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "weaviateApi"
+  ],
+  "credential_details": [
+    {
+      "name": "weaviateApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Weaviate Vector Store"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{\n\t\t\t((parameters) => {\n\t\t\t\tconst mode = parameters?.mode;\n\t\t\t\tconst useReranker = parameters?.useReranker;\n\t\t\t\tconst inputs = [{ displayName: \"Embedding\", type: \"ai_embedding\", required: true, maxConnections: 1}]\n\n\t\t\t\tif (['load', 'retrieve', 'retrieve-as-tool'].includes(mode) && useReranker) {\n\t\t\t\t\tinputs.push({ displayName: \"Reranker\", type: \"ai_reranker\", required: true, maxConnections: 1})\n\t\t\t\t}\n\n\t\t\t\tif (mode === 'retrieve-as-tool') {\n\t\t\t\t\treturn inputs;\n\t\t\t\t}\n\n\t\t\t\tif (['insert', 'load', 'update'].includes(mode)) {\n\t\t\t\t\tinputs.push({ displayName: \"\", type: \"main\"})\n\t\t\t\t}\n\n\t\t\t\tif (['insert'].includes(mode)) {\n\t\t\t\t\tinputs.push({ displayName: \"Document\", type: \"ai_document\", required: true, maxConnections: 1})\n\t\t\t\t}\n\t\t\t\treturn inputs\n\t\t\t})($parameter)\n\t\t}}",
+    "outputs": "={{\n\t\t\t((parameters) => {\n\t\t\t\tconst mode = parameters?.mode ?? 'retrieve';\n\n\t\t\t\tif (mode === 'retrieve-as-tool') {\n\t\t\t\t\treturn [{ displayName: \"Tool\", type: \"ai_tool\"}]\n\t\t\t\t}\n\n\t\t\t\tif (mode === 'retrieve') {\n\t\t\t\t\treturn [{ displayName: \"Vector Store\", type: \"ai_vectorStore\"}]\n\t\t\t\t}\n\t\t\t\treturn [{ displayName: \"\", type: \"main\"}]\n\t\t\t})($parameter)\n\t\t}}"
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 15,
+    "parameters": [
+      {
+        "name": "ragStarterCallout",
+        "displayName": "Tip: Get a feel for vector stores in n8n with our",
+        "type": "callout"
+      },
+      {
+        "name": "mode",
+        "displayName": "Operation Mode",
+        "type": "options",
+        "default": "retrieve",
+        "options": [
+          {
+            "name": "Get Many",
+            "value": "load",
+            "description": "Get many ranked documents from vector store for query"
+          },
+          {
+            "name": "Insert Documents",
+            "value": "insert",
+            "description": "Insert documents into vector store"
+          },
+          {
+            "name": "Retrieve Documents (As Vector Store for Chain/Tool)",
+            "value": "retrieve",
+            "description": "Retrieve documents from vector store to be used as vector store with AI nodes"
+          },
+          {
+            "name": "Retrieve Documents (As Tool for AI Agent)",
+            "value": "retrieve-as-tool",
+            "description": "Retrieve documents from vector store to be used as tool with AI nodes"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to a vector store retriever. <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_retriever'>Insert one</a>",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "retrieve"
+            ]
+          }
+        }
+      },
+      {
+        "name": "toolName",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1.2
+                }
+              }
+            ],
+            "mode": [
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Name of the vector store"
+      },
+      {
+        "name": "toolDescription",
+        "displayName": "Description",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Explain to the LLM what this tool does, a good, specific description would allow LLMs to produce expected results much more often"
+      },
+      {
+        "name": "weaviateCollection",
+        "displayName": "Weaviate Collection",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        }
+      },
+      {
+        "name": "embeddingBatchSize",
+        "displayName": "Embedding Batch Size",
+        "type": "number",
+        "default": 200,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "insert"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Number of documents to embed in a single batch"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "tenant",
+            "description": "Tenant Name. Collection must have been created with tenant support enabled."
+          },
+          {
+            "name": "textKey",
+            "description": "The key in the document that contains the embedded text"
+          },
+          {
+            "name": "skip_init_checks",
+            "description": "Whether to skip init checks while instantiating the client"
+          },
+          {
+            "name": "timeout_init",
+            "description": "Number of timeout seconds for initial checks"
+          },
+          {
+            "name": "timeout_insert",
+            "description": "Number of timeout seconds for inserts"
+          },
+          {
+            "name": "timeout_query",
+            "description": "Number of timeout seconds for queries"
+          },
+          {
+            "name": "proxy_grpc",
+            "description": "Proxy to use for GRPC. Applies only when the credential has no gRPC proxy, and needs \"Custom Connection gRPC Secure\" when the credential has an API key."
+          },
+          {
+            "name": "clearStore",
+            "description": "Whether to clear the Collection/Tenant before inserting new data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "insert"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load"
+            ]
+          }
+        },
+        "description": "Search prompt to retrieve matching documents from the vector store using similarity-based ranking"
+      },
+      {
+        "name": "topK",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 4,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Number of top results to fetch from vector store"
+      },
+      {
+        "name": "includeDocumentMetadata",
+        "displayName": "Include Metadata",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Whether or not to include document metadata"
+      },
+      {
+        "name": "useReranker",
+        "displayName": "Rerank Results",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve",
+              "retrieve-as-tool"
+            ]
+          }
+        },
+        "description": "Whether or not to rerank results"
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID of an embedding entry"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "searchFilterJson",
+            "description": "Filter pageContent or metadata using this <a href=\"https://weaviate.io/\" target=\"_blank\">filtering syntax</a>"
+          },
+          {
+            "name": "metadataKeys",
+            "description": "Select the metadata to retrieve along the content"
+          },
+          {
+            "name": "hybridQuery",
+            "description": "Provide a query text to combine vector search with a keyword/text search"
+          },
+          {
+            "name": "hybridExplainScore",
+            "description": "Whether to show the score fused between hybrid and vector search explanation"
+          },
+          {
+            "name": "fusionType",
+            "description": "Select the fusion type for combining vector and keyword search results"
+          },
+          {
+            "name": "autoCutLimit",
+            "description": "Limit result groups by detecting sudden jumps in score"
+          },
+          {
+            "name": "alpha",
+            "description": "Change the relative weights of the keyword and vector components. 1.0 = pure vector, 0.0 = pure keyword."
+          },
+          {
+            "name": "queryProperties",
+            "description": "Comma-separated list of properties to include in the query with optionally weighted values, e.g., \"question^2,answer\""
+          },
+          {
+            "name": "maxVectorDistance",
+            "description": "Set the maximum allowable distance for the vector search component"
+          },
+          {
+            "name": "tenant",
+            "description": "Tenant Name. Collection must have been created with tenant support enabled."
+          },
+          {
+            "name": "textKey",
+            "description": "The key in the document that contains the embedded text"
+          },
+          {
+            "name": "skip_init_checks",
+            "description": "Whether to skip init checks while instantiating the client"
+          },
+          {
+            "name": "timeout_init",
+            "description": "Number of timeout seconds for initial checks"
+          },
+          {
+            "name": "timeout_insert",
+            "description": "Number of timeout seconds for inserts"
+          },
+          {
+            "name": "timeout_query",
+            "description": "Number of timeout seconds for queries"
+          },
+          {
+            "name": "proxy_grpc",
+            "description": "Proxy to use for GRPC. Applies only when the credential has no gRPC proxy, and needs \"Custom Connection gRPC Secure\" when the credential has an API key."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "load",
+              "retrieve-as-tool"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "searchFilterJson",
+            "description": "Filter pageContent or metadata using this <a href=\"https://weaviate.io/\" target=\"_blank\">filtering syntax</a>"
+          },
+          {
+            "name": "metadataKeys",
+            "description": "Select the metadata to retrieve along the content"
+          },
+          {
+            "name": "hybridQuery",
+            "description": "Provide a query text to combine vector search with a keyword/text search"
+          },
+          {
+            "name": "hybridExplainScore",
+            "description": "Whether to show the score fused between hybrid and vector search explanation"
+          },
+          {
+            "name": "fusionType",
+            "description": "Select the fusion type for combining vector and keyword search results"
+          },
+          {
+            "name": "autoCutLimit",
+            "description": "Limit result groups by detecting sudden jumps in score"
+          },
+          {
+            "name": "alpha",
+            "description": "Change the relative weights of the keyword and vector components. 1.0 = pure vector, 0.0 = pure keyword."
+          },
+          {
+            "name": "queryProperties",
+            "description": "Comma-separated list of properties to include in the query with optionally weighted values, e.g., \"question^2,answer\""
+          },
+          {
+            "name": "maxVectorDistance",
+            "description": "Set the maximum allowable distance for the vector search component"
+          },
+          {
+            "name": "tenant",
+            "description": "Tenant Name. Collection must have been created with tenant support enabled."
+          },
+          {
+            "name": "textKey",
+            "description": "The key in the document that contains the embedded text"
+          },
+          {
+            "name": "skip_init_checks",
+            "description": "Whether to skip init checks while instantiating the client"
+          },
+          {
+            "name": "timeout_init",
+            "description": "Number of timeout seconds for initial checks"
+          },
+          {
+            "name": "timeout_insert",
+            "description": "Number of timeout seconds for inserts"
+          },
+          {
+            "name": "timeout_query",
+            "description": "Number of timeout seconds for queries"
+          },
+          {
+            "name": "proxy_grpc",
+            "description": "Proxy to use for GRPC. Applies only when the credential has no gRPC proxy, and needs \"Custom Connection gRPC Secure\" when the credential has an API key."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "mode": [
+              "retrieve"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

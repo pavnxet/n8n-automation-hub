@@ -1,0 +1,955 @@
+{
+  "id": "n8n-nodes-base.googleanalytics",
+  "name": "Google Analytics",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googleanalytics",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Analytics node to automate work in Google Analytics, and integrate Google Analytics with other applications. n8n has built-in support for a wide range of Google Analytics features, including returning reports and user activities",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googleanalytics",
+  "credentials": {
+    "name": "Google Analytics",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Report",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "report",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User Activity",
+      "operation": "Search",
+      "description": "",
+      "doc": "",
+      "resource_value": "userActivity",
+      "operation_value": "search"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "activities",
+    "activity",
+    "analytics",
+    "app",
+    "applications",
+    "get",
+    "google",
+    "googleanalytics",
+    "including",
+    "report",
+    "reports",
+    "returning",
+    "search",
+    "user",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googleanalytics.md",
+      "title": "Google Analytics node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googleanalytics",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googleanalytics.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googleanalytics.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googleanalytics.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googleanalytics.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleAnalytics",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleAnalyticsOAuth2"
+  ],
+  "credential_details": [
+    {
+      "name": "googleAnalyticsOAuth2",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Google Analytics"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 29,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "report",
+        "options": [
+          {
+            "name": "Report",
+            "value": "report"
+          },
+          {
+            "name": "User Activity",
+            "value": "userActivity"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Return the analytics data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ]
+          }
+        }
+      },
+      {
+        "name": "propertyType",
+        "displayName": "Property Type",
+        "type": "options",
+        "default": "ga4",
+        "options": [
+          {
+            "name": "Google Analytics 4",
+            "value": "ga4"
+          },
+          {
+            "name": "Universal Analytics",
+            "value": "universal"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Google Analytics 4 is the latest version. Universal Analytics is an older version that is not fully functional after the end of June 2023."
+      },
+      {
+        "name": "propertyId",
+        "displayName": "Property",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "ga4"
+            ]
+          }
+        },
+        "description": "The Property of Google Analytics"
+      },
+      {
+        "name": "dateRange",
+        "displayName": "Date Range",
+        "type": "options",
+        "required": true,
+        "default": "last7days",
+        "options": [
+          {
+            "name": "Last 7 Days",
+            "value": "last7days"
+          },
+          {
+            "name": "Last 30 Days",
+            "value": "last30days"
+          },
+          {
+            "name": "Today",
+            "value": "today"
+          },
+          {
+            "name": "Yesterday",
+            "value": "yesterday"
+          },
+          {
+            "name": "Last Complete Calendar Week",
+            "value": "lastCalendarWeek"
+          },
+          {
+            "name": "Last Complete Calendar Month",
+            "value": "lastCalendarMonth"
+          },
+          {
+            "name": "Custom",
+            "value": "custom"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "ga4"
+            ]
+          }
+        }
+      },
+      {
+        "name": "startDate",
+        "displayName": "Start",
+        "type": "dateTime",
+        "required": true,
+        "default": "2026-04-02T00:00:00.000+00:00",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "dateRange": [
+              "custom"
+            ],
+            "propertyType": [
+              "ga4"
+            ]
+          }
+        }
+      },
+      {
+        "name": "endDate",
+        "displayName": "End",
+        "type": "dateTime",
+        "required": true,
+        "default": "2026-04-09T00:00:00.000+00:00",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "dateRange": [
+              "custom"
+            ],
+            "propertyType": [
+              "ga4"
+            ]
+          }
+        }
+      },
+      {
+        "name": "metricsGA4",
+        "displayName": "Metrics",
+        "type": "fixedCollection",
+        "default": {
+          "metricValues": [
+            {
+              "listName": "totalUsers"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "metricValues",
+            "values": [
+              {
+                "name": "listName",
+                "displayName": "Metric",
+                "type": "options"
+              },
+              {
+                "name": "name",
+                "displayName": "Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "expression",
+                "displayName": "Expression",
+                "type": "string"
+              },
+              {
+                "name": "invisible",
+                "displayName": "Invisible",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "ga4"
+            ]
+          }
+        },
+        "description": "The quantitative measurements of a report. For example, the metric eventCount is the total number of events. Requests are allowed up to 10 metrics."
+      },
+      {
+        "name": "dimensionsGA4",
+        "displayName": "Dimensions to split by",
+        "type": "fixedCollection",
+        "default": {
+          "dimensionValues": [
+            {
+              "listName": "date"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "dimensionValues",
+            "values": [
+              {
+                "name": "listName",
+                "displayName": "Dimension",
+                "type": "options"
+              },
+              {
+                "name": "name",
+                "displayName": "Name or ID",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "ga4"
+            ]
+          }
+        },
+        "description": "Dimensions are attributes of your data. For example, the dimension city indicates the city from which an event originates. Dimension values in report responses are strings; for example, the city could be \"Paris\" or \"New "
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "report"
+            ],
+            "propertyType": [
+              "ga4"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "report"
+            ],
+            "propertyType": [
+              "ga4"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "report"
+            ],
+            "propertyType": [
+              "ga4"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "currencyCode",
+            "description": "A currency code in ISO4217 format, such as \"AED\", \"USD\", \"JPY\". If the field is empty, the report uses the property's default currency."
+          },
+          {
+            "name": "dimensionFiltersUI"
+          },
+          {
+            "name": "metricAggregations"
+          },
+          {
+            "name": "metricsFiltersUI"
+          },
+          {
+            "name": "keepEmptyRows",
+            "description": "Whether false or unspecified, each row with all metrics equal to 0 will not be returned. If true, these rows will be returned if they are not separately removed"
+          },
+          {
+            "name": "orderByUI",
+            "description": "Specifies how rows are ordered in the response"
+          },
+          {
+            "name": "returnPropertyQuota",
+            "description": "Whether to return the current state of this Analytics Property's quota. Quota is returned in PropertyQuota."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "ga4"
+            ]
+          }
+        }
+      },
+      {
+        "name": "viewId",
+        "displayName": "View",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "universal"
+            ]
+          }
+        },
+        "description": "The View of Google Analytics"
+      },
+      {
+        "name": "dateRange",
+        "displayName": "Date Range",
+        "type": "options",
+        "required": true,
+        "default": "last7days",
+        "options": [
+          {
+            "name": "Last 7 Days",
+            "value": "last7days"
+          },
+          {
+            "name": "Last 30 Days",
+            "value": "last30days"
+          },
+          {
+            "name": "Today",
+            "value": "today"
+          },
+          {
+            "name": "Yesterday",
+            "value": "yesterday"
+          },
+          {
+            "name": "Last Complete Calendar Week",
+            "value": "lastCalendarWeek"
+          },
+          {
+            "name": "Last Complete Calendar Month",
+            "value": "lastCalendarMonth"
+          },
+          {
+            "name": "Custom",
+            "value": "custom"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "universal"
+            ]
+          }
+        }
+      },
+      {
+        "name": "startDate",
+        "displayName": "Start",
+        "type": "dateTime",
+        "required": true,
+        "default": "2026-04-02T00:00:00.000+00:00",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "universal"
+            ],
+            "dateRange": [
+              "custom"
+            ]
+          }
+        }
+      },
+      {
+        "name": "endDate",
+        "displayName": "End",
+        "type": "dateTime",
+        "required": true,
+        "default": "2026-04-09T00:00:00.000+00:00",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "universal"
+            ],
+            "dateRange": [
+              "custom"
+            ]
+          }
+        }
+      },
+      {
+        "name": "metricsUA",
+        "displayName": "Metrics",
+        "type": "fixedCollection",
+        "default": {
+          "metricValues": [
+            {
+              "listName": "ga:users"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "metricValues",
+            "values": [
+              {
+                "name": "listName",
+                "displayName": "Metric",
+                "type": "options"
+              },
+              {
+                "name": "name",
+                "displayName": "Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "expression",
+                "displayName": "Expression",
+                "type": "string"
+              },
+              {
+                "name": "formattingType",
+                "displayName": "Formatting Type",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "universal"
+            ]
+          }
+        },
+        "description": "Metrics in the request"
+      },
+      {
+        "name": "dimensionsUA",
+        "displayName": "Dimensions to split by",
+        "type": "fixedCollection",
+        "default": {
+          "dimensionValues": [
+            {
+              "listName": "ga:date"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "dimensionValues",
+            "values": [
+              {
+                "name": "listName",
+                "displayName": "Dimension",
+                "type": "options"
+              },
+              {
+                "name": "name",
+                "displayName": "Name or ID",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "universal"
+            ]
+          }
+        },
+        "description": "Dimensions are attributes of your data. For example, the dimension ga:city indicates the city, for example, \"Paris\" or \"New York\", from which a session originates."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "report"
+            ],
+            "propertyType": [
+              "universal"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "report"
+            ],
+            "propertyType": [
+              "universal"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "report"
+            ],
+            "propertyType": [
+              "universal"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dimensionFiltersUi",
+            "description": "Dimension Filters in the request"
+          },
+          {
+            "name": "hideTotals",
+            "description": "Whether to hide the total of all metrics for all the matching rows, for every date range"
+          },
+          {
+            "name": "hideValueRanges",
+            "description": "Whether to hide the minimum and maximum across all matching rows"
+          },
+          {
+            "name": "includeEmptyRows",
+            "description": "Whether the response exclude rows if all the retrieved metrics are equal to zero"
+          },
+          {
+            "name": "useResourceQuotas",
+            "description": "Whether to enable resource based quotas"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ],
+            "propertyType": [
+              "universal"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "search",
+        "options": [
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Return user activity data"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userActivity"
+            ]
+          }
+        }
+      },
+      {
+        "name": "viewId",
+        "displayName": "View Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userActivity"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "The view from Google Analytics. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "userActivity"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "ID of a user"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "userActivity"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "userActivity"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "activityTypes",
+            "description": "Type of activites requested"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "search"
+            ],
+            "resource": [
+              "userActivity"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

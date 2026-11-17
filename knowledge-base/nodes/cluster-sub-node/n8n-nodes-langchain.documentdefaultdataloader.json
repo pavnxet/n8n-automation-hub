@@ -1,0 +1,342 @@
+{
+  "id": "n8n-nodes-langchain.documentdefaultdataloader",
+  "name": "Default Data Loader",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.documentdefaultdataloader",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Default Data Loader node to load binary data files or JSON data for vector stores[^1] or summarization",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentdefaultdataloader",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Text Splitting",
+      "description": "Choose from:"
+    },
+    {
+      "name": "Type of Data",
+      "description": "Select Binary or JSON"
+    },
+    {
+      "name": "Mode",
+      "description": "Choose from:"
+    },
+    {
+      "name": "Data Format",
+      "description": "Displays when you set Type of Data to Binary. Select the file MIME type for your binary data. Set to Automatically Detect by MIME Type if you want n8n to set the data format for you. If you set a specific data format and the incoming file MIME type doesn't match it, the node errors. If you use Autom"
+    },
+    {
+      "name": "Metadata",
+      "description": "Set the metadata that should accompany the document in the vector store. This is what you match to using the Metadata Filter option when retrieving data using the vector store nodes"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "binary",
+    "cluster",
+    "data",
+    "default",
+    "documentdefaultdataloader",
+    "files",
+    "format",
+    "json",
+    "load",
+    "loader",
+    "metadata",
+    "mode",
+    "splitting",
+    "stores",
+    "sub",
+    "summarization",
+    "text",
+    "type",
+    "vector"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "7MPhMVJM8wcmiOf5zn2m",
+      "name": "langchain-doc-loaders-link"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.documentdefaultdataloader.md",
+      "title": "Default Data Loader node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentdefaultdataloader",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentdefaultdataloader.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.documentdefaultdataloader.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.documentdefaultdataloader.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentdefaultdataloader.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Default Data Loader"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{ ((parameter) => { function getInputs(parameters) {\n    const inputs = [];\n    const textSplittingMode = parameters?.textSplittingMode;\n    if (!textSplittingMode || textSplittingMode === 'custom') {\n        inputs.push({\n            displayName: 'Text Splitter',\n            maxConnections: 1,\n            type: 'ai_textSplitter',\n            required: true,\n        });\n    }\n    return inputs;\n}; return getInputs(parameter) })($parameter) }}",
+    "outputs": [
+      "ai_document"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This will load data from a previous step in the workflow. <a href=\"/templates/1962\" target=\"_blank\">Example</a>",
+        "type": "notice"
+      },
+      {
+        "name": "dataType",
+        "displayName": "Type of Data",
+        "type": "options",
+        "required": true,
+        "default": "json",
+        "options": [
+          {
+            "name": "JSON",
+            "value": "json",
+            "description": "Process JSON data from previous step in the workflow"
+          },
+          {
+            "name": "Binary",
+            "value": "binary",
+            "description": "Process binary data from previous step in the workflow"
+          }
+        ]
+      },
+      {
+        "name": "jsonMode",
+        "displayName": "Mode",
+        "type": "options",
+        "required": true,
+        "default": "allInputData",
+        "options": [
+          {
+            "name": "Load All Input Data",
+            "value": "allInputData",
+            "description": "Use all JSON data that flows into the parent agent or chain"
+          },
+          {
+            "name": "Load Specific Data",
+            "value": "expressionData",
+            "description": "Load a subset of data, and/or data from any previous step in the workflow"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataType": [
+              "json"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryMode",
+        "displayName": "Mode",
+        "type": "options",
+        "required": true,
+        "default": "allInputData",
+        "options": [
+          {
+            "name": "Load All Input Data",
+            "value": "allInputData",
+            "description": "Use all Binary data that flows into the parent agent or chain"
+          },
+          {
+            "name": "Load Specific Data",
+            "value": "specificField",
+            "description": "Load data from a specific field in the parent agent or chain"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataType": [
+              "binary"
+            ]
+          }
+        }
+      },
+      {
+        "name": "loader",
+        "displayName": "Data Format",
+        "type": "options",
+        "required": true,
+        "default": "auto",
+        "options": [
+          {
+            "name": "Automatically Detect by Mime Type",
+            "value": "auto",
+            "description": "Uses the mime type to detect the format"
+          },
+          {
+            "name": "CSV",
+            "value": "csvLoader",
+            "description": "Load CSV files"
+          },
+          {
+            "name": "Docx",
+            "value": "docxLoader",
+            "description": "Load Docx documents"
+          },
+          {
+            "name": "EPub",
+            "value": "epubLoader",
+            "description": "Load EPub files"
+          },
+          {
+            "name": "JSON",
+            "value": "jsonLoader",
+            "description": "Load JSON files"
+          },
+          {
+            "name": "PDF",
+            "value": "pdfLoader",
+            "description": "Load PDF documents"
+          },
+          {
+            "name": "Text",
+            "value": "textLoader",
+            "description": "Load plain text files"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "dataType": [
+              "binary"
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonData",
+        "displayName": "Data",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "dataType": [
+              "json"
+            ],
+            "jsonMode": [
+              "expressionData"
+            ]
+          }
+        },
+        "description": "Drag and drop fields from the input pane, or use an expression"
+      },
+      {
+        "name": "binaryDataKey",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "dataType": [
+              "binary"
+            ]
+          },
+          "hide": {
+            "binaryMode": [
+              "allInputData"
+            ]
+          }
+        },
+        "description": "The name of the field in the agent or chain’s input that contains the binary file to be processed"
+      },
+      {
+        "name": "textSplittingMode",
+        "displayName": "Text Splitting",
+        "type": "options",
+        "required": true,
+        "default": "simple",
+        "options": [
+          {
+            "name": "Simple",
+            "value": "simple",
+            "description": "Splits every 1000 characters with a 200 character overlap"
+          },
+          {
+            "name": "Custom",
+            "value": "custom",
+            "description": "Connect a custom text-splitting sub-node"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1.1
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "pointers",
+            "description": "Pointers to extract from JSON, e.g. \"/text\" or \"/text, /meta/title\""
+          },
+          {
+            "name": "separator",
+            "description": "Separator to use for CSV"
+          },
+          {
+            "name": "column",
+            "description": "Column to extract from CSV"
+          },
+          {
+            "name": "splitPages",
+            "description": "Whether to split PDF pages into separate documents"
+          },
+          {
+            "name": "metadata",
+            "description": "Metadata to add to each document. Could be used for filtering during retrieval"
+          }
+        ]
+      }
+    ]
+  }
+}

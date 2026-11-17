@@ -1,0 +1,325 @@
+{
+  "id": "n8n-nodes-langchain.microsoftagent365trigger",
+  "name": "Microsoft Agent 365 Trigger",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.microsoftagent365trigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Microsoft Agent 365 Trigger node to receive messages from Microsoft Agent 365 and respond with AI-powered agent capabilities. This node allows n8n to act as the backend for your Agent 365 agents",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.microsoftagent365trigger",
+  "credentials": {
+    "name": "Microsoft Agent 365 credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/cluster-nodes/credentials/microsoftagent365",
+    "slug": "microsoftagent365",
+    "json_file": "credentials/microsoftagent365.json",
+    "markdown_file": "credentials/microsoftagent365.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Enable Microsoft Work IQ Tools for A365",
+      "description": "Toggle this option to give your agent access to Microsoft 365 tools through the Model Context Protocol (MCP). Default: Off",
+      "options": [
+        "All: Enable all available Microsoft MCP tools",
+        "Selected: Choose specific tools from the list:",
+        "Calendar",
+        "Mail",
+        "SharePoint",
+        "Teams",
+        "Word",
+        "and more"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [
+    "webhook"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "365",
+    "a365",
+    "agent",
+    "agents",
+    "allows",
+    "backend",
+    "capabilities",
+    "cluster",
+    "credentials",
+    "enable",
+    "messages",
+    "microsoft",
+    "microsoftagent365trigger",
+    "powered",
+    "receive",
+    "respond",
+    "root",
+    "tools",
+    "trigger",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.microsoftagent365trigger.md",
+      "title": "Microsoft Agent 365 Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.microsoftagent365trigger",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.microsoftagent365trigger/index.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.microsoftagent365trigger.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.microsoftagent365trigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.microsoftagent365trigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.microsoftAgent365Trigger",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "microsoftAgent365Api"
+  ],
+  "credential_details": [
+    {
+      "name": "microsoftAgent365Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Microsoft Agent 365"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{\n\t\t\t\t((hasOutputParser, needsFallback) => {\n\t\t\t\t\tfunction getInputs(hasMainInput, hasOutputParser, needsFallback) {\n    const getInputData = (inputs) => {\n        return inputs.map(({ type, filter, displayName, required }) => {\n            const input = {\n                type,\n                displayName,\n                required,\n                maxConnections: ['ai_languageModel', 'ai_memory', 'ai_outputParser'].includes(type)\n                    ? 1\n                    : undefined,\n            };\n            if (filter) {\n                input.filter = filter;\n            }\n            return input;\n        });\n    };\n    let specialInputs = [\n        {\n            type: 'ai_languageModel',\n            displayName: 'Chat Model',\n            required: true,\n            filter: {\n                excludedNodes: [\n                    '@n8n/n8n-nodes-langchain.lmCohere',\n                    '@n8n/n8n-nodes-langchain.lmOllama',\n                    'n8n/n8n-nodes-langchain.lmOpenAi',\n                    '@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference',\n                ],\n            },\n        },\n        {\n            type: 'ai_languageModel',\n            displayName: 'Fallback Model',\n            required: true,\n            filter: {\n                excludedNodes: [\n                    '@n8n/n8n-nodes-langchain.lmCohere',\n                    '@n8n/n8n-nodes-langchain.lmOllama',\n                    'n8n/n8n-nodes-langchain.lmOpenAi',\n                    '@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference',\n                ],\n            },\n        },\n        {\n            displayName: 'Memory',\n            type: 'ai_memory',\n        },\n        {\n            displayName: 'Tool',\n            type: 'ai_tool',\n        },\n        {\n            displayName: 'Output Parser',\n            type: 'ai_outputParser',\n        },\n    ];\n    if (hasOutputParser === false) {\n        specialInputs = specialInputs.filter((input) => input.type !== 'ai_outputParser');\n    }\n    if (needsFallback === false) {\n        specialInputs = specialInputs.filter((input) => input.displayName !== 'Fallback Model');\n    }\n    const mainInputs = hasMainInput ? ['main'] : [];\n    return [...mainInputs, ...getInputData(specialInputs)];\n};\n\t\t\t\t\treturn getInputs(false, hasOutputParser, needsFallback);\n\t\t\t\t})($parameter.hasOutputParser === undefined || $parameter.hasOutputParser === true, $parameter.needsFallback !== undefined && $parameter.needsFallback === true)\n\t\t\t}}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "previewNotice",
+        "displayName": "This is an early preview for building Agents with Microsoft Agent 365 and n8n. You need to be part of the <a href=\"https://adoption.microsoft.com/copilot/frontier-program/\" target=\"_blank\">Frontier preview program</a> to get early access to Microsoft Agent 365. <a href=\"https://github.com/microsoft/Agent365-Samples/tree/main/nodejs/n8n/sample-agent\" target=\"_blank\">Learn more</a>",
+        "type": "notice"
+      },
+      {
+        "name": "systemPrompt",
+        "displayName": "System Prompt",
+        "type": "string"
+      },
+      {
+        "name": "notice",
+        "displayName": "Connect an <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_outputParser'>output parser</a> on the canvas to specify the output format you require",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "hasOutputParser": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "needsFallback",
+        "displayName": "Enable Fallback Model",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "fallbackNotice",
+        "displayName": "Connect an additional language model on the canvas to use it as a fallback if the main model fails",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "needsFallback": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "useMcpTools",
+        "displayName": "Enable Microsoft Work IQ Tools for A365",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to allow the agent to use Microsoft MCP tools like Calendar, Email, and OneDrive to assist in completing tasks. Requires appropriate permissions in your Microsoft account."
+      },
+      {
+        "name": "include",
+        "displayName": "Tools to Include",
+        "type": "options",
+        "default": "all",
+        "options": [
+          {
+            "name": "All",
+            "value": "all"
+          },
+          {
+            "name": "Selected",
+            "value": "selected"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "useMcpTools": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "includeTools",
+        "displayName": "Tools to Include",
+        "type": "multiOptions",
+        "options": [
+          {
+            "name": "Admin 365",
+            "value": "mcp_Admin365_GraphTools"
+          },
+          {
+            "name": "Admin Tools",
+            "value": "mcp_AdminTools"
+          },
+          {
+            "name": "Calendar",
+            "value": "mcp_CalendarTools"
+          },
+          {
+            "name": "DA Search",
+            "value": "mcp_DASearch"
+          },
+          {
+            "name": "Excel",
+            "value": "mcp_ExcelServer"
+          },
+          {
+            "name": "Knowledge",
+            "value": "mcp_KnowledgeTools"
+          },
+          {
+            "name": "M365 Copilot",
+            "value": "mcp_M365Copilot"
+          },
+          {
+            "name": "Mail",
+            "value": "mcp_MailTools"
+          },
+          {
+            "name": "OneDrive",
+            "value": "mcp_OneDriveRemoteServer"
+          },
+          {
+            "name": "OneDrive & SharePoint",
+            "value": "mcp_ODSPRemoteServer"
+          },
+          {
+            "name": "Planner",
+            "value": "mcp_PlannerServer"
+          },
+          {
+            "name": "SharePoint",
+            "value": "mcp_SharePointRemoteServer"
+          },
+          {
+            "name": "SharePoint Lists",
+            "value": "mcp_SharePointListsTools"
+          },
+          {
+            "name": "Task Personalization",
+            "value": "mcp_TaskPersonalizationServer"
+          },
+          {
+            "name": "Teams",
+            "value": "mcp_TeamsServer"
+          },
+          {
+            "name": "Teams Canary",
+            "value": "mcp_TeamsCanaryServer"
+          },
+          {
+            "name": "Teams V1",
+            "value": "mcp_TeamsServerV1"
+          },
+          {
+            "name": "Web Search",
+            "value": "mcp_WebSearchTools"
+          },
+          {
+            "name": "Windows 365 Computer Use",
+            "value": "mcp_W365ComputerUse"
+          },
+          {
+            "name": "Word",
+            "value": "mcp_WordServer"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "useMcpTools": [
+              true
+            ],
+            "include": [
+              "selected"
+            ]
+          }
+        }
+      },
+      {
+        "name": "hasOutputParser",
+        "displayName": "Require Specific Output Format",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxIterations",
+            "description": "The maximum number of iterations the agent will run before stopping"
+          },
+          {
+            "name": "welcomeMessage"
+          }
+        ]
+      }
+    ]
+  }
+}

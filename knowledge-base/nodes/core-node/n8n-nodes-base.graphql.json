@@ -1,0 +1,449 @@
+{
+  "id": "n8n-nodes-base.graphql",
+  "name": "GraphQL",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.graphql",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "GraphQL is an open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data. Use the GraphQL node to query a GraphQL endpoint",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.graphql",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Authentication",
+      "description": "Select the type of authentication to use. n8n recommends using Predefined Credential Type when it's available for the service you want to connect to. It offers an easier way to set up and manage credentials, compared to configuring generic credentials manually"
+    },
+    {
+      "name": "HTTP Request Method",
+      "description": "Select the underlying HTTP Request method the node should use. Choose from:",
+      "options": [
+        "GET",
+        "GraphQL (Raw)",
+        "JSON"
+      ]
+    },
+    {
+      "name": "Endpoint",
+      "description": "Enter the GraphQL Endpoint you'd like to hit"
+    },
+    {
+      "name": "Ignore SSL Issues",
+      "description": "When you turn on this control, n8n ignores SSL certificate validation failure"
+    },
+    {
+      "name": "Query",
+      "description": "Enter the GraphQL query you want to execute"
+    },
+    {
+      "name": "Response Format",
+      "description": "Select the format you'd like to receive query results in. Choose between:",
+      "options": [
+        "JSON"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "apis",
+    "authentication",
+    "core",
+    "data",
+    "endpoint",
+    "existing",
+    "format",
+    "fulfilling",
+    "graphql",
+    "http",
+    "ignore",
+    "issues",
+    "language",
+    "manipulation",
+    "method",
+    "open",
+    "queries",
+    "query",
+    "request",
+    "response",
+    "runtime",
+    "source",
+    "ssl"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.graphql.md",
+      "title": "GraphQL",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.graphql",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.graphql.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.graphql.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.graphql.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.graphql.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.graphql",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "httpBasicAuth",
+    "httpCustomAuth",
+    "httpDigestAuth",
+    "httpHeaderAuth",
+    "httpQueryAuth",
+    "oAuth1Api",
+    "oAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "httpBasicAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "basicAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "httpCustomAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "customAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "httpDigestAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "digestAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "httpHeaderAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "headerAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "httpQueryAuth",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "queryAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "oAuth1Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "oAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "GraphQL"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 12,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "Basic Auth",
+            "value": "basicAuth"
+          },
+          {
+            "name": "Custom Auth",
+            "value": "customAuth"
+          },
+          {
+            "name": "Digest Auth",
+            "value": "digestAuth"
+          },
+          {
+            "name": "Header Auth",
+            "value": "headerAuth"
+          },
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "OAuth1",
+            "value": "oAuth1"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          },
+          {
+            "name": "Query Auth",
+            "value": "queryAuth"
+          }
+        ],
+        "description": "The way to authenticate"
+      },
+      {
+        "name": "requestMethod",
+        "displayName": "HTTP Request Method",
+        "type": "options",
+        "default": "POST",
+        "options": [
+          {
+            "name": "GET",
+            "value": "GET"
+          },
+          {
+            "name": "POST",
+            "value": "POST"
+          }
+        ],
+        "description": "The underlying HTTP request method to use"
+      },
+      {
+        "name": "endpoint",
+        "displayName": "Endpoint",
+        "type": "string",
+        "required": true,
+        "description": "The GraphQL endpoint"
+      },
+      {
+        "name": "allowUnauthorizedCerts",
+        "displayName": "Ignore SSL Issues (Insecure)",
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to download the response even if SSL certificate validation is not possible"
+      },
+      {
+        "name": "requestFormat",
+        "displayName": "Request Format",
+        "type": "options",
+        "required": true,
+        "default": "graphql",
+        "options": [
+          {
+            "name": "GraphQL (Raw)",
+            "value": "graphql"
+          },
+          {
+            "name": "JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "requestMethod": [
+              "POST"
+            ],
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "The format for the query payload"
+      },
+      {
+        "name": "requestFormat",
+        "displayName": "Request Format",
+        "type": "options",
+        "required": true,
+        "default": "json",
+        "options": [
+          {
+            "name": "JSON (Recommended)",
+            "value": "json",
+            "description": "JSON object with query, variables, and operationName properties. The standard and most widely supported format for GraphQL requests."
+          },
+          {
+            "name": "GraphQL (Raw)",
+            "value": "graphql",
+            "description": "Raw GraphQL query string. Not all servers support this format. Use JSON for better compatibility."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "requestMethod": [
+              "POST"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "The request format for the query payload"
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "description": "GraphQL query"
+      },
+      {
+        "name": "variables",
+        "displayName": "Variables",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "requestFormat": [
+              "json"
+            ],
+            "requestMethod": [
+              "POST"
+            ]
+          }
+        },
+        "description": "Query variables as JSON object"
+      },
+      {
+        "name": "operationName",
+        "displayName": "Operation Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "requestFormat": [
+              "json"
+            ],
+            "requestMethod": [
+              "POST"
+            ]
+          }
+        },
+        "description": "Name of operation to execute"
+      },
+      {
+        "name": "responseFormat",
+        "displayName": "Response Format",
+        "type": "options",
+        "default": "json",
+        "options": [
+          {
+            "name": "JSON",
+            "value": "json"
+          },
+          {
+            "name": "String",
+            "value": "string"
+          }
+        ],
+        "description": "The format in which the data gets returned from the URL"
+      },
+      {
+        "name": "dataPropertyName",
+        "displayName": "Response Data Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "responseFormat": [
+              "string"
+            ]
+          }
+        },
+        "description": "Name of the property to which to write the response data"
+      },
+      {
+        "name": "headerParametersUi",
+        "displayName": "Headers",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "parameter",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "description": "The headers to send"
+      }
+    ]
+  }
+}

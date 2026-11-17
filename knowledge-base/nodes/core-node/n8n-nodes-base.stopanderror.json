@@ -1,0 +1,155 @@
+{
+  "id": "n8n-nodes-base.stopanderror",
+  "name": "Stop And Error",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.stopanderror",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Stop And Error node to display custom error messages, cause executions to fail under certain conditions, and send custom error information to error workflows",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.stopanderror",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Error Message",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "",
+      "operation": "Error Object",
+      "description": "",
+      "doc": ""
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [
+    {
+      "name": "Error Message parameters",
+      "description": "The Error Message Error Type adds one parameter, the Error Message field. Enter the message you'd like to throw"
+    },
+    {
+      "name": "Error Object parameters",
+      "description": "The Error Object Error Type adds one parameter, the Error Object. Enter a JSON object that contains the error properties you'd like to throw"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "cause",
+    "certain",
+    "conditions",
+    "core",
+    "custom",
+    "display",
+    "error",
+    "executions",
+    "fail",
+    "message",
+    "messages",
+    "object",
+    "parameters",
+    "send",
+    "stop",
+    "stopanderror",
+    "under"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.stopanderror.md",
+      "title": "Stop And Error",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.stopanderror",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.stopanderror.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.stopanderror.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.stopanderror.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.stopanderror.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.stopAndError",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Stop and Error",
+    "color": "#ff0000"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": []
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "errorType",
+        "displayName": "Error Type",
+        "type": "options",
+        "default": "errorMessage",
+        "options": [
+          {
+            "name": "Error Message",
+            "value": "errorMessage"
+          },
+          {
+            "name": "Error Object",
+            "value": "errorObject"
+          }
+        ],
+        "description": "Type of error to throw"
+      },
+      {
+        "name": "errorMessage",
+        "displayName": "Error Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "errorType": [
+              "errorMessage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "errorObject",
+        "displayName": "Error Object",
+        "type": "json",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "errorType": [
+              "errorObject"
+            ]
+          }
+        },
+        "description": "Object containing error properties"
+      }
+    ]
+  }
+}

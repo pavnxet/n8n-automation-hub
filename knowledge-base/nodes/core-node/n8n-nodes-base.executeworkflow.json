@@ -1,0 +1,370 @@
+{
+  "id": "n8n-nodes-base.executeworkflow",
+  "name": "Execute Sub-workflow",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.executeworkflow",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Execute Sub-workflow node to run a different workflow on the host machine that runs n8n",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Source",
+      "description": "Select where the node should get the sub-workflow's information from:",
+      "options": [
+        "Workflow JSON: Enter the JSON code you want the node to execute",
+        "URL: Select this option to load the workflow from a URL. You must also enter:",
+        "Workflow URL: Enter the URL you want to load the workflow from"
+      ]
+    },
+    {
+      "name": "Workflow Inputs",
+      "description": "If you select a sub-workflow using the database and From list options, the sub-workflow's input items will automatically display, ready for you to fill in or map values"
+    },
+    {
+      "name": "Mode",
+      "description": "Use this parameter to control the execution mode for the node. Choose from these options:",
+      "options": [
+        "Run once for each item: Execute the node once for each input item in turn"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "core",
+    "different",
+    "execute",
+    "executeworkflow",
+    "host",
+    "inputs",
+    "machine",
+    "mode",
+    "runs",
+    "source",
+    "sub"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "wlwT5JcWyWTecnDN6aul",
+      "name": "subworkflow-usage"
+    },
+    {
+      "id": "edKlUxnfiRMq38CujuFv",
+      "name": "subworkflow-data-flow"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.executeworkflow.md",
+      "title": "Execute Sub-workflow",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.executeworkflow.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.executeworkflow.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.executeworkflow.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.executeWorkflow",
+  "type_version": 1.3,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Execute Workflow",
+    "color": "#ff6d5a"
+  },
+  "subtitle": "={{\"Workflow: \" + $parameter[\"workflowId\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 13,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "hidden",
+        "default": "call_workflow",
+        "options": [
+          {
+            "name": "Execute a Sub-Workflow",
+            "value": "call_workflow"
+          }
+        ]
+      },
+      {
+        "name": "outdatedVersionWarning",
+        "displayName": "This node is out of date. Please upgrade by removing it and adding a new one",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1.1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "options",
+        "default": "database",
+        "options": [
+          {
+            "name": "Database",
+            "value": "database",
+            "description": "Load the workflow from the database by ID"
+          },
+          {
+            "name": "Local File",
+            "value": "localFile",
+            "description": "Load the workflow from a locally saved file"
+          },
+          {
+            "name": "Parameter",
+            "value": "parameter",
+            "description": "Load the workflow from a parameter"
+          },
+          {
+            "name": "URL",
+            "value": "url",
+            "description": "Load the workflow from an URL"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "Where to get the workflow to execute from"
+      },
+      {
+        "name": "source",
+        "displayName": "Source",
+        "type": "options",
+        "default": "database",
+        "options": [
+          {
+            "name": "Database",
+            "value": "database",
+            "description": "Load the workflow from the database by ID"
+          },
+          {
+            "name": "Define Below",
+            "value": "parameter",
+            "description": "Pass the JSON code of a workflow"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "Where to get the workflow to execute from"
+      },
+      {
+        "name": "workflowId",
+        "displayName": "Workflow ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "database"
+            ],
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Note on using an expression here: if this node is set to run once with all items, they will all be sent to the <em>same</em> workflow. That workflow's ID will be calculated by evaluating the expression for the <strong>fi"
+      },
+      {
+        "name": "workflowId",
+        "displayName": "Workflow",
+        "type": "workflowSelector",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "database"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "workflowPath",
+        "displayName": "Workflow Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "localFile"
+            ]
+          }
+        },
+        "description": "The path to local JSON workflow file to execute"
+      },
+      {
+        "name": "workflowJson",
+        "displayName": "Workflow JSON",
+        "type": "json",
+        "required": true,
+        "default": "\n\n\n",
+        "displayOptions": {
+          "show": {
+            "source": [
+              "parameter"
+            ]
+          }
+        },
+        "description": "The workflow JSON code to execute"
+      },
+      {
+        "name": "workflowUrl",
+        "displayName": "Workflow URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "source": [
+              "url"
+            ]
+          }
+        },
+        "description": "The URL from which to load the workflow from"
+      },
+      {
+        "name": "executeWorkflowNotice",
+        "displayName": "Any data you pass into this node will be output by the Execute Workflow Trigger. <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow/\" target=\"_blank\">More info</a>",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lte": 1.1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "workflowInputs",
+        "displayName": "Workflow Inputs",
+        "type": "resourceMapper",
+        "required": true,
+        "default": {
+          "mappingMode": "defineBelow",
+          "value": null
+        },
+        "displayOptions": {
+          "show": {
+            "source": [
+              "database"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ]
+          },
+          "hide": {
+            "workflowId": [
+              ""
+            ]
+          }
+        }
+      },
+      {
+        "name": "mode",
+        "displayName": "Mode",
+        "type": "options",
+        "default": "once",
+        "options": [
+          {
+            "name": "Run once with all items",
+            "value": "once",
+            "description": "Pass all items into a single execution of the sub-workflow"
+          },
+          {
+            "name": "Run once for each item",
+            "value": "each",
+            "description": "Call the sub-workflow individually for each item"
+          }
+        ]
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "waitForSubWorkflow",
+            "description": "Whether the main workflow should wait for the sub-workflow to complete its execution before proceeding"
+          }
+        ]
+      }
+    ]
+  }
+}

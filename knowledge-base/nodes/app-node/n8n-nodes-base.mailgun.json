@@ -1,0 +1,160 @@
+{
+  "id": "n8n-nodes-base.mailgun",
+  "name": "Mailgun",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.mailgun",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Mailgun node to automate work in Mailgun, and integrate Mailgun with other applications. n8n has built-in support for sending emails with Mailgun",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mailgun",
+  "credentials": {
+    "name": "Mailgun",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mailgun",
+    "slug": "mailgun",
+    "json_file": "credentials/mailgun.json",
+    "markdown_file": "credentials/mailgun.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Send an email",
+      "description": "",
+      "doc": ""
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "email",
+    "emails",
+    "mailgun",
+    "send",
+    "sending",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mailgun.md",
+      "title": "Mailgun node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mailgun",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.mailgun.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.mailgun.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.mailgun.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.mailgun.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mailgun",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mailgunApi"
+  ],
+  "credential_details": [
+    {
+      "name": "mailgunApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Mailgun"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "fromEmail",
+        "displayName": "From Email",
+        "type": "string",
+        "required": true,
+        "description": "Email address of the sender optional with name"
+      },
+      {
+        "name": "toEmail",
+        "displayName": "To Email",
+        "type": "string",
+        "required": true,
+        "description": "Email address of the recipient. Multiple ones can be separated by comma."
+      },
+      {
+        "name": "ccEmail",
+        "displayName": "Cc Email",
+        "type": "string",
+        "description": "Cc Email address of the recipient. Multiple ones can be separated by comma."
+      },
+      {
+        "name": "bccEmail",
+        "displayName": "Bcc Email",
+        "type": "string",
+        "description": "Bcc Email address of the recipient. Multiple ones can be separated by comma."
+      },
+      {
+        "name": "subject",
+        "displayName": "Subject",
+        "type": "string",
+        "description": "Subject line of the email"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "description": "Plain text message of email"
+      },
+      {
+        "name": "html",
+        "displayName": "HTML",
+        "type": "string",
+        "description": "HTML text message of email"
+      },
+      {
+        "name": "attachments",
+        "displayName": "Attachments",
+        "type": "string",
+        "description": "Name of the binary properties which contain data which should be added to email as attachment. Multiple ones can be comma-separated."
+      }
+    ]
+  }
+}

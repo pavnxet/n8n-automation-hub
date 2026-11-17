@@ -1,0 +1,137 @@
+{
+  "id": "n8n-nodes-base.peekalink",
+  "name": "Peekalink",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.peekalink",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Peekalink node to automate work in Peekalink, and integrate Peekalink with other applications. n8n supports checking, and reviewing links with Peekalink",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.peekalink",
+  "credentials": {
+    "name": "Peekalink",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/peekalink",
+    "slug": "peekalink",
+    "json_file": "credentials/peekalink.json",
+    "markdown_file": "credentials/peekalink.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Check whether preview for a given link is available",
+      "description": "",
+      "doc": "",
+      "operation_value": "isAvailable"
+    },
+    {
+      "resource": "",
+      "operation": "Return the preview for a link",
+      "description": "",
+      "doc": "",
+      "operation_value": "preview"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "available",
+    "check",
+    "checking",
+    "given",
+    "peekalink",
+    "preview",
+    "return",
+    "reviewing",
+    "whether",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.peekalink.md",
+      "title": "Peekalink node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.peekalink",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.peekalink.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.peekalink.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.peekalink.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.peekalink.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.peekalink",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "peekalinkApi"
+  ],
+  "credential_details": [
+    {
+      "name": "peekalinkApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Peekalink"
+  },
+  "subtitle": "={{$parameter[\"operation\"]",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "preview",
+        "options": [
+          {
+            "name": "Is Available",
+            "value": "isAvailable",
+            "description": "Check whether preview for a given link is available"
+          },
+          {
+            "name": "Preview",
+            "value": "preview",
+            "description": "Return the preview for a link"
+          }
+        ]
+      },
+      {
+        "name": "url",
+        "displayName": "URL",
+        "type": "string",
+        "required": true
+      }
+    ]
+  }
+}

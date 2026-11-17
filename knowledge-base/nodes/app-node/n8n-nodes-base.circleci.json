@@ -1,0 +1,310 @@
+{
+  "id": "n8n-nodes-base.circleci",
+  "name": "CircleCI",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.circleci",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the CircleCI node to automate work in CircleCI, and integrate CircleCI with other applications. n8n has built-in support for a wide range of CircleCI features, including getting and triggering pipelines",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.circleci",
+  "credentials": {
+    "name": "CircleCI",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/circleci",
+    "slug": "circleci",
+    "json_file": "credentials/circleci.json",
+    "markdown_file": "credentials/circleci.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Pipeline",
+      "operation": "Get a pipeline",
+      "description": "",
+      "doc": "",
+      "resource_value": "pipeline",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Pipeline",
+      "operation": "Get all pipelines",
+      "description": "",
+      "doc": "",
+      "resource_value": "pipeline",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Pipeline",
+      "operation": "Trigger a pipeline",
+      "description": "",
+      "doc": "",
+      "resource_value": "pipeline",
+      "operation_value": "trigger"
+    }
+  ],
+  "operation_count": 3,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "circleci",
+    "get",
+    "getting",
+    "including",
+    "pipeline",
+    "pipelines",
+    "trigger",
+    "triggering",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.circleci.md",
+      "title": "CircleCI node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.circleci",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.circleci.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.circleci.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.circleci.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.circleci.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.circleCi",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "circleCiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "circleCiApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "CircleCI"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "pipeline",
+        "options": [
+          {
+            "name": "Pipeline",
+            "value": "pipeline"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a pipeline"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many pipelines"
+          },
+          {
+            "name": "Trigger",
+            "value": "trigger",
+            "description": "Trigger a pipeline"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "pipeline"
+            ]
+          }
+        }
+      },
+      {
+        "name": "vcs",
+        "displayName": "Provider",
+        "type": "options",
+        "options": [
+          {
+            "name": "Bitbucket",
+            "value": "bitbucket"
+          },
+          {
+            "name": "GitHub",
+            "value": "github"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get",
+              "getAll",
+              "trigger"
+            ],
+            "resource": [
+              "pipeline"
+            ]
+          }
+        },
+        "description": "Source control system"
+      },
+      {
+        "name": "projectSlug",
+        "displayName": "Project Slug",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get",
+              "getAll",
+              "trigger"
+            ],
+            "resource": [
+              "pipeline"
+            ]
+          }
+        },
+        "description": "Project slug in the form org-name/repo-name"
+      },
+      {
+        "name": "pipelineNumber",
+        "displayName": "Pipeline Number",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "pipeline"
+            ]
+          }
+        },
+        "description": "The number of the pipeline"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "pipeline"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "pipeline"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "branch",
+            "description": "The name of a vcs branch"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "pipeline"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "branch",
+            "description": "The branch where the pipeline ran. The HEAD commit on this branch was used for the pipeline. Note that branch and tag are mutually exclusive."
+          },
+          {
+            "name": "tag",
+            "description": "The tag used by the pipeline. The commit that this tag points to was used for the pipeline. Note that branch and tag are mutually exclusive"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "pipeline"
+            ],
+            "operation": [
+              "trigger"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

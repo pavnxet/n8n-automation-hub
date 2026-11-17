@@ -1,0 +1,432 @@
+{
+  "id": "n8n-nodes-base.phantombuster",
+  "name": "PhantomBuster",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.phantombuster",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the PhantomBuster node to automate work in PhantomBuster, and integrate PhantomBuster with other applications. n8n has built-in support for a wide range of PhantomBuster features, including adding, deleting, and getting agents",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.phantombuster",
+  "credentials": {
+    "name": "PhantomBuster",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/phantombuster",
+    "slug": "phantombuster",
+    "json_file": "credentials/phantombuster.json",
+    "markdown_file": "credentials/phantombuster.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Agent",
+      "operation": "Delete an agent by ID",
+      "description": "",
+      "doc": "",
+      "resource_value": "agent",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Agent",
+      "operation": "Get an agent by ID",
+      "description": "",
+      "doc": "",
+      "resource_value": "agent",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Agent",
+      "operation": "Get all agents of the current user's organization",
+      "description": "",
+      "doc": "",
+      "resource_value": "agent",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Agent",
+      "operation": "Get the output of the most recent container of an agent",
+      "description": "",
+      "doc": "",
+      "resource_value": "agent",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Agent",
+      "operation": "Add an agent to the launch queue",
+      "description": "",
+      "doc": "",
+      "resource_value": "agent",
+      "operation_value": "launch"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "adding",
+    "agent",
+    "agents",
+    "app",
+    "applications",
+    "container",
+    "current",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "launch",
+    "most",
+    "organization",
+    "output",
+    "phantombuster",
+    "queue",
+    "recent",
+    "user",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.phantombuster.md",
+      "title": "PhantomBuster node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.phantombuster",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.phantombuster.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.phantombuster.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.phantombuster.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.phantombuster.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.phantombuster",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "phantombusterApi"
+  ],
+  "credential_details": [
+    {
+      "name": "phantombusterApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Phantombuster"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 13,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "agent",
+        "options": [
+          {
+            "name": "Agent",
+            "value": "agent"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "launch",
+        "options": [
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete an agent by ID"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an agent by ID"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many agents of the current user's organization"
+          },
+          {
+            "name": "Get Output",
+            "value": "getOutput",
+            "description": "Get the output of the most recent container of an agent"
+          },
+          {
+            "name": "Launch",
+            "value": "launch",
+            "description": "Add an agent to the launch queue"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "agent"
+            ]
+          }
+        }
+      },
+      {
+        "name": "agentId",
+        "displayName": "Agent Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "agent"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "agentId",
+        "displayName": "Agent ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "agent"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "agent"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 25,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "agent"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "agentId",
+        "displayName": "Agent Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getOutput"
+            ],
+            "resource": [
+              "agent"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "resolveData",
+        "displayName": "Resolve Data",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getOutput"
+            ],
+            "resource": [
+              "agent"
+            ]
+          }
+        },
+        "description": "By default the outpout is presented as string. If this option gets activated, it will resolve the data automatically."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "prevContainerId",
+            "description": "If set, the output will be retrieved from the container after the specified previous container ID"
+          },
+          {
+            "name": "prevStatus",
+            "description": "If set, allows to define which status was previously retrieved on user-side"
+          },
+          {
+            "name": "prevRuntimeEventIndex",
+            "description": "If set, the container's runtime events will be returned in the response starting from the provided previous runtime event index"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "agent"
+            ],
+            "operation": [
+              "getOutput"
+            ]
+          }
+        }
+      },
+      {
+        "name": "agentId",
+        "displayName": "Agent Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "launch"
+            ],
+            "resource": [
+              "agent"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "resolveData",
+        "displayName": "Resolve Data",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "launch"
+            ],
+            "resource": [
+              "agent"
+            ]
+          }
+        },
+        "description": "By default the launch just include the container ID. If this option gets activated, it will resolve the data automatically."
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "launch"
+            ],
+            "resource": [
+              "agent"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "argumentsJson",
+            "description": "Agent argument. Can either be a JSON string or a plain object. The argument can be retrieved with buster.argument in the agent’s script."
+          },
+          {
+            "name": "argumentsUi"
+          },
+          {
+            "name": "bonusArgumentUi"
+          },
+          {
+            "name": "bonusArgumentJson",
+            "description": "Agent bonus argument. Can either be a JSON string or a plain object. This bonus argument is single-use, it will only be used for the current launch. If present,"
+          },
+          {
+            "name": "manualLaunch",
+            "description": "Whether the agent will be considered as \"launched manually\""
+          },
+          {
+            "name": "maxInstanceCount",
+            "description": "If set, the agent will only be launched if the number of already running instances is below the specified number"
+          },
+          {
+            "name": "saveArgument",
+            "description": "If true, argument will be saved as the default launch options for the agent"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "agent"
+            ],
+            "operation": [
+              "launch"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

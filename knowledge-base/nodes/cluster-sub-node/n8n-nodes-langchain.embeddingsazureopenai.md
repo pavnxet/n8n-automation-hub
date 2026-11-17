@@ -1,0 +1,35 @@
+<!-- n8n built-in node reference: n8n-nodes-langchain.embeddingsazureopenai | source: https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsazureopenai -->
+
+Use the Microsoft Foundry Embeddings node to generate embeddings[^1] for a given text.
+
+This node was previously called the **Embeddings Azure OpenAI** node.
+
+On this page, you'll find the node parameters for the Microsoft Foundry Embeddings node, and links to more resources.
+
+> **Credentials:**
+> Refer to the [Microsoft Foundry credentials documentation](https://docs.n8n.io/integrations/builtin/credentials/azureopenai) for authentication information for this node.
+
+## Node parameters
+
+* **Authentication**: Choose how the node signs in to Azure. Each option uses its own credential.
+    * **API Key**: Use a stored API key. This is the default. Refer to [Using API key](https://docs.n8n.io/integrations/builtin/credentials/azureopenai#using-api-key).
+    * **Azure Entra ID (OAuth2)**: Sign in as your Entra application with a client ID and secret. Use this when your organization doesn't allow stored API keys. No API key is stored in n8n. Refer to [Using Microsoft Foundry (Entra ID)](https://docs.n8n.io/integrations/builtin/credentials/azureopenai#using-azure-entra-id-oauth2).
+
+Both options work with the **Classic** and the **Microsoft Foundry** endpoint types.
+
+## Node options
+
+* **Model (Deployment) Name**: Select the model (deployment) to use for generating embeddings.
+* **Batch Size**: Enter the maximum number of documents to send in each request.
+* **Strip New Lines**: Select whether to remove new line characters from input text (turned on) or not (turned off). n8n enables this by default.
+* **Timeout**: Enter the maximum amount of time a request can take in seconds. Set to `-1` for no timeout.
+
+## Templates and examples
+
+[Browse Microsoft Foundry Embeddings node documentation integration templates](https://n8n.io/integrations/embeddings-azure-openai) or [search all templates](https://n8n.io/workflows/)
+
+## Related resources
+
+Refer to [LangChain's Azure OpenAI embeddings documentation](https://docs.langchain.com/oss/javascript/integrations/embeddings/azure_openai) for more information about the service.
+
+[^1]: Embeddings are numerical representations of data using vectors. They're used by AI to interpret complex data and relationships by mapping values across many dimensions. Vector databases, or vector stores, are databases designed to store and access embeddings.

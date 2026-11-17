@@ -1,0 +1,287 @@
+{
+  "id": "n8n-nodes-base.zendesktrigger",
+  "name": "Zendesk Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.zendesktrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Zendesk is a support ticketing system, designed to help track, prioritize, and solve customer support interactions. More than just a help desk, Zendesk Support helps nurture customer relationships with personalized, responsive support across any channel",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.zendesktrigger",
+  "credentials": {
+    "name": "Zendesk credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/zendesk",
+    "slug": "zendesk",
+    "json_file": "credentials/zendesk.json",
+    "markdown_file": "credentials/zendesk.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "across",
+    "channel",
+    "credentials",
+    "customer",
+    "designed",
+    "desk",
+    "help",
+    "helps",
+    "interactions",
+    "just",
+    "nurture",
+    "personalized",
+    "prioritize",
+    "relationships",
+    "responsive",
+    "solve",
+    "system",
+    "ticketing",
+    "track",
+    "trigger",
+    "zendesk",
+    "zendesktrigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.zendesktrigger.md",
+      "title": "Zendesk Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.zendesktrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.zendesktrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.zendesktrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.zendesktrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.zendesktrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.zendeskTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "zendeskApi",
+    "zendeskOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "zendeskApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "zendeskOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Zendesk Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiToken",
+        "options": [
+          {
+            "name": "API Token",
+            "value": "apiToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "service",
+        "displayName": "Service",
+        "type": "options",
+        "required": true,
+        "default": "support",
+        "options": [
+          {
+            "name": "Support",
+            "value": "support"
+          }
+        ]
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "The fields to return the values of. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "service": [
+              "support"
+            ]
+          }
+        }
+      },
+      {
+        "name": "conditions",
+        "displayName": "Conditions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "all",
+            "values": [
+              {
+                "name": "resource",
+                "displayName": "Resource",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "operation",
+                "displayName": "Operation",
+                "type": "options"
+              },
+              {
+                "name": "operation",
+                "displayName": "Operation",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              }
+            ]
+          },
+          {
+            "name": "any",
+            "values": [
+              {
+                "name": "resource",
+                "displayName": "Resource",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "options"
+              },
+              {
+                "name": "operation",
+                "displayName": "Operation",
+                "type": "options"
+              },
+              {
+                "name": "operation",
+                "displayName": "Operation",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "service": [
+              "support"
+            ]
+          }
+        },
+        "description": "The condition to set"
+      }
+    ]
+  }
+}

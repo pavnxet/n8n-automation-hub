@@ -1,0 +1,188 @@
+{
+  "id": "n8n-nodes-base.splitout",
+  "name": "Split Out",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.splitout",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Split Out node to separate a single data item containing a list into multiple items. For example, a list of customers, and you want to split them so that you have an item for each customer",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.splitout",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Field to Split Out",
+      "description": "Enter the field containing the list you want to separate out into individual items"
+    },
+    {
+      "name": "Include",
+      "description": "Select whether and how you want n8n to keep any other fields from the input data with each new individual item",
+      "options": [
+        "No Other Fields: No other fields will be included",
+        "All Other Fields: All other fields will be included",
+        "Selected Other Fields: Only the selected fields will be included"
+      ]
+    },
+    {
+      "name": "Disable Dot Notation",
+      "description": "By default, n8n enables dot notation to reference child fields in the format parent.child. Use this option to disable dot notation (turned on) or to continue using dot (turned off)"
+    },
+    {
+      "name": "Destination Field Name",
+      "description": "Enter the field in the output where the split field contents should go"
+    },
+    {
+      "name": "Include Binary",
+      "description": "Choose whether to include binary data from the input in the new output (turned on) or not (turned off)"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "binary",
+    "containing",
+    "core",
+    "customer",
+    "customers",
+    "data",
+    "destination",
+    "disable",
+    "dot",
+    "field",
+    "include",
+    "item",
+    "items",
+    "list",
+    "multiple",
+    "name",
+    "notation",
+    "out",
+    "separate",
+    "single",
+    "split",
+    "splitout",
+    "them",
+    "want"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "0nvcx1EqJQgGVzUXOOMN",
+      "name": "data-section-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.splitout.md",
+      "title": "Split Out",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.splitout",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.splitout.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.splitout.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.splitout.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.splitout.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.splitOut",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Split Out"
+  },
+  "subtitle": "",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "fieldToSplitOut",
+        "displayName": "Fields To Split Out",
+        "type": "string",
+        "required": true,
+        "description": "The name of the input fields to break out into separate items. Separate multiple field names by commas. For binary data, use $binary."
+      },
+      {
+        "name": "include",
+        "displayName": "Include",
+        "type": "options",
+        "default": "noOtherFields",
+        "options": [
+          {
+            "name": "No Other Fields",
+            "value": "noOtherFields"
+          },
+          {
+            "name": "All Other Fields",
+            "value": "allOtherFields"
+          },
+          {
+            "name": "Selected Other Fields",
+            "value": "selectedOtherFields"
+          }
+        ],
+        "description": "Whether to copy any other fields into the new items"
+      },
+      {
+        "name": "fieldsToInclude",
+        "displayName": "Fields To Include",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "include": [
+              "selectedOtherFields"
+            ]
+          }
+        },
+        "description": "Fields in the input items to aggregate together"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "disableDotNotation",
+            "description": "Whether to disallow referencing child fields using `parent.child` in the field name"
+          },
+          {
+            "name": "destinationFieldName",
+            "description": "The field in the output under which to put the split field contents"
+          },
+          {
+            "name": "includeBinary",
+            "description": "Whether to include the binary data in the new items"
+          }
+        ]
+      }
+    ]
+  }
+}

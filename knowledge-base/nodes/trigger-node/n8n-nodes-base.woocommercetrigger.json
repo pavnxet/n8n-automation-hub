@@ -1,0 +1,151 @@
+{
+  "id": "n8n-nodes-base.woocommercetrigger",
+  "name": "WooCommerce Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.woocommercetrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "WooCommerce is a customizable, open-source e-commerce plugin for WordPress",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.woocommercetrigger",
+  "credentials": {
+    "name": "WooCommerce credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/woocommerce",
+    "slug": "woocommerce",
+    "json_file": "credentials/woocommerce.json",
+    "markdown_file": "credentials/woocommerce.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "commerce",
+    "credentials",
+    "customizable",
+    "open",
+    "plugin",
+    "source",
+    "trigger",
+    "woocommerce",
+    "woocommercetrigger",
+    "wordpress"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.woocommercetrigger.md",
+      "title": "WooCommerce Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.woocommercetrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.woocommercetrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.woocommercetrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.woocommercetrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.woocommercetrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.wooCommerceTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "wooCommerceApi"
+  ],
+  "credential_details": [
+    {
+      "name": "wooCommerceApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "WooCommerce Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 1,
+    "parameters": [
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "coupon.created",
+            "value": "coupon.created"
+          },
+          {
+            "name": "coupon.deleted",
+            "value": "coupon.deleted"
+          },
+          {
+            "name": "coupon.updated",
+            "value": "coupon.updated"
+          },
+          {
+            "name": "customer.created",
+            "value": "customer.created"
+          },
+          {
+            "name": "customer.deleted",
+            "value": "customer.deleted"
+          },
+          {
+            "name": "customer.updated",
+            "value": "customer.updated"
+          },
+          {
+            "name": "order.created",
+            "value": "order.created"
+          },
+          {
+            "name": "order.deleted",
+            "value": "order.deleted"
+          },
+          {
+            "name": "order.updated",
+            "value": "order.updated"
+          },
+          {
+            "name": "product.created",
+            "value": "product.created"
+          },
+          {
+            "name": "product.deleted",
+            "value": "product.deleted"
+          },
+          {
+            "name": "product.updated",
+            "value": "product.updated"
+          }
+        ],
+        "description": "Determines which resource events the webhook is triggered for"
+      }
+    ]
+  }
+}

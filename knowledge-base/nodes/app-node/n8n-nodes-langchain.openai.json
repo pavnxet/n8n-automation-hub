@@ -1,0 +1,3839 @@
+{
+  "id": "n8n-nodes-langchain.openai",
+  "name": "OpenAI",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-langchain.openai",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the OpenAI node to automate work in OpenAI and integrate OpenAI with other applications. n8n has built-in support for a wide range of OpenAI features, including creating images and assistants, as well as chatting with models",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai",
+  "credentials": {
+    "name": "OpenAI",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/openai",
+    "slug": "openai",
+    "json_file": "credentials/openai.json",
+    "markdown_file": "credentials/openai.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Text",
+      "operation": "Generate a Chat Completion",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/text-operations#generate-a-chat-completion",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Text"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Generate a Chat Completion"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use. If you’re not sure which model to use, try gpt-4o if you need high intelligence or gpt-4o-mini if you need the fastest speed and lowest cost. Refer to Models overview | OpenAI Platform for more information"
+        },
+        {
+          "name": "Messages",
+          "description": "Enter a Text prompt and assign a Role that the model will use to generate responses. Refer to Prompt engineering | OpenAI for more information on how to write a better prompt by using these roles. Choose from one of these roles:"
+        },
+        {
+          "name": "Simplify Output",
+          "description": "Turn on to return a simplified version of the response instead of the raw data"
+        },
+        {
+          "name": "Output Content as JSON",
+          "description": "Turn on to attempt to return the response in JSON format. Compatible with GPT-4 Turbo and all GPT-3.5 Turbo models newer than gpt-3.5-turbo-1106"
+        }
+      ],
+      "options": [
+        {
+          "name": "Frequency Penalty",
+          "description": "Apply a penalty to reduce the model's tendency to repeat similar lines. The range is between 0.0 and 2.0"
+        },
+        {
+          "name": "Maximum Number of Tokens",
+          "description": "Set the maximum number of tokens for the response. One token is roughly four characters for standard English text. Use this to limit the length of the output"
+        },
+        {
+          "name": "Number of Completions",
+          "description": "Defaults to 1. Set the number of completions you want to generate for each prompt. Use carefully since setting a high number will quickly consume your tokens"
+        },
+        {
+          "name": "Presence Penalty",
+          "description": "Apply a penalty to influence the model to discuss new topics. The range is between 0.0 and 2.0"
+        },
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the responses are too repet"
+        },
+        {
+          "name": "Output Randomness (Top P)",
+          "description": "Adjust the Top P setting to control the diversity of the assistant's responses. For example, 0.5 means half of all likelihood-weighted options are considered. We recommend altering this or Output Randomness (Temperature) but not both. Defaults to 1.0"
+        }
+      ],
+      "resource_value": "text"
+    },
+    {
+      "resource": "Text",
+      "operation": "Generate a Model Response",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/text-operations#generate-a-model-response",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Text"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Generate a Model Response"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use. Refer to Models overview | OpenAI Platform for an overview"
+        },
+        {
+          "name": "Messages",
+          "description": "Choose from one of these a Message Types:"
+        },
+        {
+          "name": "Simplify Output",
+          "description": "Turn on to return a simplified version of the response instead of the raw data"
+        }
+      ],
+      "options": [
+        {
+          "name": "Web Search",
+          "description": "Allows models to search the web for the latest information before generating a response"
+        },
+        {
+          "name": "MCP Servers",
+          "description": "Allows models to connect to remote MCP servers. Find out more about using remote MCP servers as tools"
+        },
+        {
+          "name": "File Search",
+          "description": "Allow models to search your knowledgebase from previously uploaded files for relevant information before generating a response. Refer to the OpenAI documentation for more information"
+        },
+        {
+          "name": "Code Interpreter",
+          "description": "Allows models to write and run Python code in a sandboxed environment"
+        },
+        {
+          "name": "Maximum Number of Tokens",
+          "description": "Set the maximum number of tokens for the response. One token is roughly four characters for standard English text. Use this to limit the length of the output"
+        },
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the responses are too repet"
+        },
+        {
+          "name": "Output Randomness (Top P)",
+          "description": "Adjust the Top P setting to control the diversity of the assistant's responses. For example, 0.5 means half of all likelihood-weighted options are considered. We recommend altering this or Output Randomness (Temperature) but not both. Defaults to 1.0"
+        },
+        {
+          "name": "Conversation ID",
+          "description": "The conversation that this response belongs to. Input items and output items from this response are automatically added to this conversation after this response completes"
+        },
+        {
+          "name": "Previous Response ID",
+          "description": "The ID of the previous response to continue from. Can't be used in conjunction with Conversation ID"
+        },
+        {
+          "name": "Reasoning",
+          "description": "The level of reasoning effort the model should spend to generate the response. Includes the ability to return a Summary of the reasoning performed by the model (for example, for debugging purposes)"
+        },
+        {
+          "name": "Store",
+          "description": "Whether to store the generated model response for later retrieval via API. Defaults to true"
+        },
+        {
+          "name": "Output Format",
+          "description": "Whether to return the response as Text, in a specified JSON Schema or as a JSON Object"
+        },
+        {
+          "name": "Background",
+          "description": "Whether to run the model in background mode. This allows executing long-running tasks more reliably"
+        }
+      ],
+      "resource_value": "text"
+    },
+    {
+      "resource": "Text",
+      "operation": "Classify Text for Violations",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/text-operations#classify-text-for-violations",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Text"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Classify Text for Violations"
+        },
+        {
+          "name": "Text Input",
+          "description": "Enter text to classify if it violates the moderation policy"
+        },
+        {
+          "name": "Simplify Output",
+          "description": "Turn on to return a simplified version of the response instead of the raw data"
+        }
+      ],
+      "options": [
+        {
+          "name": "Use Stable Model",
+          "description": "Turn on to use the stable version of the model instead of the latest version, accuracy may be slightly lower"
+        }
+      ],
+      "resource_value": "text",
+      "operation_value": "classify"
+    },
+    {
+      "resource": "Image",
+      "operation": "Analyze Image",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/image-operations#analyze-image",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Image"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Analayze Image"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use to analyze an image"
+        },
+        {
+          "name": "Text Input",
+          "description": "Ask a question about the image"
+        },
+        {
+          "name": "Input Type",
+          "description": "Select how you'd like to input the image. Options include:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Detail",
+          "description": "Specify the balance between response time versus token usage"
+        },
+        {
+          "name": "Length of Description (Max Tokens)",
+          "description": "Defaults to 300. Fewer tokens will result in shorter, less detailed image description"
+        }
+      ],
+      "resource_value": "image",
+      "operation_value": "analyze"
+    },
+    {
+      "resource": "Image",
+      "operation": "Generate an Image",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/image-operations#generate-an-image",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Image"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Generate an Image"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use to generate an image"
+        },
+        {
+          "name": "Prompt",
+          "description": "Enter the text description of the desired image(s). The maximum length is 1000 characters for dall-e-2 and 4000 characters for dall-e-3"
+        }
+      ],
+      "options": [
+        {
+          "name": "Quality",
+          "description": "The quality of the image you generate. HD creates images with finer details and greater consistency across the image. This option is only supported for dall-e-3. Otherwise, choose Standard"
+        },
+        {
+          "name": "Resolution",
+          "description": "Select the resolution of the generated images. Select 1024x1024 for dall-e-2. Select one of 1024x1024, 1792x1024, or 1024x1792 for dall-e-3 models"
+        },
+        {
+          "name": "Style",
+          "description": "Select the style of the generated images. This option is only supported for dall-e-3"
+        },
+        {
+          "name": "Respond with image URL(s)",
+          "description": "Whether to return image URL(s) instead of binary file(s)"
+        },
+        {
+          "name": "Put Output in Field",
+          "description": "Defaults to data. Enter the name of the output field to put the binary file data in. Only available if Respond with image URL(s) is turned off"
+        }
+      ],
+      "resource_value": "image",
+      "operation_value": "generate"
+    },
+    {
+      "resource": "Image",
+      "operation": "Edit an Image",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/image-operations#edit-an-image",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Image"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Edit Image"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use to generate an image. Supports dall-e-2 and gpt-image-1"
+        },
+        {
+          "name": "Prompt",
+          "description": "Enter the text description of the desired edits to the input image(s)"
+        },
+        {
+          "name": "Image(s)",
+          "description": "Add one or more binary fields to include images with your prompt. Each image should be a png, webp, or jpg file less than 50MB. You can provide up to 16 images"
+        },
+        {
+          "name": "Number of Images",
+          "description": "The number of images to generate. Must be between 1 and 10"
+        },
+        {
+          "name": "Size",
+          "description": "The size and dimensions of the generated images (in px)"
+        },
+        {
+          "name": "Quality",
+          "description": "The quality of the image that will be generated (auto, low, medium, high, standard). Only supported for gpt-image-1"
+        },
+        {
+          "name": "Output Format",
+          "description": "The format in which the generated images are returned (png, webp, or jpg). Only supported for gpt-image-1"
+        },
+        {
+          "name": "Output Compression",
+          "description": "The compression level (0-100%) for the generated images. Only supported for gpt-image-1 with webp or jpeg output formats"
+        }
+      ],
+      "options": [
+        {
+          "name": "Background",
+          "description": "Allows to set transparency for the background of the generated image(s). Only supported for gpt-image-1"
+        },
+        {
+          "name": "Input Fidelity",
+          "description": "Control how much effort the model will exert to match the style and features of input images. Only supported for gpt-image-1"
+        },
+        {
+          "name": "Image Mask",
+          "description": "Name of the binary property that contains the image. A second image whose fully transparent areas (for example, where alpha is zero) shows where the image should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, an"
+        },
+        {
+          "name": "User",
+          "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse"
+        }
+      ],
+      "resource_value": "image"
+    },
+    {
+      "resource": "Audio",
+      "operation": "Generate Audio",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/audio-operations#generate-audio",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Audio"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Generate Audio"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use to generate the audio. Refer to TTS | OpenAI for more information"
+        },
+        {
+          "name": "Text Input",
+          "description": "Enter the text to generate the audio for. The maximum length is 4096 characters"
+        },
+        {
+          "name": "Voice",
+          "description": "Select a voice to use when generating the audio. Listen to the previews of the voices in Text to speech guide | OpenAI"
+        }
+      ],
+      "options": [
+        {
+          "name": "Response Format",
+          "description": "Select the format for the audio response. Choose from MP3 (default), OPUS, AAC, FLAC, WAV, and PCM"
+        },
+        {
+          "name": "Audio Speed",
+          "description": "Enter the speed for the generated audio from a value from 0.25 to 4.0. Defaults to 1"
+        },
+        {
+          "name": "Put Output in Field",
+          "description": "Defaults to data. Enter the name of the output field to put the binary file data in"
+        }
+      ],
+      "resource_value": "audio",
+      "operation_value": "generate"
+    },
+    {
+      "resource": "Audio",
+      "operation": "Transcribe a Recording",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/audio-operations#transcribe-a-recording",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Audio"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Transcribe a Recording"
+        },
+        {
+          "name": "Input Data Field Name",
+          "description": "Defaults to data. Enter the name of the binary property that contains the audio file in one of these formats: .flac, .mp3, .mp4, .mpeg, .mpga, .m4a, .ogg, .wav, or .webm"
+        }
+      ],
+      "options": [
+        {
+          "name": "Language of the Audio File",
+          "description": "Enter the language of the input audio in ISO-639-1. Use this option to improve accuracy and latency"
+        },
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Defaults to 1.0. Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the respon"
+        }
+      ],
+      "resource_value": "audio",
+      "operation_value": "transcribe"
+    },
+    {
+      "resource": "Audio",
+      "operation": "Translate a Recording",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/audio-operations#translate-a-recording",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Audio"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Translate a Recording"
+        },
+        {
+          "name": "Input Data Field Name",
+          "description": "Defaults to data. Enter the name of the binary property that contains the audio file in one of these formats: .flac, .mp3, .mp4, .mpeg, .mpga, .m4a, .ogg, .wav, or .webm"
+        }
+      ],
+      "options": [
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Defaults to 1.0. Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the respon"
+        }
+      ],
+      "resource_value": "audio",
+      "operation_value": "translate"
+    },
+    {
+      "resource": "File",
+      "operation": "Delete a File",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/file-operations#delete-a-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete a File"
+        },
+        {
+          "name": "File",
+          "description": "Enter the ID of the file to use for this operation or select the file name from the dropdown"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "deleteFile"
+    },
+    {
+      "resource": "File",
+      "operation": "List Files",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/file-operations#list-files",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select List Files"
+        }
+      ],
+      "options": [
+        {
+          "name": "Purpose",
+          "description": "Use this to only return files with the given purpose. Use Assistants to return only files related to Assistants and Message operations. Use Fine-Tune for files related to Fine-tuning"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "list"
+    },
+    {
+      "resource": "File",
+      "operation": "Upload a File",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/file-operations#upload-a-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Upload a File"
+        },
+        {
+          "name": "Input Data Field Name",
+          "description": "Defaults to data. Enter the name of the binary property which contains the file. The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants"
+        }
+      ],
+      "options": [
+        {
+          "name": "Purpose",
+          "description": "Enter the intended purpose of the uploaded file. Use Assistants for files associated with Assistants and Message operations. Use Fine-Tune for Fine-tuning"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "upload"
+    },
+    {
+      "resource": "Video",
+      "operation": "Generate a Video",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/video-operations#generate-video",
+      "resource_value": "video",
+      "operation_value": "generate"
+    },
+    {
+      "resource": "Conversation",
+      "operation": "Create a Conversation",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations#create-a-conversation",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Conversation"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create a Conversation"
+        },
+        {
+          "name": "Messages",
+          "description": "A message input to the model. Messages with the system role take precedence over instructions given with the user role. Messages with the assistant role will be assumed to have been generated by the model in previous interactions"
+        }
+      ],
+      "options": [
+        {
+          "name": "Metadata",
+          "description": "A set of key-value pairs for storing structured information. You can attach up to 16 pairs to an object, which is useful for adding custom data that can be used for searching via the API or in the dashboard"
+        }
+      ],
+      "resource_value": "conversation",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Conversation",
+      "operation": "Get a Conversation",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations#get-a-conversation",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Conversation"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Conversation"
+        },
+        {
+          "name": "Conversation ID",
+          "description": "The ID of the conversation to retrieve"
+        }
+      ],
+      "resource_value": "conversation",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Conversation",
+      "operation": "Update a Conversation",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations#update-a-conversation",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Conversation"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update a Conversation"
+        },
+        {
+          "name": "Conversation ID",
+          "description": "The ID of the conversation to update"
+        }
+      ],
+      "options": [
+        {
+          "name": "Metadata",
+          "description": "A set of key-value pairs for storing structured information. You can attach up to 16 pairs to an object, which is useful for adding custom data that can be used for searching via the API or in the dashboard"
+        }
+      ],
+      "resource_value": "conversation",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Conversation",
+      "operation": "Remove a Conversation",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations#remove-a-conversation",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Conversation"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Remove Conversation"
+        },
+        {
+          "name": "Conversation ID",
+          "description": "The ID of the conversation to remove"
+        }
+      ],
+      "resource_value": "conversation",
+      "operation_value": "remove"
+    }
+  ],
+  "operation_count": 17,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Create an Assistant",
+      "page": "assistant-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/assistant-operations#create-an-assistant",
+      "summary": "Use this operation to create a new assistant",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Assistant"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create an Assistant"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model that the assistant will use. If you’re not sure which model to use, try gpt-4o if you need high intelligence or gpt-4o-mini if you need the fastest speed and lowest cost. Refer to Models overview | OpenAI Platform for more information"
+        },
+        {
+          "name": "Name",
+          "description": "Enter the name of the assistant. The maximum length is 256 characters"
+        },
+        {
+          "name": "Description",
+          "description": "Enter the description of the assistant. The maximum length is 512 characters"
+        },
+        {
+          "name": "Instructions",
+          "description": "Enter the system instructions that the assistant uses. The maximum length is 32,768 characters. Use this to specify the persona used by the model in its replies"
+        },
+        {
+          "name": "Code Interpreter",
+          "description": "Turn on to enable the code interpreter for the assistant, where it can write and execute code in a sandbox environment. Enable this tool for tasks that require computations, data analysis, or any logic-based processing"
+        },
+        {
+          "name": "Knowledge Retrieval",
+          "description": "Turn on to enable knowledge retrieval for the assistant, allowing it to access external sources or a connected knowledge base. Refer to File Search | OpenAI Platform for more information"
+        }
+      ],
+      "options": [
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the responses are too repet"
+        },
+        {
+          "name": "Output Randomness (Top P)",
+          "description": "Adjust the Top P setting to control the diversity of the assistant's responses. For example, 0.5 means half of all likelihood-weighted options are considered. We recommend altering this or Output Randomness (Temperature) but not both. Defaults to 1.0"
+        },
+        {
+          "name": "Fail if Assistant Already Exists",
+          "description": "If enabled, the operation will fail if an assistant with the same name already exists"
+        }
+      ]
+    },
+    {
+      "operation": "Delete an Assistant",
+      "page": "assistant-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/assistant-operations#delete-an-assistant",
+      "summary": "Use this operation to delete an existing assistant from your account",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Assistant"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete an Assistant"
+        },
+        {
+          "name": "Assistant",
+          "description": "Select the assistant you want to delete From list or By ID"
+        }
+      ]
+    },
+    {
+      "operation": "List Assistants",
+      "page": "assistant-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/assistant-operations#list-assistants",
+      "summary": "Use this operation to retrieve a list of assistants in your organization",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Assistant"
+        },
+        {
+          "name": "Operation",
+          "description": "Select List Assistants"
+        }
+      ],
+      "options": [
+        {
+          "name": "Simplify Output",
+          "description": "Turn on to return a simplified version of the response instead of the raw data. This option is enabled by default"
+        }
+      ]
+    },
+    {
+      "operation": "Message an Assistant",
+      "page": "assistant-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/assistant-operations#message-an-assistant",
+      "summary": "Use this operation to send a message to an assistant and receive a response",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Assistant"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Message an Assistant"
+        },
+        {
+          "name": "Assistant",
+          "description": "Select the assistant you want to message"
+        },
+        {
+          "name": "Prompt",
+          "description": "Enter the text prompt or message that you want to send to the assistant"
+        }
+      ],
+      "options": [
+        {
+          "name": "Base URL",
+          "description": "Enter the base URL that the assistant should use for making API requests. This option is useful for directing the assistant to use endpoints provided by other LLM providers that offer an OpenAI-compatible API"
+        },
+        {
+          "name": "Max Retries",
+          "description": "Specify the number of times the assistant should retry an operation in case of failure"
+        },
+        {
+          "name": "Timeout",
+          "description": "Set the maximum amount of time in milliseconds, that the assistant should wait for a response before timing out. Use this option to prevent long waits during operations"
+        },
+        {
+          "name": "Preserve Original Tools",
+          "description": "Turn off to remove the original tools associated with the assistant. Use this if you want to temporarily remove tools for this specific operation"
+        }
+      ]
+    },
+    {
+      "operation": "Update an Assistant",
+      "page": "assistant-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/assistant-operations#update-an-assistant",
+      "summary": "Use this operation to update the details of an existing assistant",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Assistant"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update an Assistant"
+        },
+        {
+          "name": "Assistant",
+          "description": "Select the assistant you want to update"
+        }
+      ],
+      "options": [
+        {
+          "name": "Code Interpreter",
+          "description": "Turn on to enable the code interpreter for the assistant, where it can write and execute code in a sandbox environment. Enable this tool for tasks that require computations, data analysis, or any logic-based processing"
+        },
+        {
+          "name": "Description",
+          "description": "Enter the description of the assistant. The maximum length is 512 characters"
+        },
+        {
+          "name": "Instructions",
+          "description": "Enter the system instructions that the assistant uses. The maximum length is 32,768 characters. Use this to specify the persona used by the model in its replies"
+        },
+        {
+          "name": "Knowledge Retrieval",
+          "description": "Turn on to enable knowledge retrieval for the assistant, allowing it to access external sources or a connected knowledge base. Refer to File Search | OpenAI Platform for more information"
+        },
+        {
+          "name": "Files",
+          "description": "Select a file to upload for your external knowledge source. Use Upload a File operation to add more files. Note that this only updates the Code Interpreter tool, not the File Search tool"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model that the assistant will use. If you’re not sure which model to use, try gpt-4o if you need high intelligence or gpt-4o-mini if you need the fastest speed and lowest cost. Refer to Models overview | OpenAI Platform for more information"
+        },
+        {
+          "name": "Name",
+          "description": "Enter the name of the assistant. The maximum length is 256 characters"
+        },
+        {
+          "name": "Remove All Custom Tools (Functions)",
+          "description": "Turn on to remove all custom tools (functions) from the assistant"
+        },
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the responses are too repet"
+        },
+        {
+          "name": "Output Randomness (Top P)",
+          "description": "Adjust the Top P setting to control the diversity of the assistant's responses. For example, 0.5 means half of all likelihood-weighted options are considered. We recommend altering this or Output Randomness (Temperature) but not both. Defaults to 1.0"
+        }
+      ]
+    },
+    {
+      "operation": "Generate Audio",
+      "page": "audio-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/audio-operations#generate-audio",
+      "summary": "Use this operation to create audio from a text prompt",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Audio"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Generate Audio"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use to generate the audio. Refer to TTS | OpenAI for more information"
+        },
+        {
+          "name": "Text Input",
+          "description": "Enter the text to generate the audio for. The maximum length is 4096 characters"
+        },
+        {
+          "name": "Voice",
+          "description": "Select a voice to use when generating the audio. Listen to the previews of the voices in Text to speech guide | OpenAI"
+        }
+      ],
+      "options": [
+        {
+          "name": "Response Format",
+          "description": "Select the format for the audio response. Choose from MP3 (default), OPUS, AAC, FLAC, WAV, and PCM"
+        },
+        {
+          "name": "Audio Speed",
+          "description": "Enter the speed for the generated audio from a value from 0.25 to 4.0. Defaults to 1"
+        },
+        {
+          "name": "Put Output in Field",
+          "description": "Defaults to data. Enter the name of the output field to put the binary file data in"
+        }
+      ]
+    },
+    {
+      "operation": "Transcribe a Recording",
+      "page": "audio-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/audio-operations#transcribe-a-recording",
+      "summary": "Use this operation to transcribe audio into text. OpenAI API limits the size of the audio file to 25 MB. OpenAI will use the whisper-1 model by default",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Audio"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Transcribe a Recording"
+        },
+        {
+          "name": "Input Data Field Name",
+          "description": "Defaults to data. Enter the name of the binary property that contains the audio file in one of these formats: .flac, .mp3, .mp4, .mpeg, .mpga, .m4a, .ogg, .wav, or .webm"
+        }
+      ],
+      "options": [
+        {
+          "name": "Language of the Audio File",
+          "description": "Enter the language of the input audio in ISO-639-1. Use this option to improve accuracy and latency"
+        },
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Defaults to 1.0. Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the respon"
+        }
+      ]
+    },
+    {
+      "operation": "Translate a Recording",
+      "page": "audio-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/audio-operations#translate-a-recording",
+      "summary": "Use this operation to translate audio into English. OpenAI API limits the size of the audio file to 25 MB. OpenAI will use the whisper-1 model by default",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Audio"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Translate a Recording"
+        },
+        {
+          "name": "Input Data Field Name",
+          "description": "Defaults to data. Enter the name of the binary property that contains the audio file in one of these formats: .flac, .mp3, .mp4, .mpeg, .mpga, .m4a, .ogg, .wav, or .webm"
+        }
+      ],
+      "options": [
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Defaults to 1.0. Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the respon"
+        }
+      ]
+    },
+    {
+      "operation": "Create a Conversation",
+      "page": "conversation-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations#create-a-conversation",
+      "summary": "Use this operation to create a new conversation",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Conversation"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create a Conversation"
+        },
+        {
+          "name": "Messages",
+          "description": "A message input to the model. Messages with the system role take precedence over instructions given with the user role. Messages with the assistant role will be assumed to have been generated by the model in previous interactions"
+        }
+      ],
+      "options": [
+        {
+          "name": "Metadata",
+          "description": "A set of key-value pairs for storing structured information. You can attach up to 16 pairs to an object, which is useful for adding custom data that can be used for searching via the API or in the dashboard"
+        }
+      ]
+    },
+    {
+      "operation": "Get a Conversation",
+      "page": "conversation-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations#get-a-conversation",
+      "summary": "Use this operation to retrieve an existing conversation",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Conversation"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Conversation"
+        },
+        {
+          "name": "Conversation ID",
+          "description": "The ID of the conversation to retrieve"
+        }
+      ]
+    },
+    {
+      "operation": "Remove a Conversation",
+      "page": "conversation-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations#remove-a-conversation",
+      "summary": "Use this operation to remove an existing conversation",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Conversation"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Remove Conversation"
+        },
+        {
+          "name": "Conversation ID",
+          "description": "The ID of the conversation to remove"
+        }
+      ]
+    },
+    {
+      "operation": "Update a Conversation",
+      "page": "conversation-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations#update-a-conversation",
+      "summary": "Use this operation to update an existing conversation",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Conversation"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update a Conversation"
+        },
+        {
+          "name": "Conversation ID",
+          "description": "The ID of the conversation to update"
+        }
+      ],
+      "options": [
+        {
+          "name": "Metadata",
+          "description": "A set of key-value pairs for storing structured information. You can attach up to 16 pairs to an object, which is useful for adding custom data that can be used for searching via the API or in the dashboard"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a File",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/file-operations#delete-a-file",
+      "summary": "Use this operation to delete a file from the server",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete a File"
+        },
+        {
+          "name": "File",
+          "description": "Enter the ID of the file to use for this operation or select the file name from the dropdown"
+        }
+      ]
+    },
+    {
+      "operation": "List Files",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/file-operations#list-files",
+      "summary": "Use this operation to list files that belong to the user's organization",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select List Files"
+        }
+      ],
+      "options": [
+        {
+          "name": "Purpose",
+          "description": "Use this to only return files with the given purpose. Use Assistants to return only files related to Assistants and Message operations. Use Fine-Tune for files related to Fine-tuning"
+        }
+      ]
+    },
+    {
+      "operation": "Upload a File",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/file-operations#upload-a-file",
+      "summary": "Use this operation to upload a file. This can be used across various operations",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Upload a File"
+        },
+        {
+          "name": "Input Data Field Name",
+          "description": "Defaults to data. Enter the name of the binary property which contains the file. The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants"
+        }
+      ],
+      "options": [
+        {
+          "name": "Purpose",
+          "description": "Enter the intended purpose of the uploaded file. Use Assistants for files associated with Assistants and Message operations. Use Fine-Tune for Fine-tuning"
+        }
+      ]
+    },
+    {
+      "operation": "Analyze Image",
+      "page": "image-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/image-operations#analyze-image",
+      "summary": "Use this operation to take in images and answer questions about them",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Image"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Analayze Image"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use to analyze an image"
+        },
+        {
+          "name": "Text Input",
+          "description": "Ask a question about the image"
+        },
+        {
+          "name": "Input Type",
+          "description": "Select how you'd like to input the image. Options include:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Detail",
+          "description": "Specify the balance between response time versus token usage"
+        },
+        {
+          "name": "Length of Description (Max Tokens)",
+          "description": "Defaults to 300. Fewer tokens will result in shorter, less detailed image description"
+        }
+      ]
+    },
+    {
+      "operation": "Generate an Image",
+      "page": "image-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/image-operations#generate-an-image",
+      "summary": "Use this operation to create an image from a text prompt",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Image"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Generate an Image"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use to generate an image"
+        },
+        {
+          "name": "Prompt",
+          "description": "Enter the text description of the desired image(s). The maximum length is 1000 characters for dall-e-2 and 4000 characters for dall-e-3"
+        }
+      ],
+      "options": [
+        {
+          "name": "Quality",
+          "description": "The quality of the image you generate. HD creates images with finer details and greater consistency across the image. This option is only supported for dall-e-3. Otherwise, choose Standard"
+        },
+        {
+          "name": "Resolution",
+          "description": "Select the resolution of the generated images. Select 1024x1024 for dall-e-2. Select one of 1024x1024, 1792x1024, or 1024x1792 for dall-e-3 models"
+        },
+        {
+          "name": "Style",
+          "description": "Select the style of the generated images. This option is only supported for dall-e-3"
+        },
+        {
+          "name": "Respond with image URL(s)",
+          "description": "Whether to return image URL(s) instead of binary file(s)"
+        },
+        {
+          "name": "Put Output in Field",
+          "description": "Defaults to data. Enter the name of the output field to put the binary file data in. Only available if Respond with image URL(s) is turned off"
+        }
+      ]
+    },
+    {
+      "operation": "Edit an Image",
+      "page": "image-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/image-operations#edit-an-image",
+      "summary": "Use this operation to edit an image from a text prompt",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Image"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Edit Image"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use to generate an image. Supports dall-e-2 and gpt-image-1"
+        },
+        {
+          "name": "Prompt",
+          "description": "Enter the text description of the desired edits to the input image(s)"
+        },
+        {
+          "name": "Image(s)",
+          "description": "Add one or more binary fields to include images with your prompt. Each image should be a png, webp, or jpg file less than 50MB. You can provide up to 16 images"
+        },
+        {
+          "name": "Number of Images",
+          "description": "The number of images to generate. Must be between 1 and 10"
+        },
+        {
+          "name": "Size",
+          "description": "The size and dimensions of the generated images (in px)"
+        },
+        {
+          "name": "Quality",
+          "description": "The quality of the image that will be generated (auto, low, medium, high, standard). Only supported for gpt-image-1"
+        },
+        {
+          "name": "Output Format",
+          "description": "The format in which the generated images are returned (png, webp, or jpg). Only supported for gpt-image-1"
+        },
+        {
+          "name": "Output Compression",
+          "description": "The compression level (0-100%) for the generated images. Only supported for gpt-image-1 with webp or jpeg output formats"
+        }
+      ],
+      "options": [
+        {
+          "name": "Background",
+          "description": "Allows to set transparency for the background of the generated image(s). Only supported for gpt-image-1"
+        },
+        {
+          "name": "Input Fidelity",
+          "description": "Control how much effort the model will exert to match the style and features of input images. Only supported for gpt-image-1"
+        },
+        {
+          "name": "Image Mask",
+          "description": "Name of the binary property that contains the image. A second image whose fully transparent areas (for example, where alpha is zero) shows where the image should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, an"
+        },
+        {
+          "name": "User",
+          "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse"
+        }
+      ]
+    },
+    {
+      "operation": "Generate a Chat Completion",
+      "page": "text-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/text-operations#generate-a-chat-completion",
+      "summary": "Use this operation to send a message or prompt to an OpenAI model - using the Chat Completions API - and receive a response",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Text"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Generate a Chat Completion"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use. If you’re not sure which model to use, try gpt-4o if you need high intelligence or gpt-4o-mini if you need the fastest speed and lowest cost. Refer to Models overview | OpenAI Platform for more information"
+        },
+        {
+          "name": "Messages",
+          "description": "Enter a Text prompt and assign a Role that the model will use to generate responses. Refer to Prompt engineering | OpenAI for more information on how to write a better prompt by using these roles. Choose from one of these roles:"
+        },
+        {
+          "name": "Simplify Output",
+          "description": "Turn on to return a simplified version of the response instead of the raw data"
+        },
+        {
+          "name": "Output Content as JSON",
+          "description": "Turn on to attempt to return the response in JSON format. Compatible with GPT-4 Turbo and all GPT-3.5 Turbo models newer than gpt-3.5-turbo-1106"
+        }
+      ],
+      "options": [
+        {
+          "name": "Frequency Penalty",
+          "description": "Apply a penalty to reduce the model's tendency to repeat similar lines. The range is between 0.0 and 2.0"
+        },
+        {
+          "name": "Maximum Number of Tokens",
+          "description": "Set the maximum number of tokens for the response. One token is roughly four characters for standard English text. Use this to limit the length of the output"
+        },
+        {
+          "name": "Number of Completions",
+          "description": "Defaults to 1. Set the number of completions you want to generate for each prompt. Use carefully since setting a high number will quickly consume your tokens"
+        },
+        {
+          "name": "Presence Penalty",
+          "description": "Apply a penalty to influence the model to discuss new topics. The range is between 0.0 and 2.0"
+        },
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the responses are too repet"
+        },
+        {
+          "name": "Output Randomness (Top P)",
+          "description": "Adjust the Top P setting to control the diversity of the assistant's responses. For example, 0.5 means half of all likelihood-weighted options are considered. We recommend altering this or Output Randomness (Temperature) but not both. Defaults to 1.0"
+        }
+      ]
+    },
+    {
+      "operation": "Generate a Model Response",
+      "page": "text-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/text-operations#generate-a-model-response",
+      "summary": "Use this operation to send a message or prompt to an OpenAI model - using the Responses API - and receive a response",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Text"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Generate a Model Response"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use. Refer to Models overview | OpenAI Platform for an overview"
+        },
+        {
+          "name": "Messages",
+          "description": "Choose from one of these a Message Types:"
+        },
+        {
+          "name": "Simplify Output",
+          "description": "Turn on to return a simplified version of the response instead of the raw data"
+        }
+      ],
+      "options": [
+        {
+          "name": "Web Search",
+          "description": "Allows models to search the web for the latest information before generating a response"
+        },
+        {
+          "name": "MCP Servers",
+          "description": "Allows models to connect to remote MCP servers. Find out more about using remote MCP servers as tools"
+        },
+        {
+          "name": "File Search",
+          "description": "Allow models to search your knowledgebase from previously uploaded files for relevant information before generating a response. Refer to the OpenAI documentation for more information"
+        },
+        {
+          "name": "Code Interpreter",
+          "description": "Allows models to write and run Python code in a sandboxed environment"
+        },
+        {
+          "name": "Maximum Number of Tokens",
+          "description": "Set the maximum number of tokens for the response. One token is roughly four characters for standard English text. Use this to limit the length of the output"
+        },
+        {
+          "name": "Output Randomness (Temperature)",
+          "description": "Adjust the randomness of the response. The range is between 0.0 (deterministic) and 1.0 (maximum randomness). We recommend altering this or Output Randomness (Top P) but not both. Start with a medium temperature (around 0.7) and adjust based on the outputs you observe. If the responses are too repet"
+        },
+        {
+          "name": "Output Randomness (Top P)",
+          "description": "Adjust the Top P setting to control the diversity of the assistant's responses. For example, 0.5 means half of all likelihood-weighted options are considered. We recommend altering this or Output Randomness (Temperature) but not both. Defaults to 1.0"
+        },
+        {
+          "name": "Conversation ID",
+          "description": "The conversation that this response belongs to. Input items and output items from this response are automatically added to this conversation after this response completes"
+        },
+        {
+          "name": "Previous Response ID",
+          "description": "The ID of the previous response to continue from. Can't be used in conjunction with Conversation ID"
+        },
+        {
+          "name": "Reasoning",
+          "description": "The level of reasoning effort the model should spend to generate the response. Includes the ability to return a Summary of the reasoning performed by the model (for example, for debugging purposes)"
+        },
+        {
+          "name": "Store",
+          "description": "Whether to store the generated model response for later retrieval via API. Defaults to true"
+        },
+        {
+          "name": "Output Format",
+          "description": "Whether to return the response as Text, in a specified JSON Schema or as a JSON Object"
+        },
+        {
+          "name": "Background",
+          "description": "Whether to run the model in background mode. This allows executing long-running tasks more reliably"
+        }
+      ]
+    },
+    {
+      "operation": "Classify Text for Violations",
+      "page": "text-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/text-operations#classify-text-for-violations",
+      "summary": "Use this operation to identify and flag content that might be harmful. OpenAI model will analyze the text and return a response containing:",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Text"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Classify Text for Violations"
+        },
+        {
+          "name": "Text Input",
+          "description": "Enter text to classify if it violates the moderation policy"
+        },
+        {
+          "name": "Simplify Output",
+          "description": "Turn on to return a simplified version of the response instead of the raw data"
+        }
+      ],
+      "options": [
+        {
+          "name": "Use Stable Model",
+          "description": "Turn on to use the stable version of the model instead of the latest version, accuracy may be slightly lower"
+        }
+      ]
+    },
+    {
+      "operation": "Generate Video",
+      "page": "video-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/video-operations#generate-video",
+      "summary": "Use this operation to generate a video from a text prompt",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing OpenAI credential"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Video"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Generate Video"
+        },
+        {
+          "name": "Model",
+          "description": "Select the model you want to use to generate a video. Currently supports sora-2 and sora-2-pro"
+        },
+        {
+          "name": "Prompt",
+          "description": "The prompt to generate a video from"
+        },
+        {
+          "name": "Seconds",
+          "description": "Clip duration in seconds (up to 25)"
+        },
+        {
+          "name": "Size",
+          "description": "Output resolution formatted as width x height. 1024x1792 and 1792x1024 are only supported by Sora 2 Pro"
+        }
+      ],
+      "options": [
+        {
+          "name": "Reference",
+          "description": "Optional image reference that guides generation. Has to be passed in as a binary item"
+        },
+        {
+          "name": "Wait Timeout",
+          "description": "Time to wait for the video to be generated in seconds. Defaults to 300"
+        },
+        {
+          "name": "Output Field Name",
+          "description": "The name of the output field to put the binary file data in. Defaults to data"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "analyze",
+    "app",
+    "applications",
+    "assistants",
+    "audio",
+    "chat",
+    "chatting",
+    "classify",
+    "completion",
+    "conversation",
+    "create",
+    "creating",
+    "delete",
+    "edit",
+    "file",
+    "files",
+    "generate",
+    "get",
+    "image",
+    "images",
+    "including",
+    "list",
+    "model",
+    "models",
+    "openai",
+    "recording",
+    "remove",
+    "response",
+    "text",
+    "transcribe",
+    "translate",
+    "update",
+    "upload",
+    "video",
+    "violations",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    },
+    {
+      "id": "wqdQXLzKrIsqxA7CuhxT",
+      "name": "openai-api-issues"
+    },
+    {
+      "id": "nAnAPqDqAcOOqFiJJrTl",
+      "name": "referenced-node-unexecuted"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "OpenAI node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.openai/index.md"
+    },
+    {
+      "page": "assistant-operations.md",
+      "title": "OpenAI Assistant operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/assistant-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.openai/assistant-operations.md"
+    },
+    {
+      "page": "audio-operations.md",
+      "title": "OpenAI Audio operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/audio-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.openai/audio-operations.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "OpenAI node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.openai/common-issues.md"
+    },
+    {
+      "page": "conversation-operations.md",
+      "title": "OpenAI Conversation operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.openai/conversation-operations.md"
+    },
+    {
+      "page": "file-operations.md",
+      "title": "OpenAI File operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/file-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.openai/file-operations.md"
+    },
+    {
+      "page": "image-operations.md",
+      "title": "OpenAI Image operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/image-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.openai/image-operations.md"
+    },
+    {
+      "page": "text-operations.md",
+      "title": "OpenAI Text operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/text-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.openai/text-operations.md"
+    },
+    {
+      "page": "video-operations.md",
+      "title": "OpenAI Video operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/video-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-langchain.openai/video-operations.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-langchain.openai.json",
+    "markdown": "nodes/app-node/n8n-nodes-langchain.openai.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-langchain.openai/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.openAi",
+  "type_version": 2.3,
+  "type_versions": [
+    2,
+    2.1,
+    2.2,
+    2.3
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "openAiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "openAiApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "OpenAI"
+  },
+  "subtitle": "={{((resource, operation) => {\n    if (operation === 'deleteAssistant') {\n        return 'Delete Assistant';\n    }\n    if (operation === 'deleteFile') {\n        return 'Delete File';\n    }\n    if (operation === 'classify') {\n        return 'Classify Text';\n    }\n    if (operation === 'message' && resource === 'text') {\n        return 'Message Model';\n    }\n    const capitalize = (str) => {\n        const chars = str.split('');\n        chars[0] = chars[0].toUpperCase();\n        return chars.join('');\n    };\n    if (['transcribe', 'translate'].includes(operation)) {\n        resource = 'recording';\n    }\n    if (operation === 'list') {\n        resource = resource + 's';\n    }\n    return `${capitalize(operation)} ${capitalize(resource)}`;\n})($parameter.resource, $parameter.operation)}}",
+  "io": {
+    "inputs": "={{((resource, operation, hideTools, memory) => {\n    if (resource === 'assistant' && operation === 'message') {\n        const inputs = [\n            { type: 'main' },\n            { type: 'ai_tool', displayName: 'Tools' },\n        ];\n        if (memory !== 'threadId') {\n            inputs.push({ type: 'ai_memory', displayName: 'Memory', maxConnections: 1 });\n        }\n        return inputs;\n    }\n    if (resource === 'text' && (operation === 'message' || operation === 'response')) {\n        if (hideTools === 'hide') {\n            return ['main'];\n        }\n        return [{ type: 'main' }, { type: 'ai_tool', displayName: 'Tools' }];\n    }\n    return ['main'];\n})($parameter.resource, $parameter.operation, $parameter.hideTools, $parameter.memory ?? undefined)}}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 72,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "text",
+        "options": [
+          {
+            "name": "Text",
+            "value": "text"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Audio",
+            "value": "audio"
+          },
+          {
+            "name": "File",
+            "value": "file"
+          },
+          {
+            "name": "Conversation",
+            "value": "conversation"
+          },
+          {
+            "name": "Video",
+            "value": "video"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "generate",
+        "options": [
+          {
+            "name": "Generate Audio",
+            "value": "generate",
+            "description": "Creates audio from a text prompt"
+          },
+          {
+            "name": "Transcribe a Recording",
+            "value": "transcribe",
+            "description": "Transcribes audio into text"
+          },
+          {
+            "name": "Translate a Recording",
+            "value": "translate",
+            "description": "Translates audio into text in English"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileSizeLimitNotice",
+        "displayName": "OpenAI API limits the size of the audio file to 25 MB",
+        "type": "notice",
+        "default": " ",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "audio"
+            ],
+            "operation": [
+              "translate",
+              "transcribe"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "tts-1",
+        "options": [
+          {
+            "name": "TTS-1",
+            "value": "tts-1"
+          },
+          {
+            "name": "TTS-1-HD",
+            "value": "tts-1-hd"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "input",
+        "displayName": "Text Input",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "The text to generate audio for. The maximum length is 4096 characters."
+      },
+      {
+        "name": "voice",
+        "displayName": "Voice",
+        "type": "options",
+        "default": "alloy",
+        "options": [
+          {
+            "name": "Alloy",
+            "value": "alloy"
+          },
+          {
+            "name": "Echo",
+            "value": "echo"
+          },
+          {
+            "name": "Fable",
+            "value": "fable"
+          },
+          {
+            "name": "Nova",
+            "value": "nova"
+          },
+          {
+            "name": "Onyx",
+            "value": "onyx"
+          },
+          {
+            "name": "Shimmer",
+            "value": "shimmer"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "The voice to use when generating the audio"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "response_format"
+          },
+          {
+            "name": "speed"
+          },
+          {
+            "name": "binaryPropertyOutput"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "transcribe"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the audio file in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "language",
+            "description": "The language of the input audio. Supplying the input language in <a href=\"https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes\" target=\"_blank\">ISO-639-"
+          },
+          {
+            "name": "temperature"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "transcribe"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "translate"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the audio file in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "temperature"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "translate"
+            ],
+            "resource": [
+              "audio"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upload",
+        "options": [
+          {
+            "name": "Delete a File",
+            "value": "deleteFile",
+            "description": "Delete a file from the server"
+          },
+          {
+            "name": "List Files",
+            "value": "list",
+            "description": "Returns a list of files that belong to the user's organization"
+          },
+          {
+            "name": "Upload a File",
+            "value": "upload",
+            "description": "Upload a file that can be used across various endpoints"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the file. The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "purpose",
+            "description": "The intended purpose of the uploaded file, the 'Fine-tuning' only supports .jsonl files"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "upload"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "deleteFile"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "purpose",
+            "description": "Only return files with the given purpose"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "list"
+            ],
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "generate",
+        "options": [
+          {
+            "name": "Analyze Image",
+            "value": "analyze",
+            "description": "Take in images and answer questions about them"
+          },
+          {
+            "name": "Generate an Image",
+            "value": "generate",
+            "description": "Creates an image from a text prompt"
+          },
+          {
+            "name": "Edit Image",
+            "value": "edit",
+            "description": "Edit an image"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "dall-e-3",
+        "options": [
+          {
+            "name": "DALL·E 2",
+            "value": "dall-e-2"
+          },
+          {
+            "name": "DALL·E 3",
+            "value": "dall-e-3"
+          },
+          {
+            "name": "GPT Image 1",
+            "value": "gpt-image-1"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.2
+                }
+              }
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The model to use for image generation"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "gpt-image-1-mini"
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.2
+                }
+              }
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "A text description of the desired image(s). The maximum length is 1000 characters for dall-e-2 and 4000 characters for dall-e-3."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "n",
+            "description": "Number of images to generate"
+          },
+          {
+            "name": "dalleQuality",
+            "description": "The quality of the image that will be generated, HD creates images with finer details and greater consistency across the image"
+          },
+          {
+            "name": "quality",
+            "description": "The quality of the image that will be generated, High creates images with finer details and greater consistency across the image"
+          },
+          {
+            "name": "size"
+          },
+          {
+            "name": "size"
+          },
+          {
+            "name": "size"
+          },
+          {
+            "name": "style"
+          },
+          {
+            "name": "returnImageUrls",
+            "description": "Whether to return image URL(s) instead of binary file(s)"
+          },
+          {
+            "name": "binaryPropertyOutput"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.2
+                }
+              }
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "n",
+            "description": "Number of images to generate"
+          },
+          {
+            "name": "dalleQuality",
+            "description": "The quality of the image that will be generated, HD creates images with finer details and greater consistency across the image"
+          },
+          {
+            "name": "quality",
+            "description": "The quality of the image that will be generated, High creates images with finer details and greater consistency across the image"
+          },
+          {
+            "name": "size"
+          },
+          {
+            "name": "size"
+          },
+          {
+            "name": "size"
+          },
+          {
+            "name": "style"
+          },
+          {
+            "name": "returnImageUrls",
+            "description": "Whether to return image URL(s) instead of binary file(s)"
+          },
+          {
+            "name": "binaryPropertyOutput"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.2
+                }
+              }
+            ],
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Text Input",
+        "type": "string",
+        "default": "What's in this image?",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputType",
+        "displayName": "Input Type",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "Image URL(s)",
+            "value": "url"
+          },
+          {
+            "name": "Binary File(s)",
+            "value": "base64"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "imageUrls",
+        "displayName": "URL(s)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "url"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "inputType": [
+              "base64"
+            ],
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the image(s)"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Whether to simplify the response or not"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "detail"
+          },
+          {
+            "name": "maxTokens",
+            "description": "Fewer tokens will result in shorter, less detailed image description"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "analyze"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "gpt-image-1",
+        "options": [
+          {
+            "name": "DALL·E 2",
+            "value": "dall-e-2"
+          },
+          {
+            "name": "GPT Image 1",
+            "value": "gpt-image-1"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.3
+                }
+              }
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The model to use for image generation"
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "gpt-image-1"
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.3
+                }
+              }
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "A text description of the desired image(s). Maximum 1000 characters for dall-e-2, 32000 characters for gpt-image-1."
+      },
+      {
+        "name": "images",
+        "displayName": "Images",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "binaryPropertyName": "data"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "binaryPropertyName",
+                "displayName": "Binary Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/model": [
+              "gpt-image-1"
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Add one or more binary fields to include images with your prompt. Each image should be a png, webp, or jpg file less than 50MB. You can provide up to 16 images."
+      },
+      {
+        "name": "images",
+        "displayName": "Images",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "binaryPropertyName": "data"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "binaryPropertyName",
+                "displayName": "Binary Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "gpt-image"
+                }
+              }
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Add one or more binary fields to include images with your prompt. Each image should be a png, webp, or jpg file less than 50MB. You can provide up to 16 images."
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Binary Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "/model": [
+              "dall-e-2"
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the image. It should be a square png file less than 4MB."
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Binary Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "dall-e"
+                }
+              }
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the image. It should be a square png file less than 4MB."
+      },
+      {
+        "name": "n",
+        "displayName": "Number of Images",
+        "type": "number",
+        "default": 1,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The number of images to generate. Must be between 1 and 10."
+      },
+      {
+        "name": "size",
+        "displayName": "Size",
+        "type": "options",
+        "default": "1024x1024",
+        "options": [
+          {
+            "name": "256x256",
+            "value": "256x256"
+          },
+          {
+            "name": "512x512",
+            "value": "512x512"
+          },
+          {
+            "name": "1024x1024",
+            "value": "1024x1024"
+          },
+          {
+            "name": "1024x1536 (Portrait)",
+            "value": "1024x1536"
+          },
+          {
+            "name": "1536x1024 (Landscape)",
+            "value": "1536x1024"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The size of the generated images"
+      },
+      {
+        "name": "quality",
+        "displayName": "Quality",
+        "type": "options",
+        "default": "auto",
+        "options": [
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Medium",
+            "value": "medium"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Standard",
+            "value": "standard"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/model": [
+              "gpt-image-1"
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The quality of the image that will be generated"
+      },
+      {
+        "name": "quality",
+        "displayName": "Quality",
+        "type": "options",
+        "default": "auto",
+        "options": [
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Medium",
+            "value": "medium"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Standard",
+            "value": "standard"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "gpt-image"
+                }
+              }
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The quality of the image that will be generated"
+      },
+      {
+        "name": "responseFormat",
+        "displayName": "Response Format",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "URL",
+            "value": "url"
+          },
+          {
+            "name": "Base64 JSON",
+            "value": "b64_json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/model": [
+              "dall-e-2"
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The format in which the generated images are returned. URLs are only valid for 60 minutes after generation."
+      },
+      {
+        "name": "responseFormat",
+        "displayName": "Response Format",
+        "type": "options",
+        "default": "url",
+        "options": [
+          {
+            "name": "URL",
+            "value": "url"
+          },
+          {
+            "name": "Base64 JSON",
+            "value": "b64_json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "dall-e"
+                }
+              }
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The format in which the generated images are returned. URLs are only valid for 60 minutes after generation."
+      },
+      {
+        "name": "outputFormat",
+        "displayName": "Output Format",
+        "type": "options",
+        "default": "png",
+        "options": [
+          {
+            "name": "PNG",
+            "value": "png"
+          },
+          {
+            "name": "JPEG",
+            "value": "jpeg"
+          },
+          {
+            "name": "WebP",
+            "value": "webp"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/model": [
+              "gpt-image-1"
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The format in which the generated images are returned. Only supported for gpt-image-1."
+      },
+      {
+        "name": "outputFormat",
+        "displayName": "Output Format",
+        "type": "options",
+        "default": "png",
+        "options": [
+          {
+            "name": "PNG",
+            "value": "png"
+          },
+          {
+            "name": "JPEG",
+            "value": "jpeg"
+          },
+          {
+            "name": "WebP",
+            "value": "webp"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "gpt-image"
+                }
+              }
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The format in which the generated images are returned. Only supported for gpt-image-1."
+      },
+      {
+        "name": "outputCompression",
+        "displayName": "Output Compression",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "/model": [
+              "gpt-image-1"
+            ],
+            "outputFormat": [
+              "webp",
+              "jpeg"
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The compression level (0-100%) for the generated images. Only supported for gpt-image-1 with webp or jpeg output formats."
+      },
+      {
+        "name": "outputCompression",
+        "displayName": "Output Compression",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "/modelId": [
+              {
+                "_cnd": {
+                  "includes": "gpt-image"
+                }
+              }
+            ],
+            "outputFormat": [
+              "webp",
+              "jpeg"
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        },
+        "description": "The compression level (0-100%) for the generated images. Only supported for gpt-image-1 with webp or jpeg output formats."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "user",
+            "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse"
+          },
+          {
+            "name": "background",
+            "description": "Allows to set transparency for the background of the generated image(s). Only supported for gpt-image-1."
+          },
+          {
+            "name": "inputFidelity",
+            "description": "Control how much effort the model will exert to match the style and features of input images. Only supported for gpt-image-1."
+          },
+          {
+            "name": "imageMask",
+            "description": "Name of the binary property which contains the image. An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where image should b"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.3
+                }
+              }
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "user",
+            "description": "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse"
+          },
+          {
+            "name": "background",
+            "description": "Allows to set transparency for the background of the generated image(s). Only supported for gpt-image-1."
+          },
+          {
+            "name": "inputFidelity",
+            "description": "Control how much effort the model will exert to match the style and features of input images. Only supported for gpt-image-1."
+          },
+          {
+            "name": "imageMask",
+            "description": "Name of the binary property which contains the image. An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where image should b"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.3
+                }
+              }
+            ],
+            "operation": [
+              "edit"
+            ],
+            "resource": [
+              "image"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "response",
+        "options": [
+          {
+            "name": "Message a Model",
+            "value": "response",
+            "description": "Generate a model response with GPT 3, 4, 5, etc. using Responses API"
+          },
+          {
+            "name": "Classify Text for Violations",
+            "value": "classify",
+            "description": "Check whether content complies with usage policies"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "input",
+        "displayName": "Text Input",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "classify"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "The input text to classify if it is violates the moderation policy"
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "classify"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "useStableModel",
+            "description": "Whether to use the stable version of the model instead of the latest version, accuracy may be slightly lower"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 2.1
+                }
+              }
+            ],
+            "operation": [
+              "classify"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "response"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "responses",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "type": "text"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              },
+              {
+                "name": "content",
+                "displayName": "Prompt",
+                "type": "string"
+              },
+              {
+                "name": "imageType",
+                "displayName": "Image Type",
+                "type": "options"
+              },
+              {
+                "name": "imageUrl",
+                "displayName": "Image URL",
+                "type": "string"
+              },
+              {
+                "name": "binaryPropertyName",
+                "displayName": "Image Data",
+                "type": "string"
+              },
+              {
+                "name": "fileId",
+                "displayName": "File ID",
+                "type": "string"
+              },
+              {
+                "name": "imageDetail",
+                "displayName": "Detail",
+                "type": "options"
+              },
+              {
+                "name": "fileType",
+                "displayName": "File Type",
+                "type": "options"
+              },
+              {
+                "name": "fileUrl",
+                "displayName": "File URL",
+                "type": "string"
+              },
+              {
+                "name": "fileId",
+                "displayName": "File ID",
+                "type": "string"
+              },
+              {
+                "name": "binaryPropertyName",
+                "displayName": "File Data",
+                "type": "string"
+              },
+              {
+                "name": "fileName",
+                "displayName": "File Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "response"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simplify",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "response"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "hideTools",
+        "displayName": "Hide Tools",
+        "type": "hidden",
+        "default": "hide",
+        "displayOptions": {
+          "show": {
+            "modelId": [
+              "gpt-3.5-turbo-16k-0613",
+              "dall-e-3",
+              "text-embedding-3-large",
+              "dall-e-2",
+              "whisper-1",
+              "tts-1-hd-1106",
+              "tts-1-hd",
+              "gpt-4-0314",
+              "text-embedding-3-small",
+              "gpt-4-32k-0314",
+              "gpt-3.5-turbo-0301",
+              "gpt-4-vision-preview",
+              "gpt-3.5-turbo-16k",
+              "gpt-3.5-turbo-instruct-0914",
+              "tts-1",
+              "davinci-002",
+              "gpt-3.5-turbo-instruct",
+              "babbage-002",
+              "tts-1-1106",
+              "text-embedding-ada-002"
+            ],
+            "operation": [
+              "response"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "noticeTools",
+        "displayName": "Connect your own custom n8n tools to this node on the canvas",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "response"
+            ],
+            "resource": [
+              "text"
+            ]
+          },
+          "hide": {
+            "hideTools": [
+              "hide"
+            ]
+          }
+        }
+      },
+      {
+        "name": "builtInTools",
+        "displayName": "Built-in Tools",
+        "type": "collection",
+        "options": [
+          {
+            "name": "webSearch"
+          },
+          {
+            "name": "fileSearch"
+          },
+          {
+            "name": "codeInterpreter",
+            "description": "Whether to allow the model to execute code in a sandboxed environment"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "response"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "conversationId",
+            "description": "The conversation that this response belongs to. Input items and output items from this response are automatically added to this conversation after this response"
+          },
+          {
+            "name": "include",
+            "description": "Specify additional output data to include in the model response"
+          },
+          {
+            "name": "instructions",
+            "description": "Instructions for the model to follow"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 32,768"
+          },
+          {
+            "name": "maxToolsIterations",
+            "description": "The maximum number of tool iteration cycles the LLM will run before stopping. A single iteration can contain multiple tool calls. Set to 0 for no limit."
+          },
+          {
+            "name": "maxToolCalls",
+            "description": "The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per ind"
+          },
+          {
+            "name": "metadata",
+            "description": "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and "
+          },
+          {
+            "name": "parallelToolCalls",
+            "description": "Whether to allow parallel tool calls. If true, the model can call multiple tools at once."
+          },
+          {
+            "name": "previousResponseId",
+            "description": "The ID of the previous response to continue from. Cannot be used in conjunction with Conversation ID."
+          },
+          {
+            "name": "promptConfig",
+            "description": "Configure the reusable prompt template configured via OpenAI Dashboard. <a href=\"https://platform.openai.com/docs/guides/prompt-engineering#reusable-prompts\">Le"
+          },
+          {
+            "name": "promptCacheKey",
+            "description": "Used by OpenAI to cache responses for similar requests to optimize your cache hit rates"
+          },
+          {
+            "name": "reasoning"
+          },
+          {
+            "name": "safetyIdentifier",
+            "description": "A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies. The IDs should be a string that uniquely identi"
+          },
+          {
+            "name": "serviceTier",
+            "description": "The service tier to use for the request"
+          },
+          {
+            "name": "store",
+            "description": "Whether to store the generated model response for later retrieval via API"
+          },
+          {
+            "name": "textFormat"
+          },
+          {
+            "name": "topLogprobs",
+            "description": "An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability"
+          },
+          {
+            "name": "temperature",
+            "description": "What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focuse"
+          },
+          {
+            "name": "topP",
+            "description": "An alternative to sampling with temperature, controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We gener"
+          },
+          {
+            "name": "truncation",
+            "description": "Whether to truncate the input to the model's context window size. When disabled will throw a 400 error instead."
+          },
+          {
+            "name": "backgroundMode"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "response"
+            ],
+            "resource": [
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a conversation"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a conversation"
+          },
+          {
+            "name": "Remove",
+            "value": "remove",
+            "description": "Remove a conversation"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a conversation"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "conversation"
+            ]
+          }
+        }
+      },
+      {
+        "name": "messages",
+        "displayName": "Messages",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "type": "text"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              },
+              {
+                "name": "content",
+                "displayName": "Prompt",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "metadata",
+            "description": "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        }
+      },
+      {
+        "name": "conversationId",
+        "displayName": "Conversation ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "remove"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "The ID of the conversation to delete"
+      },
+      {
+        "name": "conversationId",
+        "displayName": "Conversation ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "The ID of the conversation to update"
+      },
+      {
+        "name": "metadata",
+        "displayName": "Metadata",
+        "type": "json",
+        "required": true,
+        "default": "{}",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API or the dashboard. Keys are stri"
+      },
+      {
+        "name": "conversationId",
+        "displayName": "Conversation ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "conversation"
+            ]
+          }
+        },
+        "description": "The ID of the conversation to retrieve"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "generate",
+        "options": [
+          {
+            "name": "Generate",
+            "value": "generate",
+            "description": "Creates a video from a text prompt"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "modelId",
+        "displayName": "Model",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prompt",
+        "displayName": "Prompt",
+        "type": "string",
+        "required": true,
+        "default": "A video of a cat playing with a ball",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        },
+        "description": "The prompt to generate a video from"
+      },
+      {
+        "name": "seconds",
+        "displayName": "Seconds",
+        "type": "number",
+        "required": true,
+        "default": 4,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        },
+        "description": "Clip duration in seconds"
+      },
+      {
+        "name": "size",
+        "displayName": "Size",
+        "type": "options",
+        "default": "1280x720",
+        "options": [
+          {
+            "name": "720x1280",
+            "value": "720x1280"
+          },
+          {
+            "name": "1280x720",
+            "value": "1280x720"
+          },
+          {
+            "name": "1024x1792",
+            "value": "1024x1792"
+          },
+          {
+            "name": "1792x1024",
+            "value": "1792x1024"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        },
+        "description": "Output resolution formatted as width x height. 1024x1792 and 1792x1024 are only supported by Sora 2 Pro."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "binaryPropertyNameReference",
+            "description": "Optional image reference that guides generation"
+          },
+          {
+            "name": "waitTime",
+            "description": "Time to wait for the video to be generated in seconds"
+          },
+          {
+            "name": "fileName"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "generate"
+            ],
+            "resource": [
+              "video"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

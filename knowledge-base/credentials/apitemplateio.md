@@ -1,0 +1,23 @@
+<!-- n8n built-in node reference: apitemplateio | source: https://docs.n8n.io/integrations/builtin/credentials/apitemplateio -->
+
+You can use these credentials to authenticate the following nodes:
+
+- [APITemplate.io](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.apitemplateio)
+
+## Prerequisites
+
+Create an [APITemplate.io](https://apitemplate.io/) account.
+
+## Supported authentication methods
+
+- API key
+
+## Related resources
+
+Refer to [APITemplate.io's API documentation](https://apitemplate.io/apiv2/) for more information about the service.
+
+## Using API key
+
+To configure this credential, you'll need:
+
+- An **API Key**: Once you've created an APITemplate.io account, go to **API Integration** to copy the **API Key**.

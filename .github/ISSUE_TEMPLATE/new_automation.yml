@@ -1,0 +1,49 @@
+name: New automation
+description: Propose a workflow to add to automations/
+labels: ["automation"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Workflow name
+      placeholder: Gmail to Google Sheets invoice logger
+    validations:
+      required: true
+
+  - type: dropdown
+    id: group
+    attributes:
+      label: Group
+      options: ["ai", "integrations/<app>", "core/<node>", "patterns"]
+    validations:
+      required: true
+
+  - type: textarea
+    id: does
+    attributes:
+      label: What it does
+      description: Trigger, steps, output. Three sentences maximum.
+    validations:
+      required: true
+
+  - type: input
+    id: credentials
+    attributes:
+      label: Credentials required
+      placeholder: gmailOAuth2, googleSheetsOAuth2Api
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before submitting
+      options:
+        - label: No secrets, tokens or personal identifiers in the JSON
+          required: true
+        - label: tools/validate_repo.py passes
+          required: true
+        - label: Provenance recorded in sources/sources.json (or written from scratch)
+          required: true
+        - label: A README note explains what it needs
+          required: true

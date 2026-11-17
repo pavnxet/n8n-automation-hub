@@ -1,0 +1,234 @@
+{
+  "id": "n8n-nodes-base.summarize",
+  "name": "Summarize",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.summarize",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Summarize node to aggregate items together, in a manner similar to Excel pivot tables",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.summarize",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Fields to Summarize",
+      "description": "Use these fields to define how you want to summarize your input data",
+      "options": [
+        "Append: Append",
+        "Average: Calculate the numeric average of your input data",
+        "Concatenate: Combine together values in your input data",
+        "Separator: Select the separator you want to insert between concatenated values",
+        "Count: Count the total number of values in your input data",
+        "Count Unique: Count the number of unique values in your input data",
+        "Max: Find the highest numeric value in your input data",
+        "Min: Find the lowest numeric value in your input data",
+        "Sum: Add together the numeric values in your input data",
+        "Field: Enter the name of the field you want to perform the aggregation on"
+      ]
+    },
+    {
+      "name": "Fields to Split By",
+      "description": "Enter the name of the input fields that you want to split the summary by (similar to a group by statement). This allows you to get separate summaries based on values in other fields"
+    },
+    {
+      "name": "Continue if Field Not Found",
+      "description": "By default, if a Field to Summarize isn't in any items, the node throws an error. Use this option to continue and return a single empty item (turned on) instead or keep the default error behavior (turned off)"
+    },
+    {
+      "name": "Disable Dot Notation",
+      "description": "By default, n8n enables dot notation to reference child fields in the format parent.child. Use this option to disable dot notation (turned on) or to continue using dot (turned off)"
+    },
+    {
+      "name": "Output Format",
+      "description": "Select the format for your output format. This option is recommended if you're using Fields to Split By"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "aggregate",
+    "continue",
+    "core",
+    "disable",
+    "dot",
+    "excel",
+    "field",
+    "fields",
+    "format",
+    "found",
+    "items",
+    "manner",
+    "notation",
+    "output",
+    "pivot",
+    "similar",
+    "split",
+    "summarize",
+    "tables",
+    "together"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "0nvcx1EqJQgGVzUXOOMN",
+      "name": "data-section-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.summarize.md",
+      "title": "Summarize",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.summarize",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.summarize.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.summarize.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.summarize.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.summarize.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.summarize",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Summarize"
+  },
+  "subtitle": "",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "fieldsToSummarize",
+        "displayName": "Fields to Summarize",
+        "type": "fixedCollection",
+        "default": {
+          "values": [
+            {
+              "aggregation": "count",
+              "field": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "values",
+            "values": [
+              {
+                "name": "aggregation",
+                "displayName": "Aggregation",
+                "type": "options"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "field",
+                "displayName": "Field",
+                "type": "string"
+              },
+              {
+                "name": "includeEmpty",
+                "displayName": "Include Empty Values",
+                "type": "boolean"
+              },
+              {
+                "name": "separateBy",
+                "displayName": "Separator",
+                "type": "options"
+              },
+              {
+                "name": "customSeparator",
+                "displayName": "Custom Separator",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fieldsToSplitBy",
+        "displayName": "Fields to Split By",
+        "type": "string",
+        "displayOptions": {
+          "hide": {
+            "/options.outputFormat": [
+              "singleItem"
+            ]
+          }
+        },
+        "description": "The name of the input fields that you want to split the summary by"
+      },
+      {
+        "name": "fieldsToSplitBy",
+        "displayName": "Fields to Group By",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "/options.outputFormat": [
+              "singleItem"
+            ]
+          }
+        },
+        "description": "The name of the input fields that you want to split the summary by"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "continueIfFieldNotFound",
+            "description": "Whether to continue if field to summarize can't be found in any items and return single empty item, otherwise an error would be thrown"
+          },
+          {
+            "name": "disableDotNotation",
+            "description": "Whether to disallow referencing child fields using `parent.child` in the field name"
+          },
+          {
+            "name": "outputFormat"
+          },
+          {
+            "name": "skipEmptySplitFields"
+          }
+        ]
+      }
+    ]
+  }
+}

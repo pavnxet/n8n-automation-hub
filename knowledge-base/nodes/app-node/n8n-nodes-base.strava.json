@@ -1,0 +1,822 @@
+{
+  "id": "n8n-nodes-base.strava",
+  "name": "Strava",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.strava",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Strava node to automate work in Strava, and integrate Strava with other applications. n8n has built-in support for a wide range of Strava features, including creating new activities, and getting activity information",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.strava",
+  "credentials": {
+    "name": "Strava",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/strava",
+    "slug": "strava",
+    "json_file": "credentials/strava.json",
+    "markdown_file": "credentials/strava.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Activity",
+      "operation": "Create a new activity",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Get an activity",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Get all activities",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Get all activity comments",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Get all activity kudos",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Get all activity laps",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Get all activity zones",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Activity",
+      "operation": "Update an activity",
+      "description": "",
+      "doc": "",
+      "resource_value": "activity",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 8,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "activities",
+    "activity",
+    "app",
+    "applications",
+    "comments",
+    "create",
+    "creating",
+    "get",
+    "getting",
+    "including",
+    "kudos",
+    "laps",
+    "new",
+    "strava",
+    "update",
+    "work",
+    "zones"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.strava.md",
+      "title": "Strava node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.strava",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.strava.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.strava.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.strava.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.strava.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.strava",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "stravaOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "stravaOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Strava"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 17,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "activity",
+        "options": [
+          {
+            "name": "Activity",
+            "value": "activity"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new activity"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an activity"
+          },
+          {
+            "name": "Get Comments",
+            "value": "getComments",
+            "description": "Get all activity comments"
+          },
+          {
+            "name": "Get Kudos",
+            "value": "getKudos",
+            "description": "Get all activity kudos"
+          },
+          {
+            "name": "Get Laps",
+            "value": "getLaps",
+            "description": "Get all activity laps"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many activities"
+          },
+          {
+            "name": "Get Streams",
+            "value": "getStreams",
+            "description": "Get activity streams"
+          },
+          {
+            "name": "Get Zones",
+            "value": "getZones",
+            "description": "Get all activity zones"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an activity"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The name of the activity"
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ],
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Type of activity. For example - Run, Ride etc."
+      },
+      {
+        "name": "sport_type",
+        "displayName": "Sport Type",
+        "type": "options",
+        "default": "Run",
+        "options": [
+          {
+            "name": "Alpine Ski",
+            "value": "AlpineSki"
+          },
+          {
+            "name": "Backcountry Ski",
+            "value": "BackcountrySki"
+          },
+          {
+            "name": "Badminton",
+            "value": "Badminton"
+          },
+          {
+            "name": "Canoeing",
+            "value": "Canoeing"
+          },
+          {
+            "name": "Crossfit",
+            "value": "Crossfit"
+          },
+          {
+            "name": "EBike Ride",
+            "value": "EBikeRide"
+          },
+          {
+            "name": "Elliptical",
+            "value": "Elliptical"
+          },
+          {
+            "name": "EMountain Bike Ride",
+            "value": "EMountainBikeRide"
+          },
+          {
+            "name": "Golf",
+            "value": "Golf"
+          },
+          {
+            "name": "Gravel Ride",
+            "value": "GravelRide"
+          },
+          {
+            "name": "Handcycle",
+            "value": "Handcycle"
+          },
+          {
+            "name": "HIIT",
+            "value": "HighIntensityIntervalTraining"
+          },
+          {
+            "name": "Hike",
+            "value": "Hike"
+          },
+          {
+            "name": "Ice Skate",
+            "value": "IceSkate"
+          },
+          {
+            "name": "Inline Skate",
+            "value": "InlineSkate"
+          },
+          {
+            "name": "Kayaking",
+            "value": "Kayaking"
+          },
+          {
+            "name": "Kitesurf",
+            "value": "Kitesurf"
+          },
+          {
+            "name": "Mountain Bike Ride",
+            "value": "MountainBikeRide"
+          },
+          {
+            "name": "Nordic Ski",
+            "value": "NordicSki"
+          },
+          {
+            "name": "Pickleball",
+            "value": "Pickleball"
+          },
+          {
+            "name": "Pilates",
+            "value": "Pilates"
+          },
+          {
+            "name": "Racquetball",
+            "value": "Racquetball"
+          },
+          {
+            "name": "Ride",
+            "value": "Ride"
+          },
+          {
+            "name": "Rock Climbing",
+            "value": "RockClimbing"
+          },
+          {
+            "name": "Roller Ski",
+            "value": "RollerSki"
+          },
+          {
+            "name": "Rowing",
+            "value": "Rowing"
+          },
+          {
+            "name": "Run",
+            "value": "Run"
+          },
+          {
+            "name": "Sail",
+            "value": "Sail"
+          },
+          {
+            "name": "Skateboard",
+            "value": "Skateboard"
+          },
+          {
+            "name": "Snowboard",
+            "value": "Snowboard"
+          },
+          {
+            "name": "Snowshoe",
+            "value": "Snowshoe"
+          },
+          {
+            "name": "Soccer",
+            "value": "Soccer"
+          },
+          {
+            "name": "Squash",
+            "value": "Squash"
+          },
+          {
+            "name": "Stair Stepper",
+            "value": "StairStepper"
+          },
+          {
+            "name": "Stand Up Paddling",
+            "value": "StandUpPaddling"
+          },
+          {
+            "name": "Surfing",
+            "value": "Surfing"
+          },
+          {
+            "name": "Swim",
+            "value": "Swim"
+          },
+          {
+            "name": "Table Tennis",
+            "value": "TableTennis"
+          },
+          {
+            "name": "Tennis",
+            "value": "Tennis"
+          },
+          {
+            "name": "Trail Run",
+            "value": "TrailRun"
+          },
+          {
+            "name": "Velomobile",
+            "value": "Velomobile"
+          },
+          {
+            "name": "Virtual Ride",
+            "value": "VirtualRide"
+          },
+          {
+            "name": "Virtual Row",
+            "value": "VirtualRow"
+          },
+          {
+            "name": "Virtual Run",
+            "value": "VirtualRun"
+          },
+          {
+            "name": "Walk",
+            "value": "Walk"
+          },
+          {
+            "name": "Weight Training",
+            "value": "WeightTraining"
+          },
+          {
+            "name": "Wheelchair",
+            "value": "Wheelchair"
+          },
+          {
+            "name": "Windsurf",
+            "value": "Windsurf"
+          },
+          {
+            "name": "Workout",
+            "value": "Workout"
+          },
+          {
+            "name": "Yoga",
+            "value": "Yoga"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Type of sport"
+      },
+      {
+        "name": "startDate",
+        "displayName": "Start Date",
+        "type": "dateTime",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "ISO 8601 formatted date time"
+      },
+      {
+        "name": "elapsedTime",
+        "displayName": "Elapsed Time (Seconds)",
+        "type": "number",
+        "required": true,
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "In seconds"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "commute",
+            "description": "Whether to mark as commute"
+          },
+          {
+            "name": "description",
+            "description": "Description of the activity"
+          },
+          {
+            "name": "distance",
+            "description": "In meters"
+          },
+          {
+            "name": "trainer",
+            "description": "Whether to mark as a trainer activity"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "activityId",
+        "displayName": "Activity ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "ID or email of activity"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "commute",
+            "description": "Whether to mark as commute"
+          },
+          {
+            "name": "description",
+            "description": "Description of the activity"
+          },
+          {
+            "name": "gear_id",
+            "description": "Identifier for the gear associated with the activity. ‘none’ clears gear from activity."
+          },
+          {
+            "name": "hide_from_home",
+            "description": "Do not publish to Home or Club feeds"
+          },
+          {
+            "name": "name",
+            "description": "The name of the activity"
+          },
+          {
+            "name": "type",
+            "description": "Type of activity. For example - Run, Ride etc."
+          },
+          {
+            "name": "sport_type",
+            "description": "Type of sport"
+          },
+          {
+            "name": "trainer",
+            "description": "Whether to mark as a trainer activity"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "activityId",
+        "displayName": "Activity ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID or email of activity"
+      },
+      {
+        "name": "activityId",
+        "displayName": "Activity ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getComments",
+              "getLaps",
+              "getKudos",
+              "getZones",
+              "getStreams"
+            ]
+          }
+        },
+        "description": "ID or email of activity"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getComments",
+              "getLaps",
+              "getKudos",
+              "getZones"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getComments",
+              "getLaps",
+              "getKudos",
+              "getZones"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "keys",
+        "displayName": "Keys",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Altitude",
+            "value": "altitude"
+          },
+          {
+            "name": "Cadence",
+            "value": "cadence"
+          },
+          {
+            "name": "Distance",
+            "value": "distance"
+          },
+          {
+            "name": "Gradient",
+            "value": "grade_smooth"
+          },
+          {
+            "name": "Heartrate",
+            "value": "heartrate"
+          },
+          {
+            "name": "Latitude / Longitude",
+            "value": "latlng"
+          },
+          {
+            "name": "Moving",
+            "value": "moving"
+          },
+          {
+            "name": "Temperature",
+            "value": "temp"
+          },
+          {
+            "name": "Time",
+            "value": "time"
+          },
+          {
+            "name": "Velocity",
+            "value": "velocity_smooth"
+          },
+          {
+            "name": "Watts",
+            "value": "watts"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getStreams"
+            ]
+          }
+        },
+        "description": "Desired stream types to return"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "activity"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1346 @@
+{
+  "id": "n8n-nodes-base.editimage",
+  "name": "Edit Image",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.editimage",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Documentation for the Edit Image node in n8n, a workflow automation platform. Includes guidance on usage, and links to examples.",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.editimage",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Add a Blur to the image to reduce sharpness",
+      "description": "",
+      "doc": "",
+      "operation_value": "blur"
+    },
+    {
+      "resource": "",
+      "operation": "Add a Border to the image",
+      "description": "",
+      "doc": "",
+      "operation_value": "border"
+    },
+    {
+      "resource": "",
+      "operation": "Composite",
+      "description": "an image on top of another image",
+      "doc": "",
+      "operation_value": "composite"
+    },
+    {
+      "resource": "",
+      "operation": "Create",
+      "description": "a new image",
+      "doc": "",
+      "operation_value": "create"
+    },
+    {
+      "resource": "",
+      "operation": "Crop",
+      "description": "the image",
+      "doc": "",
+      "operation_value": "crop"
+    },
+    {
+      "resource": "",
+      "operation": "Draw",
+      "description": "on an image",
+      "doc": "",
+      "operation_value": "draw"
+    },
+    {
+      "resource": "",
+      "operation": "Get Information",
+      "description": "about the image",
+      "doc": "",
+      "operation_value": "information"
+    },
+    {
+      "resource": "",
+      "operation": "Multi Step",
+      "description": "perform multiple operations on the image",
+      "doc": "",
+      "operation_value": "multiStep"
+    },
+    {
+      "resource": "",
+      "operation": "Resize",
+      "description": "Change the size of the image",
+      "doc": "",
+      "operation_value": "resize"
+    },
+    {
+      "resource": "",
+      "operation": "Rotate",
+      "description": "the image",
+      "doc": "",
+      "operation_value": "rotate"
+    },
+    {
+      "resource": "",
+      "operation": "Shear",
+      "description": "image along the X or Y axis",
+      "doc": "",
+      "operation_value": "shear"
+    },
+    {
+      "resource": "",
+      "operation": "Add Text to the image",
+      "description": "",
+      "doc": "",
+      "operation_value": "text"
+    },
+    {
+      "resource": "",
+      "operation": "Make a color in image Transparent",
+      "description": "",
+      "doc": "",
+      "operation_value": "transparent"
+    }
+  ],
+  "operation_count": 13,
+  "parameters": [
+    {
+      "name": "Blur parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data"
+      ]
+    },
+    {
+      "name": "Border parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data",
+        "Border Width: Enter the width of the border",
+        "Border Height: Enter the height of the border"
+      ]
+    },
+    {
+      "name": "Composite parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Add",
+        "Atop",
+        "Bumpmap",
+        "Copy",
+        "Copy Black",
+        "Copy Blue",
+        "Copy Cyan",
+        "Copy Green",
+        "Copy Magenta",
+        "Copy Opacity",
+        "Copy Red",
+        "Copy Yellow",
+        "Difference",
+        "Divide",
+        "In",
+        "Minus",
+        "Multiply",
+        "Out",
+        "Over",
+        "Plus",
+        "Subtract",
+        "Xor",
+        "Position X: Enter the x axis position (horizontal) of the composite image",
+        "Position Y: Enter the y axis position (vertical) of the composite image"
+      ]
+    },
+    {
+      "name": "Create parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data",
+        "Image Width: Enter the width of the image",
+        "Image Height: Enter the height of the image"
+      ]
+    },
+    {
+      "name": "Crop parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data",
+        "Width: Enter the width you'd like to crop to",
+        "Height: Enter the height you'd like to crop to",
+        "Position X: Enter the x axis position (horizontal) to start the crop from",
+        "Position Y: Enter the y axis position (vertical) to start the crop from"
+      ]
+    },
+    {
+      "name": "Draw parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data",
+        "Primitive: Select the primitive shape to draw. Choose from:",
+        "Circle",
+        "Line",
+        "Rectangle",
+        "Start Position X: Enter the x axis position (horizontal) to start drawing from",
+        "Start Position Y: Enter the y axis position (vertical) to start drawing from",
+        "End Position X: Enter the x axis position (horizontal) to stop drawing at",
+        "End Position Y: Enter the y axis position (vertical) to start drawing at"
+      ]
+    },
+    {
+      "name": "Get Information parameters",
+      "description": "For this operation, you only need to add the Property Name of the binary property that stores the image data"
+    },
+    {
+      "name": "Multi Step parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data"
+      ]
+    },
+    {
+      "name": "Resize parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data",
+        "Width: Enter the new width you'd like for the image",
+        "Height: Enter the new height you'd like for the image",
+        "Option: Select how you'd like to resize the image. Choose from:"
+      ]
+    },
+    {
+      "name": "Rotate parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data",
+        "Rotate: Enter the number of degrees to rotate the image, from --360 to 360"
+      ]
+    },
+    {
+      "name": "Shear parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data",
+        "Degrees X: Enter the number of degrees to shear from the x axis",
+        "Degrees Y: Enter the number of degrees to shear from the y axis"
+      ]
+    },
+    {
+      "name": "Text parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data",
+        "Text: Enter the text you'd like to write on the image",
+        "Font Size: Select the font size for the text",
+        "Position X: Enter the x axis position (horizontal) to begin the text at",
+        "Position Y: Enter the y axis position (vertical) to begin the text at"
+      ]
+    },
+    {
+      "name": "Transparent parameters",
+      "description": "Refer to Node options for optional configuration options",
+      "options": [
+        "Property Name: Enter the name of the binary property that stores the image data"
+      ]
+    },
+    {
+      "name": "File Name",
+      "description": "Enter the filename of the output file"
+    },
+    {
+      "name": "Format",
+      "description": "Enter the image format of the output file. Choose from:"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "automation",
+    "blur",
+    "border",
+    "color",
+    "composite",
+    "core",
+    "create",
+    "crop",
+    "draw",
+    "edit",
+    "editimage",
+    "file",
+    "format",
+    "get",
+    "image",
+    "make",
+    "multi",
+    "name",
+    "parameters",
+    "platform",
+    "reduce",
+    "resize",
+    "rotate",
+    "sharpness",
+    "shear",
+    "step",
+    "text",
+    "transparent",
+    "usage"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.editimage.md",
+      "title": "Edit Image",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.editimage",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.editimage.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.editimage.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.editimage.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.editimage.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.editImage",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Edit Image",
+    "color": "#553399"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 41,
+    "parameters": [
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "border",
+        "options": [
+          {
+            "name": "Blur",
+            "value": "blur",
+            "description": "Adds a blur to the image and so makes it less sharp"
+          },
+          {
+            "name": "Border",
+            "value": "border",
+            "description": "Adds a border to the image"
+          },
+          {
+            "name": "Composite",
+            "value": "composite",
+            "description": "Composite image on top of another one"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new image"
+          },
+          {
+            "name": "Crop",
+            "value": "crop",
+            "description": "Crops the image"
+          },
+          {
+            "name": "Draw",
+            "value": "draw",
+            "description": "Draw on image"
+          },
+          {
+            "name": "Get Information",
+            "value": "information",
+            "description": "Returns image information like resolution"
+          },
+          {
+            "name": "Multi Step",
+            "value": "multiStep",
+            "description": "Perform multiple operations"
+          },
+          {
+            "name": "Resize",
+            "value": "resize",
+            "description": "Change the size of image"
+          },
+          {
+            "name": "Rotate",
+            "value": "rotate",
+            "description": "Rotate image"
+          },
+          {
+            "name": "Shear",
+            "value": "shear",
+            "description": "Shear image along the X or Y axis"
+          },
+          {
+            "name": "Text",
+            "value": "text",
+            "description": "Adds text to image"
+          },
+          {
+            "name": "Transparent",
+            "value": "transparent",
+            "description": "Make a color in image transparent"
+          }
+        ]
+      },
+      {
+        "name": "dataPropertyName",
+        "displayName": "Property Name",
+        "type": "string",
+        "default": "data",
+        "description": "Name of the binary property in which the image data can be found"
+      },
+      {
+        "name": "operations",
+        "displayName": "Operations",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "operations",
+            "values": [
+              {
+                "name": "operation",
+                "displayName": "Operation",
+                "type": "options"
+              },
+              {
+                "name": "backgroundColor",
+                "displayName": "Background Color",
+                "type": "color"
+              },
+              {
+                "name": "width",
+                "displayName": "Image Width",
+                "type": "number"
+              },
+              {
+                "name": "height",
+                "displayName": "Image Height",
+                "type": "number"
+              },
+              {
+                "name": "primitive",
+                "displayName": "Primitive",
+                "type": "options"
+              },
+              {
+                "name": "color",
+                "displayName": "Color",
+                "type": "color"
+              },
+              {
+                "name": "startPositionX",
+                "displayName": "Start Position X",
+                "type": "number"
+              },
+              {
+                "name": "startPositionY",
+                "displayName": "Start Position Y",
+                "type": "number"
+              },
+              {
+                "name": "endPositionX",
+                "displayName": "End Position X",
+                "type": "number"
+              },
+              {
+                "name": "endPositionY",
+                "displayName": "End Position Y",
+                "type": "number"
+              },
+              {
+                "name": "cornerRadius",
+                "displayName": "Corner Radius",
+                "type": "number"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "fontSize",
+                "displayName": "Font Size",
+                "type": "number"
+              },
+              {
+                "name": "fontColor",
+                "displayName": "Font Color",
+                "type": "color"
+              },
+              {
+                "name": "positionX",
+                "displayName": "Position X",
+                "type": "number"
+              },
+              {
+                "name": "positionY",
+                "displayName": "Position Y",
+                "type": "number"
+              },
+              {
+                "name": "lineLength",
+                "displayName": "Max Line Length",
+                "type": "number"
+              },
+              {
+                "name": "blur",
+                "displayName": "Blur",
+                "type": "number"
+              },
+              {
+                "name": "sigma",
+                "displayName": "Sigma",
+                "type": "number"
+              },
+              {
+                "name": "borderWidth",
+                "displayName": "Border Width",
+                "type": "number"
+              },
+              {
+                "name": "borderHeight",
+                "displayName": "Border Height",
+                "type": "number"
+              },
+              {
+                "name": "borderColor",
+                "displayName": "Border Color",
+                "type": "color"
+              },
+              {
+                "name": "dataPropertyNameComposite",
+                "displayName": "Composite Image Property",
+                "type": "string"
+              },
+              {
+                "name": "operator",
+                "displayName": "Operator",
+                "type": "options"
+              },
+              {
+                "name": "positionX",
+                "displayName": "Position X",
+                "type": "number"
+              },
+              {
+                "name": "positionY",
+                "displayName": "Position Y",
+                "type": "number"
+              },
+              {
+                "name": "width",
+                "displayName": "Width",
+                "type": "number"
+              },
+              {
+                "name": "height",
+                "displayName": "Height",
+                "type": "number"
+              },
+              {
+                "name": "positionX",
+                "displayName": "Position X",
+                "type": "number"
+              },
+              {
+                "name": "positionY",
+                "displayName": "Position Y",
+                "type": "number"
+              },
+              {
+                "name": "width",
+                "displayName": "Width",
+                "type": "number"
+              },
+              {
+                "name": "height",
+                "displayName": "Height",
+                "type": "number"
+              },
+              {
+                "name": "resizeOption",
+                "displayName": "Option",
+                "type": "options"
+              },
+              {
+                "name": "rotate",
+                "displayName": "Rotate",
+                "type": "number"
+              },
+              {
+                "name": "backgroundColor",
+                "displayName": "Background Color",
+                "type": "color"
+              },
+              {
+                "name": "degreesX",
+                "displayName": "Degrees X",
+                "type": "number"
+              },
+              {
+                "name": "degreesY",
+                "displayName": "Degrees Y",
+                "type": "number"
+              },
+              {
+                "name": "color",
+                "displayName": "Color",
+                "type": "color"
+              },
+              {
+                "name": "font",
+                "displayName": "Font Name or ID",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "multiStep"
+            ]
+          }
+        },
+        "description": "The operations to perform"
+      },
+      {
+        "name": "backgroundColor",
+        "displayName": "Background Color",
+        "type": "color",
+        "default": "#ffffff00",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The background color of the image to create"
+      },
+      {
+        "name": "width",
+        "displayName": "Image Width",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The width of the image to create"
+      },
+      {
+        "name": "height",
+        "displayName": "Image Height",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The height of the image to create"
+      },
+      {
+        "name": "primitive",
+        "displayName": "Primitive",
+        "type": "options",
+        "default": "rectangle",
+        "options": [
+          {
+            "name": "Circle",
+            "value": "circle"
+          },
+          {
+            "name": "Line",
+            "value": "line"
+          },
+          {
+            "name": "Rectangle",
+            "value": "rectangle"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "draw"
+            ]
+          }
+        },
+        "description": "The primitive to draw"
+      },
+      {
+        "name": "color",
+        "displayName": "Color",
+        "type": "color",
+        "default": "#ff000000",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "draw"
+            ]
+          }
+        },
+        "description": "The color of the primitive to draw"
+      },
+      {
+        "name": "startPositionX",
+        "displayName": "Start Position X",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "draw"
+            ],
+            "primitive": [
+              "circle",
+              "line",
+              "rectangle"
+            ]
+          }
+        },
+        "description": "X (horizontal) start position of the primitive"
+      },
+      {
+        "name": "startPositionY",
+        "displayName": "Start Position Y",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "draw"
+            ],
+            "primitive": [
+              "circle",
+              "line",
+              "rectangle"
+            ]
+          }
+        },
+        "description": "Y (horizontal) start position of the primitive"
+      },
+      {
+        "name": "endPositionX",
+        "displayName": "End Position X",
+        "type": "number",
+        "default": 250,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "draw"
+            ],
+            "primitive": [
+              "circle",
+              "line",
+              "rectangle"
+            ]
+          }
+        },
+        "description": "X (horizontal) end position of the primitive"
+      },
+      {
+        "name": "endPositionY",
+        "displayName": "End Position Y",
+        "type": "number",
+        "default": 250,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "draw"
+            ],
+            "primitive": [
+              "circle",
+              "line",
+              "rectangle"
+            ]
+          }
+        },
+        "description": "Y (horizontal) end position of the primitive"
+      },
+      {
+        "name": "cornerRadius",
+        "displayName": "Corner Radius",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "draw"
+            ],
+            "primitive": [
+              "rectangle"
+            ]
+          }
+        },
+        "description": "The radius of the corner to create round corners"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "text"
+            ]
+          }
+        },
+        "description": "Text to write on the image"
+      },
+      {
+        "name": "fontSize",
+        "displayName": "Font Size",
+        "type": "number",
+        "default": 18,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "text"
+            ]
+          }
+        },
+        "description": "Size of the text"
+      },
+      {
+        "name": "fontColor",
+        "displayName": "Font Color",
+        "type": "color",
+        "default": "#000000",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "text"
+            ]
+          }
+        },
+        "description": "Color of the text"
+      },
+      {
+        "name": "positionX",
+        "displayName": "Position X",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "text"
+            ]
+          }
+        },
+        "description": "X (horizontal) position of the text"
+      },
+      {
+        "name": "positionY",
+        "displayName": "Position Y",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "text"
+            ]
+          }
+        },
+        "description": "Y (vertical) position of the text"
+      },
+      {
+        "name": "lineLength",
+        "displayName": "Max Line Length",
+        "type": "number",
+        "default": 80,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "text"
+            ]
+          }
+        },
+        "description": "Max amount of characters in a line before a line-break should get added"
+      },
+      {
+        "name": "blur",
+        "displayName": "Blur",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "blur"
+            ]
+          }
+        },
+        "description": "How strong the blur should be"
+      },
+      {
+        "name": "sigma",
+        "displayName": "Sigma",
+        "type": "number",
+        "default": 2,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "blur"
+            ]
+          }
+        },
+        "description": "The sigma of the blur"
+      },
+      {
+        "name": "borderWidth",
+        "displayName": "Border Width",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "border"
+            ]
+          }
+        },
+        "description": "The width of the border"
+      },
+      {
+        "name": "borderHeight",
+        "displayName": "Border Height",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "border"
+            ]
+          }
+        },
+        "description": "The height of the border"
+      },
+      {
+        "name": "borderColor",
+        "displayName": "Border Color",
+        "type": "color",
+        "default": "#000000",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "border"
+            ]
+          }
+        },
+        "description": "Color of the border"
+      },
+      {
+        "name": "dataPropertyNameComposite",
+        "displayName": "Composite Image Property",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "composite"
+            ]
+          }
+        },
+        "description": "The name of the binary property which contains the data of the image to composite on top of image which is found in Property Name"
+      },
+      {
+        "name": "operator",
+        "displayName": "Operator",
+        "type": "options",
+        "default": "Over",
+        "options": [
+          {
+            "name": "Add",
+            "value": "Add"
+          },
+          {
+            "name": "Atop",
+            "value": "Atop"
+          },
+          {
+            "name": "Bumpmap",
+            "value": "Bumpmap"
+          },
+          {
+            "name": "Copy",
+            "value": "Copy"
+          },
+          {
+            "name": "Copy Black",
+            "value": "CopyBlack"
+          },
+          {
+            "name": "Copy Blue",
+            "value": "CopyBlue"
+          },
+          {
+            "name": "Copy Cyan",
+            "value": "CopyCyan"
+          },
+          {
+            "name": "Copy Green",
+            "value": "CopyGreen"
+          },
+          {
+            "name": "Copy Magenta",
+            "value": "CopyMagenta"
+          },
+          {
+            "name": "Copy Opacity",
+            "value": "CopyOpacity"
+          },
+          {
+            "name": "Copy Red",
+            "value": "CopyRed"
+          },
+          {
+            "name": "Copy Yellow",
+            "value": "CopyYellow"
+          },
+          {
+            "name": "Difference",
+            "value": "Difference"
+          },
+          {
+            "name": "Divide",
+            "value": "Divide"
+          },
+          {
+            "name": "In",
+            "value": "In"
+          },
+          {
+            "name": "Minus",
+            "value": "Minus"
+          },
+          {
+            "name": "Multiply",
+            "value": "Multiply"
+          },
+          {
+            "name": "Out",
+            "value": "Out"
+          },
+          {
+            "name": "Over",
+            "value": "Over"
+          },
+          {
+            "name": "Plus",
+            "value": "Plus"
+          },
+          {
+            "name": "Subtract",
+            "value": "Subtract"
+          },
+          {
+            "name": "Xor",
+            "value": "Xor"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "composite"
+            ]
+          }
+        },
+        "description": "The operator to use to combine the images"
+      },
+      {
+        "name": "positionX",
+        "displayName": "Position X",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "composite"
+            ]
+          }
+        },
+        "description": "X (horizontal) position of composite image"
+      },
+      {
+        "name": "positionY",
+        "displayName": "Position Y",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "composite"
+            ]
+          }
+        },
+        "description": "Y (vertical) position of composite image"
+      },
+      {
+        "name": "width",
+        "displayName": "Width",
+        "type": "number",
+        "default": 500,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "crop"
+            ]
+          }
+        },
+        "description": "Crop width"
+      },
+      {
+        "name": "height",
+        "displayName": "Height",
+        "type": "number",
+        "default": 500,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "crop"
+            ]
+          }
+        },
+        "description": "Crop height"
+      },
+      {
+        "name": "positionX",
+        "displayName": "Position X",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "crop"
+            ]
+          }
+        },
+        "description": "X (horizontal) position to crop from"
+      },
+      {
+        "name": "positionY",
+        "displayName": "Position Y",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "crop"
+            ]
+          }
+        },
+        "description": "Y (vertical) position to crop from"
+      },
+      {
+        "name": "width",
+        "displayName": "Width",
+        "type": "number",
+        "default": 500,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "resize"
+            ]
+          }
+        },
+        "description": "New width of the image"
+      },
+      {
+        "name": "height",
+        "displayName": "Height",
+        "type": "number",
+        "default": 500,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "resize"
+            ]
+          }
+        },
+        "description": "New height of the image"
+      },
+      {
+        "name": "resizeOption",
+        "displayName": "Option",
+        "type": "options",
+        "default": "maximumArea",
+        "options": [
+          {
+            "name": "Ignore Aspect Ratio",
+            "value": "ignoreAspectRatio",
+            "description": "Ignore aspect ratio and resize exactly to specified values"
+          },
+          {
+            "name": "Maximum Area",
+            "value": "maximumArea",
+            "description": "Specified values are maximum area"
+          },
+          {
+            "name": "Minimum Area",
+            "value": "minimumArea",
+            "description": "Specified values are minimum area"
+          },
+          {
+            "name": "Only if Larger",
+            "value": "onlyIfLarger",
+            "description": "Resize only if image is larger than width or height"
+          },
+          {
+            "name": "Only if Smaller",
+            "value": "onlyIfSmaller",
+            "description": "Resize only if image is smaller than width or height"
+          },
+          {
+            "name": "Percent",
+            "value": "percent",
+            "description": "Width and height are specified in percents"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "resize"
+            ]
+          }
+        },
+        "description": "How to resize the image"
+      },
+      {
+        "name": "rotate",
+        "displayName": "Rotate",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "rotate"
+            ]
+          }
+        },
+        "description": "How much the image should be rotated"
+      },
+      {
+        "name": "backgroundColor",
+        "displayName": "Background Color",
+        "type": "color",
+        "default": "#ffffffff",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "rotate"
+            ]
+          }
+        },
+        "description": "The color to use for the background when image gets rotated by anything which is not a multiple of 90"
+      },
+      {
+        "name": "degreesX",
+        "displayName": "Degrees X",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "shear"
+            ]
+          }
+        },
+        "description": "X (horizontal) shear degrees"
+      },
+      {
+        "name": "degreesY",
+        "displayName": "Degrees Y",
+        "type": "number",
+        "default": 0,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "shear"
+            ]
+          }
+        },
+        "description": "Y (vertical) shear degrees"
+      },
+      {
+        "name": "color",
+        "displayName": "Color",
+        "type": "color",
+        "default": "#ff0000",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "transparent"
+            ]
+          }
+        },
+        "description": "The color to make transparent"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "destinationKey",
+            "description": "The name of the output field that will contain the file data"
+          },
+          {
+            "name": "fileName",
+            "description": "File name to set in binary data"
+          },
+          {
+            "name": "font",
+            "description": "The font to use. Defaults to Arial. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "format",
+            "description": "Set the output image format"
+          },
+          {
+            "name": "quality",
+            "description": "Sets the jpeg|png|tiff compression level from 0 to 100 (best)"
+          }
+        ],
+        "displayOptions": {
+          "hide": {
+            "operation": [
+              "information"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

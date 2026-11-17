@@ -1,0 +1,163 @@
+{
+  "id": "n8n-nodes-base.mailerlitetrigger",
+  "name": "MailerLite Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.mailerlitetrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "MailerLite is an email marketing solution that provides you with a user-friendly content editor, simplified subscriber management, and campaign reports with the most important statistics",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mailerlitetrigger",
+  "credentials": {
+    "name": "MailerLite credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/mailerlite",
+    "slug": "mailerlite",
+    "json_file": "credentials/mailerlite.json",
+    "markdown_file": "credentials/mailerlite.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "campaign",
+    "content",
+    "credentials",
+    "editor",
+    "email",
+    "friendly",
+    "important",
+    "mailerlite",
+    "mailerlitetrigger",
+    "management",
+    "marketing",
+    "most",
+    "provides",
+    "reports",
+    "simplified",
+    "solution",
+    "statistics",
+    "subscriber",
+    "trigger",
+    "user"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.mailerlitetrigger.md",
+      "title": "MailerLite Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mailerlitetrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.mailerlitetrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.mailerlitetrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.mailerlitetrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.mailerlitetrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.mailerLiteTrigger",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mailerLiteApi"
+  ],
+  "credential_details": [
+    {
+      "name": "mailerLiteApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "MailerLite Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 1,
+    "parameters": [
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Campaign Sent",
+            "value": "campaign.sent",
+            "description": "Fired when campaign is sent"
+          },
+          {
+            "name": "Subscriber Added to Group",
+            "value": "subscriber.added_to_group",
+            "description": "Fired when a subscriber is added to a group"
+          },
+          {
+            "name": "Subscriber Automation Completed",
+            "value": "subscriber.automation_completed",
+            "description": "Fired when subscriber finishes automation"
+          },
+          {
+            "name": "Subscriber Automation Triggered",
+            "value": "subscriber.automation_triggered",
+            "description": "Fired when subscriber starts automation"
+          },
+          {
+            "name": "Subscriber Bounced",
+            "value": "subscriber.bounced",
+            "description": "Fired when an email address bounces"
+          },
+          {
+            "name": "Subscriber Created",
+            "value": "subscriber.created",
+            "description": "Fired when a new subscriber is added to an account"
+          },
+          {
+            "name": "Subscriber Removed From Group",
+            "value": "subscriber.removed_from_group",
+            "description": "Fired when a subscriber is removed from a group"
+          },
+          {
+            "name": "Subscriber Spam Reported",
+            "value": "subscriber.spam_reported",
+            "description": "Fired when subscriber marks a campaign as a spam"
+          },
+          {
+            "name": "Subscriber Unsubscribe",
+            "value": "subscriber.unsubscribed",
+            "description": "Fired when a subscriber becomes unsubscribed"
+          },
+          {
+            "name": "Subscriber Updated",
+            "value": "subscriber.updated",
+            "description": "Fired when any of the subscriber's custom fields are updated"
+          }
+        ],
+        "description": "The events to listen to"
+      }
+    ]
+  }
+}

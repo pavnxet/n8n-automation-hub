@@ -1,0 +1,446 @@
+{
+  "id": "n8n-nodes-base.egoi",
+  "name": "E-goi",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.egoi",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the E-goi node to automate work in E-goi, and integrate E-goi with other applications. n8n has built-in support for a wide range of E-goi features, including creating, updating, deleting, and getting contacts",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.egoi",
+  "credentials": {
+    "name": "E-goi",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/egoi",
+    "slug": "egoi",
+    "json_file": "credentials/egoi.json",
+    "markdown_file": "credentials/egoi.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Create a member",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "create"
+    },
+    {
+      "resource": "",
+      "operation": "Get a member",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "",
+      "operation": "Get all members",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "get"
+    },
+    {
+      "resource": "",
+      "operation": "Update a member",
+      "description": "",
+      "doc": "",
+      "resource_value": "contact",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "contacts",
+    "create",
+    "creating",
+    "deleting",
+    "egoi",
+    "get",
+    "getting",
+    "goi",
+    "including",
+    "member",
+    "members",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.egoi.md",
+      "title": "E-goi node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.egoi",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.egoi.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.egoi.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.egoi.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.egoi.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.egoi",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "egoiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "egoiApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "E-goi"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 14,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "default": "contact",
+        "options": [
+          {
+            "name": "Contact",
+            "value": "contact"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "required": true,
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a member"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a member"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many members"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a member"
+          }
+        ]
+      },
+      {
+        "name": "list",
+        "displayName": "List Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll",
+              "create",
+              "update",
+              "get"
+            ]
+          }
+        },
+        "description": "ID of list to operate on. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Email address for a subscriber"
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Contact ID of the subscriber"
+      },
+      {
+        "name": "resolveData",
+        "displayName": "Resolve Data",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        },
+        "description": "By default the response just includes the contact ID. If this option gets activated, it will resolve the data automatically."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "birth_date",
+            "description": "Birth date of a subscriber"
+          },
+          {
+            "name": "cellphone",
+            "description": "Cellphone of a subscriber"
+          },
+          {
+            "name": "extraFieldsUi"
+          },
+          {
+            "name": "first_name",
+            "description": "Name of a subscriber"
+          },
+          {
+            "name": "last_name",
+            "description": "Name of a subscriber"
+          },
+          {
+            "name": "status",
+            "description": "Subscriber's current status"
+          },
+          {
+            "name": "tagIds",
+            "description": "List of tag IDs to be added. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "birth_date",
+            "description": "Birth date of subscriber"
+          },
+          {
+            "name": "cellphone",
+            "description": "Cellphone of subscriber"
+          },
+          {
+            "name": "email",
+            "description": "Email address for subscriber"
+          },
+          {
+            "name": "extraFieldsUi"
+          },
+          {
+            "name": "first_name",
+            "description": "Name of subscriber"
+          },
+          {
+            "name": "last_name",
+            "description": "Name of subscriber"
+          },
+          {
+            "name": "status",
+            "description": "Subscriber's current status"
+          },
+          {
+            "name": "tagIds",
+            "description": "List of tag IDs to be added. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "by",
+        "displayName": "By",
+        "type": "options",
+        "default": "id",
+        "options": [
+          {
+            "name": "Contact ID",
+            "value": "id"
+          },
+          {
+            "name": "Email",
+            "value": "email"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "Search by"
+      },
+      {
+        "name": "contactId",
+        "displayName": "Contact ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "get"
+            ],
+            "by": [
+              "id"
+            ]
+          }
+        },
+        "description": "Contact ID of the subscriber"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "contact"
+            ],
+            "operation": [
+              "get"
+            ],
+            "by": [
+              "email"
+            ]
+          }
+        },
+        "description": "Email address for subscriber"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "contact"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get",
+              "getAll"
+            ],
+            "resource": [
+              "contact"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      }
+    ]
+  }
+}

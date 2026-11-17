@@ -1,0 +1,626 @@
+{
+  "id": "n8n-nodes-langchain.agent",
+  "name": "AI Agent",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.agent",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The AI Agent node lets you build an AI agent in n8n. Connect a chat model and one or more tools, and the agent decides which tools to call to complete a task",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Prompt"
+    },
+    {
+      "name": "Require Specific Output Format"
+    },
+    {
+      "name": "Human Message",
+      "description": "Tell the agent about the tools it can use and add context to the user's input"
+    },
+    {
+      "name": "System Message"
+    },
+    {
+      "name": "Max Iterations"
+    },
+    {
+      "name": "Return Intermediate Steps"
+    },
+    {
+      "name": "Tracing Metadata"
+    },
+    {
+      "name": "Human Message Template",
+      "description": "Enter a message that n8n will send to the agent during each step execution",
+      "options": [
+        "{current_step}: Contains information about the current step",
+        "{agent_scratchpad}: Information to remember for the next iteration"
+      ]
+    },
+    {
+      "name": "Prefix Message",
+      "description": "Enter text to prefix the tools list at the start of the conversation. You don't need to add the list of tools. LangChain automatically adds the tools list"
+    },
+    {
+      "name": "Suffix Message for Chat Model",
+      "description": "Add text to append after the tools list at the start of the conversation when the agent uses a chat model. You don't need to add the list of tools. LangChain automatically adds the tools list"
+    },
+    {
+      "name": "Suffix Message for Regular Model",
+      "description": "Add text to append after the tools list at the start of the conversation when the agent uses a regular/instruct model. You don't need to add the list of tools. LangChain automatically adds the tools list"
+    },
+    {
+      "name": "Data Source",
+      "description": "Choose the database to use as a data source for the node. Options include:",
+      "options": [
+        "MySQL: Select this option to use a MySQL database",
+        "Also select the Credential for MySQL",
+        "SQLite: Select this option to use a SQLite database",
+        "Postgres: Select this option to use a Postgres database",
+        "Also select the Credential for Postgres"
+      ]
+    },
+    {
+      "name": "Ignored Tables",
+      "description": "If you'd like the node to ignore any tables from the database, enter a comma-separated list of tables you'd like it to ignore"
+    },
+    {
+      "name": "Include Sample Rows",
+      "description": "Enter the number of sample rows to include in the prompt to the agent. Default is 3"
+    },
+    {
+      "name": "Included Tables",
+      "description": "If you'd only like to include specific tables from the database, enter a comma-separated list of tables to include"
+    },
+    {
+      "name": "Prefix Prompt",
+      "description": "Enter a message you'd like to send to the agent before the Prompt text. This initial message can provide more context and guidance to the agent about what it can and can't do, and how to format the response"
+    },
+    {
+      "name": "Suffix Prompt",
+      "description": "Enter a message you'd like to send to the agent after the Prompt text",
+      "options": [
+        "{input}: Contains the user prompt",
+        "{agent_scratchpad}: Information to remember for the next iteration"
+      ]
+    },
+    {
+      "name": "Limit",
+      "description": "Enter the maximum number of results to return"
+    },
+    {
+      "name": "Automatically Passthrough Binary Images"
+    },
+    {
+      "name": "Enable Streaming",
+      "description": "When enabled, the AI Agent sends data back to the user in real-time as it generates the answer. This is useful for long-running generations. This is enabled by default"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Node options",
+      "page": "react-agent.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/react-agent#node-options",
+      "summary": "Use the options to create a message to send to the agent at the start of the conversation. The message type depends on the model you're using:",
+      "parameters": [
+        {
+          "name": "Chat models",
+          "description": "These models have the concept of three components interacting (AI, system, and human). They can receive system messages and human messages (prompts)"
+        },
+        {
+          "name": "Instruct models",
+          "description": "These models don't have the concept of separate AI, system, and human components. They receive one body of text, the instruct message"
+        }
+      ]
+    },
+    {
+      "operation": "Node parameters",
+      "page": "sql-agent.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/sql-agent#node-parameters",
+      "summary": "Configure the SQL Agent using the following parameters",
+      "options": [
+        {
+          "name": "MySQL",
+          "description": "Select this option to use a MySQL database"
+        },
+        {
+          "name": "SQLite",
+          "description": "Select this option to use a SQLite database"
+        },
+        {
+          "name": "Postgres",
+          "description": "Select this option to use a Postgres database"
+        }
+      ]
+    }
+  ],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Internal error: 400 Invalid value for 'content'",
+      "summary": "A full error message might look like this:"
+    },
+    {
+      "title": "Error in sub-node Simple Memory",
+      "summary": "This error displays when n8n runs into an issue with the Simple Memory sub-node"
+    },
+    {
+      "title": "A Chat Model sub-node must be connected error",
+      "summary": "This error displays when n8n tries to execute the node without having a Chat Model connected"
+    },
+    {
+      "title": "No prompt specified error",
+      "summary": "This error occurs when the agent expects to get the prompt from the previous node automatically. Typically, this happens when you're using the Chat Trigger Node"
+    }
+  ],
+  "keywords": [
+    "agent",
+    "ai",
+    "automatically",
+    "binary",
+    "build",
+    "call",
+    "chat",
+    "cluster",
+    "complete",
+    "connect",
+    "data",
+    "decides",
+    "enable",
+    "format",
+    "human",
+    "ignored",
+    "images",
+    "include",
+    "included",
+    "intermediate",
+    "iterations",
+    "lets",
+    "limit",
+    "max",
+    "message",
+    "metadata",
+    "model",
+    "output",
+    "passthrough",
+    "prefix",
+    "prompt",
+    "regular",
+    "require",
+    "return",
+    "root",
+    "rows",
+    "sample",
+    "source",
+    "specific",
+    "steps",
+    "streaming",
+    "suffix",
+    "system",
+    "tables",
+    "task",
+    "template",
+    "tools",
+    "tracing"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    },
+    {
+      "id": "cHtfs3gewkhPbGP31rjc",
+      "name": "use-with-chat-trigger"
+    },
+    {
+      "id": "Ss9Y6clfLTwlXMx69w6E",
+      "name": "prompt"
+    },
+    {
+      "id": "IsHMhvgDA3Ok5qdqnHnJ",
+      "name": "output-format"
+    },
+    {
+      "id": "Ci5NMdJiVoyT9dtdTE9w",
+      "name": "system-message"
+    },
+    {
+      "id": "8UflrA3Nx8LD5bKQn8Xc",
+      "name": "max-iterations"
+    },
+    {
+      "id": "skA96E8hAnMMKG7c4Lta",
+      "name": "return-intermediate-steps"
+    },
+    {
+      "id": "GAsqtB1RVGEDrT5PMMLl",
+      "name": "tracing-metadata"
+    },
+    {
+      "id": "cHtfs3gewkhPbGP31rjc",
+      "name": "use-with-chat-trigger"
+    },
+    {
+      "id": "Ss9Y6clfLTwlXMx69w6E",
+      "name": "prompt"
+    },
+    {
+      "id": "IsHMhvgDA3Ok5qdqnHnJ",
+      "name": "output-format"
+    },
+    {
+      "id": "Ci5NMdJiVoyT9dtdTE9w",
+      "name": "system-message"
+    },
+    {
+      "id": "8UflrA3Nx8LD5bKQn8Xc",
+      "name": "max-iterations"
+    },
+    {
+      "id": "skA96E8hAnMMKG7c4Lta",
+      "name": "return-intermediate-steps"
+    },
+    {
+      "id": "GAsqtB1RVGEDrT5PMMLl",
+      "name": "tracing-metadata"
+    },
+    {
+      "id": "Ss9Y6clfLTwlXMx69w6E",
+      "name": "prompt"
+    },
+    {
+      "id": "IsHMhvgDA3Ok5qdqnHnJ",
+      "name": "output-format"
+    },
+    {
+      "id": "GAsqtB1RVGEDrT5PMMLl",
+      "name": "tracing-metadata"
+    },
+    {
+      "id": "Ss9Y6clfLTwlXMx69w6E",
+      "name": "prompt"
+    },
+    {
+      "id": "IsHMhvgDA3Ok5qdqnHnJ",
+      "name": "output-format"
+    },
+    {
+      "id": "skA96E8hAnMMKG7c4Lta",
+      "name": "return-intermediate-steps"
+    },
+    {
+      "id": "GAsqtB1RVGEDrT5PMMLl",
+      "name": "tracing-metadata"
+    },
+    {
+      "id": "Ss9Y6clfLTwlXMx69w6E",
+      "name": "prompt"
+    },
+    {
+      "id": "GAsqtB1RVGEDrT5PMMLl",
+      "name": "tracing-metadata"
+    },
+    {
+      "id": "cHtfs3gewkhPbGP31rjc",
+      "name": "use-with-chat-trigger"
+    },
+    {
+      "id": "Ss9Y6clfLTwlXMx69w6E",
+      "name": "prompt"
+    },
+    {
+      "id": "IsHMhvgDA3Ok5qdqnHnJ",
+      "name": "output-format"
+    },
+    {
+      "id": "Ci5NMdJiVoyT9dtdTE9w",
+      "name": "system-message"
+    },
+    {
+      "id": "8UflrA3Nx8LD5bKQn8Xc",
+      "name": "max-iterations"
+    },
+    {
+      "id": "skA96E8hAnMMKG7c4Lta",
+      "name": "return-intermediate-steps"
+    },
+    {
+      "id": "GAsqtB1RVGEDrT5PMMLl",
+      "name": "tracing-metadata"
+    },
+    {
+      "id": "2rKQZnqDH1pc3xlyYYdX",
+      "name": "binary-images"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "AI Agent node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "AI Agent node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/common-issues",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/common-issues.md"
+    },
+    {
+      "page": "conversational-agent.md",
+      "title": "Conversational AI Agent node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/conversational-agent",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/conversational-agent.md"
+    },
+    {
+      "page": "openai-functions-agent.md",
+      "title": "OpenAI Functions Agent node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/openai-functions-agent",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/openai-functions-agent.md"
+    },
+    {
+      "page": "plan-execute-agent.md",
+      "title": "Plan and Execute AI Agent node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/plan-execute-agent",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/plan-execute-agent.md"
+    },
+    {
+      "page": "react-agent.md",
+      "title": "ReAct AI Agent node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/react-agent",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/react-agent.md"
+    },
+    {
+      "page": "sql-agent.md",
+      "title": "SQL AI Agent node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/sql-agent",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/sql-agent.md"
+    },
+    {
+      "page": "tools-agent.md",
+      "title": "Tools AI Agent node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/tools-agent",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/tools-agent.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.agent.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.agent.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.agent",
+  "type_version": 3.1,
+  "type_versions": [
+    3,
+    3.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "AI Agent",
+    "color": "#404040"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": "={{\n\t\t\t\t((hasOutputParser, needsFallback) => {\n\t\t\t\t\tfunction getInputs(hasMainInput, hasOutputParser, needsFallback) {\n    const getInputData = (inputs) => {\n        return inputs.map(({ type, filter, displayName, required }) => {\n            const input = {\n                type,\n                displayName,\n                required,\n                maxConnections: ['ai_languageModel', 'ai_memory', 'ai_outputParser'].includes(type)\n                    ? 1\n                    : undefined,\n            };\n            if (filter) {\n                input.filter = filter;\n            }\n            return input;\n        });\n    };\n    let specialInputs = [\n        {\n            type: 'ai_languageModel',\n            displayName: 'Chat Model',\n            required: true,\n            filter: {\n                excludedNodes: [\n                    '@n8n/n8n-nodes-langchain.lmCohere',\n                    '@n8n/n8n-nodes-langchain.lmOllama',\n                    'n8n/n8n-nodes-langchain.lmOpenAi',\n                    '@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference',\n                ],\n            },\n        },\n        {\n            type: 'ai_languageModel',\n            displayName: 'Fallback Model',\n            required: true,\n            filter: {\n                excludedNodes: [\n                    '@n8n/n8n-nodes-langchain.lmCohere',\n                    '@n8n/n8n-nodes-langchain.lmOllama',\n                    'n8n/n8n-nodes-langchain.lmOpenAi',\n                    '@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference',\n                ],\n            },\n        },\n        {\n            displayName: 'Memory',\n            type: 'ai_memory',\n        },\n        {\n            displayName: 'Tool',\n            type: 'ai_tool',\n        },\n        {\n            displayName: 'Output Parser',\n            type: 'ai_outputParser',\n        },\n    ];\n    if (hasOutputParser === false) {\n        specialInputs = specialInputs.filter((input) => input.type !== 'ai_outputParser');\n    }\n    if (needsFallback === false) {\n        specialInputs = specialInputs.filter((input) => input.displayName !== 'Fallback Model');\n    }\n    const mainInputs = hasMainInput ? ['main'] : [];\n    return [...mainInputs, ...getInputData(specialInputs)];\n};\n\t\t\t\t\treturn getInputs(true, hasOutputParser, needsFallback);\n\t\t\t\t})($parameter.hasOutputParser === undefined || $parameter.hasOutputParser === true, $parameter.needsFallback !== undefined && $parameter.needsFallback === true)\n\t\t\t}}",
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 10,
+    "parameters": [
+      {
+        "name": "promptType",
+        "displayName": "Source for Prompt (User Message)",
+        "type": "options",
+        "default": "auto",
+        "options": [
+          {
+            "name": "Connected Chat Trigger Node",
+            "value": "auto",
+            "description": "Looks for an input field called 'chatInput' that is coming from a directly connected Chat Trigger"
+          },
+          {
+            "name": "Connected Guardrails Node",
+            "value": "guardrails",
+            "description": "Looks for an input field called 'guardrailsInput' that is coming from a directly connected Guardrails Node"
+          },
+          {
+            "name": "Define below",
+            "value": "define",
+            "description": "Use an expression to reference data in previous nodes or enter static text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "lt": 3.1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "promptType",
+        "displayName": "Source for Prompt (User Message)",
+        "type": "options",
+        "default": "auto",
+        "options": [
+          {
+            "name": "Connected Chat Trigger Node",
+            "value": "auto",
+            "description": "Looks for an input field called 'chatInput' that is coming from a directly connected Chat Trigger"
+          },
+          {
+            "name": "Define below",
+            "value": "define",
+            "description": "Use an expression to reference data in previous nodes or enter static text"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 3.1
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Prompt (User Message)",
+        "type": "string",
+        "required": true,
+        "default": "={{ $json.guardrailsInput }}",
+        "displayOptions": {
+          "show": {
+            "promptType": [
+              "guardrails"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Prompt (User Message)",
+        "type": "string",
+        "required": true,
+        "default": "={{ $json.chatInput }}",
+        "displayOptions": {
+          "show": {
+            "promptType": [
+              "auto"
+            ]
+          }
+        }
+      },
+      {
+        "name": "text",
+        "displayName": "Prompt (User Message)",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "promptType": [
+              "define"
+            ]
+          }
+        }
+      },
+      {
+        "name": "hasOutputParser",
+        "displayName": "Require Specific Output Format",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "notice",
+        "displayName": "Connect an <a data-action='openSelectiveNodeCreator' data-action-parameter-connectiontype='ai_outputParser'>output parser</a> on the canvas to specify the output format you require",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "hasOutputParser": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "needsFallback",
+        "displayName": "Enable Fallback Model",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "fallbackNotice",
+        "displayName": "Connect an additional language model on the canvas to use it as a fallback if the main model fails",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "needsFallback": [
+              true
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "systemMessage",
+            "description": "The message that will be sent to the agent before the conversation starts"
+          },
+          {
+            "name": "maxIterations",
+            "description": "The maximum number of iterations the agent will run before stopping"
+          },
+          {
+            "name": "returnIntermediateSteps",
+            "description": "Whether or not the output should include intermediate steps the agent took"
+          },
+          {
+            "name": "passthroughBinaryImages",
+            "description": "Whether or not binary images should be automatically passed through to the agent as image type messages"
+          },
+          {
+            "name": "passthroughBinaryPdfs",
+            "description": "Whether or not binary PDF documents should be automatically passed through to the agent. Useful for models that natively support PDF input (e.g. Google Gemini)."
+          },
+          {
+            "name": "tracingMetadata",
+            "description": "Custom metadata added to tracing events"
+          },
+          {
+            "name": "autoSaveHighlightedData",
+            "description": "Whether to automatically save <a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executiondata/\" target=\"_blank\">highlighted data</a>. "
+          },
+          {
+            "name": "enableStreaming",
+            "description": "Whether this agent will stream the response in real-time as it generates text"
+          },
+          {
+            "name": "batching",
+            "description": "Batch processing options for rate limiting"
+          },
+          {
+            "name": "maxTokensFromMemory",
+            "description": "The maximum number of tokens to read from the chat memory history. Set to 0 to read all history."
+          },
+          {
+            "name": "forceToolCallOnFirstIteration",
+            "description": "Whether the model must call at least one tool on its first response of each run. Later responses are unrestricted so the agent can answer. Useful for smaller mo"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,2650 @@
+{
+  "id": "n8n-nodes-base.notion",
+  "name": "Notion",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.notion",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Notion node to automate work in Notion, and integrate Notion with other applications. n8n has built-in support for a wide range of Notion features, including getting and searching databases, creating pages, and getting users",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.notion",
+  "credentials": {
+    "name": "Notion",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/notion",
+    "slug": "notion",
+    "json_file": "credentials/notion.json",
+    "markdown_file": "credentials/notion.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Block",
+      "operation": "Append After",
+      "description": "",
+      "doc": "",
+      "resource_value": "block",
+      "operation_value": "append"
+    },
+    {
+      "resource": "Block",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "block"
+    },
+    {
+      "resource": "Block",
+      "operation": "Get Markdown",
+      "description": "",
+      "doc": "",
+      "resource_value": "block"
+    },
+    {
+      "resource": "Data Source",
+      "operation": "Get",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Data Source",
+      "operation": "Search",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Database",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "database",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Database Page",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "databasePage",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Database Page",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "databasePage",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Database Page",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "databasePage",
+      "operation_value": "getAll"
+    },
+    {
+      "resource": "Database Page",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "databasePage",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Page",
+      "operation": "Archive",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "archive"
+    },
+    {
+      "resource": "Page",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Page",
+      "operation": "Get Markdown",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Page",
+      "operation": "Search",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Page",
+      "operation": "Update Markdown",
+      "description": "",
+      "doc": "",
+      "resource_value": "page"
+    },
+    {
+      "resource": "User",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Get Many",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "getAll"
+    }
+  ],
+  "operation_count": 17,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Relation property not displaying",
+      "summary": "The Notion node only supports displaying the data relation property for two-way relations. When you connect two Notion databases with a two-way relationship, you can select or filter by the relation property when working with the Notion node's Database Page resource"
+    },
+    {
+      "title": "Create toggle heading",
+      "summary": "The Notion node allows you to create headings and toggles when adding blocks to Page, Database Page, or Block resources. Creating toggleable headings isn't yet supported by the Notion node itself"
+    },
+    {
+      "title": "Handle null and empty values",
+      "summary": "You may receive a validation error when working with the Notion node if you submit fields with empty or null values. This can occur any time you populate fields from previous nodes when that data is missing"
+    }
+  ],
+  "keywords": [
+    "after",
+    "app",
+    "append",
+    "applications",
+    "archive",
+    "block",
+    "create",
+    "creating",
+    "data",
+    "database",
+    "databases",
+    "get",
+    "getting",
+    "including",
+    "many",
+    "markdown",
+    "notion",
+    "pages",
+    "search",
+    "searching",
+    "source",
+    "update",
+    "user",
+    "users",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Notion node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.notion",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.notion/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Notion node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.notion/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.notion/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.notion.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.notion.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.notion/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.notion",
+  "type_version": 2.2,
+  "type_versions": [
+    2,
+    2.1,
+    2.2
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "notionApi"
+  ],
+  "credential_details": [
+    {
+      "name": "notionApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Notion"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 68,
+    "parameters": [
+      {
+        "name": "notionNotice",
+        "displayName": "In Notion, make sure to <a href=\"https://www.notion.so/help/add-and-manage-connections-with-the-api\" target=\"_blank\">add your connection</a> to the pages you want to access.",
+        "type": "notice"
+      },
+      {
+        "name": "Credentials",
+        "type": "credentials"
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "page",
+        "options": [
+          {
+            "name": "Block",
+            "value": "block"
+          },
+          {
+            "name": "Database",
+            "value": "database"
+          },
+          {
+            "name": "Database Page",
+            "value": "databasePage"
+          },
+          {
+            "name": "Page",
+            "value": "page"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "append",
+        "options": [
+          {
+            "name": "Append After",
+            "value": "append",
+            "description": "Append a block"
+          },
+          {
+            "name": "Get Child Blocks",
+            "value": "getAll",
+            "description": "Get many child blocks"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ]
+          }
+        }
+      },
+      {
+        "name": "blockId",
+        "displayName": "Block",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ],
+            "operation": [
+              "append"
+            ]
+          },
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The Notion Block to append blocks to"
+      },
+      {
+        "name": "blockId",
+        "displayName": "Block",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ],
+            "operation": [
+              "append"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The Notion Block to get all children from, when using 'By URL' mode make sure to use the URL of the block itself, you can find it in block parameters in Notion under 'Copy link to block'"
+      },
+      {
+        "name": "blockUi",
+        "displayName": "Blocks",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "blockValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "checked",
+                "displayName": "Checked",
+                "type": "boolean"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "url",
+                "displayName": "Image URL",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ],
+            "operation": [
+              "append"
+            ]
+          }
+        }
+      },
+      {
+        "name": "blockId",
+        "displayName": "Block",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The Notion Block to get all children from"
+      },
+      {
+        "name": "blockId",
+        "displayName": "Block",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 2.2
+                }
+              }
+            ]
+          }
+        },
+        "description": "The Notion Block to get all children from, when using 'By URL' mode make sure to use the URL of the block itself, you can find it in block parameters in Notion under 'Copy link to block'"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "fetchNestedBlocks",
+        "displayName": "Also Fetch Nested Blocks",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "simplifyOutput",
+        "displayName": "Simplify Output",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "block"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1,
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a database"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many databases"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Search databases using text search"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a database"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many databases"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "resource": [
+              "database"
+            ]
+          }
+        }
+      },
+      {
+        "name": "databaseId",
+        "displayName": "Database",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The Notion Database to get"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "getAll",
+              "get"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "text",
+        "displayName": "Search Text",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "The text to search for"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "search"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "sort"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "database"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a page in a database"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a page in a database"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many pages in a database"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update pages in a database"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a pages in a database"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many pages in a database"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update pages in a database"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "resource": [
+              "databasePage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "databaseId",
+        "displayName": "Database",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The Notion Database to operate on"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "create"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Page title. Appears at the top of the page and can be found via Quick Find."
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "propertiesUi",
+        "displayName": "Properties",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "propertyValues",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "hidden"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "phoneValue",
+                "displayName": "Phone Number",
+                "type": "string"
+              },
+              {
+                "name": "multiSelectValue",
+                "displayName": "Option Names or IDs",
+                "type": "multiOptions"
+              },
+              {
+                "name": "selectValue",
+                "displayName": "Option Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "statusValue",
+                "displayName": "Status Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "emailValue",
+                "displayName": "Email",
+                "type": "string"
+              },
+              {
+                "name": "ignoreIfEmpty",
+                "displayName": "Ignore If Empty",
+                "type": "boolean"
+              },
+              {
+                "name": "urlValue",
+                "displayName": "URL",
+                "type": "string"
+              },
+              {
+                "name": "peopleValue",
+                "displayName": "User Names or IDs",
+                "type": "multiOptions"
+              },
+              {
+                "name": "relationValue",
+                "displayName": "Relation IDs",
+                "type": "string"
+              },
+              {
+                "name": "checkboxValue",
+                "displayName": "Checked",
+                "type": "boolean"
+              },
+              {
+                "name": "numberValue",
+                "displayName": "Number",
+                "type": "number"
+              },
+              {
+                "name": "range",
+                "displayName": "Range",
+                "type": "boolean"
+              },
+              {
+                "name": "includeTime",
+                "displayName": "Include Time",
+                "type": "boolean"
+              },
+              {
+                "name": "date",
+                "displayName": "Date",
+                "type": "dateTime"
+              },
+              {
+                "name": "dateStart",
+                "displayName": "Date Start",
+                "type": "dateTime"
+              },
+              {
+                "name": "dateEnd",
+                "displayName": "Date End",
+                "type": "dateTime"
+              },
+              {
+                "name": "timezone",
+                "displayName": "Timezone Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "fileUrls",
+                "displayName": "File URLs",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "blockUi",
+        "displayName": "Blocks",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "blockValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "checked",
+                "displayName": "Checked",
+                "type": "boolean"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "url",
+                "displayName": "Image URL",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "iconType",
+            "description": "The icon type for the database page, Either a URL or an Emoji"
+          },
+          {
+            "name": "icon",
+            "description": "Emoji or File URL to use as the icon"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "pageId",
+        "displayName": "Database Page",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The Notion Database Page to update"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "propertiesUi",
+        "displayName": "Properties",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "propertyValues",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "hidden"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "phoneValue",
+                "displayName": "Phone Number",
+                "type": "string"
+              },
+              {
+                "name": "multiSelectValue",
+                "displayName": "Option Names or IDs",
+                "type": "multiOptions"
+              },
+              {
+                "name": "selectValue",
+                "displayName": "Option Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "statusValue",
+                "displayName": "Status Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "emailValue",
+                "displayName": "Email",
+                "type": "string"
+              },
+              {
+                "name": "ignoreIfEmpty",
+                "displayName": "Ignore If Empty",
+                "type": "boolean"
+              },
+              {
+                "name": "urlValue",
+                "displayName": "URL",
+                "type": "string"
+              },
+              {
+                "name": "peopleValue",
+                "displayName": "User Names or IDs",
+                "type": "multiOptions"
+              },
+              {
+                "name": "relationValue",
+                "displayName": "Relation IDs",
+                "type": "string"
+              },
+              {
+                "name": "checkboxValue",
+                "displayName": "Checked",
+                "type": "boolean"
+              },
+              {
+                "name": "numberValue",
+                "displayName": "Number",
+                "type": "number"
+              },
+              {
+                "name": "range",
+                "displayName": "Range",
+                "type": "boolean"
+              },
+              {
+                "name": "includeTime",
+                "displayName": "Include Time",
+                "type": "boolean"
+              },
+              {
+                "name": "date",
+                "displayName": "Date",
+                "type": "dateTime"
+              },
+              {
+                "name": "dateStart",
+                "displayName": "Date Start",
+                "type": "dateTime"
+              },
+              {
+                "name": "dateEnd",
+                "displayName": "Date End",
+                "type": "dateTime"
+              },
+              {
+                "name": "timezone",
+                "displayName": "Timezone Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "fileUrls",
+                "displayName": "File URLs",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "iconType",
+            "description": "The icon type for the database page, Either a URL or an Emoji"
+          },
+          {
+            "name": "icon",
+            "description": "Emoji or File URL to use as the icon"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "pageId",
+        "displayName": "Database Page",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "The Notion Database Page to get"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "get"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "databaseId",
+        "displayName": "Database",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "The Notion Database to operate on"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "filterType",
+        "displayName": "Filter",
+        "type": "options",
+        "default": "none",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Build Manually",
+            "value": "manual"
+          },
+          {
+            "name": "JSON",
+            "value": "json"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "matchType",
+        "displayName": "Must Match",
+        "type": "options",
+        "default": "anyFilter",
+        "options": [
+          {
+            "name": "Any filter",
+            "value": "anyFilter"
+          },
+          {
+            "name": "All Filters",
+            "value": "allFilters"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "filterType": [
+              "manual"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conditions",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Property Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "hidden"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "returnType",
+                "displayName": "Return Type",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "condition",
+                "displayName": "Condition",
+                "type": "options"
+              },
+              {
+                "name": "titleValue",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "richTextValue",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "phoneNumberValue",
+                "displayName": "Phone Number",
+                "type": "string"
+              },
+              {
+                "name": "multiSelectValue",
+                "displayName": "Option Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "selectValue",
+                "displayName": "Option Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "statusValue",
+                "displayName": "Status Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "emailValue",
+                "displayName": "Email",
+                "type": "string"
+              },
+              {
+                "name": "urlValue",
+                "displayName": "URL",
+                "type": "string"
+              },
+              {
+                "name": "peopleValue",
+                "displayName": "User Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "createdByValue",
+                "displayName": "User Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "lastEditedByValue",
+                "displayName": "User Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "relationValue",
+                "displayName": "Relation ID",
+                "type": "string"
+              },
+              {
+                "name": "checkboxValue",
+                "displayName": "Checked",
+                "type": "boolean"
+              },
+              {
+                "name": "numberValue",
+                "displayName": "Number",
+                "type": "number"
+              },
+              {
+                "name": "date",
+                "displayName": "Date",
+                "type": "dateTime"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "filterType": [
+              "manual"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "jsonNotice",
+        "displayName": "See <a href=\"https://developers.notion.com/reference/post-database-query#post-database-query-filter\" target=\"_blank\">Notion guide</a> to creating filters",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "filterType": [
+              "json"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "filterJson",
+        "displayName": "Filters (JSON)",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databasePage"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "filterType": [
+              "json"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "downloadFiles",
+            "description": "Whether to download a file if a database's field contains it"
+          },
+          {
+            "name": "filter"
+          },
+          {
+            "name": "sort"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "databasePage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a page"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a page"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Text search of pages"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "resource": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Archive",
+            "value": "archive",
+            "description": "Archive a page"
+          },
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a page"
+          },
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Text search of pages"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "pageId",
+        "displayName": "Page",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "archive"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "The Notion Page to archive"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "archive"
+            ]
+          },
+          "hide": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "pageId",
+        "displayName": "Parent Page",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "url",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The Notion Database Page to create a child page for"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Page title. Appears at the top of the page and can be found via Quick Find."
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "blockUi",
+        "displayName": "Blocks",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "blockValues",
+            "values": [
+              {
+                "name": "type",
+                "displayName": "Type Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "checked",
+                "displayName": "Checked",
+                "type": "boolean"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "title",
+                "displayName": "Title",
+                "type": "string"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "richText",
+                "displayName": "Rich Text",
+                "type": "boolean"
+              },
+              {
+                "name": "textContent",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "url",
+                "displayName": "Image URL",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "iconType",
+            "description": "The icon type for the page, Either a URL or an Emoji"
+          },
+          {
+            "name": "icon",
+            "description": "Emoji or File URL to use as the icon"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "pageId",
+        "displayName": "Page Link or ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The Page URL from Notion's 'copy link' functionality (or just the ID contained within the URL)"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ],
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "text",
+        "displayName": "Search Text",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "The text to search for"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "sort"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a user"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many users"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      }
+    ]
+  }
+}

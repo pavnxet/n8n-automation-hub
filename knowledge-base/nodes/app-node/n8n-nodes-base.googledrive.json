@@ -1,0 +1,3367 @@
+{
+  "id": "n8n-nodes-base.googledrive",
+  "name": "Google Drive",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googledrive",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Drive node to automate work in Google Drive, and integrate Google Drive with other applications. n8n has built-in support for a wide range of Google Drive features, including creating, updating, listing, deleting, and getting drives, files, and folders",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive",
+  "credentials": {
+    "name": "Google Drive",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "File",
+      "operation": "Copy",
+      "description": "a file",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#copy-a-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Copy"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to copy"
+        },
+        {
+          "name": "File Name",
+          "description": "The name to use for the new copy of the file"
+        },
+        {
+          "name": "Copy In The Same Folder",
+          "description": "Choose whether to copy the file to the same folder. If disabled, set the following:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Copy Requires Writer Permissions",
+          "description": "Select whether to enable readers and commenters to copy, print, or download the new file"
+        },
+        {
+          "name": "Description",
+          "description": "A short description of the file"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "copy"
+    },
+    {
+      "resource": "File",
+      "operation": "Create from text",
+      "description": "",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#create-from-text",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create From Text"
+        },
+        {
+          "name": "File Content",
+          "description": "Enter the file content to use to create the new file"
+        },
+        {
+          "name": "File Name",
+          "description": "The name to use for the new file"
+        },
+        {
+          "name": "Parent Drive",
+          "description": "Select From list to choose the drive from the dropdown list, By URL to enter the URL of the drive, or By ID to enter the driveId"
+        },
+        {
+          "name": "Parent Folder",
+          "description": "Select From list to choose the folder from the dropdown list, By URL to enter the URL of the folder, or By ID to enter the folderId"
+        }
+      ],
+      "options": [
+        {
+          "name": "APP Properties",
+          "description": "A bundle of arbitrary key-value pairs which are private to the requesting app"
+        },
+        {
+          "name": "Properties",
+          "description": "A bundle of arbitrary key-value pairs which are visible to all apps"
+        },
+        {
+          "name": "Keep Revision Forever",
+          "description": "Choose whether to set the keepForever field in the new head revision. This only applies to files with binary content. You can keep a maximum of 200 revisions, after which you must delete the pinned revisions"
+        },
+        {
+          "name": "OCR Language",
+          "description": "An ISO 639-1 language code to help the OCR interpret the content during import"
+        },
+        {
+          "name": "Use Content As Indexable Text",
+          "description": "Choose whether to mark the uploaded content as indexable text"
+        },
+        {
+          "name": "Convert to Google Document",
+          "description": "Choose whether to create a Google Document instead of the default .txt format. You must enable the Google Docs API in the Google API Console for this to work"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "createFromText"
+    },
+    {
+      "resource": "File",
+      "operation": "Delete",
+      "description": "a file",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#delete-a-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to delete"
+        }
+      ],
+      "options": [
+        {
+          "name": "Delete Permanently",
+          "description": "Choose whether to delete the file now instead of moving it to the trash"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "deleteFile"
+    },
+    {
+      "resource": "File",
+      "operation": "Download",
+      "description": "a file",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#download-a-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Download"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to download"
+        }
+      ],
+      "options": [
+        {
+          "name": "Put Output File in Field",
+          "description": "Choose the field name to place the binary file contents to make it available to following nodes"
+        },
+        {
+          "name": "Google File Conversion",
+          "description": "Choose the formats to export as when downloading Google Files:"
+        },
+        {
+          "name": "File Name",
+          "description": "The name to use for the downloaded file"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "download"
+    },
+    {
+      "resource": "File",
+      "operation": "Move",
+      "description": "a file",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#move-a-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Move"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to move"
+        },
+        {
+          "name": "Parent Drive",
+          "description": "Select From list to choose the drive from the dropdown list, By URL to enter the URL of the drive, or By ID to enter the driveId"
+        },
+        {
+          "name": "Parent Folder",
+          "description": "Select From list to choose the folder from the dropdown list, By URL to enter the URL of the folder, or By ID to enter the folderId"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "move"
+    },
+    {
+      "resource": "File",
+      "operation": "Share",
+      "description": "a file",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#share-a-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Share"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to share"
+        },
+        {
+          "name": "Permissions",
+          "description": "The permissions to add to the file:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Email Message",
+          "description": "A plain text custom message to include in the notification email"
+        },
+        {
+          "name": "Move to New Owners Root",
+          "description": "Available when trying to transfer ownership while sharing an item not in a shared drive. When enabled, moves the file to the new owner's My Drive root folder"
+        },
+        {
+          "name": "Send Notification Email",
+          "description": "Whether to send a notification email when sharing to users or groups"
+        },
+        {
+          "name": "Transfer Ownership",
+          "description": "Whether to transfer ownership to the specified user and downgrade the current owner to writer permissions"
+        },
+        {
+          "name": "Use Domain Admin Access",
+          "description": "Whether to perform the action as a domain administrator"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "share"
+    },
+    {
+      "resource": "File",
+      "operation": "Update",
+      "description": "a file",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#update-a-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update"
+        },
+        {
+          "name": "File to Update",
+          "description": "Choose a file you want to update"
+        },
+        {
+          "name": "Change File Content",
+          "description": "Choose whether to send new binary data to replace the existing file content. If enabled, fill in the following:"
+        },
+        {
+          "name": "New Updated File Name",
+          "description": "A new name for the file if you want to update the filename"
+        }
+      ],
+      "options": [
+        {
+          "name": "APP Properties",
+          "description": "A bundle of arbitrary key-value pairs which are private to the requesting app"
+        },
+        {
+          "name": "Properties",
+          "description": "A bundle of arbitrary key-value pairs which are visible to all apps"
+        },
+        {
+          "name": "Keep Revision Forever",
+          "description": "Choose whether to set the keepForever field in the new head revision. This only applies to files with binary content. You can keep a maximum of 200 revisions, after which you must delete the pinned revisions"
+        },
+        {
+          "name": "OCR Language",
+          "description": "An ISO 639-1 language code to help the OCR interpret the content during import"
+        },
+        {
+          "name": "Use Content As Indexable Text",
+          "description": "Choose whether to mark the uploaded content as indexable text"
+        },
+        {
+          "name": "Move to Trash",
+          "description": "Whether to move the file to the trash. Only possible for the file owner"
+        },
+        {
+          "name": "Return Fields",
+          "description": "Return metadata fields about the file. Can be one or more of the following: [All], explicitlyTrashed, exportLinks, hasThumbnail, iconLink, ID, Kind, mimeType, Name, Permissions, Shared, Spaces, Starred, thumbnailLink, Trashed, Version, or webViewLink"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "update"
+    },
+    {
+      "resource": "File",
+      "operation": "Upload",
+      "description": "a file",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#upload-a-file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Upload"
+        },
+        {
+          "name": "Input Data Field Name",
+          "description": "The name of the input field that contains the binary file data you wish to use"
+        },
+        {
+          "name": "File Name",
+          "description": "The name to use for the new file"
+        },
+        {
+          "name": "Parent Drive",
+          "description": "Select From list to choose the drive from the dropdown list, By URL to enter the URL of the drive, or By ID to enter the driveId"
+        },
+        {
+          "name": "Parent Folder",
+          "description": "Select From list to choose the folder from the dropdown list, By URL to enter the URL of the folder, or By ID to enter the folderId"
+        }
+      ],
+      "options": [
+        {
+          "name": "APP Properties",
+          "description": "A bundle of arbitrary key-value pairs which are private to the requesting app"
+        },
+        {
+          "name": "Properties",
+          "description": "A bundle of arbitrary key-value pairs which are visible to all apps"
+        },
+        {
+          "name": "Keep Revision Forever",
+          "description": "Choose whether to set the keepForever field in the new head revision. This only applies to files with binary content. You can keep a maximum of 200 revisions, after which you must delete the pinned revisions"
+        },
+        {
+          "name": "OCR Language",
+          "description": "An ISO 639-1 language code to help the OCR interpret the content during import"
+        },
+        {
+          "name": "Use Content As Indexable Text",
+          "description": "Choose whether to mark the uploaded content as indexable text"
+        },
+        {
+          "name": "Simplify Output",
+          "description": "Choose whether to return a simplified version of the response instead of including all fields"
+        }
+      ],
+      "resource_value": "file",
+      "operation_value": "upload"
+    },
+    {
+      "resource": "File/Folder",
+      "operation": "Search",
+      "description": "files and folders",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-folder-operations#search-files-and-folders",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File/Folder"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Search"
+        },
+        {
+          "name": "Search Method",
+          "description": "Choose how you want to search:"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether to return all results or only up to a given limit"
+        },
+        {
+          "name": "Limit",
+          "description": "The maximum number of items to return when Return All is disabled"
+        },
+        {
+          "name": "Filter",
+          "description": "Choose whether to limit the scope of your search:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Fields",
+          "description": "Select the fields to return. Can be one or more of the following: \\[All], explicitlyTrashed, exportLinks, hasThumbnail, iconLink, ID, Kind, mimeType, Name, Permissions, Shared, Spaces, Starred, thumbnailLink, Trashed, Version, or webViewLink"
+        }
+      ],
+      "resource_value": "fileFolder",
+      "operation_value": "search"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Create",
+      "description": "a folder",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/folder-operations#create-a-folder",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Folder"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Folder Name",
+          "description": "The name to use for the new folder"
+        },
+        {
+          "name": "Parent Drive",
+          "description": "Select From list to choose the drive from the dropdown list, By URL to enter the URL of the drive, or By ID to enter the driveId"
+        },
+        {
+          "name": "Parent Folder",
+          "description": "Select From list to choose the folder from the dropdown list, By URL to enter the URL of the folder, or By ID to enter the folderId"
+        }
+      ],
+      "options": [
+        {
+          "name": "Simplify Output",
+          "description": "Choose whether to return a simplified version of the response instead of including all fields"
+        },
+        {
+          "name": "Folder Color",
+          "description": "The color of the folder as an RGB hex string"
+        }
+      ],
+      "resource_value": "folder",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Delete",
+      "description": "a folder",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/folder-operations#delete-a-folder",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Folder"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Folder",
+          "description": "Choose a folder you want to delete"
+        }
+      ],
+      "options": [
+        {
+          "name": "Delete Permanently",
+          "description": "Choose whether to delete the folder now instead of moving it to the trash"
+        }
+      ],
+      "resource_value": "folder",
+      "operation_value": "deleteFolder"
+    },
+    {
+      "resource": "Folder",
+      "operation": "Share",
+      "description": "a folder",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/folder-operations#share-a-folder",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Folder"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Share"
+        },
+        {
+          "name": "Folder",
+          "description": "Choose a file you want to move"
+        },
+        {
+          "name": "Permissions",
+          "description": "The permissions to add to the folder:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Email Message",
+          "description": "A plain text custom message to include in the notification email"
+        },
+        {
+          "name": "Move to New Owners Root",
+          "description": "Available when trying to transfer ownership while sharing an item not in a shared drive. When enabled, moves the folder to the new owner's My Drive root folder"
+        },
+        {
+          "name": "Send Notification Email",
+          "description": "Whether to send a notification email when sharing to users or groups"
+        },
+        {
+          "name": "Transfer Ownership",
+          "description": "Whether to transfer ownership to the specified user and downgrade the current owner to writer permissions"
+        },
+        {
+          "name": "Use Domain Admin Access",
+          "description": "Whether to perform the action as a domain administrator"
+        }
+      ],
+      "resource_value": "folder",
+      "operation_value": "share"
+    },
+    {
+      "resource": "Shared Drive",
+      "operation": "Create",
+      "description": "a shared drive",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#create-a-shared-drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Name",
+          "description": "The name to use for the new shared drive"
+        }
+      ],
+      "options": [
+        {
+          "name": "Capabilities",
+          "description": "The capabilities to set for the new shared drive (see REST Resources: drives | Google Drive for more details):"
+        },
+        {
+          "name": "Color RGB",
+          "description": "The color of this shared drive as an RGB hex string"
+        },
+        {
+          "name": "Hidden",
+          "description": "Whether to hide this shared drive in the default view"
+        },
+        {
+          "name": "Restrictions",
+          "description": "Restrictions to add to this shared drive (see REST Resources: drives | Google Drive for more details):"
+        }
+      ],
+      "resource_value": "drive",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Shared Drive",
+      "operation": "Delete",
+      "description": "a shared drive",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#delete-a-shared-drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Shared Drive",
+          "description": "Choose the shared drive want to delete"
+        }
+      ],
+      "resource_value": "drive",
+      "operation_value": "deleteDrive"
+    },
+    {
+      "resource": "Shared Drive",
+      "operation": "Get",
+      "description": "a shared drive",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#get-a-shared-drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Shared Drive",
+          "description": "Choose the shared drive want to get"
+        }
+      ],
+      "options": [
+        {
+          "name": "Use Domain Admin Access",
+          "description": "Whether to issue the request as a domain administrator. When enabled, grants the requester access if they're an administrator of the domain to which the shared drive belongs"
+        }
+      ],
+      "resource_value": "drive",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Shared Drive",
+      "operation": "Get Many",
+      "description": "shared drives",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#get-many-shared-drives",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether to return all results or only up to a given limit"
+        },
+        {
+          "name": "Limit",
+          "description": "The maximum number of items to return when Return All is disabled"
+        },
+        {
+          "name": "Shared Drive",
+          "description": "Choose the shared drive want to get"
+        }
+      ],
+      "options": [
+        {
+          "name": "Query",
+          "description": "The query string to use to search for shared drives. See Search for shared drives | Google Drive for more information"
+        },
+        {
+          "name": "Use Domain Admin Access",
+          "description": "Whether to issue the request as a domain administrator. When enabled, grants the requester access if they're an administrator of the domain to which the shared drive belongs"
+        }
+      ],
+      "resource_value": "drive",
+      "operation_value": "list"
+    },
+    {
+      "resource": "Shared Drive",
+      "operation": "Update",
+      "description": "a shared drive",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#update-a-shared-drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update"
+        },
+        {
+          "name": "Shared Drive",
+          "description": "Choose the shared drive you want to update"
+        }
+      ],
+      "options": [
+        {
+          "name": "Color RGB",
+          "description": "The color of this shared drive as an RGB hex string"
+        },
+        {
+          "name": "Name",
+          "description": "The updated name for the shared drive"
+        },
+        {
+          "name": "Restrictions",
+          "description": "Restrictions for this shared drive (see REST Resources: drives | Google Drive for more details):"
+        }
+      ],
+      "resource_value": "drive",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 17,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [
+    {
+      "operation": "Search files and folders",
+      "page": "file-folder-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-folder-operations#search-files-and-folders",
+      "summary": "Use this operation to search for files and folders in a drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File/Folder"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Search"
+        },
+        {
+          "name": "Search Method",
+          "description": "Choose how you want to search:"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether to return all results or only up to a given limit"
+        },
+        {
+          "name": "Limit",
+          "description": "The maximum number of items to return when Return All is disabled"
+        },
+        {
+          "name": "Filter",
+          "description": "Choose whether to limit the scope of your search:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Fields",
+          "description": "Select the fields to return. Can be one or more of the following: \\[All], explicitlyTrashed, exportLinks, hasThumbnail, iconLink, ID, Kind, mimeType, Name, Permissions, Shared, Spaces, Starred, thumbnailLink, Trashed, Version, or webViewLink"
+        }
+      ]
+    },
+    {
+      "operation": "Copy a file",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#copy-a-file",
+      "summary": "Use this operation to copy a file to a drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Copy"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to copy"
+        },
+        {
+          "name": "File Name",
+          "description": "The name to use for the new copy of the file"
+        },
+        {
+          "name": "Copy In The Same Folder",
+          "description": "Choose whether to copy the file to the same folder. If disabled, set the following:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Copy Requires Writer Permissions",
+          "description": "Select whether to enable readers and commenters to copy, print, or download the new file"
+        },
+        {
+          "name": "Description",
+          "description": "A short description of the file"
+        }
+      ]
+    },
+    {
+      "operation": "Create from text",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#create-from-text",
+      "summary": "Use this operation to create a new file in a drive from provided text",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create From Text"
+        },
+        {
+          "name": "File Content",
+          "description": "Enter the file content to use to create the new file"
+        },
+        {
+          "name": "File Name",
+          "description": "The name to use for the new file"
+        },
+        {
+          "name": "Parent Drive",
+          "description": "Select From list to choose the drive from the dropdown list, By URL to enter the URL of the drive, or By ID to enter the driveId"
+        },
+        {
+          "name": "Parent Folder",
+          "description": "Select From list to choose the folder from the dropdown list, By URL to enter the URL of the folder, or By ID to enter the folderId"
+        }
+      ],
+      "options": [
+        {
+          "name": "APP Properties",
+          "description": "A bundle of arbitrary key-value pairs which are private to the requesting app"
+        },
+        {
+          "name": "Properties",
+          "description": "A bundle of arbitrary key-value pairs which are visible to all apps"
+        },
+        {
+          "name": "Keep Revision Forever",
+          "description": "Choose whether to set the keepForever field in the new head revision. This only applies to files with binary content. You can keep a maximum of 200 revisions, after which you must delete the pinned revisions"
+        },
+        {
+          "name": "OCR Language",
+          "description": "An ISO 639-1 language code to help the OCR interpret the content during import"
+        },
+        {
+          "name": "Use Content As Indexable Text",
+          "description": "Choose whether to mark the uploaded content as indexable text"
+        },
+        {
+          "name": "Convert to Google Document",
+          "description": "Choose whether to create a Google Document instead of the default .txt format. You must enable the Google Docs API in the Google API Console for this to work"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a file",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#delete-a-file",
+      "summary": "Use this operation to delete a file from a drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to delete"
+        }
+      ],
+      "options": [
+        {
+          "name": "Delete Permanently",
+          "description": "Choose whether to delete the file now instead of moving it to the trash"
+        }
+      ]
+    },
+    {
+      "operation": "Download a file",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#download-a-file",
+      "summary": "Use this operation to download a file from a drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Download"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to download"
+        }
+      ],
+      "options": [
+        {
+          "name": "Put Output File in Field",
+          "description": "Choose the field name to place the binary file contents to make it available to following nodes"
+        },
+        {
+          "name": "Google File Conversion",
+          "description": "Choose the formats to export as when downloading Google Files:"
+        },
+        {
+          "name": "File Name",
+          "description": "The name to use for the downloaded file"
+        }
+      ]
+    },
+    {
+      "operation": "Move a file",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#move-a-file",
+      "summary": "Use this operation to move a file to a different location in a drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Move"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to move"
+        },
+        {
+          "name": "Parent Drive",
+          "description": "Select From list to choose the drive from the dropdown list, By URL to enter the URL of the drive, or By ID to enter the driveId"
+        },
+        {
+          "name": "Parent Folder",
+          "description": "Select From list to choose the folder from the dropdown list, By URL to enter the URL of the folder, or By ID to enter the folderId"
+        }
+      ]
+    },
+    {
+      "operation": "Share a file",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#share-a-file",
+      "summary": "Use this operation to add sharing permissions to a file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Share"
+        },
+        {
+          "name": "File",
+          "description": "Choose a file you want to share"
+        },
+        {
+          "name": "Permissions",
+          "description": "The permissions to add to the file:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Email Message",
+          "description": "A plain text custom message to include in the notification email"
+        },
+        {
+          "name": "Move to New Owners Root",
+          "description": "Available when trying to transfer ownership while sharing an item not in a shared drive. When enabled, moves the file to the new owner's My Drive root folder"
+        },
+        {
+          "name": "Send Notification Email",
+          "description": "Whether to send a notification email when sharing to users or groups"
+        },
+        {
+          "name": "Transfer Ownership",
+          "description": "Whether to transfer ownership to the specified user and downgrade the current owner to writer permissions"
+        },
+        {
+          "name": "Use Domain Admin Access",
+          "description": "Whether to perform the action as a domain administrator"
+        }
+      ]
+    },
+    {
+      "operation": "Update a file",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#update-a-file",
+      "summary": "Use this operation to update a file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update"
+        },
+        {
+          "name": "File to Update",
+          "description": "Choose a file you want to update"
+        },
+        {
+          "name": "Change File Content",
+          "description": "Choose whether to send new binary data to replace the existing file content. If enabled, fill in the following:"
+        },
+        {
+          "name": "New Updated File Name",
+          "description": "A new name for the file if you want to update the filename"
+        }
+      ],
+      "options": [
+        {
+          "name": "APP Properties",
+          "description": "A bundle of arbitrary key-value pairs which are private to the requesting app"
+        },
+        {
+          "name": "Properties",
+          "description": "A bundle of arbitrary key-value pairs which are visible to all apps"
+        },
+        {
+          "name": "Keep Revision Forever",
+          "description": "Choose whether to set the keepForever field in the new head revision. This only applies to files with binary content. You can keep a maximum of 200 revisions, after which you must delete the pinned revisions"
+        },
+        {
+          "name": "OCR Language",
+          "description": "An ISO 639-1 language code to help the OCR interpret the content during import"
+        },
+        {
+          "name": "Use Content As Indexable Text",
+          "description": "Choose whether to mark the uploaded content as indexable text"
+        },
+        {
+          "name": "Move to Trash",
+          "description": "Whether to move the file to the trash. Only possible for the file owner"
+        },
+        {
+          "name": "Return Fields",
+          "description": "Return metadata fields about the file. Can be one or more of the following: [All], explicitlyTrashed, exportLinks, hasThumbnail, iconLink, ID, Kind, mimeType, Name, Permissions, Shared, Spaces, Starred, thumbnailLink, Trashed, Version, or webViewLink"
+        }
+      ]
+    },
+    {
+      "operation": "Upload a file",
+      "page": "file-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations#upload-a-file",
+      "summary": "Use this operation to upload a file",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select File"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Upload"
+        },
+        {
+          "name": "Input Data Field Name",
+          "description": "The name of the input field that contains the binary file data you wish to use"
+        },
+        {
+          "name": "File Name",
+          "description": "The name to use for the new file"
+        },
+        {
+          "name": "Parent Drive",
+          "description": "Select From list to choose the drive from the dropdown list, By URL to enter the URL of the drive, or By ID to enter the driveId"
+        },
+        {
+          "name": "Parent Folder",
+          "description": "Select From list to choose the folder from the dropdown list, By URL to enter the URL of the folder, or By ID to enter the folderId"
+        }
+      ],
+      "options": [
+        {
+          "name": "APP Properties",
+          "description": "A bundle of arbitrary key-value pairs which are private to the requesting app"
+        },
+        {
+          "name": "Properties",
+          "description": "A bundle of arbitrary key-value pairs which are visible to all apps"
+        },
+        {
+          "name": "Keep Revision Forever",
+          "description": "Choose whether to set the keepForever field in the new head revision. This only applies to files with binary content. You can keep a maximum of 200 revisions, after which you must delete the pinned revisions"
+        },
+        {
+          "name": "OCR Language",
+          "description": "An ISO 639-1 language code to help the OCR interpret the content during import"
+        },
+        {
+          "name": "Use Content As Indexable Text",
+          "description": "Choose whether to mark the uploaded content as indexable text"
+        },
+        {
+          "name": "Simplify Output",
+          "description": "Choose whether to return a simplified version of the response instead of including all fields"
+        }
+      ]
+    },
+    {
+      "operation": "Create a folder",
+      "page": "folder-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/folder-operations#create-a-folder",
+      "summary": "Use this operation to create a new folder in a drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Folder"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Folder Name",
+          "description": "The name to use for the new folder"
+        },
+        {
+          "name": "Parent Drive",
+          "description": "Select From list to choose the drive from the dropdown list, By URL to enter the URL of the drive, or By ID to enter the driveId"
+        },
+        {
+          "name": "Parent Folder",
+          "description": "Select From list to choose the folder from the dropdown list, By URL to enter the URL of the folder, or By ID to enter the folderId"
+        }
+      ],
+      "options": [
+        {
+          "name": "Simplify Output",
+          "description": "Choose whether to return a simplified version of the response instead of including all fields"
+        },
+        {
+          "name": "Folder Color",
+          "description": "The color of the folder as an RGB hex string"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a folder",
+      "page": "folder-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/folder-operations#delete-a-folder",
+      "summary": "Use this operation to delete a folder from a drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Folder"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Folder",
+          "description": "Choose a folder you want to delete"
+        }
+      ],
+      "options": [
+        {
+          "name": "Delete Permanently",
+          "description": "Choose whether to delete the folder now instead of moving it to the trash"
+        }
+      ]
+    },
+    {
+      "operation": "Share a folder",
+      "page": "folder-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/folder-operations#share-a-folder",
+      "summary": "Use this operation to add sharing permissions to a folder",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Folder"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Share"
+        },
+        {
+          "name": "Folder",
+          "description": "Choose a file you want to move"
+        },
+        {
+          "name": "Permissions",
+          "description": "The permissions to add to the folder:"
+        }
+      ],
+      "options": [
+        {
+          "name": "Email Message",
+          "description": "A plain text custom message to include in the notification email"
+        },
+        {
+          "name": "Move to New Owners Root",
+          "description": "Available when trying to transfer ownership while sharing an item not in a shared drive. When enabled, moves the folder to the new owner's My Drive root folder"
+        },
+        {
+          "name": "Send Notification Email",
+          "description": "Whether to send a notification email when sharing to users or groups"
+        },
+        {
+          "name": "Transfer Ownership",
+          "description": "Whether to transfer ownership to the specified user and downgrade the current owner to writer permissions"
+        },
+        {
+          "name": "Use Domain Admin Access",
+          "description": "Whether to perform the action as a domain administrator"
+        }
+      ]
+    },
+    {
+      "operation": "Create a shared drive",
+      "page": "shared-drive-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#create-a-shared-drive",
+      "summary": "Use this operation to create a new shared drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Create"
+        },
+        {
+          "name": "Name",
+          "description": "The name to use for the new shared drive"
+        }
+      ],
+      "options": [
+        {
+          "name": "Capabilities",
+          "description": "The capabilities to set for the new shared drive (see REST Resources: drives | Google Drive for more details):"
+        },
+        {
+          "name": "Color RGB",
+          "description": "The color of this shared drive as an RGB hex string"
+        },
+        {
+          "name": "Hidden",
+          "description": "Whether to hide this shared drive in the default view"
+        },
+        {
+          "name": "Restrictions",
+          "description": "Restrictions to add to this shared drive (see REST Resources: drives | Google Drive for more details):"
+        }
+      ]
+    },
+    {
+      "operation": "Delete a shared drive",
+      "page": "shared-drive-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#delete-a-shared-drive",
+      "summary": "Use this operation to delete a shared drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Delete"
+        },
+        {
+          "name": "Shared Drive",
+          "description": "Choose the shared drive want to delete"
+        }
+      ]
+    },
+    {
+      "operation": "Get a shared drive",
+      "page": "shared-drive-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#get-a-shared-drive",
+      "summary": "Use this operation to get a shared drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get"
+        },
+        {
+          "name": "Shared Drive",
+          "description": "Choose the shared drive want to get"
+        }
+      ],
+      "options": [
+        {
+          "name": "Use Domain Admin Access",
+          "description": "Whether to issue the request as a domain administrator. When enabled, grants the requester access if they're an administrator of the domain to which the shared drive belongs"
+        }
+      ]
+    },
+    {
+      "operation": "Get many shared drives",
+      "page": "shared-drive-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#get-many-shared-drives",
+      "summary": "Use this operation to get many shared drives",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Get Many"
+        },
+        {
+          "name": "Return All",
+          "description": "Choose whether to return all results or only up to a given limit"
+        },
+        {
+          "name": "Limit",
+          "description": "The maximum number of items to return when Return All is disabled"
+        },
+        {
+          "name": "Shared Drive",
+          "description": "Choose the shared drive want to get"
+        }
+      ],
+      "options": [
+        {
+          "name": "Query",
+          "description": "The query string to use to search for shared drives. See Search for shared drives | Google Drive for more information"
+        },
+        {
+          "name": "Use Domain Admin Access",
+          "description": "Whether to issue the request as a domain administrator. When enabled, grants the requester access if they're an administrator of the domain to which the shared drive belongs"
+        }
+      ]
+    },
+    {
+      "operation": "Update a shared drive",
+      "page": "shared-drive-operations.md",
+      "doc": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations#update-a-shared-drive",
+      "summary": "Use this operation to update a shared drive",
+      "parameters": [
+        {
+          "name": "Credential to connect with",
+          "description": "Create or select an existing Google Drive credentials"
+        },
+        {
+          "name": "Resource",
+          "description": "Select Shared Drive"
+        },
+        {
+          "name": "Operation",
+          "description": "Select Update"
+        },
+        {
+          "name": "Shared Drive",
+          "description": "Choose the shared drive you want to update"
+        }
+      ],
+      "options": [
+        {
+          "name": "Color RGB",
+          "description": "The color of this shared drive as an RGB hex string"
+        },
+        {
+          "name": "Name",
+          "description": "The updated name for the shared drive"
+        },
+        {
+          "name": "Restrictions",
+          "description": "Restrictions for this shared drive (see REST Resources: drives | Google Drive for more details):"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "name": "Get-Most-Recent-File",
+      "source_url": "https://raw.githubusercontent.com/n8n-io/n8n-docs/refs/heads/main/docs/_workflows/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/get-most-recent-file.json",
+      "node_count": 5,
+      "workflow": {
+        "meta": {
+          "instanceId": "cb484ba7b742928a2048bf8829668bed5b5ad9787579adea888f05980292a4a7"
+        },
+        "nodes": [
+          {
+            "parameters": {
+              "operation": "download",
+              "fileId": {
+                "__rl": true,
+                "value": "={{ $json.id }}",
+                "mode": "id"
+              },
+              "options": {}
+            },
+            "id": "45b53bcd-7dcf-4266-8b6e-bfc12008f9e2",
+            "name": "Google Drive1",
+            "type": "n8n-nodes-base.googleDrive",
+            "typeVersion": 3,
+            "position": [
+              1500,
+              300
+            ]
+          },
+          {
+            "parameters": {},
+            "id": "ba223e7c-4fed-41dd-8c80-2e8fd742629f",
+            "name": "When clicking ‘Execute workflow’",
+            "type": "n8n-nodes-base.manualTrigger",
+            "typeVersion": 1,
+            "position": [
+              620,
+              300
+            ]
+          },
+          {
+            "parameters": {
+              "resource": "fileFolder",
+              "searchMethod": "query",
+              "returnAll": true,
+              "filter": {
+                "whatToSearch": "files"
+              },
+              "options": {
+                "fields": [
+                  "*"
+                ]
+              }
+            },
+            "id": "42799909-16f3-4f0a-9ad9-4dd0375814a0",
+            "name": "Google Drive",
+            "type": "n8n-nodes-base.googleDrive",
+            "typeVersion": 3,
+            "position": [
+              840,
+              300
+            ]
+          },
+          {
+            "parameters": {
+              "sortFieldsUi": {
+                "sortField": [
+                  {
+                    "fieldName": "modifiedTime",
+                    "order": "descending"
+                  }
+                ]
+              },
+              "options": {}
+            },
+            "id": "bfb8baa6-1b8c-4540-9ad6-b5d7c3f7521b",
+            "name": "Sort",
+            "type": "n8n-nodes-base.sort",
+            "typeVersion": 1,
+            "position": [
+              1060,
+              300
+            ]
+          },
+          {
+            "parameters": {},
+            "id": "2883d39a-f7d9-4244-bf7d-b06878678ccc",
+            "name": "Limit",
+            "type": "n8n-nodes-base.limit",
+            "typeVersion": 1,
+            "position": [
+              1280,
+              300
+            ]
+          }
+        ],
+        "connections": {
+          "When clicking ‘Execute workflow’": {
+            "main": [
+              [
+                {
+                  "node": "Google Drive",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Google Drive": {
+            "main": [
+              [
+                {
+                  "node": "Sort",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Sort": {
+            "main": [
+              [
+                {
+                  "node": "Limit",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          },
+          "Limit": {
+            "main": [
+              [
+                {
+                  "node": "Google Drive1",
+                  "type": "main",
+                  "index": 0
+                }
+              ]
+            ]
+          }
+        },
+        "pinData": {}
+      }
+    }
+  ],
+  "common_issues": [
+    {
+      "title": "Google hasn't verified this app",
+      "summary": ""
+    },
+    {
+      "title": "Google Cloud app becoming unauthorized",
+      "summary": ""
+    },
+    {
+      "title": "Google Drive OAuth error",
+      "summary": "If using the OAuth authentication method, you may see an error indicating that you can't sign in because the app doesn't meet Google's expectations for keeping apps secure"
+    },
+    {
+      "title": "Get recent files from Google Drive",
+      "summary": "To retrieve recent files from Google Drive, you need to sort files by modification time. To do this, you need to search for existing files and retrieve their modification times. Next you can sort the files to find the most recent file and use another Google Drive node target the file by ID"
+    }
+  ],
+  "keywords": [
+    "app",
+    "applications",
+    "copy",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "download",
+    "drive",
+    "drives",
+    "file",
+    "files",
+    "folder",
+    "folders",
+    "get",
+    "getting",
+    "google",
+    "googledrive",
+    "including",
+    "listing",
+    "many",
+    "move",
+    "search",
+    "share",
+    "shared",
+    "text",
+    "update",
+    "updating",
+    "upload",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    },
+    {
+      "id": "uEYII1oKijzYurya61sf",
+      "name": "unverified-app"
+    },
+    {
+      "id": "PlbR0ntmBBE0DgjKiavq",
+      "name": "app-becoming-unauthorized"
+    },
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Google Drive node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googledrive/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Google Drive node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/common-issues",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googledrive/common-issues.md"
+    },
+    {
+      "page": "file-folder-operations.md",
+      "title": "Google Drive File and Folder operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-folder-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-folder-operations.md"
+    },
+    {
+      "page": "file-operations.md",
+      "title": "Google Drive File operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googledrive/file-operations.md"
+    },
+    {
+      "page": "folder-operations.md",
+      "title": "Google Drive Folder operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/folder-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googledrive/folder-operations.md"
+    },
+    {
+      "page": "shared-drive-operations.md",
+      "title": "Google Drive Shared Drive operations",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googledrive/shared-drive-operations.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googledrive.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googledrive.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googledrive/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleDrive",
+  "type_version": 3.0,
+  "type_versions": [
+    3
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleApi",
+    "googleDriveOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "serviceAccount"
+          ]
+        }
+      }
+    },
+    {
+      "name": "googleDriveOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Google Drive"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 63,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "oAuth2",
+        "options": [
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          },
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "file",
+        "options": [
+          {
+            "name": "File",
+            "value": "file"
+          },
+          {
+            "name": "File/Folder",
+            "value": "fileFolder"
+          },
+          {
+            "name": "Folder",
+            "value": "folder"
+          },
+          {
+            "name": "Shared Drive",
+            "value": "drive"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a shared drive"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteDrive",
+            "description": "Permanently delete a shared drive"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a shared drive"
+          },
+          {
+            "name": "Get Many",
+            "value": "list",
+            "description": "Get the list of shared drives"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a shared drive"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "drive"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "drive"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The name of the shared drive to create"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "capabilities"
+          },
+          {
+            "name": "colorRgb",
+            "description": "The color of this shared drive as an RGB hex string"
+          },
+          {
+            "name": "hidden",
+            "description": "Whether the shared drive is hidden from default view"
+          },
+          {
+            "name": "restrictions"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "drive"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "driveId",
+        "displayName": "Shared Drive",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "drive"
+            ],
+            "operation": [
+              "deleteDrive"
+            ]
+          }
+        },
+        "description": "The shared drive to delete"
+      },
+      {
+        "name": "driveId",
+        "displayName": "Shared Drive",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "drive"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The shared drive to get"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "useDomainAdminAccess",
+            "description": "Whether to issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "drive"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "drive"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "drive"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "q",
+            "description": "Query string for searching shared drives. See the <a href=\"https://developers.google.com/drive/api/v3/search-shareddrives\">\"Search for shared drives\"</a> guide "
+          },
+          {
+            "name": "useDomainAdminAccess",
+            "description": "Whether to issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "drive"
+            ],
+            "operation": [
+              "list"
+            ]
+          }
+        }
+      },
+      {
+        "name": "driveId",
+        "displayName": "Shared Drive",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "drive"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The shared drive to update"
+      },
+      {
+        "name": "options",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "colorRgb",
+            "description": "The color of this shared drive as an RGB hex string"
+          },
+          {
+            "name": "name",
+            "description": "The updated name of the shared drive"
+          },
+          {
+            "name": "restrictions"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "drive"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "upload",
+        "options": [
+          {
+            "name": "Copy",
+            "value": "copy",
+            "description": "Create a copy of an existing file"
+          },
+          {
+            "name": "Create From Text",
+            "value": "createFromText",
+            "description": "Create a file from a provided text"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteFile",
+            "description": "Permanently delete a file"
+          },
+          {
+            "name": "Download",
+            "value": "download",
+            "description": "Download a file"
+          },
+          {
+            "name": "Move",
+            "value": "move",
+            "description": "Move a file to another folder"
+          },
+          {
+            "name": "Share",
+            "value": "share",
+            "description": "Add sharing permissions to a file"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a file"
+          },
+          {
+            "name": "Upload",
+            "value": "upload",
+            "description": "Upload an existing file to Google Drive"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "copy"
+            ]
+          }
+        },
+        "description": "The file to copy"
+      },
+      {
+        "name": "name",
+        "displayName": "File Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "copy"
+            ]
+          }
+        },
+        "description": "The name of the new file. If not set, “Copy of {original file name}” will be used."
+      },
+      {
+        "name": "sameFolder",
+        "displayName": "Copy In The Same Folder",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "copy"
+            ]
+          }
+        },
+        "description": "Whether to copy the file in the same folder as the original file"
+      },
+      {
+        "name": "driveId",
+        "displayName": "Parent Drive",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "displayOptions": {
+          "show": {
+            "sameFolder": [
+              false
+            ],
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "copy"
+            ]
+          }
+        },
+        "description": "The drive where to save the copied file"
+      },
+      {
+        "name": "folderId",
+        "displayName": "Parent Folder",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "displayOptions": {
+          "show": {
+            "sameFolder": [
+              false
+            ],
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "copy"
+            ]
+          }
+        },
+        "description": "The folder where to save the copied file"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "copyRequiresWriterPermission",
+            "description": "Whether the options to copy, print, or download this file, should be disabled for readers and commenters"
+          },
+          {
+            "name": "description",
+            "description": "A short description of the file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "copy"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "deleteFile"
+            ]
+          }
+        },
+        "description": "The file to delete"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "deletePermanently",
+            "description": "Whether to delete the file immediately. If false, the file will be moved to the trash."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "deleteFile"
+            ]
+          }
+        }
+      },
+      {
+        "name": "content",
+        "displayName": "File Content",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "createFromText"
+            ]
+          }
+        },
+        "description": "The text to create the file with"
+      },
+      {
+        "name": "name",
+        "displayName": "File Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "createFromText"
+            ]
+          }
+        },
+        "description": "The name of the file you want to create. If not specified, 'Untitled' will be used."
+      },
+      {
+        "name": "driveId",
+        "displayName": "Parent Drive",
+        "type": "resourceLocator",
+        "default": {
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "createFromText"
+            ]
+          }
+        },
+        "description": "The drive where to create the new file"
+      },
+      {
+        "name": "folderId",
+        "displayName": "Parent Folder",
+        "type": "resourceLocator",
+        "default": {
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "createFromText"
+            ]
+          }
+        },
+        "description": "The folder where to create the new file"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "appPropertiesUi",
+            "description": "A collection of arbitrary key-value pairs which are private to the requesting app"
+          },
+          {
+            "name": "propertiesUi",
+            "description": "A collection of arbitrary key-value pairs which are visible to all apps"
+          },
+          {
+            "name": "keepRevisionForever",
+            "description": "Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for th"
+          },
+          {
+            "name": "ocrLanguage",
+            "description": "A language hint for OCR processing during image import (ISO 639-1 code)"
+          },
+          {
+            "name": "useContentAsIndexableText",
+            "description": "Whether to use the uploaded content as indexable text"
+          },
+          {
+            "name": "convertToGoogleDocument",
+            "description": "Whether to create a Google Document (instead of the .txt default format)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "createFromText"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "download"
+            ]
+          }
+        },
+        "description": "The file to download"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "binaryPropertyName",
+            "description": "Use this field name in the following nodes, to use the binary file data"
+          },
+          {
+            "name": "googleFileConversion"
+          },
+          {
+            "name": "fileName",
+            "description": "File name. Ex: data.pdf."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "download"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "move"
+            ]
+          }
+        },
+        "description": "The file to move"
+      },
+      {
+        "name": "driveId",
+        "displayName": "Parent Drive",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "move"
+            ]
+          }
+        },
+        "description": "The drive where to move the file"
+      },
+      {
+        "name": "folderId",
+        "displayName": "Parent Folder",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "move"
+            ]
+          }
+        },
+        "description": "The folder where to move the file"
+      },
+      {
+        "name": "fileId",
+        "displayName": "File",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "share"
+            ]
+          }
+        },
+        "description": "The file to share"
+      },
+      {
+        "name": "permissionsUi",
+        "displayName": "Permissions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "permissionsValues",
+            "values": [
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "emailAddress",
+                "displayName": "Email Address",
+                "type": "string"
+              },
+              {
+                "name": "domain",
+                "displayName": "Domain",
+                "type": "string"
+              },
+              {
+                "name": "allowFileDiscovery",
+                "displayName": "Allow File Discovery",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "share"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "emailMessage",
+            "description": "A plain text custom message to include in the notification email"
+          },
+          {
+            "name": "moveToNewOwnersRoot",
+            "description": "<p>This parameter only takes effect if the item is not in a shared drive and the request is attempting to transfer the ownership of the item.</p><p>When set to "
+          },
+          {
+            "name": "sendNotificationEmail",
+            "description": "Whether to send a notification email when sharing to users or groups"
+          },
+          {
+            "name": "transferOwnership",
+            "description": "Whether to transfer ownership to the specified user and downgrade the current owner to a writer"
+          },
+          {
+            "name": "useDomainAdminAccess",
+            "description": "Whether to perform the operation as domain administrator, i.e. if you are an administrator of the domain to which the shared drive belongs, you will be granted "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "share"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fileId",
+        "displayName": "File to Update",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The file to update"
+      },
+      {
+        "name": "changeFileContent",
+        "displayName": "Change File Content",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Whether to send a new binary data to update the file"
+      },
+      {
+        "name": "inputDataFieldName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "changeFileContent": [
+              true
+            ],
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Find the name of input field containing the binary data to update the file in the Input panel on the left, in the Binary tab"
+      },
+      {
+        "name": "newUpdatedFileName",
+        "displayName": "New Updated File Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "If not specified, the file name will not be changed"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "appPropertiesUi",
+            "description": "A collection of arbitrary key-value pairs which are private to the requesting app"
+          },
+          {
+            "name": "propertiesUi",
+            "description": "A collection of arbitrary key-value pairs which are visible to all apps"
+          },
+          {
+            "name": "keepRevisionForever",
+            "description": "Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for th"
+          },
+          {
+            "name": "ocrLanguage",
+            "description": "A language hint for OCR processing during image import (ISO 639-1 code)"
+          },
+          {
+            "name": "useContentAsIndexableText",
+            "description": "Whether to use the uploaded content as indexable text"
+          },
+          {
+            "name": "trashed",
+            "description": "Whether to move a file to the trash. Only the owner may trash a file."
+          },
+          {
+            "name": "fields",
+            "description": "The fields to return"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputDataFieldName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "Find the name of input field containing the binary data to update the file in the Input panel on the left, in the Binary tab"
+      },
+      {
+        "name": "name",
+        "displayName": "File Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "If not specified, the original file name will be used"
+      },
+      {
+        "name": "driveId",
+        "displayName": "Parent Drive",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "The drive where to upload the file"
+      },
+      {
+        "name": "folderId",
+        "displayName": "Parent Folder",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        },
+        "description": "The folder where to upload the file"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "appPropertiesUi",
+            "description": "A collection of arbitrary key-value pairs which are private to the requesting app"
+          },
+          {
+            "name": "propertiesUi",
+            "description": "A collection of arbitrary key-value pairs which are visible to all apps"
+          },
+          {
+            "name": "keepRevisionForever",
+            "description": "Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for th"
+          },
+          {
+            "name": "ocrLanguage",
+            "description": "A language hint for OCR processing during image import (ISO 639-1 code)"
+          },
+          {
+            "name": "useContentAsIndexableText",
+            "description": "Whether to use the uploaded content as indexable text"
+          },
+          {
+            "name": "simplifyOutput",
+            "description": "Whether to return a simplified version of the response instead of all fields"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "file"
+            ],
+            "operation": [
+              "upload"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "search",
+        "options": [
+          {
+            "name": "Search",
+            "value": "search",
+            "description": "Search or list files and folders"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "fileFolder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "searchMethod",
+        "displayName": "Search Method",
+        "type": "options",
+        "default": "name",
+        "options": [
+          {
+            "name": "Search File/Folder Name",
+            "value": "name"
+          },
+          {
+            "name": "Advanced Search",
+            "value": "query"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "fileFolder"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to search for the file/folder name or use a query string"
+      },
+      {
+        "name": "queryString",
+        "displayName": "Search Query",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "searchMethod": [
+              "name"
+            ],
+            "resource": [
+              "fileFolder"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "The name of the file or folder to search for. Returns also files and folders whose names partially match this search term."
+      },
+      {
+        "name": "queryString",
+        "displayName": "Query String",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "searchMethod": [
+              "query"
+            ],
+            "resource": [
+              "fileFolder"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Use the Google query strings syntax to search for a specific set of files or folders. <a href=\"https://developers.google.com/drive/api/v3/search-files\" target=\"_blank\">Learn more</a>."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "fileFolder"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "returnAll": [
+              false
+            ],
+            "resource": [
+              "fileFolder"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filter",
+        "displayName": "Filter",
+        "type": "collection",
+        "options": [
+          {
+            "name": "driveId",
+            "description": "The drive you want to search in. By default, the personal \"My Drive\" is used."
+          },
+          {
+            "name": "folderId",
+            "description": "The folder you want to search in. By default, the root folder of the drive is used. If you select a folder other than the root folder, only the direct children "
+          },
+          {
+            "name": "whatToSearch"
+          },
+          {
+            "name": "fileTypes",
+            "description": "Return only items corresponding to the selected MIME types"
+          },
+          {
+            "name": "fileTypes",
+            "description": "Return only items corresponding to the selected MIME types"
+          },
+          {
+            "name": "includeTrashed",
+            "description": "Whether to return also items in the Drive's bin"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "fileFolder"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "The fields to return"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "fileFolder"
+            ],
+            "operation": [
+              "search"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a folder"
+          },
+          {
+            "name": "Delete",
+            "value": "deleteFolder",
+            "description": "Permanently delete a folder"
+          },
+          {
+            "name": "Share",
+            "value": "share",
+            "description": "Add sharing permissions to a folder"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Folder Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The name of the new folder. If not set, 'Untitled' will be used."
+      },
+      {
+        "name": "driveId",
+        "displayName": "Parent Drive",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The drive where to create the new folder"
+      },
+      {
+        "name": "folderId",
+        "displayName": "Parent Folder",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The parent folder where to create the new folder"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "simplifyOutput",
+            "description": "Whether to return a simplified version of the response instead of all fields"
+          },
+          {
+            "name": "folderColorRgb",
+            "description": "The color of the folder as an RGB hex string. If an unsupported color is specified, the closest color in the palette will be used instead."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folderNoRootId",
+        "displayName": "Folder",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "deleteFolder"
+            ]
+          }
+        },
+        "description": "The folder to delete"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "deletePermanently",
+            "description": "Whether to delete the folder immediately. If false, the folder will be moved to the trash."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "deleteFolder"
+            ]
+          }
+        }
+      },
+      {
+        "name": "folderNoRootId",
+        "displayName": "Folder",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "share"
+            ]
+          }
+        },
+        "description": "The folder to share"
+      },
+      {
+        "name": "permissionsUi",
+        "displayName": "Permissions",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "permissionsValues",
+            "values": [
+              {
+                "name": "role",
+                "displayName": "Role",
+                "type": "options"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "emailAddress",
+                "displayName": "Email Address",
+                "type": "string"
+              },
+              {
+                "name": "domain",
+                "displayName": "Domain",
+                "type": "string"
+              },
+              {
+                "name": "allowFileDiscovery",
+                "displayName": "Allow File Discovery",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "share"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "emailMessage",
+            "description": "A plain text custom message to include in the notification email"
+          },
+          {
+            "name": "moveToNewOwnersRoot",
+            "description": "<p>This parameter only takes effect if the item is not in a shared drive and the request is attempting to transfer the ownership of the item.</p><p>When set to "
+          },
+          {
+            "name": "sendNotificationEmail",
+            "description": "Whether to send a notification email when sharing to users or groups"
+          },
+          {
+            "name": "transferOwnership",
+            "description": "Whether to transfer ownership to the specified user and downgrade the current owner to a writer"
+          },
+          {
+            "name": "useDomainAdminAccess",
+            "description": "Whether to perform the operation as domain administrator, i.e. if you are an administrator of the domain to which the shared drive belongs, you will be granted "
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "folder"
+            ],
+            "operation": [
+              "share"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

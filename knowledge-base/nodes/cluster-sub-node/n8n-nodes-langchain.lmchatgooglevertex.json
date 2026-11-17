@@ -1,0 +1,278 @@
+{
+  "id": "n8n-nodes-langchain.lmchatgooglevertex",
+  "name": "Google Vertex Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatgooglevertex",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Google Vertex AI Chat Model node to use Google's Vertex AI chat models with conversational agents[^1]",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatgooglevertex",
+  "credentials": {
+    "name": "Google Vertex AI",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/googlevertexai",
+    "slug": "googlevertexai",
+    "json_file": "credentials/googlevertexai.json",
+    "markdown_file": "credentials/googlevertexai.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Authentication",
+      "description": "Select Google Service Account (the default) or Google Vertex AI"
+    },
+    {
+      "name": "Project ID",
+      "description": "For Google Service Account authentication, n8n loads the project list using the service account's access. Select a listed project, or enter the project ID manually. For Google Vertex AI authentication, configure the project in the credential"
+    },
+    {
+      "name": "Model Name",
+      "description": "Enter the name of the model to use for completions, for example gemini-2.5-flash. Refer to Google models for a list of available models"
+    },
+    {
+      "name": "Region",
+      "description": "Select Default (Use Credential Region) to use the region set in the credential. To override it, select Global, EU (Multi-Region), or US (Multi-Region)"
+    },
+    {
+      "name": "Maximum Number of Tokens",
+      "description": "Enter the maximum number of tokens used, which sets the completion length"
+    },
+    {
+      "name": "Sampling Temperature",
+      "description": "Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations"
+    },
+    {
+      "name": "Thinking Budget",
+      "description": "Controls reasoning tokens for thinking models. Set to 0 to disable automatic thinking. Set to -1 for dynamic thinking. Leave empty for auto mode"
+    },
+    {
+      "name": "Top K",
+      "description": "Enter the number of token choices the model uses to generate the next token"
+    },
+    {
+      "name": "Top P",
+      "description": "Use this option to set the probability the completion should use. Use a lower value to ignore less probable options"
+    },
+    {
+      "name": "Safety Settings",
+      "description": "Gemini supports adjustable safety settings. Refer to Google's Gemini API safety settings for information on the available filters and levels"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agents",
+    "authentication",
+    "budget",
+    "chat",
+    "cluster",
+    "conversational",
+    "google",
+    "lmchatgooglevertex",
+    "maximum",
+    "model",
+    "models",
+    "name",
+    "number",
+    "project",
+    "region",
+    "safety",
+    "sampling",
+    "settings",
+    "sub",
+    "temperature",
+    "thinking",
+    "tokens",
+    "top",
+    "vertex"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.lmchatgooglevertex.md",
+      "title": "Google Vertex Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatgooglevertex",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatgooglevertex.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatgooglevertex.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatgooglevertex.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatgooglevertex.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatGoogleVertex",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "googleApi",
+    "googleVertexAiApi"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "googleApi"
+          ]
+        }
+      }
+    },
+    {
+      "name": "googleVertexAiApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "googleVertexAiApi"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Google Vertex Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "googleApi",
+        "options": [
+          {
+            "name": "Google Service Account",
+            "value": "googleApi"
+          },
+          {
+            "name": "Google Vertex AI",
+            "value": "googleVertexAiApi"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "projectId",
+        "displayName": "Project ID",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "authentication": [
+              "googleApi"
+            ]
+          }
+        },
+        "description": "Select or enter your Google Cloud project ID"
+      },
+      {
+        "name": "modelName",
+        "displayName": "Model Name",
+        "type": "string",
+        "default": "gemini-2.5-flash",
+        "description": "The model which will generate the completion. <a href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models\">Learn more</a>."
+      },
+      {
+        "name": "location",
+        "displayName": "Region",
+        "type": "options",
+        "options": [
+          {
+            "name": "Default (Use Credential Region)",
+            "value": ""
+          },
+          {
+            "name": "Global",
+            "value": "global"
+          },
+          {
+            "name": "EU (Multi-Region)",
+            "value": "eu"
+          },
+          {
+            "name": "US (Multi-Region)",
+            "value": "us"
+          }
+        ],
+        "description": "Where the model runs. Newer Gemini models (3.x) are only available on the Global or the EU/US multi-region locations. Leave as Default to use the region set in the credential."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "maxOutputTokens",
+            "description": "The maximum number of tokens to generate in the completion"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "topK",
+            "description": "Used to remove \"long tail\" low probability responses. Defaults to -1, which disables it."
+          },
+          {
+            "name": "topP",
+            "description": "Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We generally recommend altering this or temperature b"
+          },
+          {
+            "name": "safetySettings"
+          },
+          {
+            "name": "thinkingBudget",
+            "description": "Controls reasoning tokens for thinking models. Set to 0 to disable automatic thinking. Set to -1 for dynamic thinking (default)."
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

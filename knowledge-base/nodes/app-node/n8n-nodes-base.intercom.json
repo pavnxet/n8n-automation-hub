@@ -1,0 +1,1438 @@
+{
+  "id": "n8n-nodes-base.intercom",
+  "name": "Intercom",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.intercom",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Intercom node to automate work in Intercom, and integrate Intercom with other applications. n8n has built-in support for a wide range of Intercom features, including creating, updating, deleting, and getting companies, leads, and users",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.intercom",
+  "credentials": {
+    "name": "Intercom",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/intercom",
+    "slug": "intercom",
+    "json_file": "credentials/intercom.json",
+    "markdown_file": "credentials/intercom.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Company",
+      "operation": "Create a new company",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Company",
+      "operation": "Get data of a company",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Company",
+      "operation": "Get data of all companies",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Company",
+      "operation": "Update a company",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Company",
+      "operation": "List company's users",
+      "description": "",
+      "doc": "",
+      "resource_value": "company",
+      "operation_value": "users"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Create a new lead",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Delete a lead",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Get data of a lead",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Get data of all leads",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Lead",
+      "operation": "Update new lead",
+      "description": "",
+      "doc": "",
+      "resource_value": "lead",
+      "operation_value": "update"
+    },
+    {
+      "resource": "User",
+      "operation": "Create a new user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "create"
+    },
+    {
+      "resource": "User",
+      "operation": "Delete a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "User",
+      "operation": "Get data of a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Get data of all users",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Update a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 15,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "companies",
+    "company",
+    "create",
+    "creating",
+    "data",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "intercom",
+    "lead",
+    "leads",
+    "list",
+    "new",
+    "update",
+    "updating",
+    "user",
+    "users",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.intercom.md",
+      "title": "Intercom node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.intercom",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.intercom.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.intercom.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.intercom.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.intercom.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.intercom",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "intercomApi"
+  ],
+  "credential_details": [
+    {
+      "name": "intercomApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Intercom"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 46,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "user",
+        "options": [
+          {
+            "name": "Company",
+            "value": "company",
+            "description": "Companies allow you to represent commercial organizations using your product"
+          },
+          {
+            "name": "Lead",
+            "value": "lead",
+            "description": "Leads are useful for representing logged-out users of your application"
+          },
+          {
+            "name": "User",
+            "value": "user",
+            "description": "The Users resource is the primary way of interacting with Intercom"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new lead"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a lead"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a lead"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many leads"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update new lead"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new user"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a user"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a user"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many users"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a new company"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get data of a company"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get data of many companies"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a company"
+          },
+          {
+            "name": "Users",
+            "value": "users",
+            "description": "List company's users"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "id",
+        "displayName": "ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The Intercom defined ID representing the Lead"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "company_id",
+            "description": "Company ID representing the user"
+          },
+          {
+            "name": "email",
+            "description": "The email address of the user"
+          },
+          {
+            "name": "segment_id",
+            "description": "Segment representing the user"
+          },
+          {
+            "name": "tag_id",
+            "description": "Tag representing the user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "selectBy",
+        "displayName": "Select By",
+        "type": "options",
+        "options": [
+          {
+            "name": "ID",
+            "value": "id",
+            "description": "The Intercom defined ID representing the Lead"
+          },
+          {
+            "name": "User ID",
+            "value": "userId",
+            "description": "Automatically generated identifier for the Lead"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The property to select the user by"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "View by value"
+      },
+      {
+        "name": "updateBy",
+        "displayName": "Update By",
+        "type": "options",
+        "default": "id",
+        "options": [
+          {
+            "name": "ID",
+            "value": "id",
+            "description": "The Intercom defined ID representing the user"
+          },
+          {
+            "name": "Email",
+            "value": "email",
+            "description": "The email address of user"
+          },
+          {
+            "name": "User ID",
+            "value": "userId",
+            "description": "Automatically generated identifier for the user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The property via which to query the user"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Value of the property to identify the user to update"
+      },
+      {
+        "name": "identifierType",
+        "displayName": "Identifier Type",
+        "type": "options",
+        "options": [
+          {
+            "name": "User ID",
+            "value": "userId",
+            "description": "A unique string identifier for the user. It is required on creation if an email is not supplied."
+          },
+          {
+            "name": "Email",
+            "value": "email",
+            "description": "The user's email address. It is required on creation if a user_id is not supplied."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Unique string identifier"
+      },
+      {
+        "name": "idValue",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Unique string identifier value"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "avatar",
+            "description": "An avatar image URL. note: the image URL needs to be https."
+          },
+          {
+            "name": "companies",
+            "description": "Identifies the companies this user belongs to. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "email",
+            "description": "Email of the user"
+          },
+          {
+            "name": "name",
+            "description": "Name of the user"
+          },
+          {
+            "name": "phone",
+            "description": "The phone number of the user"
+          },
+          {
+            "name": "sessionCount",
+            "description": "How many sessions the user has recorded"
+          },
+          {
+            "name": "userId",
+            "description": "Email of the user"
+          },
+          {
+            "name": "unsubscribedFromEmails",
+            "description": "Whether the user is unsubscribed from emails"
+          },
+          {
+            "name": "updateLastRequestAt",
+            "description": "Whether to instruct Intercom to update the users last_request_at value to the current API service time in UTC"
+          },
+          {
+            "name": "utmCampaign",
+            "description": "Identifies a specific product promotion or strategic campaign"
+          },
+          {
+            "name": "utmContent",
+            "description": "Identifies what specifically was clicked to bring the user to the site"
+          },
+          {
+            "name": "utmMedium",
+            "description": "Identifies what type of link was used"
+          },
+          {
+            "name": "utmSource",
+            "description": "An avatar image URL. note: the image URL needs to be https."
+          },
+          {
+            "name": "utmTerm",
+            "description": "Identifies search terms"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "customAttributesJson",
+        "displayName": "Custom Attributes",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "A hash of key/value pairs to represent custom data you want to attribute to a user"
+      },
+      {
+        "name": "customAttributesUi",
+        "displayName": "Custom Attributes",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "customAttributesValues",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "A hash of key/value pairs to represent custom data you want to attribute to a user"
+      },
+      {
+        "name": "deleteBy",
+        "displayName": "Delete By",
+        "type": "options",
+        "options": [
+          {
+            "name": "ID",
+            "value": "id",
+            "description": "The Intercom defined ID representing the Lead"
+          },
+          {
+            "name": "User ID",
+            "value": "userId",
+            "description": "Automatically generated identifier for the Lead"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Delete by value"
+      },
+      {
+        "name": "selectBy",
+        "displayName": "Select By",
+        "type": "options",
+        "options": [
+          {
+            "name": "Email",
+            "value": "email",
+            "description": "Email representing the Lead"
+          },
+          {
+            "name": "ID",
+            "value": "id",
+            "description": "The Intercom defined ID representing the Lead"
+          },
+          {
+            "name": "User ID",
+            "value": "userId",
+            "description": "Automatically generated identifier for the Lead"
+          },
+          {
+            "name": "Phone",
+            "value": "phone",
+            "description": "Phone representing the Lead"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The property to select the lead by"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "View by value"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "email",
+            "description": "The email address of the lead"
+          },
+          {
+            "name": "phone",
+            "description": "The phone number of the lead"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateBy",
+        "displayName": "Update By",
+        "type": "options",
+        "default": "id",
+        "options": [
+          {
+            "name": "User ID",
+            "value": "userId",
+            "description": "Automatically generated identifier for the Lead"
+          },
+          {
+            "name": "ID",
+            "value": "id",
+            "description": "The Intercom defined ID representing the Lead"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The property via which to query the lead"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Value of the property to identify the lead to update"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The email of the user"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "resource": [
+              "lead"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "avatar",
+            "description": "An avatar image URL. note: the image URL needs to be https."
+          },
+          {
+            "name": "companies",
+            "description": "Identifies the companies this user belongs to. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "email",
+            "description": "The email of the user"
+          },
+          {
+            "name": "name",
+            "description": "Name of the user"
+          },
+          {
+            "name": "phone",
+            "description": "The phone number of the user"
+          },
+          {
+            "name": "unsubscribedFromEmails",
+            "description": "Whether the Lead is unsubscribed from emails"
+          },
+          {
+            "name": "updateLastRequestAt",
+            "description": "Whether to instruct Intercom to update the users last_request_at value to the current API service time in UTC. default value if not sent is false."
+          },
+          {
+            "name": "utmCampaign",
+            "description": "Identifies a specific product promotion or strategic campaign"
+          },
+          {
+            "name": "utmContent",
+            "description": "Identifies what specifically was clicked to bring the user to the site"
+          },
+          {
+            "name": "utmMedium",
+            "description": "Identifies what type of link was used"
+          },
+          {
+            "name": "utmSource",
+            "description": "An avatar image URL. note: the image URL needs to be https."
+          },
+          {
+            "name": "utmTerm",
+            "description": "Identifies search terms"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "resource": [
+              "lead"
+            ]
+          }
+        }
+      },
+      {
+        "name": "customAttributesJson",
+        "displayName": "Custom Attributes",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "A hash of key/value pairs to represent custom data you want to attribute to a user"
+      },
+      {
+        "name": "customAttributesUi",
+        "displayName": "Custom Attributes",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "customAttributesValues",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "lead"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "A hash of key/value pairs to represent custom data you want to attribute to a user"
+      },
+      {
+        "name": "listBy",
+        "displayName": "List By",
+        "type": "options",
+        "options": [
+          {
+            "name": "ID",
+            "value": "id",
+            "description": "The Intercom defined ID representing the company"
+          },
+          {
+            "name": "Company ID",
+            "value": "companyId",
+            "description": "The company_id you have given to the company"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "users"
+            ]
+          }
+        }
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "users"
+            ]
+          }
+        },
+        "description": "View by value"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "users"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "users"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 50,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "segment_id",
+            "description": "Segment representing the Lead"
+          },
+          {
+            "name": "tag_id",
+            "description": "Tag representing the Lead"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "selectBy",
+        "displayName": "Select By",
+        "type": "options",
+        "options": [
+          {
+            "name": "Company ID",
+            "value": "companyId",
+            "description": "The company_id you have given to the company"
+          },
+          {
+            "name": "ID",
+            "value": "id",
+            "description": "The Intercom defined ID representing the company"
+          },
+          {
+            "name": "Name",
+            "value": "name",
+            "description": "The name of the company"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "What property to use to query the company"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "View by value"
+      },
+      {
+        "name": "companyId",
+        "displayName": "Company ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ]
+          }
+        },
+        "description": "The company ID you have defined for the company"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "industry",
+            "description": "The industry that this company operates in"
+          },
+          {
+            "name": "monthlySpend",
+            "description": "The phone number of the user"
+          },
+          {
+            "name": "name",
+            "description": "Name of the user"
+          },
+          {
+            "name": "plan",
+            "description": "The name of the plan you have associated with the company"
+          },
+          {
+            "name": "size",
+            "description": "The number of employees in this company"
+          },
+          {
+            "name": "website",
+            "description": "The URL for this company's website. Please note that the value specified here is not validated. Accepts any string."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create",
+              "update"
+            ],
+            "resource": [
+              "company"
+            ]
+          }
+        }
+      },
+      {
+        "name": "customAttributesJson",
+        "displayName": "Custom Attributes",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        },
+        "description": "A hash of key/value pairs to represent custom data you want to attribute to a user"
+      },
+      {
+        "name": "customAttributesUi",
+        "displayName": "Custom Attributes",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "customAttributesValues",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "company"
+            ],
+            "operation": [
+              "create",
+              "update"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        },
+        "description": "A hash of key/value pairs to represent custom data you want to attribute to a user"
+      }
+    ]
+  }
+}

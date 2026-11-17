@@ -1,0 +1,171 @@
+{
+  "id": "n8n-nodes-base.postmarktrigger",
+  "name": "Postmark Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.postmarktrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Postmark helps deliver and track application email. You can track statistics such as the number of emails sent or processed, opens, bounces and, spam complaints",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.postmarktrigger",
+  "credentials": {
+    "name": "Postmark credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/postmark",
+    "slug": "postmark",
+    "json_file": "credentials/postmark.json",
+    "markdown_file": "credentials/postmark.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "application",
+    "bounces",
+    "complaints",
+    "credentials",
+    "deliver",
+    "email",
+    "emails",
+    "helps",
+    "number",
+    "opens",
+    "postmark",
+    "postmarktrigger",
+    "processed",
+    "sent",
+    "spam",
+    "statistics",
+    "such",
+    "track",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.postmarktrigger.md",
+      "title": "Postmark Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.postmarktrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.postmarktrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.postmarktrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.postmarktrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.postmarktrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.postmarkTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "postmarkApi"
+  ],
+  "credential_details": [
+    {
+      "name": "postmarkApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Postmark Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Bounce",
+            "value": "bounce",
+            "description": "Trigger on bounce"
+          },
+          {
+            "name": "Click",
+            "value": "click",
+            "description": "Trigger on click"
+          },
+          {
+            "name": "Delivery",
+            "value": "delivery",
+            "description": "Trigger on delivery"
+          },
+          {
+            "name": "Open",
+            "value": "open",
+            "description": "Trigger webhook on open"
+          },
+          {
+            "name": "Spam Complaint",
+            "value": "spamComplaint",
+            "description": "Trigger on spam complaint"
+          },
+          {
+            "name": "Subscription Change",
+            "value": "subscriptionChange",
+            "description": "Trigger on subscription change"
+          }
+        ],
+        "description": "Webhook events that will be enabled for that endpoint"
+      },
+      {
+        "name": "firstOpen",
+        "displayName": "First Open",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "events": [
+              "open"
+            ]
+          }
+        },
+        "description": "Only fires on first open for event \"Open\""
+      },
+      {
+        "name": "includeContent",
+        "displayName": "Include Content",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "events": [
+              "bounce",
+              "spamComplaint"
+            ]
+          }
+        },
+        "description": "Whether to include message content for events \"Bounce\" and \"Spam Complaint\""
+      }
+    ]
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "id": "n8n-nodes-langchain.information-extractor",
+  "name": "Information Extractor",
+  "category": "cluster-root-node",
+  "category_description": "AI cluster root node (agent, chain, vector store)",
+  "node_type": "n8n-nodes-langchain.information-extractor",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Information Extractor node to extract structured information from incoming data",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.information-extractor",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Text",
+      "description": "defines the input text to extract information from. This is usually an expression that references a field from the input items. For example, this could be {{ $json.chatInput }} if the input is a chat trigger, or {{ $json.text }} if a previous node is Extract from PDF"
+    },
+    {
+      "name": "System Prompt Template",
+      "description": "Use this option to change the system prompt that's used for the information extraction. n8n automatically appends format specification instructions to the prompt"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "cluster",
+    "data",
+    "extract",
+    "extractor",
+    "incoming",
+    "prompt",
+    "root",
+    "structured",
+    "system",
+    "template",
+    "text"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.information-extractor.md",
+      "title": "Information Extractor node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.information-extractor",
+      "origpath": "integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.information-extractor.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-root-node/n8n-nodes-langchain.information-extractor.json",
+    "markdown": "nodes/cluster-root-node/n8n-nodes-langchain.information-extractor.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/root-nodes/n8n-nodes-langchain.information-extractor.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.informationExtractor",
+  "type_version": 1.2,
+  "type_versions": [
+    1,
+    1.1,
+    1.2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Information Extractor"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [
+      {
+        "displayName": "",
+        "type": "main"
+      },
+      {
+        "displayName": "Model",
+        "maxConnections": 1,
+        "type": "ai_languageModel",
+        "required": true
+      }
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "description": "The text to extract information from"
+      },
+      {
+        "name": "schemaType",
+        "displayName": "Schema Type",
+        "type": "options",
+        "default": "fromAttributes",
+        "options": [
+          {
+            "name": "From Attribute Descriptions",
+            "value": "fromAttributes",
+            "description": "Extract specific attributes from the text based on types and descriptions"
+          },
+          {
+            "name": "Generate From JSON Example",
+            "value": "fromJson",
+            "description": "Generate a schema from an example JSON object"
+          },
+          {
+            "name": "Define using JSON Schema",
+            "value": "manual",
+            "description": "Define the JSON schema manually"
+          }
+        ],
+        "description": "How to specify the schema for the desired output"
+      },
+      {
+        "name": "jsonSchemaExample",
+        "displayName": "JSON Example",
+        "type": "json",
+        "default": "{\n\t\"state\": \"California\",\n\t\"cities\": [\"Los Angeles\", \"San Francisco\", \"San Diego\"]\n}",
+        "displayOptions": {
+          "show": {
+            "schemaType": [
+              "fromJson"
+            ]
+          }
+        },
+        "description": "Example JSON object to use to generate the schema"
+      },
+      {
+        "name": "notice",
+        "displayName": "All properties will be required. To make them optional, use the 'JSON Schema' schema type instead",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.2
+                }
+              }
+            ],
+            "schemaType": [
+              "fromJson"
+            ]
+          }
+        }
+      },
+      {
+        "name": "inputSchema",
+        "displayName": "Input Schema",
+        "type": "json",
+        "default": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"state\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"cities\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}",
+        "displayOptions": {
+          "show": {
+            "schemaType": [
+              "manual"
+            ]
+          }
+        },
+        "description": "Schema to use for the function"
+      },
+      {
+        "name": "attributes",
+        "displayName": "Attributes",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "attributes",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              },
+              {
+                "name": "description",
+                "displayName": "Description",
+                "type": "string"
+              },
+              {
+                "name": "required",
+                "displayName": "Required",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "schemaType": [
+              "fromAttributes"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "systemPromptTemplate",
+            "description": "String to use directly as the system prompt template"
+          },
+          {
+            "name": "batching",
+            "description": "Batch processing options for rate limiting"
+          }
+        ]
+      }
+    ]
+  }
+}

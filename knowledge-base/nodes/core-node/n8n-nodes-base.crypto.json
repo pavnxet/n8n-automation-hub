@@ -1,0 +1,804 @@
+{
+  "id": "n8n-nodes-base.crypto",
+  "name": "Crypto",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.crypto",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Crypto node to perform cryptographic operations in workflows",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.crypto",
+  "credentials": {
+    "name": "Crypto",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/crypto",
+    "slug": "crypto",
+    "json_file": "credentials/crypto.json",
+    "markdown_file": "credentials/crypto.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Decrypt parameters",
+      "options": [
+        "Symmetric (Passphrase): Decrypt with a passphrase using an authenticated cipher",
+        "Asymmetric (RSA): Decrypt with an RSA private key",
+        "AES-256-GCM",
+        "AES-192-GCM",
+        "AES-128-GCM",
+        "ChaCha20-Poly1305",
+        "Value: Enter the base64 string produced by the Encrypt action"
+      ]
+    },
+    {
+      "name": "Encrypt parameters",
+      "options": [
+        "Mode: Select the mode to use. Choose from:",
+        "Symmetric (Passphrase): Encrypt with a passphrase using an authenticated cipher",
+        "Asymmetric (RSA): Encrypt with an RSA public key",
+        "AES-256-GCM",
+        "AES-192-GCM",
+        "AES-128-GCM",
+        "ChaCha20-Poly1305",
+        "Value: Enter the value you want to encrypt"
+      ]
+    },
+    {
+      "name": "Generate parameters",
+      "options": [
+        "Property Name: Enter the name of the property to write the random string to",
+        "Type: Select the encoding type to use to generate the string. Choose from:",
+        "ASCII",
+        "BASE64",
+        "HEX",
+        "UUID"
+      ]
+    },
+    {
+      "name": "Hash parameters",
+      "options": [
+        "Type: Select the hash type to use. Choose from:",
+        "MD5",
+        "SHA256",
+        "SHA3-256",
+        "SHA3-384",
+        "SHA3-512",
+        "SHA384",
+        "SHA512",
+        "Value: If you turn off Binary File, enter the value you want to hash",
+        "Property Name: Enter the name of the property you want to write the hash to",
+        "Encoding: Select the encoding type to use. Choose from:",
+        "BASE64",
+        "HEX"
+      ]
+    },
+    {
+      "name": "Hmac parameters",
+      "description": "This action uses the Hmac Secret from your Crypto credentials",
+      "options": [
+        "Type: Select the hash type to use. Choose from:",
+        "MD5",
+        "SHA256",
+        "SHA3-256",
+        "SHA3-384",
+        "SHA3-512",
+        "SHA384",
+        "SHA512",
+        "Property Name: Enter the name of the property you want to write the Hmac to",
+        "Encoding: Select the encoding type to use. Choose from:",
+        "BASE64",
+        "HEX"
+      ]
+    },
+    {
+      "name": "Sign parameters",
+      "description": "This action uses the Private Key from your Crypto credentials",
+      "options": [
+        "Value: Enter the value you want to sign",
+        "Encoding: Select the encoding type to use. Choose from:",
+        "BASE64",
+        "HEX"
+      ]
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "core",
+    "crypto",
+    "cryptographic",
+    "decrypt",
+    "encrypt",
+    "generate",
+    "hash",
+    "hmac",
+    "operations",
+    "parameters",
+    "perform",
+    "sign"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.crypto.md",
+      "title": "Crypto",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.crypto",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.crypto.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.crypto.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.crypto.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.crypto.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.crypto",
+  "type_version": 2.0,
+  "type_versions": [
+    2
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "crypto"
+  ],
+  "credential_details": [
+    {
+      "name": "crypto",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "action": [
+            "hmac",
+            "sign"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Crypto",
+    "color": "#408000"
+  },
+  "subtitle": "={{$parameter[\"action\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 18,
+    "parameters": [
+      {
+        "name": "action",
+        "displayName": "Action",
+        "type": "options",
+        "default": "hash",
+        "options": [
+          {
+            "name": "Generate",
+            "value": "generate",
+            "description": "Generate random string"
+          },
+          {
+            "name": "Hash",
+            "value": "hash",
+            "description": "Hash a text or file in a specified format"
+          },
+          {
+            "name": "Hmac",
+            "value": "hmac",
+            "description": "Hmac a text or file in a specified format"
+          },
+          {
+            "name": "Sign",
+            "value": "sign",
+            "description": "Sign a string using a private key"
+          }
+        ]
+      },
+      {
+        "name": "binaryData",
+        "displayName": "Binary File",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hash",
+              "hmac"
+            ]
+          }
+        },
+        "description": "Whether the data to hashed should be taken from binary field"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Binary Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hash",
+              "hmac"
+            ],
+            "binaryData": [
+              true
+            ]
+          }
+        },
+        "description": "Name of the binary property which contains the input data"
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "default": "SHA256",
+        "options": [
+          {
+            "name": "MD5",
+            "value": "MD5"
+          },
+          {
+            "name": "SHA256",
+            "value": "SHA256"
+          },
+          {
+            "name": "SHA3-256",
+            "value": "SHA3-256"
+          },
+          {
+            "name": "SHA3-384",
+            "value": "SHA3-384"
+          },
+          {
+            "name": "SHA3-512",
+            "value": "SHA3-512"
+          },
+          {
+            "name": "SHA384",
+            "value": "SHA384"
+          },
+          {
+            "name": "SHA512",
+            "value": "SHA512"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hash"
+            ]
+          }
+        },
+        "description": "The hash type to use"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hash"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "The value that should be hashed"
+      },
+      {
+        "name": "dataPropertyName",
+        "displayName": "Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hash"
+            ]
+          }
+        },
+        "description": "Name of the property to which to write the hash"
+      },
+      {
+        "name": "encoding",
+        "displayName": "Encoding",
+        "type": "options",
+        "required": true,
+        "default": "hex",
+        "options": [
+          {
+            "name": "BASE64",
+            "value": "base64"
+          },
+          {
+            "name": "HEX",
+            "value": "hex"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hash"
+            ]
+          }
+        }
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "default": "SHA256",
+        "options": [
+          {
+            "name": "MD5",
+            "value": "MD5"
+          },
+          {
+            "name": "SHA256",
+            "value": "SHA256"
+          },
+          {
+            "name": "SHA3-256",
+            "value": "SHA3-256"
+          },
+          {
+            "name": "SHA3-384",
+            "value": "SHA3-384"
+          },
+          {
+            "name": "SHA3-512",
+            "value": "SHA3-512"
+          },
+          {
+            "name": "SHA384",
+            "value": "SHA384"
+          },
+          {
+            "name": "SHA512",
+            "value": "SHA512"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hmac"
+            ]
+          }
+        },
+        "description": "The hash type to use"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hmac"
+            ],
+            "binaryData": [
+              false
+            ]
+          }
+        },
+        "description": "The value of which the hmac should be created"
+      },
+      {
+        "name": "dataPropertyName",
+        "displayName": "Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hmac"
+            ]
+          }
+        },
+        "description": "Name of the property to which to write the hmac"
+      },
+      {
+        "name": "encoding",
+        "displayName": "Encoding",
+        "type": "options",
+        "required": true,
+        "default": "hex",
+        "options": [
+          {
+            "name": "BASE64",
+            "value": "base64"
+          },
+          {
+            "name": "HEX",
+            "value": "hex"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "action": [
+              "hmac"
+            ]
+          }
+        }
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "action": [
+              "sign"
+            ]
+          }
+        },
+        "description": "The value that should be signed"
+      },
+      {
+        "name": "dataPropertyName",
+        "displayName": "Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "action": [
+              "sign"
+            ]
+          }
+        },
+        "description": "Name of the property to which to write the signed value"
+      },
+      {
+        "name": "algorithm",
+        "displayName": "Algorithm Name or ID",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "RSA-MD5",
+            "value": "RSA-MD5"
+          },
+          {
+            "name": "RSA-RIPEMD160",
+            "value": "RSA-RIPEMD160"
+          },
+          {
+            "name": "RSA-SHA1",
+            "value": "RSA-SHA1"
+          },
+          {
+            "name": "RSA-SHA1-2",
+            "value": "RSA-SHA1-2"
+          },
+          {
+            "name": "RSA-SHA224",
+            "value": "RSA-SHA224"
+          },
+          {
+            "name": "RSA-SHA256",
+            "value": "RSA-SHA256"
+          },
+          {
+            "name": "RSA-SHA3-224",
+            "value": "RSA-SHA3-224"
+          },
+          {
+            "name": "RSA-SHA3-256",
+            "value": "RSA-SHA3-256"
+          },
+          {
+            "name": "RSA-SHA3-384",
+            "value": "RSA-SHA3-384"
+          },
+          {
+            "name": "RSA-SHA3-512",
+            "value": "RSA-SHA3-512"
+          },
+          {
+            "name": "RSA-SHA384",
+            "value": "RSA-SHA384"
+          },
+          {
+            "name": "RSA-SHA512",
+            "value": "RSA-SHA512"
+          },
+          {
+            "name": "RSA-SHA512/224",
+            "value": "RSA-SHA512/224"
+          },
+          {
+            "name": "RSA-SHA512/256",
+            "value": "RSA-SHA512/256"
+          },
+          {
+            "name": "RSA-SM3",
+            "value": "RSA-SM3"
+          },
+          {
+            "name": "blake2b512",
+            "value": "blake2b512"
+          },
+          {
+            "name": "blake2s256",
+            "value": "blake2s256"
+          },
+          {
+            "name": "id-rsassa-pkcs1-v1_5-with-sha3-224",
+            "value": "id-rsassa-pkcs1-v1_5-with-sha3-224"
+          },
+          {
+            "name": "id-rsassa-pkcs1-v1_5-with-sha3-256",
+            "value": "id-rsassa-pkcs1-v1_5-with-sha3-256"
+          },
+          {
+            "name": "id-rsassa-pkcs1-v1_5-with-sha3-384",
+            "value": "id-rsassa-pkcs1-v1_5-with-sha3-384"
+          },
+          {
+            "name": "id-rsassa-pkcs1-v1_5-with-sha3-512",
+            "value": "id-rsassa-pkcs1-v1_5-with-sha3-512"
+          },
+          {
+            "name": "md5",
+            "value": "md5"
+          },
+          {
+            "name": "md5-sha1",
+            "value": "md5-sha1"
+          },
+          {
+            "name": "md5WithRSAEncryption",
+            "value": "md5WithRSAEncryption"
+          },
+          {
+            "name": "ripemd",
+            "value": "ripemd"
+          },
+          {
+            "name": "ripemd160",
+            "value": "ripemd160"
+          },
+          {
+            "name": "ripemd160WithRSA",
+            "value": "ripemd160WithRSA"
+          },
+          {
+            "name": "rmd160",
+            "value": "rmd160"
+          },
+          {
+            "name": "sha1",
+            "value": "sha1"
+          },
+          {
+            "name": "sha1WithRSAEncryption",
+            "value": "sha1WithRSAEncryption"
+          },
+          {
+            "name": "sha224",
+            "value": "sha224"
+          },
+          {
+            "name": "sha224WithRSAEncryption",
+            "value": "sha224WithRSAEncryption"
+          },
+          {
+            "name": "sha256",
+            "value": "sha256"
+          },
+          {
+            "name": "sha256WithRSAEncryption",
+            "value": "sha256WithRSAEncryption"
+          },
+          {
+            "name": "sha3-224",
+            "value": "sha3-224"
+          },
+          {
+            "name": "sha3-256",
+            "value": "sha3-256"
+          },
+          {
+            "name": "sha3-384",
+            "value": "sha3-384"
+          },
+          {
+            "name": "sha3-512",
+            "value": "sha3-512"
+          },
+          {
+            "name": "sha384",
+            "value": "sha384"
+          },
+          {
+            "name": "sha384WithRSAEncryption",
+            "value": "sha384WithRSAEncryption"
+          },
+          {
+            "name": "sha512",
+            "value": "sha512"
+          },
+          {
+            "name": "sha512-224",
+            "value": "sha512-224"
+          },
+          {
+            "name": "sha512-224WithRSAEncryption",
+            "value": "sha512-224WithRSAEncryption"
+          },
+          {
+            "name": "sha512-256",
+            "value": "sha512-256"
+          },
+          {
+            "name": "sha512-256WithRSAEncryption",
+            "value": "sha512-256WithRSAEncryption"
+          },
+          {
+            "name": "sha512WithRSAEncryption",
+            "value": "sha512WithRSAEncryption"
+          },
+          {
+            "name": "shake128",
+            "value": "shake128"
+          },
+          {
+            "name": "shake256",
+            "value": "shake256"
+          },
+          {
+            "name": "sm3",
+            "value": "sm3"
+          },
+          {
+            "name": "sm3WithRSAEncryption",
+            "value": "sm3WithRSAEncryption"
+          },
+          {
+            "name": "ssl3-md5",
+            "value": "ssl3-md5"
+          },
+          {
+            "name": "ssl3-sha1",
+            "value": "ssl3-sha1"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "action": [
+              "sign"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "encoding",
+        "displayName": "Encoding",
+        "type": "options",
+        "required": true,
+        "default": "hex",
+        "options": [
+          {
+            "name": "BASE64",
+            "value": "base64"
+          },
+          {
+            "name": "HEX",
+            "value": "hex"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "action": [
+              "sign"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dataPropertyName",
+        "displayName": "Property Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "action": [
+              "generate"
+            ]
+          }
+        },
+        "description": "Name of the property to which to write the random string"
+      },
+      {
+        "name": "encodingType",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "default": "uuid",
+        "options": [
+          {
+            "name": "ASCII",
+            "value": "ascii"
+          },
+          {
+            "name": "BASE64",
+            "value": "base64"
+          },
+          {
+            "name": "HEX",
+            "value": "hex"
+          },
+          {
+            "name": "UUID",
+            "value": "uuid"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "action": [
+              "generate"
+            ]
+          }
+        },
+        "description": "Encoding that will be used to generate string"
+      },
+      {
+        "name": "stringLength",
+        "displayName": "Length",
+        "type": "number",
+        "default": 32,
+        "displayOptions": {
+          "show": {
+            "action": [
+              "generate"
+            ],
+            "encodingType": [
+              "ascii",
+              "base64",
+              "hex"
+            ]
+          }
+        },
+        "description": "Length of the generated string"
+      }
+    ]
+  }
+}

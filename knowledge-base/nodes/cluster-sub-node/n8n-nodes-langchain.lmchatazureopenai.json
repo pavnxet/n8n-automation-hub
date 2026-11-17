@@ -1,0 +1,366 @@
+{
+  "id": "n8n-nodes-langchain.lmchatazureopenai",
+  "name": "Microsoft Foundry Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatazureopenai",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "The Microsoft Foundry Chat Model node connects conversational agents[^1] to the chat models on your Microsoft Foundry or Azure OpenAI resource",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatazureopenai",
+  "credentials": {
+    "name": "Microsoft Foundry credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/azureopenai",
+    "slug": "azureopenai",
+    "json_file": "credentials/azureopenai.json",
+    "markdown_file": "credentials/azureopenai.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Authentication",
+      "description": "Choose API Key or Azure Entra ID (OAuth2). Each option uses its own credential"
+    },
+    {
+      "name": "Project",
+      "description": "Enter the name of the Microsoft Foundry project that owns the deployment. Leave it empty to use the Project from the credential. A classic Azure OpenAI resource doesn't use it"
+    },
+    {
+      "name": "Model (Deployment)",
+      "description": "Select the deployment to use to generate the completion"
+    },
+    {
+      "name": "Model Family",
+      "description": "Choose the API family the deployment uses. Azure doesn't report this, so set it to match your deployment"
+    },
+    {
+      "name": "Use Responses API",
+      "description": "Choose which API the node calls for an OpenAI family deployment. This needs a credential that uses the Microsoft Foundry endpoint type"
+    },
+    {
+      "name": "Frequency Penalty",
+      "description": "Use this option to control the chances of the model repeating itself. Higher values reduce the chance of the model repeating itself"
+    },
+    {
+      "name": "Maximum Number of Tokens",
+      "description": "Enter the maximum number of tokens used, which sets the completion length"
+    },
+    {
+      "name": "Response Format",
+      "description": "Choose Text or JSON. JSON ensures the model returns valid JSON"
+    },
+    {
+      "name": "Presence Penalty",
+      "description": "Use this option to control the chances of the model talking about new topics. Higher values increase the chance of the model talking about new topics"
+    },
+    {
+      "name": "Sampling Temperature",
+      "description": "Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations. The maximum is 2 for the OpenAI model family and 1 for the Anthropic model family"
+    },
+    {
+      "name": "Timeout",
+      "description": "Enter the maximum request time in milliseconds"
+    },
+    {
+      "name": "Max Retries",
+      "description": "Enter the maximum number of times to retry a request"
+    },
+    {
+      "name": "Top P",
+      "description": "Use this option to set the probability the completion should use. Use a lower value to ignore less probable options"
+    },
+    {
+      "name": "Extra Body",
+      "description": "Enter extra JSON properties to add to the request body. Use this for parameters that your deployment supports and the other options don't cover. The value must be a JSON object"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agents",
+    "api",
+    "authentication",
+    "azure",
+    "body",
+    "chat",
+    "cluster",
+    "connects",
+    "conversational",
+    "credentials",
+    "deployment",
+    "extra",
+    "family",
+    "format",
+    "foundry",
+    "frequency",
+    "lmchatazureopenai",
+    "max",
+    "maximum",
+    "microsoft",
+    "model",
+    "models",
+    "number",
+    "openai",
+    "penalty",
+    "presence",
+    "project",
+    "response",
+    "responses",
+    "retries",
+    "sampling",
+    "sub",
+    "temperature",
+    "timeout",
+    "tokens",
+    "top"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.lmchatazureopenai.md",
+      "title": "Microsoft Foundry Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatazureopenai",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatazureopenai.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatazureopenai.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatazureopenai.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatazureopenai.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi",
+  "type_version": 1.1,
+  "type_versions": [
+    1,
+    1.1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "azureOpenAiApi",
+    "azureEntraCognitiveServicesOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "azureOpenAiApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "azureOpenAiApi"
+          ]
+        }
+      }
+    },
+    {
+      "name": "azureEntraCognitiveServicesOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "azureEntraCognitiveServicesOAuth2Api"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Microsoft Foundry Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 9,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "azureOpenAiApi",
+        "options": [
+          {
+            "name": "API Key",
+            "value": "azureOpenAiApi"
+          },
+          {
+            "name": "Azure Entra ID (OAuth2)",
+            "value": "azureEntraCognitiveServicesOAuth2Api"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "notice",
+        "displayName": "If using JSON response format, you must include word \"json\" in the prompt in your chain or agent. Also, make sure to select latest models released post November 2023.",
+        "type": "notice",
+        "displayOptions": {
+          "show": {
+            "/options.responseFormat": [
+              "json_object"
+            ]
+          }
+        }
+      },
+      {
+        "name": "model",
+        "displayName": "Model (Deployment) Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        },
+        "description": "The name of the model(deployment) to use (e.g., gpt-4, gpt-35-turbo)"
+      },
+      {
+        "name": "project",
+        "displayName": "Project",
+        "type": "string",
+        "description": "The Microsoft Foundry project that owns the deployment. Leave empty to use the project from the credential. A classic Azure OpenAI resource does not use it."
+      },
+      {
+        "name": "model",
+        "displayName": "Model (Deployment)",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "id",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ]
+          }
+        },
+        "description": "The deployment to use. Choose from the list (Microsoft Foundry credentials only), or enter the deployment name."
+      },
+      {
+        "name": "modelFamily",
+        "displayName": "Model Family",
+        "type": "options",
+        "default": "openai",
+        "options": [
+          {
+            "name": "OpenAI",
+            "value": "openai"
+          },
+          {
+            "name": "Anthropic",
+            "value": "anthropic"
+          }
+        ],
+        "description": "The API family the deployment answers on. Azure does not report this, so set it to match the deployment: OpenAI for GPT and other OpenAI-compatible models, Anthropic for Claude. Anthropic needs a credential using the Azu"
+      },
+      {
+        "name": "responsesApiEnabled",
+        "displayName": "Use Responses API",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "@version": [
+              {
+                "_cnd": {
+                  "gte": 1.1
+                }
+              }
+            ],
+            "modelFamily": [
+              "openai"
+            ]
+          }
+        },
+        "description": "Whether to call the deployment on the Responses API instead of Chat Completions. Azure does not tell us which one a deployment supports, so set this to match your deployment: leave it off for a chat-completions deploymen"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "frequencyPenalty",
+            "description": "Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim"
+          },
+          {
+            "name": "maxTokens",
+            "description": "The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 32,768"
+          },
+          {
+            "name": "responseFormat"
+          },
+          {
+            "name": "presencePenalty",
+            "description": "Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics"
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive. Claude"
+          },
+          {
+            "name": "timeout",
+            "description": "Maximum amount of time a request is allowed to take in milliseconds"
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt on failure"
+          },
+          {
+            "name": "topP",
+            "description": "Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered. We generally recommend altering this or temperature b"
+          },
+          {
+            "name": "extraBody",
+            "description": "Optional additional JSON properties to include in the request body. Use this for parameters a deployment supports that the options above do not cover."
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

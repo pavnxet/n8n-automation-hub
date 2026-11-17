@@ -1,0 +1,288 @@
+{
+  "id": "n8n-nodes-base.aggregate",
+  "name": "Aggregate",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.aggregate",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Aggregate node to take separate items, or portions of them, and group them together into individual items",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.aggregate",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Individual Fields",
+      "description": "Refer to Node options for more configuration options"
+    },
+    {
+      "name": "All Item Data",
+      "description": "Refer to Node options for more configuration options",
+      "options": [
+        "Put Output in Field: Enter the name of the field to output the data in",
+        "Include: Select which fields to include in the output. Choose from:",
+        "All fields: The output includes data from all fields with no further parameters"
+      ]
+    },
+    {
+      "name": "Disable Dot Notation",
+      "description": "The node displays this toggle when you select the Individual Fields Aggregate. It controls whether to disallow referencing child fields using parent.child in the field name (turned on), or allow it (turned off, default)"
+    },
+    {
+      "name": "Merge Lists",
+      "description": "The node displays this toggle when you select the Individual Fields Aggregate. Turn it on if the field to aggregate is a list and you want to output a single flat list rather than a list of lists"
+    },
+    {
+      "name": "Include Binaries",
+      "description": "The node displays this toggle for both Aggregate types. Turn it on if you want to include binary data from the input in the new output"
+    },
+    {
+      "name": "Keep Missing And Null Values",
+      "description": "The node displays this toggle when you select the Individual Fields Aggregate. Turn it on to add a null (empty) entry in the output list when there is a null or missing value in the input. If turned off, the output ignores null or empty values"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "aggregate",
+    "binaries",
+    "core",
+    "data",
+    "disable",
+    "dot",
+    "fields",
+    "group",
+    "include",
+    "individual",
+    "item",
+    "items",
+    "keep",
+    "lists",
+    "merge",
+    "missing",
+    "notation",
+    "null",
+    "portions",
+    "separate",
+    "take",
+    "them",
+    "together",
+    "values"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "0nvcx1EqJQgGVzUXOOMN",
+      "name": "data-section-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.aggregate.md",
+      "title": "Aggregate",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.aggregate",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.aggregate.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.aggregate.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.aggregate.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.aggregate.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.aggregate",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Aggregate"
+  },
+  "subtitle": "",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 7,
+    "parameters": [
+      {
+        "name": "aggregate",
+        "displayName": "Aggregate",
+        "type": "options",
+        "default": "aggregateIndividualFields",
+        "options": [
+          {
+            "name": "Individual Fields",
+            "value": "aggregateIndividualFields"
+          },
+          {
+            "name": "All Item Data (Into a Single List)",
+            "value": "aggregateAllItemData"
+          }
+        ]
+      },
+      {
+        "name": "fieldsToAggregate",
+        "displayName": "Fields To Aggregate",
+        "type": "fixedCollection",
+        "default": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "",
+              "renameField": false
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "fieldToAggregate",
+            "values": [
+              {
+                "name": "fieldToAggregate",
+                "displayName": "Input Field Name",
+                "type": "string"
+              },
+              {
+                "name": "renameField",
+                "displayName": "Rename Field",
+                "type": "boolean"
+              },
+              {
+                "name": "outputFieldName",
+                "displayName": "Output Field Name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "aggregate": [
+              "aggregateIndividualFields"
+            ]
+          }
+        }
+      },
+      {
+        "name": "destinationFieldName",
+        "displayName": "Put Output in Field",
+        "type": "string",
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "aggregate": [
+              "aggregateAllItemData"
+            ]
+          }
+        },
+        "description": "The name of the output field to put the data in"
+      },
+      {
+        "name": "include",
+        "displayName": "Include",
+        "type": "options",
+        "default": "allFields",
+        "options": [
+          {
+            "name": "All Fields",
+            "value": "allFields"
+          },
+          {
+            "name": "Specified Fields",
+            "value": "specifiedFields"
+          },
+          {
+            "name": "All Fields Except",
+            "value": "allFieldsExcept"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "aggregate": [
+              "aggregateAllItemData"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fieldsToExclude",
+        "displayName": "Fields To Exclude",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "aggregate": [
+              "aggregateAllItemData"
+            ],
+            "include": [
+              "allFieldsExcept"
+            ]
+          }
+        }
+      },
+      {
+        "name": "fieldsToInclude",
+        "displayName": "Fields To Include",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "aggregate": [
+              "aggregateAllItemData"
+            ],
+            "include": [
+              "specifiedFields"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "disableDotNotation",
+            "description": "Whether to disallow referencing child fields using `parent.child` in the field name"
+          },
+          {
+            "name": "mergeLists",
+            "description": "Whether to merge the output into a single flat list (rather than a list of lists), if the field to aggregate is a list"
+          },
+          {
+            "name": "includeBinaries",
+            "description": "Whether to include the binary data in the new item"
+          },
+          {
+            "name": "keepOnlyUnique",
+            "description": "Whether to keep only unique binaries by comparing mime types, file types, file sizes and file extensions"
+          },
+          {
+            "name": "keepMissing",
+            "description": "Whether to add a null entry to the aggregated list when there is a missing or null value"
+          }
+        ]
+      }
+    ]
+  }
+}

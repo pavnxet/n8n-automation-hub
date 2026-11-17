@@ -1,0 +1,861 @@
+{
+  "id": "n8n-nodes-base.segment",
+  "name": "Segment",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.segment",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Segment node to automate work in Segment, and integrate Segment with other applications. n8n has built-in support for a wide range of Segment features, including adding users to groups, creating identities, and tracking activities",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.segment",
+  "credentials": {
+    "name": "Segment",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/segment",
+    "slug": "segment",
+    "json_file": "credentials/segment.json",
+    "markdown_file": "credentials/segment.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Group",
+      "operation": "Add a user to a group",
+      "description": "",
+      "doc": "",
+      "resource_value": "group",
+      "operation_value": "add"
+    },
+    {
+      "resource": "Identify",
+      "operation": "Create an identity",
+      "description": "",
+      "doc": "",
+      "resource_value": "identify",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Track",
+      "operation": "Record the actions your users perform. Every action triggers an event, which can also have associated properties",
+      "description": "",
+      "doc": "",
+      "resource_value": "track",
+      "operation_value": "event"
+    },
+    {
+      "resource": "Track",
+      "operation": "Record page views on your website, along with optional extra information about the page being viewed",
+      "description": "",
+      "doc": "",
+      "resource_value": "track",
+      "operation_value": "page"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "action",
+    "actions",
+    "activities",
+    "add",
+    "adding",
+    "along",
+    "app",
+    "applications",
+    "associated",
+    "being",
+    "create",
+    "creating",
+    "event",
+    "every",
+    "extra",
+    "group",
+    "groups",
+    "identify",
+    "identities",
+    "identity",
+    "including",
+    "optional",
+    "perform",
+    "properties",
+    "record",
+    "segment",
+    "track",
+    "tracking",
+    "triggers",
+    "user",
+    "users",
+    "viewed",
+    "views",
+    "website",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.segment.md",
+      "title": "Segment node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.segment",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.segment.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.segment.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.segment.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.segment.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.segment",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "segmentApi"
+  ],
+  "credential_details": [
+    {
+      "name": "segmentApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Segment"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \":\" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 23,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "identify",
+        "options": [
+          {
+            "name": "Group",
+            "value": "group",
+            "description": "Group lets you associate an identified user with a group"
+          },
+          {
+            "name": "Identify",
+            "value": "identify",
+            "description": "Identify lets you tie a user to their actions"
+          },
+          {
+            "name": "Track",
+            "value": "track",
+            "description": "Track lets you record events"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "add",
+        "options": [
+          {
+            "name": "Add",
+            "value": "add",
+            "description": "Add a user to a group"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "group"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "group"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "groupId",
+        "displayName": "Group ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "group"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        },
+        "description": "A Group ID is the unique identifier which you recognize a group by in your own database"
+      },
+      {
+        "name": "traits",
+        "displayName": "Traits",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "traitsUi",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "group"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "context",
+        "displayName": "Context",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "contextUi",
+            "values": [
+              {
+                "name": "active",
+                "displayName": "Active",
+                "type": "boolean"
+              },
+              {
+                "name": "ip",
+                "displayName": "IP",
+                "type": "string"
+              },
+              {
+                "name": "locate",
+                "displayName": "Locale",
+                "type": "string"
+              },
+              {
+                "name": "page",
+                "displayName": "Page",
+                "type": "string"
+              },
+              {
+                "name": "timezone",
+                "displayName": "Timezone",
+                "type": "string"
+              },
+              {
+                "name": "app",
+                "displayName": "App",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "campaign",
+                "displayName": "Campaign",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "device",
+                "displayName": "Device",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "group"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "integrations",
+        "displayName": "Integration",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "integrationsUi",
+            "values": [
+              {
+                "name": "all",
+                "displayName": "All",
+                "type": "boolean"
+              },
+              {
+                "name": "salesforce",
+                "displayName": "Salesforce",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "group"
+            ],
+            "operation": [
+              "add"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an identity"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "identify"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "event",
+        "options": [
+          {
+            "name": "Event",
+            "value": "event",
+            "description": "Record the actions your users perform. Every action triggers an event, which can also have associated properties."
+          },
+          {
+            "name": "Page",
+            "value": "page",
+            "description": "Record page views on your website, along with optional extra information about the page being viewed"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "identify"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "traits",
+        "displayName": "Traits",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "traitsUi",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "identify"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "context",
+        "displayName": "Context",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "contextUi",
+            "values": [
+              {
+                "name": "active",
+                "displayName": "Active",
+                "type": "boolean"
+              },
+              {
+                "name": "ip",
+                "displayName": "IP",
+                "type": "string"
+              },
+              {
+                "name": "locate",
+                "displayName": "Locale",
+                "type": "string"
+              },
+              {
+                "name": "page",
+                "displayName": "Page",
+                "type": "string"
+              },
+              {
+                "name": "timezone",
+                "displayName": "Timezone",
+                "type": "string"
+              },
+              {
+                "name": "app",
+                "displayName": "App",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "campaign",
+                "displayName": "Campaign",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "device",
+                "displayName": "Device",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "identify"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "integrations",
+        "displayName": "Integration",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "integrationsUi",
+            "values": [
+              {
+                "name": "all",
+                "displayName": "All",
+                "type": "boolean"
+              },
+              {
+                "name": "salesforce",
+                "displayName": "Salesforce",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "identify"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "event"
+            ]
+          }
+        },
+        "description": "Name of the action that a user has performed"
+      },
+      {
+        "name": "context",
+        "displayName": "Context",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "contextUi",
+            "values": [
+              {
+                "name": "active",
+                "displayName": "Active",
+                "type": "boolean"
+              },
+              {
+                "name": "ip",
+                "displayName": "IP",
+                "type": "string"
+              },
+              {
+                "name": "locate",
+                "displayName": "Locale",
+                "type": "string"
+              },
+              {
+                "name": "page",
+                "displayName": "Page",
+                "type": "string"
+              },
+              {
+                "name": "timezone",
+                "displayName": "Timezone",
+                "type": "string"
+              },
+              {
+                "name": "app",
+                "displayName": "App",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "campaign",
+                "displayName": "Campaign",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "device",
+                "displayName": "Device",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "integrations",
+        "displayName": "Integration",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "integrationsUi",
+            "values": [
+              {
+                "name": "all",
+                "displayName": "All",
+                "type": "boolean"
+              },
+              {
+                "name": "salesforce",
+                "displayName": "Salesforce",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "properties",
+        "displayName": "Properties",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "propertiesUi",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        },
+        "description": "Name of the page For example, most sites have a “Signup” page that can be useful to tag, so you can see users as they move through your funnel"
+      },
+      {
+        "name": "context",
+        "displayName": "Context",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "contextUi",
+            "values": [
+              {
+                "name": "active",
+                "displayName": "Active",
+                "type": "boolean"
+              },
+              {
+                "name": "ip",
+                "displayName": "IP",
+                "type": "string"
+              },
+              {
+                "name": "locate",
+                "displayName": "Locale",
+                "type": "string"
+              },
+              {
+                "name": "page",
+                "displayName": "Page",
+                "type": "string"
+              },
+              {
+                "name": "timezone",
+                "displayName": "Timezone",
+                "type": "string"
+              },
+              {
+                "name": "app",
+                "displayName": "App",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "campaign",
+                "displayName": "Campaign",
+                "type": "fixedCollection"
+              },
+              {
+                "name": "device",
+                "displayName": "Device",
+                "type": "fixedCollection"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "integrations",
+        "displayName": "Integration",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "integrationsUi",
+            "values": [
+              {
+                "name": "all",
+                "displayName": "All",
+                "type": "boolean"
+              },
+              {
+                "name": "salesforce",
+                "displayName": "Salesforce",
+                "type": "boolean"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "properties",
+        "displayName": "Properties",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "propertiesUi",
+            "values": [
+              {
+                "name": "key",
+                "displayName": "Key",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "track"
+            ],
+            "operation": [
+              "page"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

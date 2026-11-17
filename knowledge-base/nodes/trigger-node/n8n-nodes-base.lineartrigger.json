@@ -1,0 +1,166 @@
+{
+  "id": "n8n-nodes-base.lineartrigger",
+  "name": "Linear Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.lineartrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Learn how to use the Linear Trigger node in n8n. Follow technical documentation to integrate Linear Trigger node into your workflows.",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.lineartrigger",
+  "credentials": {
+    "name": "Linear credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/linear",
+    "slug": "linear",
+    "json_file": "credentials/linear.json",
+    "markdown_file": "credentials/linear.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "credentials",
+    "linear",
+    "lineartrigger",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.lineartrigger.md",
+      "title": "Linear Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.lineartrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.lineartrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.lineartrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.lineartrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.lineartrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.linearTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "linearApi",
+    "linearOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "linearApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "linearOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Linear Trigger"
+  },
+  "subtitle": "={{$parameter[\"triggerOn\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiToken",
+        "options": [
+          {
+            "name": "API Token",
+            "value": "apiToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "notice",
+        "displayName": "Make sure your credential has the \"Admin\" scope to create webhooks.",
+        "type": "notice"
+      },
+      {
+        "name": "teamId",
+        "displayName": "Team Name or ID",
+        "type": "options",
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "resources",
+        "displayName": "Listen to Resources",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Comment Reaction",
+            "value": "reaction"
+          },
+          {
+            "name": "Cycle",
+            "value": "cycle"
+          },
+          {
+            "name": "Issue",
+            "value": "issue"
+          },
+          {
+            "name": "Issue Comment",
+            "value": "comment"
+          },
+          {
+            "name": "Issue Label",
+            "value": "issueLabel"
+          },
+          {
+            "name": "Project",
+            "value": "project"
+          }
+        ]
+      }
+    ]
+  }
+}

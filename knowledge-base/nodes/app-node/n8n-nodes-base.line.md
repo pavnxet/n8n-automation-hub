@@ -1,0 +1,22 @@
+<!-- n8n built-in node reference: n8n-nodes-base.line | source: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.line -->
+
+> **Feature availability:**
+> The Line node is deprecated from n8n 1.64.0. LINE Notify ends its own service on April 1, 2025, after which the node stops working. View LINE Notify's [end of service announcement](https://notify-bot.line.me/closing-announce) for more information.
+
+Use the Line node to automate work in Line, and integrate Line with other applications. n8n has built-in support for a wide range of Line features, including sending notifications. 
+
+On this page, you'll find a list of operations the Line node supports and links to more resources.
+
+> **Credentials:**
+> Refer to [Line credentials](https://docs.n8n.io/integrations/builtin/credentials/line) for guidance on setting up authentication.
+
+> **AI tool:** This node can be used as an AI tool. Connect it to the Tools input of an AI Agent node so the agent can call it.
+
+## Operations
+
+* Notification
+    * Sends notifications to users or groups
+
+## Templates and examples
+
+[Browse Line node documentation integration templates](https://n8n.io/integrations/line) or [search all templates](https://n8n.io/workflows/)

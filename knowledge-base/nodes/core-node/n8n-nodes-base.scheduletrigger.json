@@ -1,0 +1,290 @@
+{
+  "id": "n8n-nodes-base.scheduletrigger",
+  "name": "Schedule Trigger",
+  "category": "core-node",
+  "category_description": "Core node - built-in logic, data or generic API functionality",
+  "node_type": "n8n-nodes-base.scheduletrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Schedule Trigger node to run workflows at fixed intervals and times. This works in a similar way to the Cron software utility in Unix-like systems",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger",
+  "credentials": null,
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Seconds trigger interval"
+    },
+    {
+      "name": "Minutes trigger interval"
+    },
+    {
+      "name": "Hours trigger interval",
+      "description": "For example, if you enter 6 Hours Between Triggers and 30 Trigger at Minute, the node will run every six hours at 30 minutes past the hour",
+      "options": [
+        "Hours Between Triggers: Enter the number of hours between each workflow trigger"
+      ]
+    },
+    {
+      "name": "Days trigger interval",
+      "description": "For example, if you enter 2 Days Between Triggers, 9am for Trigger at Hour, and 15 Trigger at Minute, the node will run every two days at 9:15am",
+      "options": [
+        "Days Between Triggers: Enter the number of days between each workflow trigger",
+        "Trigger at Hour: Select the hour of the day to trigger the node"
+      ]
+    },
+    {
+      "name": "Weeks trigger interval",
+      "description": "For example, if you enter 2 Weeks Between Triggers, Monday for Trigger on Weekdays, 3pm for Trigger at Hour, and 30 Trigger at Minute, the node will run every two weeks on Monday at 3:30 PM",
+      "options": [
+        "Weeks Between Triggers: Enter the number of weeks between each workflow trigger",
+        "Trigger on Weekdays: Select the day(s) of the week you want to trigger the node",
+        "Trigger at Hour: Select the hour of the day to trigger the node"
+      ]
+    },
+    {
+      "name": "Months trigger interval",
+      "description": "For example, if you enter 3 Months Between Triggers, 28 Trigger at Day of Month, 9am for Trigger at Hour, and 0 Trigger at Minute, the node will run each quarter on the 28th day of the month at 9:00 AM",
+      "options": [
+        "Trigger at Hour: Select the hour of the day to trigger the node"
+      ]
+    },
+    {
+      "name": "Custom (Cron) interval",
+      "description": "Enter a custom cron Expression to set the schedule for the trigger"
+    },
+    {
+      "name": "Examples",
+      "options": [
+        "Every X Seconds",
+        "Every X Minutes",
+        "Hourly",
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Every X Days",
+        "Only Weekdays",
+        "Custom Hourly Range",
+        "Quarterly"
+      ]
+    },
+    {
+      "name": "Why there are six asterisks in the Cron expression",
+      "description": "The sixth asterisk in the Cron expression represents seconds. Setting this is optional. The node will execute even if you don't set the value for seconds",
+      "options": [
+        "(second)"
+      ]
+    },
+    {
+      "name": "If Execution Is Missed",
+      "description": "What to do with missed executions. Choose from:"
+    },
+    {
+      "name": "Missed Execution Grace Period (Seconds)",
+      "description": "How late an execution may start before it counts as missed. Set to 0 to use the instance setting (N8N_SCHEDULER_MISFIRE_GRACE, 60 seconds by default). n8n raises values below the instance minimum (60 seconds with the defaults) to it, and caps values above 30 days"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [
+    "schedule"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [
+    {
+      "title": "Invalid cron expression",
+      "summary": "This error occurs when you set Trigger Interval to Custom (Cron) and n8n doesn't understand your cron expression. This may mean that there is a mistake in your cron expression or that you're using an incompatible syntax"
+    },
+    {
+      "title": "Scheduled workflows run at the wrong time",
+      "summary": "If the Schedule Trigger node runs at the wrong time, it may mean that you need to adjust the time zone n8n uses"
+    }
+  ],
+  "keywords": [
+    "asterisks",
+    "core",
+    "cron",
+    "custom",
+    "days",
+    "execution",
+    "expression",
+    "fixed",
+    "grace",
+    "hours",
+    "interval",
+    "intervals",
+    "like",
+    "minutes",
+    "missed",
+    "months",
+    "period",
+    "schedule",
+    "scheduletrigger",
+    "seconds",
+    "similar",
+    "six",
+    "software",
+    "systems",
+    "times",
+    "trigger",
+    "unix",
+    "utility",
+    "weeks",
+    "why",
+    "works"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "ttmJg4aaEfjB4LyKpCzt",
+      "name": "timezone-settings"
+    }
+  ],
+  "pages": [
+    {
+      "page": "README.md",
+      "title": "Schedule Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger/index.md"
+    },
+    {
+      "page": "common-issues.md",
+      "title": "Schedule Trigger node common issues",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger/common-issues",
+      "origpath": "integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger/common-issues.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/core-node/n8n-nodes-base.scheduletrigger.json",
+    "markdown": "nodes/core-node/n8n-nodes-base.scheduletrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/core-nodes/n8n-nodes-base.scheduletrigger/README.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.scheduleTrigger",
+  "type_version": 1.3,
+  "type_versions": [
+    1,
+    1.1,
+    1.2,
+    1.3
+  ],
+  "groups": [
+    "trigger",
+    "schedule"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [],
+  "credential_details": [],
+  "defaults": {
+    "name": "Schedule Trigger",
+    "color": "#31C49F"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 2,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This workflow will run on the schedule you define here once you publish it.<br><br>For testing, you can also trigger it manually: by going back to the canvas and clicking 'execute workflow'",
+        "type": "notice"
+      },
+      {
+        "name": "rule",
+        "displayName": "Trigger Rules",
+        "type": "fixedCollection",
+        "default": {
+          "interval": [
+            {
+              "field": "days"
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "interval",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Trigger Interval",
+                "type": "options"
+              },
+              {
+                "name": "secondsInterval",
+                "displayName": "Seconds Between Triggers",
+                "type": "number"
+              },
+              {
+                "name": "minutesInterval",
+                "displayName": "Minutes Between Triggers",
+                "type": "number"
+              },
+              {
+                "name": "hoursInterval",
+                "displayName": "Hours Between Triggers",
+                "type": "number"
+              },
+              {
+                "name": "daysInterval",
+                "displayName": "Days Between Triggers",
+                "type": "number"
+              },
+              {
+                "name": "weeksInterval",
+                "displayName": "Weeks Between Triggers",
+                "type": "number"
+              },
+              {
+                "name": "monthsInterval",
+                "displayName": "Months Between Triggers",
+                "type": "number"
+              },
+              {
+                "name": "triggerAtDayOfMonth",
+                "displayName": "Trigger at Day of Month",
+                "type": "number"
+              },
+              {
+                "name": "triggerAtDay",
+                "displayName": "Trigger on Weekdays",
+                "type": "multiOptions"
+              },
+              {
+                "name": "triggerAtHour",
+                "displayName": "Trigger at Hour",
+                "type": "options"
+              },
+              {
+                "name": "triggerAtMinute",
+                "displayName": "Trigger at Minute",
+                "type": "number"
+              },
+              {
+                "name": "notice",
+                "displayName": "You can find help generating your cron expression <a href=\"https://crontab.guru/examples.html\" target=\"_blank\">here</a>",
+                "type": "notice"
+              },
+              {
+                "name": "expression",
+                "displayName": "Expression",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

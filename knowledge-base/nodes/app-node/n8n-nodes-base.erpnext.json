@@ -1,0 +1,464 @@
+{
+  "id": "n8n-nodes-base.erpnext",
+  "name": "ERPNext",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.erpnext",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the ERPNext node to automate work in ERPNext, and integrate ERPNext with other applications. n8n has built-in support for a wide range of ERPNext features, including creating, updating, retrieving, and deleting documents",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.erpnext",
+  "credentials": {
+    "name": "ERPNext",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/erpnext",
+    "slug": "erpnext",
+    "json_file": "credentials/erpnext.json",
+    "markdown_file": "credentials/erpnext.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "",
+      "operation": "Create a document",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "create"
+    },
+    {
+      "resource": "",
+      "operation": "Delete a document",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "",
+      "operation": "Retrieve a document",
+      "description": "",
+      "doc": "",
+      "resource_value": "document"
+    },
+    {
+      "resource": "",
+      "operation": "Retrieve all documents",
+      "description": "",
+      "doc": "",
+      "resource_value": "document"
+    },
+    {
+      "resource": "",
+      "operation": "Update a document",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "document",
+    "documents",
+    "erpnext",
+    "including",
+    "retrieve",
+    "retrieving",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.erpnext.md",
+      "title": "ERPNext node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.erpnext",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.erpnext.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.erpnext.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.erpnext.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.erpnext.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.erpNext",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "erpNextApi"
+  ],
+  "credential_details": [
+    {
+      "name": "erpNextApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "ERPNext"
+  },
+  "subtitle": "={{$parameter[\"resource\"] + \": \" + $parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 15,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "document",
+        "options": [
+          {
+            "name": "Document",
+            "value": "document"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a document"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a document"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a document"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many documents"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a document"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "docType",
+        "displayName": "DocType Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "DocType whose documents to retrieve. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "fields",
+            "description": "Comma-separated list of fields to return. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "filters",
+            "description": "Custom Properties"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "docType",
+        "displayName": "DocType Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "DocType you would like to create. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "properties",
+        "displayName": "Properties",
+        "type": "fixedCollection",
+        "required": true,
+        "options": [
+          {
+            "name": "customProperty",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "docType",
+        "displayName": "DocType Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The type of document you would like to get. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "documentName",
+        "displayName": "Document Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "The name (ID) of document you would like to get"
+      },
+      {
+        "name": "docType",
+        "displayName": "DocType Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The type of document you would like to delete. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "documentName",
+        "displayName": "Document Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "The name (ID) of document you would like to get"
+      },
+      {
+        "name": "docType",
+        "displayName": "DocType Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The type of document you would like to update. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "documentName",
+        "displayName": "Document Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The name (ID) of document you would like to get"
+      },
+      {
+        "name": "properties",
+        "displayName": "Properties",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "customProperty",
+            "values": [
+              {
+                "name": "field",
+                "displayName": "Field Name or ID",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Properties of request body"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1407 @@
+{
+  "id": "n8n-nodes-base.wordpress",
+  "name": "WordPress",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.wordpress",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the WordPress node to automate work in WordPress, and integrate WordPress with other applications. n8n has built-in support for a wide range of WordPress features, including creating, updating, and getting posts and users",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.wordpress",
+  "credentials": {
+    "name": "WordPress",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/wordpress",
+    "slug": "wordpress",
+    "json_file": "credentials/wordpress.json",
+    "markdown_file": "credentials/wordpress.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Post",
+      "operation": "Create a post",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Post",
+      "operation": "Get a post",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Post",
+      "operation": "Get all posts",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Post",
+      "operation": "Update a post",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Pages",
+      "operation": "Create a page",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Pages",
+      "operation": "Get a page",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Pages",
+      "operation": "Get all pages",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Pages",
+      "operation": "Update a page",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "update"
+    },
+    {
+      "resource": "User",
+      "operation": "Create a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "create"
+    },
+    {
+      "resource": "User",
+      "operation": "Get a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Get all users",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Update a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 12,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "get",
+    "getting",
+    "including",
+    "pages",
+    "post",
+    "posts",
+    "update",
+    "updating",
+    "user",
+    "users",
+    "wordpress",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.wordpress.md",
+      "title": "WordPress node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.wordpress",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.wordpress.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.wordpress.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.wordpress.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.wordpress.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.wordpress",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "wordpressApi",
+    "wordpressOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "wordpressApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authType": [
+            "basicAuth"
+          ]
+        }
+      }
+    },
+    {
+      "name": "wordpressOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authType": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Wordpress"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 42,
+    "parameters": [
+      {
+        "name": "authType",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "basicAuth",
+        "options": [
+          {
+            "name": "Basic Auth",
+            "value": "basicAuth"
+          },
+          {
+            "name": "OAuth2 (WordPress.com)",
+            "value": "oAuth2"
+          }
+        ],
+        "description": "The authentication method to use"
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "post",
+        "options": [
+          {
+            "name": "Post",
+            "value": "post"
+          },
+          {
+            "name": "Page",
+            "value": "page"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a post"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a post"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many posts"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a post"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The title for the post"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "authorId",
+            "description": "The ID for the author of the object. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "content",
+            "description": "The content for the post"
+          },
+          {
+            "name": "slug",
+            "description": "An alphanumeric identifier for the object unique to its type"
+          },
+          {
+            "name": "password",
+            "description": "A password to protect access to the content and excerpt"
+          },
+          {
+            "name": "status",
+            "description": "A named status for the post"
+          },
+          {
+            "name": "date",
+            "description": "The date the post was published, in the site's timezone"
+          },
+          {
+            "name": "commentStatus",
+            "description": "Whether or not comments are open on the post"
+          },
+          {
+            "name": "pingStatus",
+            "description": "If the a message should be send to announce the post"
+          },
+          {
+            "name": "format",
+            "description": "Whether or not comments are open on the post"
+          },
+          {
+            "name": "sticky",
+            "description": "Whether or not the object should be treated as sticky"
+          },
+          {
+            "name": "categories",
+            "description": "The terms assigned to the object in the category taxonomy. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">express"
+          },
+          {
+            "name": "tags",
+            "description": "The terms assigned to the object in the post_tag taxonomy. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">express"
+          },
+          {
+            "name": "postTemplate"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "postId",
+        "displayName": "Post ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Unique identifier for the object"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "authorId",
+            "description": "The ID for the author of the object. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "title",
+            "description": "The title for the post"
+          },
+          {
+            "name": "content",
+            "description": "The content for the post"
+          },
+          {
+            "name": "slug",
+            "description": "An alphanumeric identifier for the object unique to its type"
+          },
+          {
+            "name": "password",
+            "description": "A password to protect access to the content and excerpt"
+          },
+          {
+            "name": "status",
+            "description": "A named status for the post"
+          },
+          {
+            "name": "date",
+            "description": "The date the post was published, in the site's timezone"
+          },
+          {
+            "name": "commentStatus",
+            "description": "Whether or not comments are open on the post"
+          },
+          {
+            "name": "pingStatus",
+            "description": "Whether or not comments are open on the post"
+          },
+          {
+            "name": "format",
+            "description": "The format of the post"
+          },
+          {
+            "name": "sticky",
+            "description": "Whether or not the object should be treated as sticky"
+          },
+          {
+            "name": "categories",
+            "description": "The terms assigned to the object in the category taxonomy. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">express"
+          },
+          {
+            "name": "tags",
+            "description": "The terms assigned to the object in the post_tag taxonomy. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">express"
+          },
+          {
+            "name": "postTemplate"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "postId",
+        "displayName": "Post ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for the object"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "password",
+            "description": "The password for the post if it is password protected"
+          },
+          {
+            "name": "context",
+            "description": "Scope under which the request is made; determines fields present in response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "after",
+            "description": "Limit response to posts published after a given ISO8601 compliant date"
+          },
+          {
+            "name": "author",
+            "description": "Limit result set to posts assigned to specific authors. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression"
+          },
+          {
+            "name": "before",
+            "description": "Limit response to posts published before a given ISO8601 compliant date"
+          },
+          {
+            "name": "categories",
+            "description": "Limit result set to all items that have the specified term assigned in the categories taxonomy. Choose from the list, or specify IDs using an <a href=\"https://d"
+          },
+          {
+            "name": "context",
+            "description": "Scope under which the request is made; determines fields present in response"
+          },
+          {
+            "name": "excludedCategories",
+            "description": "Limit result set to all items except those that have the specified term assigned in the categories taxonomy. Choose from the list, or specify IDs using an <a hr"
+          },
+          {
+            "name": "excludedTags",
+            "description": "Limit result set to all items except those that have the specified term assigned in the tags taxonomy. Choose from the list, or specify IDs using an <a href=\"ht"
+          },
+          {
+            "name": "order",
+            "description": "Order sort attribute ascending or descending"
+          },
+          {
+            "name": "orderBy",
+            "description": "Sort collection by object attribute"
+          },
+          {
+            "name": "search",
+            "description": "Limit results to those matching a string"
+          },
+          {
+            "name": "status",
+            "description": "The status of the post"
+          },
+          {
+            "name": "sticky",
+            "description": "Whether to limit the result set to items that are sticky"
+          },
+          {
+            "name": "tags",
+            "description": "Limit result set to all items that have the specified term assigned in the tags taxonomy. Choose from the list, or specify IDs using an <a href=\"https://docs.n8"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "postId",
+        "displayName": "Post ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Unique identifier for the object"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "force",
+            "description": "Whether to bypass trash and force deletion"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a page"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a page"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many pages"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a page"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The title for the page"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "authorId",
+            "description": "The ID for the author of the object. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "parent",
+            "description": "The ID for the parent of the post"
+          },
+          {
+            "name": "content",
+            "description": "The content for the page"
+          },
+          {
+            "name": "slug",
+            "description": "An alphanumeric identifier for the object unique to its type"
+          },
+          {
+            "name": "password",
+            "description": "A password to protect access to the content and excerpt"
+          },
+          {
+            "name": "status",
+            "description": "A named status for the page"
+          },
+          {
+            "name": "commentStatus",
+            "description": "Whether or not comments are open on the page"
+          },
+          {
+            "name": "pingStatus",
+            "description": "If the a message should be send to announce the page"
+          },
+          {
+            "name": "pageTemplate"
+          },
+          {
+            "name": "menuOrder",
+            "description": "The order of the page in relation to other pages"
+          },
+          {
+            "name": "featuredMediaId",
+            "description": "The ID of the featured media for the page"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "pageId",
+        "displayName": "Page ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Unique identifier for the object"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "authorId",
+            "description": "The ID for the author of the object. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "parent",
+            "description": "The ID for the parent of the post"
+          },
+          {
+            "name": "title",
+            "description": "The title for the page"
+          },
+          {
+            "name": "content",
+            "description": "The content for the page"
+          },
+          {
+            "name": "slug",
+            "description": "An alphanumeric identifier for the object unique to its type"
+          },
+          {
+            "name": "password",
+            "description": "A password to protect access to the content and excerpt"
+          },
+          {
+            "name": "status",
+            "description": "A named status for the page"
+          },
+          {
+            "name": "commentStatus",
+            "description": "Whether or not comments are open on the page"
+          },
+          {
+            "name": "pingStatus",
+            "description": "Whether or not comments are open on the page"
+          },
+          {
+            "name": "pageTemplate"
+          },
+          {
+            "name": "menuOrder",
+            "description": "The order of the page in relation to other pages"
+          },
+          {
+            "name": "commentStatus",
+            "description": "Whether or not comments are open on the page"
+          },
+          {
+            "name": "featuredMediaId",
+            "description": "The ID of the featured media for the page"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "pageId",
+        "displayName": "Page ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for the object"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "password",
+            "description": "The password for the page if it is password protected"
+          },
+          {
+            "name": "context",
+            "description": "Scope under which the request is made; determines fields present in response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "after",
+            "description": "Limit response to pages published after a given ISO8601 compliant date"
+          },
+          {
+            "name": "author",
+            "description": "Limit result set to pages assigned to specific authors. Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">expression"
+          },
+          {
+            "name": "before",
+            "description": "Limit response to pages published before a given ISO8601 compliant date"
+          },
+          {
+            "name": "context",
+            "description": "Scope under which the request is made; determines fields present in response"
+          },
+          {
+            "name": "menuOrder",
+            "description": "Limit result set to items with a specific menu order value"
+          },
+          {
+            "name": "order",
+            "description": "Order sort attribute ascending or descending"
+          },
+          {
+            "name": "orderBy",
+            "description": "Sort collection by object attribute"
+          },
+          {
+            "name": "page",
+            "description": "Current page of the collection"
+          },
+          {
+            "name": "parent",
+            "description": "Limit result set to items with a particular parent page ID"
+          },
+          {
+            "name": "search",
+            "description": "Limit results to those matching a string"
+          },
+          {
+            "name": "status",
+            "description": "The status of the page"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "pageId",
+        "displayName": "Page ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Unique identifier for the object"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "force",
+            "description": "Whether to bypass trash and force deletion"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a user"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a user"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many users"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "username",
+        "displayName": "Username",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Login name for the user"
+      },
+      {
+        "name": "name",
+        "displayName": "Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Display name for the user"
+      },
+      {
+        "name": "firstName",
+        "displayName": "First Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "First name for the user"
+      },
+      {
+        "name": "lastName",
+        "displayName": "Last Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Last name for the user"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The email address for the user"
+      },
+      {
+        "name": "password",
+        "displayName": "Password",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Password for the user (never included)"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "url",
+            "description": "URL of the user"
+          },
+          {
+            "name": "description",
+            "description": "Description of the user"
+          },
+          {
+            "name": "nickname",
+            "description": "The nickname for the user"
+          },
+          {
+            "name": "slug",
+            "description": "An alphanumeric identifier for the user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Unique identifier for the user"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "username",
+            "description": "Login name for the user"
+          },
+          {
+            "name": "name",
+            "description": "Display name for the user"
+          },
+          {
+            "name": "firstName",
+            "description": "First name for the user"
+          },
+          {
+            "name": "lastName",
+            "description": "Last name for the user"
+          },
+          {
+            "name": "email",
+            "description": "The email address for the user"
+          },
+          {
+            "name": "password",
+            "description": "Password for the user (never included)"
+          },
+          {
+            "name": "url",
+            "description": "URL of the user"
+          },
+          {
+            "name": "description",
+            "description": "Description of the user"
+          },
+          {
+            "name": "nickname",
+            "description": "The nickname for the user"
+          },
+          {
+            "name": "slug",
+            "description": "An alphanumeric identifier for the user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for the user"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "context",
+            "description": "Scope under which the request is made; determines fields present in response"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 5,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "context",
+            "description": "Scope under which the request is made; determines fields present in response"
+          },
+          {
+            "name": "orderBy",
+            "description": "Sort collection by object attribute"
+          },
+          {
+            "name": "order",
+            "description": "Order sort attribute ascending or descending"
+          },
+          {
+            "name": "search",
+            "description": "Limit results to those matching a string"
+          },
+          {
+            "name": "who",
+            "description": "Limit result set to users who are considered authors"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "reassign",
+        "displayName": "Reassign",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        },
+        "description": "Reassign the deleted user's posts and links to this user ID"
+      }
+    ]
+  }
+}

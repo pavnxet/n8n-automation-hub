@@ -1,0 +1,153 @@
+{
+  "id": "n8n-nodes-langchain.lmchatcohere",
+  "name": "Cohere Chat Model",
+  "category": "cluster-sub-node",
+  "category_description": "AI cluster sub-node (model, memory, tool, parser)",
+  "node_type": "n8n-nodes-langchain.lmchatcohere",
+  "is_trigger": false,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Use the Cohere Chat Model node to access Cohere's large language models for conversational AI and text generation tasks",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatcohere",
+  "credentials": {
+    "name": "Cohere credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/cohere",
+    "slug": "cohere",
+    "json_file": "credentials/cohere.json",
+    "markdown_file": "credentials/cohere.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [
+    {
+      "name": "Model",
+      "description": "Select the model which will generate the completion. n8n dynamically loads available models from the Cohere API. Learn more in the Cohere model documentation"
+    },
+    {
+      "name": "Sampling Temperature",
+      "description": "Use this option to control the randomness of the sampling process. A higher temperature creates more diverse sampling, but increases the risk of hallucinations"
+    },
+    {
+      "name": "Max Retries",
+      "description": "Enter the maximum number of times to retry a request"
+    }
+  ],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "access",
+    "chat",
+    "cluster",
+    "cohere",
+    "conversational",
+    "credentials",
+    "generation",
+    "language",
+    "large",
+    "lmchatcohere",
+    "max",
+    "model",
+    "models",
+    "retries",
+    "sampling",
+    "sub",
+    "tasks",
+    "temperature",
+    "text"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "X6JM1Mgg5iwvZLDpGEB0",
+      "name": "sub-node-expression-resolution"
+    },
+    {
+      "id": "mjXhKRIw98UJ5hk9LWBl",
+      "name": "langchain-overview-link"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-langchain.lmchatcohere.md",
+      "title": "Cohere Chat Model node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatcohere",
+      "origpath": "integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatcohere.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatcohere.json",
+    "markdown": "nodes/cluster-sub-node/n8n-nodes-langchain.lmchatcohere.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatcohere.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "@n8n/n8n-nodes-langchain.lmChatCohere",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": false,
+  "package": "@n8n/n8n-nodes-langchain",
+  "credential_types": [
+    "cohereApi"
+  ],
+  "credential_details": [
+    {
+      "name": "cohereApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Cohere Chat Model"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "ai_languageModel"
+    ]
+  },
+  "node_schema": {
+    "source": "@n8n/n8n-nodes-langchain node description",
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "name": "notice",
+        "displayName": "This node must be connected to an AI chain. <a data-action='openSelectiveNodeCreator' data-action-parameter-creatorview='AI'>Insert one</a>",
+        "type": "notice"
+      },
+      {
+        "name": "model",
+        "displayName": "Model",
+        "type": "options",
+        "default": "command-a-03-2025",
+        "description": "The model which will generate the completion. <a href=\"https://docs.cohere.com/docs/models\">Learn more</a>."
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "temperature",
+            "description": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive."
+          },
+          {
+            "name": "maxRetries",
+            "description": "Maximum number of retries to attempt"
+          }
+        ],
+        "description": "Additional options to add"
+      }
+    ]
+  }
+}

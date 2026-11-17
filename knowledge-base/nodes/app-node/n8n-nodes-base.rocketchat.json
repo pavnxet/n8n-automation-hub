@@ -1,0 +1,329 @@
+{
+  "id": "n8n-nodes-base.rocketchat",
+  "name": "Rocket.Chat",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.rocketchat",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Rocket.Chat node to automate work in Rocket.Chat, and integrate Rocket.Chat with other applications. n8n supports posting messages to channels, and sending direct messages, with Rocket.Chat",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.rocketchat",
+  "credentials": {
+    "name": "Rocket.Chat",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/rocketchat",
+    "slug": "rocketchat",
+    "json_file": "credentials/rocketchat.json",
+    "markdown_file": "credentials/rocketchat.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Chat",
+      "operation": "Post a message to a channel or a direct message",
+      "description": "",
+      "doc": "",
+      "resource_value": "chat"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "channel",
+    "channels",
+    "chat",
+    "direct",
+    "message",
+    "messages",
+    "post",
+    "posting",
+    "rocket",
+    "rocket.chat",
+    "rocketchat",
+    "sending",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.rocketchat.md",
+      "title": "Rocket.Chat node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.rocketchat",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.rocketchat.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.rocketchat.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.rocketchat.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.rocketchat.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.rocketchat",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "rocketchatApi"
+  ],
+  "credential_details": [
+    {
+      "name": "rocketchatApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "RocketChat"
+  },
+  "subtitle": "={{$parameter[\"resource\"] + \": \" + $parameter[\"operation\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 8,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "chat",
+        "options": [
+          {
+            "name": "Chat",
+            "value": "chat"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "postMessage",
+        "options": [
+          {
+            "name": "Post Message",
+            "value": "postMessage",
+            "description": "Post a message to a channel or a direct message"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ]
+          }
+        }
+      },
+      {
+        "name": "channel",
+        "displayName": "Channel",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "postMessage"
+            ]
+          }
+        },
+        "description": "The channel name with the prefix in front of it"
+      },
+      {
+        "name": "text",
+        "displayName": "Text",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "postMessage"
+            ]
+          }
+        },
+        "description": "The text of the message to send, is optional because of attachments"
+      },
+      {
+        "name": "jsonParameters",
+        "displayName": "JSON Parameters",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "postMessage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "alias",
+            "description": "This will cause the message’s name to appear as the given alias, but your username will still display"
+          },
+          {
+            "name": "avatar",
+            "description": "If provided, this will make the avatar use the provided image URL"
+          },
+          {
+            "name": "emoji",
+            "description": "This will cause the message’s name to appear as the given alias, but your username will still display"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "postMessage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachments",
+        "displayName": "Attachments",
+        "type": "collection",
+        "options": [
+          {
+            "name": "color",
+            "description": "The color you want the order on the left side to be, any value background-css supports"
+          },
+          {
+            "name": "text",
+            "description": "The text to display for this attachment, it is different than the message’s text"
+          },
+          {
+            "name": "ts",
+            "description": "Displays the time next to the text portion"
+          },
+          {
+            "name": "thumbUrl",
+            "description": "An image that displays to the left of the text, looks better when this is relatively small"
+          },
+          {
+            "name": "messageLink",
+            "description": "Only applicable if the timestamp is provided, as it makes the time clickable to this link"
+          },
+          {
+            "name": "collapsed",
+            "description": "Causes the image, audio, and video sections to be hiding when collapsed is true"
+          },
+          {
+            "name": "authorName",
+            "description": "Name of the author"
+          },
+          {
+            "name": "authorLink",
+            "description": "Providing this makes the author name clickable and points to this link"
+          },
+          {
+            "name": "authorIcon",
+            "description": "Displays a tiny icon to the left of the Author’s name"
+          },
+          {
+            "name": "title",
+            "description": "Title to display for this attachment, displays under the author"
+          },
+          {
+            "name": "titleLink",
+            "description": "Providing this makes the title clickable, pointing to this link"
+          },
+          {
+            "name": "titleLinkDownload",
+            "description": "When this is true, a download icon appears and clicking this saves the link to file"
+          },
+          {
+            "name": "imageUrl",
+            "description": "The image to display, will be “big” and easy to see"
+          },
+          {
+            "name": "audioUrl",
+            "description": "Audio file to play, only supports what html audio does"
+          },
+          {
+            "name": "videoUrl",
+            "description": "Video file to play, only supports what html video does"
+          },
+          {
+            "name": "fields"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "postMessage"
+            ],
+            "jsonParameters": [
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "attachmentsJson",
+        "displayName": "Attachments",
+        "type": "json",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "chat"
+            ],
+            "operation": [
+              "postMessage"
+            ],
+            "jsonParameters": [
+              true
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

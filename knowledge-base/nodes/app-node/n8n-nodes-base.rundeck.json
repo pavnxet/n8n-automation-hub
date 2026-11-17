@@ -1,0 +1,231 @@
+{
+  "id": "n8n-nodes-base.rundeck",
+  "name": "Rundeck",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.rundeck",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Rundeck node to automate work in Rundeck, and integrate Rundeck with other applications. n8n has built-in support for executing jobs and getting metadata",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.rundeck",
+  "credentials": {
+    "name": "Rundeck",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/rundeck",
+    "slug": "rundeck",
+    "json_file": "credentials/rundeck.json",
+    "markdown_file": "credentials/rundeck.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Job",
+      "operation": "Execute a job",
+      "description": "",
+      "doc": "",
+      "resource_value": "job",
+      "operation_value": "execute"
+    },
+    {
+      "resource": "Job",
+      "operation": "Get metadata of a job",
+      "description": "",
+      "doc": "",
+      "resource_value": "job",
+      "operation_value": "getMetadata"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "execute",
+    "executing",
+    "get",
+    "getting",
+    "job",
+    "jobs",
+    "metadata",
+    "rundeck",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.rundeck.md",
+      "title": "Rundeck node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.rundeck",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.rundeck.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.rundeck.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.rundeck.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.rundeck.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.rundeck",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "rundeckApi"
+  ],
+  "credential_details": [
+    {
+      "name": "rundeckApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Rundeck"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "job",
+        "options": [
+          {
+            "name": "Job",
+            "value": "job"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "execute",
+        "options": [
+          {
+            "name": "Execute",
+            "value": "execute",
+            "description": "Execute a job"
+          },
+          {
+            "name": "Get Metadata",
+            "value": "getMetadata",
+            "description": "Get metadata of a job"
+          }
+        ]
+      },
+      {
+        "name": "jobid",
+        "displayName": "Job ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "execute"
+            ],
+            "resource": [
+              "job"
+            ]
+          }
+        },
+        "description": "The job ID to execute"
+      },
+      {
+        "name": "arguments",
+        "displayName": "Arguments",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "arguments",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "execute"
+            ],
+            "resource": [
+              "job"
+            ]
+          }
+        }
+      },
+      {
+        "name": "filter",
+        "displayName": "Filter",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "execute"
+            ],
+            "resource": [
+              "job"
+            ]
+          }
+        },
+        "description": "Filter Rundeck nodes by name"
+      },
+      {
+        "name": "jobid",
+        "displayName": "Job ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getMetadata"
+            ],
+            "resource": [
+              "job"
+            ]
+          }
+        },
+        "description": "The job ID to get metadata off"
+      }
+    ]
+  }
+}

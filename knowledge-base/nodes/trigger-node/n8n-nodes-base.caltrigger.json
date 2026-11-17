@@ -1,0 +1,193 @@
+{
+  "id": "n8n-nodes-base.caltrigger",
+  "name": "Cal Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.caltrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Cal is the event-juggling scheduler for everyone. Focus on meeting, not making meetings",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.caltrigger",
+  "credentials": {
+    "name": "Cal.com credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/cal",
+    "slug": "cal",
+    "json_file": "credentials/cal.json",
+    "markdown_file": "credentials/cal.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [
+    "schedule"
+  ],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "cal",
+    "caltrigger",
+    "com",
+    "credentials",
+    "event",
+    "everyone",
+    "focus",
+    "juggling",
+    "making",
+    "meeting",
+    "meetings",
+    "scheduler",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.caltrigger.md",
+      "title": "Cal Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.caltrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.caltrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.caltrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.caltrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.caltrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.calTrigger",
+  "type_version": 2.0,
+  "type_versions": [
+    1,
+    2
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "calApi"
+  ],
+  "credential_details": [
+    {
+      "name": "calApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Cal.com Trigger"
+  },
+  "subtitle": "=Events: {{$parameter[\"events\"].join(\", \")}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "events",
+        "displayName": "Events",
+        "type": "multiOptions",
+        "required": true,
+        "options": [
+          {
+            "name": "Booking Cancelled",
+            "value": "BOOKING_CANCELLED",
+            "description": "Receive notifications when a Cal event is canceled"
+          },
+          {
+            "name": "Booking Created",
+            "value": "BOOKING_CREATED",
+            "description": "Receive notifications when a new Cal event is created"
+          },
+          {
+            "name": "Booking Rescheduled",
+            "value": "BOOKING_RESCHEDULED",
+            "description": "Receive notifications when a Cal event is rescheduled"
+          },
+          {
+            "name": "Meeting Ended",
+            "value": "MEETING_ENDED",
+            "description": "Receive notifications when a Cal event or meeting has ended"
+          }
+        ]
+      },
+      {
+        "name": "version",
+        "displayName": "API Version",
+        "type": "options",
+        "default": 1,
+        "options": [
+          {
+            "name": "Before v2.0",
+            "value": 1
+          },
+          {
+            "name": "v2.0 Onwards",
+            "value": 2
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "version",
+        "displayName": "API Version",
+        "type": "options",
+        "default": 2,
+        "options": [
+          {
+            "name": "Before v2.0",
+            "value": 1
+          },
+          {
+            "name": "v2.0 Onwards",
+            "value": 2
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "appId",
+            "description": "The ID of the App to monitor"
+          },
+          {
+            "name": "eventTypeId",
+            "description": "The EventType to monitor. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "payloadTemplate",
+            "description": "Template to customize the webhook payload"
+          }
+        ]
+      }
+    ]
+  }
+}

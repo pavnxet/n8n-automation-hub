@@ -1,0 +1,9 @@
+<!-- n8n built-in node reference: n8n-nodes-base.wufootrigger | source: https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.wufootrigger -->
+
+[Wufoo](https://wufoo.com) is an online form builder that helps you create custom HTML forms without writing code.
+
+> **Credentials:**
+> Refer to the [Wufoo credentials documentation](https://docs.n8n.io/integrations/builtin/credentials/wufoo) for authentication information for this node.
+
+> **Examples and templates:**
+> For usage examples and templates to help you get started, refer to n8n's [Wufoo Trigger integrations](https://n8n.io/integrations/wufoo-trigger/) page.

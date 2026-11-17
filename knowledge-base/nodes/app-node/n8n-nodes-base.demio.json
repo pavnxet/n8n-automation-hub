@@ -1,0 +1,449 @@
+{
+  "id": "n8n-nodes-base.demio",
+  "name": "Demio",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.demio",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Demio node to automate work in Demio, and integrate Demio with other applications. n8n has built-in support for a wide range of Demio features, including getting, and registering events and reports",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.demio",
+  "credentials": {
+    "name": "Demio",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/demio",
+    "slug": "demio",
+    "json_file": "credentials/demio.json",
+    "markdown_file": "credentials/demio.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Event",
+      "operation": "Get an event",
+      "description": "",
+      "doc": "",
+      "resource_value": "event",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Event",
+      "operation": "Get all events",
+      "description": "",
+      "doc": "",
+      "resource_value": "event",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Event",
+      "operation": "Register someone to an event",
+      "description": "",
+      "doc": "",
+      "resource_value": "event",
+      "operation_value": "register"
+    },
+    {
+      "resource": "Report",
+      "operation": "Get an event report",
+      "description": "",
+      "doc": "",
+      "resource_value": "report",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "demio",
+    "event",
+    "events",
+    "get",
+    "getting",
+    "including",
+    "register",
+    "registering",
+    "report",
+    "reports",
+    "someone",
+    "work"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.demio.md",
+      "title": "Demio node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.demio",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.demio.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.demio.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.demio.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.demio.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.demio",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "demioApi"
+  ],
+  "credential_details": [
+    {
+      "name": "demioApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Demio"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 15,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "event",
+        "options": [
+          {
+            "name": "Event",
+            "value": "event"
+          },
+          {
+            "name": "Report",
+            "value": "report"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an event"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many events"
+          },
+          {
+            "name": "Register",
+            "value": "register",
+            "description": "Register someone to an event"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "event"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "event"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "type"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "eventId",
+        "displayName": "Event ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "active",
+            "description": "Whether to return only active dates in series"
+          },
+          {
+            "name": "date_id",
+            "description": "Event Date ID"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      },
+      {
+        "name": "eventId",
+        "displayName": "Event Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "register"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "firstName",
+        "displayName": "First Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "register"
+            ]
+          }
+        },
+        "description": "The registrant's first name"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "register"
+            ]
+          }
+        },
+        "description": "The registrant's email address"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "company",
+            "description": "The value for the predefined Company field"
+          },
+          {
+            "name": "customFieldsUi"
+          },
+          {
+            "name": "ref_url",
+            "description": "Event Registration page URL. It can be useful when you do not know Event ID, but have Event link."
+          },
+          {
+            "name": "gdpr",
+            "description": "The value for the predefined GDPR field"
+          },
+          {
+            "name": "last_name",
+            "description": "The value for the predefined Last Name field"
+          },
+          {
+            "name": "phone_number",
+            "description": "The value for the predefined Phone Number field"
+          },
+          {
+            "name": "date_id",
+            "description": "Event Session ID. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "website",
+            "description": "The value for the predefined Website field"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "event"
+            ],
+            "operation": [
+              "register"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an event report"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ]
+          }
+        }
+      },
+      {
+        "name": "eventId",
+        "displayName": "Event Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "dateId",
+        "displayName": "Session Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "ID of the session. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "status",
+            "description": "Filter results by participation status"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "report"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

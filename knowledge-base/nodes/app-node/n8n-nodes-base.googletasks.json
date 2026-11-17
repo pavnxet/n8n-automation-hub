@@ -1,0 +1,527 @@
+{
+  "id": "n8n-nodes-base.googletasks",
+  "name": "Google Tasks",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googletasks",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Tasks node to automate work in Google Tasks, and integrate Google Tasks with other applications. n8n has built-in support for a wide range of Google Tasks features, including adding, updating, and retrieving contacts",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googletasks",
+  "credentials": {
+    "name": "Google Tasks",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Task",
+      "operation": "Add a task to task list",
+      "description": "",
+      "doc": "",
+      "resource_value": "task"
+    },
+    {
+      "resource": "Task",
+      "operation": "Delete a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Task",
+      "operation": "Retrieve a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task"
+    },
+    {
+      "resource": "Task",
+      "operation": "Retrieve all tasks from a task list",
+      "description": "",
+      "doc": "",
+      "resource_value": "task"
+    },
+    {
+      "resource": "Task",
+      "operation": "Update a task",
+      "description": "",
+      "doc": "",
+      "resource_value": "task",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 5,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "add",
+    "adding",
+    "app",
+    "applications",
+    "contacts",
+    "delete",
+    "google",
+    "googletasks",
+    "including",
+    "list",
+    "retrieve",
+    "retrieving",
+    "task",
+    "tasks",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googletasks.md",
+      "title": "Google Tasks node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googletasks",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googletasks.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googletasks.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googletasks.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googletasks.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleTasks",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleTasksOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleTasksOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Google Tasks"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 16,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "task",
+        "options": [
+          {
+            "name": "Task",
+            "value": "task"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Add a task to tasklist"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a task"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Retrieve a task"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Retrieve many tasks from a tasklist"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a task"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "TaskList Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Title of the task"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "completed",
+            "description": "Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed."
+          },
+          {
+            "name": "deleted",
+            "description": "Whether the task has been deleted"
+          },
+          {
+            "name": "dueDate",
+            "description": "Due date of the task"
+          },
+          {
+            "name": "notes",
+            "description": "Additional Notes"
+          },
+          {
+            "name": "parent",
+            "description": "Parent task identifier. If the task is created at the top level, this parameter is omitted."
+          },
+          {
+            "name": "previous",
+            "description": "Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted."
+          },
+          {
+            "name": "status",
+            "description": "Current status of the task"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "TaskList Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "delete"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "TaskList Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "TaskList Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 20,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "task"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "completedMax",
+            "description": "Upper bound for a task completion date (as a RFC 3339 timestamp) to filter by"
+          },
+          {
+            "name": "completedMin",
+            "description": "Lower bound for a task completion date (as a RFC 3339 timestamp) to filter by"
+          },
+          {
+            "name": "dueMin",
+            "description": "Lower bound for a task due date (as a RFC 3339 timestamp) to filter by"
+          },
+          {
+            "name": "dueMax",
+            "description": "Upper bound for a task due date (as a RFC 3339 timestamp) to filter by"
+          },
+          {
+            "name": "showCompleted",
+            "description": "Whether completed tasks are returned in the result. <strong>Show Hidden</strong> must also be True to show tasks completed in first party clients such as the we"
+          },
+          {
+            "name": "showDeleted",
+            "description": "Whether deleted tasks are returned in the result"
+          },
+          {
+            "name": "showHidden",
+            "description": "Whether hidden tasks are returned in the result"
+          },
+          {
+            "name": "updatedMin",
+            "description": "Lower bound for a task last modification time (as a RFC 3339 timestamp) to filter by"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "task",
+        "displayName": "TaskList Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "taskId",
+        "displayName": "Task ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "completed",
+            "description": "Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed."
+          },
+          {
+            "name": "deleted",
+            "description": "Whether the task has been deleted"
+          },
+          {
+            "name": "dueDate",
+            "description": "Due date of the task"
+          },
+          {
+            "name": "notes",
+            "description": "Additional Notes"
+          },
+          {
+            "name": "previous",
+            "description": "Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted."
+          },
+          {
+            "name": "status",
+            "description": "Current status of the task"
+          },
+          {
+            "name": "title",
+            "description": "Title of the task"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "task"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

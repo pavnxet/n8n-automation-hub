@@ -1,0 +1,1828 @@
+{
+  "id": "n8n-nodes-base.databricks",
+  "name": "Databricks",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.databricks",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Databricks node to automate work in Databricks, and integrate Databricks with other applications. n8n has built-in support for a wide range of Databricks features, including running jobs, executing SQL queries, managing Unity Catalog objects, querying ML model serving endpoints, and working with vector search indexes",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.databricks",
+  "credentials": {
+    "name": "Databricks",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/databricks",
+    "slug": "databricks",
+    "json_file": "credentials/databricks.json",
+    "markdown_file": "credentials/databricks.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Databricks SQL",
+      "operation": "Execute Query",
+      "description": "",
+      "doc": "",
+      "resource_value": "databricksSql",
+      "operation_value": "executeQuery"
+    },
+    {
+      "resource": "File",
+      "operation": "Create Directory",
+      "description": "",
+      "doc": "",
+      "resource_value": "files",
+      "operation_value": "createDirectory"
+    },
+    {
+      "resource": "File",
+      "operation": "Delete Directory",
+      "description": "",
+      "doc": "",
+      "resource_value": "files",
+      "operation_value": "deleteDirectory"
+    },
+    {
+      "resource": "File",
+      "operation": "Delete File",
+      "description": "",
+      "doc": "",
+      "resource_value": "files",
+      "operation_value": "deleteFile"
+    },
+    {
+      "resource": "File",
+      "operation": "Download File",
+      "description": "",
+      "doc": "",
+      "resource_value": "files",
+      "operation_value": "downloadFile"
+    },
+    {
+      "resource": "File",
+      "operation": "Get File Metadata",
+      "description": "",
+      "doc": "",
+      "resource_value": "files",
+      "operation_value": "getFileInfo"
+    },
+    {
+      "resource": "File",
+      "operation": "List Directory",
+      "description": "",
+      "doc": "",
+      "resource_value": "files",
+      "operation_value": "listDirectory"
+    },
+    {
+      "resource": "File",
+      "operation": "Upload File",
+      "description": "",
+      "doc": "",
+      "resource_value": "files",
+      "operation_value": "uploadFile"
+    },
+    {
+      "resource": "Genie Agent",
+      "operation": "Create Conversation Message",
+      "description": "",
+      "doc": "",
+      "resource_value": "genie",
+      "operation_value": "createMessage"
+    },
+    {
+      "resource": "Genie Agent",
+      "operation": "Execute Message SQL Query",
+      "description": "",
+      "doc": "",
+      "resource_value": "genie",
+      "operation_value": "executeMessageQuery"
+    },
+    {
+      "resource": "Genie Agent",
+      "operation": "Get Conversation Message",
+      "description": "",
+      "doc": "",
+      "resource_value": "genie",
+      "operation_value": "getMessage"
+    },
+    {
+      "resource": "Genie Agent",
+      "operation": "Get Genie Agent",
+      "description": "",
+      "doc": "",
+      "resource_value": "genie"
+    },
+    {
+      "resource": "Genie Agent",
+      "operation": "Get Query Results",
+      "description": "",
+      "doc": "",
+      "resource_value": "genie",
+      "operation_value": "getQueryResults"
+    },
+    {
+      "resource": "Genie Agent",
+      "operation": "Start Conversation",
+      "description": "",
+      "doc": "",
+      "resource_value": "genie",
+      "operation_value": "startConversation"
+    },
+    {
+      "resource": "Job",
+      "operation": "Get",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Job",
+      "operation": "Get Run",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Job",
+      "operation": "Get Run Output",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Job",
+      "operation": "Run",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Lakebase",
+      "operation": "Delete",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Lakebase",
+      "operation": "Execute Function",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Lakebase",
+      "operation": "Get Many",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Lakebase",
+      "operation": "Insert",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Lakebase",
+      "operation": "Insert or Update",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Lakebase",
+      "operation": "Update",
+      "description": "",
+      "doc": ""
+    },
+    {
+      "resource": "Model Serving",
+      "operation": "Query Endpoint",
+      "description": "",
+      "doc": "",
+      "resource_value": "modelServing",
+      "operation_value": "queryEndpoint"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Create Catalog",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "createCatalog"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Create Function",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "createFunction"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Create Volume",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "createVolume"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Delete Catalog",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "deleteCatalog"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Delete Function",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "deleteFunction"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Delete Volume",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "deleteVolume"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Get Catalog",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "getCatalog"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Get Function",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "getFunction"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Get Table",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "getTable"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Get Volume",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "getVolume"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "List Catalogs",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "listCatalogs"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "List Functions",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "listFunctions"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "List Tables",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "listTables"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "List Volumes",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "listVolumes"
+    },
+    {
+      "resource": "Unity Catalog",
+      "operation": "Update Catalog",
+      "description": "",
+      "doc": "",
+      "resource_value": "unityCatalog",
+      "operation_value": "updateCatalog"
+    },
+    {
+      "resource": "Vector Search",
+      "operation": "Create Index",
+      "description": "",
+      "doc": "",
+      "resource_value": "vectorSearch",
+      "operation_value": "createIndex"
+    },
+    {
+      "resource": "Vector Search",
+      "operation": "Get Index",
+      "description": "",
+      "doc": "",
+      "resource_value": "vectorSearch",
+      "operation_value": "getIndex"
+    },
+    {
+      "resource": "Vector Search",
+      "operation": "List Indexes",
+      "description": "",
+      "doc": "",
+      "resource_value": "vectorSearch",
+      "operation_value": "listIndexes"
+    },
+    {
+      "resource": "Vector Search",
+      "operation": "Query Index",
+      "description": "",
+      "doc": "",
+      "resource_value": "vectorSearch",
+      "operation_value": "queryIndex"
+    }
+  ],
+  "operation_count": 44,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "agent",
+    "app",
+    "applications",
+    "catalog",
+    "catalogs",
+    "conversation",
+    "create",
+    "databricks",
+    "delete",
+    "directory",
+    "download",
+    "endpoint",
+    "endpoints",
+    "execute",
+    "executing",
+    "file",
+    "function",
+    "functions",
+    "genie",
+    "get",
+    "including",
+    "index",
+    "indexes",
+    "insert",
+    "job",
+    "jobs",
+    "lakebase",
+    "list",
+    "managing",
+    "many",
+    "message",
+    "metadata",
+    "model",
+    "objects",
+    "output",
+    "queries",
+    "query",
+    "querying",
+    "results",
+    "run",
+    "running",
+    "search",
+    "serving",
+    "sql",
+    "start",
+    "table",
+    "tables",
+    "unity",
+    "update",
+    "upload",
+    "vector",
+    "volume",
+    "volumes",
+    "work",
+    "working"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.databricks.md",
+      "title": "Databricks node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.databricks",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.databricks.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.databricks.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.databricks.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.databricks.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.databricks",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "transform"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "databricksApi",
+    "databricksOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "databricksApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "databricksOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Databricks"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 59,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "databricksSql",
+        "options": [
+          {
+            "name": "Databricks SQL",
+            "value": "databricksSql",
+            "description": "Execute SQL queries on data warehouses. <a href=\"https://docs.databricks.com/sql/index.html\" target=\"_blank\">Learn more</a>."
+          },
+          {
+            "name": "File",
+            "value": "files",
+            "description": "Manage files in Unity Catalog volumes. <a href=\"https://docs.databricks.com/api/workspace/files\" target=\"_blank\">Learn more</a>."
+          },
+          {
+            "name": "Genie",
+            "value": "genie",
+            "description": "AI-powered data assistant. <a href=\"https://docs.databricks.com/genie/index.html\" target=\"_blank\">Learn more</a>."
+          },
+          {
+            "name": "Model Serving",
+            "value": "modelServing",
+            "description": "Deploy and query ML models. <a href=\"https://docs.databricks.com/machine-learning/model-serving/index.html\" target=\"_blank\">Learn more</a>."
+          },
+          {
+            "name": "Unity Catalog",
+            "value": "unityCatalog",
+            "description": "Unified governance for data and AI. <a href=\"https://docs.databricks.com/data-governance/unity-catalog/index.html\" target=\"_blank\">Learn more</a>."
+          },
+          {
+            "name": "Vector Search",
+            "value": "vectorSearch",
+            "description": "Semantic search with vector embeddings. <a href=\"https://docs.databricks.com/generative-ai/vector-search.html\" target=\"_blank\">Learn more</a>."
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "listDirectory",
+        "options": [
+          {
+            "name": "Create Directory",
+            "value": "createDirectory",
+            "description": "Create a directory in volume"
+          },
+          {
+            "name": "Delete Directory",
+            "value": "deleteDirectory",
+            "description": "Delete a directory in volume"
+          },
+          {
+            "name": "Delete File",
+            "value": "deleteFile",
+            "description": "Delete a file from a volume"
+          },
+          {
+            "name": "Download File",
+            "value": "downloadFile",
+            "description": "Download file content from a volume"
+          },
+          {
+            "name": "Get File Metadata",
+            "value": "getFileInfo",
+            "description": "Get file metadata from a volume"
+          },
+          {
+            "name": "List Directory",
+            "value": "listDirectory",
+            "description": "List directory contents in volume"
+          },
+          {
+            "name": "Upload File",
+            "value": "uploadFile",
+            "description": "Upload a file (up to 5 GiB) to Databricks volumes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "files"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "startConversation",
+        "options": [
+          {
+            "name": "Create Conversation Message",
+            "value": "createMessage",
+            "description": "Create a new conversation message"
+          },
+          {
+            "name": "Execute Message SQL Query",
+            "value": "executeMessageQuery",
+            "description": "Execute a SQL query from a message attachment"
+          },
+          {
+            "name": "Get Conversation Message",
+            "value": "getMessage",
+            "description": "Get a conversation message by ID"
+          },
+          {
+            "name": "Get Genie Space",
+            "value": "getSpace",
+            "description": "Get details of a Genie space"
+          },
+          {
+            "name": "Get Query Results",
+            "value": "getQueryResults",
+            "description": "Get results of a SQL query execution"
+          },
+          {
+            "name": "Start Conversation",
+            "value": "startConversation",
+            "description": "Start a new conversation"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "genie"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "listTables",
+        "options": [
+          {
+            "name": "Create Catalog",
+            "value": "createCatalog",
+            "description": "Create a new catalog"
+          },
+          {
+            "name": "Create Function",
+            "value": "createFunction",
+            "description": "Create a new function"
+          },
+          {
+            "name": "Create Table",
+            "value": "createTable",
+            "description": "Register a new table"
+          },
+          {
+            "name": "Create Volume",
+            "value": "createVolume",
+            "description": "Create a new volume"
+          },
+          {
+            "name": "Delete Catalog",
+            "value": "deleteCatalog",
+            "description": "Delete a catalog"
+          },
+          {
+            "name": "Delete Function",
+            "value": "deleteFunction",
+            "description": "Delete a function"
+          },
+          {
+            "name": "Delete Table",
+            "value": "deleteTable",
+            "description": "Delete a table"
+          },
+          {
+            "name": "Delete Volume",
+            "value": "deleteVolume",
+            "description": "Delete a volume"
+          },
+          {
+            "name": "Get Catalog",
+            "value": "getCatalog",
+            "description": "Get catalog information"
+          },
+          {
+            "name": "Get Function",
+            "value": "getFunction",
+            "description": "Get function information"
+          },
+          {
+            "name": "Get Table",
+            "value": "getTable",
+            "description": "Get table information"
+          },
+          {
+            "name": "Get Volume",
+            "value": "getVolume",
+            "description": "Get volume information"
+          },
+          {
+            "name": "List Catalogs",
+            "value": "listCatalogs",
+            "description": "List all catalogs"
+          },
+          {
+            "name": "List Functions",
+            "value": "listFunctions",
+            "description": "List functions in schema"
+          },
+          {
+            "name": "List Tables",
+            "value": "listTables",
+            "description": "List tables in schema"
+          },
+          {
+            "name": "List Volumes",
+            "value": "listVolumes",
+            "description": "List volumes in schema"
+          },
+          {
+            "name": "Update Catalog",
+            "value": "updateCatalog",
+            "description": "Update catalog information"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "unityCatalog"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "executeQuery",
+        "options": [
+          {
+            "name": "Execute Query",
+            "value": "executeQuery",
+            "description": "Execute a SQL query and wait for results"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databricksSql"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "queryEndpoint",
+        "options": [
+          {
+            "name": "Query Endpoint",
+            "value": "queryEndpoint",
+            "description": "Query a serving endpoint. The input format is automatically detected from the endpoint schema."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "modelServing"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "listIndexes",
+        "options": [
+          {
+            "name": "Create Index",
+            "value": "createIndex",
+            "description": "Create a new vector search index"
+          },
+          {
+            "name": "Get Index",
+            "value": "getIndex",
+            "description": "Get details of a vector search index"
+          },
+          {
+            "name": "List Indexes",
+            "value": "listIndexes",
+            "description": "List all vector search indexes"
+          },
+          {
+            "name": "Query Index",
+            "value": "queryIndex",
+            "description": "Query a vector search index with text or vectors"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ]
+          }
+        }
+      },
+      {
+        "name": "volumePath",
+        "displayName": "Volume Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "files"
+            ]
+          }
+        },
+        "description": "Full path to the volume in format: catalog.schema.volume"
+      },
+      {
+        "name": "filePath",
+        "displayName": "File Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "uploadFile",
+              "downloadFile",
+              "deleteFile",
+              "getFileInfo"
+            ]
+          }
+        },
+        "description": "Path to the file within the volume (e.g. \"folder/file.txt\" or \"file.txt\"). Do not include leading slash."
+      },
+      {
+        "name": "dataFieldName",
+        "displayName": "Input Data Field Name",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "files"
+            ],
+            "operation": [
+              "uploadFile"
+            ]
+          }
+        },
+        "description": "Name of the field from input that contains the binary data to be uploaded"
+      },
+      {
+        "name": "directoryPath",
+        "displayName": "Directory Path",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createDirectory",
+              "deleteDirectory"
+            ]
+          }
+        },
+        "description": "Path to directory within the volume (e.g. \"folder1\" or \"folder1/subfolder\"). Do not include leading slash."
+      },
+      {
+        "name": "directoryPath",
+        "displayName": "Directory Path",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "listDirectory"
+            ]
+          }
+        },
+        "description": "Path to directory within the volume (e.g. \"folder1\" or \"folder1/subfolder\"). Leave empty to list the volume root. Do not include leading slash."
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "pageSize",
+            "description": "Number of files to return per page"
+          },
+          {
+            "name": "pageToken",
+            "description": "Token for the next page of results"
+          },
+          {
+            "name": "overwrite",
+            "description": "Whether to overwrite an existing file"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "listDirectory",
+              "uploadFile"
+            ]
+          }
+        }
+      },
+      {
+        "name": "spaceId",
+        "displayName": "Space ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "genie"
+            ],
+            "operation": [
+              "startConversation",
+              "getSpace",
+              "createMessage",
+              "getQueryResults",
+              "executeMessageQuery",
+              "getMessage"
+            ]
+          }
+        },
+        "description": "The ID of the Genie space"
+      },
+      {
+        "name": "conversationId",
+        "displayName": "Conversation ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "genie"
+            ],
+            "operation": [
+              "createMessage",
+              "getQueryResults",
+              "executeMessageQuery",
+              "getMessage"
+            ]
+          }
+        },
+        "description": "The ID of the conversation"
+      },
+      {
+        "name": "messageId",
+        "displayName": "Message ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "genie"
+            ],
+            "operation": [
+              "getMessage",
+              "executeMessageQuery",
+              "getQueryResults"
+            ]
+          }
+        },
+        "description": "The ID of the message"
+      },
+      {
+        "name": "attachmentId",
+        "displayName": "Attachment ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "genie"
+            ],
+            "operation": [
+              "executeMessageQuery",
+              "getQueryResults"
+            ]
+          }
+        },
+        "description": "The ID of the message attachment"
+      },
+      {
+        "name": "message",
+        "displayName": "Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "genie"
+            ],
+            "operation": [
+              "createMessage"
+            ]
+          }
+        },
+        "description": "The message to be sent to Genie Space"
+      },
+      {
+        "name": "initialMessage",
+        "displayName": "Initial Message",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "genie"
+            ],
+            "operation": [
+              "startConversation"
+            ]
+          }
+        },
+        "description": "The initial message to start the conversation"
+      },
+      {
+        "name": "catalogName",
+        "displayName": "Catalog",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getCatalog",
+              "updateCatalog",
+              "deleteCatalog",
+              "createCatalog",
+              "createVolume",
+              "getVolume",
+              "deleteVolume",
+              "createFunction",
+              "getFunction",
+              "deleteFunction",
+              "createTable",
+              "getTable",
+              "deleteTable"
+            ]
+          }
+        },
+        "description": "The catalog to use"
+      },
+      {
+        "name": "catalogName",
+        "displayName": "Catalog",
+        "type": "resourceLocator",
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "listVolumes",
+              "listTables",
+              "listFunctions"
+            ]
+          }
+        },
+        "description": "Filter by catalog (optional)"
+      },
+      {
+        "name": "schemaName",
+        "displayName": "Schema",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createVolume",
+              "getVolume",
+              "deleteVolume",
+              "createFunction",
+              "getFunction",
+              "deleteFunction",
+              "createTable",
+              "getTable",
+              "deleteTable"
+            ]
+          }
+        },
+        "description": "The schema to use"
+      },
+      {
+        "name": "schemaName",
+        "displayName": "Schema",
+        "type": "resourceLocator",
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "listVolumes",
+              "listTables",
+              "listFunctions"
+            ]
+          }
+        },
+        "description": "Filter by schema (optional, requires catalog)"
+      },
+      {
+        "name": "fullName",
+        "displayName": "Table",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getTable",
+              "deleteTable"
+            ]
+          }
+        },
+        "description": "The table to access"
+      },
+      {
+        "name": "fullName",
+        "displayName": "Function",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getFunction",
+              "deleteFunction"
+            ]
+          }
+        },
+        "description": "The function to access"
+      },
+      {
+        "name": "volumeName",
+        "displayName": "Volume Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createVolume",
+              "getVolume",
+              "deleteVolume"
+            ]
+          }
+        },
+        "description": "Name of the volume"
+      },
+      {
+        "name": "volumeType",
+        "displayName": "Volume Type",
+        "type": "options",
+        "required": true,
+        "default": "MANAGED",
+        "options": [
+          {
+            "name": "Managed",
+            "value": "MANAGED",
+            "description": "Databricks manages the volume storage"
+          },
+          {
+            "name": "External",
+            "value": "EXTERNAL",
+            "description": "Volume points to external storage"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createVolume"
+            ]
+          }
+        },
+        "description": "The type of volume to create"
+      },
+      {
+        "name": "functionName",
+        "displayName": "Function Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createFunction"
+            ]
+          }
+        },
+        "description": "Name of the function to create"
+      },
+      {
+        "name": "inputParams",
+        "displayName": "Input Parameters",
+        "type": "json",
+        "required": true,
+        "default": "[]",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createFunction"
+            ]
+          }
+        },
+        "description": "Array of input parameters. Each parameter requires name, type_name, and type_text."
+      },
+      {
+        "name": "returnType",
+        "displayName": "Return Type",
+        "type": "string",
+        "required": true,
+        "default": "STRING",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createFunction"
+            ]
+          }
+        },
+        "description": "The return type of the function (e.g., STRING, INT, DOUBLE)"
+      },
+      {
+        "name": "routineBody",
+        "displayName": "Routine Body",
+        "type": "string",
+        "required": true,
+        "default": "SQL",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createFunction"
+            ]
+          }
+        },
+        "description": "The language of the function body"
+      },
+      {
+        "name": "routineDefinition",
+        "displayName": "Routine Definition",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createFunction"
+            ]
+          }
+        },
+        "description": "The function body (SQL expression)"
+      },
+      {
+        "name": "comment",
+        "displayName": "Comment",
+        "type": "string",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createCatalog",
+              "updateCatalog"
+            ]
+          }
+        },
+        "description": "Optional comment or description"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "comment",
+            "description": "Optional comment or description for the volume"
+          },
+          {
+            "name": "storage_location",
+            "description": "External storage location (required for EXTERNAL volumes)"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createVolume"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tableName",
+        "displayName": "Table Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createTable"
+            ]
+          }
+        },
+        "description": "Name of the table to create"
+      },
+      {
+        "name": "storageLocation",
+        "displayName": "Storage Location",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createTable"
+            ]
+          }
+        },
+        "description": "External storage root URL for the table. The Create Table API only supports external Delta tables."
+      },
+      {
+        "name": "tableAdditionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "columns",
+            "description": "Array of column definitions. Each column requires name and type_name (e.g. STRING, LONG, DOUBLE, BOOLEAN, DATE, TIMESTAMP)."
+          },
+          {
+            "name": "comment",
+            "description": "Optional comment or description for the table"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "createTable"
+            ]
+          }
+        }
+      },
+      {
+        "name": "warehouseId",
+        "displayName": "Warehouse",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "databricksSql"
+            ],
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "The SQL warehouse to use"
+      },
+      {
+        "name": "query",
+        "displayName": "Query",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "SQL query to execute"
+      },
+      {
+        "name": "queryParameters",
+        "displayName": "Query Parameters",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "parameters",
+            "values": [
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Value",
+                "type": "string"
+              },
+              {
+                "name": "type",
+                "displayName": "Type",
+                "type": "options"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "executeQuery"
+            ]
+          }
+        },
+        "description": "Named parameters for the query. Reference them in your SQL as <code>:name</code>, e.g. <code>WHERE ID = :user_id</code>."
+      },
+      {
+        "name": "endpointName",
+        "displayName": "Endpoint",
+        "type": "resourceLocator",
+        "required": true,
+        "default": {
+          "mode": "list",
+          "value": ""
+        },
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "modelServing"
+            ],
+            "operation": [
+              "queryEndpoint"
+            ]
+          }
+        },
+        "description": "The model serving endpoint to query. The input format will be automatically detected from the endpoint schema. The node will fetch the endpoint's OpenAPI schema to determine the correct invocation URL."
+      },
+      {
+        "name": "requestBody",
+        "displayName": "Request Body",
+        "type": "json",
+        "required": true,
+        "default": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Hello!\"\n    }\n  ]\n}",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "modelServing"
+            ],
+            "operation": [
+              "queryEndpoint"
+            ]
+          }
+        },
+        "description": "Request body in JSON format. The node automatically detects the expected format from the endpoint's OpenAPI schema and validates your input at runtime."
+      },
+      {
+        "name": "indexName",
+        "displayName": "Index Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "getIndex",
+              "queryIndex",
+              "createIndex"
+            ]
+          }
+        },
+        "description": "Name of the vector search index"
+      },
+      {
+        "name": "endpointName",
+        "displayName": "Endpoint Name",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "listIndexes",
+              "createIndex"
+            ]
+          }
+        },
+        "description": "Name of the vector search endpoint"
+      },
+      {
+        "name": "primaryKey",
+        "displayName": "Primary Key",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "createIndex"
+            ]
+          }
+        },
+        "description": "Primary key column of the index"
+      },
+      {
+        "name": "indexType",
+        "displayName": "Index Type",
+        "type": "options",
+        "required": true,
+        "default": "DELTA_SYNC",
+        "options": [
+          {
+            "name": "Delta Sync",
+            "value": "DELTA_SYNC",
+            "description": "Automatically syncs with a source Delta Table"
+          },
+          {
+            "name": "Direct Access",
+            "value": "DIRECT_ACCESS",
+            "description": "Supports direct read and write of vectors and metadata"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "createIndex"
+            ]
+          }
+        },
+        "description": "Type of vector search index to create"
+      },
+      {
+        "name": "deltaSyncIndexSpec",
+        "displayName": "Delta Sync Index Spec",
+        "type": "json",
+        "required": true,
+        "default": "{\n  \"source_table\": \"catalog.schema.table\",\n  \"pipeline_type\": \"TRIGGERED\",\n  \"embedding_source_columns\": [{\n    \"name\": \"text\",\n    \"embedding_model_endpoint_name\": \"e5-small-v2\"\n  }],\n  \"columns_to_sync\": [\"id\", \"text\"]\n}",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "createIndex"
+            ],
+            "indexType": [
+              "DELTA_SYNC"
+            ]
+          }
+        },
+        "description": "Specification for the Delta Sync index"
+      },
+      {
+        "name": "directAccessIndexSpec",
+        "displayName": "Direct Access Index Spec",
+        "type": "json",
+        "required": true,
+        "default": "{\n  \"embedding_vector_columns\": [{\n    \"name\": \"embedding\",\n    \"embedding_dimension\": 1536\n  }],\n  \"schema_json\": \"{}\"\n}",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "createIndex"
+            ],
+            "indexType": [
+              "DIRECT_ACCESS"
+            ]
+          }
+        },
+        "description": "Specification for the Direct Access index"
+      },
+      {
+        "name": "queryType",
+        "displayName": "Query Type",
+        "type": "options",
+        "required": true,
+        "default": "text",
+        "options": [
+          {
+            "name": "Text Query",
+            "value": "text",
+            "description": "Query using text (automatically converted to vectors)"
+          },
+          {
+            "name": "Vector Query",
+            "value": "vector",
+            "description": "Query using pre-computed vector embeddings"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ]
+          }
+        },
+        "description": "Type of query to perform"
+      },
+      {
+        "name": "queryText",
+        "displayName": "Query Text",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ],
+            "queryType": [
+              "text"
+            ]
+          }
+        },
+        "description": "Text to search for (will be automatically converted to embeddings)"
+      },
+      {
+        "name": "queryVector",
+        "displayName": "Query Vector",
+        "type": "json",
+        "required": true,
+        "default": "[]",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ],
+            "queryType": [
+              "vector"
+            ]
+          }
+        },
+        "description": "Vector embeddings to search for similar vectors (array of numbers)"
+      },
+      {
+        "name": "searchMode",
+        "displayName": "Search Mode",
+        "type": "options",
+        "default": "ANN",
+        "options": [
+          {
+            "name": "Hybrid",
+            "value": "HYBRID",
+            "description": "Combines semantic (vector) and keyword search for best results"
+          },
+          {
+            "name": "ANN (Approximate Nearest Neighbor)",
+            "value": "ANN",
+            "description": "Pure vector similarity search"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ]
+          }
+        },
+        "description": "Search algorithm to use"
+      },
+      {
+        "name": "columns",
+        "displayName": "Columns to Return",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ]
+          }
+        },
+        "description": "Comma-separated list of column names to return in results (e.g., \"content,URL,title\")"
+      },
+      {
+        "name": "numResults",
+        "displayName": "Number of Results",
+        "type": "number",
+        "default": 10,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ]
+          }
+        },
+        "description": "Maximum number of results to return"
+      },
+      {
+        "name": "enableReranking",
+        "displayName": "Enable Reranking",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ]
+          }
+        },
+        "description": "Whether to rerank results using a reranker model for improved relevance"
+      },
+      {
+        "name": "rerankerModel",
+        "displayName": "Reranker Model",
+        "type": "string",
+        "required": true,
+        "default": "databricks_reranker",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ],
+            "enableReranking": [
+              true
+            ]
+          }
+        },
+        "description": "Name of the reranker model to use"
+      },
+      {
+        "name": "columnsToRerank",
+        "displayName": "Columns to Rerank",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ],
+            "enableReranking": [
+              true
+            ]
+          }
+        },
+        "description": "Comma-separated list of columns to use for reranking (e.g., \"content,title\")"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "filterExpression",
+            "description": "SQL-like filter expression to apply to the results (e.g., \"category = 'docs' AND published = true\")"
+          },
+          {
+            "name": "scoreThreshold",
+            "description": "Minimum relevance score threshold for results. Must be ≥ 0 and ≤ 1."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "vectorSearch"
+            ],
+            "operation": [
+              "queryIndex"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

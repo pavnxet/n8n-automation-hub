@@ -1,0 +1,497 @@
+{
+  "id": "n8n-nodes-base.googleslides",
+  "name": "Google Slides",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googleslides",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Slides node to automate work in Google Slides, and integrate Google Slides with other applications. n8n has built-in support for a wide range of Google Slides features, including creating presentations, and getting pages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googleslides",
+  "credentials": {
+    "name": "Google",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Page",
+      "operation": "Get a page",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Page",
+      "operation": "Get a thumbnail",
+      "description": "",
+      "doc": "",
+      "resource_value": "page",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Presentation",
+      "operation": "Create a presentation",
+      "description": "",
+      "doc": "",
+      "resource_value": "presentation",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Presentation",
+      "operation": "Get a presentation",
+      "description": "",
+      "doc": "",
+      "resource_value": "presentation",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Presentation",
+      "operation": "Get presentation slides",
+      "description": "",
+      "doc": "",
+      "resource_value": "presentation",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Presentation",
+      "operation": "Replace text in a presentation",
+      "description": "",
+      "doc": "",
+      "resource_value": "presentation",
+      "operation_value": "replaceText"
+    }
+  ],
+  "operation_count": 6,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "get",
+    "getting",
+    "google",
+    "googleslides",
+    "including",
+    "pages",
+    "presentation",
+    "presentations",
+    "replace",
+    "slides",
+    "text",
+    "thumbnail",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googleslides.md",
+      "title": "Google Slides node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googleslides",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googleslides.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googleslides.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googleslides.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googleslides.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleSlides",
+  "type_version": 2.0,
+  "type_versions": [
+    1,
+    2
+  ],
+  "groups": [
+    "input",
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleApi",
+    "googleSlidesOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "serviceAccount"
+          ]
+        }
+      }
+    },
+    {
+      "name": "googleSlidesOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Google Slides"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 14,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "serviceAccount",
+        "options": [
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          },
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "oAuth2",
+        "options": [
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          },
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "presentation",
+        "options": [
+          {
+            "name": "Page",
+            "value": "page"
+          },
+          {
+            "name": "Presentation",
+            "value": "presentation"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a presentation"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a presentation"
+          },
+          {
+            "name": "Get Slides",
+            "value": "getSlides",
+            "description": "Get presentation slides"
+          },
+          {
+            "name": "Replace Text",
+            "value": "replaceText",
+            "description": "Replace text in a presentation"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "presentation"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a page"
+          },
+          {
+            "name": "Get Thumbnail",
+            "value": "getThumbnail",
+            "description": "Get a thumbnail"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "presentation"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Title of the presentation to create"
+      },
+      {
+        "name": "presentationId",
+        "displayName": "Presentation ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "presentation",
+              "page"
+            ],
+            "operation": [
+              "get",
+              "getThumbnail",
+              "getSlides",
+              "replaceText"
+            ]
+          }
+        },
+        "description": "ID of the presentation to retrieve. Found in the presentation URL: <code>https://docs.google.com/presentation/d/PRESENTATION_ID/edit</code>"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getSlides"
+            ],
+            "resource": [
+              "presentation"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getSlides"
+            ],
+            "resource": [
+              "presentation"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "pageObjectId",
+        "displayName": "Page Object ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "get",
+              "getThumbnail"
+            ]
+          }
+        },
+        "description": "ID of the page object to retrieve"
+      },
+      {
+        "name": "textUi",
+        "displayName": "Texts To Replace",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "textValues",
+            "values": [
+              {
+                "name": "matchCase",
+                "displayName": "Match Case",
+                "type": "boolean"
+              },
+              {
+                "name": "pageObjectIds",
+                "displayName": "Slide Names or IDs",
+                "type": "multiOptions"
+              },
+              {
+                "name": "text",
+                "displayName": "Search For",
+                "type": "string"
+              },
+              {
+                "name": "replaceText",
+                "displayName": "Replace With",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "presentation"
+            ],
+            "operation": [
+              "replaceText"
+            ]
+          }
+        }
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "revisionId",
+            "description": "The revision ID of the presentation required for the write request. If specified and the requiredRevisionId doesn't exactly match the presentation's current rev"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "replaceText"
+            ],
+            "resource": [
+              "presentation"
+            ]
+          }
+        }
+      },
+      {
+        "name": "download",
+        "displayName": "Download",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "getThumbnail"
+            ]
+          }
+        },
+        "description": "Name of the binary property to which to write the data of the read page"
+      },
+      {
+        "name": "binaryProperty",
+        "displayName": "Put Output File in Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "page"
+            ],
+            "operation": [
+              "getThumbnail"
+            ],
+            "download": [
+              true
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

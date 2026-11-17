@@ -1,0 +1,47 @@
+<!-- n8n built-in node reference: n8n-nodes-base.actionnetwork | source: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.actionnetwork -->
+
+Use the Action Network node to automate work in Action Network, and integrate Action Network with other applications. n8n has built-in support for a wide range of Action Network features, including creating, updating, and deleting events, people, tags, and signatures. 
+
+On this page, you'll find a list of operations the Action Network node supports, and links to more resources.
+
+> **Credentials:**
+> Refer to [Action Network credentials](https://docs.n8n.io/integrations/builtin/credentials/actionnetwork) for guidance on setting up authentication.
+
+> **AI tool:** This node can be used as an AI tool. Connect it to the Tools input of an AI Agent node so the agent can call it.
+
+## Operations
+
+* Attendance
+    * Create
+    * Get
+    * Get All
+* Event
+    * Create
+    * Get
+    * Get All
+* Person
+    * Create
+    * Get
+    * Get All
+    * Update
+* Person Tag
+    * Add
+    * Remove
+* Petition
+    * Create
+    * Get
+    * Get All
+    * Update
+* Signature
+    * Create
+    * Get
+    * Get All
+    * Update
+* Tag
+    * Create
+    * Get
+    * Get All
+
+## Templates and examples
+
+[Browse Action Network node documentation integration templates](https://n8n.io/integrations/action-network) or [search all templates](https://n8n.io/workflows/)

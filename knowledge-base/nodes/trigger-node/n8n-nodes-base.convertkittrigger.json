@@ -1,0 +1,222 @@
+{
+  "id": "n8n-nodes-base.convertkittrigger",
+  "name": "ConvertKit Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.convertkittrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "ConvertKit is a fully featured email marketing platform. Use ConvertKit to build an email list, send email broadcasts, automate sequences, create segments, and build landing pages",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.convertkittrigger",
+  "credentials": {
+    "name": "ConvertKit credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/convertkit",
+    "slug": "convertkit",
+    "json_file": "credentials/convertkit.json",
+    "markdown_file": "credentials/convertkit.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "broadcasts",
+    "build",
+    "convertkit",
+    "convertkittrigger",
+    "create",
+    "credentials",
+    "email",
+    "featured",
+    "fully",
+    "landing",
+    "list",
+    "marketing",
+    "pages",
+    "platform",
+    "segments",
+    "send",
+    "sequences",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.convertkittrigger.md",
+      "title": "ConvertKit Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.convertkittrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.convertkittrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.convertkittrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.convertkittrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.convertkittrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.convertKitTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "convertKitApi"
+  ],
+  "credential_details": [
+    {
+      "name": "convertKitApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "ConvertKit Trigger"
+  },
+  "subtitle": "={{$parameter[\"event\"]}}",
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 6,
+    "parameters": [
+      {
+        "name": "event",
+        "displayName": "Event",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Form Subscribe",
+            "value": "formSubscribe"
+          },
+          {
+            "name": "Link Click",
+            "value": "linkClick"
+          },
+          {
+            "name": "Product Purchase",
+            "value": "productPurchase"
+          },
+          {
+            "name": "Purchase Created",
+            "value": "purchaseCreate"
+          },
+          {
+            "name": "Sequence Complete",
+            "value": "courseComplete"
+          },
+          {
+            "name": "Sequence Subscribe",
+            "value": "courseSubscribe"
+          },
+          {
+            "name": "Subscriber Activated",
+            "value": "subscriberActivate"
+          },
+          {
+            "name": "Subscriber Unsubscribe",
+            "value": "subscriberUnsubscribe"
+          },
+          {
+            "name": "Tag Add",
+            "value": "tagAdd"
+          },
+          {
+            "name": "Tag Remove",
+            "value": "tagRemove"
+          }
+        ],
+        "description": "The events that can trigger the webhook and whether they are enabled"
+      },
+      {
+        "name": "formId",
+        "displayName": "Form Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "event": [
+              "formSubscribe"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "courseId",
+        "displayName": "Sequence Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "event": [
+              "courseSubscribe",
+              "courseComplete"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "link",
+        "displayName": "Initiating Link",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "event": [
+              "linkClick"
+            ]
+          }
+        },
+        "description": "The URL of the initiating link"
+      },
+      {
+        "name": "productId",
+        "displayName": "Product ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "event": [
+              "productPurchase"
+            ]
+          }
+        }
+      },
+      {
+        "name": "tagId",
+        "displayName": "Tag Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "event": [
+              "tagAdd",
+              "tagRemove"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      }
+    ]
+  }
+}

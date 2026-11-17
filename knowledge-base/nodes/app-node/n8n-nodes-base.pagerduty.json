@@ -1,0 +1,911 @@
+{
+  "id": "n8n-nodes-base.pagerduty",
+  "name": "PagerDuty",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.pagerduty",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the PagerDuty node to automate work in PagerDuty, and integrate PagerDuty with other applications. n8n has built-in support for a wide range of PagerDuty features, including creating incident notes, as well as updating, and getting all log entries and users",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.pagerduty",
+  "credentials": {
+    "name": "PagerDuty",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/pagerduty",
+    "slug": "pagerduty",
+    "json_file": "credentials/pagerduty.json",
+    "markdown_file": "credentials/pagerduty.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Incident",
+      "operation": "Create an incident",
+      "description": "",
+      "doc": "",
+      "resource_value": "incident",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Incident",
+      "operation": "Get an incident",
+      "description": "",
+      "doc": "",
+      "resource_value": "incident",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Incident",
+      "operation": "Get all incidents",
+      "description": "",
+      "doc": "",
+      "resource_value": "incident",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Incident",
+      "operation": "Update an incident",
+      "description": "",
+      "doc": "",
+      "resource_value": "incident",
+      "operation_value": "update"
+    },
+    {
+      "resource": "Incident Note",
+      "operation": "Create an incident note",
+      "description": "",
+      "doc": "",
+      "resource_value": "incidentNote",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Incident Note",
+      "operation": "Get all incident's notes",
+      "description": "",
+      "doc": "",
+      "resource_value": "incidentNote"
+    },
+    {
+      "resource": "Log Entry",
+      "operation": "Get a log entry",
+      "description": "",
+      "doc": "",
+      "resource_value": "logEntry",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Log Entry",
+      "operation": "Get all log entries",
+      "description": "",
+      "doc": "",
+      "resource_value": "logEntry",
+      "operation_value": "get"
+    },
+    {
+      "resource": "User",
+      "operation": "Get a user",
+      "description": "",
+      "doc": "",
+      "resource_value": "user",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 9,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "entries",
+    "entry",
+    "get",
+    "getting",
+    "incident",
+    "incidents",
+    "including",
+    "log",
+    "note",
+    "notes",
+    "pagerduty",
+    "update",
+    "updating",
+    "user",
+    "users",
+    "well",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.pagerduty.md",
+      "title": "PagerDuty node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.pagerduty",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.pagerduty.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.pagerduty.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.pagerduty.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.pagerduty.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.pagerDuty",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "pagerDutyApi",
+    "pagerDutyOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "pagerDutyApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "apiToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "pagerDutyOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "PagerDuty"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 30,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "apiToken",
+        "options": [
+          {
+            "name": "API Token",
+            "value": "apiToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "incident",
+        "options": [
+          {
+            "name": "Incident",
+            "value": "incident"
+          },
+          {
+            "name": "Incident Note",
+            "value": "incidentNote"
+          },
+          {
+            "name": "Log Entry",
+            "value": "logEntry"
+          },
+          {
+            "name": "User",
+            "value": "user"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create an incident"
+          },
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get an incident"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many incidents"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update an incident"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "A succinct description of the nature, symptoms, cause, or effect of the incident"
+      },
+      {
+        "name": "serviceId",
+        "displayName": "Service Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The incident will be created on this service. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The email address of a valid user associated with the account making the request"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "escalationPolicyId",
+            "description": "Delegate this incident to the specified escalation policy. Cannot be specified if an assignee is given. Choose from the list, or specify an ID using an <a href="
+          },
+          {
+            "name": "details",
+            "description": "Additional details about the incident which will go in the body"
+          },
+          {
+            "name": "incidentKey",
+            "description": "Sending subsequent requests referencing the same service and with the same incident_key will result in those requests being rejected if an open incident matches"
+          },
+          {
+            "name": "priorityId",
+            "description": "The incident will be created on this service. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "urgency",
+            "description": "The urgency of the incident"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "conferenceBridgeUi",
+        "displayName": "Conference Bridge",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conferenceBridgeValues",
+            "values": [
+              {
+                "name": "conferenceNumber",
+                "displayName": "Conference Number",
+                "type": "string"
+              },
+              {
+                "name": "conferenceUrl",
+                "displayName": "Conference URL",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "incidentId",
+        "displayName": "Incident ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for the incident"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "incident"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "incident"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "dateRange",
+            "description": "When set to all, the since and until parameters and defaults are ignored"
+          },
+          {
+            "name": "incidentKey",
+            "description": "Incident de-duplication key. Incidents with child alerts do not have an incident key; querying by incident key will return incidents whose alerts have alert_key"
+          },
+          {
+            "name": "include",
+            "description": "Additional details to include"
+          },
+          {
+            "name": "serviceIds",
+            "description": "Returns only the incidents associated with the passed service(s). Choose from the list, or specify IDs using an <a href=\"https://docs.n8n.io/code/expressions/\">"
+          },
+          {
+            "name": "since",
+            "description": "The start of the date range over which you want to search. (the limit on date ranges is 6 months)."
+          },
+          {
+            "name": "sortBy",
+            "description": "Used to specify both the field you wish to sort the results on (incident_number/created_at/resolved_at/urgency), as well as the direction (asc/desc) of the resu"
+          },
+          {
+            "name": "statuses",
+            "description": "Returns only the incidents associated with the passed service(s)"
+          },
+          {
+            "name": "teamIds",
+            "description": "Team IDs. Only results related to these teams will be returned. Account must have the teams ability to use this parameter. (multiples IDs can be added separated"
+          },
+          {
+            "name": "timeZone",
+            "description": "Time zone in which dates in the result will be rendered. If not set dates will return UTC. Choose from the list, or specify an ID using an <a href=\"https://docs"
+          },
+          {
+            "name": "until",
+            "description": "The end of the date range over which you want to search. (the limit on date ranges is 6 months)."
+          },
+          {
+            "name": "urgencies",
+            "description": "Urgencies of the incidents to be returned. Defaults to all urgencies. Account must have the urgencies ability to do this"
+          },
+          {
+            "name": "userIds",
+            "description": "Returns only the incidents currently assigned to the passed user(s). This expects one or more user IDs (multiple IDs can be added separated by comma)."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "incidentId",
+        "displayName": "Incident ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Unique identifier for the incident"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "The email address of a valid user associated with the account making the request"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "escalationLevel",
+            "description": "Escalate the incident to this level in the escalation policy"
+          },
+          {
+            "name": "escalationPolicyId",
+            "description": "Delegate this incident to the specified escalation policy. Cannot be specified if an assignee is given. Choose from the list, or specify an ID using an <a href="
+          },
+          {
+            "name": "priorityId",
+            "description": "The incident will be created on this service. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+          },
+          {
+            "name": "resolution",
+            "description": "The resolution for this incident if status is set to resolved"
+          },
+          {
+            "name": "status",
+            "description": "The new status of the incident"
+          },
+          {
+            "name": "title",
+            "description": "A succinct description of the nature, symptoms, cause, or effect of the incident"
+          },
+          {
+            "name": "urgency",
+            "description": "The urgency of the incident"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "conferenceBridgeUi",
+        "displayName": "Conference Bridge",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "conferenceBridgeValues",
+            "values": [
+              {
+                "name": "conferenceNumber",
+                "displayName": "Conference Number",
+                "type": "string"
+              },
+              {
+                "name": "conferenceUrl",
+                "displayName": "Conference URL",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incident"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a incident note"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many incident's notes"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incidentNote"
+            ]
+          }
+        }
+      },
+      {
+        "name": "incidentId",
+        "displayName": "Incident ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incidentNote"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Unique identifier for the incident"
+      },
+      {
+        "name": "content",
+        "displayName": "Content",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incidentNote"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The note content"
+      },
+      {
+        "name": "email",
+        "displayName": "Email",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incidentNote"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "The email address of a valid user associated with the account making the request"
+      },
+      {
+        "name": "incidentId",
+        "displayName": "Incident ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "incidentNote"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        },
+        "description": "Unique identifier for the incident"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "incidentNote"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "incidentNote"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a log entry"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many log entries"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "logEntry"
+            ]
+          }
+        }
+      },
+      {
+        "name": "logEntryId",
+        "displayName": "Log Entry ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "logEntry"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for the log entry"
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "logEntry"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "logEntry"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "include",
+            "description": "Additional details to include"
+          },
+          {
+            "name": "isOverview",
+            "description": "Whether to return a subset of log entries that show only the most important changes to the incident"
+          },
+          {
+            "name": "since",
+            "description": "The start of the date range over which you want to search. (the limit on date ranges is 6 months)."
+          },
+          {
+            "name": "timeZone",
+            "description": "Time zone in which dates in the result will be rendered. If not set dates will return UTC. Choose from the list, or specify an ID using an <a href=\"https://docs"
+          },
+          {
+            "name": "until",
+            "description": "The end of the date range over which you want to search. (the limit on date ranges is 6 months)."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "logEntry"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get",
+            "value": "get",
+            "description": "Get a user"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ]
+          }
+        }
+      },
+      {
+        "name": "userId",
+        "displayName": "User ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "user"
+            ],
+            "operation": [
+              "get"
+            ]
+          }
+        },
+        "description": "Unique identifier for the user"
+      }
+    ]
+  }
+}

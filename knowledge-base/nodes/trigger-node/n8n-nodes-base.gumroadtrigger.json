@@ -1,0 +1,130 @@
+{
+  "id": "n8n-nodes-base.gumroadtrigger",
+  "name": "Gumroad Trigger",
+  "category": "trigger-node",
+  "category_description": "Trigger node - starts a workflow when an event happens",
+  "node_type": "n8n-nodes-base.gumroadtrigger",
+  "is_trigger": true,
+  "is_ai_tool": false,
+  "is_credential_only": false,
+  "description": "Gumroad is an online platform that enables creators to sell products directly to consumers",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.gumroadtrigger",
+  "credentials": {
+    "name": "Gumroad credentials documentation",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/gumroad",
+    "slug": "gumroad",
+    "json_file": "credentials/gumroad.json",
+    "markdown_file": "credentials/gumroad.md"
+  },
+  "authentication_methods": [],
+  "operations": [],
+  "operation_count": 0,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "consumers",
+    "creators",
+    "credentials",
+    "directly",
+    "enables",
+    "gumroad",
+    "gumroadtrigger",
+    "online",
+    "platform",
+    "products",
+    "sell",
+    "trigger"
+  ],
+  "reusable_blocks": [],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.gumroadtrigger.md",
+      "title": "Gumroad Trigger node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.gumroadtrigger",
+      "origpath": "integrations/builtin/trigger-nodes/n8n-nodes-base.gumroadtrigger.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/trigger-node/n8n-nodes-base.gumroadtrigger.json",
+    "markdown": "nodes/trigger-node/n8n-nodes-base.gumroadtrigger.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/trigger-nodes/n8n-nodes-base.gumroadtrigger.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.gumroadTrigger",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "trigger"
+  ],
+  "usable_as_tool": false,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "gumroadApi"
+  ],
+  "credential_details": [
+    {
+      "name": "gumroadApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Gumroad Trigger"
+  },
+  "subtitle": null,
+  "io": {
+    "inputs": [],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 1,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "Cancellation",
+            "value": "cancellation",
+            "description": "When subscribed to this resource, you will be notified of cancellations of the user's subscribers"
+          },
+          {
+            "name": "Dispute",
+            "value": "dispute",
+            "description": "When subscribed to this resource, you will be notified of the disputes raised against user's sales"
+          },
+          {
+            "name": "Dispute Won",
+            "value": "dispute_won",
+            "description": "When subscribed to this resource, you will be notified of the sale disputes won"
+          },
+          {
+            "name": "Refund",
+            "value": "refund",
+            "description": "When subscribed to this resource, you will be notified of refunds to the user's sales"
+          },
+          {
+            "name": "Sale",
+            "value": "sale",
+            "description": "When subscribed to this resource, you will be notified of the user's sales"
+          }
+        ],
+        "description": "The resource is gonna fire the event"
+      }
+    ]
+  }
+}

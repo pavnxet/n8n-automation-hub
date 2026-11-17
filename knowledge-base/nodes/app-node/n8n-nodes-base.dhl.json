@@ -1,0 +1,156 @@
+{
+  "id": "n8n-nodes-base.dhl",
+  "name": "DHL",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.dhl",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the DHL node to automate work in DHL, and integrate DHL with other applications. n8n has built-in support for a wide range of DHL features, including tracking shipment",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.dhl",
+  "credentials": {
+    "name": "DHL",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/dhl",
+    "slug": "dhl",
+    "json_file": "credentials/dhl.json",
+    "markdown_file": "credentials/dhl.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Shipment",
+      "operation": "Get Tracking Details",
+      "description": "",
+      "doc": "",
+      "resource_value": "shipment",
+      "operation_value": "get"
+    }
+  ],
+  "operation_count": 1,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "dhl",
+    "get",
+    "including",
+    "shipment",
+    "tracking",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.dhl.md",
+      "title": "DHL node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.dhl",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.dhl.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.dhl.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.dhl.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.dhl.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.dhl",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "dhlApi"
+  ],
+  "credential_details": [
+    {
+      "name": "dhlApi",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "DHL"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 4,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "hidden",
+        "default": "shipment",
+        "options": [
+          {
+            "name": "Shipment",
+            "value": "shipment"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "get",
+        "options": [
+          {
+            "name": "Get Tracking Details",
+            "value": "get"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "shipment"
+            ]
+          }
+        }
+      },
+      {
+        "name": "trackingNumber",
+        "displayName": "Tracking Number",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "options",
+        "displayName": "Options",
+        "type": "collection",
+        "options": [
+          {
+            "name": "recipientPostalCode",
+            "description": "DHL will return more detailed information on the shipment when you provide the Recipient's Postal Code - it acts as a verification step"
+          }
+        ]
+      }
+    ]
+  }
+}

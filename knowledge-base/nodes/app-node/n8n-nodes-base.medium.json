@@ -1,0 +1,386 @@
+{
+  "id": "n8n-nodes-base.medium",
+  "name": "Medium",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.medium",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Medium node to automate work in Medium, and integrate Medium with other applications. n8n has built-in support for a wide range of Medium features, including creating posts, and getting publications",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.medium",
+  "credentials": {
+    "name": "Medium",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/medium",
+    "slug": "medium",
+    "json_file": "credentials/medium.json",
+    "markdown_file": "credentials/medium.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Post",
+      "operation": "Create a post",
+      "description": "",
+      "doc": "",
+      "resource_value": "post",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Publication",
+      "operation": "Get all publications",
+      "description": "",
+      "doc": "",
+      "resource_value": "publication"
+    }
+  ],
+  "operation_count": 2,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "get",
+    "getting",
+    "including",
+    "medium",
+    "post",
+    "posts",
+    "publication",
+    "publications",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.medium.md",
+      "title": "Medium node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.medium",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.medium.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.medium.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.medium.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.medium.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.medium",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "output"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "mediumApi",
+    "mediumOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "mediumApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "accessToken"
+          ]
+        }
+      }
+    },
+    {
+      "name": "mediumOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Medium"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 12,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "accessToken",
+        "options": [
+          {
+            "name": "Access Token",
+            "value": "accessToken"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ]
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "post",
+        "options": [
+          {
+            "name": "Post",
+            "value": "post"
+          },
+          {
+            "name": "Publication",
+            "value": "publication"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a post"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ]
+          }
+        }
+      },
+      {
+        "name": "publication",
+        "displayName": "Publication",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Whether you are posting for a publication"
+      },
+      {
+        "name": "publicationId",
+        "displayName": "Publication Name or ID",
+        "type": "options",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "post"
+            ],
+            "operation": [
+              "create"
+            ],
+            "publication": [
+              true
+            ]
+          }
+        },
+        "description": "Publication IDs. Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>."
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        },
+        "description": "Title of the post. Max Length : 100 characters."
+      },
+      {
+        "name": "contentFormat",
+        "displayName": "Content Format",
+        "type": "options",
+        "required": true,
+        "options": [
+          {
+            "name": "HTML",
+            "value": "html"
+          },
+          {
+            "name": "Markdown",
+            "value": "markdown"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        },
+        "description": "The format of the content to be posted"
+      },
+      {
+        "name": "content",
+        "displayName": "Content",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        },
+        "description": "The body of the post, in a valid semantic HTML fragment, or Markdown"
+      },
+      {
+        "name": "additionalFields",
+        "displayName": "Additional Fields",
+        "type": "collection",
+        "options": [
+          {
+            "name": "canonicalUrl",
+            "description": "The original home of this content, if it was originally published elsewhere"
+          },
+          {
+            "name": "license",
+            "description": "License of the post"
+          },
+          {
+            "name": "notifyFollowers",
+            "description": "Whether to notify followers that the user has published"
+          },
+          {
+            "name": "publishStatus",
+            "description": "The status of the post"
+          },
+          {
+            "name": "tags",
+            "description": "Comma-separated strings to be used as tags for post classification. Max allowed tags: 5. Max tag length: 25 characters."
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "post"
+            ]
+          }
+        }
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "publication",
+        "options": [
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many publications"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "publication"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "publication"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "publication"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      }
+    ]
+  }
+}

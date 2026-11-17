@@ -1,0 +1,625 @@
+{
+  "id": "n8n-nodes-base.googledocs",
+  "name": "Google Docs",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.googledocs",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Google Docs node to automate work in Google Docs, and integrate Google Docs with other applications. n8n has built-in support for a wide range of Google Docs features, including creating, updating, and getting documents",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledocs",
+  "credentials": {
+    "name": "Google Docs",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/google",
+    "slug": "google",
+    "json_file": "credentials/google.json",
+    "markdown_file": "credentials/google.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Document",
+      "operation": "Create",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Document",
+      "operation": "Get",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "get"
+    },
+    {
+      "resource": "Document",
+      "operation": "Update",
+      "description": "",
+      "doc": "",
+      "resource_value": "document",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 3,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "docs",
+    "document",
+    "documents",
+    "get",
+    "getting",
+    "google",
+    "googledocs",
+    "including",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "6vuTxJwns2nA8U7V56ij",
+      "name": "ai-tools"
+    },
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.googledocs.md",
+      "title": "Google Docs node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googledocs",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.googledocs.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.googledocs.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.googledocs.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.googledocs.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.googleDocs",
+  "type_version": 2.0,
+  "type_versions": [
+    1,
+    2
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "googleApi",
+    "googleDocsOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "googleApi",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "serviceAccount"
+          ]
+        }
+      }
+    },
+    {
+      "name": "googleDocsOAuth2Api",
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "authentication": [
+            "oAuth2"
+          ]
+        }
+      }
+    }
+  ],
+  "defaults": {
+    "name": "Google Docs"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 13,
+    "parameters": [
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "serviceAccount",
+        "options": [
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          },
+          {
+            "name": "OAuth2",
+            "value": "oAuth2"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "authentication",
+        "displayName": "Authentication",
+        "type": "options",
+        "default": "oAuth2",
+        "options": [
+          {
+            "name": "OAuth2 (recommended)",
+            "value": "oAuth2"
+          },
+          {
+            "name": "Service Account",
+            "value": "serviceAccount"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "@version": [
+              2
+            ]
+          }
+        }
+      },
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "document",
+        "options": [
+          {
+            "name": "Document",
+            "value": "document"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create"
+          },
+          {
+            "name": "Get",
+            "value": "get"
+          },
+          {
+            "name": "Update",
+            "value": "update"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "driveId",
+        "displayName": "Drive Name or ID",
+        "type": "options",
+        "required": true,
+        "default": "myDrive",
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "folderId",
+        "displayName": "Folder Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "create"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      },
+      {
+        "name": "documentURL",
+        "displayName": "Doc ID or URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "The ID in the document URL (or just paste the whole URL)"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "get"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "documentURL",
+        "displayName": "Doc ID or URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "The ID in the document URL (or just paste the whole URL)"
+      },
+      {
+        "name": "simple",
+        "displayName": "Simplify",
+        "type": "boolean",
+        "default": true,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Whether to return a simplified version of the response instead of the raw data"
+      },
+      {
+        "name": "actionsUi",
+        "displayName": "Actions",
+        "type": "fixedCollection",
+        "default": {
+          "actionFields": [
+            {
+              "object": "text",
+              "action": "insert",
+              "locationChoice": "endOfSegmentLocation",
+              "index": 0,
+              "text": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "actionFields",
+            "values": [
+              {
+                "name": "object",
+                "displayName": "Object",
+                "type": "options"
+              },
+              {
+                "name": "action",
+                "displayName": "Action",
+                "type": "options"
+              },
+              {
+                "name": "action",
+                "displayName": "Action",
+                "type": "options"
+              },
+              {
+                "name": "action",
+                "displayName": "Action",
+                "type": "options"
+              },
+              {
+                "name": "action",
+                "displayName": "Action",
+                "type": "options"
+              },
+              {
+                "name": "action",
+                "displayName": "Action",
+                "type": "options"
+              },
+              {
+                "name": "insertSegment",
+                "displayName": "Insert Segment",
+                "type": "options"
+              },
+              {
+                "name": "segmentId",
+                "displayName": "Segment ID",
+                "type": "string"
+              },
+              {
+                "name": "index",
+                "displayName": "Index",
+                "type": "number"
+              },
+              {
+                "name": "name",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "startIndex",
+                "displayName": "Start Index",
+                "type": "number"
+              },
+              {
+                "name": "endIndex",
+                "displayName": "End Index",
+                "type": "number"
+              },
+              {
+                "name": "bulletPreset",
+                "displayName": "Style",
+                "type": "options"
+              },
+              {
+                "name": "footerId",
+                "displayName": "Footer ID",
+                "type": "string"
+              },
+              {
+                "name": "headerId",
+                "displayName": "Header ID",
+                "type": "string"
+              },
+              {
+                "name": "namedRangeReference",
+                "displayName": "Specify Range By",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "ID",
+                "type": "string"
+              },
+              {
+                "name": "value",
+                "displayName": "Name",
+                "type": "string"
+              },
+              {
+                "name": "objectId",
+                "displayName": "Object ID",
+                "type": "string"
+              },
+              {
+                "name": "insertSegment",
+                "displayName": "Insert Segment",
+                "type": "options"
+              },
+              {
+                "name": "segmentId",
+                "displayName": "Segment ID",
+                "type": "string"
+              },
+              {
+                "name": "locationChoice",
+                "displayName": "Insert Location",
+                "type": "options"
+              },
+              {
+                "name": "index",
+                "displayName": "Index",
+                "type": "number"
+              },
+              {
+                "name": "locationChoice",
+                "displayName": "Insert Location",
+                "type": "options"
+              },
+              {
+                "name": "index",
+                "displayName": "Index",
+                "type": "number"
+              },
+              {
+                "name": "rows",
+                "displayName": "Rows",
+                "type": "number"
+              },
+              {
+                "name": "columns",
+                "displayName": "Columns",
+                "type": "number"
+              },
+              {
+                "name": "locationChoice",
+                "displayName": "Insert Location",
+                "type": "options"
+              },
+              {
+                "name": "index",
+                "displayName": "Index",
+                "type": "number"
+              },
+              {
+                "name": "text",
+                "displayName": "Text",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "displayName": "Old Text",
+                "type": "string"
+              },
+              {
+                "name": "replaceText",
+                "displayName": "New Text",
+                "type": "string"
+              },
+              {
+                "name": "matchCase",
+                "displayName": "Match Case",
+                "type": "boolean"
+              },
+              {
+                "name": "insertSegment",
+                "displayName": "Insert Segment",
+                "type": "options"
+              },
+              {
+                "name": "segmentId",
+                "displayName": "Segment ID",
+                "type": "string"
+              },
+              {
+                "name": "startIndex",
+                "displayName": "Start Index",
+                "type": "number"
+              },
+              {
+                "name": "endIndex",
+                "displayName": "End Index",
+                "type": "number"
+              },
+              {
+                "name": "insertPosition",
+                "displayName": "Insert Position",
+                "type": "options"
+              },
+              {
+                "name": "index",
+                "displayName": "Index",
+                "type": "number"
+              },
+              {
+                "name": "rowIndex",
+                "displayName": "Row Index",
+                "type": "number"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        },
+        "description": "Actions applied to update the document"
+      },
+      {
+        "name": "updateFields",
+        "displayName": "Update Fields",
+        "type": "fixedCollection",
+        "options": [
+          {
+            "name": "writeControlObject",
+            "values": [
+              {
+                "name": "control",
+                "displayName": "Revision Mode",
+                "type": "options"
+              },
+              {
+                "name": "value",
+                "displayName": "Revision ID",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "update"
+            ],
+            "resource": [
+              "document"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

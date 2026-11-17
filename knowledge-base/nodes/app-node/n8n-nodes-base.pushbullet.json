@@ -1,0 +1,494 @@
+{
+  "id": "n8n-nodes-base.pushbullet",
+  "name": "Pushbullet",
+  "category": "app-node",
+  "category_description": "App node - connects to an external service API",
+  "node_type": "n8n-nodes-base.pushbullet",
+  "is_trigger": false,
+  "is_ai_tool": true,
+  "is_credential_only": false,
+  "description": "Use the Pushbullet node to automate work in Pushbullet, and integrate Pushbullet with other applications. n8n has built-in support for a wide range of Pushbullet features, including creating, updating, deleting, and getting a push",
+  "doc_url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.pushbullet",
+  "credentials": {
+    "name": "Pushbullet",
+    "doc": "https://docs.n8n.io/integrations/builtin/credentials/pushbullet",
+    "slug": "pushbullet",
+    "json_file": "credentials/pushbullet.json",
+    "markdown_file": "credentials/pushbullet.md"
+  },
+  "authentication_methods": [],
+  "operations": [
+    {
+      "resource": "Push",
+      "operation": "Create a push",
+      "description": "",
+      "doc": "",
+      "resource_value": "push",
+      "operation_value": "create"
+    },
+    {
+      "resource": "Push",
+      "operation": "Delete a push",
+      "description": "",
+      "doc": "",
+      "resource_value": "push",
+      "operation_value": "delete"
+    },
+    {
+      "resource": "Push",
+      "operation": "Get all pushes",
+      "description": "",
+      "doc": "",
+      "resource_value": "push"
+    },
+    {
+      "resource": "Push",
+      "operation": "Update a push",
+      "description": "",
+      "doc": "",
+      "resource_value": "push",
+      "operation_value": "update"
+    }
+  ],
+  "operation_count": 4,
+  "parameters": [],
+  "events": [],
+  "trigger_methods": [],
+  "operation_details": [],
+  "examples": [],
+  "common_issues": [],
+  "keywords": [
+    "app",
+    "applications",
+    "create",
+    "creating",
+    "delete",
+    "deleting",
+    "get",
+    "getting",
+    "including",
+    "push",
+    "pushbullet",
+    "pushes",
+    "update",
+    "updating",
+    "work"
+  ],
+  "reusable_blocks": [
+    {
+      "id": "96ifDzfcUuwOyYrubZUt",
+      "name": "operation-not-supported"
+    }
+  ],
+  "pages": [
+    {
+      "page": "n8n-nodes-base.pushbullet.md",
+      "title": "Pushbullet node documentation",
+      "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.pushbullet",
+      "origpath": "integrations/builtin/app-nodes/n8n-nodes-base.pushbullet.md"
+    }
+  ],
+  "files": {
+    "json": "nodes/app-node/n8n-nodes-base.pushbullet.json",
+    "markdown": "nodes/app-node/n8n-nodes-base.pushbullet.md"
+  },
+  "source": {
+    "repo": "n8n-io/n8n-docs",
+    "path": "docs/app-nodes/n8n-nodes-base.pushbullet.md",
+    "license": "Sustainable Use License (n8n docs)"
+  },
+  "generated": "2026-11-17",
+  "workflow_type": "n8n-nodes-base.pushbullet",
+  "type_version": 1.0,
+  "type_versions": [
+    1
+  ],
+  "groups": [
+    "input"
+  ],
+  "usable_as_tool": true,
+  "package": "n8n-nodes-base",
+  "credential_types": [
+    "pushbulletOAuth2Api"
+  ],
+  "credential_details": [
+    {
+      "name": "pushbulletOAuth2Api",
+      "required": true
+    }
+  ],
+  "defaults": {
+    "name": "Pushbullet"
+  },
+  "subtitle": "={{$parameter[\"operation\"] + \": \" + $parameter[\"resource\"]}}",
+  "io": {
+    "inputs": [
+      "main"
+    ],
+    "outputs": [
+      "main"
+    ]
+  },
+  "node_schema": {
+    "source": "n8n-nodes-base node description",
+    "parameter_count": 16,
+    "parameters": [
+      {
+        "name": "resource",
+        "displayName": "Resource",
+        "type": "options",
+        "default": "push",
+        "options": [
+          {
+            "name": "Push",
+            "value": "push"
+          }
+        ]
+      },
+      {
+        "name": "operation",
+        "displayName": "Operation",
+        "type": "options",
+        "default": "create",
+        "options": [
+          {
+            "name": "Create",
+            "value": "create",
+            "description": "Create a push"
+          },
+          {
+            "name": "Delete",
+            "value": "delete",
+            "description": "Delete a push"
+          },
+          {
+            "name": "Get Many",
+            "value": "getAll",
+            "description": "Get many pushes"
+          },
+          {
+            "name": "Update",
+            "value": "update",
+            "description": "Update a push"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ]
+          }
+        }
+      },
+      {
+        "name": "type",
+        "displayName": "Type",
+        "type": "options",
+        "required": true,
+        "default": "note",
+        "options": [
+          {
+            "name": "File",
+            "value": "file"
+          },
+          {
+            "name": "Link",
+            "value": "link"
+          },
+          {
+            "name": "Note",
+            "value": "note"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        }
+      },
+      {
+        "name": "title",
+        "displayName": "Title",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "create"
+            ],
+            "type": [
+              "note",
+              "link"
+            ]
+          }
+        },
+        "description": "Title of the push"
+      },
+      {
+        "name": "body",
+        "displayName": "Body",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "create"
+            ],
+            "type": [
+              "note",
+              "link",
+              "file"
+            ]
+          }
+        },
+        "description": "Body of the push"
+      },
+      {
+        "name": "url",
+        "displayName": "URL",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "create"
+            ],
+            "type": [
+              "link"
+            ]
+          }
+        },
+        "description": "URL of the push"
+      },
+      {
+        "name": "binaryPropertyName",
+        "displayName": "Input Binary Field",
+        "type": "string",
+        "required": true,
+        "default": "data",
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "create"
+            ],
+            "type": [
+              "file"
+            ]
+          }
+        }
+      },
+      {
+        "name": "target",
+        "displayName": "Target",
+        "type": "options",
+        "required": true,
+        "default": "default",
+        "options": [
+          {
+            "name": "Channel Tag",
+            "value": "channel_tag",
+            "description": "Send the push to all subscribers to your channel that has this tag"
+          },
+          {
+            "name": "Default",
+            "value": "default",
+            "description": "Broadcast it to all of the user's devices"
+          },
+          {
+            "name": "Device ID",
+            "value": "device_iden",
+            "description": "Send the push to a specific device"
+          },
+          {
+            "name": "Email",
+            "value": "email",
+            "description": "Send the push to this email address"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "create"
+            ]
+          }
+        },
+        "description": "Define the medium that will be used to send the push"
+      },
+      {
+        "name": "value",
+        "displayName": "Value",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "create"
+            ]
+          },
+          "hide": {
+            "target": [
+              "default",
+              "device_iden"
+            ]
+          }
+        },
+        "description": "The value to be set depending on the target selected. For example, if the target selected is email then this field would take the email address of the person you are trying to send the push to."
+      },
+      {
+        "name": "value",
+        "displayName": "Value Name or ID",
+        "type": "options",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "create"
+            ],
+            "target": [
+              "device_iden"
+            ]
+          }
+        },
+        "description": "Choose from the list, or specify an ID using an <a href=\"https://docs.n8n.io/code/expressions/\">expression</a>"
+      },
+      {
+        "name": "pushId",
+        "displayName": "Push ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "returnAll",
+        "displayName": "Return All",
+        "type": "boolean",
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "push"
+            ]
+          }
+        },
+        "description": "Whether to return all results or only up to a given limit"
+      },
+      {
+        "name": "limit",
+        "displayName": "Limit",
+        "type": "number",
+        "default": 100,
+        "displayOptions": {
+          "show": {
+            "operation": [
+              "getAll"
+            ],
+            "resource": [
+              "push"
+            ],
+            "returnAll": [
+              false
+            ]
+          }
+        },
+        "description": "Max number of results to return"
+      },
+      {
+        "name": "filters",
+        "displayName": "Filters",
+        "type": "collection",
+        "options": [
+          {
+            "name": "active",
+            "description": "Don't return deleted pushes"
+          },
+          {
+            "name": "modified_after",
+            "description": "Request pushes modified after this timestamp"
+          }
+        ],
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "getAll"
+            ]
+          }
+        }
+      },
+      {
+        "name": "pushId",
+        "displayName": "Push ID",
+        "type": "string",
+        "required": true,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        }
+      },
+      {
+        "name": "dismissed",
+        "displayName": "Dismissed",
+        "type": "boolean",
+        "required": true,
+        "default": false,
+        "displayOptions": {
+          "show": {
+            "resource": [
+              "push"
+            ],
+            "operation": [
+              "update"
+            ]
+          }
+        },
+        "description": "Whether to mark a push as having been dismissed by the user, will cause any notifications for the push to be hidden if possible"
+      }
+    ]
+  }
+}

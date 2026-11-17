@@ -1,0 +1,26 @@
+<!-- n8n built-in node reference: n8n-nodes-langchain.embeddingsopenai | source: https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsopenai -->
+
+Use the Embeddings OpenAI node to generate embeddings[^1] for a given text.
+
+On this page, you'll find the node parameters for the Embeddings OpenAI node, and links to more resources.
+
+> **Credentials:**
+> Refer to the [OpenAI credentials documentation](https://docs.n8n.io/integrations/builtin/credentials/openai) for authentication information for this node.
+
+## Node options
+
+* **Model**: Select the model to use for generating embeddings.
+* **Base URL**: Enter the URL to send the request to. Use this if you are using a self-hosted OpenAI-like model. 
+* **Batch Size**: Enter the maximum number of documents to send in each request.
+* **Strip New Lines**: Select whether to remove new line characters from input text (turned on) or not (turned off). n8n enables this by default.
+* **Timeout**: Enter the maximum amount of time a request can take in seconds. Set to `-1` for no timeout.
+
+## Templates and examples
+
+[Browse Embeddings OpenAI node documentation integration templates](https://n8n.io/integrations/embeddings-openai) or [search all templates](https://n8n.io/workflows/)
+
+## Related resources
+
+Refer to [LangChain's OpenAI embeddings documentation](https://docs.langchain.com/oss/javascript/integrations/embeddings/openai) for more information about the service.
+
+[^1]: Embeddings are numerical representations of data using vectors. They're used by AI to interpret complex data and relationships by mapping values across many dimensions. Vector databases, or vector stores, are databases designed to store and access embeddings.
