@@ -37,7 +37,7 @@ an `errorWorkflow` presence check.
 
 `server/` now exposes seven tools over stdio. Follow-ups worth doing:
 
-- a `search_community_nodes` tool over `community-nodes/index.json`
+- ~~a `search_community_nodes` tool over `community-nodes/index.json`~~ shipped in 1.2.0
 - a `diff_kb_versions` tool once item 8 exists
 - an HTTP transport, only if a remote client actually needs one
 

@@ -5,6 +5,47 @@ versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.2.0] — 2026-11-17
+
+Two more sources ingested into the provenance registry, a popularity ranking computed from
+npm, and community nodes made searchable over MCP.
+
+### Added — community nodes
+
+- `community-nodes/top-100.json`: the hundred community packages with the highest last-30-day
+  npm downloads, with version, author, repository and npm link per row. Ranked by
+  `tools/build_top_nodes.py` from npm data — computed here, not quoted from a third-party list.
+- `tools/build_top_nodes.py`: refreshes download counts, re-ranks, writes the file.
+  `--offline` re-ranks on stored counts; `--candidates` / `--top` control depth.
+- `search_community_nodes` MCP tool: name, description, downloads and top-100 rank for
+  third-party packages, with an explicit warning that they are unverified. Tool count is now 8,
+  protocol tests 24.
+
+### Added — sources
+
+- `awesome-n8n-restyler` (community-curated): a README ranking community nodes by npm
+  downloads, plus a crawler history of ecosystem growth. No licence file, affiliate links, and
+  an author column that miscredits CI bots — so it is used only as a cross-check.
+- `ncnodes` (community-curated): a directory that separates 30-day from all-time downloads and
+  flags AI-generated packages. No licence stated and its API is unreachable from the build
+  environment, so it is cited, not ingested.
+- Registry is now 14 sources.
+
+### Changed
+
+- `community-nodes/index.json` download coverage grew from 329 to 401 packages.
+- Documentation updated across the root README, `community-nodes/README.md`,
+  `server/README.md`, `docs/roadmap.md` and `sources/README.md`.
+
+### Verified
+
+- `server/test_server.py`: 24/24 checks, including three new community-search assertions.
+- `tools/security_scan.py`: 13 workflows and 853 records, clean apart from the one waived
+  documentation webhook.
+- The top-100 ranking was cross-checked against both new sources; the leaders agree.
+
+---
+
 ## [1.1.0] — 2026-11-17
 
 The repository went public, gained an MCP server, and grew a security gate in CI.

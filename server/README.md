@@ -18,6 +18,7 @@ Standard library only: no dependencies, no build step, no network access at runt
 | `get_operation` | "what are the fields for Gmail → Send?" | One operation's parameters and options, nothing else |
 | `list_triggers` | "how can this workflow start?" | The 91 trigger nodes, filterable |
 | `resolve_enum` | "'Append Row' → ?" | Label → internal value, plus the whole option table |
+| `search_community_nodes` | "is there a package for X?" | Third-party npm packages, with download counts and top-100 rank; warns that they are unverified |
 | `validate_workflow` | "will this import?" | Runs the **same lint as CI** on the JSON before a human sees it |
 
 Resources: `n8n://guide/agent`, `n8n://guide/knowledge-base`,
@@ -149,5 +150,6 @@ Without the server, steps 1–3 are a filesystem search and step 5 does not exis
 - **Read-only.** Nothing here writes to the repository or to an n8n instance.
 - **Snapshot-bound.** Results reflect the knowledge base committed alongside it; refresh the
   KB (`tools/build_kb.py`, `tools/enrich_kb.py`) to move forward.
-- **No community nodes in lookups.** They are indexed separately in
-  `community-nodes/index.json` and are not searchable through these tools.
+- **Community nodes are searchable but not enriched.** `search_community_nodes` returns name,
+  description, downloads and links from `community-nodes/`; it has no parameter schemas, because
+  those packages are not installed here.

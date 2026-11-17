@@ -38,10 +38,10 @@ Built for two readers at once:
 |---|---|---|---|
 | Knowledge base | `knowledge-base/` | Every n8n built-in node as JSON + Markdown, with operations, parameter schemas, credentials and search indexes | 531 nodes · 3,848 operations · 322 credentials |
 | Automations | `automations/` | Importable workflow JSON, grouped by AI / integrations / core / patterns | 12 seed workflows |
-| MCP server | `server/` | Model Context Protocol server: 7 tools, 5 resources, stdlib only | 20 protocol tests |
-| Community nodes | `community-nodes/` | npm registry index of community node packages, ranked by real download counts, plus the approved shortlist | 1,500 packages indexed |
-| Sources | `sources/` | Registry of official and unofficial sources, with licences, quality notes and check dates | 12 sources |
-| Tooling | `tools/` | Validators, security scanner, KB builders, BM25 search | 6 scripts |
+| MCP server | `server/` | Model Context Protocol server: 8 tools, 5 resources, stdlib only | 24 protocol tests |
+| Community nodes | `community-nodes/` | npm index of community node packages, a top-100 ranked by real download counts, and the approved shortlist | 1,500 indexed · 100 ranked |
+| Sources | `sources/` | Registry of official and unofficial sources, with licences, quality notes and check dates | 14 sources |
+| Tooling | `tools/` | Validators, security scanner, KB builders, BM25 search, node ranker | 7 scripts |
 | Documentation | `docs/` | Architecture, workflow conventions, importing guide, research notes, roadmap | 5 documents |
 
 Snapshot date: **2026-11-17**. Node schemas come from `n8n-nodes-base@2.15.1` and
@@ -73,7 +73,7 @@ python3 tools/search.py "new email" --trigger
 
 ```bash
 python3 server/mcp_server.py        # stdio JSON-RPC
-python3 server/test_server.py       # 20 checks
+python3 server/test_server.py       # 24 checks
 ```
 
 Point Claude Desktop, Cursor, VS Code or an n8n **MCP Client Tool** node at
@@ -122,10 +122,11 @@ n8n-automation-hub/
 │   ├── README.md                 tools, resources, client configuration
 │   ├── mcp_server.py             protocol layer (stdio JSON-RPC 2.0)
 │   ├── kb.py                     data layer: search and lookups
-│   └── test_server.py            20 protocol and tool assertions
+│   └── test_server.py            24 protocol and tool assertions
 ├── community-nodes/
 │   ├── README.md                 what community nodes are, how to install them safely
 │   ├── index.json                1,500 npm packages tagged n8n-community-node-package
+│   ├── top-100.json              100 packages ranked by monthly downloads
 │   └── shortlist.json            approved packages, machine-checked
 ├── sources/
 │   ├── README.md                 how to evaluate and record a source
@@ -144,6 +145,7 @@ n8n-automation-hub/
 │   ├── build_kb.py               rebuild the KB from an n8n-docs clone
 │   ├── enrich_kb.py              add exact parameter schemas from the npm packages
 │   ├── build_community_index.py  rebuild community-nodes/index.json from npm
+│   ├── build_top_nodes.py        rank community nodes by monthly downloads
 │   └── search.py                 BM25 search CLI
 └── .github/
     ├── workflows/validate.yml    CI: workflows, security scan, MCP server tests
@@ -252,7 +254,12 @@ python3 tools/security_scan.py
 `community-nodes/index.json` is built from the npm registry using the exact keyword n8n
 itself searches — `n8n-community-node-package` — so it mirrors what **Settings → Community
 Nodes → Browse** shows. npm reports **14,543** packages carrying that keyword; this index
-captures the top **1,500** by search rank and enriches **329** with last-month downloads.
+captures the top **1,500** by search rank and enriches **401** with last-month downloads.
+
+`community-nodes/top-100.json` is the popularity view: the hundred packages with the highest
+30-day downloads, ranked by `tools/build_top_nodes.py` from npm data. It is computed here, not
+quoted from a third-party list, and it is cross-checked against two independent directories —
+both recorded in `sources/sources.json`. A high rank means many installs, not a security review.
 
 `community-nodes/shortlist.json` is the approved list, and it is machine-checked: every entry
 must pin an exact version, declare a licence and a source repository, be old enough to have a
@@ -285,6 +292,7 @@ nodes and validate its own output instead of guessing.
 | `get_node` | One record: summary, or `operations` / `schema` / `params` / `events` / `issues` / `examples` |
 | `get_operation` | One operation's parameters and options |
 | `list_triggers` | How a workflow can start |
+| `search_community_nodes` | Third-party packages for an app, with download counts and rank |
 | `resolve_enum` | "Append Row" → `append` |
 | `validate_workflow` | Runs the same lint as CI on JSON the agent just produced |
 
@@ -334,7 +342,8 @@ Python 3.12 standard library only — no `pip install` needed to run any of it.
 | `python3 tools/build_kb.py --docs-repo <clone>` | Rebuilds `knowledge-base/` from an n8n-docs clone |
 | `python3 tools/enrich_kb.py --kb <dir>` | Re-applies exact parameter schemas from the npm packages |
 | `python3 tools/build_community_index.py` | Rebuilds `community-nodes/index.json` from npm |
-| `python3 server/test_server.py` | Drives the MCP server over stdio and asserts 20 behaviours |
+| `python3 tools/build_top_nodes.py` | Ranks community nodes by monthly downloads into `community-nodes/top-100.json` |
+| `python3 server/test_server.py` | Drives the MCP server over stdio and asserts 24 behaviours |
 
 Refreshing the knowledge base is two steps because the two sources are versioned separately:
 

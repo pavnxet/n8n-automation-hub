@@ -69,6 +69,9 @@ class KnowledgeBase:
         self._node_index = None
         self._enums = None
         self._catalog = None
+        self._community = None
+        self._community_index = None
+        self._top_ranks = None
 
     # ---------------------------------------------------------------- loading
     def _jsonl(self, name):
@@ -99,6 +102,52 @@ class KnowledgeBase:
         if self._catalog is None:
             self._catalog = json.load(open(os.path.join(KB, "catalog.json"), encoding="utf-8"))
         return self._catalog
+
+    @property
+    def community(self):
+        if self._community is None:
+            path = os.path.join(ROOT, "community-nodes", "index.json")
+            self._community = (json.load(open(path, encoding="utf-8")).get("packages", [])
+                               if os.path.exists(path) else [])
+        return self._community
+
+    @property
+    def top_ranks(self):
+        if self._top_ranks is None:
+            path = os.path.join(ROOT, "community-nodes", "top-100.json")
+            if os.path.exists(path):
+                doc = json.load(open(path, encoding="utf-8"))
+                self._top_ranks = {p["name"]: p["rank"] for p in doc.get("packages", [])}
+            else:
+                self._top_ranks = {}
+        return self._top_ranks
+
+    def search_community(self, query, limit=8, min_downloads=0):
+        """Search community node packages by name and description."""
+        if self._community_index is None:
+            docs = []
+            for p in self.community:
+                docs.append({"_text": f"{p['name']} {p.get('description','')}", **p})
+            self._community_index = BM25(docs)
+        hits = self._community_index.search(query, limit * 4)
+        out = []
+        for score, p in hits:
+            dl = p.get("downloads_last_month") or 0
+            if dl < min_downloads:
+                continue
+            out.append({
+                "score": score,
+                "name": p["name"],
+                "version": p.get("version"),
+                "description": (p.get("description") or "")[:220],
+                "downloads_last_month": dl or None,
+                "top_rank": self.top_ranks.get(p["name"]),
+                "repository": (p.get("links") or {}).get("repository"),
+                "npm": (p.get("links") or {}).get("npm") or f"https://www.npmjs.com/package/{p['name']}",
+            })
+            if len(out) >= limit:
+                break
+        return out
 
     def _op_bm25(self):
         if self._op_index is None:

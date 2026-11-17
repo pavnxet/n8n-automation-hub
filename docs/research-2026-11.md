@@ -140,6 +140,26 @@ automation can have, and it is exactly why this repository refuses bulk imports.
 
 Source: <https://urielpapa.com/blog/free-n8n-workflow-templates-github>
 
+### Sources added after the first survey
+
+Two more were evaluated later in the month and added to the registry.
+
+**`restyler/awesome-n8n`** — a single README ranking ~100 community nodes by npm monthly
+downloads, in eight categories, with a crawler-statistics table that tracks the ecosystem from
+1,075 packages in February 2025 to 5,834 in January 2026. Useful as a second opinion on which
+packages lead. Three problems: no LICENSE file, so nothing may be copied; affiliate and sponsor
+links throughout; and an author column that credits "GitHub Actions" for several packages whose
+npm author field is a CI bot. Conclusion: cross-check only, and compute our own ranking instead.
+
+**`ncnodes.com`** — a directory of community nodes that does two things npm metadata cannot:
+it separates 30-day from all-time downloads, and it marks packages that declare themselves
+AI-generated. Its API host is not reachable from this build environment and no licence is
+stated, so it is cited as a reference rather than ingested. Package facts were verified against
+npm directly.
+
+Both are now listed in `sources/sources.json` with those notes, and both were used to sanity
+check `community-nodes/top-100.json` — the leaders agree with our npm-derived ranking.
+
 ---
 
 ## 4. Decisions

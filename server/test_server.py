@@ -40,9 +40,10 @@ def main():
 
     tools = rpc(proc, {"jsonrpc": "2.0", "id": 2, "method": "tools/list"})
     names = {t["name"] for t in tools["result"]["tools"]}
-    checks.append(("seven tools listed", len(names) == 7))
+    checks.append(("eight tools listed", len(names) == 8))
     checks.append(("validate_workflow exposed", "validate_workflow" in names))
     checks.append(("search_operations exposed", "search_operations" in names))
+    checks.append(("search_community_nodes exposed", "search_community_nodes" in names))
 
     def call(i, name, args):
         r = rpc(proc, {"jsonrpc": "2.0", "id": i, "method": "tools/call",
@@ -76,6 +77,13 @@ def main():
     body, is_err = call(7, "list_triggers", {"query": "slack", "limit": 5})
     tr = json.loads(body)
     checks.append(("list_triggers filters", tr["count"] >= 1 and not is_err))
+
+    body, is_err = call(15, "search_community_nodes", {"query": "whatsapp", "limit": 3})
+    comm = json.loads(body)
+    checks.append(("community search returns packages", comm["count"] > 0 and not is_err))
+    checks.append(("community search carries download counts",
+                   any(r.get("downloads_last_month") for r in comm["results"])))
+    checks.append(("community search warns about trust", "unverified" in comm["warning"].lower()))
 
     good = {"name": "t", "nodes": [
         {"parameters": {}, "id": "11111111-1111-4111-8111-111111111111",

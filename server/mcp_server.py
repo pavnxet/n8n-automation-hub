@@ -188,6 +188,23 @@ TOOLS = [
         },
     },
     {
+        "name": "search_community_nodes",
+        "description": (
+            "Search n8n community node packages (third-party npm packages that add nodes). "
+            "Returns download counts and top-100 rank where known. These are unverified "
+            "packages: check the repository link and pin an exact version before use."),
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "App or capability, e.g. 'whatsapp'"},
+                "limit": {"type": "integer", "default": 8, "minimum": 1, "maximum": 30},
+                "min_downloads": {"type": "integer", "default": 0,
+                                  "description": "Ignore packages below this monthly download count"},
+            },
+            "required": ["query"],
+        },
+    },
+    {
         "name": "validate_workflow",
         "description": (
             "Validate a workflow JSON before handing it to a human. Runs the same checks as "
@@ -300,6 +317,21 @@ def tool_resolve_enum(a):
     return text_result(out, is_error="error" in out)
 
 
+def tool_search_community_nodes(a):
+    rows = KB.search_community(a["query"], int(a.get("limit", 8)),
+                               int(a.get("min_downloads", 0)))
+    if not rows:
+        return text_result({"results": [],
+                            "hint": "Nothing matched. Community nodes are not in the built-in "
+                                    "knowledge base; try a shorter or broader term."})
+    return text_result({
+        "count": len(rows),
+        "warning": "Community nodes are unverified third-party code with full host access. "
+                   "Pin an exact version and read the source before installing.",
+        "results": rows,
+    })
+
+
 def tool_validate_workflow(a):
     wf = a["workflow"]
     if isinstance(wf, str):
@@ -337,6 +369,7 @@ HANDLERS = {
     "get_operation": tool_get_operation,
     "list_triggers": tool_list_triggers,
     "resolve_enum": tool_resolve_enum,
+    "search_community_nodes": tool_search_community_nodes,
     "validate_workflow": tool_validate_workflow,
 }
 

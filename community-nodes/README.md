@@ -6,9 +6,10 @@ registry, using the same keyword n8n's own **Settings → Community Nodes → Br
 
 | Field | Value |
 |---|---|
-| Packages indexed | 1,500 (top of npm search ranking) |
+| Packages indexed (`index.json`) | 1,500 (top of npm search ranking) |
 | npm matches for the keyword | 14,543 |
-| Packages with download counts | 329 (last 30 days) |
+| Packages with download counts | 401 (last 30 days) |
+| Ranked shortlist (`top-100.json`) | 100, by monthly downloads |
 | Generated | 2026-11-17 |
 
 ---
@@ -59,6 +60,33 @@ Self-hosted controls worth knowing:
 | `NODES_EXCLUDE` | Block specific node types entirely, e.g. `executeCommand` |
 
 ---
+
+## Top 100 by downloads
+
+`top-100.json` is the popularity view: the hundred community packages with the highest
+last-30-day npm downloads, with version, author, repository link and npm link for each.
+
+The ranking is computed here by `tools/build_top_nodes.py`, which reads the index, refreshes
+counts from `api.npmjs.org`, and sorts. Counts, versions and descriptions come from npm, so the
+file is ours to publish — no rows are copied from any third-party list.
+
+```bash
+python3 tools/build_top_nodes.py                 # refresh and re-rank
+python3 tools/build_top_nodes.py --offline       # re-rank on stored counts, no network
+jq -r '.packages[:20][] | "\(.rank). \(.name)  \(.downloads_last_month)"' community-nodes/top-100.json
+```
+
+Two independent directories were used as a cross-check on the ranking, and both are recorded in
+`sources/sources.json`:
+
+| Source | What it gave us | What we did not take |
+|---|---|---|
+| [restyler/awesome-n8n](https://github.com/restyler/awesome-n8n) | A second opinion on which packages lead, plus a crawler history of ecosystem growth | Any row or description — the repository has no licence file, and its author column miscredits CI bots as people |
+| [ncnodes.com](https://ncnodes.com/packages) | A cleaner presentation: 30-day vs all-time downloads, and an "AI-generated" badge | Any data — no licence is stated and its API is unreachable from the build environment |
+
+**Popularity is not trust.** The top of this list is dominated by WhatsApp and chat wrappers
+with no security review. A high rank means many installs, nothing more — which is exactly why
+the shortlist below exists.
 
 ## How to search the index
 

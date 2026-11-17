@@ -4,7 +4,7 @@
 somewhere else, the source is in that file — with its licence, what it actually contains, and
 what was verified about it.
 
-Twelve sources are registered as of 2026-11-17.
+Fourteen sources are registered as of 2026-11-17.
 
 ---
 
@@ -85,3 +85,5 @@ Step 4: record what you found in `quality_notes`, in plain language, including t
 | n8n docs and docs repo | 2026-11-17 | monthly |
 | npm node packages | 2026-11-17 | monthly, or when an n8n release changes a node used here |
 | Community collections | 2026-11-17 | quarterly |
+| `awesome-n8n-restyler` | 2026-11-17 | quarterly, or when the ranking is refreshed |
+| `ncnodes` | 2026-11-17 | quarterly |
