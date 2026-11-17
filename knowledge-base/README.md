@@ -224,6 +224,7 @@ git clone --depth 1 https://github.com/n8n-io/n8n-docs.git
 npm pack n8n-nodes-base @n8n/n8n-nodes-langchain      # or curl the tarballs
 python3 ../tools/build_kb.py      # docs -> nodes/, catalog.json, indexes, examples
 python3 ../tools/enrich_kb.py     # packages -> node_schema, resources-operations.json
+python3 ../tools/build_reference.py  # docs -> reference/ (expressions, env vars, releases)
 ```
 
 Edit the path constants at the top of each script first. Both scripts preserve hand-written

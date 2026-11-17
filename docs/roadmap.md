@@ -59,13 +59,31 @@ see realistic parameter values instead of empty objects.
 **Done when:** `node_schema.parameters[].codex` is populated where the package provides it, and
 `knowledge-base/schema.json` documents the field.
 
-### 6. Templates index (blocked)
+### 6. Templates index — shipped in 1.3.0
 
-If `api.n8n.io` becomes reachable from the build environment, index the official template
-gallery the same way community nodes are indexed.
+`templates/index.json` exists with 9 entries and a status per entry (`validated`, `documented`,
+`executed`), served by `search_templates` and `get_template`. The remaining part is blocked:
+indexing the **official** n8n template gallery needs `api.n8n.io`, which is not reachable from
+this build environment.
 
-**Done when:** `templates/index.json` exists with creator, category and last-updated per entry,
-and the build script is in `tools/`.
+**Done when:** the official gallery is indexed alongside the local templates.
+
+### 6a. Reference layer — shipped in 1.4.0
+
+Expressions, environment variables, releases and breaking changes are parsed into
+`knowledge-base/reference/` and served by `search_reference` / `get_reference`. Two of the four
+files feed validation rather than documentation.
+
+**Next:** a diff between two builds, so an upgrade can be read as "what changed" instead of
+"read 609 release notes".
+
+### 6b. MCP catalogue — shipped in 1.5.0
+
+`mcp-servers/index.json` lists 4,978 external MCP servers with trust level and sources, served by
+`search_mcp_servers` / `get_mcp_server`.
+
+**Next:** transport and auth metadata for the top ~200 by downloads, read from each server's own
+README, so the catalogue becomes configurable rather than just discoverable.
 
 ---
 

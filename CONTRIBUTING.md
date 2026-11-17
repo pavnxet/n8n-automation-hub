@@ -44,6 +44,7 @@ Step 5: validate and scan.
 ```bash
 python3 tools/validate_repo.py      # structure, node types, registry
 python3 tools/security_scan.py      # secrets, dangerous nodes, PII
+python3 tools/check_docs.py         # doc numbers match the repository
 ```
 
 Both must be clean before a pull request. A `high` finding is a blocker, not a discussion.
@@ -144,6 +145,13 @@ python3 tools/enrich_kb.py
 ```
 
 Then update `CHANGELOG.md` with the new snapshot date and package versions.
+
+The reference layer and the MCP catalogue refresh separately:
+
+```bash
+python3 tools/build_reference.py                     # expressions, env vars, releases
+python3 tools/build_mcp_index.py --pages 4 --enrich 300   # external MCP servers
+```
 
 ---
 

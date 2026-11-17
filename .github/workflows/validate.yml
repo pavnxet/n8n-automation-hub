@@ -48,6 +48,9 @@ jobs:
           sys.exit(1 if bad else 0)
           PY
 
+      - name: Documentation matches the repository
+        run: python3 tools/check_docs.py
+
       - name: Search CLI smoke test
         run: |
           python3 tools/search.py "append row" --ops --limit 3

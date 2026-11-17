@@ -38,12 +38,13 @@ Built for two readers at once:
 |---|---|---|---|
 | Knowledge base | `knowledge-base/` | Every n8n built-in node as JSON + Markdown, with operations, parameter schemas, credentials and search indexes | 531 nodes · 3,848 operations · 322 credentials |
 | Automations | `automations/` | Importable workflow JSON, grouped by AI / integrations / core / patterns | 12 seed workflows |
-| MCP server | `server/` | Model Context Protocol server: 24 tools, 7 resources, stdlib only — plan, generate, validate, audit, debug, test | 63 protocol + 111 unit tests |
+| MCP server | `server/` | Model Context Protocol server: 24 tools, 7 resources, stdlib only — plan, generate, validate, audit, debug, test | 63 protocol + 114 unit tests |
 | Community nodes | `community-nodes/` | npm index of community node packages, a top-100 ranked by real download counts, and the approved shortlist | 1,500 indexed · 100 ranked |
 | MCP servers | `mcp-servers/` | Catalogue of external MCP servers an n8n agent can call through the MCP Client Tool | 4,978 listed · 7 official |
 | Sources | `sources/` | Registry of official and unofficial sources, with licences, quality notes and check dates | 20 sources |
 | Tooling | `tools/` | Validators, security scanner, KB, reference and MCP builders, BM25 search, node ranker | 9 scripts |
-| Documentation | `docs/` | Architecture, workflow conventions, importing guide, research notes, roadmap | 5 documents |
+| Templates | `templates/` | Reusable workflow patterns with a verification status per entry | 9 templates |
+| Documentation | `docs/` | Architecture, workflow conventions, importing guide, MCP tool reference, research notes, roadmap | 6 documents |
 
 Snapshot date: **2026-11-17**. Node schemas come from `n8n-nodes-base@2.15.1` and
 `@n8n/n8n-nodes-langchain@2.48.3`.
@@ -84,8 +85,8 @@ python3 tools/search.py "new email" --trigger
 
 ```bash
 python3 server/mcp_server.py        # stdio JSON-RPC
-python3 server/test_server.py       # 52 protocol checks
-python3 -m unittest discover -s tests   # 79 unit and regression tests
+python3 server/test_server.py       # 63 protocol checks
+python3 -m unittest discover -s tests   # 114 unit and regression tests
 ```
 
 Point Claude Desktop, Cursor, VS Code or an n8n **MCP Client Tool** node at
@@ -135,7 +136,7 @@ n8n-automation-hub/
 │   ├── README.md                 tools, resources, client configuration
 │   ├── mcp_server.py             protocol layer (stdio JSON-RPC 2.0)
 │   ├── kb.py                     data layer: search and lookups
-│   ├── test_server.py            52 protocol and tool assertions
+│   ├── test_server.py            63 protocol and tool assertions
 │   ├── planner.py generator.py validation.py audit.py debugger.py analysis.py
 │   │                             workflow intelligence modules
 │   └── n8n_api.py               optional live n8n client
@@ -225,7 +226,7 @@ Full field reference: `knowledge-base/README.md`. Building rules: `knowledge-bas
 | `indexes/resources-operations.json` | Internal `resource` / `operation` / `authentication` values for 521 nodes |
 | `indexes/nodes.jsonl` | One line per node: id, type, typeVersion, operations, description |
 | `indexes/keywords.json` | 2,604 keywords mapped to node ids |
-| `indexes/triggers.json` | All 91 trigger nodes |
+| `indexes/triggers.json` | All 107 nodes flagged as triggers (91 in the trigger-node category, plus core ones like Webhook) |
 | `indexes/ai-tools.json` | Every node usable as an AI Agent tool |
 | `indexes/credentials.json` | 322 credential types with auth methods |
 
@@ -374,7 +375,7 @@ Python 3.12 standard library only — no `pip install` needed to run any of it.
 | `python3 tools/build_community_index.py` | Rebuilds `community-nodes/index.json` from npm |
 | `python3 tools/build_top_nodes.py` | Ranks community nodes by monthly downloads into `community-nodes/top-100.json` |
 | `python3 server/test_server.py` | Drives the MCP server over stdio and asserts 52 behaviours |
-| `python3 -m unittest discover -s tests` | 79 unit, integration and regression tests, including a 47-query search benchmark |
+| `python3 -m unittest discover -s tests` | 114 unit, integration and regression tests, including a 47-query search benchmark |
 
 Refreshing the knowledge base is two steps because the two sources are versioned separately:
 

@@ -12,7 +12,7 @@ optional n8n API.
 
 ## 1. Tools
 
-Twenty tools in five groups. Full contracts and examples: [`../docs/mcp-tools.md`](../docs/mcp-tools.md).
+Twenty-four tools in five groups. Full contracts and examples: [`../docs/mcp-tools.md`](../docs/mcp-tools.md).
 
 ### Discovery
 
@@ -24,7 +24,9 @@ Twenty tools in five groups. Full contracts and examples: [`../docs/mcp-tools.md
 | `get_operation` | one operation's parameters and options |
 | `list_triggers` | how a workflow can start (107 trigger nodes) |
 | `resolve_enum` | "Append Row" → `append` |
-| `search_community_nodes` | third-party packages, with a trust warning |
+| `search_community_nodes` | third-party npm packages, with a trust warning |
+| `search_mcp_servers` / `get_mcp_server` | external MCP servers an agent can call, with trust level and downloads |
+| `search_reference` / `get_reference` | expressions, env vars, release history, breaking changes |
 | `search_templates` / `get_template` | reusable patterns, with verification status |
 
 ### Validation and analysis
@@ -56,7 +58,8 @@ Twenty tools in five groups. Full contracts and examples: [`../docs/mcp-tools.md
 ### Resources
 
 `n8n://guide/agent`, `n8n://guide/knowledge-base`, `n8n://guide/workflow-conventions`,
-`n8n://guide/security`, `n8n://guide/mcp-tools`, and the template `n8n://node/{id}`.
+`n8n://guide/security`, `n8n://guide/mcp-tools`, `n8n://reference/index`, `n8n://mcp-servers`, and
+the template `n8n://node/{id}`.
 
 ---
 
@@ -64,8 +67,8 @@ Twenty tools in five groups. Full contracts and examples: [`../docs/mcp-tools.md
 
 ```bash
 python3 server/mcp_server.py          # stdio JSON-RPC
-python3 server/test_server.py         # 52 protocol and tool checks
-python3 -m unittest discover -s tests # 79 unit, integration and regression tests
+python3 server/test_server.py         # 63 protocol and tool checks
+python3 -m unittest discover -s tests # 114 unit, integration and regression tests
 ```
 
 Install as a command:
@@ -200,6 +203,8 @@ request
 | `audit.py` | security and reliability findings |
 | `n8n_api.py` | optional public-API client |
 | `templates.py` | template library access |
+| `reference.py` | expressions, env vars, releases, breaking changes |
+| `mcp_catalog.py` | catalogue of external MCP servers |
 
 Two deliberate couplings: the validator is the only thing that decides `valid`, and the
 generator calls it rather than re-implementing checks. `audit.py` reuses

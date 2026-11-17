@@ -37,7 +37,7 @@ from server.search import SearchEngine
 from server.templates import TemplateLibrary
 
 PROTOCOL_VERSION = "2024-11-05"
-SERVER_INFO = {"name": "n8n-automation-hub", "version": "1.5.0"}
+SERVER_INFO = {"name": "n8n-automation-hub", "version": "1.5.1"}
 MAX_TEXT = 60000
 
 KB = KnowledgeBase()

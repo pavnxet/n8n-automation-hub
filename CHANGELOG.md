@@ -5,6 +5,49 @@ versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.5.1] — 2026-11-17
+
+Documentation audit. The docs had drifted behind three releases of features, and nothing was
+catching it.
+
+### Fixed — stale documentation
+
+- Root README quoted **52 protocol checks** and **79 unit tests**; the real numbers are 63 and
+  114. Also corrected in `server/README.md`.
+- `server/README.md` still said "Twenty tools" and its tables were missing four tools:
+  `search_reference`, `get_reference`, `search_mcp_servers`, `get_mcp_server`.
+- `server/README.md` module map was missing `reference.py` and `mcp_catalog.py`.
+- Root README's inventory table had no `templates/` row and undercounted `docs/` (5 → 6 files).
+- Root README described `indexes/triggers.json` as "all 91 trigger nodes" — it holds **107**
+  (91 in the trigger-node category plus core triggers such as Webhook). The category breakdown
+  elsewhere legitimately says 91, so both numbers are now explained rather than reconciled by
+  accident.
+- `knowledge-base/README.md` and `CONTRIBUTING.md` did not mention `build_reference.py` or
+  `build_mcp_index.py` in their rebuild instructions.
+- `docs/roadmap.md` still listed the templates index as "blocked" and did not record the
+  reference layer or the MCP catalogue as shipped.
+
+### Added — so it cannot drift again
+
+- `tools/check_docs.py`: reads the numeric claims out of seven Markdown files and compares them
+  with the repository — tool and resource counts, sources, nodes, operations, credentials,
+  templates, reference-layer counts, MCP catalogue counts, trigger-index size, protocol checks
+  and unit tests. `--fix` rewrites the numbers it can.
+- `tests/test_docs.py`: the same check inside the normal test run (3 tests).
+- CI step "Documentation matches the repository", which fails a pull request that ships a tool
+  without updating the docs.
+
+### Verified
+
+- `tools/check_docs.py` passes: 24 tools · 7 resources · 20 sources · 531 nodes · 3,848
+  operations · 322 credentials · 9 templates · 243 expressions · 364 env vars · 609 releases ·
+  46 breaking changes · 4,978 MCP servers · 107 triggers · 63 protocol checks · 114 unit tests.
+- 114 unit tests and 63 protocol checks pass; validator and security scan clean.
+- **Not verified:** prose accuracy. The checker compares numbers, not sentences — a paragraph
+  that describes the wrong behaviour is still wrong and still needs a human.
+
+---
+
 ## [1.5.0] — 2026-11-17
 
 Added the missing half of the MCP story: a catalogue of the servers an n8n agent can actually
