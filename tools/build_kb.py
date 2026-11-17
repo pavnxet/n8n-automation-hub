@@ -825,7 +825,7 @@ def main():
             os.remove(fp)
     for sub in ["nodes/app-node", "nodes/trigger-node", "nodes/core-node",
                 "nodes/cluster-root-node", "nodes/cluster-sub-node",
-                "credentials", "indexes", "tools"]:
+                "credentials", "indexes"]:
         os.makedirs(os.path.join(OUT, sub), exist_ok=True)
 
     nodes = discover()

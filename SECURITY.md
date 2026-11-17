@@ -60,6 +60,20 @@ date. Expired waivers stop applying automatically.
 4. **Rotate on suspicion.** If a secret did land in a commit, rotate it first, then rewrite
    history — deleting the file is not enough, the object stays in the pack.
 
+## The optional n8n API client
+
+`server/n8n_api.py` is off unless `N8N_BASE_URL` and `N8N_API_KEY` are set. When it is on:
+
+- the key travels only in the `X-N8N-API-KEY` header and is redacted from every error message;
+- workflows are uploaded with their credential references stripped, because credential ids are
+  instance-local and names are sensitive;
+- nothing is ever activated, overwritten or deleted — the client has no such call;
+- `execute_workflow` needs `N8N_ALLOW_EXECUTE=1` **and** `confirm: true`, and should point at a
+  staging instance rather than production.
+
+Treat a configured client as production access to your automation platform: the same review
+rules apply as for a human with an API key.
+
 ## Importing a workflow you did not write
 
 Treat a downloaded workflow as untrusted code. Before importing, open the JSON and read:

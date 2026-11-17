@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Smoke test: drives the MCP server over stdio and asserts the protocol behaves.
+"""Protocol and tool tests: drives the MCP server over stdio exactly as a client would.
 
     python3 server/test_server.py
 
@@ -13,120 +13,232 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SERVER = os.path.join(HERE, "mcp_server.py")
 
+EXPECTED_TOOLS = {
+    # discovery
+    "search_operations", "search_nodes", "get_node", "get_operation", "list_triggers",
+    "resolve_enum", "search_community_nodes", "search_templates", "get_template",
+    # validation
+    "validate_workflow", "audit_workflow", "analyze_data_flow", "debug_workflow",
+    # authoring
+    "plan_workflow", "generate_workflow",
+    # live n8n
+    "test_workflow", "execute_workflow", "get_execution_status", "get_execution_data",
+    "get_execution_error",
+}
 
-def rpc(proc, msg):
-    proc.stdin.write(json.dumps(msg) + "\n")
-    proc.stdin.flush()
-    line = proc.stdout.readline()
-    if not line:
-        raise SystemExit(f"server closed the stream after {msg.get('method')}")
-    return json.loads(line)
+
+class Client:
+    def __init__(self):
+        self.proc = subprocess.Popen([sys.executable, SERVER], stdin=subprocess.PIPE,
+                                     stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+                                     text=True, bufsize=1)
+        self.next_id = 0
+
+    def rpc(self, method, params=None):
+        self.next_id += 1
+        msg = {"jsonrpc": "2.0", "id": self.next_id, "method": method}
+        if params is not None:
+            msg["params"] = params
+        self.proc.stdin.write(json.dumps(msg) + "\n")
+        self.proc.stdin.flush()
+        line = self.proc.stdout.readline()
+        if not line:
+            raise SystemExit(f"server closed the stream during {method}")
+        return json.loads(line)
+
+    def call(self, name, args):
+        reply = self.rpc("tools/call", {"name": name, "arguments": args})
+        if "error" in reply:
+            return None, reply["error"], True
+        res = reply["result"]
+        body = json.loads(res["content"][0]["text"]) if res["content"][0]["text"].strip() \
+            .startswith(("{", "[")) else res["content"][0]["text"]
+        return body, res, res.get("isError", False)
+
+    def close(self):
+        self.proc.stdin.close()
+        self.proc.wait(timeout=10)
 
 
 def main():
-    proc = subprocess.Popen([sys.executable, SERVER], stdin=subprocess.PIPE,
-                            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
-                            text=True, bufsize=1)
+    c = Client()
     checks = []
 
-    init = rpc(proc, {"jsonrpc": "2.0", "id": 1, "method": "initialize",
-                      "params": {"protocolVersion": "2024-11-05", "capabilities": {},
-                                 "clientInfo": {"name": "test", "version": "0"}}})
-    checks.append(("initialize returns serverInfo", "serverInfo" in init.get("result", {})))
-    checks.append(("initialize advertises tools", "tools" in init["result"]["capabilities"]))
+    def check(name, condition):
+        checks.append((name, bool(condition)))
 
-    proc.stdin.write(json.dumps({"jsonrpc": "2.0", "method": "notifications/initialized"}) + "\n")
-    proc.stdin.flush()
+    init = c.rpc("initialize", {"protocolVersion": "2024-11-05", "capabilities": {},
+                                "clientInfo": {"name": "test", "version": "0"}})
+    check("initialize returns serverInfo", "serverInfo" in init.get("result", {}))
+    check("initialize advertises tools", "tools" in init["result"]["capabilities"])
+    c.proc.stdin.write(json.dumps({"jsonrpc": "2.0",
+                                   "method": "notifications/initialized"}) + "\n")
+    c.proc.stdin.flush()
 
-    tools = rpc(proc, {"jsonrpc": "2.0", "id": 2, "method": "tools/list"})
+    tools = c.rpc("tools/list")
     names = {t["name"] for t in tools["result"]["tools"]}
-    checks.append(("eight tools listed", len(names) == 8))
-    checks.append(("validate_workflow exposed", "validate_workflow" in names))
-    checks.append(("search_operations exposed", "search_operations" in names))
-    checks.append(("search_community_nodes exposed", "search_community_nodes" in names))
+    check("twenty tools listed", len(names) == 20)
+    check("every expected tool is registered", EXPECTED_TOOLS <= names)
+    check("no duplicate tool names", len(names) == len(tools["result"]["tools"]))
+    check("all tools declare an input schema",
+          all("inputSchema" in t for t in tools["result"]["tools"]))
 
-    def call(i, name, args):
-        r = rpc(proc, {"jsonrpc": "2.0", "id": i, "method": "tools/call",
-                       "params": {"name": name, "arguments": args}})
-        return r["result"]["content"][0]["text"], r["result"].get("isError", False)
+    # ---------------- discovery
+    body, res, err = c.call("search_operations", {"query": "append row to a spreadsheet",
+                                                  "limit": 3})
+    check("search returns rows", body["count"] > 0 and not err)
+    top = body["results"][0]
+    check("search results carry internal values",
+          any(r.get("operation") for r in body["results"]))
+    check("search result explains itself", bool(top.get("why")))
+    check("search result carries a doc link", bool(top.get("doc")))
+    check("structuredContent is present", "structuredContent" in res)
 
-    body, is_err = call(3, "search_operations", {"query": "append row to spreadsheet", "limit": 3})
-    data = json.loads(body)
-    checks.append(("operation search returns rows", data["count"] > 0 and not is_err))
-    top = data["results"][0]
-    checks.append(("operation carries internal values",
-                   bool(top.get("operation_value")) and bool(top.get("resource_value"))))
+    body, _, err = c.call("search_operations", {"query": "HTTP Request GET JSON API", "limit": 3})
+    check("http request query resolves to HTTP Request",
+          body["results"][0]["workflow_type"] == "n8n-nodes-base.httpRequest")
 
-    body, is_err = call(4, "get_node", {"node": "Gmail"})
-    rec = json.loads(body)
-    checks.append(("get_node resolves a display name", rec.get("workflow_type") == "n8n-nodes-base.gmail"))
-    checks.append(("get_node carries typeVersion", rec.get("type_version") is not None))
-    checks.append(("get_node summary stays compact", len(body) < 20000))
+    body, _, _ = c.call("search_nodes", {"query": "Schedule Trigger", "limit": 2})
+    check("node search resolves Schedule Trigger",
+          body["results"][0]["workflow_type"] == "n8n-nodes-base.scheduleTrigger")
 
-    body, is_err = call(5, "get_operation", {"node": "n8n-nodes-base.gmail", "operation": "Send"})
-    op = json.loads(body)
-    checks.append(("get_operation finds parameters",
-                   bool(op["matches"][0]["parameters"]) and not is_err))
+    body, _, _ = c.call("get_node", {"node": "Gmail"})
+    check("get_node resolves a display name", body["workflow_type"] == "n8n-nodes-base.gmail")
+    check("get_node carries typeVersion", body["type_version"] is not None)
 
-    body, is_err = call(6, "resolve_enum", {"node": "n8n-nodes-base.googleSheets",
-                                            "label": "Append Row"})
-    en = json.loads(body)
-    checks.append(("resolve_enum maps a label to a value",
-                   any(m.get("operation_value") == "append" for m in en.get("matched", []))))
+    body, _, _ = c.call("get_operation", {"node": "n8n-nodes-base.gmail", "operation": "Send"})
+    check("get_operation returns parameters", bool(body["matches"][0]["parameters"]))
 
-    body, is_err = call(7, "list_triggers", {"query": "slack", "limit": 5})
-    tr = json.loads(body)
-    checks.append(("list_triggers filters", tr["count"] >= 1 and not is_err))
+    body, _, _ = c.call("resolve_enum", {"node": "n8n-nodes-base.googleSheets",
+                                         "label": "Append Row"})
+    check("resolve_enum maps a label",
+          any(m.get("operation_value") == "append" for m in body.get("matched", [])))
 
-    body, is_err = call(15, "search_community_nodes", {"query": "whatsapp", "limit": 3})
-    comm = json.loads(body)
-    checks.append(("community search returns packages", comm["count"] > 0 and not is_err))
-    checks.append(("community search carries download counts",
-                   any(r.get("downloads_last_month") for r in comm["results"])))
-    checks.append(("community search warns about trust", "unverified" in comm["warning"].lower()))
+    body, _, _ = c.call("list_triggers", {"query": "slack", "limit": 5})
+    check("list_triggers filters", body["count"] >= 1)
 
+    body, _, _ = c.call("search_community_nodes", {"query": "whatsapp", "limit": 3})
+    check("community search returns packages", body["count"] > 0)
+    check("community search warns about trust", "unverified" in body["warning"].lower())
+
+    body, _, _ = c.call("search_templates", {"query": "pagination", "limit": 3})
+    check("template search returns entries", body["count"] >= 1)
+    tpl_id = body["templates"][0]["id"]
+    body, _, _ = c.call("get_template", {"id": tpl_id})
+    check("get_template returns a workflow", "workflow" in body)
+
+    # ---------------- validation
     good = {"name": "t", "nodes": [
-        {"parameters": {}, "id": "11111111-1111-4111-8111-111111111111",
-         "name": "Start", "type": "n8n-nodes-base.manualTrigger", "typeVersion": 1,
-         "position": [0, 0]}],
-        "connections": {}}
-    body, is_err = call(8, "validate_workflow", {"workflow": good})
-    checks.append(("validator passes a clean workflow", json.loads(body)["valid"] and not is_err))
+        {"parameters": {}, "id": "1", "name": "Start", "type": "n8n-nodes-base.manualTrigger",
+         "typeVersion": 1, "position": [0, 0]}], "connections": {}}
+    body, _, err = c.call("validate_workflow", {"workflow": good})
+    check("validator accepts a clean workflow", body["valid"] and not err)
+    check("validator reports which checks ran", bool(body["checked"]))
 
-    bad = json.loads(json.dumps(good))
-    bad["nodes"][0]["parameters"] = {"apiKey": "sk-test-0000000000000000"}
-    body, is_err = call(9, "validate_workflow", {"workflow": bad})
-    errs = json.loads(body)["errors"]
-    checks.append(("validator rejects a literal secret",
-                   any("secret-shaped" in e for e in errs) and is_err))
+    missing_url = {"name": "t", "nodes": [
+        {"parameters": {}, "id": "1", "name": "HTTP Request",
+         "type": "n8n-nodes-base.httpRequest", "typeVersion": 4.4, "position": [0, 0]}],
+        "connections": {}}
+    body, _, err = c.call("validate_workflow", {"workflow": missing_url})
+    check("validator rejects a missing required parameter", not body["valid"] and err)
+    check("validator names the missing parameter",
+          any(e.get("parameter") == "url" for e in body["errors"]))
+    check("validator offers a suggestion",
+          all("suggestion" in e for e in body["errors"] if e["code"] == "missing_required_parameter"))
+
+    secret_wf = json.loads(json.dumps(good))
+    secret_wf["nodes"][0]["parameters"] = {"apiKey": "sk-test-0000000000000000"}
+    body, _, err = c.call("validate_workflow", {"workflow": secret_wf})
+    check("validator rejects a literal secret",
+          any(e["code"] == "secret_in_parameters" for e in body["errors"]) and err)
 
     dup = json.loads(json.dumps(good))
     dup["nodes"].append(dict(dup["nodes"][0], position=[220, 0]))
-    body, _ = call(10, "validate_workflow", {"workflow": dup})
-    checks.append(("validator rejects duplicate node names",
-                   any("duplicate node name" in e for e in json.loads(body)["errors"])))
+    body, _, _ = c.call("validate_workflow", {"workflow": dup})
+    check("validator rejects duplicate node names",
+          any(e["code"] == "duplicate_node_name" for e in body["errors"]))
 
-    unknown = rpc(proc, {"jsonrpc": "2.0", "id": 11, "method": "tools/call",
-                         "params": {"name": "nope", "arguments": {}}})
-    checks.append(("unknown tool is an error", "error" in unknown))
+    body, _, _ = c.call("audit_workflow", {"workflow": {
+        "name": "t", "nodes": [
+            {"parameters": {"command": "ls"}, "id": "1", "name": "Run",
+             "type": "n8n-nodes-base.executeCommand", "typeVersion": 1,
+             "position": [0, 0]}], "connections": {}}})
+    check("audit flags a dangerous node",
+          any(f["rule"] == "SEC004" for f in body["findings"]))
+    check("audit reports a risk level", body["risk"] in
+          ("critical", "high", "medium", "low", "clean"))
 
-    res = rpc(proc, {"jsonrpc": "2.0", "id": 12, "method": "resources/read",
-                     "params": {"uri": "n8n://guide/agent"}})
-    checks.append(("guide resource is readable",
-                   "workflow" in res["result"]["contents"][0]["text"].lower()))
+    body, _, _ = c.call("analyze_data_flow", {"workflow": {
+        "name": "t", "nodes": [
+            {"parameters": {"assignments": {"assignments": [
+                {"name": "title", "value": "x", "type": "string"}]}},
+             "id": "1", "name": "Set", "type": "n8n-nodes-base.set",
+             "typeVersion": 3.4, "position": [0, 0]},
+            {"parameters": {"resource": "message", "operation": "sendMessage",
+                            "chatId": "1", "text": "={{ $json.headline }}"},
+             "id": "2", "name": "Post", "type": "n8n-nodes-base.telegram",
+             "typeVersion": 1, "position": [220, 0]}],
+        "connections": {"Set": {"main": [[{"node": "Post", "index": 0}]]}}}})
+    check("data-flow analysis finds a missing field",
+          any(f["code"] == "field_not_upstream" for f in body["findings"]))
+    check("data-flow analysis declares itself a simulation", body["simulated"])
 
-    node_res = rpc(proc, {"jsonrpc": "2.0", "id": 13, "method": "resources/read",
-                          "params": {"uri": "n8n://node/n8n-nodes-base.gmail"}})
-    checks.append(("node resource template works",
-                   "Gmail" in node_res["result"]["contents"][0]["text"]))
+    body, _, _ = c.call("debug_workflow", {
+        "workflow": good, "error_text": "401 Unauthorized"})
+    check("debugger classifies an auth error",
+          any(f["category"] == "authentication" for f in body["findings"]))
+    check("debugger requires approval for fixes", body["requires_approval"])
 
-    ping = rpc(proc, {"jsonrpc": "2.0", "id": 14, "method": "ping"})
-    checks.append(("ping replies", ping.get("result") == {}))
+    # ---------------- authoring
+    body, _, err = c.call("plan_workflow", {"request": "When a new row appears in Google "
+                                                       "Sheets, send it to Telegram"})
+    check("planner picks the app trigger",
+          body["trigger"]["node_type"] == "n8n-nodes-base.googleSheetsTrigger")
+    check("planner returns steps", len(body["steps"]) >= 1)
 
-    proc.stdin.close()
-    proc.wait(timeout=10)
+    body, _, err = c.call("generate_workflow", {"request": "Every morning at 8 fetch the "
+                                                           "weather from an API and post it "
+                                                           "to Slack"})
+    check("generator returns importable JSON", body.get("importable") is True)
+    check("generator marks placeholders", bool(body["placeholders"]))
+    check("generator does not claim execution", body["executed"] is False)
+    check("generator emits a sticky note",
+          any(n["type"] == "n8n-nodes-base.stickyNote" for n in body["workflow"]["nodes"]))
 
-    failed = [name for name, ok_ in checks if not ok_]
+    # ---------------- live n8n (not configured in CI)
+    body, _, _ = c.call("test_workflow", {"workflow": good})
+    check("test_workflow validates without an instance", body["validation"]["valid"])
+    check("test_workflow says what it could not do", "configured" in body)
+
+    body, _, _ = c.call("execute_workflow", {"workflow_id": "1", "confirm": True})
+    check("execute_workflow refuses without configuration", body.get("executed") is False)
+
+    body, _, _ = c.call("get_execution_status", {"execution_id": "1"})
+    check("get_execution_status explains configuration", "how_to_configure" in body)
+
+    # ---------------- protocol edge cases
+    reply = c.rpc("tools/call", {"name": "nope", "arguments": {}})
+    check("unknown tool is a protocol error", "error" in reply)
+
+    body, _, err = c.call("get_node", {"node": "definitely-not-a-node"})
+    check("unknown node is a tool error", err)
+
+    reply = c.rpc("resources/read", {"uri": "n8n://guide/agent"})
+    check("guide resource is readable",
+          "workflow" in reply["result"]["contents"][0]["text"].lower())
+    reply = c.rpc("resources/read", {"uri": "n8n://node/n8n-nodes-base.gmail"})
+    check("node resource template works", "Gmail" in reply["result"]["contents"][0]["text"])
+    reply = c.rpc("resources/read", {"uri": "n8n://guide/mcp-tools"})
+    check("tool documentation resource exists",
+          "search_operations" in reply["result"]["contents"][0]["text"])
+
+    reply = c.rpc("ping")
+    check("ping replies", reply.get("result") == {})
+    reply = c.rpc("no/such/method")
+    check("unknown method is an error", reply.get("error", {}).get("code") == -32601)
+
+    c.close()
+    failed = [n for n, ok_ in checks if not ok_]
     for name, ok_ in checks:
         print(f"{'PASS' if ok_ else 'FAIL'}  {name}")
     print(f"\n{len(checks) - len(failed)}/{len(checks)} checks passed")

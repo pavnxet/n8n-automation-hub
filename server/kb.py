@@ -69,6 +69,8 @@ class KnowledgeBase:
         self._node_index = None
         self._enums = None
         self._catalog = None
+        self._type_map = None
+        self._record_cache = {}
         self._community = None
         self._community_index = None
         self._top_ranks = None
@@ -191,11 +193,28 @@ class KnowledgeBase:
                     return os.path.join(d, f)
         return None
 
+    def record_by_type(self, workflow_type):
+        """Record for a workflow type string (e.g. n8n-nodes-base.httpRequest), cached."""
+        if not workflow_type:
+            return None
+        if self._type_map is None:
+            self._type_map = {}
+            for row in self.nodes:
+                self._type_map[row.get("type") or row["id"]] = row["id"]
+                self._type_map[row["id"]] = row["id"]
+        nid = self._type_map.get(workflow_type)
+        if not nid:
+            return None
+        if nid not in self._record_cache:
+            self._record_cache[nid] = self.record(nid)
+        return self._record_cache[nid]
+
     def record(self, node_id):
         p = self.record_path(node_id)
         if not p:
             return None
-        return json.load(open(p, encoding="utf-8"))
+        with open(p, encoding="utf-8") as fh:
+            return json.load(fh)
 
     def find_node_id(self, needle):
         """Accept an id, a display name, or a workflow type."""

@@ -38,7 +38,7 @@ Built for two readers at once:
 |---|---|---|---|
 | Knowledge base | `knowledge-base/` | Every n8n built-in node as JSON + Markdown, with operations, parameter schemas, credentials and search indexes | 531 nodes · 3,848 operations · 322 credentials |
 | Automations | `automations/` | Importable workflow JSON, grouped by AI / integrations / core / patterns | 12 seed workflows |
-| MCP server | `server/` | Model Context Protocol server: 8 tools, 5 resources, stdlib only | 24 protocol tests |
+| MCP server | `server/` | Model Context Protocol server: 20 tools, 5 resources, stdlib only — plan, generate, validate, audit, debug, test | 52 protocol + 79 unit tests |
 | Community nodes | `community-nodes/` | npm index of community node packages, a top-100 ranked by real download counts, and the approved shortlist | 1,500 indexed · 100 ranked |
 | Sources | `sources/` | Registry of official and unofficial sources, with licences, quality notes and check dates | 14 sources |
 | Tooling | `tools/` | Validators, security scanner, KB builders, BM25 search, node ranker | 7 scripts |
@@ -73,7 +73,8 @@ python3 tools/search.py "new email" --trigger
 
 ```bash
 python3 server/mcp_server.py        # stdio JSON-RPC
-python3 server/test_server.py       # 24 checks
+python3 server/test_server.py       # 52 protocol checks
+python3 -m unittest discover -s tests   # 79 unit and regression tests
 ```
 
 Point Claude Desktop, Cursor, VS Code or an n8n **MCP Client Tool** node at
@@ -122,7 +123,10 @@ n8n-automation-hub/
 │   ├── README.md                 tools, resources, client configuration
 │   ├── mcp_server.py             protocol layer (stdio JSON-RPC 2.0)
 │   ├── kb.py                     data layer: search and lookups
-│   └── test_server.py            24 protocol and tool assertions
+│   ├── test_server.py            52 protocol and tool assertions
+│   ├── planner.py generator.py validation.py audit.py debugger.py analysis.py
+│   │                             workflow intelligence modules
+│   └── n8n_api.py               optional live n8n client
 ├── community-nodes/
 │   ├── README.md                 what community nodes are, how to install them safely
 │   ├── index.json                1,500 npm packages tagged n8n-community-node-package
@@ -287,14 +291,21 @@ nodes and validate its own output instead of guessing.
 
 | Tool | Answers |
 |---|---|
-| `search_operations` | "which node appends a row to a sheet?" — with the internal values JSON needs |
+| `search_operations` | "which node appends a row to a sheet?" — hybrid ranking, internal values, why |
 | `search_nodes` | Discovery without pinning an operation |
 | `get_node` | One record: summary, or `operations` / `schema` / `params` / `events` / `issues` / `examples` |
 | `get_operation` | One operation's parameters and options |
 | `list_triggers` | How a workflow can start |
 | `search_community_nodes` | Third-party packages for an app, with download counts and rank |
+| `search_templates` / `get_template` | Reusable patterns with a verification status |
 | `resolve_enum` | "Append Row" → `append` |
-| `validate_workflow` | Runs the same lint as CI on JSON the agent just produced |
+| `validate_workflow` | Schema-aware: required parameters, types, enums, versions, connections, expressions, credentials |
+| `audit_workflow` | Secrets, dangerous nodes, plain HTTP, open webhooks, TLS, supply chain |
+| `analyze_data_flow` | Expression ↔ upstream field check, with optional fixtures |
+| `debug_workflow` | Error classification, root cause, repair proposal |
+| `plan_workflow` | Request → trigger, steps, credentials, risks, open questions |
+| `generate_workflow` | Importable JSON with marked placeholders, validated |
+| `test_workflow` / `execute_workflow` / `get_execution_*` | Optional live n8n: draft, run, inspect |
 
 Resources: `n8n://guide/agent`, `n8n://guide/knowledge-base`,
 `n8n://guide/workflow-conventions`, `n8n://guide/security`, and the template
@@ -343,7 +354,8 @@ Python 3.12 standard library only — no `pip install` needed to run any of it.
 | `python3 tools/enrich_kb.py --kb <dir>` | Re-applies exact parameter schemas from the npm packages |
 | `python3 tools/build_community_index.py` | Rebuilds `community-nodes/index.json` from npm |
 | `python3 tools/build_top_nodes.py` | Ranks community nodes by monthly downloads into `community-nodes/top-100.json` |
-| `python3 server/test_server.py` | Drives the MCP server over stdio and asserts 24 behaviours |
+| `python3 server/test_server.py` | Drives the MCP server over stdio and asserts 52 behaviours |
+| `python3 -m unittest discover -s tests` | 79 unit, integration and regression tests, including a 47-query search benchmark |
 
 Refreshing the knowledge base is two steps because the two sources are versioned separately:
 

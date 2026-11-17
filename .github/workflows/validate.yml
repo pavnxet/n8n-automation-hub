@@ -98,6 +98,12 @@ jobs:
       - name: Protocol and tool tests
         run: python3 server/test_server.py
 
+      - name: Unit, integration and regression tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Search benchmark report
+        run: python3 tests/test_search_benchmark.py | tail -20
+
       - name: Package installs and exposes its entry point
         run: |
           pip install -e .

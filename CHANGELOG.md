@@ -5,6 +5,82 @@ versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.3.0] — 2026-11-17
+
+The MCP server became a workflow engineering assistant: better search, schema-aware validation,
+planning, generation, data-flow analysis, debugging, auditing and optional live execution.
+
+### Fixed — the two reported defects
+
+- **Search returned unrelated nodes.** `HTTP Request GET JSON API` matched a Facebook node whose
+  *operation* is called "HTTP Request Method / GET"; `Filter items based on conditions` matched a
+  database "Combine Conditions"; `Schedule Trigger` matched a CI "Trigger a pipeline". Root cause:
+  the operation index was the only index, and core nodes with no operations (HTTP Request,
+  Filter, Schedule Trigger, Webhook) were invisible to it. Replaced with hybrid ranking over
+  nodes *and* operations, a 69-node alias lexicon, intent routing, an explicit fallback path and
+  a confidence floor that drops weak results instead of padding the list. Measured on a
+  47-query benchmark: **top-1 97.9%, top-3 100%, 0 confident false positives, 76 ms mean**.
+- **The validator accepted an HTTP Request with no URL.** It only checked structure and secrets.
+  It now validates against the node schemas: required parameters (visibility-aware, so hidden
+  conditional fields are not flagged), value types, enum values (and display-label-vs-value
+  mistakes, with the correct value in the suggestion), `typeVersion` support, connections,
+  expressions and credential references.
+
+### Added — workflow intelligence
+
+- `plan_workflow`: request → trigger, ordered steps, operations, credentials, data flow, error
+  handling, risks, open questions. Only names nodes that exist; says so when a capability has no
+  dedicated node.
+- `generate_workflow`: plan → importable JSON with real types, `typeVersion`, internal enum
+  values, schema defaults, marked placeholders, sticky note and connections; validates and
+  repairs mechanical errors; never fabricates credentials and never claims execution.
+- `analyze_data_flow`: per-node input/output fields, expression references, fixture resolution,
+  and findings such as `field_not_upstream` and `loop_without_close`. Unknowable shapes are
+  marked unknown rather than guessed.
+- `debug_workflow`: classifies authentication, rate limit, network, expression, data format,
+  query and file failures; returns root cause, evidence, fix and a proposed corrected workflow
+  with `requires_approval: true`.
+- `audit_workflow`: secrets (redacted), dangerous nodes and code, plain HTTP, unauthenticated
+  webhooks, disabled TLS, PII, third-party packages, log leakage, missing error handling.
+
+### Added — optional live n8n
+
+- `test_workflow`, `execute_workflow`, `get_execution_status`, `get_execution_data`,
+  `get_execution_error`, backed by a defensive client: off by default, never activates, never
+  deletes, strips credentials before upload, redacts the API key, requires
+  `N8N_ALLOW_EXECUTE=1` plus `confirm: true` to run anything, and explains itself when the
+  instance's public API has no execute endpoint.
+
+### Added — templates and data
+
+- `templates/` with a searchable index: validated patterns (scheduled collection, pagination,
+  dedupe-and-store, error notifier) and documented n8n examples, each labelled `validated`,
+  `documented` or `executed`.
+- `knowledge-base/indexes/package-types.json`: every node type the pinned packages ship, so the
+  validator can tell "real but undocumented" from "does not exist".
+- Trigger detection now trusts the package's `trigger` group over name heuristics — Webhook was
+  previously not flagged as a trigger.
+
+### Changed
+
+- `validate_workflow` returns **structured** findings (`errors[]` are objects with `code`,
+  `node`, `parameter`, `suggestion`, `doc`) instead of strings. Compatibility note: clients that
+  stringified errors should read `error.message`; `summary` provides a human paragraph.
+- Tool results now also carry `structuredContent`.
+- Search is ~20× faster (1552 ms → 76 ms mean) through precomputed token sets, cached edit
+  distance and skipping operation scans that cannot matter.
+- `server/test_server.py` grew from 24 to 52 checks; new `tests/` suite adds 79 tests.
+
+### Verified
+
+- 79/79 unit and integration tests, 52/52 protocol checks.
+- 47-query search benchmark: top-1 97.9%, top-3 100%, false-positive rate 0.
+- `tools/validate_repo.py` and `tools/security_scan.py` clean over 17 workflows and 853 records.
+- **Not verified:** live execution against a real n8n instance (none is configured here). The
+  client is covered by mocked-transport tests only.
+
+---
+
 ## [1.2.0] — 2026-11-17
 
 Two more sources ingested into the provenance registry, a popularity ranking computed from

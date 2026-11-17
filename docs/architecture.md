@@ -74,6 +74,7 @@ directly; they read `catalog.json` or search.
 | `indexes/*` | Derived from the records above | Regenerate, never hand-edit |
 | `automations/*.json` | Imports, has no secrets, node types exist | CI rejects it |
 | `server/*` | Speaks MCP correctly; validator identical to CI's | `server/test_server.py` fails |
+| `templates/*.json` | Importable and schema-valid | `tests/test_validator.py` fails |
 | `security/waivers.json` | Every accepted risk has a reason, an owner and an expiry | An expired waiver stops applying |
 
 ---
@@ -107,6 +108,13 @@ python3 tools/build_community_index.py --pages 6 --downloads 400
 Reads the npm search API for the exact keyword n8n uses, then enriches the top results with
 last-month downloads. Scoped packages are fetched one at a time because the bulk downloads
 endpoint rejects them.
+
+### Workflow intelligence
+
+`planner.py` → `generator.py` → `validation.py` is one pipeline: the planner proposes steps from
+real node knowledge, the generator emits JSON and calls the validator, and the validator is the
+only thing that decides whether the result is valid. `analysis.py`, `debugger.py` and `audit.py`
+read the same knowledge base and never invent a node type.
 
 ### Security gate
 

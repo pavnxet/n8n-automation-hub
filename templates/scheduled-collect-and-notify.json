@@ -1,0 +1,106 @@
+{
+  "name": "Scheduled collection with a notification",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "triggerAtHour": 8,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "9e429b4b-40db-457c-95aa-60f987151a30",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "none",
+        "method": "GET",
+        "provideSslCertificates": false,
+        "sendQuery": false,
+        "sendHeaders": false,
+        "sendBody": false,
+        "url": "https://example.com/api/endpoint"
+      },
+      "id": "ad9043e8-0875-4164-8950-69d2709867f4",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "resource": "message",
+        "operation": "post",
+        "messageType": "text",
+        "text": "REPLACE_WITH_MESSAGE_TEXT"
+      },
+      "id": "c53165c7-3d30-470e-808e-c6937052a358",
+      "name": "Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        440,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Every morning at 8, fetch the weather for Delhi from an API and post it to Slack\n\n**Objective:** Every morning at 8, fetch the weather for Delhi from an API and post it to Slack\n\n**Credentials to attach after import:**\n- `slackApi` → Slack\n- `slackOAuth2Api` → Slack\n\n**Fill in before running:**\n- HTTP Request → url\n- Slack → text\n\n**Open questions:**\n- Which API or service should 'fetch the weather for Delhi from an API' call? No dedicated node was named.",
+        "height": 320,
+        "width": 460,
+        "color": 4
+      },
+      "id": "2ecd48e4-3a50-4914-8ca8-cf5c113da74f",
+      "name": "Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        -60
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}

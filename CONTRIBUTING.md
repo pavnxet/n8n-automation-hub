@@ -48,6 +48,14 @@ python3 tools/security_scan.py      # secrets, dangerous nodes, PII
 
 Both must be clean before a pull request. A `high` finding is a blocker, not a discussion.
 
+If you touched the MCP server, run its suite too:
+
+```bash
+python3 server/test_server.py            # protocol and tool behaviour
+python3 -m unittest discover -s tests    # unit, integration and regression tests
+python3 tests/test_search_benchmark.py   # search accuracy and latency
+```
+
 Step 6: commit with a scoped message.
 
 ```

@@ -392,6 +392,11 @@ def main():
     findings = []
     workflows = [os.path.join(d, f) for d, _, fs in os.walk(os.path.join(ROOT, "automations"))
                  for f in fs if f.endswith(".json") and f != "registry.json"]
+    # templates are importable workflows too
+    workflows += [os.path.join(ROOT, "templates", f)
+                  for f in os.listdir(os.path.join(ROOT, "templates"))
+                  if f.endswith(".json") and f != "index.json"] \
+        if os.path.isdir(os.path.join(ROOT, "templates")) else []
     records = ([os.path.join(d, f) for d, _, fs in os.walk(os.path.join(ROOT, "knowledge-base", "nodes"))
                 for f in fs if f.endswith(".json")] +
                [os.path.join(d, f) for d, _, fs in os.walk(os.path.join(ROOT, "knowledge-base", "credentials"))

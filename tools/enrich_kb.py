@@ -206,6 +206,9 @@ def main():
         rec["type_version"] = max([float(v) for v in versions if v is not None] or [0]) or None
         rec["type_versions"] = versions
         rec["groups"] = entry.get("group") or []
+        if "trigger" in rec["groups"] and not rec.get("is_trigger"):
+            # the package knows best: Webhook is a trigger even though its name does not say so
+            rec["is_trigger"] = True
         rec["usable_as_tool"] = bool(entry.get("usableAsTool"))
         if rec["usable_as_tool"]:
             rec["is_ai_tool"] = True
@@ -265,6 +268,17 @@ def main():
                     o["operation_value"] = ov
 
         json.dump(rec, open(f, "w"), indent=2, ensure_ascii=False)
+
+    # authoritative list of node types the packages ship (documented or not)
+    shipped = set()
+    for path, pkg in ((BASE, "n8n-nodes-base"), (LC, "@n8n/n8n-nodes-langchain")):
+        if os.path.exists(path):
+            for n in json.load(open(path)):
+                shipped.add(f"{pkg}.{n['name']}")
+    json.dump({"generated": TODAY,
+               "note": "Every node type the pinned packages actually ship.",
+               "count": len(shipped), "types": sorted(shipped)},
+              open(os.path.join(KB, "indexes", "package-types.json"), "w"), indent=1)
 
     json.dump({"generated": TODAY,
                "note": "Internal values for resource/operation/authentication parameters, "

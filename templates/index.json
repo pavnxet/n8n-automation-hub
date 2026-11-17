@@ -1,0 +1,226 @@
+{
+  "generated": "2026-11-17",
+  "note": "Reusable workflow templates. status: validated = passed static schema validation here; documented = shipped by n8n as an example; executed = ran successfully against a real instance (none yet).",
+  "count": 9,
+  "templates": [
+    {
+      "id": "scheduled-collect-and-notify",
+      "name": "Scheduled collection with a notification",
+      "file": "templates/scheduled-collect-and-notify.json",
+      "purpose": "Every morning at 8, fetch the weather for Delhi from an API and post it to Slack",
+      "tags": [
+        "schedule",
+        "api",
+        "notify",
+        "slack"
+      ],
+      "status": "validated",
+      "source": "authored here",
+      "node_types": [
+        "n8n-nodes-base.httpRequest",
+        "n8n-nodes-base.scheduleTrigger",
+        "n8n-nodes-base.slack",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "nodes": 4,
+      "placeholders": [
+        "url",
+        "text"
+      ],
+      "note": "Statically validated against node schemas; not executed."
+    },
+    {
+      "id": "api-pagination",
+      "name": "Paginate an API into a single result set",
+      "file": "templates/api-pagination.json",
+      "purpose": "Every day at 9am, fetch a paginated API with an HTTP Request and loop over items until done",
+      "tags": [
+        "pagination",
+        "loop",
+        "api"
+      ],
+      "status": "validated",
+      "source": "authored here",
+      "node_types": [
+        "n8n-nodes-base.httpRequest",
+        "n8n-nodes-base.scheduleTrigger",
+        "n8n-nodes-base.splitInBatches",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "nodes": 4,
+      "placeholders": [
+        "url"
+      ],
+      "note": "Statically validated against node schemas; not executed."
+    },
+    {
+      "id": "error-notifier",
+      "name": "Error notifier",
+      "file": "templates/error-notifier.json",
+      "purpose": "Catch workflow failures and post a structured message to Slack",
+      "tags": [
+        "error",
+        "retry",
+        "notify",
+        "slack"
+      ],
+      "status": "validated",
+      "source": "authored here",
+      "node_types": [
+        "n8n-nodes-base.errorTrigger",
+        "n8n-nodes-base.set",
+        "n8n-nodes-base.slack"
+      ],
+      "nodes": 3,
+      "placeholders": [
+        "channel"
+      ],
+      "note": "Statically validated against node schemas; not executed."
+    },
+    {
+      "id": "agents_vs_chains",
+      "name": "Agents vs chains",
+      "file": "automations/ai/agents_vs_chains.json",
+      "purpose": "Example shipped with the n8n documentation",
+      "tags": [
+        "documented-example"
+      ],
+      "status": "documented",
+      "source": "n8n docs (Sustainable Use License)",
+      "node_types": [
+        "@n8n/n8n-nodes-langchain.agent",
+        "@n8n/n8n-nodes-langchain.chainLlm",
+        "@n8n/n8n-nodes-langchain.chatTrigger",
+        "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+        "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+        "@n8n/n8n-nodes-langchain.toolWikipedia",
+        "n8n-nodes-base.stickyNote",
+        "n8n-nodes-base.switch"
+      ],
+      "nodes": 14,
+      "placeholders": [],
+      "note": "Published by n8n as an example; not executed here."
+    },
+    {
+      "id": "ask_a_human",
+      "name": "Ask a human",
+      "file": "automations/ai/ask_a_human.json",
+      "purpose": "Example shipped with the n8n documentation",
+      "tags": [
+        "documented-example"
+      ],
+      "status": "documented",
+      "source": "n8n docs (Sustainable Use License)",
+      "node_types": [
+        "@n8n/n8n-nodes-langchain.agent",
+        "@n8n/n8n-nodes-langchain.chatTrigger",
+        "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+        "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+        "@n8n/n8n-nodes-langchain.toolWorkflow",
+        "n8n-nodes-base.code",
+        "n8n-nodes-base.executeWorkflowTrigger",
+        "n8n-nodes-base.if",
+        "n8n-nodes-base.slack",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "nodes": 17,
+      "placeholders": [],
+      "note": "Published by n8n as an example; not executed here."
+    },
+    {
+      "id": "let_your_ai_call_an_api",
+      "name": "Let your AI call an API",
+      "file": "automations/ai/let_your_ai_call_an_api.json",
+      "purpose": "Example shipped with the n8n documentation",
+      "tags": [
+        "documented-example"
+      ],
+      "status": "documented",
+      "source": "n8n docs (Sustainable Use License)",
+      "node_types": [
+        "@n8n/n8n-nodes-langchain.agent",
+        "@n8n/n8n-nodes-langchain.chainLlm",
+        "@n8n/n8n-nodes-langchain.chatTrigger",
+        "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+        "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+        "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+        "@n8n/n8n-nodes-langchain.outputParserStructured",
+        "@n8n/n8n-nodes-langchain.toolWorkflow",
+        "n8n-nodes-base.executeWorkflowTrigger",
+        "n8n-nodes-base.httpRequest",
+        "n8n-nodes-base.set",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "nodes": 21,
+      "placeholders": [],
+      "note": "Published by n8n as an example; not executed here."
+    },
+    {
+      "id": "mutually-exclusive-branching",
+      "name": "Form with mutually exclusive branching",
+      "file": "automations/core/form/mutually-exclusive-branching.json",
+      "purpose": "Example shipped with the n8n documentation",
+      "tags": [
+        "documented-example"
+      ],
+      "status": "documented",
+      "source": "n8n docs (Sustainable Use License)",
+      "node_types": [
+        "n8n-nodes-base.form",
+        "n8n-nodes-base.formTrigger",
+        "n8n-nodes-base.stickyNote",
+        "n8n-nodes-base.switch"
+      ],
+      "nodes": 8,
+      "placeholders": [],
+      "note": "Published by n8n as an example; not executed here."
+    },
+    {
+      "id": "rss-feed-example",
+      "name": "RSS feed example",
+      "file": "automations/core/splitinbatches/rss-feed-example.json",
+      "purpose": "Example shipped with the n8n documentation",
+      "tags": [
+        "documented-example"
+      ],
+      "status": "documented",
+      "source": "n8n docs (Sustainable Use License)",
+      "node_types": [
+        "n8n-nodes-base.code",
+        "n8n-nodes-base.manualTrigger",
+        "n8n-nodes-base.rssFeedRead",
+        "n8n-nodes-base.splitInBatches"
+      ],
+      "nodes": 4,
+      "placeholders": [],
+      "note": "Published by n8n as an example; not executed here."
+    },
+    {
+      "id": "dedupe-and-store",
+      "name": "Deduplicate against a database, then notify",
+      "file": "templates/dedupe-and-store.json",
+      "purpose": "When a new row appears in Google Sheets, filter out previously processed rows, save them to a Postgres database and send a Telegram message",
+      "tags": [
+        "dedupe",
+        "database",
+        "notify",
+        "google-sheets"
+      ],
+      "status": "validated",
+      "source": "authored here",
+      "node_types": [
+        "n8n-nodes-base.googleSheetsTrigger",
+        "n8n-nodes-base.postgres",
+        "n8n-nodes-base.removeDuplicates",
+        "n8n-nodes-base.stickyNote",
+        "n8n-nodes-base.telegram"
+      ],
+      "nodes": 5,
+      "placeholders": [
+        "chatId",
+        "text"
+      ],
+      "note": "Statically validated against node schemas; not executed."
+    }
+  ]
+}
