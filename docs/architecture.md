@@ -110,6 +110,14 @@ Reads the npm search API for the exact keyword n8n uses, then enriches the top r
 last-month downloads. Scoped packages are fetched one at a time because the bulk downloads
 endpoint rejects them.
 
+### The MCP catalogue
+
+`mcp-servers/index.json` answers "what can I attach to an MCP Client Tool node?". It merges three
+sources by repository slug: the seven official reference servers, ~5,000 entries from the largest
+curated community list, and npm packages carrying the `mcp-server` keyword. The last group is kept
+in a separate array because the keyword is self-declared — `yahoo-finance2` carries it and is a
+library, not a server — and search only includes those when explicitly asked.
+
 ### The reference layer
 
 Node records cover "which node, which parameters". Four more documentation sections cover the

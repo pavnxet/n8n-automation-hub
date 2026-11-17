@@ -16,7 +16,8 @@ SERVER = os.path.join(HERE, "mcp_server.py")
 EXPECTED_TOOLS = {
     # discovery
     "search_operations", "search_nodes", "get_node", "get_operation", "list_triggers",
-    "resolve_enum", "search_community_nodes", "search_reference", "get_reference",
+    "resolve_enum", "search_community_nodes", "search_mcp_servers", "get_mcp_server",
+    "search_reference", "get_reference",
     "search_templates", "get_template",
     # validation
     "validate_workflow", "audit_workflow", "analyze_data_flow", "debug_workflow",
@@ -78,7 +79,7 @@ def main():
 
     tools = c.rpc("tools/list")
     names = {t["name"] for t in tools["result"]["tools"]}
-    check("twenty-two tools listed", len(names) == 22)
+    check("twenty-four tools listed", len(names) == 24)
     check("every expected tool is registered", EXPECTED_TOOLS <= names)
     check("no duplicate tool names", len(names) == len(tools["result"]["tools"]))
     check("all tools declare an input schema",
@@ -121,6 +122,21 @@ def main():
     body, _, _ = c.call("search_community_nodes", {"query": "whatsapp", "limit": 3})
     check("community search returns packages", body["count"] > 0)
     check("community search warns about trust", "unverified" in body["warning"].lower())
+
+    body, _, _ = c.call("search_mcp_servers", {"query": "postgres", "limit": 3})
+    check("mcp catalogue returns servers", body["count"] >= 1)
+    check("mcp catalogue reports totals", body["counts"]["servers"] > 1000)
+    check("mcp catalogue exposes categories", bool(body["categories"]))
+
+    body, _, _ = c.call("search_mcp_servers", {"query": "fetch", "limit": 5})
+    check("official reference servers are findable",
+          any(r["trust"] == "official" for r in body["results"]))
+
+    body, _, _ = c.call("get_mcp_server", {"name": "modelcontextprotocol/servers/fetch"})
+    check("get_mcp_server returns an entry", body.get("name") == "fetch")
+
+    body, _, err = c.call("get_mcp_server", {"name": "no-such-server-xyz"})
+    check("unknown mcp server is a tool error", err)
 
     body, _, _ = c.call("search_reference", {"query": "$fromAI"})
     check("reference search finds an expression",

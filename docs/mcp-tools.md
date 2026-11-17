@@ -1,6 +1,6 @@
 # MCP tool reference
 
-Twenty-two tools in five groups. Every tool returns the same envelope:
+Twenty-four tools in five groups. Every tool returns the same envelope:
 
 - `content[0].text` — pretty-printed JSON (for clients that only read text);
 - `structuredContent` — the same object, for clients that support structured output;
@@ -109,6 +109,42 @@ Returns the matching operation(s) with `parameters`, `options`, internal values 
 ### `search_community_nodes`
 
 Third-party npm packages. Always carries an unverified-code warning.
+
+### `search_mcp_servers`
+
+Find an external MCP server to attach to an AI Agent through the **MCP Client Tool** node — or to
+mirror with an **MCP Server Trigger**.
+
+```json
+{"query": "postgres", "limit": 3}
+```
+
+```json
+{
+  "query": "postgres", "count": 3,
+  "counts": {"servers": 4978, "official": 7, "from_curated_list": 4971,
+             "on_npm": 141, "keyword_only": 802},
+  "results": [{"id": "antonorlov/mcp-postgres-server", "name": "antonorlov/mcp-postgres-server",
+               "category": "Databases", "trust": "community",
+               "sources": ["punkpeye/awesome-mcp-servers"], "keyword_only": false}],
+  "categories": ["Developer Tools", "Finance & Fintech", "…"]
+}
+```
+
+| Input | Notes |
+|---|---|
+| `query` | required; empty string returns the most-downloaded entries |
+| `category` | e.g. `Databases`, `Browser Automation` |
+| `min_downloads` | filter on last-30-day npm downloads |
+| `include_keyword_only` | also return packages that only *claim* the npm keyword `mcp-server` — unreviewed, excluded by default |
+
+### `get_mcp_server`
+
+```json
+{"name": "modelcontextprotocol/servers/fetch"}
+```
+
+Accepts an id, a display name, a repository slug or an npm package.
 
 ### `search_reference`
 
@@ -363,6 +399,7 @@ All five tools need `N8N_BASE_URL` and `N8N_API_KEY`. Without them they return
 | `n8n://guide/security` | secret handling and import safety |
 | `n8n://guide/mcp-tools` | this document |
 | `n8n://reference/index` | counts and file map for the reference layer |
+| `n8n://mcp-servers` | the MCP server catalogue guide and trust model |
 | `n8n://node/{id}` | full Markdown reference for one node |
 
 ---

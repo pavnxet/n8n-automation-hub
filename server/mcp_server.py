@@ -31,18 +31,20 @@ if ROOT not in sys.path:
 from server import analysis, audit as audit_mod, debugger, generator, planner, validation
 from server.kb import KnowledgeBase
 from server.n8n_api import N8nClient, N8nError, N8nNotConfigured
+from server.mcp_catalog import McpCatalog
 from server.reference import Reference
 from server.search import SearchEngine
 from server.templates import TemplateLibrary
 
 PROTOCOL_VERSION = "2024-11-05"
-SERVER_INFO = {"name": "n8n-automation-hub", "version": "1.4.0"}
+SERVER_INFO = {"name": "n8n-automation-hub", "version": "1.5.0"}
 MAX_TEXT = 60000
 
 KB = KnowledgeBase()
 SE = SearchEngine(KB)
 TEMPLATES = TemplateLibrary()
 REFERENCE = Reference()
+MCP_CATALOG = McpCatalog()
 N8N = N8nClient.from_env()
 
 
@@ -213,6 +215,40 @@ TOOLS = [
                 "min_downloads": {"type": "integer", "default": 0},
             },
             "required": ["query"],
+        },
+    },
+    {
+        "name": "search_mcp_servers",
+        "description": (
+            "Search external MCP servers that an n8n AI Agent can call through the MCP Client "
+            "Tool node (or that n8n can mirror with an MCP Server Trigger). Covers the official "
+            "reference servers, a curated community list of ~5,000, and npm packages. Listing is "
+            "not endorsement: read the source before connecting one."),
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string",
+                          "description": "e.g. 'postgres', 'browser', 'filesystem'"},
+                "category": {"type": "string",
+                             "description": "e.g. 'Developer Tools', 'Databases', "
+                                            "'Browser Automation'"},
+                "limit": {"type": "integer", "default": 8, "minimum": 1, "maximum": 30},
+                "min_downloads": {"type": "integer", "default": 0},
+                "include_keyword_only": {
+                    "type": "boolean", "default": False,
+                    "description": ("Also return packages that only claim the npm keyword "
+                                    "'mcp-server'. Unreviewed.")},
+            },
+            "required": ["query"],
+        },
+    },
+    {
+        "name": "get_mcp_server",
+        "description": "Fetch one MCP server entry by id, name, repository slug or npm package.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {"name": {"type": "string"}},
+            "required": ["name"],
         },
     },
     {
@@ -562,6 +598,26 @@ def tool_search_community_nodes(a):
     })
 
 
+def tool_search_mcp_servers(a):
+    out = MCP_CATALOG.search(a.get("query", ""), a.get("category"),
+                             int(a.get("limit", 8)),
+                             bool(a.get("include_keyword_only", False)),
+                             int(a.get("min_downloads", 0)))
+    if not out["results"]:
+        out["hint"] = ("Nothing matched. Try a shorter term, drop the category, or set "
+                       "include_keyword_only=true to widen to npm-only packages.")
+    out["categories"] = [c["category"] for c in MCP_CATALOG.categories()[:12]]
+    return result(out)
+
+
+def tool_get_mcp_server(a):
+    row = MCP_CATALOG.get(a["name"])
+    if not row:
+        return result({"error": f"no MCP server matching {a['name']!r}",
+                       "counts": MCP_CATALOG.counts()}, is_error=True)
+    return result(row)
+
+
 def tool_search_reference(a):
     out = REFERENCE.search(a["query"], a.get("kind"), int(a.get("limit", 8)))
     out["counts"] = REFERENCE.counts()
@@ -776,6 +832,8 @@ HANDLERS = {
     "list_triggers": tool_list_triggers,
     "resolve_enum": tool_resolve_enum,
     "search_community_nodes": tool_search_community_nodes,
+    "search_mcp_servers": tool_search_mcp_servers,
+    "get_mcp_server": tool_get_mcp_server,
     "search_reference": tool_search_reference,
     "get_reference": tool_get_reference,
     "search_templates": tool_search_templates,
@@ -813,7 +871,7 @@ def handle(msg):
                 "validate_workflow and audit_workflow to check it, then test_workflow (and "
                 "execute_workflow if an instance is configured) to run it. For expressions, "
                 "environment variables, release history and breaking changes use "
-                "search_reference. Resource "
+                "search_reference, and for external MCP servers use search_mcp_servers. Resource "
                 "n8n://guide/agent explains the workflow format. Live tools need "
                 "N8N_BASE_URL and N8N_API_KEY; without them everything else still works."),
         })
@@ -859,6 +917,8 @@ def handle(msg):
                  "Every MCP tool with input and output examples"),
                 ("n8n://reference/index", "reference/index.json",
                  "Counts and files for the reference layer"),
+                ("n8n://mcp-servers", "mcp-servers/README.md",
+                 "Catalogue of external MCP servers, and how n8n consumes them"),
             ]
         ]})
 
@@ -878,6 +938,11 @@ def handle(msg):
                 return err(msg_id, -32602, f"unknown node in uri: {uri}")
             return ok(msg_id, {"contents": [{"uri": uri, "mimeType": "text/markdown",
                                              "text": body[:MAX_TEXT]}]})
+        if uri == "n8n://mcp-servers":
+            path = os.path.join(ROOT, "mcp-servers", "README.md")
+            if os.path.exists(path):
+                return ok(msg_id, {"contents": [{"uri": uri, "mimeType": "text/markdown",
+                                                 "text": open(path, encoding="utf-8").read()[:MAX_TEXT]}]})
         if uri == "n8n://reference/index":
             body = json.dumps(REFERENCE.index(), indent=2)
             return ok(msg_id, {"contents": [{"uri": uri, "mimeType": "application/json",

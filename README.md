@@ -38,10 +38,11 @@ Built for two readers at once:
 |---|---|---|---|
 | Knowledge base | `knowledge-base/` | Every n8n built-in node as JSON + Markdown, with operations, parameter schemas, credentials and search indexes | 531 nodes · 3,848 operations · 322 credentials |
 | Automations | `automations/` | Importable workflow JSON, grouped by AI / integrations / core / patterns | 12 seed workflows |
-| MCP server | `server/` | Model Context Protocol server: 22 tools, 6 resources, stdlib only — plan, generate, validate, audit, debug, test | 57 protocol + 99 unit tests |
+| MCP server | `server/` | Model Context Protocol server: 24 tools, 7 resources, stdlib only — plan, generate, validate, audit, debug, test | 63 protocol + 111 unit tests |
 | Community nodes | `community-nodes/` | npm index of community node packages, a top-100 ranked by real download counts, and the approved shortlist | 1,500 indexed · 100 ranked |
-| Sources | `sources/` | Registry of official and unofficial sources, with licences, quality notes and check dates | 17 sources |
-| Tooling | `tools/` | Validators, security scanner, KB and reference builders, BM25 search, node ranker | 8 scripts |
+| MCP servers | `mcp-servers/` | Catalogue of external MCP servers an n8n agent can call through the MCP Client Tool | 4,978 listed · 7 official |
+| Sources | `sources/` | Registry of official and unofficial sources, with licences, quality notes and check dates | 20 sources |
+| Tooling | `tools/` | Validators, security scanner, KB, reference and MCP builders, BM25 search, node ranker | 9 scripts |
 | Documentation | `docs/` | Architecture, workflow conventions, importing guide, research notes, roadmap | 5 documents |
 
 Snapshot date: **2026-11-17**. Node schemas come from `n8n-nodes-base@2.15.1` and
@@ -138,6 +139,9 @@ n8n-automation-hub/
 │   ├── planner.py generator.py validation.py audit.py debugger.py analysis.py
 │   │                             workflow intelligence modules
 │   └── n8n_api.py               optional live n8n client
+├── mcp-servers/
+│   ├── README.md                 what MCP servers are, how n8n consumes them, trust model
+│   └── index.json                4,978 listed servers + 802 keyword-only packages
 ├── community-nodes/
 │   ├── README.md                 what community nodes are, how to install them safely
 │   ├── index.json                1,500 npm packages tagged n8n-community-node-package
@@ -162,6 +166,7 @@ n8n-automation-hub/
 │   ├── build_community_index.py  rebuild community-nodes/index.json from npm
 │   ├── build_top_nodes.py        rank community nodes by monthly downloads
 │   ├── build_reference.py        parse expressions, env vars, releases, breaking changes
+│   ├── build_mcp_index.py        build the external MCP server catalogue
 │   └── search.py                 BM25 search CLI
 └── .github/
     ├── workflows/validate.yml    CI: workflows, security scan, MCP server tests
@@ -310,6 +315,7 @@ nodes and validate its own output instead of guessing.
 | `list_triggers` | How a workflow can start |
 | `search_community_nodes` | Third-party packages for an app, with download counts and rank |
 | `search_reference` / `get_reference` | Expressions (`$fromAI`), env vars (`N8N_*`), release history, breaking changes |
+| `search_mcp_servers` / `get_mcp_server` | External MCP servers to attach to an agent, with trust level and download counts |
 | `search_templates` / `get_template` | Reusable patterns with a verification status |
 | `resolve_enum` | "Append Row" → `append` |
 | `validate_workflow` | Schema-aware: required parameters, types, enums, versions, connections, expressions, credentials |

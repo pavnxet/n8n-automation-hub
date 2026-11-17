@@ -5,6 +5,48 @@ versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.5.0] — 2026-11-17
+
+Added the missing half of the MCP story: a catalogue of the servers an n8n agent can actually
+call, plus the sources behind it.
+
+### Added — `mcp-servers/`
+
+- `index.json`: **4,978** external MCP servers merged from three sources by repository slug, so
+  one server appears once with every list that carried it.
+  - 7 official reference servers (`modelcontextprotocol/servers`)
+  - 4,971 entries from `punkpeye/awesome-mcp-servers`, the largest curated community list
+  - 141 with an npm package and a 30-day download count
+- `keyword_only_packages`: **802** npm packages that only *claim* the `mcp-server` keyword.
+  Kept separate because the keyword is self-declared — `yahoo-finance2` and `agent-device` carry
+  it and are libraries — and excluded from search unless explicitly requested.
+- `README.md`: what the two n8n MCP nodes do in each direction, how to use the index, and a
+  five-point trust model for connecting a server to an agent.
+- `tools/build_mcp_index.py`: the builder, with `--official` / `--curated` / `--pages` /
+  `--enrich` / `--offline`.
+
+### Added — tools
+
+- `search_mcp_servers` and `get_mcp_server` (24 tools total): search by query, category and
+  download floor, with `include_keyword_only` to widen; `trust`, `sources` and `keyword_only`
+  are returned per result so the caller can judge provenance.
+- Resource `n8n://mcp-servers`.
+
+### Added — sources
+
+- `modelcontextprotocol/servers` (official), `punkpeye/awesome-mcp-servers`
+  (community-curated), `npm mcp-server keyword` (official metadata). Registry is now 20 sources.
+
+### Verified
+
+- 111 unit and integration tests (12 new for the catalogue), 63 protocol checks.
+- `tools/validate_repo.py` and `tools/security_scan.py` clean.
+- **Not verified:** that any listed server works, or that it speaks the transport you need. The
+  curated list does not record transport or auth, and no server was installed or run. Listing is
+  discovery, not endorsement.
+
+---
+
 ## [1.4.0] — 2026-11-17
 
 Widened the knowledge base beyond nodes: expressions, environment variables, release history and
