@@ -18,13 +18,39 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
-# Globals n8n exposes inside expressions.
+# Globals n8n exposes inside expressions. The static set below is the floor; the reference
+# layer (knowledge-base/reference/expressions.json) adds every documented name, so a new
+# helper in a future release is recognised without a code change.
 KNOWN_GLOBALS = {
     "$json", "$binary", "$node", "$items", "$item", "$input", "$parameter", "$now",
     "$today", "$vars", "$env", "$execution", "$workflow", "$runIndex", "$itemIndex",
     "$jmespath", "$evaluate", "$if", "$max", "$min", "$number", "$string", "$object",
     "$array", "$boolean", "$date", "$this", "$root", "$j", "$",
 }
+
+def _documented_globals() -> set:
+    """`$` names documented in the expression reference."""
+    import json as _json
+    import os as _os
+    path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                         "knowledge-base", "reference", "expressions.json")
+    if not _os.path.exists(path):
+        return set()
+    try:
+        with open(path, encoding="utf-8") as fh:
+            rows = _json.load(fh).get("entries") or []
+    except Exception:
+        return set()
+    names = set()
+    for row in rows:
+        base = re.split(r"[.(]", str(row.get("name", "")).strip())[0]
+        if base.startswith("$") and len(base) > 1:
+            names.add(base)
+    return names
+
+
+DOCUMENTED_GLOBALS = _documented_globals()
+KNOWN_GLOBALS = set(KNOWN_GLOBALS) | DOCUMENTED_GLOBALS
 
 NODE_REF_PATTERNS = [
     re.compile(r"\$\(\s*['\"]([^'\"]+)['\"]\s*\)"),          # $('Node name')

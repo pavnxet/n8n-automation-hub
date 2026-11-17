@@ -101,6 +101,22 @@ def _type_version_bounds(record: Optional[dict]) -> tuple:
     return (min(versions), max(versions))
 
 
+def _removal_for(kb, node_type: str) -> Optional[dict]:
+    """Match a node type against documented breaking-change removals."""
+    short = node_type.split(".")[-1].lower()
+    try:
+        from server.reference import Reference
+        ref = getattr(kb, "_reference", None) or Reference()
+        kb._reference = ref
+        for entry in ref.removed_nodes():
+            blob = f"{entry.get('title','')} {entry.get('detail','')}".lower()
+            if short and short in blob:
+                return entry
+    except Exception:
+        return None
+    return None
+
+
 def validate(workflow: Any, kb, options: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     """Validate a workflow dict. `kb` is a KnowledgeBase instance."""
     opts = {"expressions": True, "credentials": True, "connections": True,
@@ -196,6 +212,17 @@ def validate(workflow: Any, kb, options: Optional[Dict[str, Any]] = None) -> Dic
         community = bool(COMMUNITY_RE.match(ntype)) and not ntype.startswith(BUILTIN_PREFIX)
 
         shipped = shipped_types(kb)
+        if not known and not community:
+            removal = _removal_for(kb, ntype)
+            if removal:
+                errors.append(_finding(
+                    SEV_ERROR, "node_removed_in_version",
+                    f"'{ntype}' was removed in n8n {removal['version']}: {removal['title']}.",
+                    node=label, node_type=ntype,
+                    suggestion="Replace this node before upgrading, or keep the instance on the "
+                               "older major version.",
+                    doc=removal.get("doc_url")))
+                continue
         if (not known and not community and ntype.startswith(BUILTIN_PREFIX)
                 and shipped and ntype not in shipped and ntype not in COSMETIC_OK):
             errors.append(_finding(

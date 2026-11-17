@@ -72,6 +72,7 @@ directly; they read `catalog.json` or search.
 | `nodes/<id>.json` → `operations[]` | Every documented operation, with internal values where known | An operation exists in the UI but not here |
 | `nodes/<id>.json` → `node_schema` | Exact parameter keys, types, defaults, option values | Absent for 10 nodes and for all community nodes |
 | `indexes/*` | Derived from the records above | Regenerate, never hand-edit |
+| `reference/*.json` | Parsed from other n8n doc sections: expressions, env vars, releases, breaking changes | Regenerate with `tools/build_reference.py` |
 | `automations/*.json` | Imports, has no secrets, node types exist | CI rejects it |
 | `server/*` | Speaks MCP correctly; validator identical to CI's | `server/test_server.py` fails |
 | `templates/*.json` | Importable and schema-valid | `tests/test_validator.py` fails |
@@ -108,6 +109,23 @@ python3 tools/build_community_index.py --pages 6 --downloads 400
 Reads the npm search API for the exact keyword n8n uses, then enriches the top results with
 last-month downloads. Scoped packages are fetched one at a time because the bulk downloads
 endpoint rejects them.
+
+### The reference layer
+
+Node records cover "which node, which parameters". Four more documentation sections cover the
+questions around them, and `tools/build_reference.py` parses each into JSON:
+
+| File | Answers | Entries |
+|---|---|---|
+| `reference/expressions.json` | is `$fromAI()` real, what does `$jmespath()` take? | 243 |
+| `reference/env-vars.json` | what does `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS` do? | 364 |
+| `reference/releases.json` | which release introduced or fixed something? | 609 |
+| `reference/breaking-changes.json` | did 3.0 remove the node I use? | 46 |
+
+Two couplings make it useful rather than decorative: the expression validator checks unknown
+`$globals` against `expressions.json`, so a new helper in a future release is recognised without
+a code change; and the validator matches unknown node types against documented removals, so a
+removed node fails with the version that removed it.
 
 ### Workflow intelligence
 

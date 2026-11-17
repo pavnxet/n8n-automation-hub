@@ -1,0 +1,330 @@
+{
+ "generated": "2026-11-17",
+ "source": "n8n docs — breaking changes",
+ "note": "What changed between major versions, by category.",
+ "count": 46,
+ "changes": [
+  {
+   "version": "2.0",
+   "category": "Behavior changes",
+   "title": "Removed nodes for retired services",
+   "detail": "The following nodes have been removed because the external services they connect to are no longer available:",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Behavior changes",
+   "title": "Return expected sub-workflow data when the sub-workflow resumes from waiting (waiting for webhook, forms, HITL, etc.)",
+   "detail": "Previously, when an execution (parent) called a sub-execution (child) that contained a node that causes the sub-execution to enter the waiting state and the parent-execution is set up to wait for the sub-execution's completion, the parent-execution would receive incorrect results.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Behavior changes",
+   "title": "Saving and publishing workflows",
+   "detail": "The new workflow publishing system replaces the previous active/inactive toggle. This means that the old \"Activate/Deactivate\" toggles become the new \"Publish/Unpublish\" buttons. This change gives you better control over when your workflow changes go live, reducing the risk of accidentally deploying work-in-progress changes to production. More information can be found here: Saving and publishing w",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Behavior changes",
+   "title": "Start node removed",
+   "detail": "The Start node is no longer supported. This node was the original way to begin workflows but more specific trigger nodes now replace it.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "CLI & Workflow",
+   "title": "Replace CLI command update:workflow",
+   "detail": "The update:workflow CLI command will be deprecated and replaced by two new commands to deliver similar functionality and more clarity:",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Configuration & Environment",
+   "title": "Remove N8N_CONFIG_FILES",
+   "detail": "The N8N_CONFIG_FILES environment variable has been removed.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Configuration & Environment",
+   "title": "Remove QUEUE_WORKER_MAX_STALLED_COUNT",
+   "detail": "The QUEUE_WORKER_MAX_STALLED_COUNT environment variable and the Bull retry mechanism for stalled jobs will be removed because they often caused confusion and didn't work reliably.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Configuration & Environment",
+   "title": "Remove n8n --tunnel option",
+   "detail": "The n8n --tunnel command-line option will be removed from n8n 2.0.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Configuration & Environment",
+   "title": "Upgrade dotenv",
+   "detail": "n8n loads environment configuration from a .env file using the dotenv library. The library will be upgraded from version 8.6.0 to the latest version, which may change how .env files are parsed. Key breaking changes include:",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Data",
+   "title": "Drop MySQL/MariaDB support",
+   "detail": "n8n will no longer support MySQL and MariaDB as storage backends. This support was deprecated from n8n 1.0. For best compatibility and long-term support, use PostgreSQL. MySQL node will continue to be supported as before.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Data",
+   "title": "Remove SQLite legacy driver",
+   "detail": "n8n will remove the legacy SQLite driver due to reliability issues. The pooling driver will become the default and only SQLite driver. The pooling driver uses WAL mode, a single write connection, and a pool of read connections. Our benchmarks show it can be up to 10 times faster.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Data",
+   "title": "Remove in-memory binary data mode",
+   "detail": "n8n will remove the default mode for N8N_DEFAULT_BINARY_DATA_MODE, which keeps execution binary data in memory during execution. For better performance and stability the following options will be available starting from n8n 2.0:",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "External Hooks",
+   "title": "Deprecated frontend workflow hooks",
+   "detail": "The hooks workflow.activeChange and workflow.activeChangeCurrent will be deprecated. These will be replaced by a new hook workflow.published. The new hook will be triggered when any version of a workflow is published.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "$evaluateExpression no longer works in the Code node",
+   "detail": "Because Code node executions now run on task runners in secure mode by default, the $evaluateExpression() convenience method no longer works inside the Code node. Secure mode disables evaluating strings as code, which is the mechanism expressions rely on, so $evaluateExpression() calls in a Code node return null or error. Expressions in regular node fields, such as the Edit Fields (Set) node, aren",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "Block environment variable access from Code Node by default",
+   "detail": "To improve security, n8n will block access to environment variables from the Code node by default. The default value for N8N_BLOCK_ENV_ACCESS_IN_NODE is now set to true.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "Change the default value of N8N_GIT_NODE_DISABLE_BARE_REPOS to true",
+   "detail": "By default, the Git node will now block bare repositories for security reasons. The default value for N8N_GIT_NODE_DISABLE_BARE_REPOS is set to true, which means bare repositories are disabled unless you change this setting.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "Disable ExecuteCommand and LocalFileTrigger nodes by default",
+   "detail": "n8n will disable the ExecuteCommand and LocalFileTrigger nodes by default because they pose security risks. These nodes allow users to run arbitrary commands and access the file system.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "Enable task runners by default",
+   "detail": "n8n will enable task runners by default to improve security and isolation. All Code node executions will run on task runners.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "Enforce settings file permissions",
+   "detail": "n8n will require strict file permissions for configuration files to improve security. By default, configuration files must use 0600 permissions, which means only the file owner can read and write them. This approach is similar to how SSH protects private keys.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "Remove Pyodide-based Python Code node and tool",
+   "detail": "n8n will remove the Pyodide-based Python Code node and tool and replace them with a task runner-based implementation that uses native Python for better security and performance. Starting in n8n 2.0, you can only use Python Code nodes with task runners in external mode and native Python tools.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "Remove task runner from n8nio/n8n docker image",
+   "detail": "Starting with n8n 2.0, the main n8nio/n8n Docker image will no longer include the task runner for external mode. You must use the separate n8nio/runners Docker image to run task runners in external mode.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "Require authentication on OAuth callback URLs by default",
+   "detail": "n8n will require authentication for OAuth callback endpoints by default. The default value for N8N_SKIP_AUTH_ON_OAUTH_CALLBACK will change from true (no authentication required) to false (authentication required).",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "2.0",
+   "category": "Security",
+   "title": "Set default value for N8N_RESTRICT_FILE_ACCESS_TO",
+   "detail": "n8n will set a default value for N8N_RESTRICT_FILE_ACCESS_TO to control where file operations can occur. This affects the ReadWriteFile and ReadBinaryFiles nodes. By default, these nodes can only access files in the ~/.n8n-files directory.",
+   "doc_url": "https://docs.n8n.io/release-notes/v20-breaking-changes"
+  },
+  {
+   "version": "3.0",
+   "category": "Behavior changes",
+   "title": "Always Output Data on nodes with several outputs",
+   "detail": "With Always Output Data on, nodes with multiple outputs, for example If and Switch, now add an empty item only when every output is empty. Previously, each empty output got an empty item, so branches ran when they shouldn't have.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Behavior changes",
+   "title": "Chat Trigger node: WebSocket messages are JSON frames",
+   "detail": "The chat WebSocket endpoint that the Chat Trigger node uses in the Using Response Nodes response mode, where the Chat node sends replies, now sends every frame as a JSON object with a type field: heartbeat, continue, error, message, or with-buttons. Before, control frames and plain text replies were raw strings. A text reply is now { \"type\": \"message\", \"text\": \"...\" }. The client acknowledges hear",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Behavior changes",
+   "title": "Gmail Trigger node: Older versions run as version 1.4",
+   "detail": "n8n 3.0 removes the separate behavior of Gmail Trigger node versions 1 to 1.3. Workflows that use these versions keep loading, but the node runs with the version 1.4 behavior:",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Behavior changes",
+   "title": "Webflow OAuth2 credential: Legacy toggle off by default",
+   "detail": "The Legacy toggle on the Webflow OAuth2 API credential defaults to off. New credentials request the Webflow v2 API scopes (cms:read cms:write sites:read forms:read). Existing credentials that never saved an explicit Legacy value request these scopes the next time you reconnect them. Connected credentials keep working. n8n doesn't touch stored tokens, and token refresh doesn't send scopes.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Community node development",
+   "title": "--custom-user-folder only applies with --external-n8n",
+   "detail": "The flag used to set where the CLI linked your node. It now names the N8N_USER_FOLDER of the instance you run yourself and has no effect in container mode.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Community node development",
+   "title": "defaults.color removed from the node description",
+   "detail": "n8n 3.0 removes the deprecated defaults.color property from the node description type. It only tinted Font Awesome icons (icon: 'fa:...'). Community nodes that still set it keep working, but the editor shows a Font Awesome icon in a neutral color. Nodes with a file icon (icon: 'file:...') aren't affected, because n8n never tints file icons.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Community node development",
+   "title": "n8n-node dev requires Docker or Podman",
+   "detail": "n8n-node dev started n8n with npx n8n@latest. n8n 3.0 doesn't publish a runnable n8n package to npm, so the command now runs the official image in a container.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Community node development",
+   "title": "n8n-node dev test data moves to a per-image container volume",
+   "detail": "Workflows and credentials you create while testing your node now live in a n8n-node-cli-data-<image> container volume, not in ~/.n8n-node-cli/.n8n. Each --n8n-image gets its own volume, because n8n only migrates a database forward. Switching images gives you an empty instance rather than a database an older n8n version can't read.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Configuration",
+   "title": "Changed defaults and removed variables",
+   "detail": "",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Configuration",
+   "title": "In-memory binary data mode removed",
+   "detail": "N8N_DEFAULT_BINARY_DATA_MODE=default is no longer valid. Instances that still use it switch to filesystem on upgrade.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Configuration",
+   "title": "Remove N8N_PRE_EXECUTE_ERROR_CREATES_EXECUTION",
+   "detail": "n8n 3.0 removes the N8N_PRE_EXECUTE_ERROR_CREATES_EXECUTION environment variable. If a workflow.preExecute external hook throws, n8n never creates an execution record. The run never starts, so it doesn't count toward Insights or license usage. There's no way to keep the old behavior.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Configuration",
+   "title": "Storage directory renamed",
+   "detail": "On first start, n8n 3.0 renames ~/.n8n/binaryData to ~/.n8n/storage and removes N8N_MIGRATE_FS_STORAGE_PATH.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Deployment",
+   "title": "Docker-based deployment required for self-hosted n8n",
+   "detail": "Self-hosted n8n requires a Docker-based deployment. n8n 3.0 no longer supports installations run using npm or npx n8n, and n8n 3.0 doesn't publish a runnable n8n package to npm.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Removed nodes and helpers",
+   "title": "$evaluateExpression() removed from the Code node",
+   "detail": "n8n 3.0 removes the $evaluateExpression() convenience method from the Code node (JavaScript). Only task runners in insecure mode (N8N_RUNNERS_INSECURE_MODE=true) are affected. Secure-mode runners, the default since n8n 2.0, already fail on this call.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Removed nodes and helpers",
+   "title": "AI Agent node: Older agent modes removed",
+   "detail": "Version 1 of the AI Agent node supported several agent type modes, including SQL Agent, Conversational Agent, OpenAI Functions Agent, Plan and Execute Agent, and ReAct Agent. n8n 3.0 removes version 1 of the node, along with these modes.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Removed nodes and helpers",
+   "title": "Edit Image node: Node versions 1 and 1.1 removed",
+   "detail": "n8n 3.0 removes support for deprecated node versions 1 and 1.1 of the Edit Image node. Workflows that still use these versions fail with an error until you upgrade the node.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Removed nodes and helpers",
+   "title": "Execute Sub-workflow node: Local File and URL sources removed",
+   "detail": "n8n 3.0 removes the Local File and URL options from the Source parameter of the Execute Sub-workflow node. Only node versions 1.1 and older offered them. Nodes that still use one of these sources fail with an error.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Removed nodes and helpers",
+   "title": "Removed expression helpers",
+   "detail": "n8n 3.0 removes the deprecated $getPairedItem expression helper. Expressions that still call it fail when the node runs.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Removed nodes and helpers",
+   "title": "Removed nodes",
+   "detail": "Workflows that use a removed node fail when they run. If such a workflow is published, it doesn't activate when n8n 3.0 starts, so its triggers stop firing. Before you upgrade, Settings > Migration Report lists the affected workflows on your instance, and the Deprecated and versioned nodes page tracks the final version of every node listed here.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Security",
+   "title": "Encryption key rotation on by default",
+   "detail": "n8n 3.0 turns on encryption key rotation by default. Before, self-hosted instances had to opt in to the feature. With it on, n8n keeps a data encryption key that you can rotate from Settings > Data Encryption Keys. Credentials and other data encrypted before the upgrade stay readable, and n8n re-encrypts each record to the current key the next time you update it.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Security",
+   "title": "Larger default SSRF block list",
+   "detail": "When N8N_SSRF_PROTECTION_ENABLED is true and N8N_SSRF_BLOCKED_IP_RANGES contains default, n8n 3.0 adds four ranges to the built-in default list:",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Security",
+   "title": "Lower Compression node decompression limits",
+   "detail": "The default N8N_COMPRESSION_NODE_MAX_DECOMPRESSED_SIZE_BYTES drops from 2 GiB to 256 MiB, and the default N8N_COMPRESSION_NODE_MAX_ZIP_ENTRIES drops from 5,000 to 1,000. The Compression node fails on archives above either limit.",
+   "doc_url": ""
+  },
+  {
+   "version": "3.0",
+   "category": "Security",
+   "title": "Slack API credential requires the signing secret",
+   "detail": "n8n 3.0 requires a signing secret on the Slack API credential. The Slack Trigger node verifies incoming requests against it. When a workflow with a Slack Trigger node is published or n8n starts, n8n checks the credential and stops the activation if the secret is missing.",
+   "doc_url": ""
+  }
+ ]
+}

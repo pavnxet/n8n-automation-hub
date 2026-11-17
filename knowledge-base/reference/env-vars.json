@@ -1,0 +1,2920 @@
+{
+ "generated": "2026-11-17",
+ "source": "n8n docs — environment variables",
+ "note": "Self-hosting configuration reference.",
+ "count": 364,
+ "entries": [
+  {
+   "name": "ALL_PROXY",
+   "type": "String",
+   "default": "-",
+   "description": "A URL to proxy both unencrypted and encrypted HTTP requests through. When set, n8n uses this value when more specific variables (HTTP_PROXY or HTTPS_PROXY) aren't present.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "CODE_ENABLE_STDOUT",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true to send Code node logs from console.log or print to the process's stdout, only for production executions.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "CREDENTIALS_DEFAULT_NAME",
+   "type": "String",
+   "default": "My credentials",
+   "description": "The default name for credentials.",
+   "category": "credentials",
+   "doc_url": ">-"
+  },
+  {
+   "name": "CREDENTIALS_OVERWRITE_ENDPOINT",
+   "type": "String",
+   "default": "-",
+   "description": "The API endpoint to fetch credentials.",
+   "category": "credentials",
+   "doc_url": ">-"
+  },
+  {
+   "name": "CREDENTIALS_OVERWRITE_PERSISTENCE",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Enable database persistence for credential overwrites. Required for multi-instance or queue mode to propagate overwrites to workers through a publish/subscribe approach.",
+   "category": "credentials",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_CONNECTION_ACQUISITION_TIMEOUT_MS",
+   "type": "Number",
+   "default": "30000",
+   "description": "How long, in milliseconds, a query waits while recovery is in progress before failing fast with an error. Set to 0 to wait indefinitely. Applies to PostgreSQL only.",
+   "category": "database",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_LOGGING_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to enable database-specific logging.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_LOGGING_MAX_EXECUTION_TIME",
+   "type": "Number",
+   "default": "1000",
+   "description": "Maximum execution time (in milliseconds) before n8n logs a warning. Set to 0 to disable long running query warning.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_LOGGING_OPTIONS",
+   "type": "Enum string: query, error, schema, warn, info, log",
+   "default": "error",
+   "description": "Database log output level. To enable all logging, specify all. Refer to TypeORM logging options",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_PING_INTERVAL_SECONDS",
+   "type": "Number",
+   "default": "2",
+   "description": "How often, in seconds, n8n pings the database to check that the connection is still alive.",
+   "category": "database",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_PING_MAX_FAILURES_BEFORE_RECOVERY",
+   "type": "Number",
+   "default": "3",
+   "description": "How many pings in a row must fail before n8n treats the connection as lost and starts recovery.",
+   "category": "database",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_PING_TIMEOUT_MS",
+   "type": "Number",
+   "default": "5000",
+   "description": "How long, in milliseconds, n8n waits for a single ping to respond before counting it as a failure. Falls back to N8N_DB_PING_TIMEOUT, deprecated from n8n 2.35.0, if that's set.",
+   "category": "database",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_RECOVERY_BACKOFF_MAX_MS",
+   "type": "Number",
+   "default": "30000",
+   "description": "The longest, in milliseconds, n8n waits between recovery attempts. This caps the backoff. Must be greater than or equal to DB_RECOVERY_BACKOFF_MIN_MS.",
+   "category": "database",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_RECOVERY_BACKOFF_MIN_MS",
+   "type": "Number",
+   "default": "1000",
+   "description": "How long, in milliseconds, n8n waits before its first recovery attempt. Each retry waits longer (exponential backoff).",
+   "category": "database",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_SQLITE_POOL_SIZE",
+   "type": "Number",
+   "default": "3",
+   "description": "The number of parallel SQL read connections in the SQLite connection pool. Must be at least 1. Setting it to 0 logs a warning and falls back to the default. n8n opens the SQLite file in WAL mode.",
+   "category": "database",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_SQLITE_VACUUM_ON_STARTUP",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Runs VACUUM operation on startup to rebuild the database. Reduces file size and optimizes indexes. This is a long running blocking operation and increases start-up time.",
+   "category": "database",
+   "doc_url": ">-"
+  },
+  {
+   "name": "DB_TABLE_PREFIX",
+   "type": "*",
+   "default": "-",
+   "description": "Prefix to use for table names.",
+   "category": "database",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_HARD_DELETE_BUFFER",
+   "type": "Number",
+   "default": "1",
+   "description": "How old (hours) the finished execution data has to be to get hard-deleted. By default, this buffer excludes recent executions as the user may need them while building a workflow.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_MAX_AGE",
+   "type": "Number",
+   "default": "336",
+   "description": "The execution age (in hours) before it's deleted.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_MAX_DISPLAY_SIZE",
+   "type": "Number",
+   "default": "104857600",
+   "description": "Maximum size (in bytes) of execution data that n8n loads when displaying an execution (editor, execution detail, and public API). For larger executions, n8n omits the data (shown as \"too large to display\") to avoid running low-resource instances out of memory. Doesn't affect retrying or resuming exe",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_PRUNE",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to delete data of past executions on a rolling basis.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_PRUNE_HARD_DELETE_INTERVAL",
+   "type": "Number",
+   "default": "15",
+   "description": "How often (minutes) execution data should be hard-deleted.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_PRUNE_MAX_COUNT",
+   "type": "Number",
+   "default": "10000",
+   "description": "Maximum number of executions to keep in the database. 0 = no limit",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_PRUNE_SOFT_DELETE_INTERVAL",
+   "type": "Number",
+   "default": "60",
+   "description": "How often (minutes) execution data should be soft-deleted.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to save data of executions when started manually.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_SAVE_ON_ERROR",
+   "type": "Enum string: all, none",
+   "default": "all",
+   "description": "Whether n8n saves execution data on error.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_SAVE_ON_PROGRESS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to save progress for each node executed (true) or not (false).",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_DATA_SAVE_ON_SUCCESS",
+   "type": "Enum string: all, none",
+   "default": "all",
+   "description": "Whether n8n saves execution data on success.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_MODE",
+   "type": "Enum string: regular, queue",
+   "default": "regular",
+   "description": "Whether executions should run directly or using queue.<br><br>Refer to Queue mode for more details.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_TIMEOUT",
+   "type": "Number",
+   "default": "-1",
+   "description": "Sets a default timeout (in seconds) to all workflows after which n8n stops their execution. Users can override this for individual workflows up to the duration set in EXECUTIONS_TIMEOUT_MAX. Set EXECUTIONS_TIMEOUT to -1 to disable.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXECUTIONS_TIMEOUT_MAX",
+   "type": "Number",
+   "default": "3600",
+   "description": "The maximum execution time (in seconds) that users can set for an individual workflow.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXTERNAL_FRONTEND_HOOKS_URLS",
+   "type": "String",
+   "default": "-",
+   "description": "URLs to files containing frontend external hooks. Provide multiple URLs as a colon-separated list (\":\").",
+   "category": "external-hooks",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXTERNAL_HOOK_FILES",
+   "type": "String",
+   "default": "-",
+   "description": "Files containing backend external hooks. Provide multiple files separated by the character defined in EXTERNAL_HOOK_FILES_SEPARATOR.",
+   "category": "external-hooks",
+   "doc_url": ">-"
+  },
+  {
+   "name": "EXTERNAL_HOOK_FILES_SEPARATOR",
+   "type": "String",
+   "default": ":",
+   "description": "Separator character for EXTERNAL_HOOK_FILES. Use ; on Windows to avoid conflicts with drive-letter paths like C:\\.",
+   "category": "external-hooks",
+   "doc_url": ">-"
+  },
+  {
+   "name": "GENERIC_TIMEZONE",
+   "type": "*",
+   "default": "America/New_York",
+   "description": "The same default timezone as configured for the n8n instance.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "GENERIC_TIMEZONE",
+   "type": "*",
+   "default": "America/New_York",
+   "description": "The n8n instance timezone. Important for schedule nodes (such as Cron).",
+   "category": "timezone-and-localization",
+   "doc_url": ">-"
+  },
+  {
+   "name": "HTTPS_PROXY",
+   "type": "String",
+   "default": "-",
+   "description": "A URL to proxy TLS/SSL encrypted HTTP requests through. When set, n8n proxies all TLS/SSL encrypted HTTP traffic from nodes through the proxy URL.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "HTTP_PROXY",
+   "type": "String",
+   "default": "-",
+   "description": "A URL to proxy unencrypted HTTP requests through. When set, n8n proxies all unencrypted HTTP traffic from nodes through the proxy URL.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_AGENTS_TRACING_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether agent runs emit OpenTelemetry spans. Inherits the endpoint, headers, sampling, and transport settings from N8N_OTEL_*. Spans have nowhere to go until you configure an OTel provider, so set this to false to run workflow tracing without agent spans.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_AGENTS_TRACING_RECORD_INPUTS",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether agent tracing records inputs, such as prompts and tool arguments. Set to false to exclude sensitive input data from traces.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_AGENTS_TRACING_RECORD_OUTPUTS",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether agent tracing records outputs, such as responses and tool results. Set to false to exclude sensitive output data from traces.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_AI_ASSISTANT_BASE_URL",
+   "type": "String",
+   "default": "(empty)",
+   "description": "Base URL of the AI assistant service, specified as https://ai-assistant.n8n.io . Required if you self-host n8n and want to enable Ask n8n AI.",
+   "category": "ai-assistant",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_AI_TIMEOUT_MAX",
+   "type": "Number",
+   "default": "3600000",
+   "description": "Sets the HTTP request timeout in milliseconds for AI and LLM nodes (such as OpenAI, Anthropic, Mistral, and Ollama). This controls how long n8n waits for responses from AI services before timing out. Useful for slower local AI services or complex prompts that require longer processing time.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_AVAILABLE_BINARY_DATA_MODES",
+   "type": "String",
+   "default": "filesystem",
+   "description": "A comma separated list of available binary data modes.",
+   "category": "binary-data",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_BINARY_DATA_DATABASE_MAX_FILE_SIZE",
+   "type": "Number",
+   "default": "512",
+   "description": "Maximum size (in MiB) of a single file n8n stores when N8N_DEFAULT_BINARY_DATA_MODE is database. Can't exceed 1024, the limit of a database column. Storing a larger file fails.",
+   "category": "binary-data",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_BINARY_DATA_STORAGE_PATH",
+   "type": "String",
+   "default": "N8N_USER_FOLDER/binaryData",
+   "description": "The path where n8n stores binary data.",
+   "category": "binary-data",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_BLOCK_ENV_ACCESS_IN_NODE",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to allow users to access environment variables in expressions and the Code node (false) or not (true).",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Set to true to block access to all files in the .n8n directory and user defined configuration files.",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_BLOCK_RUNNER_ENV_ACCESS",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to block access to the runner's environment from within Python code tasks. Set to false to enable all Python code node users access to the runner's environment via os.environ. For security reasons, environment variable access is blocked by default.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_CACHE_REDIS_KEY_PREFIX",
+   "type": "String",
+   "default": "cache",
+   "description": "Prefix for cache keys in Redis. n8n adds it after N8N_REDIS_KEY_PREFIX, for example n8n:cache.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_CANVAS_ONLY",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true to run n8n in canvas-only mode, hiding the header, sidebar, and overlay elements when viewing an individual workflow. Available from n8n 2.15.0.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_COMMUNITY_PACKAGES_AUTH_TOKEN",
+   "type": "String",
+   "default": "-",
+   "description": "Authentication token for a private npm registry. Use with N8N_COMMUNITY_PACKAGES_REGISTRY to authenticate requests when installing community nodes from a private registry.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_COMMUNITY_PACKAGES_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Enables (true) or disables (false) the functionality to install and load community nodes. If set to false, neither verified nor unverified community packages will be available, regardless of their individual settings.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_COMMUNITY_PACKAGES_PREVENT_LOADING",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Prevents (true) or allows (false) loading installed community nodes on instance startup. Use this if a faulty node prevents the instance from starting.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_COMMUNITY_PACKAGES_REGISTRY",
+   "type": "String",
+   "default": "https://registry.npmjs.org",
+   "description": "NPM registry URL to pull community packages from (license required).",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_COMPRESSION_NODE_MAX_DECOMPRESSED_SIZE_BYTES",
+   "type": "Number",
+   "default": "268435456",
+   "description": "Maximum total decompressed output size in bytes. Default is 256 MiB.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_COMPRESSION_NODE_MAX_ZIP_ENTRIES",
+   "type": "Number",
+   "default": "1000",
+   "description": "Maximum number of entries allowed in a ZIP archive.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_CONCURRENCY_EVALUATION_LIMIT",
+   "type": "Number",
+   "default": "License-tier default",
+   "description": "Max test cases that can run in parallel within a single evaluation test run. When unset, the limit follows the license tier: self-hosted Community: 1, n8n Cloud Pro: 1, self-hosted Business: 3, n8n Cloud Enterprise and self-hosted Enterprise: 5. Setting this overrides the tier default.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_CONCURRENCY_PRODUCTION_LIMIT",
+   "type": "Number",
+   "default": "-1",
+   "description": "Max production executions allowed to run concurrently, in both regular and scaling modes. -1 to disable in regular mode.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_CONTENT_SECURITY_POLICY",
+   "type": "String",
+   "default": "script-src <nonce> 'strict-dynamic' 'unsafe-eval'; object-src 'none'; base-uri 'none'",
+   "description": "The Content-Security-Policy n8n serves on its own pages. Accepts a policy string, for example frame-ancestors http://localhost:3000, or a helmet.js directives object. Write <nonce> where n8n inserts the per-request nonce. Set to default for n8n's policy, or {} for no header.",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_CONTENT_SECURITY_POLICY_REPORT_ONLY",
+   "type": "String",
+   "default": "",
+   "description": "The policy n8n serves as Content-Security-Policy-Report-Only, in the same formats as N8N_CONTENT_SECURITY_POLICY. The browser reports violations but doesn't block them, so use it to try a policy before enforcing it.",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_CUSTOM_EXTENSIONS",
+   "type": "String",
+   "default": "-",
+   "description": "Specify the path to directories containing your custom nodes.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_DEFAULT_BINARY_DATA_MODE",
+   "type": "String",
+   "default": "default",
+   "description": "The default binary data mode. default keeps binary data in memory. Set to filesystem to use the filesystem, s3 to use AWS S3, azure to use Azure Blob Storage, or database to use the DB. Note that binary data pruning operates on the active binary data mode. For example, if your instance stored data i",
+   "category": "binary-data",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_DEFAULT_LOCALE",
+   "type": "String",
+   "default": "en",
+   "description": "A locale identifier, compatible with the Accept-Language header. n8n doesn't support regional identifiers, such as de-AT. When running in a locale other than the default, n8n displays UI strings in the selected locale, and falls back to en for any untranslated strings.",
+   "category": "timezone-and-localization",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_DEV_RELOAD",
+   "type": "Boolean",
+   "default": "false",
+   "description": "When working on the n8n source code, set this to true to automatically reload or restart the application when changes occur in the source code files.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_DIAGNOSTICS_CONFIG_BACKEND",
+   "type": "String",
+   "default": "1zPn7YoGC3ZXE9zLeTKLuQCB4F6;https://telemetry.n8n.io/v1/batch",
+   "description": "Telemetry configuration for the backend.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_DIAGNOSTICS_CONFIG_FRONTEND",
+   "type": "String",
+   "default": "1zPn9bgWPzlQc0p8Gj1uiK6DOTn;https://telemetry.n8n.io",
+   "description": "Telemetry configuration for the frontend.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_DIAGNOSTICS_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to share selected, anonymous telemetry with n8n. Note that if you set this to false, you can't enable Ask AI in the Code node.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_DISABLED_MODULES",
+   "type": "String",
+   "default": "-",
+   "description": "Set to insights to disable the feature and metrics collection for an instance.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_DISABLE_PRODUCTION_MAIN_PROCESS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Disable production webhooks from main process. This helps ensure no HTTP traffic load to main process when using webhook-specific processes.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_DISABLE_UI",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true to disable the UI.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EDITOR_BASE_URL",
+   "type": "String",
+   "default": "-",
+   "description": "Public URL where users can access the editor. Also used for emails sent from n8n and the redirect URL for SAML based authentication.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EMAIL_MODE",
+   "type": "String",
+   "default": "smtp",
+   "description": "Enable emails.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENCRYPTION_KEY",
+   "type": "String",
+   "default": "Random key generated by n8n",
+   "description": "Provide a custom key used to encrypt credentials in the n8n database. By default n8n generates a random key on first launch.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENDPOINT_FORM",
+   "type": "String",
+   "default": "form",
+   "description": "The path used for the form endpoint.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENDPOINT_FORM_TEST",
+   "type": "String",
+   "default": "form-test",
+   "description": "The path used for the test-form endpoint.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENDPOINT_FORM_WAIT",
+   "type": "String",
+   "default": "form-waiting",
+   "description": "The path used for the waiting-form endpoint.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENDPOINT_HEALTH",
+   "type": "String",
+   "default": "healthz",
+   "description": "The path used for health check endpoint.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENDPOINT_REST",
+   "type": "String",
+   "default": "rest",
+   "description": "The path used for REST endpoint.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENDPOINT_WEBHOOK",
+   "type": "String",
+   "default": "webhook",
+   "description": "The path used for webhook endpoint.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENDPOINT_WEBHOOK_TEST",
+   "type": "String",
+   "default": "webhook-test",
+   "description": "The path used for test-webhook endpoint.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENDPOINT_WEBHOOK_WAIT",
+   "type": "String",
+   "default": "webhook-waiting",
+   "description": "The path used for waiting-webhook endpoint.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENFORCE_GLOBAL_USER_AGENT",
+   "type": "Boolean",
+   "default": "false",
+   "description": "When set to true, n8n replaces the default bare n8n User-Agent string with an RFC-compliant value (Mozilla/5.0 (compatible; n8n/<version>; +https://n8n.io/)) on all outbound HTTP requests. Enable this to prevent web application firewalls from blocking n8n requests.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true to try to set 0600 permissions for the settings file, giving only the owner read and write access.",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENV_FEAT_ENCRYPTION_KEY_ROTATION",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true on all instances (main and workers) to enable encryption key rotation. One-way change: take a full database backup first.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENV_FEAT_OAUTH2_JWE",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true on all instances (main and workers) to enable JWE token decryption for OAuth 2.0 credentials. Preview feature.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ENV_FEAT_TOKEN_EXCHANGE",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true to enable token exchange for embedding partners. Preview feature.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EVENTBUS_CHECKUNSENTINTERVAL",
+   "type": "Number",
+   "default": "0",
+   "description": "How often (in milliseconds) to check for unsent event messages. Can in rare cases send message twice. Set to 0 to disable it.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EVENTBUS_LOGWRITER_KEEPLOGCOUNT",
+   "type": "Number",
+   "default": "3",
+   "description": "Number of event log files to keep.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EVENTBUS_LOGWRITER_LOGBASENAME",
+   "type": "String",
+   "default": "n8nEventLog",
+   "description": "Basename of the event log file. Ignored when N8N_EVENTBUS_LOGWRITER_LOGFULLPATH is set.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EVENTBUS_LOGWRITER_LOGFULLPATH",
+   "type": "String",
+   "default": "''",
+   "description": "Absolute path to the event log file. Must end in .log. When set, this path is used verbatim and overrides N8N_EVENTBUS_LOGWRITER_LOGBASENAME and the default per-process suffix. Use this to give each n8n process a unique event log path when multiple processes share a writable filesystem. Refer to Per",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EVENTBUS_LOGWRITER_MAXFILESIZEINKB",
+   "type": "Number",
+   "default": "10240",
+   "description": "Maximum size (in kilo-bytes) of an event log file before a new one starts.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EVENTBUS_LOGWRITER_MAXTOTALMESSAGESPERFILE",
+   "type": "Number",
+   "default": "500000",
+   "description": "Maximum number of lines parsed from a single event log file during recovery. Bounds memory use when an event log file contains many invalid lines.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EVENTBUS_LOGWRITER_SYNCFILEACCESS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether all file access happens synchronously within the thread (true) or not (false).",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXECUTION_DATA_STORAGE_MODE",
+   "type": "Enum string: database, filesystem, s3, azure",
+   "default": "database",
+   "description": "Where n8n stores execution data. The s3 and azure modes require a self-hosted Business or Enterprise plan. Refer to External data storage for the related storage variables.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXPRESSION_ENGINE",
+   "type": "Enum string: vm, quickjs, legacy",
+   "default": "vm",
+   "description": "Which expression engine the backend uses. vm runs expressions in a sandboxed V8 isolate. quickjs runs them in a QuickJS sandbox compiled to WebAssembly. legacy runs them without isolation, and n8n plans to deprecate it. vm is the default from n8n 2.35.0. Earlier n8n versions default to legacy.",
+   "category": "expression-engine",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXPRESSION_ENGINE_FRONTEND",
+   "type": "Enum string: legacy, quickjs",
+   "default": "legacy",
+   "description": "Which expression engine the editor uses in the browser. quickjs runs expressions in a QuickJS sandbox compiled to WebAssembly, isolated from the rest of the page. legacy runs them without isolation. n8n strongly recommends quickjs. Available from n8n 2.41.0.",
+   "category": "expression-engine",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXPRESSION_ENGINE_IDLE_TIMEOUT",
+   "type": "Number",
+   "default": "-",
+   "description": "If set, scales the pool to zero warm sandboxes after this many seconds with no activity.",
+   "category": "expression-engine",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXPRESSION_ENGINE_MAX_CODE_CACHE_SIZE",
+   "type": "Number",
+   "default": "1024",
+   "description": "Maximum number of compiled expressions to cache.",
+   "category": "expression-engine",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXPRESSION_ENGINE_MEMORY_LIMIT",
+   "type": "Number",
+   "default": "128",
+   "description": "Memory limit in MiB for each sandbox.",
+   "category": "expression-engine",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXPRESSION_ENGINE_POOL_SIZE",
+   "type": "Number",
+   "default": "1",
+   "description": "Number of sandboxes kept warm in the pool.",
+   "category": "expression-engine",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXPRESSION_ENGINE_TIMEOUT",
+   "type": "Number",
+   "default": "5000",
+   "description": "Execution timeout in milliseconds for each expression evaluation.",
+   "category": "expression-engine",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_SECRETS_CONNECT_TIMEOUT",
+   "type": "Number",
+   "default": "20",
+   "description": "Maximum time (in seconds) n8n waits for a secrets vault to connect. If the vault doesn't answer in time, n8n marks it as errored, retries the connection in the background with increasing delays, and startup continues without its secrets. Available from n8n 2.41.0.",
+   "category": "external-secrets",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_SECRETS_REFRESH_TIMEOUT",
+   "type": "Number",
+   "default": "20",
+   "description": "Maximum time (in seconds) n8n waits for a secrets vault to deliver its secrets, at startup and on each update interval. If the fetch takes longer, n8n stops waiting and the fetch keeps running in the background. When it completes successfully, n8n stores the secrets. At startup, workflows that use s",
+   "category": "external-secrets",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_SECRETS_UPDATE_INTERVAL",
+   "type": "Number",
+   "default": "300 (5 minutes)",
+   "description": "How often (in seconds) to check for secret updates.",
+   "category": "external-secrets",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_AZURE_ACCOUNT_KEY",
+   "type": "String",
+   "default": "-",
+   "description": "Storage account key. Use with the account name.",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_AZURE_ACCOUNT_NAME",
+   "type": "String",
+   "default": "-",
+   "description": "Storage account name. Use with an account key or managed identity.",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_AZURE_AUTH_AUTO_DETECT",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Authenticate via DefaultAzureCredential (managed identity, environment, or Azure CLI) instead of an account key. Ignores the account key when enabled.",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_AZURE_CONNECTION_STRING",
+   "type": "String",
+   "default": "-",
+   "description": "Connection string for Azure Blob Storage. Takes precedence over the account name and key when set.",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_AZURE_CONTAINER_NAME",
+   "type": "String",
+   "default": "-",
+   "description": "Name of the blob container to store execution data and/or binary data in. Required for Azure Blob Storage.",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_AZURE_ENDPOINT",
+   "type": "String",
+   "default": "-",
+   "description": "Custom blob endpoint, for example for Azurite or sovereign clouds.",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_S3_ACCESS_KEY",
+   "type": "String",
+   "default": "-",
+   "description": "Access key in S3-compatible external storage",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_S3_ACCESS_SECRET",
+   "type": "String",
+   "default": "-",
+   "description": "Access secret in S3-compatible external storage.",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_S3_AUTH_AUTO_DETECT",
+   "type": "Boolean",
+   "default": "-",
+   "description": "Use automatic credential detection to authenticate S3 calls for external storage. This will ignore the access key and access secret and use the default credential provider chain.",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_S3_BUCKET_NAME",
+   "type": "String",
+   "default": "-",
+   "description": "Name of the n8n bucket in S3-compatible external storage.",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_S3_BUCKET_REGION",
+   "type": "String",
+   "default": "-",
+   "description": "Region of the n8n bucket in S3-compatible external storage. For example, us-east-1",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_EXTERNAL_STORAGE_S3_HOST",
+   "type": "String",
+   "default": "-",
+   "description": "Host of the n8n bucket in S3-compatible external storage. For example, s3.us-east-1.amazonaws.com",
+   "category": "external-data-storage",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_FORMDATA_FILE_SIZE_MAX",
+   "type": "Number",
+   "default": "200",
+   "description": "Max payload size for files in form-data webhook payloads in MiB.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_GIT_NODE_DISABLE_BARE_REPOS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true to prevent the Git node from working with bare repositories, enhancing security.",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_GIT_NODE_ENABLE_HOOKS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true to allow the Git node to execute Git hooks.",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_GLOBAL_USER_AGENT_VALUE",
+   "type": "String",
+   "default": "-",
+   "description": "A custom User-Agent string to use for all outbound HTTP requests. Overrides the RFC-compliant default set by N8N_ENFORCE_GLOBAL_USER_AGENT. Useful when you don't want to disclose the n8n version to upstream servers.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_GRACEFUL_SHUTDOWN_TIMEOUT",
+   "type": "Number",
+   "default": "30",
+   "description": "How long should the n8n process wait (in seconds) for components to shut down before exiting the process.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_HIDE_USAGE_PAGE",
+   "type": "boolean",
+   "default": "false",
+   "description": "Hide the Plan & usage page in the app.",
+   "category": "license",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_HIRING_BANNER_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to show the n8n hiring banner in the console (true) or not (false).",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_HOST",
+   "type": "String",
+   "default": "localhost",
+   "description": "Host name n8n runs on.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSECURE_DISABLE_FORM_HTML_SANDBOX",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to remove the sandbox directive from the Content Security Policy (CSP) on form pages. Only for forms on a separate hostname from the editor. Available from n8n 2.15.0. Refer to Configure webhook URLs with reverse proxy for full details and safety conditions.",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_COMPACTION_BATCH_DELAY_MILLISECONDS",
+   "type": "Number",
+   "default": "100",
+   "description": "Delay in milliseconds between full compaction batches. Increase this to wait longer between batches. Set to 0 to skip the delay.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_COMPACTION_BATCH_SIZE",
+   "type": "Number",
+   "default": "500",
+   "description": "The number of raw insights data to compact in a single batch.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_COMPACTION_DAILY_TO_WEEKLY_THRESHOLD_DAYS",
+   "type": "Number",
+   "default": "180",
+   "description": "Age in days after which n8n compacts daily insights rows to weekly.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_COMPACTION_HOURLY_TO_DAILY_THRESHOLD_DAYS",
+   "type": "Number",
+   "default": "90",
+   "description": "Age in days after which n8n compacts hourly insights rows to daily.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_COMPACTION_INTERVAL_MINUTES",
+   "type": "Number",
+   "default": "60",
+   "description": "Interval (in minutes) at which compaction should run. Decrease this to run compaction more often and reduce how much data builds up between runs.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_COMPACTION_MAX_BATCHES_PER_RUN",
+   "type": "Number",
+   "default": "1000",
+   "description": "Maximum number of compaction batches to process in one run. Decrease this to process fewer batches per run. Set to 0 to disable this limit.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_COMPACTION_MAX_RUNTIME_SECONDS",
+   "type": "Number",
+   "default": "300",
+   "description": "Maximum runtime in seconds for one compaction run. Decrease this to stop each run sooner. Set to 0 to disable this limit.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_FLUSH_BATCH_SIZE",
+   "type": "Number",
+   "default": "1000",
+   "description": "The maximum number of insights data to keep in the buffer before flushing.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_FLUSH_INTERVAL_SECONDS",
+   "type": "Number",
+   "default": "30",
+   "description": "The interval (in seconds) at which n8n flushes insights data to the database.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_MAX_AGE_DAYS",
+   "type": "Number",
+   "default": "365",
+   "description": "Number of days n8n keeps compacted insights data before pruning. The maximum value is 730 (two years).",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INSIGHTS_PRUNE_CHECK_INTERVAL_HOURS",
+   "type": "Number",
+   "default": "24",
+   "description": "How often (in hours) the instance checks for insights data older than the effective max age and deletes it.",
+   "category": "insights",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_INVITE_LINKS_EMAIL_ONLY",
+   "type": "Boolean",
+   "default": "false",
+   "description": "When set to true, n8n will only deliver invite links via email and will not expose them through the API. This option enhances security by preventing invite URLs from being accessible programmatically, or to high privileged users.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LICENSE_ACTIVATION_KEY",
+   "type": "String",
+   "default": "''",
+   "description": "Activation key to initialize license. Not applicable if the n8n instance was already activated.",
+   "category": "license",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LICENSE_AUTO_RENEW_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "<p>Enables (true) or disables (false) autorenewal for licenses.<br>If disabled, you need to manually renew the license every 10 days by navigating to <strong>Settings</strong> > <strong>Plan & usage</strong>, and pressing <code>F5</code>. Failure to renew the license will disable all licensed featur",
+   "category": "license",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LICENSE_CERT",
+   "type": "String",
+   "default": "''",
+   "description": "Base64-encoded license certificate provided by n8n. Used instead of N8N_LICENSE_ACTIVATION_KEY for special use cases, e.g. air-gapped environments.",
+   "category": "license",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LICENSE_DETACH_FLOATING_ON_SHUTDOWN",
+   "type": "Boolean",
+   "default": "true",
+   "description": "<p>Controls whether the instance releases <a href=\"https://app.gitbook.com/s/CxSeOtVxqqhfxMSac0AV/key-concept-glossary#entitlement-n8n\">floating entitlements</a> back to the pool upon shutdown. Set to <code>true</code> to allow other instances to reuse the entitlements, or <code>false</code> to reta",
+   "category": "license",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LICENSE_SERVER_URL",
+   "type": "String",
+   "default": "https://license.n8n.io/v1",
+   "description": "Server URL to retrieve license.",
+   "category": "license",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LICENSE_TENANT_ID",
+   "type": "Number",
+   "default": "1",
+   "description": "Tenant ID associated with the license. Only set this variable if explicitly instructed by n8n.",
+   "category": "license",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LISTEN_ADDRESS",
+   "type": "String",
+   "default": "::",
+   "description": "The IP address n8n should listen on.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LOG_CRON_ACTIVE_INTERVAL",
+   "type": "Number",
+   "default": "0",
+   "description": "Interval in minutes to log currently active cron jobs. Set to 0 to disable.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LOG_FILE_COUNT_MAX",
+   "type": "Number",
+   "default": "100",
+   "description": "Max number of log files to keep.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LOG_FILE_LOCATION",
+   "type": "String",
+   "default": "<n8n-directory-path>/logs/n8n.log",
+   "description": "Log file location. Requires N8N_LOG_OUTPUT set to file.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LOG_FILE_SIZE_MAX",
+   "type": "Number",
+   "default": "16",
+   "description": "Max size of each log file in MB.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LOG_FORMAT",
+   "type": "Enum string: text, json",
+   "default": "text",
+   "description": "The log format to use. text prints human readable messages. json prints one JSON object per line containing the message, level, timestamp, and all metadata. This is useful for production monitoring as well as debugging.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LOG_LEVEL",
+   "type": "Enum string: info, warn, error, debug",
+   "default": "info",
+   "description": "Log output level. Refer to Log levels for details.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_LOG_OUTPUT",
+   "type": "Enum string: console, file",
+   "default": "console",
+   "description": "Where to output logs. Provide multiple values as a comma-separated list.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_MANAGED_OAUTH_SHOW_SCOPES",
+   "type": "String",
+   "default": "-",
+   "description": "Comma-separated list of managed OAuth credential types for which users can configure scope fields.",
+   "category": "credentials",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_MCP_BASE_URL",
+   "type": "String",
+   "default": "-",
+   "description": "Public base URL where MCP clients reach the instance-level MCP server, when it differs from the instance base URL. Useful for deployments that serve the MCP server on a dedicated hostname (for example, https://n8n-mcp.example.com in front of the same instance). When set, n8n advertises the MCP serve",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_MCP_SERVER_RATE_LIMIT",
+   "type": "Number",
+   "default": "100",
+   "description": "Maximum number of requests per IP, per 5 minutes, to the MCP server endpoint (/mcp-server/http).",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to enable the /metrics endpoint.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_API_ENDPOINTS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to expose metrics for API endpoints.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_API_METHOD_LABEL",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include a label for the HTTP method (GET, POST, ...) of API invocations.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_API_PATH_LABEL",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include a label for the path of API invocations.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_API_STATUS_CODE_LABEL",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include a label for the HTTP status code (200, 404, ...) of API invocations.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_CACHE_METRICS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include metrics (true) for cache hits and misses, or not include them (false).",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_CREDENTIAL_TYPE_LABEL",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include a label for the credential type on credential metrics.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_DEFAULT_METRICS",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to expose default system and node.js metrics.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_DNS_CACHE_METRICS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include metrics for the DNS cache (currently only used by SSRF protection).",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_MESSAGE_EVENT_BUS_METRICS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include metrics (true) for events, or not include them (false).",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_NODE_TYPE_LABEL",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include a label for the node type on node metrics.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_POLL_TRIGGER_METRICS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include metrics for trigger nodes that poll, such as poll duration, poll errors, overlapping polls, and cursor commits. Main instances only. For what each metric means, see Poll trigger metrics.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_QUEUE_METRICS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include metrics for jobs in scaling mode.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_SCHEDULER_METRICS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include metrics for the durable scheduler, such as queue depth, scheduling lag, dispatch throughput, retries, and dead-letters. Main instances only. For what each metric means, see Durable scheduler observability.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_SSRF_METRICS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include metrics for SSRF protection checks.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_SYSTEM_TASK_METRICS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include metrics for n8n's internal maintenance tasks, such as run duration, last success, skipped occurrences, and timer lag. Main instances only. For what each metric means, see System task observability.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_INCLUDE_WORKFLOW_ID_LABEL",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to include a label for the workflow ID on workflow metrics.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_PREFIX",
+   "type": "String",
+   "default": "n8n_",
+   "description": "Optional prefix for n8n specific metrics names.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_QUEUE_METRICS_INTERVAL",
+   "type": "Integer",
+   "default": "20",
+   "description": "How often (in seconds) to update queue metrics.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_METRICS_SCHEDULER_INTERVAL",
+   "type": "Integer",
+   "default": "20",
+   "description": "How often (in seconds) to refresh the queue-health gauges for the durable scheduler. See Durable scheduler observability.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_MFA_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to enable two-factor authentication (true) or disable (false). n8n ignores this if existing users have 2FA enabled.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL",
+   "type": "Number",
+   "default": "3",
+   "description": "Interval (in seconds) for leader check in multi-main setup.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_MULTI_MAIN_SETUP_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to enable multi-main setup for queue mode (license required).",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_MULTI_MAIN_SETUP_KEY_TTL",
+   "type": "Number",
+   "default": "10",
+   "description": "Time to live (in seconds) for leader key in multi-main setup.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OAUTH_JWE_JWKS_PER_MINUTE",
+   "type": "Number",
+   "default": "60",
+   "description": "Per-IP rate limit on the public JWKS endpoint (/rest/.well-known/jwks.json) used by JWE token decryption for OAuth 2.0 credentials.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OAUTH_SERVER_AUTHORIZE_RATE_LIMIT",
+   "type": "Number",
+   "default": "50",
+   "description": "Maximum number of requests per IP, per 5 minutes, to the OAuth server authorization endpoint (/oauth/authorize and /mcp-oauth/authorize).",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OAUTH_SERVER_REGISTER_RATE_LIMIT",
+   "type": "Number",
+   "default": "10",
+   "description": "Maximum number of requests per IP, per 5 minutes, to the OAuth server client registration endpoint (/oauth/register and /mcp-oauth/register).",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OAUTH_SERVER_REVOKE_RATE_LIMIT",
+   "type": "Number",
+   "default": "30",
+   "description": "Maximum number of requests per IP, per 5 minutes, to the OAuth server token revocation endpoint (/oauth/revoke and /mcp-oauth/revoke).",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OAUTH_SERVER_TOKEN_RATE_LIMIT",
+   "type": "Number",
+   "default": "20",
+   "description": "Maximum number of requests per IP, per 5 minutes, to the OAuth server token endpoint (/oauth/token and /mcp-oauth/token).",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_ONBOARDING_FLOW_DISABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to disable onboarding tips when creating a new workflow (true) or not (false).",
+   "category": "workflows",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to enable OpenTelemetry tracing. When set to false, n8n doesn't load the OpenTelemetry SDK.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_EXPORTER_OTLP_ENDPOINT",
+   "type": "String",
+   "default": "http://localhost:4318",
+   "description": "Base URL of the OTLP endpoint to export traces to. The value must be an http:// or https:// URL. If it isn't, n8n logs a warning and uses the default. For http/protobuf, n8n appends the value of N8N_OTEL_EXPORTER_OTLP_TRACING_PATH to this URL.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_EXPORTER_OTLP_HEADERS",
+   "type": "String",
+   "default": "-",
+   "description": "Comma-separated list of key=value pairs to send as HTTP headers with each OTLP request. Use this for authentication tokens or tenant headers. For example: authorization=Bearer <token>,x-tenant=acme. With the grpc protocol, n8n sends these as gRPC metadata and converts the keys to lowercase.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_EXPORTER_OTLP_PROTOCOL",
+   "type": "String",
+   "default": "http/protobuf",
+   "description": "OTLP transport for exporting traces. Valid values: http/protobuf and grpc. The name and values match the upstream OTEL_EXPORTER_OTLP_PROTOCOL specification. Refer to Choose the OTLP protocol for guidance.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_EXPORTER_OTLP_TRACING_PATH",
+   "type": "String",
+   "default": "/v1/traces",
+   "description": "Path appended to N8N_OTEL_EXPORTER_OTLP_ENDPOINT for exporting traces. n8n ignores this variable when N8N_OTEL_EXPORTER_OTLP_PROTOCOL is grpc, because gRPC endpoints take no URL path.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_EXPORTER_SERVICE_NAME",
+   "type": "String",
+   "default": "n8n",
+   "description": "Value of the service.name resource attribute on exported spans.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_STARTUP_CONNECTIVITY_TIMEOUT_MS",
+   "type": "Number",
+   "default": "2000",
+   "description": "Timeout (in milliseconds) for the startup connectivity check against the OTLP endpoint. n8n logs an error if the endpoint isn't reachable within this period.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_TRACES_CUSTOM_ATTRIBUTE_PREFIXES",
+   "type": "String",
+   "default": "-",
+   "description": "JSON object that changes or removes the prefix on custom span attribute keys, for example {\"project\":\"\",\"node\":\"\"}. Refer to Change the attribute prefixes.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_TRACES_EMIT_NODE_START_SPAN",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to send a 0 ms node.execute.started span when a node execution starts. Needs N8N_OTEL_TRACES_INCLUDE_NODE_SPANS set to true. Refer to Start spans.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_TRACES_EMIT_WORKFLOW_START_SPAN",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to send a 0 ms workflow.execute.started span when a workflow execution starts. Refer to Start spans.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_TRACES_INCLUDE_NODE_SPANS",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to emit a node.execute span for each node execution. Set to false to export workflow-level spans only.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_TRACES_INJECT_OUTBOUND",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether n8n adds tracing headers to outbound HTTP requests made by nodes that use n8n's HTTP helpers. When true, n8n sends traceparent, tracestate, and baggage (from n8n 2.47.0). Use OTEL_PROPAGATORS to narrow the set. Refer to Outbound trace headers.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_TRACES_PRODUCTION_ONLY",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to export traces for production executions only. Set to false to export traces for all workflow executions.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_OTEL_TRACES_SAMPLE_RATE",
+   "type": "Number",
+   "default": "1.0",
+   "description": "Fraction of traces to export, between 0 and 1. n8n uses a trace ID ratio sampler, so all spans in a trace are either sampled or dropped together.",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PATH",
+   "type": "String",
+   "default": "/",
+   "description": "The path n8n deploys to. Combining N8N_PATH with reverse proxies can cause folder navigation issues. Use a subdomain (for example, n8n.example.com) or use N8N_PATH without reverse proxy.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PAYLOAD_SIZE_MAX",
+   "type": "Number",
+   "default": "16",
+   "description": "The maximum payload size in MiB. The default is 16 MiB, but this can be increased by adjusting the variable to a higher value. The n8n instance needs to be restarted to apply the new setting. Note: Increasing the payload size requires more memory and CPU resources and may impact performance. Ensure ",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PERSONALIZATION_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to ask users personalisation questions and then customise n8n accordingly.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_POLLER_DURABLE_CURSORS_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether n8n stores a poll trigger node's cursor in a dedicated database table and commits it in the same transaction as the execution the poll produced, so a crash mid-poll can't drop or duplicate data. Available from n8n 2.36.0. From n8n 2.37.0, requires N8N_SCHEDULER_ENABLED, N8N_SCHEDULER_POLL_TR",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PORT",
+   "type": "Number",
+   "default": "5678",
+   "description": "The HTTP port n8n runs on.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_POSTMESSAGE_ALLOWED_ORIGINS",
+   "type": "String",
+   "default": "",
+   "description": "Origins allowed to exchange postMessage commands with the editor when it's embedded in another page. Only relevant when embedding the editor is possible, for example when running with N8N_PREVIEW_MODE=true. Provide multiple origins as a comma-separated list, for example https://n8n.io,https://app.ex",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PREVIEW_MODE",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true to run in preview mode.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PROTOCOL",
+   "type": "Enum string: http, https",
+   "default": "http",
+   "description": "The protocol used to reach n8n.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PROXY_HOPS",
+   "type": "Number",
+   "default": "0",
+   "description": "Number of reverse-proxies n8n is running behind.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_DISABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to disable the public API (true) or not (false).",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_ENDPOINT",
+   "type": "String",
+   "default": "api",
+   "description": "Path for the public API endpoints.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_RATE_LIMIT_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether n8n limits how many public API requests each API key can make. A request over a limit gets a 429 response. n8n counts only requests that use an API key. Each N8N_PUBLIC_API_RATE_LIMIT_* variable you set overrides its own field in Settings > Policies, and you can't change that field there. Re",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_RATE_LIMIT_ENDPOINT_READ_LIMIT",
+   "type": "Number",
+   "default": "1000",
+   "description": "Maximum number of read requests (GET) that one API key can make to each public API endpoint in each window. An endpoint is a method and a path, so GET /workflows/{id} is one endpoint for every workflow ID. Set to 0 for no limit.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_RATE_LIMIT_ENDPOINT_READ_WINDOW_SECONDS",
+   "type": "Number",
+   "default": "60",
+   "description": "Length of the window for N8N_PUBLIC_API_RATE_LIMIT_ENDPOINT_READ_LIMIT, in seconds. The count starts again when the window ends.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_RATE_LIMIT_ENDPOINT_WRITE_LIMIT",
+   "type": "Number",
+   "default": "500",
+   "description": "Maximum number of write requests (POST, PUT, PATCH, and DELETE) that one API key can make to each public API endpoint in each window. An endpoint is a method and a path, so DELETE /workflows/{id} is one endpoint for every workflow ID. Set to 0 for no limit.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_RATE_LIMIT_ENDPOINT_WRITE_WINDOW_SECONDS",
+   "type": "Number",
+   "default": "60",
+   "description": "Length of the window for N8N_PUBLIC_API_RATE_LIMIT_ENDPOINT_WRITE_LIMIT, in seconds. The count starts again when the window ends.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_RATE_LIMIT_GLOBAL_READ_LIMIT",
+   "type": "Number",
+   "default": "1200",
+   "description": "Maximum number of read requests (GET) that one API key can make to all public API endpoints together in each window. Set to 0 for no limit.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_RATE_LIMIT_GLOBAL_READ_WINDOW_SECONDS",
+   "type": "Number",
+   "default": "60",
+   "description": "Length of the window for N8N_PUBLIC_API_RATE_LIMIT_GLOBAL_READ_LIMIT, in seconds. The count starts again when the window ends.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_RATE_LIMIT_GLOBAL_WRITE_LIMIT",
+   "type": "Number",
+   "default": "600",
+   "description": "Maximum number of write requests (POST, PUT, PATCH, and DELETE) that one API key can make to all public API endpoints together in each window. Set to 0 for no limit.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_RATE_LIMIT_GLOBAL_WRITE_WINDOW_SECONDS",
+   "type": "Number",
+   "default": "60",
+   "description": "Length of the window for N8N_PUBLIC_API_RATE_LIMIT_GLOBAL_WRITE_LIMIT, in seconds. The count starts again when the window ends.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUBLIC_API_SWAGGERUI_DISABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether the Swagger UI (API playground) is disabled (true) or not (false).",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PUSH_BACKEND",
+   "type": "String",
+   "default": "websocket",
+   "description": "Choose whether the n8n backend uses server-sent events (sse) or WebSockets (websocket) to send changes to the UI.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_PYTHON_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to enable Python execution on the Code node.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_REDIS_KEY_PREFIX",
+   "type": "String",
+   "default": "n8n",
+   "description": "Prefix for Redis keys and pub/sub channels outside the job queue, such as the multi-main leader key, messages between main and worker instances, the cache, and locks. If two or more n8n deployments share one Redis, give each deployment a different value. Use the same value on every main and worker o",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_REINSTALL_MISSING_PACKAGES",
+   "type": "Boolean",
+   "default": "false",
+   "description": "If set to true, n8n will automatically attempt to reinstall any missing packages.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RESTRICT_FILE_ACCESS_TO",
+   "type": "String",
+   "default": "",
+   "description": "Limits access to files in these directories. Provide multiple files as a semicolon-separated list (\";\").",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_ALLOW_PROTOTYPE_MUTATION",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to allow prototype mutation for external libraries. Set to true to allow modules that rely on runtime prototype mutation (for example, puppeteer) at the cost of relaxing security.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_ALLOW_TRANSITIVE_IMPORTS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether imports performed by an allowlisted package's own code skip the import allowlist (both N8N_RUNNERS_EXTERNAL_ALLOW and N8N_RUNNERS_STDLIB_ALLOW). Set to true to let an allowlisted package load whatever it imports (its transitive dependencies and stdlib) without listing each module. This helps",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_AUTH_TOKEN",
+   "type": "String",
+   "default": "Random string",
+   "description": "Shared secret used by a task runner to authenticate to n8n. Required when using external mode.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_AUTH_TOKEN",
+   "type": "String",
+   "default": "-",
+   "description": "Shared secret used to authenticate to n8n.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT",
+   "type": "Number",
+   "default": "15",
+   "description": "The number of seconds to wait before shutting down an idle runner.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT",
+   "type": "Number",
+   "default": "15",
+   "description": "The number of seconds to wait before shutting down an idle runner.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_BROKER_LISTEN_ADDRESS",
+   "type": "String",
+   "default": "127.0.0.1",
+   "description": "Address the task broker listens on.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_BROKER_PORT",
+   "type": "Number",
+   "default": "5679",
+   "description": "Port the task broker listens on for task runner connections.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_BUILTINS_DENY",
+   "type": "String",
+   "default": "eval,exec,compile,open,input,breakpoint,getattr,object,type,vars,setattr,delattr,hasattr,dir,memoryview,__build_class__,globals,locals",
+   "description": "Python built-ins that you can't use in the Code node. Set to an empty string to allow all built-ins.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_EXTERNAL_ALLOW",
+   "type": "String",
+   "default": "-",
+   "description": "Third-party Python modules that are allowed to be used in the Code node, including their submodules. Use * to allow all external modules. n8n disables all third-party Python modules by default. Third-party Python modules must be included in the n8nio/runners image. In external mode, set this in the ",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_GRANT_TOKEN",
+   "type": "String",
+   "default": "Random string",
+   "description": "Token the runner uses to authenticate with the task broker. This is automatically provided by the launcher.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_HEARTBEAT_INTERVAL",
+   "type": "Number",
+   "default": "30",
+   "description": "The interval, in seconds, at which the runner must send a heartbeat to the broker. If the runner doesn't send a heartbeat in time, the task stops and the runner restarts. This value must be greater than 0.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_ID",
+   "type": "String",
+   "default": "Random string",
+   "description": "ID the runner identifies itself with to the task broker. In internal mode, n8n sets it for each runner it launches. In external mode, leave it unset unless you need stable IDs in the broker logs: every runner needs a unique value, and two runners sharing one keep evicting each other. Set it per runn",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_INSECURE_MODE",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to disable all security measures in the task runner, for compatibility with modules that rely on insecure JS features. Discouraged for production use.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_LAUNCHER_HEALTH_CHECK_PORT",
+   "type": "Number",
+   "default": "5680",
+   "description": "Port for the launcher's health check server.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_LAUNCHER_HEALTH_CHECK_PORT",
+   "type": "Number",
+   "default": "5680",
+   "description": "Port for the launcher's health check server.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_LAUNCHER_LOG_LEVEL",
+   "type": "Enum string: debug, info, warn, error",
+   "default": "info",
+   "description": "Which log messages to show.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_MAX_CONCURRENCY",
+   "type": "Number",
+   "default": "5",
+   "description": "The number of concurrent tasks a task runner can execute at a time.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_MAX_CONCURRENCY",
+   "type": "Number",
+   "default": "5",
+   "description": "The number of concurrent tasks a task runner can execute at a time.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_MAX_CONCURRENCY",
+   "type": "Number",
+   "default": "5",
+   "description": "The number of concurrent tasks a task runner can execute at a time.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_MAX_OLD_SPACE_SIZE",
+   "type": "String",
+   "default": "",
+   "description": "The --max-old-space-size option to use for a task runner (in MB). By default, Node.js will set this based on available memory.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_MAX_OLD_SPACE_SIZE",
+   "type": "String",
+   "default": "",
+   "description": "The --max-old-space-size option to use for a task runner (in MB). By default, Node.js will set this based on available memory.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_MAX_PAYLOAD",
+   "type": "Number",
+   "default": "1 073 741 824",
+   "description": "Maximum payload size in bytes for communication between a task broker and a task runner.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_MAX_PAYLOAD",
+   "type": "Number",
+   "default": "1 073 741 824",
+   "description": "Maximum payload size in bytes for communication between a task broker and a task runner.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_MAX_PAYLOAD",
+   "type": "Number",
+   "default": "1 073 741 824",
+   "description": "Maximum payload size in bytes for communication between a task broker and a task runner.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_MODE",
+   "type": "Enum string: internal (deprecated), external",
+   "default": "internal",
+   "description": "How to launch and run the task runner. internal means n8n will launch a task runner as child process. Deprecated: internal mode will be removed in a future version. external means an external orchestrator will launch the task runner. See external mode.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_STDLIB_ALLOW",
+   "type": "String",
+   "default": "-",
+   "description": "Python standard library modules that you can use in the Code node, including their submodules. Use * to allow all stdlib modules. n8n disables all Python standard library imports by default. In external mode, set this in the runners config file (/etc/n8n-task-runners.json) as an env-override, not as",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_TASK_BROKER_URI",
+   "type": "String",
+   "default": "http://127.0.0.1:5679",
+   "description": "The URI of the task broker server (n8n instance).",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_TASK_BROKER_URI",
+   "type": "String",
+   "default": "http://127.0.0.1:5679",
+   "description": "The URI of the task broker server (n8n instance).",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_TASK_REQUEST_TIMEOUT",
+   "type": "Number",
+   "default": "60",
+   "description": "How long (in seconds) a task request can wait for a runner to become available before timing out. This prevents workflows from hanging indefinitely when no runners are available. Must be greater than 0.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_RUNNERS_TASK_TIMEOUT",
+   "type": "Number",
+   "default": "300",
+   "description": "The maximum time, in seconds, a task can run before the runner stops it and restarts. This value must be greater than 0.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SAMESITE_COOKIE",
+   "type": "Enum string: strict, lax, none",
+   "default": "lax",
+   "description": "Controls cross-site cookie behavior (learn more):<ul><li>strict: Sent only for first-party requests.</li><li>lax (default): Sent with top-level navigation requests.</li><li>none: Sent in all contexts (requires HTTPS).</li></ul>",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_CLAIM_BATCH_SIZE",
+   "type": "Number",
+   "default": "100",
+   "description": "The most runs a single claim takes from the queue in one pass. Larger batches drain a backlog faster but hold more work on one instance per tick. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to use the durable scheduler. Defaults to true from n8n 2.45.0 (false in earlier versions). Set to false to use the in-memory scheduler. Requires N8N_USE_WORKFLOW_PUBLICATION_SERVICE, also on by default, to take over Schedule Trigger nodes. Deprecated from n8n 2.45.0: a future version will r",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_EXECUTOR_INTERVAL",
+   "type": "Number",
+   "default": "5",
+   "description": "How often, in seconds, the scheduler checks for recorded runs coming due. Each check claims the runs due within the next interval and holds them on a precise timer, so a run starts at its scheduled instant rather than on the polling cadence. The interval caps how long the scheduler takes to pick up ",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_EXECUTOR_TIMEOUT",
+   "type": "Number",
+   "default": "60",
+   "description": "How long, in seconds, a single check for due runs may run before it's abandoned and retried on the next interval. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_FAILED_RETENTION",
+   "type": "Number",
+   "default": "604800",
+   "description": "How long, in seconds, the scheduler keeps runs that went wrong (a failure, or a missed run) before deleting them. Defaults to seven days. Keep it longer than N8N_SCHEDULER_RETENTION so there's time to debug; the scheduler warns if you set it lower. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_JITTER_RATIO",
+   "type": "Number",
+   "default": "0.1",
+   "description": "A small random variation added to the timing of each periodic pass, as a fraction of the interval. With 0.1, a pass set to run every 10 seconds actually runs every 9 to 11 seconds. This spreads out database queries from instances started at the same time, such as during a rolling deploy. Set it to 0",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_LEASE_DURATION",
+   "type": "Number",
+   "default": "60",
+   "description": "How long, in seconds, an instance holds an exclusive claim on a run it picked up, so no other instance starts the same one. If the instance stops without finishing, the claim expires after this long and another instance may take over. Keep it comfortably above the time a run needs to get going: too ",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_MATERIALIZATION_INTERVAL",
+   "type": "Number",
+   "default": "10",
+   "description": "How often, in seconds, the scheduler scans active schedules to record the runs falling within the window. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_MATERIALIZATION_TIMEOUT",
+   "type": "Number",
+   "default": "60",
+   "description": "How long, in seconds, a single scan may run before it's abandoned and retried on the next interval. Guards against a scan stuck on a slow database. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_MATERIALIZATION_WINDOW",
+   "type": "Number",
+   "default": "60",
+   "description": "How far into the future, in seconds, the scheduler records upcoming runs. A larger window commits more runs in advance (more resilient to downtime, slightly more storage churn). Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_MAX_ATTEMPTS",
+   "type": "Number",
+   "default": "5",
+   "description": "How many times a scheduled run may be reclaimed (for example after a crash) or retried on error before n8n gives up on it and dead-letters it. Raise it on infrastructure prone to instance restarts or transient errors; lower it to give up and move on sooner. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_MAX_CONCURRENT_PASSES",
+   "type": "Number",
+   "default": "10",
+   "description": "The most background passes of the same kind that can run at once on one instance, when the database supports overlapping passes (PostgreSQL). If a pass comes due while the limit is already in use, n8n skips it. On SQLite, passes never overlap, so this setting has no effect. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_MISFIRE_GRACE",
+   "type": "Number",
+   "default": "60",
+   "description": "How late, in seconds, a run may start and still count as on time. A run later than this counts as missed, and its trigger's misfire policy decides what happens to it and to any backlog behind it. This is the default a schedule inherits; from n8n 2.36.0, a Schedule Trigger node can set its own grace ",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_OWNER_QUARANTINE_GRACE",
+   "type": "Number",
+   "default": "86400",
+   "description": "How long, in seconds, the sweep keeps a stopped schedule before deleting it. Defaults to one day. The schedule stops firing as soon as the sweep finds it, so this only delays the delete. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_OWNER_RECONCILIATION_BATCH_SIZE",
+   "type": "Number",
+   "default": "500",
+   "description": "How many owners the sweep checks per database query. Larger batches finish a sweep in fewer queries; smaller ones keep each query light. Must be between 1 and 1000.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_OWNER_RECONCILIATION_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether the scheduler periodically checks that every schedule's owner still exists and retires the schedules whose owner is missing. Turning it off leaves those schedules in place.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_OWNER_RECONCILIATION_INTERVAL",
+   "type": "Number",
+   "default": "900",
+   "description": "How often, in seconds, the sweep runs. Defaults to 15 minutes. It's a safety net rather than the usual cleanup path, so a long interval is fine. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_OWNER_RECONCILIATION_TIMEOUT",
+   "type": "Number",
+   "default": "300",
+   "description": "How long, in seconds, a single sweep may run before it's abandoned and retried on the next interval. Defaults to five minutes. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_OWNER_SETTLE_PERIOD",
+   "type": "Number",
+   "default": "300",
+   "description": "How old, in seconds, a schedule must be before the sweep considers it. Defaults to five minutes. n8n can write a schedule a moment before its owner, so this stops the sweep from mistaking a brand-new schedule for an abandoned one. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_POLL_TIMEOUT",
+   "type": "Number",
+   "default": "45",
+   "description": "How long, in seconds, a single poll may run before n8n abandons it. An abandoned poll records nothing: the cursor stays put and the next poll covers the same ground, so no data goes missing. A poll that keeps timing out counts as failing, so n8n re-polls it at a widening interval. Keep the timeout b",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_POLL_TRIGGERS_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether the durable scheduler also takes over polling triggers (trigger nodes with a Poll Times parameter). Requires N8N_SCHEDULER_ENABLED and N8N_USE_WORKFLOW_PUBLICATION_SERVICE. Available from n8n 2.33.0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_REAPER_BATCH_SIZE",
+   "type": "Number",
+   "default": "100",
+   "description": "The most expired-claim runs a single reaper pass reclaims. Larger batches recover a backlog faster but hold more work on one instance per pass. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_REAPER_INTERVAL",
+   "type": "Number",
+   "default": "30",
+   "description": "How often, in seconds, the scheduler looks for runs an instance claimed but never finished (for example after a crash or shutdown) and makes them available again. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_REAPER_TIMEOUT",
+   "type": "Number",
+   "default": "60",
+   "description": "How long, in seconds, a single recovery pass may run before it's abandoned and retried on the next interval. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_RETENTION",
+   "type": "Number",
+   "default": "86400",
+   "description": "How long, in seconds, the scheduler keeps runs that finished cleanly (a success or a cancellation) before deleting them. Defaults to one day. Raise it to keep more history, lower it to reclaim database space sooner. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_RETENTION_INTERVAL",
+   "type": "Number",
+   "default": "3600",
+   "description": "How often, in seconds, the scheduler deletes finished runs older than the retention windows. Defaults to one hour. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_RETENTION_TIMEOUT",
+   "type": "Number",
+   "default": "300",
+   "description": "How long, in seconds, a single cleanup pass may run before it's abandoned and retried on the next interval. Defaults to five minutes. Must be greater than 0.",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_SYSTEM_TASKS_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether the durable scheduler runs n8n's internal maintenance jobs instead of the leader main's in-process timers. Requires N8N_SCHEDULER_ENABLED. Give every main the same value for both variables, and run the same n8n version on every main. A main with either flag off removes the durable schedules ",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SCHEDULER_TRIGGER_NODE_MODE",
+   "type": "Enum (legacy, new)",
+   "default": "new",
+   "description": "How a Schedule Trigger node's \"every N seconds\" and \"every N minutes\" schedules fire. new spaces runs a steady N apart from workflow publication. It's the default from n8n 2.45.0. legacy keeps clock-aligned timing matching the in-memory scheduler and is the default in earlier versions. Only affects ",
+   "category": "scheduler",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SECURE_COOKIE",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Ensures that cookies are only sent over HTTPS, enhancing security.",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SECURITY_AUDIT_DAYS_ABANDONED_WORKFLOW",
+   "type": "Number",
+   "default": "90",
+   "description": "Number of days to consider a workflow abandoned if it's not executed.",
+   "category": "security",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SMTP_HOST",
+   "type": "String",
+   "default": "-",
+   "description": "_your_SMTP_server_name_",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SMTP_OAUTH_PRIVATE_KEY",
+   "type": "String",
+   "default": "-",
+   "description": "If using 2LO with a service account this is your private key",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SMTP_OAUTH_SERVICE_CLIENT",
+   "type": "String",
+   "default": "-",
+   "description": "If using 2LO with a service account this is your client ID",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SMTP_PASS",
+   "type": "String",
+   "default": "-",
+   "description": "_your_SMTP_password_",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SMTP_PORT",
+   "type": "Number",
+   "default": "-",
+   "description": "_your_SMTP_server_port_",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SMTP_SENDER",
+   "type": "String",
+   "default": "-",
+   "description": "Sender email address. You can optionally include the sender name. Example with name: _n8n <contact@n8n.com>_",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SMTP_SSL",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to use SSL for SMTP (true) or not (false).",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SMTP_STARTTLS",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Whether to use STARTTLS for SMTP (true) or not (false).",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SMTP_USER",
+   "type": "String",
+   "default": "-",
+   "description": "_your_SMTP_username_",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SOURCECONTROL_DEFAULT_SSH_KEY_TYPE",
+   "type": "String",
+   "default": "ed25519",
+   "description": "Set to rsa to make RSA the default SSH key type for Source control setup.",
+   "category": "source-control",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SSL_CERT",
+   "type": "String",
+   "default": "-",
+   "description": "The SSL certificate for HTTPS protocol.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SSL_KEY",
+   "type": "String",
+   "default": "-",
+   "description": "The SSL key for HTTPS protocol.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SSRF_ALLOWED_HOSTNAMES",
+   "type": "String",
+   "default": "-",
+   "description": "Comma-separated hostnames to allow. Supports a leading *. wildcard: *.internal.example.com matches any subdomain, including nested ones, but not the bare domain. Matching is case-insensitive.",
+   "category": "ssrf-protection",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SSRF_ALLOWED_IP_RANGES",
+   "type": "String",
+   "default": "-",
+   "description": "Comma-separated CIDR ranges to allow. Takes precedence over the block list, so use it to reach a known internal host.",
+   "category": "ssrf-protection",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SSRF_BLOCKED_HOSTNAMES",
+   "type": "String",
+   "default": "-",
+   "description": "Comma-separated hostnames to deny by name, checked before DNS resolution. Uses the same leading *. wildcard and case-insensitive matching as N8N_SSRF_ALLOWED_HOSTNAMES. An allowed hostname always overrides a blocked one.",
+   "category": "ssrf-protection",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SSRF_BLOCKED_IP_RANGES",
+   "type": "String",
+   "default": "default",
+   "description": "Comma-separated CIDR ranges to block. The keyword default (case-insensitive) expands to n8n's built-in set. Append your own ranges: default,100.64.0.0/10.",
+   "category": "ssrf-protection",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SSRF_DNS_CACHE_MAX_SIZE",
+   "type": "Number",
+   "default": "1048576",
+   "description": "Maximum size of the internal DNS-resolution cache, in bytes (1 MB by default). n8n evicts the least recently used entries when the cache is full.",
+   "category": "ssrf-protection",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_SSRF_PROTECTION_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Turns on SSRF protection for requests to user-controllable targets.",
+   "category": "ssrf-protection",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_STORAGE_PATH",
+   "type": "String",
+   "default": "N8N_USER_FOLDER/storage",
+   "description": "Base path for filesystem storage. When N8N_EXECUTION_DATA_STORAGE_MODE is filesystem, n8n stores execution data here. n8n also uses this path for filesystem binary data.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_TEMPLATES_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "Enables workflow templates[^1] (true) or disable (false).",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_TEMPLATES_HOST",
+   "type": "String",
+   "default": "https://api.n8n.io",
+   "description": "Change this if creating your own workflow template library. Note that to use your own workflow templates library, your API must provide the same endpoints and response structure as n8n's. Refer to Workflow templates for more information.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_TUNNEL_SUBDOMAIN",
+   "type": "String",
+   "default": "-",
+   "description": "Specifies the subdomain for the n8n tunnel. If not set, n8n generates a random subdomain.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_UM_EMAIL_TEMPLATES_CREDENTIALS_SHARED",
+   "type": "String",
+   "default": "-",
+   "description": "Overrides the default HTML template for notifying users that a credential was shared. Provide the full path to the template.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_UM_EMAIL_TEMPLATES_INVITE",
+   "type": "String",
+   "default": "-",
+   "description": "Full path to your HTML email template. This overrides the default template for invite emails.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_UM_EMAIL_TEMPLATES_PROJECT_SHARED",
+   "type": "String",
+   "default": "-",
+   "description": "Overrides the default HTML template for notifying users that a project was shared. Provide the full path to the template.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_UM_EMAIL_TEMPLATES_PWRESET",
+   "type": "String",
+   "default": "-",
+   "description": "Full path to your HTML email template. This overrides the default template for password reset emails.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_UM_EMAIL_TEMPLATES_WORKFLOW_SHARED",
+   "type": "String",
+   "default": "-",
+   "description": "Overrides the default HTML template for notifying users that a workflow was shared. Provide the full path to the template.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_UNVERIFIED_PACKAGES_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "When N8N_COMMUNITY_PACKAGES_ENABLED is true, this variable controls whether to enable the installation and use of unverified community nodes from an NPM registry (true) or not (false).",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_USER_FOLDER",
+   "type": "String",
+   "default": "user-folder",
+   "description": "Provide the path where n8n will create the .n8n folder. This directory stores user-specific data, such as database file and encryption key.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_USER_MANAGEMENT_JWT_DURATION_HOURS",
+   "type": "Number",
+   "default": "168",
+   "description": "Set an expiration date for the JWTs in hours.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_USER_MANAGEMENT_JWT_REFRESH_TIMEOUT_HOURS",
+   "type": "Number",
+   "default": "0",
+   "description": "How many hours before the JWT expires to automatically refresh it. 0 means 25% of N8N_USER_MANAGEMENT_JWT_DURATION_HOURS. -1 means it will never refresh, which forces users to log in again after the period defined in N8N_USER_MANAGEMENT_JWT_DURATION_HOURS.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_USER_MANAGEMENT_JWT_SECRET",
+   "type": "String",
+   "default": "-",
+   "description": "Set a specific JWT secret. By default, n8n generates one on start.",
+   "category": "user-management-and-2fa",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_VERIFIED_PACKAGES_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "When N8N_COMMUNITY_PACKAGES_ENABLED is true, this variable controls whether to show verified community nodes in the nodes panel for installation and use (true) or to hide them (false).",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_VERSION_NOTIFICATIONS_ENABLED",
+   "type": "Boolean",
+   "default": "true",
+   "description": "When enabled, n8n sends notifications of new versions and security updates.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_VERSION_NOTIFICATIONS_ENDPOINT",
+   "type": "String",
+   "default": "https://api.n8n.io/versions/",
+   "description": "The endpoint to retrieve where version information.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_VERSION_NOTIFICATIONS_INFO_URL",
+   "type": "String",
+   "default": "https://docs.n8n.io/getting-started/installation/updating.html",
+   "description": "The URL displayed in the New Versions panel for more information.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_WEBHOOK_RESPONSE_RELAY_OFFLOAD_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether a worker stores a response body above N8N_WEBHOOK_RESPONSE_RELAY_SIZE_MAX in binary data storage, so the main instance can stream it to the client, instead of failing the node. Needs a N8N_DEFAULT_BINARY_DATA_MODE that stores (filesystem, database, s3, or azure), and storage every instance c",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_WEBHOOK_RESPONSE_RELAY_SIZE_MAX",
+   "type": "Number",
+   "default": "64",
+   "description": "Maximum size (in MiB) of a response a worker sends back to the main instance inside a queue message. Redis holds several copies of a response in flight, so budget about 1.5 times this value in Redis memory per response in flight. The same limit applies to a tool result an MCP Trigger workflow return",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_WEBHOOK_URL",
+   "type": "String",
+   "default": "-",
+   "description": "Sets the base URL for both test and production webhooks when running n8n behind a reverse proxy. Use this instead of the N8N_ENDPOINT_* variables above, which set only the endpoint _path_, not a URL. See Configure webhook URLs with reverse proxy.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_WORKFLOW_ACTIVATION_BATCH_SIZE",
+   "type": "Number",
+   "default": "1",
+   "description": "How many workflows to publish simultaneously during startup.",
+   "category": "workflows",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_WORKFLOW_AUTODEACTIVATION_ENABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether workflows are automatically unpublished after repeated crashed executions.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_WORKFLOW_AUTODEACTIVATION_MAX_LAST_EXECUTIONS",
+   "type": "Number",
+   "default": "3",
+   "description": "Number of crashed executions before unpublishing a workflow.",
+   "category": "executions",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_WORKFLOW_CALLER_POLICY_DEFAULT_OPTION",
+   "type": "String",
+   "default": "workflowsFromSameOwner",
+   "description": "Which workflows can call a workflow. Options are: any, none, workflowsFromAList, workflowsFromSameOwner. This feature requires Workflow sharing.",
+   "category": "workflows",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_WORKFLOW_HISTORY_PRUNE_TIME",
+   "type": "Number",
+   "default": "-1",
+   "description": "How long to keep workflow history versions before automatically deleting them (in hours). Set to -1 to keep all versions indefinitely.",
+   "category": "workflow-history",
+   "doc_url": ">-"
+  },
+  {
+   "name": "N8N_WORKFLOW_TAGS_DISABLED",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to disable workflow tags (true) or enable tags (false).",
+   "category": "workflows",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NODES_ERROR_TRIGGER_TYPE",
+   "type": "String",
+   "default": "n8n-nodes-base.errorTrigger",
+   "description": "Specify which node type to use as Error Trigger.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NODES_EXCLUDE",
+   "type": "Array of strings",
+   "default": "[\\\"n8n-nodes-base.executeCommand\\\", \\\"n8n-nodes-base.localFileTrigger\\\"]",
+   "description": "Specify which nodes not to load. For example, to block nodes that can be a security risk if users aren't trustworthy: NODES_EXCLUDE: \"[\\\"n8n-nodes-base.executeCommand\\\", \\\"@n8n/n8n-nodes-langchain.lmChatDeepSeek\\\"]\". To enable all nodes, specify NODES_EXCLUDE: \"[]\".",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NODES_INCLUDE",
+   "type": "Array of strings",
+   "default": "-",
+   "description": "Specify which nodes to load.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NODES_MERGE_SQL_SANDBOX_MEMORY_LIMIT_MB",
+   "type": "Number",
+   "default": "64",
+   "description": "Memory limit in MB for the Merge node's SQL sandbox. Increase this if Combine by SQL fails with large datasets and your instance has enough memory available.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NODE_FUNCTION_ALLOW_BUILTIN",
+   "type": "String",
+   "default": "-",
+   "description": "Permit users to import specific built-in modules in the Code node. Use * to allow all. n8n disables importing modules by default.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NODE_FUNCTION_ALLOW_BUILTIN",
+   "type": "String",
+   "default": "-",
+   "description": "Permit users to import specific built-in modules in the Code node. Use * to allow all. n8n disables importing modules by default. In external mode, set this in the runners config file (/etc/n8n-task-runners.json) as an env-override, not as a container environment variable.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NODE_FUNCTION_ALLOW_EXTERNAL",
+   "type": "String",
+   "default": "-",
+   "description": "Permit users to import specific external modules (from n8n/node_modules) in the Code node. n8n disables importing modules by default.",
+   "category": "nodes",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NODE_FUNCTION_ALLOW_EXTERNAL",
+   "type": "String",
+   "default": "-",
+   "description": "Permit users to import specific external modules (from n8n/node_modules) in the Code node. n8n disables importing modules by default. In external mode, set this in the runners config file (/etc/n8n-task-runners.json) as an env-override, not as a container environment variable.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NODE_OPTIONS",
+   "type": "String",
+   "default": "-",
+   "description": "Options for Node.js.",
+   "category": "task-runners",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NO_COLOR",
+   "type": "any",
+   "default": "undefined",
+   "description": "Set to any value to output logs without ANSI colors. For more information, see the no-color.org website.",
+   "category": "logs",
+   "doc_url": ">-"
+  },
+  {
+   "name": "NO_PROXY",
+   "type": "String",
+   "default": "-",
+   "description": "A comma-separated list of hostnames or URLs that should bypass the proxy. When using HTTP_PROXY, HTTPS_PROXY, or ALL_PROXY, n8n will connect directly to the URLs or hostnames defined here instead of using the proxy.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Set to true if you want manual executions to run on the worker rather than on main.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "OTEL_PROPAGATORS",
+   "type": "String",
+   "default": "tracecontext,baggage",
+   "description": "Comma-separated list naming which headers n8n writes while N8N_OTEL_TRACES_INJECT_OUTBOUND is true. Valid names: tracecontext (sends traceparent and tracestate), baggage, and none. Set it to tracecontext to stop n8n forwarding the caller's baggage entries downstream. n8n reads it once at startup, so",
+   "category": "opentelemetry",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_PREFIX",
+   "type": "String",
+   "default": "-",
+   "description": "Prefix to use for all queue keys.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_REDIS_CLUSTER_NODES",
+   "type": "String",
+   "default": "-",
+   "description": "Expects a comma-separated list of Redis Cluster nodes in the format host:port, for the Redis client to initially connect to. If running in queue mode (EXECUTIONS_MODE = queue), setting this variable will create a Redis Cluster client instead of a Redis client, and n8n will ignore QUEUE_BULL_REDIS_HO",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_REDIS_DB",
+   "type": "Number",
+   "default": "0",
+   "description": "The Redis database used.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_REDIS_DUALSTACK",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Enable dual-stack support (IPv4 and IPv6) on Redis connections.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_REDIS_HOST",
+   "type": "String",
+   "default": "localhost",
+   "description": "The Redis host.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_REDIS_PASSWORD",
+   "type": "String",
+   "default": "-",
+   "description": "The Redis password.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_REDIS_PORT",
+   "type": "Number",
+   "default": "6379",
+   "description": "The Redis port used.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD",
+   "type": "Number",
+   "default": "10000",
+   "description": "The Redis timeout threshold (in ms).",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_REDIS_TLS",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Enable TLS on Redis connections.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_BULL_REDIS_USERNAME",
+   "type": "String",
+   "default": "-",
+   "description": "The Redis username (needs Redis version 6 or above). Don't define it for Redis < 6 compatibility",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_HEALTH_CHECK_ACTIVE",
+   "type": "Boolean",
+   "default": "false",
+   "description": "Whether to enable health checks (true) or disable (false).",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_HEALTH_CHECK_PORT",
+   "type": "Number",
+   "default": "5678",
+   "description": "The port to serve health checks on. If you experience a port conflict error when starting a worker server using its default port, change this.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_WORKER_LOCK_DURATION",
+   "type": "Number",
+   "default": "60000",
+   "description": "How long (in ms) is the lease period for a worker to work on a message.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_WORKER_LOCK_RENEW_TIME",
+   "type": "Number",
+   "default": "10000",
+   "description": "How frequently (in ms) should a worker renew the lease time.",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "QUEUE_WORKER_STALLED_INTERVAL",
+   "type": "Number",
+   "default": "30000",
+   "description": "How often should a worker check for stalled jobs (use 0 for never).",
+   "category": "queue-mode",
+   "doc_url": ">-"
+  },
+  {
+   "name": "VUE_APP_URL_BASE_API",
+   "type": "String",
+   "default": "http://localhost:5678/",
+   "description": "Used when building the n8n-editor-ui package manually to set how the frontend can reach the backend API. Refer to Configure the Base URL.",
+   "category": "deployment",
+   "doc_url": ">-"
+  },
+  {
+   "name": "WEBHOOK_URL",
+   "type": "String",
+   "default": "-",
+   "description": "Deprecated from n8n 2.35.0; alias of N8N_WEBHOOK_URL. Still works, but n8n logs a deprecation warning on startup.",
+   "category": "endpoints",
+   "doc_url": ">-"
+  },
+  {
+   "name": "WORKFLOWS_DEFAULT_NAME",
+   "type": "String",
+   "default": "My workflow",
+   "description": "The default name used for new workflows.",
+   "category": "workflows",
+   "doc_url": ">-"
+  }
+ ]
+}

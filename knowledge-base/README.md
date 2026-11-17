@@ -62,9 +62,13 @@ jq '.nodes["n8n-nodes-base.googleSheets"]' indexes/resources-operations.json
 | `indexes/nodes.jsonl` | One line per node: id, type, typeVersion, ops, description | Grep / cheap keyword search |
 | `indexes/keywords.json` | keyword → node ids (2,604 keywords) | Fast term → node lookup |
 | `indexes/by-category.json` | category → node ids | Enumerate a category |
-| `indexes/triggers.json` | All 91 trigger nodes | Picking the workflow start node |
+| `indexes/triggers.json` | All 107 trigger nodes | Picking the workflow start node |
 | `indexes/ai-tools.json` | Nodes usable as AI Agent tools | Building agent workflows |
 | `indexes/credentials.json` | 322 credential types + auth methods | Auth planning |
+| `reference/expressions.json` | 243 documented expression variables, methods and functions | Writing and checking `{{ … }}` |
+| `reference/env-vars.json` | 364 self-hosting environment variables | Instance configuration and hardening |
+| `reference/releases.json` | 609 releases with dates and summaries | "which version introduced this?" |
+| `reference/breaking-changes.json` | 46 breaking-change entries, incl. removed nodes | Upgrade planning |
 | `nodes/<category>/<id>.json` | Full node record | The authoritative per-node data |
 | `nodes/<category>/<id>.md` | Clean markdown reference | Human/LLM reading, RAG chunks |
 | `credentials/<id>.json` / `.md` | Credential type records | Auth setup |

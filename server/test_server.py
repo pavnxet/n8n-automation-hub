@@ -16,7 +16,8 @@ SERVER = os.path.join(HERE, "mcp_server.py")
 EXPECTED_TOOLS = {
     # discovery
     "search_operations", "search_nodes", "get_node", "get_operation", "list_triggers",
-    "resolve_enum", "search_community_nodes", "search_templates", "get_template",
+    "resolve_enum", "search_community_nodes", "search_reference", "get_reference",
+    "search_templates", "get_template",
     # validation
     "validate_workflow", "audit_workflow", "analyze_data_flow", "debug_workflow",
     # authoring
@@ -77,7 +78,7 @@ def main():
 
     tools = c.rpc("tools/list")
     names = {t["name"] for t in tools["result"]["tools"]}
-    check("twenty tools listed", len(names) == 20)
+    check("twenty-two tools listed", len(names) == 22)
     check("every expected tool is registered", EXPECTED_TOOLS <= names)
     check("no duplicate tool names", len(names) == len(tools["result"]["tools"]))
     check("all tools declare an input schema",
@@ -120,6 +121,21 @@ def main():
     body, _, _ = c.call("search_community_nodes", {"query": "whatsapp", "limit": 3})
     check("community search returns packages", body["count"] > 0)
     check("community search warns about trust", "unverified" in body["warning"].lower())
+
+    body, _, _ = c.call("search_reference", {"query": "$fromAI"})
+    check("reference search finds an expression",
+          body["count"] >= 1 and any("fromAI" in (r.get("name") or "") for r in body["results"]))
+    check("reference search reports layer counts", body["counts"]["expressions"] > 100)
+
+    body, _, _ = c.call("search_reference", {"query": "N8N_ENFORCE_SETTINGS",
+                                             "kind": "env-vars"})
+    check("reference search filters by kind", body["count"] >= 1)
+
+    body, _, _ = c.call("get_reference", {"kind": "expressions", "name": "$jmespath()"})
+    check("get_reference returns an entry", body.get("name") == "$jmespath()")
+
+    body, _, err = c.call("get_reference", {"kind": "expressions", "name": "$nope()"})
+    check("unknown reference entry is a tool error", err)
 
     body, _, _ = c.call("search_templates", {"query": "pagination", "limit": 3})
     check("template search returns entries", body["count"] >= 1)

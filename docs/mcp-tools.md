@@ -1,6 +1,6 @@
 # MCP tool reference
 
-Twenty tools in five groups. Every tool returns the same envelope:
+Twenty-two tools in five groups. Every tool returns the same envelope:
 
 - `content[0].text` — pretty-printed JSON (for clients that only read text);
 - `structuredContent` — the same object, for clients that support structured output;
@@ -109,6 +109,57 @@ Returns the matching operation(s) with `parameters`, `options`, internal values 
 ### `search_community_nodes`
 
 Third-party npm packages. Always carries an unverified-code warning.
+
+### `search_reference`
+
+Search the reference layer — the knowledge the node records cannot carry: expression variables
+and functions, environment variables, release history, and breaking changes.
+
+```json
+{"query": "$fromAI", "limit": 3}
+```
+
+```json
+{
+  "query": "$fromAI",
+  "count": 1,
+  "counts": {"expressions": 243, "env-vars": 364, "releases": 609, "breaking-changes": 46},
+  "results": [
+    {"kind": "expressions", "score": 8, "name": "$fromAI()", "section": "root",
+     "kind_detail": "function",
+     "description": "Generate a value with an AI model, with a description of what it should be",
+     "doc_url": "https://docs.n8n.io/build/work-with-data/transform-data/expression-reference"}
+  ]
+}
+```
+
+| `kind` | Contents | Example query |
+|---|---|---|
+| `expressions` | 243 documented variables, properties and methods | `$jmespath`, `toDateTime`, `base64Decode` |
+| `env-vars` | 364 self-hosting variables with type, default, category | `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS` |
+| `releases` | 609 releases with date and summary | `2.29`, `1.100` |
+| `breaking-changes` | 46 categorised entries from the v2 and v3 pages | `removed nodes`, `expression helpers` |
+
+Omit `kind` to search all four.
+
+### `get_reference`
+
+Exact lookup by name, version or title:
+
+```json
+{"kind": "env-vars", "name": "N8N_PORT"}
+```
+
+```json
+{"kind": "env-vars", "name": "N8N_PORT", "type": "Number", "default": "5678",
+ "description": "The port n8n listens on.", "category": "deployment",
+ "doc_url": "https://docs.n8n.io/deploy/…/use-environment-variables"}
+```
+
+Two of these files are wired into validation rather than being read-only reference: an unknown
+`$global` in an expression is checked against `expressions.json`, and an unknown node type is
+matched against documented removals, producing `node_removed_in_version` with the version that
+removed it.
 
 ### `search_templates` / `get_template`
 
@@ -311,6 +362,7 @@ All five tools need `N8N_BASE_URL` and `N8N_API_KEY`. Without them they return
 | `n8n://guide/workflow-conventions` | repository rules for workflow JSON |
 | `n8n://guide/security` | secret handling and import safety |
 | `n8n://guide/mcp-tools` | this document |
+| `n8n://reference/index` | counts and file map for the reference layer |
 | `n8n://node/{id}` | full Markdown reference for one node |
 
 ---

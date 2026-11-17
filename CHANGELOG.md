@@ -5,6 +5,53 @@ versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.4.0] — 2026-11-17
+
+Widened the knowledge base beyond nodes: expressions, environment variables, release history and
+breaking changes are now first-class data, and two of them feed the validator.
+
+### Added — reference layer (`knowledge-base/reference/`)
+
+- `expressions.json` — 243 documented variables, properties and methods, each with description,
+  syntax and returns, parsed from the expression reference (String, Array, Date, DateTime,
+  Object, Number, Root, Item, Node input/output, Workflow, Execution data, …).
+- `env-vars.json` — 364 self-hosting environment variables with type, default, description and
+  category.
+- `releases.json` — 609 releases (1.x and 2.x) with dates and one-line summaries.
+- `breaking-changes.json` — 46 categorised entries from the v2 and v3 breaking-change pages.
+- `tools/build_reference.py` — the parser, with `--docs-repo` / `--out` and environment
+  fallbacks, matching the other builders.
+
+### Added — tools
+
+- `search_reference` and `get_reference` (22 tools total): search across the four reference
+  files or one of them, fetch an entry by name, version or title.
+- Resource `n8n://reference/index` with counts and file map.
+
+### Changed — data now drives behaviour
+
+- Expression validation checks unknown `$globals` against the documented reference instead of a
+  hardcoded list, so a helper added in a future release is recognised without a code change
+  (`$fromAI`, `$jmespath`, `$ifEmpty`, … all resolve).
+- The validator matches unknown node types against documented removals and fails with
+  `node_removed_in_version`, naming the version that removed the node — instead of the vaguer
+  "unknown type".
+
+### Added — sources
+
+- `n8n-expression-reference`, `n8n-environment-variables`, `n8n-changelog` (all `official`).
+  Registry is now 17 sources.
+
+### Verified
+
+- 99 unit and integration tests (20 new for the reference layer), 57 protocol checks.
+- Search benchmark unchanged: top-1 97.9%, top-3 100%, 0 false positives.
+- `tools/validate_repo.py` and `tools/security_scan.py` clean.
+- **Not verified:** that every parsed entry is complete — the parsers are structural, so a page
+  that changes shape would silently yield fewer rows. Counts are asserted in tests to catch that.
+
+---
+
 ## [1.3.0] — 2026-11-17
 
 The MCP server became a workflow engineering assistant: better search, schema-aware validation,

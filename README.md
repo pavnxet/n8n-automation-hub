@@ -38,10 +38,10 @@ Built for two readers at once:
 |---|---|---|---|
 | Knowledge base | `knowledge-base/` | Every n8n built-in node as JSON + Markdown, with operations, parameter schemas, credentials and search indexes | 531 nodes · 3,848 operations · 322 credentials |
 | Automations | `automations/` | Importable workflow JSON, grouped by AI / integrations / core / patterns | 12 seed workflows |
-| MCP server | `server/` | Model Context Protocol server: 20 tools, 5 resources, stdlib only — plan, generate, validate, audit, debug, test | 52 protocol + 79 unit tests |
+| MCP server | `server/` | Model Context Protocol server: 22 tools, 6 resources, stdlib only — plan, generate, validate, audit, debug, test | 57 protocol + 99 unit tests |
 | Community nodes | `community-nodes/` | npm index of community node packages, a top-100 ranked by real download counts, and the approved shortlist | 1,500 indexed · 100 ranked |
-| Sources | `sources/` | Registry of official and unofficial sources, with licences, quality notes and check dates | 14 sources |
-| Tooling | `tools/` | Validators, security scanner, KB builders, BM25 search, node ranker | 7 scripts |
+| Sources | `sources/` | Registry of official and unofficial sources, with licences, quality notes and check dates | 17 sources |
+| Tooling | `tools/` | Validators, security scanner, KB and reference builders, BM25 search, node ranker | 8 scripts |
 | Documentation | `docs/` | Architecture, workflow conventions, importing guide, research notes, roadmap | 5 documents |
 
 Snapshot date: **2026-11-17**. Node schemas come from `n8n-nodes-base@2.15.1` and
@@ -56,6 +56,16 @@ Snapshot date: **2026-11-17**. Node schemas come from `n8n-nodes-base@2.15.1` an
 In n8n: **Workflows → ⋯ → Import from File** → pick a file from `automations/` → attach a
 credential to each flagged node. No workflow here contains secrets; credentials are always
 yours to attach.
+
+### Ask about more than nodes
+
+The reference layer answers questions that are not about a single node — expressions,
+environment variables, releases, breaking changes:
+
+```bash
+python3 -c "import sys; sys.path.insert(0,'.'); from server.reference import Reference; r=Reference(); print(r.search('$fromAI', limit=2)['results'][0]['name'])"
+python3 -c "import sys; sys.path.insert(0,'.'); from server.reference import Reference; print(Reference().get('env-vars','N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS')['description'][:120])"
+```
 
 ### Ask the knowledge base a question
 
@@ -118,6 +128,7 @@ n8n-automation-hub/
 │   ├── nodes/<category>/         one .json + one .md per node
 │   ├── credentials/              one .json + one .md per credential type
 │   ├── indexes/                  operations, nodes, keywords, triggers, enums
+│   ├── reference/                expressions, env vars, releases, breaking changes
 │   └── examples/                 the 12 bundled workflows + index
 ├── server/
 │   ├── README.md                 tools, resources, client configuration
@@ -150,6 +161,7 @@ n8n-automation-hub/
 │   ├── enrich_kb.py              add exact parameter schemas from the npm packages
 │   ├── build_community_index.py  rebuild community-nodes/index.json from npm
 │   ├── build_top_nodes.py        rank community nodes by monthly downloads
+│   ├── build_reference.py        parse expressions, env vars, releases, breaking changes
 │   └── search.py                 BM25 search CLI
 └── .github/
     ├── workflows/validate.yml    CI: workflows, security scan, MCP server tests
@@ -297,6 +309,7 @@ nodes and validate its own output instead of guessing.
 | `get_operation` | One operation's parameters and options |
 | `list_triggers` | How a workflow can start |
 | `search_community_nodes` | Third-party packages for an app, with download counts and rank |
+| `search_reference` / `get_reference` | Expressions (`$fromAI`), env vars (`N8N_*`), release history, breaking changes |
 | `search_templates` / `get_template` | Reusable patterns with a verification status |
 | `resolve_enum` | "Append Row" → `append` |
 | `validate_workflow` | Schema-aware: required parameters, types, enums, versions, connections, expressions, credentials |

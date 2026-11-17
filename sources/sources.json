@@ -160,6 +160,39 @@
       "quality_notes": "The clearest third-party presentation of community-node metadata found in this survey: it separates 30-day from all-time downloads and flags AI-generated packages, neither of which npm metadata gives you. No licence is stated and its API host is not reachable from this build environment, so it is cited as a reference rather than ingested; package facts were cross-checked against npm directly.",
       "used_for": "cross-check of community-nodes/top-100.json; reference for readers",
       "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8n-expression-reference",
+      "name": "n8n docs — expression reference",
+      "url": "https://docs.n8n.io/build/work-with-data/transform-data/expression-reference",
+      "tier": "official",
+      "licence": "Sustainable Use License v1.0",
+      "what_it_is": "Every variable, property and method available inside {{ … }} expressions, including Luxon date methods, JMESPath, $fromAI and the item-linking helpers.",
+      "quality_notes": "Structured per type (String, Array, Date, Object…), each entry with Description/Syntax/Returns. Parsed into 243 entries; this is also what the validator checks unknown $globals against, so a new helper is recognised without a code change.",
+      "used_for": "knowledge-base/reference/expressions.json, expression validation",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8n-environment-variables",
+      "name": "n8n docs — environment variables",
+      "url": "https://docs.n8n.io/deploy/host-n8n/configure-n8n/basic-configuration/use-environment-variables",
+      "tier": "official",
+      "licence": "Sustainable Use License v1.0",
+      "what_it_is": "The self-hosting configuration reference: 364 N8N_* variables with type, default and description, grouped by area (database, executions, security, community nodes, …).",
+      "quality_notes": "Tables parse cleanly; defaults use '-' for unset. Useful when advising on instance hardening or explaining why a feature is unavailable.",
+      "used_for": "knowledge-base/reference/env-vars.json",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "n8n-changelog",
+      "name": "n8n docs — release notes and breaking changes",
+      "url": "https://docs.n8n.io/changelog/release-notes-2.x",
+      "tier": "official",
+      "licence": "Sustainable Use License v1.0",
+      "what_it_is": "Release notes for 1.x and 2.x (609 releases with dates and summaries) plus dedicated breaking-change pages for major versions, including removed nodes and expression helpers.",
+      "quality_notes": "The only official source for what changed between versions. Removal entries feed a validator rule, so a workflow using a removed node fails with the version that removed it instead of a vague 'unknown type'.",
+      "used_for": "knowledge-base/reference/releases.json, breaking-changes.json, typeVersion guidance",
+      "last_checked": "2026-11-17"
     }
   ]
 }

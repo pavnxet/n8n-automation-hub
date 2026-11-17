@@ -31,16 +31,18 @@ if ROOT not in sys.path:
 from server import analysis, audit as audit_mod, debugger, generator, planner, validation
 from server.kb import KnowledgeBase
 from server.n8n_api import N8nClient, N8nError, N8nNotConfigured
+from server.reference import Reference
 from server.search import SearchEngine
 from server.templates import TemplateLibrary
 
 PROTOCOL_VERSION = "2024-11-05"
-SERVER_INFO = {"name": "n8n-automation-hub", "version": "1.3.0"}
+SERVER_INFO = {"name": "n8n-automation-hub", "version": "1.4.0"}
 MAX_TEXT = 60000
 
 KB = KnowledgeBase()
 SE = SearchEngine(KB)
 TEMPLATES = TemplateLibrary()
+REFERENCE = Reference()
 N8N = N8nClient.from_env()
 
 
@@ -211,6 +213,39 @@ TOOLS = [
                 "min_downloads": {"type": "integer", "default": 0},
             },
             "required": ["query"],
+        },
+    },
+    {
+        "name": "search_reference",
+        "description": (
+            "Search the reference layer: expression variables and functions (is $fromAI() "
+            "real?), environment variables (N8N_*), release history, and breaking changes "
+            "between major versions. Use it for anything that is not about a single node."),
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string",
+                          "description": "e.g. '$fromAI', 'N8N_ENFORCE', '2.29', 'removed nodes'"},
+                "kind": {"type": "string",
+                         "enum": ["expressions", "env-vars", "releases", "breaking-changes"]},
+                "limit": {"type": "integer", "default": 8, "minimum": 1, "maximum": 30},
+            },
+            "required": ["query"],
+        },
+    },
+    {
+        "name": "get_reference",
+        "description": (
+            "Fetch one reference entry by exact name, version or title — for example an "
+            "expression like '$jmespath()', an env var like 'N8N_PORT', a release like '2.29.0'."),
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "kind": {"type": "string",
+                         "enum": ["expressions", "env-vars", "releases", "breaking-changes"]},
+                "name": {"type": "string"},
+            },
+            "required": ["kind", "name"],
         },
     },
     {
@@ -527,6 +562,23 @@ def tool_search_community_nodes(a):
     })
 
 
+def tool_search_reference(a):
+    out = REFERENCE.search(a["query"], a.get("kind"), int(a.get("limit", 8)))
+    out["counts"] = REFERENCE.counts()
+    if not out["results"]:
+        out["hint"] = ("Nothing matched. Try a shorter term, or drop 'kind' to search all four "
+                       "reference files.")
+    return result(out)
+
+
+def tool_get_reference(a):
+    row = REFERENCE.get(a["kind"], a["name"])
+    if not row:
+        return result({"error": f"no {a['kind']} entry named {a['name']!r}",
+                       "counts": REFERENCE.counts()}, is_error=True)
+    return result(row)
+
+
 def tool_search_templates(a):
     rows = TEMPLATES.search(a["query"], a.get("tag"), int(a.get("limit", 5)))
     return result({"count": len(rows), "templates": rows,
@@ -724,6 +776,8 @@ HANDLERS = {
     "list_triggers": tool_list_triggers,
     "resolve_enum": tool_resolve_enum,
     "search_community_nodes": tool_search_community_nodes,
+    "search_reference": tool_search_reference,
+    "get_reference": tool_get_reference,
     "search_templates": tool_search_templates,
     "get_template": tool_get_template,
     "validate_workflow": tool_validate_workflow,
@@ -757,7 +811,9 @@ def handle(msg):
                 "request into steps, search_operations/get_operation to confirm nodes and "
                 "parameters, resolve_enum for internal values, generate_workflow to build JSON, "
                 "validate_workflow and audit_workflow to check it, then test_workflow (and "
-                "execute_workflow if an instance is configured) to run it. Resource "
+                "execute_workflow if an instance is configured) to run it. For expressions, "
+                "environment variables, release history and breaking changes use "
+                "search_reference. Resource "
                 "n8n://guide/agent explains the workflow format. Live tools need "
                 "N8N_BASE_URL and N8N_API_KEY; without them everything else still works."),
         })
@@ -801,6 +857,8 @@ def handle(msg):
                  "Secret handling and import safety"),
                 ("n8n://guide/mcp-tools", "mcp-tools.md",
                  "Every MCP tool with input and output examples"),
+                ("n8n://reference/index", "reference/index.json",
+                 "Counts and files for the reference layer"),
             ]
         ]})
 
@@ -819,6 +877,10 @@ def handle(msg):
             if body is None:
                 return err(msg_id, -32602, f"unknown node in uri: {uri}")
             return ok(msg_id, {"contents": [{"uri": uri, "mimeType": "text/markdown",
+                                             "text": body[:MAX_TEXT]}]})
+        if uri == "n8n://reference/index":
+            body = json.dumps(REFERENCE.index(), indent=2)
+            return ok(msg_id, {"contents": [{"uri": uri, "mimeType": "application/json",
                                              "text": body[:MAX_TEXT]}]})
         guides = KB.guides()
         if uri == "n8n://guide/mcp-tools":

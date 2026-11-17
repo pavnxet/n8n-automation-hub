@@ -4,7 +4,7 @@
 somewhere else, the source is in that file — with its licence, what it actually contains, and
 what was verified about it.
 
-Fourteen sources are registered as of 2026-11-17.
+Seventeen sources are registered as of 2026-11-17.
 
 ---
 
