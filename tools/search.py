@@ -12,7 +12,8 @@ Run from the KB root (the folder containing catalog.json).
 import sys, os, json, math, re, argparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-IDX = os.path.join(ROOT, "indexes")
+KB = os.environ.get("N8N_KB_OUT", os.path.join(ROOT, "knowledge-base"))
+IDX = os.path.join(KB, "indexes")
 STOP = set("""a an and are as at be by for from has have how in into is it its of on or that the
 this to use used using with you your the do does i we my can will not what which who node nodes""".split())
 

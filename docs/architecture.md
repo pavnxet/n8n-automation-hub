@@ -34,9 +34,15 @@ So the repository keeps two layers of truth and merges them per node.
         ▼                                          ▼
   tools/validate_repo.py                    tools/search.py
   (lint automations, build registry)        (BM25 over the indexes)
+        │                                          │
+        │                                   server/mcp_server.py
+        │                                   (same index, MCP tools)
+        ▼                                          ▼
+   automations/registry.json              any MCP client
         │
         ▼
-   automations/registry.json
+  tools/security_scan.py  ──►  CI gate (fail on high)
+  (secrets, dangerous nodes, packages)
 ```
 
 ---
@@ -67,6 +73,8 @@ directly; they read `catalog.json` or search.
 | `nodes/<id>.json` → `node_schema` | Exact parameter keys, types, defaults, option values | Absent for 10 nodes and for all community nodes |
 | `indexes/*` | Derived from the records above | Regenerate, never hand-edit |
 | `automations/*.json` | Imports, has no secrets, node types exist | CI rejects it |
+| `server/*` | Speaks MCP correctly; validator identical to CI's | `server/test_server.py` fails |
+| `security/waivers.json` | Every accepted risk has a reason, an owner and an expiry | An expired waiver stops applying |
 
 ---
 
@@ -100,6 +108,29 @@ Reads the npm search API for the exact keyword n8n uses, then enriches the top r
 last-month downloads. Scoped packages are fetched one at a time because the bulk downloads
 endpoint rejects them.
 
+### Security gate
+
+```bash
+python3 tools/security_scan.py                # whole repository
+python3 tools/security_scan.py --changed      # what a branch adds (CI on PRs)
+```
+
+Two scanners, two questions. `validate_repo.py` asks *is this a well-formed workflow?*;
+`security_scan.py` asks *is this workflow safe to run, and did the author paste a key into it?*
+They are separate so a structural warning never hides a credential.
+
+### MCP server
+
+```bash
+python3 server/test_server.py     # protocol and tool assertions
+pip install -e .                  # optional: `n8n-hub-mcp`
+```
+
+`server/kb.py` reuses the same BM25 scorer as `tools/search.py`, and
+`server/mcp_server.py` imports `tools/validate_repo.py` for its `validate_workflow` tool. No
+second implementation of either exists — that is deliberate, because two implementations
+eventually disagree.
+
 ### Automations
 
 ```bash
@@ -120,6 +151,8 @@ knowledge base, scans for secret-shaped values, and rewrites `automations/regist
 | A pinned community node | `community-nodes/README.md` shortlist | `index.json` (generated) |
 | A node missing from the docs | nothing — it is a docs gap; record it in `docs/roadmap.md` | hand-editing `nodes/` |
 | A new index | `tools/build_kb.py` | writing it by hand |
+| An MCP tool | `server/mcp_server.py` + a test in `server/test_server.py` | adding a tool without a test |
+| A security rule | `tools/security_scan.py` + a row in the `SECURITY.md` table | silencing a finding by editing the file it flagged |
 
 ---
 

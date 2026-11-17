@@ -2,8 +2,8 @@
 
 ## Scope
 
-This repository is private and single-maintainer, but its conventions assume collaborators.
-These rules apply to issues, pull requests, commit messages and review comments.
+This repository is public and single-maintainer. These rules apply to issues, pull requests,
+commit messages and review comments.
 
 ## Expected behaviour
 
@@ -28,4 +28,4 @@ restrict access for repeat breaches. Concerns go to the maintainer directly.
 ## Attribution
 
 Adapted in spirit from the Contributor Covenant (contributor-covenant.org, CC BY 4.0),
-shortened to fit a private repository.
+shortened to fit this repository.

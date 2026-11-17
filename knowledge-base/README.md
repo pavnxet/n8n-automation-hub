@@ -3,7 +3,8 @@
 > This is the knowledge-base component of the **n8n Automation Hub** repository.
 > Start at [`../README.md`](../README.md) for the whole picture, and
 > [`../docs/architecture.md`](../docs/architecture.md) for how this directory is built.
-> Build and validation scripts live in [`../tools/`](../tools/).
+> Build and validation scripts live in [`../tools/`](../tools/), and the MCP server that
+> serves this directory is in [`../server/`](../server/).
 
 A machine-readable, agent-friendly split of the n8n built-in node documentation
 (<https://docs.n8n.io/integrations/builtin>), built for one job: letting an AI agent
@@ -28,9 +29,9 @@ parameter schema from the published packages (`n8n-nodes-base@2.15.1`,
 
 ```bash
 grep -i "append row" indexes/operations.jsonl | head -20
-python3 tools/search.py "send whatsapp message"          # BM25, ranked
-python3 tools/search.py "append row" --ops               # operations only
-python3 tools/search.py "new email" --trigger            # trigger nodes only
+python3 ../tools/search.py "send whatsapp message"       # BM25, ranked
+python3 ../tools/search.py "append row" --ops            # operations only
+python3 ../tools/search.py "new email" --trigger            # trigger nodes only
 ```
 
 **Step 2 — read the node record.**
@@ -70,7 +71,7 @@ jq '.nodes["n8n-nodes-base.googleSheets"]' indexes/resources-operations.json
 | `examples/index.json` | 12 real n8n workflows shipped with the docs, with the node types each uses | Structural templates |
 | `examples/workflows/` | The workflow JSON files themselves | Copy/adapt a working workflow |
 | `schema.json` | JSON Schema for a node record | Validation |
-| `tools/search.py` | BM25 CLI over the indexes (stdlib only) | Ranked search (mirror of `../tools/search.py`) |
+| `../tools/search.py` | BM25 CLI over the indexes (stdlib only) | Ranked search |
 | `../tools/build_kb.py` | Step 1 generator (docs → KB) | Rebuild from a newer docs snapshot |
 | `../tools/enrich_kb.py` | Step 2 enricher (package → KB) | Rebuild the schema layer |
 
@@ -169,8 +170,8 @@ jq '.nodes["n8n-nodes-base.slack"].operations' indexes/resources-operations.json
 Python (ranked, no dependencies):
 
 ```bash
-python3 tools/search.py "convert pdf to text" --limit 5
-python3 tools/search.py "vector store" --category cluster-sub-node
+python3 ../tools/search.py "convert pdf to text" --limit 5
+python3 ../tools/search.py "vector store" --category cluster-sub-node
 ```
 
 ---

@@ -25,12 +25,21 @@ reference it in `settings.errorWorkflow`.
 
 ### 3. Extend the validator
 
-Add: required-sticky-note check for production workflows, retry-policy check on network nodes,
-and an `errorWorkflow` presence check.
+~~Security scanning~~ shipped in 1.1.0 as `tools/security_scan.py`. Remaining: a
+required-sticky-note check for production workflows, a retry-policy check on network nodes, and
+an `errorWorkflow` presence check.
 
 **Done when:** the new rules fail a deliberately bad fixture and pass the existing corpus.
 
 ---
+
+### 3a. MCP server — shipped in 1.1.0
+
+`server/` now exposes seven tools over stdio. Follow-ups worth doing:
+
+- a `search_community_nodes` tool over `community-nodes/index.json`
+- a `diff_kb_versions` tool once item 8 exists
+- an HTTP transport, only if a remote client actually needs one
 
 ## Next
 
@@ -90,4 +99,5 @@ need, so a new credential can be created least-privilege by default.
   documented in `docs/research-2026-11.md`; volume is not the goal.
 - **Merging community nodes into the node records.** They change too fast and are unverified.
 - **Hosting a public mirror of the documentation.** The Sustainable Use License permits
-  non-commercial distribution only, and a private repository is the safer reading.
+  non-commercial distribution only; publishing it free and non-commercially, as this
+  repository does, is within the licence.

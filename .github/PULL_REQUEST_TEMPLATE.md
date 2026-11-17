@@ -18,6 +18,7 @@
 ## Verification
 
 - [ ] `python3 tools/validate_repo.py` passes
+- [ ] `python3 tools/security_scan.py` passes (or the finding is waived in `security/waivers.json` with a reason and an expiry)
 - [ ] Workflow imported into an n8n instance and ran at least once (say which version)
 - [ ] No secrets, tokens or personal identifiers in the diff
 - [ ] `automations/registry.json` regenerated and committed

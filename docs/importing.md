@@ -75,6 +75,16 @@ Bulk collections are the highest-risk source: a large share of files in the bigg
 known to contain placeholder `noOp` nodes where AI nodes should be, so the workflow imports
 cleanly and quietly does nothing. See `../sources/README.md`.
 
+If the workflow is going into this repository, run the scanner before you commit it:
+
+```bash
+python3 tools/security_scan.py --changed --base origin/main
+```
+
+It reports secrets, `executeCommand` and `ssh`, dangerous Code-node APIs, SSRF-shaped URLs,
+disabled TLS, unauthenticated webhooks, embedded emails, and third-party nodes that are not on
+the shortlist. A `high` finding is a blocker.
+
 ---
 
 ## 5. Moving a workflow between instances

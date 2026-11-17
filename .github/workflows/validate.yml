@@ -10,7 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  validate:
+  workflows:
+    name: workflows and knowledge base
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -49,5 +50,55 @@ jobs:
 
       - name: Search CLI smoke test
         run: |
-          python3 knowledge-base/tools/search.py "append row" --ops --limit 3
-          python3 knowledge-base/tools/search.py "send email" --limit 3
+          python3 tools/search.py "append row" --ops --limit 3
+          python3 tools/search.py "send email" --limit 3
+
+  security:
+    name: security scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scan the full repository
+        if: github.event_name != 'pull_request'
+        run: python3 tools/security_scan.py --fail-on high
+
+      - name: Scan only what this pull request adds or changes
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags origin "${{ github.base_ref }}"
+          python3 tools/security_scan.py --changed --base "origin/${{ github.base_ref }}" --fail-on high
+
+      - name: Report findings in the job summary
+        if: always()
+        run: |
+          {
+            echo "## Security scan"
+            echo '```'
+            python3 tools/security_scan.py --fail-on none || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  mcp-server:
+    name: mcp server
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Protocol and tool tests
+        run: python3 server/test_server.py
+
+      - name: Package installs and exposes its entry point
+        run: |
+          pip install -e .
+          python3 -c "import server.mcp_server as m; print('server module ok', m.SERVER_INFO)"

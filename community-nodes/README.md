@@ -85,12 +85,19 @@ verified badge — check the shield icon in the n8n panel for that.
 
 ## Shortlist
 
-Nodes actually approved for use in this repository. Empty until one is evaluated — add a row
-only after reading the source or finding it verified.
+Nodes approved for use in this repository live in `shortlist.json`, not in a table nobody
+checks. Each entry pins an exact version and records who reviewed it and why.
 
-| Package | Version pinned | Verified | Why it is here | Reviewed |
-|---|---|---|---|---|
-| — | — | — | — | — |
+`tools/security_scan.py` verifies every entry against npm: exact version pin, declared licence,
+declared source repository, publication age, last-modified date, and Levenshtein distance to the
+most-downloaded packages. A typosquat, an unpinned version or a package with no repository is a
+CI failure.
+
+```bash
+python3 tools/security_scan.py --fail-on medium
+```
+
+The list is empty on purpose. Nothing gets approved until it is needed and read.
 
 ---
 

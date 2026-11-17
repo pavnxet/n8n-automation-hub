@@ -1,0 +1,19 @@
+{
+  "note": "Accepted risks. A waiver silences one rule for one file (or prefix) until it expires. Expired waivers stop working, so a stale exception cannot hide forever.",
+  "schema": {
+    "rule": "SEC### from tools/security_scan.py",
+    "file": "path prefix the waiver applies to",
+    "reason": "why the risk is accepted",
+    "owner": "who accepted it",
+    "expires": "YYYY-MM-DD"
+  },
+  "waivers": [
+    {
+      "rule": "SEC007",
+      "file": "automations/core/extractfromfile/webhook-example.json",
+      "reason": "Documentation example: the webhook exists to demo file extraction, not to be deployed. If it is ever copied into a real workflow, the waiver does not follow the copy - the new path is scanned fresh.",
+      "owner": "pavnxet",
+      "expires": "2027-05-17"
+    }
+  ]
+}

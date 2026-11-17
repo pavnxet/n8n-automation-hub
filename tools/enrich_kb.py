@@ -8,9 +8,12 @@ and writes indexes/resources-operations.json.
 """
 import json, os, re, glob, datetime
 
-KB = "/scratch/work/n8n-node-kb"
-BASE = "/scratch/work/nbdist/base-nodes.json"
-LC = "/scratch/work/nbdist/langchain-nodes.json"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+KB = os.environ.get("N8N_KB_OUT", os.path.join(ROOT, "knowledge-base"))
+BASE = os.environ.get("N8N_BASE_NODES_JSON",
+                      os.path.join(ROOT, "vendor", "n8n-nodes-base.nodes.json"))
+LC = os.environ.get("N8N_LC_NODES_JSON",
+                    os.path.join(ROOT, "vendor", "n8n-nodes-langchain.nodes.json"))
 TODAY = "2026-11-17"
 
 
@@ -124,7 +127,30 @@ def enum_map(entry):
     return resources, ops, auth
 
 
+def configure(kb=None, base=None, langchain=None):
+    global KB, BASE, LC
+    if kb:
+        KB = os.path.abspath(kb)
+    if base:
+        BASE = os.path.abspath(base)
+    if langchain:
+        LC = os.path.abspath(langchain)
+
+
 def main():
+    import argparse
+    ap = argparse.ArgumentParser(description="Add exact node schemas from the npm packages.")
+    ap.add_argument("--kb", help="knowledge base directory (default: ./knowledge-base)")
+    ap.add_argument("--base-nodes", help="dist/types/nodes.json from n8n-nodes-base")
+    ap.add_argument("--langchain-nodes", help="same, from @n8n/n8n-nodes-langchain")
+    a = ap.parse_args()
+    configure(a.kb, a.base_nodes, a.langchain_nodes)
+    for label, path in (("n8n-nodes-base", BASE), ("@n8n/n8n-nodes-langchain", LC)):
+        if not os.path.exists(path):
+            raise SystemExit(f"missing {label} nodes.json at {path}\n"
+                             f"extract it with: npm pack {label} && tar -xzf *.tgz "
+                             f"--wildcards 'package/dist/types/nodes.json'")
+
     index = {}
     index.update(load(BASE, "n8n-nodes-base."))
     index.update(load(LC, "@n8n/n8n-nodes-langchain."))

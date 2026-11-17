@@ -1,6 +1,6 @@
 # Contributing
 
-This is a private repository with one maintainer, but it is written as if others will use it.
+This is a public repository with one maintainer, written as if others will use it.
 The rules below are what keep it usable a year from now.
 
 ---
@@ -39,11 +39,14 @@ Step 3: strip anything personal.
 Step 4: fill in the automation README — what it does, what triggers it, which credentials it
 needs, and any assumption a reader must know.
 
-Step 5: validate.
+Step 5: validate and scan.
 
 ```bash
-python3 tools/validate_repo.py
+python3 tools/validate_repo.py      # structure, node types, registry
+python3 tools/security_scan.py      # secrets, dangerous nodes, PII
 ```
+
+Both must be clean before a pull request. A `high` finding is a blocker, not a discussion.
 
 Step 6: commit with a scoped message.
 
@@ -66,11 +69,34 @@ A workflow fails validation when:
   `privateKey`) and has a non-empty literal value;
 - a string value looks like a live credential (long high-entropy string, `sk-…`, `ghp_…`,
   `xoxb-…`, a bearer token);
-- a node sits at a duplicate `position`.
+- a node sits at a duplicate `position`;
+- `tools/security_scan.py` reports a `high` finding (real credential shape, `executeCommand`,
+  `ssh`, `eval`/`child_process` in a Code node, unauthenticated webhook, typosquatted package).
 
 The validator prints the exact path and reason for every failure.
 
 ---
+
+## 3a. Adding a community node
+
+A package is not approved by adding it to `community-nodes/README.md` alone. Add it to
+`community-nodes/shortlist.json`:
+
+```json
+{
+  "name": "n8n-nodes-example",
+  "version": "1.4.2",
+  "verified": false,
+  "reviewed": "2026-11-17",
+  "reviewed_by": "pavnxet",
+  "why": "One sentence on what it adds and why nothing built-in covers it.",
+  "source_reviewed": "read the package source on 2026-11-17; no network calls outside its stated API"
+}
+```
+
+Then run `python3 tools/security_scan.py`. It checks the exact pin, the declared licence, the
+declared repository, publication age, last-modified date, and Levenshtein distance against the
+most-downloaded community packages. A typosquat or an unpinned version fails CI.
 
 ## 4. Adding a source
 

@@ -2,13 +2,14 @@
 """Build a machine-readable knowledge base of n8n built-in nodes from the
 n8n-docs repository (docs/integrations/builtin).
 
-Output: /scratch/work/n8n-node-kb/
+Output: knowledge-base/ (default), or --out <dir>
 """
 import os, re, json, shutil, datetime, unicodedata, urllib.parse
 
-SRC = "/scratch/work/n8n-docs/docs/integrations/builtin"
-REPO = "/scratch/work/n8n-docs"
-OUT = "/scratch/work/n8n-node-kb"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO = os.environ.get("N8N_DOCS_REPO", os.path.join(ROOT, "vendor", "n8n-docs"))
+OUT = os.environ.get("N8N_KB_OUT", os.path.join(ROOT, "knowledge-base"))
+SRC = os.path.join(REPO, "docs", "integrations", "builtin")
 DOCS_BASE = "https://docs.n8n.io"
 TODAY = "2026-11-17"
 
@@ -790,7 +791,29 @@ def copy_workflow_examples():
     return index
 
 
+def configure(docs_repo=None, out_dir=None):
+    """Point the builder at a docs clone and an output directory."""
+    global REPO, SRC, OUT
+    if docs_repo:
+        REPO = os.path.abspath(docs_repo)
+        SRC = os.path.join(REPO, "docs", "integrations", "builtin")
+    if out_dir:
+        OUT = os.path.abspath(out_dir)
+
+
 def main():
+    import argparse
+    ap = argparse.ArgumentParser(description="Build the knowledge base from an n8n-docs clone.")
+    ap.add_argument("--docs-repo", help="clone of n8n-io/n8n-docs "
+                                        "(default: ./vendor/n8n-docs or $N8N_DOCS_REPO)")
+    ap.add_argument("--out", help="output directory (default: ./knowledge-base or $N8N_KB_OUT)")
+    a = ap.parse_args()
+    configure(a.docs_repo, a.out)
+    if not os.path.isdir(SRC):
+        raise SystemExit(f"docs not found at {SRC}\nclone it first:\n"
+                         f"  git clone --depth 1 https://github.com/n8n-io/n8n-docs.git {REPO}")
+    print(f"docs: {REPO}\nout:  {OUT}")
+
     # remove only generated parts - hand-written docs (README, AGENT-GUIDE, schema) survive
     for sub in ["nodes", "credentials", "indexes", "examples"]:
         d = os.path.join(OUT, sub)

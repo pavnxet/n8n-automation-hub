@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "n8n-automation-hub-mcp"
+version = "1.1.0"
+description = "MCP server exposing the n8n Automation Hub knowledge base: node search, exact parameter schemas and workflow validation."
+readme = "server/README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["n8n", "mcp", "model-context-protocol", "automation", "knowledge-base"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = []
+
+[project.scripts]
+n8n-hub-mcp = "server.mcp_server:main"
+
+[tool.setuptools]
+packages = ["server"]
